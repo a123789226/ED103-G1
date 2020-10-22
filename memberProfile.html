@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    <title>Aqua Member</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="background" style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div> 
+  <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="memBackground">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Log In -->
+  <div class="memLogin overlay">
+    <form class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+
+  <div>
+    <!-- Title -->
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">Big Title</h2>
+      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
+    </div> -->
+    <!-- 你的code打這下面 -->
+    <main>
+      <div class="container memMain">
+        <div class="row">
+          <!-- 右半邊選單 -->
+          <div class="memList col-lg-3">
+            <div class="memImgArea">
+              <div class="memImg">
+                <img src="./image/member/Shinnosuke2.jpg" alt="">
+              </div>
+              <label for="memPhoto">
+                <input type="file" name="memImg" id="memPhoto" style="display: none;">
+                Edit<i class="fas fa-pen"></i>
+              </label>
+            </div>
+            <h3>Shinnosuke</h3>
+            <ul>
+              <div class="membtn">
+                <a href="#" data-target="tab1" class="memTab -on">Profile</a>
+              </div>
+              <div class="membtn">
+                <a href="#" data-target="tab2" class="memTab">Blog Record</a>
+              </div>
+              <div class="membtn">
+                <a href="#" data-target="tab3" class="memTab">Thankscard Record</a>
+              </div>
+              <div class="membtn">
+                <a href="#" data-target="tab4" class="memTab">Adoption Record</a>
+              </div>
+              <div class="membtn">
+                <a href="#" data-target="tab5" class="memTab">Order Record</a>
+              </div>
+            </ul>
+          </div>
+          
+          <!-- 左半邊內容 -->
+          <div class="container memProContent col-lg-9">
+            <!-- PROFILE -->
+            <div class="memTab tab1 memProfile -on">
+              <div class="memProTitle">
+                <h3>Profile</h3>
+                <ul>
+                  <div class="memSpanPoint">
+                    <p class="memPointTitle">Point</p>
+                    <p class="memPointNumber">88</p>
+                  </div>
+                </ul>
+              </div>
+              <div class="memProAll">
+                <div class="memName memProfileContent">
+                  <div class="memProTit col-lg-3">Name</div>
+                  <div class="col-lg-8">Shinnosuke</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memUsername memProfileContent">
+                  <div class="memProTit col-lg-3">Username</div>
+                  <div class="col-lg-8">tony1021</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memPsw memProfileContent">
+                  <div class="memProTit col-lg-3">Password</div>
+                  <div class="col-lg-8">*******</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memGender memProfileContent">
+                  <div class="memProTit col-lg-3">Gender</div>
+                  <div class="col-lg-8">Male</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memEmail memProfileContent">
+                  <div class="memProTit col-lg-3">Email</div>
+                  <div class="col-lg-8">tony1021@gmail.com</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memMobile memProfileContent">
+                  <div class="memProTit col-lg-3">Phone</div>
+                  <div class="col-lg-8">0987-654321</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="memBirth memProfileContent">
+                  <div class="memProTit col-lg-3">Birthday</div>
+                  <div class="col-lg-8">1995-10-21</div>
+                  <i class="fas fa-pen"></i>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Blog Record -->
+            <div class="memTab tab2 memBlog">
+              <div class="memAllTitle">
+                <h3>Bolg Record</h3>
+                <ul>
+                  <div class="memSpanBlog">
+                    <div>
+                      <a href="#" data-target="memBlogTab1" class="memBlogTab -on">Posted</a>
+                    </div>
+                    <div>
+                      <a href="#" data-target="memBlogTab2" class="memBlogTab span2">Saved</a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <div class="memBlogAll">
+                <div class="memBlogTable memBlogTab1 memBlogTab -on">
+                  <div class="col-md-12 memBlogForm memBlogCard">
+                    <div class="col-md-3 memFormTitle">Image</div>
+                    <div class="col-md-3 memFormTitle">Title</div>
+                    <div class="col-md-3 memFormTitle">Hashtag</div>
+                    <div class="col-md-3 memFormTitle">Edit</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memBlogCard">
+                    <div class="col-md-3 mem_ana"><img src="./image/member/memBlog.jpg" alt=""></div>
+                    <div class="col-md-3 mem_ana">FunDay!</div>
+                    <div class="col-md-3 mem_ana">#dolphin</div>
+                    <div class="col-md-3 mem_ana">
+                      <div class="memBlogClick">
+                        <i class="fas fa-pen"></i>
+                        <i class="fas fa-trash-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memBlogCard">
+                    <div class="col-md-3 mem_ana"><img src="./image/member/memBlog1.jpg" alt=""></div>
+                    <div class="col-md-3 mem_ana">That's Great!</div>
+                    <div class="col-md-3 mem_ana">#whale</div>
+                    <div class="col-md-3 mem_ana">
+                      <div class="memBlogClick">
+                        <i class="fas fa-pen"></i>
+                        <i class="fas fa-trash-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="memBlogTable memBlogTab2 memBlogTab">
+                  <div class="col-md-12 memBlogForm memBlogCard">
+                    <div class="col-md-3 memFormTitle">Image</div>
+                    <div class="col-md-3 memFormTitle">Title</div>
+                    <div class="col-md-3 memFormTitle">Hashtag</div>
+                    <div class="col-md-3 memFormTitle">Edit</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memBlogCard">
+                    <div class="col-md-3 mem_ana"><img src="./image/member/memblogseal.jpg" alt=""></div>
+                    <div class="col-md-3 mem_ana">GreatTime!</div>
+                    <div class="col-md-3 mem_ana">#seal</div>
+                    <div class="col-md-3 mem_ana">
+                      <div class="memBlogClick">
+                        <i class="fas fa-trash-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memBlogCard">
+                    <div class="col-md-3 mem_ana"><img src="./image/member/memBlogseaturtle.jpg" alt=""></div>
+                    <div class="col-md-3 mem_ana">Funny!</div>
+                    <div class="col-md-3 mem_ana">#seaturtle</div>
+                    <div class="col-md-3 mem_ana">
+                      <div class="memBlogClick">
+                        <i class="fas fa-trash-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thankscard Record -->
+            <div class="memTab tab3 memThanks">
+              <div class="memAllTitle">
+                <h3>Thankscard Record</h3>
+              </div>
+              <div class="memThanksAll">
+                <div class="memThanksTable">
+                  <div class="col-md-12 memBlogForm memCard">
+                    <div class="col-md-2 memFormTitle">Date</div>
+                    <div class="col-md-2 memFormTitle">Recipient</div>
+                    <div class="col-md-6 memFormTitle">Address</div>
+                    <div class="col-md-2 memFormTitle">Status</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memCard">
+                    <div class="col-md-2 mem_ana">2020-10-21</div>
+                    <div class="col-md-2 mem_ana">Shinnosuke</div>
+                    <div class="col-md-6 mem_ana">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
+                    <div class="col-md-2 mem_ana">Sended</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memCard">
+                    <div class="col-md-2 mem_ana">2020-10-21</div>
+                    <div class="col-md-2 mem_ana">Shinnosuke</div>
+                    <div class="col-md-6 mem_ana">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
+                    <div class="col-md-2 mem_ana">Failed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Adoption Record -->
+            <div class="memTab tab4 memAdopt">
+              <div class="memAllTitle">
+                <h3>Adoption Record</h3>
+              </div>
+              <div class="memAdoptAll">
+                <div class="memAdoptTable">
+                  <div class="col-md-12 memBlogForm memAdoptCard">
+                    <div class="col-md-3 memFormTitle">Date</div>
+                    <div class="col-md-3 memFormTitle">Adopt</div>
+                    <div class="col-md-3 memFormTitle">Dollar</div>
+                    <div class="col-md-3 memFormTitle">Status</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memAdoptCard">
+                    <div class="col-md-3 mem_ana">2020-09-21</div>
+                    <div class="col-md-3 mem_ana">dolphin</div>
+                    <div class="col-md-3 mem_ana">NT$2,000</div>
+                    <div class="col-md-3 mem_ana">Succeed</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memAdoptCard">
+                    <div class="col-md-3 mem_ana">2020-10-21</div>
+                    <div class="col-md-3 mem_ana">seaturtle</div>
+                    <div class="col-md-3 mem_ana">NT$1,500</div>
+                    <div class="col-md-3 mem_ana">Succeed</div>
+                  </div>
+                  <div class="col-md-12 memBlogContent memAdoptCard">
+                    <div class="col-md-3 mem_ana">2020-11-21</div>
+                    <div class="col-md-3 mem_ana">whale</div>
+                    <div class="col-md-3 mem_ana">NT$1,500</div>
+                    <div class="col-md-3 mem_ana">Succeed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Record -->
+            <div class="memTab tab5 memOrder">
+              <div class="memAllTitle">
+                <h3>Order Record</h3>
+                <ul>
+                  <div class="memSpanBlog">
+                    <div>
+                      <a href="#" data-target="memBlogTab1" class="memBlogTab -on">Ticket</a>
+                    </div>
+                    <div>
+                      <a href="#" data-target="memBlogTab2" class="memBlogTab span2">Night</a>
+                    </div>
+                  </div>
+                </ul>
+                <!-- OrderAll -->
+                <div class="memBlogAll">
+                  <div class="memBlogTable memBlogTab1 memBlogTab -on">
+                    <!-- Ticket Title -->
+                    <div class="col-md-12 memBlogForm memOrderCard">
+                      <div class="col-md-2 memFormTitle">Order No.</div>
+                      <div class="col-md-3 memFormTitle">Visit Date</div>
+                      <div class="col-md-2 memFormTitle">Total</div>
+                      <div class="col-md-3 memFormTitle">Status</div>
+                      <div class="col-md-2 memFormTitle">Detail</div>
+                    </div>
+                    <!-- ticket 001 -->
+                    <div class="col-md-12 memBlogContent memOrderCard">
+                      <div class="col-md-2 mem_ana">001</div>
+                      <div class="col-md-3 mem_ana">2020-10-21</div>
+                      <div class="col-md-2 mem_ana">NT$800</div>
+                      <div class="col-md-3 mem_ana">Processing</div>
+                      <div class="col-md-2 mem_ana memStep" aria-expanded="false">view 
+                        <i class="fa fa-angle-down fa-lg"></i>
+                      </div>
+                      <div class="memBlogDetail memStepContent">
+                        <div class="col-md-12 memBlogForm memOrderCardDetail">
+                          <div class="col-md-3 memFormTitle">ProdNo.</div>
+                          <div class="col-md-2 memFormTitle">Amount</div>
+                          <div class="col-md-2 memFormTitle">price</div>
+                          <div class="col-md-3 memFormTitle">Subtotal</div>
+                          <div class="col-md-2 memFormTitle">Edit</div>
+                        </div>
+                        <div class="col-md-12 memBlogContent memOrderCardDetail">
+                          <div class="col-md-3 memTick">Adult</div>
+                          <div class="col-md-2 memTick">2</div>
+                          <div class="col-md-2 memTick">NT$200</div>
+                          <div class="col-md-3 memTick">NT$400</div>
+                          <div class="col-md-2 memTick">
+                            <i class="fas fa-pen"></i>
+                            <i class="fas fa-trash-alt"></i>
+                          </div>
+                        </div>
+                        <div class="col-md-12 memBlogContent memOrderCardDetail">
+                          <div class="col-md-3 memTick">Child</div>
+                          <div class="col-md-2 memTick">2</div>
+                          <div class="col-md-2 memTick">NT$50</div>
+                          <div class="col-md-3 memTick">NT$100</div>
+                          <div class="col-md-2 memTick">
+                            <i class="fas fa-pen"></i>
+                            <i class="fas fa-trash-alt"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="memBlogTable memBlogTab2 memBlogTab">
+                    <!-- Night Title -->
+                    <div class="col-md-12 memBlogForm memOrderCard">
+                      <div class="col-md-2 memFormTitle">Order No.</div>
+                      <div class="col-md-3 memFormTitle">Visit Date</div>
+                      <div class="col-md-2 memFormTitle">Total</div>
+                      <div class="col-md-3 memFormTitle">Status</div>
+                      <div class="col-md-2 memFormTitle">Detail</div>
+                    </div>
+                    <!-- Night 001 -->
+                    <div class="col-md-12 memBlogContent memOrderCard">
+                      <div class="col-md-2 mem_ana">001</div>
+                      <div class="col-md-3 mem_ana">2020-10-21</div>
+                      <div class="col-md-2 mem_ana">NT$4,800</div>
+                      <div class="col-md-3 mem_ana">Unpaid</div>
+                      <div class="col-md-2 mem_ana memStep" aria-expanded="false">view 
+                        <i class="fa fa-angle-down fa-lg"></i>
+                      </div>
+                      <div class="memBlogDetail memStepContent">
+                        <div class="col-md-12 memBlogForm memOrderCardDetail">
+                          <div class="col-md-3 memFormTitle">AreaNo.</div>
+                          <div class="col-md-2 memFormTitle">Person</div>
+                          <div class="col-md-2 memFormTitle">price</div>
+                          <div class="col-md-3 memFormTitle">Subtotal</div>
+                          <div class="col-md-2 memFormTitle">Edit</div>
+                        </div>
+                        <div class="col-md-12 memBlogContent memOrderCardDetail">
+                          <div class="col-md-3 memTick">Whale</div>
+                          <div class="col-md-2 memTick">2</div>
+                          <div class="col-md-2 memTick">NT$2,400</div>
+                          <div class="col-md-3 memTick">NT$4,800</div>
+                          <div class="col-md-2 memTick">
+                            <i class="fas fa-pen"></i>
+                            <i class="fas fa-trash-alt"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Night 002 -->
+                    <div class="col-md-12 memBlogContent memOrderCard">
+                      <div class="col-md-2 mem_ana">002</div>
+                      <div class="col-md-3 mem_ana">2020-10-21</div>
+                      <div class="col-md-2 mem_ana">NT$4,800</div>
+                      <div class="col-md-3 mem_ana">Paid</div>
+                      <div class="col-md-2 mem_ana memStep" aria-expanded="false">view 
+                        <i class="fa fa-angle-down fa-lg"></i>
+                      </div>
+                    <!-- Detail -->
+                      <div class="memBlogDetail memStepContent">
+                        <div class="col-md-12 memBlogForm memOrderCardDetail">
+                          <div class="col-md-3 memFormTitle">AreaNo.</div>
+                          <div class="col-md-2 memFormTitle">Person</div>
+                          <div class="col-md-2 memFormTitle">price</div>
+                          <div class="col-md-3 memFormTitle">Subtotal</div>
+                          <div class="col-md-2 memFormTitle">Edit</div>
+                        </div>
+                        <div class="col-md-12 memBlogContent memOrderCardDetail">
+                          <div class="col-md-3 memTick">Whale</div>
+                          <div class="col-md-2 memTick">2</div>
+                          <div class="col-md-2 memTick">NT$2,400</div>
+                          <div class="col-md-3 memTick">NT$4,800</div>
+                          <div class="col-md-2 memTick">
+                            <i class="fas fa-pen"></i>
+                            <i class="fas fa-trash-alt"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- 你的code打這上面 -->
+  </div>
+  
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <!-- 頁籤 -->
+  <script>
+  // member頁籤
+  $(function(){
+    $("a.memTab").on("click", function(e){
+      e.preventDefault();
+      
+      /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+      $(this).closest("ul").find("a.memTab").removeClass("-on");
+      $(this).addClass("-on");
+      
+      /* 找到對應的頁籤內容，加上 -on 來顯示 */
+      $("div.memTab").removeClass("-on");
+      $("div.memTab." + $(this).attr("data-target")).addClass("-on");
+    });
+  });
+
+  // Blog, Order頁籤
+  $(function(){
+    $("a.memBlogTab").on("click", function(e){
+      e.preventDefault();
+      
+      /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+      $(this).closest("ul").find("a.memBlogTab").removeClass("-on");
+      $(this).addClass("-on");
+      
+      /* 找到對應的頁籤內容，加上 -on 來顯示 */
+      $("div.memBlogTab").removeClass("-on");
+      $("div.memBlogTab." + $(this).attr("data-target")).addClass("-on");
+    });
+  });
+
+  // OrderDetail收合
+  $("div.memStep").on("click", function(){
+    $(this).next().slideToggle();
+    $(this).find('i').toggleClass('rotate');
+  });
+
+  // Hamburger
+  $("div.hamburger_box").on("click", function(){
+    $("span.hamburger_line").toggleClass("is-active");
+    $("span.hamburger_cross").toggleClass("is-active");
+    $("ul.main_menu_ul").toggleClass("is-active");
+  });
+
+  // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+</script>
+</body>
+</html>

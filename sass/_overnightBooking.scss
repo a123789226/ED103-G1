@@ -1,0 +1,172 @@
+
+
+.overnightBG{
+  @include BGColor(rgb(24, 96, 138),  rgb(33, 104, 161));
+  @include BG01('bg3-2', 90%);
+  @include BG02('bg4-1', 100%);
+  @include BGLeft('bg3-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg3-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 60%, 10s);
+  @include FishMove2(30%, 30%, 20s);
+}
+
+
+.OvernightContent{
+  width: 80%;
+  max-width: 1200px;
+  background-color: rgba(0,0,0,.2);
+  margin: 160px auto 50px;
+  padding: 50px;
+  @media screen and (max-width: 676px){
+    padding: 50px 20px;
+  }
+  @media screen and (max-width: 479px){
+    width: 95%;
+  }
+  .bookingTitle{
+    @include main_title($keyWhite);
+    margin-bottom: 15px;
+  }
+  .bookingSubTitle{
+    @include sub_title($keyWhite);
+    margin-bottom: 30px;
+  }
+  .bookingStepBox{
+    text-align: center;
+    margin-bottom: 30px;
+    .bookingStep{
+      @include cartStep($keyWhite, $blockYellow, $keyBlack);
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+    .active{
+      @include cartStep($blockYellow, $blockYellow, $keyBlack);
+    }
+  }
+
+  .bookingTable{
+    // border: 1px solid red;
+    table{
+      border-radius: 6px;
+      overflow: hidden;
+      width: 100%;
+      thead{
+        background-color: $keyGreen;
+        tr{
+          th{
+            @include sub_title($keyWhite);
+            padding: 15px;
+            @media screen and (max-width: 991px){
+              padding: 15px 5px;
+            }
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+            &:first-child{
+              width: 120px;
+              @media screen and (max-width: 767px){
+                display: none;
+              }
+            }
+            // &:nth-child(2){
+            //   // width: 150px;
+            // }
+            // &:nth-child(3){
+            //   width: 80px;
+            // }
+            &:nth-child(4){
+              width: 70px;
+            }
+            // &:nth-child(5){
+            //   width: 100px;
+            // }
+            // &:last-child{
+            //   width: 60px;
+            // }
+          }
+        }
+      }
+      tbody{
+        background-color: $keyWhite;
+        tr{
+          &:nth-child(2n){
+            background-color: #eeeeee;
+          }
+          td{
+            padding: 10px;
+            @include sub_title($keyBlack);
+            text-align: center;
+            @media screen and (max-width: 991px){
+              padding: 10px 5px;
+            }
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+            &:first-child{
+              @media screen and (max-width: 767px){
+                display: none;
+              }
+            }
+            &:last-child{
+              img{
+                width: 24px;
+                cursor: pointer;
+                max-width: 20px;
+              }
+            }
+
+          }
+          
+        }
+      }
+    }
+  }
+  .ticketCartTotal{
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    color: $blockYellow;
+    display: block;
+    text-align: right;
+    padding-right: 30px;
+    margin: 30px auto;
+  }
+  .bookingButtonBox{
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media screen and (max-width: 991px){
+      flex-direction: column-reverse;
+    }
+    
+    a{
+      margin: 0 15px;
+      &:first-child{
+        @media screen and (max-width: 991px){
+          margin-top: 20px;
+        }
+
+      }
+      .ticketPayCancel{
+        @include btn60(200px, white);  
+        @media screen and (max-width: 991px){
+          width: 50%;
+          min-width: 220px;
+        }
+      }
+
+      .ticketPayToCheck{
+        @include btn60(200px, green);
+        @media screen and (max-width: 991px){
+          width: 50%;
+          min-width: 220px;
+        }
+        
+      }
+    }
+  }
+
+}

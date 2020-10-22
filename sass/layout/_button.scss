@@ -1,0 +1,88 @@
+
+//缺圓心距離按鈕左邊界30px，並與按鈕垂直置中對齊，小圓形內要再設置一個37px的圓形範圍，限制丟入的PGN檔範圍，按鈕左右padding66px。
+
+@mixin btn60($width, $color){
+        width: $width;
+        display: inline-block;
+        cursor: pointer;
+        border: 5px solid $keyGreen;
+        border-radius: 30px; 
+        padding: 0 36px;
+        font-family: $en; 
+        font-size: 1.5 * $fontbase;
+        font-weight: $fw_Bold;
+        background-color: $keyGreen;
+        height: $button_height;
+        line-height: $button_height - 10px;
+        text-align: center;
+        &:hover{
+            border:5px solid #208686;
+        }
+        @if $color == green{
+            color: $keyWhite;
+            background-color: $keyGreen;
+            &:hover{
+                background-color: #208686;
+            }
+            // > .btn_icon{
+            // width: 42px;
+            // height: 42px;
+            // border-radius: 999rem ;
+            // }
+        }@else if $color == white{
+            color: $keyGreen;
+            background-color: $keyWhite;
+            &:hover{
+                color:  white;
+                background-color: #208686;
+                
+            }
+            // > .btn_icon{
+            // background-color: $keyGreen;
+            // }
+        }
+}
+
+@mixin btn40($width, $color){
+        width: $width;
+        display: inline-block;
+        cursor: pointer;
+        border: 3px solid $keyGreen;
+        border-radius: 30px; 
+        padding: 0 24px;
+        font-family: $en; 
+        font-size: 1 * $fontbase;
+        font-weight: $fw_Bold;
+        background-color: $blockYellow;
+        height: 40px;
+        line-height: 40px - 10px;
+        text-align: center;
+        &:hover{
+            border: 3px solid #ffbb00;
+            background-color: #ffbb00;
+        }
+        @if $color == yellow{
+            color: $keyBlack;
+            background-color: $blockYellow;
+            border: 3px solid $blockYellow;
+            // > .btn_icon{
+            // width: 42px;
+            // height: 42px;
+            // border-radius: 999rem ;
+            // }
+        }@else if $color == white{
+            color: $keyBlack;
+            background-color: $keyWhite;
+            border: 3px solid $blockYellow;
+            // > .btn_icon{
+            // background-color: $keyGreen;
+            // }
+        }
+}
+
+@mixin a_button($width){
+    display: block;
+    width: $width;
+    text-align: center;
+    margin: 0 auto;
+}

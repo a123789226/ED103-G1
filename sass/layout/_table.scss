@@ -1,0 +1,20 @@
+@mixin table{
+    font-size: 1.25 * $fontbase;
+    font-family: $en;
+    font-weight: $fw_Regular;
+    box-shadow: $shadow;
+    > th{
+        background-color: $keyGreen;
+        color: $keyWhite;
+        padding: 10px;
+    }
+    > tr{
+        background-color: #eeeeee;
+    }
+    > tr:nth-child(2n){
+        background-color: $keyWhite;
+    }
+    > td{
+        padding: 10px;
+    }
+}

@@ -1,0 +1,572 @@
+body.voteBLOCK{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 3000px;
+  color: #ffffff;
+  font-family: 'ROBOTO';
+    
+}
+
+.commonTitleBox .commonTitle{
+  font-size: 48px;
+}
+
+
+
+.vote_bk{
+  @include BGColor(rgb(24, 62, 121),  rgb(12, 94, 161));
+  @include BG01('bg4-1', 80%);
+  @include BG02('bg5-1', 140%);
+  @include BGLeft('bg3-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg4-2', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+.vote_container{
+  width:1200px;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1530px){
+  .vote_container{
+  width:80%;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+  }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+  .vote_container{
+  width:80%;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .vote_container{
+  width:80%;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+  .vote_container{
+  width:80%;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  .vote_container{
+  width:80%;
+  background: rgba(255, 255, 255, .2);
+  margin:auto;
+  margin-top:50px;
+  }
+}
+
+
+/* 頁籤區塊 */
+.vote_block{
+  height: 100px;
+  background: rgba(0, 0, 0, .7);
+  padding: 0 50px;
+}
+
+/* 頁籤列表 */
+ul.vote_list{
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+}
+
+ul.vote_list > li{
+  display: inline-block;
+  margin-top: 30px;
+}
+
+ul.vote_list > li > a{
+  height: 50px;
+  text-decoration: none;
+  display: inline-block;
+  border: 4px solid #FBE108;
+  padding: 10px 24px;
+  border-radius: 6PX;
+  box-shadow: 2px 2px  black;
+  cursor: pointer;
+  color: #333333;
+  background:#ffffff;
+  position: relative;
+  font-size:20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-left: 30px;
+    &:hover{
+  background:#FBE108;
+
+
+  }
+}
+
+
+ul.vote_list > li > a.-on{
+  border: 2px solid #FBE108;
+  color: #333333;
+  background:#FBE108;
+  line-height: 1.2;
+}
+
+.vote_info{
+  height: 150px;
+  background: rgba(0, 0, 0, .7);
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.vote_subtitle{
+  @include main_title($keyWhite);
+}
+
+
+.vote_text{
+  @include text($keyWhite);
+  height: 100px;
+  width: 80%;
+  padding-left: 10px;
+}
+
+
+
+/* 頁籤內容區塊 */
+.vote_contents{
+  height: 2500px;
+}
+.vote_contents .vote{
+  display: none;
+  margin: 0 auto;
+}
+.vote_contents .vote.-on{
+  display: block;
+  height: 2000px;
+  margin: 0 auto;
+}
+
+
+
+
+.nominate{
+  width: 40%;
+  height: 35%;
+  margin: 0 auto;
+  background: #ffffff;
+  display: inline-block;
+  margin-left: 6.5%;
+  margin-top: 50px;
+  >p{
+  color: #444444;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  >h4{
+    color: #1BB8CE;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;  
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
+.nominate .vote_img{
+  position: relative;
+  >img{
+  width: 90%;
+  margin-left: 5%;
+  display: inline-block;
+  
+  }
+}
+
+.nominate .vote_img  a.journal{
+  width: 25%;
+  display: inline-block;
+  border: 3px solid #FBE108;
+  border-radius: 20px;
+  padding: 0 24px;
+  padding-top: 7px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  background-color: #FBE108;
+  height: 40px;
+  text-align: center;
+  color: #333333;
+  outline: none;
+  text-decoration: none;
+  position: absolute;
+  top:80%;
+  left:67%;
+  line-height: 1.2;
+  &:hover{
+    background-color: #ffbb00;
+    border: 3px solid #ffbb00;
+
+  }
+}
+
+
+
+
+
+.name{
+  width: 90%;
+  height: 30%;
+  background: rgba(0, 0, 0, .8);
+  margin: auto;
+  > input{
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size: 20px;
+  outline: none;
+  }
+  >.btn{
+  width: 200px;
+  display: block;
+  border: 5px solid #1BB8CE;
+  border-radius: 30px;
+  padding: 0 36px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  // background-color: #1BB8CE;
+  height: 60px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1BB8CE;
+  margin: 0 auto;
+  outline: none;
+  cursor: pointer;
+  &:hover{
+  background-color: #208686;
+  border: 5px solid #208686;
+  }
+  }
+  > h4{
+  color: #1BB8CE;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;  
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+}
+
+
+
+
+.name h4{
+  padding-left: 0px;
+  text-align: center;
+}
+
+.vote_nav{
+  width: 40%;
+  height: 47%;
+  margin: 0 auto;
+  background: #ffffff;
+  display: inline-block;
+  margin-left: 6.5%;
+  margin-top: 50px;
+  >p{
+  color: #444444;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  >h4{
+    color: #1BB8CE;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;  
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+.vote_nav .vote_img{
+  position: relative;
+  >img{
+  width: 90%;
+  margin-left: 5%;
+  display: inline-block;
+  } 
+}
+
+.vote_nav .vote_img a.journal{
+  width: 25%;
+  display: inline-block;
+  border: 3px solid #FBE108;
+  border-radius: 20px;
+  padding: 0 24px;
+  padding-top: 7px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  background-color: #FBE108;
+  height: 40px;
+  text-align: center;
+  color: #333333;
+  outline: none;
+  text-decoration: none;
+  position: absolute;
+  top:80%;
+  left:67%;
+  &:hover{
+    background-color: #ffbb00;
+    border: 3px solid #ffbb00;
+
+  }
+}
+
+
+
+.vote_nav .name{
+  width: 90%;
+  height: 53%;
+  background: rgba(0, 0, 0, .8);
+  margin: auto;
+  >.btn_2{
+  width: 200px;
+  display: block;
+  border: 3px solid #FBE108;
+  border-radius: 6px;
+  padding: 0 36px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #ffffff;
+  height: 40px;
+  text-align: center;
+  color: #333333;
+  margin: 0 auto;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  }
+  >.btn_2:hover{
+  width: 200px;
+  display: block;
+  border: 3px solid #FBE108;
+  border-radius: 6px;
+  padding: 0 36px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #FBE108;
+  height: 40px;
+  text-align: center;
+  color: #333333;
+  margin: 0 auto;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  }
+  >h4{
+  color: #1BB8CE;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  }
+}  
+
+
+
+.vote_nav .name h4{
+  padding-left: 0px;
+  text-align: center;
+
+}
+
+
+
+
+
+.finished{
+  width: 80%;
+  height: 20%;
+  margin: 0 auto;
+  background: #ffffff;
+  display: block;
+  margin:0 auto;
+  margin-top: 50px;
+  >h4{
+    color: #1BB8CE;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;  
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+}
+
+.finished h4{
+  width: 40%;
+  margin-right: 0;
+
+}
+
+
+.finished .vote_img{
+  position: relative;
+  width: 50%;
+  height: 80%;
+  display: inline-block;
+  >img{
+  width: 90%;
+  margin-left: 5%;
+  display: inline-block;
+  }
+  >p{
+  color: #444444;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+}
+
+.finished .vote_img a.journal{
+  width: 25%;
+  display: inline-block;
+  border: 3px solid #FBE108;
+  border-radius: 20px;
+  padding: 0 24px;
+  padding-top: 7px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  background-color: #FBE108;
+  height: 40px;
+  text-align: center;
+  color: #333333;
+  outline: none;
+  text-decoration: none;
+  position: absolute;
+  top:55%;
+  left:52%;
+   &:hover{
+    background-color: #ffbb00;
+    border: 3px solid #ffbb00;
+
+  }
+}
+
+.finished .vote_img img{
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+
+
+.finished .vote_all{
+  width: 25%;
+  height: 45%;
+  display: inline-block;
+  position: absolute;
+  >h3{
+  color: #1BB8CE;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 36px;
+  font-weight: 700;
+  }
+
+}
+
+.finished .vote_all h3{
+  padding-top: 0px;
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open + Sans");
+.skillbar {
+  font-family: "Open Sans", "sans-serif";
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  background: #eee;
+  height: 30px;
+  border-radius: 4px;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.skillbar-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 13px;
+  color: #fff;
+  background: #6adcfa;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.skillbar-title span {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  height: 30px;
+  line-height: 35px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.skillbar-bar {
+  height: 30px;
+  width: 0px;
+  background: #6adcfa;
+}
+
+.skill-bar-percent {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 11px;
+  height: 35px;
+  line-height: 35px;
+  color: #444;
+  color: rgba(0, 0, 0, 0.4);
+}
+

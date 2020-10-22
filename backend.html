@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    <title>Aqua backend</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="background" style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div> 
+  <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="mgrBackground">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <!-- <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="index.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a class="member_box" href="">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header> -->
+  <div class="mgrHeader">
+    <a href="homepage.html">Back to Aqua</a>
+  </div>
+ 
+  <div>
+    <!-- Title -->
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">Big Title</h2>
+      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
+    </div> -->
+    <!-- 你的code打這下面 -->
+    <main>
+      <div class="container mgrMain">
+        <div class="row mgrrow">
+          <!-- 右半邊選單 -->
+          <div class="mgrList col-lg-2">
+            <div class="mgrImg">
+              <img src="./image/header/logo.png" alt="">
+            </div>
+            <h3>AQUA WONDERLAND</h3>
+            <ul>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab1" class="mgrTab -on">CHATBOT</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab2" class="mgrTab">MEMBER</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab3" class="mgrTab">AQUA</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab4" class="mgrTab">ORDER</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab5" class="mgrTab">TICKET INFO</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab6" class="mgrTab">JUORNAL</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab7" class="mgrTab">JOURNAL MSG</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab8" class="mgrTab">THANKSCARD</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab9" class="mgrTab">BLOG POSTED</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab10" class="mgrTab">NAMING</a>
+              </div>
+              <div class="mgrbtn">
+                <a href="#" data-target="tab11" class="mgrTab">MANAGER</a>
+              </div>
+            </ul>
+          </div>
+          
+          <!-- 左半邊內容 -->
+          <div class="mgrContent col-lg-9">
+            <!-- CHATBOT -->
+            <div class="mgrTab tab1 mgrChatbot -on">
+              <h3>CHATBOT</h3>
+              <div class="mgrChatAll">
+                <div class="col-md-12 mgrChatTitle">
+                  <div class="col-md-1 mgrTitle">No</div>
+                  <div class="col-md-3 mgrTitle">Content</div>
+                  <div class="col-md-5 mgrTitle">Reply</div>
+                  <div class="col-md-2 mgrTitle">Keywords</div>
+                  <div class="col-md-1 mgrTitle">Edit</div>
+                </div>
+                <div class="col-md-12 mgrChatKey word1">
+                  <div class="col-md-1 mgrTitle">1</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">哈囉</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">您好，歡迎來到Aqua Wonderland！</div>
+                  <div class="col-md-2 mgrTitle">Hello</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word2">
+                  <div class="col-md-1 mgrTitle">2</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">有幾個區域？</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">我們一共有四個區域哦！</div>
+                  <div class="col-md-2 mgrTitle">Area</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word3">
+                  <div class="col-md-1 mgrTitle">3</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">如何購票？</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面進行購票</div>
+                  <div class="col-md-2 mgrTitle">Ticket</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word4">
+                  <div class="col-md-1 mgrTitle">4</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">想要過夜</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面有更詳細的夜宿說明</div>
+                  <div class="col-md-2 mgrTitle">Night</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word5">
+                  <div class="col-md-1 mgrTitle">5</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">如何替海豚提名呢</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">Vote頁面裡的Naming可直接替海豚命名哦！</div>
+                  <div class="col-md-2 mgrTitle">Vote</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word6">
+                  <div class="col-md-1 mgrTitle">6</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">積分獲得方法</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">可以到首頁進行遊戲獲得積分；也可以藉由登入至Journal留言及Blog發文獲得積分哦！</div>
+                  <div class="col-md-2 mgrTitle">Point</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey worf7">
+                  <div class="col-md-1 mgrTitle">7</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">如何贊助？</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">可以到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt哦！Adopt之後還會寄送感謝函感謝您的認養</div>
+                  <div class="col-md-2 mgrTitle">Adopt</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrChatKey word8">
+                  <div class="col-md-1 mgrTitle">8</div>
+                  <div class="col-md-3 mgrTitle mgrcontent2">感謝函好漂亮哦！如何獲得呢？</div>
+                  <div class="col-md-5 mgrTitle mgrcontent3">只要到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt就有機會獲得感謝函哦！</div>
+                  <div class="col-md-2 mgrTitle">Thankscard</div>
+                  <div class="col-md-1 mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CHATBOT END -->
+            <!-- MEMBER -->
+            <div class="mgrTab tab2 mgrMember">
+              <h3>MEMBER</h3>
+              <table class="mgrMemAll">
+                <tr class="mgrMemTitle">
+                  <th width="60">No</th>
+                  <th width="100">Name</th>
+                  <th width="100">Id</th>
+                  <th width="100">Password</th>
+                  <th width="150">Email</th>
+                  <th width="50">Sex</th>
+                  <th width="150">Phone</th>
+                  <th width="100">Birthday</th>
+                  <th width="100">Photo</th>
+                  <th width="60">Point</th>
+                  <th width="150">Status</th>
+                  <th width="60">Edit</th>
+                </tr>
+                <tr class=" mgrMemKey word1">
+                  <td class="mgrTitle">1</td>
+                  <td class="mgrTitle">Shinnosuke</td>
+                  <td class="mgrTitle">Shin</td>
+                  <td class="mgrTitle">shin0722</td>
+                  <td class="mgrTitle">shin0722@gmail.com</td>
+                  <td class="mgrTitle">Male</td>
+                  <td class="mgrTitle">0987-654321</td>
+                  <td class="mgrTitle">1994-07-22</td>
+                  <td class="mgrTitle"><img src="./image/member/Shinnosuke2.jpg" alt=""></td>
+                  <td class="mgrTitle">88</td>
+                  <td class="mgrTitle">
+                    <label>
+                      <input type="radio" name="memStatus1" value="1" checked>正常
+                    </label>
+                    <label>
+                      <input type="radio" name="memStatus1" value="0">停權
+                    </label>
+                  </td>
+                  <td class="mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </td>
+                </tr>
+                <tr class=" mgrMemKey word2">
+                  <td class="mgrTitle">2</td>
+                  <td class="mgrTitle">Shinnosuke</td>
+                  <td class="mgrTitle">Shin</td>
+                  <td class="mgrTitle">shin0722</td>
+                  <td class="mgrTitle">shin0722@gmail.com</td>
+                  <td class="mgrTitle">Male</td>
+                  <td class="mgrTitle">0987-654321</td>
+                  <td class="mgrTitle">1994-07-22</td>
+                  <td class="mgrTitle"><img src="./image/member/Shinnosuke3.png" alt=""></td>
+                  <td class="mgrTitle">88</td>
+                  <td class="mgrTitle">
+                    <label>
+                      <input type="radio" name="memStatus2" value="1" checked>正常
+                    </label>
+                    <label>
+                      <input type="radio" name="memStatus2" value="0">停權
+                    </label>
+                  </td>
+                  <td class="mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- MEMBER END -->
+            <!-- AQUA -->
+            <div class="mgrTab tab3 mgrAqua">
+              <h3>AQUA</h3>
+              <button type="submit">Add</button>
+              <table class="mgrAquaAll">
+                <tr align=center auto class="mgrAquaNo">
+                  <td width="150">AquaNo</td>
+                  <td width="150">1</td>
+                  <td width="150">2</td>
+                  <td width="150">3</td>
+                  <td width="150">4</td>
+                  <td width="150">5</td>
+                </tr> 
+                <tr align=center auto class="mgrAquaType">
+                  <td width="150">Type</td>
+                  <td width="150">Dolphin</td>
+                  <td width="150">Seal</td>
+                  <td width="150">Sea Turtle</td>
+                  <td width="150">Whale</td>
+                  <td width="150">Seal</td>
+                </tr> 
+                <tr align=center class="mgrAquaName">
+                  <td width="150">Name</td>
+                  <td width="150">Lulu</td>
+                  <td width="150"><a href="#">Naming</a></td>
+                  <td width="150"><a href="#">Voting</a></td>
+                  <td width="150">Harley</td>
+                  <td width="150">Loki</td>
+                </tr>
+                <tr align=center auto class="mgrAquaAge">
+                  <td width="150">Age</td>
+                  <td width="150">3</td>
+                  <td width="150">4</td>
+                  <td width="150">5</td>
+                  <td width="150">4</td>
+                  <td width="150">6</td>
+                </tr>
+                <tr align=center auto class="mgrAquaSex">
+                  <td width="150">Sex</td>
+                  <td width="150">F</td>
+                  <td width="150">M</td>
+                  <td width="150">M</td>
+                  <td width="150">F</td>
+                  <td width="150">F</td>
+                </tr>
+                <tr align=center auto class="mgrAquaArrive">
+                  <td width="150">Arrive Date</td>
+                  <td width="150">2019-01-23</td>
+                  <td width="150">2019-03-11</td>
+                  <td width="150">2020-06-16</td>
+                  <td width="150">2020-10-21</td>
+                  <td width="150">2020-11-27</td>
+                </tr>
+                <tr align=center auto class="mgrAquaRescue">
+                  <td width="150">Rescue Location</td>
+                  <td width="150">Philippines</td>
+                  <td width="150">Taiwan</td>
+                  <td width="150">Philippines</td>
+                  <td width="150">Taiwan</td>
+                  <td width="150">Taiwan</td>
+                </tr>
+                <tr align=center auto class="mgrAquaRecover">
+                  <td width="150">Recover Status</td>
+                  <td width="150">Recovered</td>
+                  <td width="150">Recovered</td>
+                  <td width="150">Not Recovered</td>
+                  <td width="150">Not Recovered</td>
+                  <td width="150">Not Recovered</td>
+                </tr>
+                <tr align=center auto class="mgrAquaRelease">
+                  <td width="150">Release Date</td>
+                  <td width="150">2019-12-31</td>
+                  <td width="150">2020-03-21</td>
+                  <td width="150">null</td>
+                  <td width="150">null</td>
+                  <td width="150">null</td>
+                </tr>
+                <tr align=center auto class="mgrAquaReleaseLoc">
+                  <td width="150">Release Location</td>
+                  <td width="150">Philippines</td>
+                  <td width="150">Taiwan</td>
+                  <td width="150">null</td>
+                  <td width="150">null</td>
+                  <td width="150">null</td>
+                </tr>
+                <tr align=center auto class="mgrAquaPic">
+                  <td width="150">Aqua Photo</td>
+                  <td width="150"><img src="./image/member/memBlog.jpg" alt=""></td>
+                  <td width="150"><img src="./image/member/memblogseal.jpg" alt=""></td>
+                  <td width="150"><img src="./image/member/memBlogseaturtle.jpg" alt=""></td>
+                  <td width="150"><img src="./image/member/memblog1.jpg" alt=""></td>
+                  <td width="150"><img src="./image/member/memblogseal.jpg" alt=""></td>
+                </tr>
+                <tr align=center auto class="mgrAquaAdoptNum">
+                  <td width="150">Adopt Total Number</td>
+                  <td width="150">21</td>
+                  <td width="150">42</td>
+                  <td width="150">31</td>
+                  <td width="150">8</td>
+                  <td width="150">100</td>
+                </tr>
+                <tr align=center auto class="mgrAquaAdoptAmt">
+                  <td width="150">Adopt Total Amount</td>
+                  <td width="150">NT$800</td>
+                  <td width="150">NT$7,600</td>
+                  <td width="150">NT$5,400</td>
+                  <td width="150">NT$200</td>
+                  <td width="150">NT$10,700</td>
+                </tr>
+                <tr align=center auto class="mgrAquaNameStatus">
+                  <td width="150">Name Status</td>
+                  <td width="150">Voted</td>
+                  <td width="150">Voting</td>
+                  <td width="150">Voting</td>
+                  <td width="150">Naming</td>
+                  <td width="150">Naming</td>
+                </tr>
+                <tr align=center auto class="mgrAquaNameStart">
+                  <td width="150">Name Start</td>
+                  <td width="150">2019-02-02</td>
+                  <td width="150">2019-05-21</td>
+                  <td width="150">2020-07-27</td>
+                  <td width="150">2020-11-27</td>
+                  <td width="150">2020-12-31</td>
+                </tr>
+                <tr align=center auto class="mgrAquaNameEnd">
+                  <td width="150">Name End</td>
+                  <td width="150">2019-02-16</td>
+                  <td width="150">2019-06-04</td>
+                  <td width="150">2020-08-10</td>
+                  <td width="150">2020-12-10</td>
+                  <td width="150">2021-01-14</td>
+                </tr>
+                <tr align=center auto class="mgrAquaVoteStart">
+                  <td width="150">Vote Start</td>
+                  <td width="150">2019-02-17</td>
+                  <td width="150">2019-06-05</td>
+                  <td width="150">2020-08-11</td>
+                  <td width="150">2020-12-11</td>
+                  <td width="150">2021-01-15</td>
+                </tr>
+                <tr align=center auto class="mgrAquaVoteEnd">
+                  <td width="150">Vote End</td>
+                  <td width="150">2019-03-03</td>
+                  <td width="150">2019-06-19</td>
+                  <td width="150">2020-08-25</td>
+                  <td width="150">2020-12-25</td>
+                  <td width="150">2021-01-29</td>
+                </tr>
+              </table>
+            </div>
+            <!-- AQUA END -->
+            <!-- ORDER -->
+            <div class="mgrTab tab4 mgrOrder">
+              <h3>ORDER</h3>
+              <div class="mgrOrderAll">
+                <div class="col-md-12 mgrOrderTitle">
+                  <div class="col-md-2 mgrTitle">Order No</div>
+                  <div class="col-md-2 mgrTitle">Member No</div>
+                  <div class="col-md-4 mgrTitle">Order Date</div>
+                  <div class="col-md-2 mgrTitle">Total</div>
+                  <div class="col-md-2 mgrTitle">Detail</div>
+                </div>
+                <div class="col-md-12 mgrTicketOrder word1">
+                  <div class="col-md-2 mgrTitle">1</div>
+                  <div class="col-md-2 mgrTitle">2</div>
+                  <div class="col-md-4 mgrTitle">2019-08-23</div>
+                  <div class="col-md-2 mgrTitle">NT$4,300</div>
+                  <div class="col-md-2 mgrTitle mgrStep">View
+                    <i class="fa fa-angle-down fa-lg"></i>
+                  </div>
+                  <div class="mgrOrderDetail mgrStepContent">
+                    <div class="col-md-12 mgrOrderDetailForm">
+                      <div class="col-md-2 mgrDetailTitle">Order No</div>
+                      <div class="col-md-2 mgrDetailTitle">Item No</div>
+                      <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+                      <div class="col-md-2 mgrDetailTitle">Amount</div>
+                      <div class="col-md-2 mgrDetailTitle">Total</div>
+                    </div>
+                    <div class="col-md-12 mgrTicketItem1">
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">2</div>
+                      <div class="col-md-2 mgrTick">NT$1,000</div>
+                    </div>
+                    <div class="col-md-12 mgrTicketItem2">
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">2</div>
+                      <div class="col-md-2 mgrTick">2</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">NT$300</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrTicketOrder word2">
+                  <div class="col-md-2 mgrTitle">2</div>
+                  <div class="col-md-2 mgrTitle">4</div>
+                  <div class="col-md-4 mgrTitle">2020-01-31</div>
+                  <div class="col-md-2 mgrTitle">NT$800</div>
+                  <div class="col-md-2 mgrTitle">View
+                    <i class="fa fa-angle-down fa-lg"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrTicketOrder word3">
+                  <div class="col-md-2 mgrTitle">3</div>
+                  <div class="col-md-2 mgrTitle">1</div>
+                  <div class="col-md-4 mgrTitle">2020-06-16</div>
+                  <div class="col-md-2 mgrTitle">NT$1,200</div>
+                  <div class="col-md-2 mgrTitle">View
+                    <i class="fa fa-angle-down fa-lg"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ORDER END -->
+            <!-- TICKET INFO -->
+            <div class="mgrTab tab5 mgrTicket">
+              <h3>TICKET INFO</h3>
+              <div class="mgrTicketInfoAll">
+                <div class="col-md-12 mgrTicketInfoTitle">
+                  <div class="col-md-3 mgrTitle">Ticket No</div>
+                  <div class="col-md-3 mgrTitle">Ticket Type</div>
+                  <div class="col-md-3 mgrTitle">Ticket Price</div>
+                  <div class="col-md-3 mgrTitle">Edit</div>
+                </div>
+                <div class="col-md-12 mgrTicketInfo info1">
+                  <div class="col-md-3 mgrTitle">1</div>
+                  <div class="col-md-3 mgrTitle">Adult Ticket</div>
+                  <div class="col-md-3 mgrTitle">NT$500</div>
+                  <div class="col-md-3 mgrTitle mgrStep">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrTicketInfo info2">
+                  <div class="col-md-3 mgrTitle">2</div>
+                  <div class="col-md-3 mgrTitle">Child Ticket</div>
+                  <div class="col-md-3 mgrTitle">NT$300</div>
+                  <div class="col-md-3 mgrTitle mgrStep">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-12 mgrTicketInfo info3">
+                  <div class="col-md-3 mgrTitle">3</div>
+                  <div class="col-md-3 mgrTitle">Concession Ticket</div>
+                  <div class="col-md-3 mgrTitle">NT$300</div>
+                  <div class="col-md-3 mgrTitle mgrStep">
+                    <i class="fas fa-pen"></i>
+                  </div>
+                </div>
+                <div class="col-md-6 mgrTicketadd">
+                  <h2>New Type</h2>
+                  <div class="mrgadd">Ticket No
+                    <input type="text" name="addType" id="">
+                  </div>
+                  <div class="mrgadd">Ticket Price
+                    <input type="text" name="addPrice" id="">
+                  </div>
+                  <button type="submit">Add</button>
+              </div>
+              </div>
+            </div>
+            <!-- TICKET INFO END -->
+            <!-- JOURNAL -->
+            <div class="mgrTab tab6 mgrJournal">
+              <h3>JOURNAL</h3>
+              <table class="mgrJournalAll">
+                <tr class="mgrJournalTitle">
+                  <th width="100">Journal No</th>
+                  <th width="100">Aqua No</th>
+                  <th width="100">Title</th>
+                  <th width="300">Content</th>
+                  <th width="100">Pic1</th>
+                  <th width="100">Pic2</th>
+                  <th width="100">Pic3</th>
+                  <th width="100">Date</th>
+                  <th width="60">Edit</th>
+                </tr>
+                <tr class=" mgrJournalDetail">
+                  <td class="mgrTitle">1</td>
+                  <td class="mgrTitle">1</td>
+                  <td class="mgrTitle">Eating Status</td>
+                  <td class="mgrTitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop.jpg" alt=""></td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop1.jpg" alt=""></td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
+                  <td class="mgrTitle">2019-07-22</td>
+                  <td class="mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- JOURNAL END -->
+
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- 你的code打這上面 -->
+  </div>
+
+  <footer>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <!-- 頁籤 -->
+  <script>
+    // backend頁籤
+    $(function(){
+      $("a.mgrTab").on("click", function(e){
+        e.preventDefault();
+        
+        /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+        $(this).closest("ul").find("a.mgrTab").removeClass("-on");
+        $(this).addClass("-on");
+        
+        /* 找到對應的頁籤內容，加上 -on 來顯示 */
+        $("div.mgrTab").removeClass("-on");
+        $("div.mgrTab." + $(this).attr("data-target")).addClass("-on");
+      });
+    });
+    
+    // OrderDetail收合
+    $("div.mgrStep").on("click", function(){
+      $(this).next().slideToggle();
+      $(this).find('i').toggleClass('rotate');
+    });
+  
+    // Hamburger
+    $("div.hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+
+</script>
+</body>
+</html>

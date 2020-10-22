@@ -1,0 +1,657 @@
+
+
+.tourbg{
+  @include BGColor(rgb(123, 225, 243),  rgb(203, 236, 241));
+  @include BG01('bg1-1', 100%);
+  @include BG02('bg1-2', 130%);
+  @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg1-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+.team_main{
+  max-width: 1200px;
+  margin:0px auto;
+  // border: 5px solid blue;
+}
+
+// title + btn 部分
+.tour_title_block{
+    // border:1px solid black;
+    margin:40px
+}
+
+// btn區塊
+.tour_btn{
+  width:50%;
+  // border:1px solid blue;
+}
+
+// title區塊
+.tour_title_area{
+  width:49%;
+  // border: 1px solid blue;
+}
+
+// title & btn 水平對齊
+.tour_btn , .tour_title_area{
+  display: inline-block;
+}
+
+.tour_puzzle{
+  display:block;
+  margin: 0 auto;
+}
+
+.tour_puzzle_btn{
+    @include btn60(250px, white);
+    @include box-shadow;
+    display:block;
+    margin: 0 auto;
+}
+
+.tour_title1{
+    @include main_title($keyWhite);
+    margin-left: 150px;
+}
+
+.tour_title2{
+  @include main_title($keyWhite);
+  margin-left: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+//地圖與房子
+.tour_map_area{
+  // border: 1px solid red;
+  width:100%;
+}
+
+.tour_island{
+  width: 100%;
+  max-width:1200px;
+  // border: 1px solid red;
+  position: absolute;
+  z-index: -1;
+}
+
+.tour_map_area1{
+  display:flex;
+  justify-content: space-evenly;
+  width:100%;
+  margin:10px 0px;
+  // border:1px solid blue;
+}
+
+.tour_map_area2{
+  display:flex;
+  justify-content: space-evenly;
+  // border:10px solid green;
+  width:100%;
+}
+
+.tour_houseA, .tour_houseB{
+  width:20%;
+  display: none;
+  cursor: pointer;
+  // transition: box-shadow 500ms;
+  // &:hover{
+  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
+  //   background-image: url("/image/tour/house1_hover.png");
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   border-radius: 7x;
+  //   cursor: pointer;
+  // }
+}
+.tour_houseB{
+  filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+}
+.tour_house_show{
+  display: block;
+}
+
+// .tour_house2{
+//   width:20%;
+  // transition: box-shadow 500ms;
+  // &:hover{
+  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
+  //   background-image: url("/image/tour/house2_hover.png");
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   border-radius: 7x;
+  //   cursor: pointer;
+  // }
+// }
+
+// .tour_house3{
+//   width:20%;
+  // transition: box-shadow 500ms;
+  // &:hover{
+  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
+  //   background-image: url("/image/tour/house3_hover.png");
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   border-radius: 7x;
+  //   cursor: pointer;
+  // }
+// }
+
+// .tour_house4{
+//   width:20%;
+  // transition: box-shadow 500ms;
+  // &:hover{
+  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
+  //   background-image: url("/image/tour/house4_hover.png");
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   border-radius: 7x;
+  //   cursor: pointer;
+  // }
+// }
+
+.tour_space{
+  margin:100px auto;
+  border:2px solid green;
+  opacity: 0;
+}
+
+//場館介紹 -- dolphin 館
+.tour_overlay1{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, .5);
+  
+  /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.tour_overlay1.-on{
+  
+  /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+  opacity: 1;
+  z-index: 1;
+}
+
+.btn_modal{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.btn_modal_close1{
+  @include btn40(150px, white);
+  margin:10px auto;
+  display:block;
+  &:hover{
+    color:white;
+    background-color:#FBE108;
+  }
+}
+
+.btn_modal_close2{
+  @include btn40(150px, white);
+  margin:10px auto;
+  display:block;
+  &:hover{
+    color:white;
+    background-color:#FBE108;
+  }
+}
+
+
+.tour_overlay1.-opacity-zero{
+  /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+  opacity: 0;
+}
+
+/* 元素 article 置中及基本樣式 */
+.tour_overlay1 > article{
+  background-image: url("/image/tour/tour_intro_dolphin1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 20px;
+  line-height: 22px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tour_overlay1 > article > h3{
+  @include sub_title(brown);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay1 > article > p{
+  @include text(black);
+//  background-color: rgba(232, 247, 31, 0.5);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay1img{
+  border: 5px solid rgba(192, 138, 138, 0.7);
+  padding:5px;
+  border-radius: 7px;
+  margin:0 auto;
+
+}
+
+
+//場館介紹 -- whale 館
+.tour_overlay2{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, .5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.tour_overlay2.-on{
+  opacity: 1;
+  z-index: 1;
+}
+
+.tour_overlay2.-opacity-zero{
+  opacity: 0;
+}
+
+.tour_overlay2 > article{
+  background-image: url("/image/tour/tour_intro_whale1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 20px;
+  line-height: 22px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tour_overlay2 > article > h3{
+  @include sub_title(brown);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay2 > article > p{
+  @include text(black);
+//  background-color: rgba(232, 247, 31, 0.5);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay2img{
+  border: 5px solid rgba(192, 138, 138, 0.7);
+  padding:5px;
+  border-radius: 7px;
+  margin:0 auto;
+
+}
+
+
+//場館介紹 -- Seal 館
+.tour_overlay3{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, .5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.tour_overlay3.-on{
+  opacity: 1;
+  z-index: 1;
+}
+
+.tour_overlay3.-opacity-zero{
+  opacity: 0;
+}
+
+.tour_overlay3 > article{
+  background-image: url("/image/tour/tour_intro_seal1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 20px;
+  line-height: 22px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tour_overlay3 > article > h3{
+  @include sub_title(brown);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay3 > article > p{
+  @include text(black);
+//  background-color: rgba(232, 247, 31, 0.5);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay3img{
+  border: 5px solid rgba(192, 138, 138, 0.7);
+  padding:5px;
+  border-radius: 7px;
+  margin:0 auto;
+
+}
+
+
+
+//場館介紹 -- Sea turtle 館
+.tour_overlay4{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, .5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.tour_overlay4.-on{
+  opacity: 1;
+  z-index: 1;
+}
+
+.tour_overlay4.-opacity-zero{
+  opacity: 0;
+}
+
+.tour_overlay4 > article{
+  background-image: url("/image/tour/tour_intro_seaturtle1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 20px;
+  line-height: 22px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tour_overlay4 > article > h3{
+  @include sub_title(brown);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay4 > article > p{
+  @include text(black);
+//  background-color: rgba(232, 247, 31, 0.5);
+ padding:10px 10px;
+ border-bottom: 7px;
+ margin:0 auto;
+}
+
+.tour_overlay4img{
+  border: 5px solid rgba(192, 138, 138, 0.7);
+  padding:5px;
+  border-radius: 7px;
+  margin:0 auto;
+
+}
+
+
+//動物
+.tour_row{
+  display:flex;
+  margin:40px auto;
+  .tour_slide{
+    // border:5px solid green;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    .tour_content{
+      // border:5px solid blue;
+      position: relative;
+      top: 0;
+      padding: 50px 25px;
+      color: #fff;
+      opacity: 0;
+      word-wrap: break-word;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      word-break: break-all;
+      .tour_headerimg {
+        position: relative;
+        flex: 0 1 40%;
+        top:20px;
+        border:5px solid rgba(0, 128, 0, 0.2);
+        border-radius: 7px;
+        padding:5px;
+        box-shadow: 3px 3px 10px 5px #504f4fc4;
+        .img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .tour_word {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px;
+        background-color: rgba(255, 255, 255, .7);
+        box-shadow: 3px 3px 15px 5px #504f4fc4;
+        margin-left: 25px;
+        max-height: 300px;
+        overflow: auto;
+        border-radius: 7px;
+
+        h4 {
+          @include sub_title(green);
+          margin:0 auto;
+          padding:4px;
+        }
+        .tour_row_button{
+          @include btn40(150px, white);
+          display:block;
+          margin:0 auto;
+        }
+
+        p{
+          @include text(black);
+          word-wrap: break-word;
+          padding-right:4px;
+          padding-left:4px;
+        }
+      }
+    }
+  }
+}
+
+.tour_slide:last-child {
+  border-right: none;
+}
+
+.tour_slide:nth-child(1) {
+  background-image: url(../image/tour/tour_dolphin.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(.6);
+  .tour_content {
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+  }
+}
+
+.tour_slide:nth-child(2) {
+  background-image: url(../image/tour/tour_whale.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(.6);
+  .tour_content {
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+  }
+}
+
+.tour_slide:nth-child(3) {
+  background-image: url(../image/tour/tour_seal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(.6);
+  .tour_content {
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+  }
+}
+
+.tour_slide:nth-child(4) {
+  background-image: url(../image/tour/tour_sea_turtle.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(.6);
+  .tour_content {
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+  }
+}
+
+.tour_slide:hover {
+  flex-grow:4;
+  background-position: top;
+  background-size: cover;
+  filter: brightness(1);
+  .tour_content {
+      opacity: 1;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+  }
+}
+
+
+@media screen and (max-width: 991px){
+      .tour_row{
+        // border:5px solid red;
+        flex-wrap: wrap;
+        flex: 100%;
+        .tour_slide{
+          flex: 1 1 50%;
+          .tour_content {
+            // border:5px solid yellow;
+            flex-direction: column;
+            padding: 15px;
+            .tour_headerimg {
+              display: none;
+            }
+            .tour_word {
+              // border:5px solid purple;
+              width:100%;
+              max-height: 100%;
+              margin:0 auto;
+              padding: 15px;
+            .tour_row_button{
+              margin-right: 0px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+@media screen and (max-width: 767px){
+    .tour_row {
+      // border:5px solid blue;
+      width:80%;    
+      flex-wrap: wrap;
+      flex: 100%;
+      .tour_slide {
+          margin: 20px auto;
+          flex: 1 1 100%;
+          background-position: top!important;
+          height: auto;
+          .tour_content {
+              // border:5px solid yellow;
+              flex-direction: column;
+              padding: 20 15px;
+              background-size: cover!important;
+              opacity: 0;
+              .tour_headerimg {
+                display: block;
+                margin: 20px auto;             
+              }
+              &:hover{
+                transition: all 1s ease-in;
+
+              }
+              .tour_word {
+                  // border:5px solid purple;
+                  max-height: 100%;
+                  margin: 15px 0px 0px 0px;
+                  padding: 15px;
+                  width:90%;
+                  line-height: 15px;
+               }
+               &:hover{
+                opacity:1;
+                cursor: pointer;             
+              }
+            }
+        }
+    }
+
+.tour_slide:nth-child(1),
+.tour_slide:nth-child(2),
+.tour_slide:nth-child(3),
+.tour_slide:nth-child(4) {
+ filter: blur(5);
+}
+
+.tour_puzzle_btn{
+    width:150px;
+}
+
+}
+

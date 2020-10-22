@@ -1,0 +1,153 @@
+
+
+.cartBG{
+  @include BGColor(rgba(77,209,232,1),  rgba(171,224,232,1));
+  @include BG01('bg1-2', 90%);
+  @include BG02('bg2-1', 110%);
+  @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg2-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+
+.cartContent{
+  width: 80%;
+  max-width: 1200px;
+  background-color: rgba(0,0,0,.2);
+  margin: 160px auto 50px;
+  padding: 50px;
+  @media screen and (max-width: 676px){
+    padding: 50px 20px;
+  }
+  .cartTitle{
+    @include main_title($keyWhite);
+    margin-bottom: 15px;
+  }
+  .cartSubTitle{
+    @include sub_title($keyWhite);
+    margin-bottom: 30px;
+  }
+
+  .cartTable{
+    // border: 1px solid red;
+    table{
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      thead{
+        background-color: $keyGreen;
+        tr{
+          th{
+            @include sub_title($keyWhite);
+            padding: 15px;
+            // border: 1px solid white;
+            @media screen and (max-width: 676px){
+              padding: 15px 5px;
+            }
+            &:nth-child(2){
+              width: 150px;
+              @media screen and (max-width: 676px){
+                width: 120px;
+              }
+            }
+            &:nth-child(3){
+              width: 100px;
+              @media screen and (max-width: 676px){
+                width: 60px;
+              }
+            }
+            &:nth-child(4){
+              width: 60px;
+            }
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      tbody{
+        background-color: $keyWhite;
+        tr{
+          &:nth-child(2n){
+            background-color: #eeeeee;
+          }
+          td{
+            text-align: center;
+            @include sub_title($keyBlack);
+            padding: 15px;
+            // border: 1px solid #eee;
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+              padding: 15px 5px;
+            }
+            &:nth-child(2){
+              text-align: center;
+              // display: flex;
+              // align-items: center;
+              // justify-content: space-between;
+              width: 120px;
+              padding: 15px 0;
+              margin: 0;
+              .ticketButton{
+                cursor: pointer;       
+                border: none;
+                color: $keyWhite;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                background-color: $keyGreen;
+                @include sub_title($keyWhite);
+                outline: none;
+                &:hover{
+                  background-color: #208686;
+                }
+                @media screen and (max-width: 676px){
+                  width: 30px;
+                  height: 30px;
+                }
+              }
+              span{
+                display: inline-block;
+                width: 30px;
+                @media screen and (max-width: 676px){
+                  width: 15px;
+                }
+              }
+            }
+            img{
+              width: 24px;
+              cursor: pointer;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+  .ticketCartTotal{
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    color: $blockYellow;
+    display: block;
+    text-align: right;
+    padding-right: 30px;
+    margin-top: 30px;
+  }
+  a{
+    text-align: center;
+    display: block;
+    margin: 50px 0 0;
+    @media screen and (max-width: 676px){
+      margin: 20px 0 0;
+    }
+    .ticketToMoneyButton{
+      @include btn60(300px, green);
+      @media screen and (max-width: 676px){
+        width: 250px;
+      }
+    }
+  }
+
+}

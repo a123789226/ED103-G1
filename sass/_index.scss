@@ -1,0 +1,39 @@
+.indexTitle{
+  h1{
+    color: $keyGreen;
+    font-size: 80px;
+    font-family: $en;
+    text-align: center; 
+    margin: 250px 0 50px 0;
+  }
+  .indexAll{
+    display: flex;
+    justify-content: space-evenly;
+    .homepage, .backend{
+      border: 10px solid #ffffff;
+      overflow: hidden;
+    }
+    .homepage img{
+      margin-top: 50px;
+      margin-bottom: 57px;
+    }
+    img{
+      width: 300px;
+    }
+    p{
+      font-size: 40px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 40px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .homepage:hover, .backend:hover{
+      border: 10px solid $keyGreen;
+    }
+    .homepage:hover p, .backend:hover p{
+      color: $blockYellow;
+    }
+  }
+}

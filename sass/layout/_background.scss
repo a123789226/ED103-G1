@@ -1,0 +1,210 @@
+//背景漸層顏色以及其他背景的共通設定
+@mixin BGColor($color1, $color2){
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, $color1 0%, $color2 50%, $color1 100%);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  .commonBGSet{
+    position: absolute;
+    left: 0;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    width: 100%;
+    height: 1600px;
+    transform: translateY(-50%);
+  }
+  .commonBG00{
+    background-image: url("../image/background/bg0.png");
+    top: 93%;
+  }
+  .BGFish1, .BGFish2{
+    position: absolute;  
+    opacity: 20%;   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+//第一層底圖，變數為圖片檔名（要用''包，不用寫.png），背景高度(單位%)
+@mixin BG01($png01, $bg01Top){
+  .commonBG01{
+    background-image: url("../image/background/#{$png01}.png");
+    top: $bg01Top;
+  }
+}
+
+//第二層底圖，變數為圖片檔名（要用''包，不用寫.png），背景高度(單位%)
+@mixin BG02($png02, $bg02Top){
+  .commonBG02{
+    background-image: url("../image/background/#{$png02}.png");
+    top: $bg02Top;
+  }
+}
+
+//左邊岩石圖，變數為圖片檔名（要用''包，不用寫.png），背景高度(單位%)，背景左右位置（單位%，正常為0%，想要凸出來太多就打-XX%)，767以下的left(%)，575以下的left(%)
+@mixin BGLeft($pngLeft, $bgLeftTop, $bgLeftLeft, $left767, $left575){
+  .commonBGLeft{
+    background-image: url("../image/background/#{$pngLeft}.png");
+    top: $bgLeftTop;
+    background-position-x: 0%;
+    left: $bgLeftLeft;
+    @media screen and (max-width: 767px){
+      left: $left767;
+    }
+    @media screen and (max-width: 575px){
+      left:  $left575;
+    }
+  }
+}
+
+//右邊岩石圖，變數為圖片檔名（要用''包，不用寫.png），背景高度(單位%)，背景左右位置（單位%，正常為0%，想要凸出來太多就打+XX%)，767以下的left(%)
+@mixin BGRight($pngRight, $bgRightTop, $bgRightLeft, $right767){
+  .commonBGRight{
+    background-image: url("../image/background/#{$pngRight}.png");
+    top: $bgRightTop;
+    background-position-x: 100%;
+    left: $bgRightLeft;
+    @media screen and (max-width: 767px){
+      left:  $right767;
+    }
+    @media screen and (max-width: 575px){
+      display: none;
+    }
+  }
+}
+
+//左邊來的魚動畫，變數為魚群的寬度（可用%或px），魚群高度（單位%），循環秒數（單位s）
+@mixin FishMove1($width,$top,$time){
+  .BGFish1{
+    width: $width;
+    animation-name: move;
+    top: $top;
+    transform: translate(-100%, -50%);
+    animation-duration: $time;
+    @keyframes move{
+      0%{
+        left: 0%;
+      }
+      100%{
+        left: 150%;
+      }
+    }
+    @media screen and (max-width: 575px){
+      display: none;
+    }
+  }
+}
+
+//右邊來的魚動畫，變數為魚群的寬度（可用%或px），魚群高度（單位%），循環秒數（單位s）
+@mixin FishMove2($width, $top, $time){
+  .BGFish2{
+    width: $width;
+    animation-name: move2;
+    top: $top;
+    transform: translate(100%, -50%) scaleX(-1);
+    animation-duration: $time;
+    @keyframes move2 {
+      0%{
+        right: 0%;
+      }
+      100%{
+        right: 150%;
+      }
+    }
+  }
+}
+
+
+
+// Irene的tour用
+.backgroundExample{
+  @include BGColor(rgb(123, 225, 243),  rgb(203, 236, 241));
+  @include BG01('bg1-1', 100%);
+  @include BG02('bg1-2', 130%);
+  @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg1-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+
+// ticket用
+// .backgroundExample{
+//   @include BGColor(rgba(77,209,232,1),  rgba(171,224,232,1));
+//   @include BG01('bg1-2', 90%);
+//   @include BG02('bg2-1', 110%);
+//   @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg2-4', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+//徐婕的journal用
+// .backgroundExample{
+//   @include BGColor(rgb(38, 166, 189),  rgb(93, 179, 192));
+//   @include BG01('bg2-1', 80%);
+//   @include BG02('bg3-2', 150%);
+//   @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg2-4', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+//明信片用
+// .backgroundExample{
+//   @include BGColor(rgb(24, 96, 138),  rgb(33, 104, 161));
+//   @include BG01('bg3-2', 90%);
+//   @include BG02('bg4-1', 100%);
+//   @include BGLeft('bg3-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg3-4', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+//Kira的vote用
+// .backgroundExample{
+//   @include BGColor(rgb(24, 62, 121),  rgb(12, 94, 161));
+//   @include BG01('bg4-1', 80%);
+//   @include BG02('bg5-1', 140%);
+//   @include BGLeft('bg3-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg4-2', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+//Zack的blog用
+// .backgroundExample{
+//   @include BGColor(rgb(11, 25, 100),  rgb(26, 64, 95));
+//   @include BG01('bg6-1', 80%);
+//   @include BG02('bg4-1', 110%);
+//   @include BGLeft('bg5-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg4-2', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+//不知道給誰用
+// .backgroundExample{
+//   @include BGColor(rgb(24, 12, 77),  rgb(18, 35, 82));
+//   @include BG01('bg6-1', 80%);
+//   @include BG02('bg7-1', 110%);
+//   @include BGLeft('bg6-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg6-4', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }
+
+// SQ的會員中心用
+// .backgroundExample{
+//   @include BGColor(rgb(139, 227, 243),  rgb(195, 239, 245));
+//   @include BG01('bg1-2', 100%);
+//   @include BG02('bridge', 140%);
+//   @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+//   @include BGRight('bg1-4', 90%, 0%, 10%);
+//   @include FishMove1(30%, 30%, 10s);
+//   @include FishMove2(30%, 60%, 15s);
+// }

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Aqua Wonderland</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/owl.carousel.css">
+  <link rel="stylesheet" href="./css/owl.theme.default.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css"
+  />
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <!-- turn.js -->
+  <script type="text/javascript" src="./js/turn.js"></script>
+  <!-- owl -->
+  <script src="/js/owl.carousel.js"></script>
+  <!-- alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body class="home_page" style="background: linear-gradient(180deg, #42eaf7 0%, #02488d 30%, #002046 50%, #011f3b 75%, #000d1e 100%);">
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="homepage.html" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- workspace -->
+  <section class="home_tour">
+    <!-- Log In -->
+    <div class="memLogin overlay">
+      <form class="LogInForm" id="LogInForm" method="post">
+        <div class="btn_modal_close">
+          <div></div>
+          <div></div>
+        </div>
+        <h3 class="memLogTitle">LOG IN</h3>
+        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+        <div class="memLine">
+          <h5>OR</h5>
+        </div>
+        <p>Don't have an account?</p><br>
+        <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+      </form>
+    </div>
+
+      <div class="home_tour_pic">
+        <img src="./image/index/object/indexMain1-1.png" class="role">
+        <img src="./image/index/map/island_2.png" class="map">
+        <embed src="./image/index/map/boat.png" class="boat" width="1000px"/>
+        <div class="home_tour_fish">
+          <img src="./image/index/object/finsh1.png" class="fish_left">
+          <!-- <img src="./image/index/object/finsh2.png" class="shark_top"> -->
+          <!-- <img src="./image/index/object/fish8.png" class="fish_middle"> -->
+          <!-- <img src="./image/index/object/finsh6.png" class="crab"> -->
+          <img src="./image/index/object/finsh7.png" class="fish_right">
+          <!-- <img src="./image/index/object/fish9.png" class="stingray_left"> -->
+          <!-- <img src="./image/index/object/fish10.png" class="stingray_middle"> -->
+          <!-- <img src="./image/index/object/fish11.png" class="turtle"> -->
+          <!-- <img src="./image/index/object/fish12.png" class="shark_bottom"> -->
+        </div>
+    </div>
+  </section>
+
+  <section class="home_ticket">
+    <h3 class="home_ticket_title">BOOKING</h3>
+    <img src="./image/index/background/2-2.png" class="page2_2">
+    <img src="./image/index/background/2-3.png" class="page2_3">
+    <div class="home_ticket_pic">
+      <img src="./image/index/object/indexMain2-1.png" class="page2_castle">
+      <img src="./image/index/object/indexMain2-2.png" 
+      class="page2_calender">
+      <div class="calendar_container">
+      <div class="BoXiang_calendar">
+        <h4 class="home_calendar_booking">Overnight Booking</h4>
+      </div>
+        <div class="home_ticket_remaining">
+          <h3>10/19 Remaining</h3>
+          <div class="home_show_table">
+    
+          </div>
+
+          <div class="home_text_row">
+            <p>Place</p>
+            <p>Person</p>
+          </div>
+
+          <div class="home_text_row">
+            <p>Dolphin</p>
+            <p>20</p>
+          </div>
+          <div class="home_text_row">
+            <p>Whale</p>
+            <p>15</p>
+          </div>
+          <div class="home_text_row">
+            <p>Seal</p>
+            <p>13</p>
+          </div>
+          <div class="home_text_row">
+            <p>Sea Turtle</p>
+            <p>20</p>
+          </div>
+
+          <a href="ticket.html"><button class="home_booking_btn">Booking</button></a>
+
+        </div>
+      </div>
+      <div class="home_ticket_fish">
+        <img src="./image/index/object/finsh1.png" class="page2_fish">
+        <!-- <img src="./image/index/object/fish13.png" class="page2_jellyfish"> -->
+        <!-- <img src="./image/index/object/page_2_middle.png" class="page2_fish_middle"> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="home_journal">
+    <div class="home_jtitle_before">
+          <h3 class="home_journal_title">JOURNAL</h3>
+    </div>
+    <img src="./image/index/background/3-2.png" class="page3_2">
+    <img src="./image/index/background/3-3.png" class="page3_3">
+    <img src="./image/index/background/3-4.png" class="page3_4">
+    <div class="home_journal_pic">
+
+      <div class="home_journal_fish">
+        <img src="./image/index/object/finsh1.png" class="page3_fish">
+        <!-- <img src="./image/index/object/fish14.png" class="whale"> -->
+        <!-- <img src="./image/index/object/page_2_middle.png" class="page3_middle"> -->
+      </div>
+    </div>
+    <div class="jourOpenBookSection">
+      <img src="./image/index/object/indexMain3-2.png" class="mermaid_1">
+      <img src="./image/index/object/indexMain3-4.png" class="mermaid_2">
+      <img src="./image/index/object/indexMain3-3.png" class="mermaid_3">
+      <img src="./image/index/object/indexMain3-5.png" class="page3_platform">
+
+      <div id="flipbook">
+        <!-- cover -->
+        <div class="hard">
+          <div class="jourOpenBook">
+            <!-- <div class="jourBookLeft">
+      
+                  </div> -->
+            <div class="jourOpenBookRight">
+              <div class="jourBookPhoto">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+              <div class="jourBookName">Olivia</div>
+              <div class="jourBookText">
+                <table>
+                  <tr>
+                    <th>Aqua No.</th>
+                    <td>No. 1</td>
+                  </tr>
+                  <tr>
+                    <th>Aqua Name</th>
+                    <td>Olivia</td>
+                  </tr>
+                  <tr>
+                    <th>Found Location</th>
+                    <td>North Bay</td>
+                  </tr>
+                  <tr>
+                    <th>Arrival Date</th>
+                    <td>August 8th, 2020</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- page 1 -->
+        <div class="hard jourPage1">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/08.jpg" alt="">
+                <img src="./image/index/object/09.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- page 2 -->
+        <div class="jourPage jourPage2">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/08.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/09.jpg" alt="">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- page 3 -->
+        <div class="jourPage jourPage3">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/08.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/09.jpg" alt="">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- page 4 -->
+        <div class="jourPage jourPage4">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/08.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/09.jpg" alt="">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- page 5 -->
+        <div class="jourPage jourPage5">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/08.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/09.jpg" alt="">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- page 6 -->
+        <div class="hard jourPage6">
+          <div class="jourPageContent">
+            <h4>Sep 15 2020</h4>
+            <div class="jourPagePhotoArea">
+              <div class="jourPagePhotoTop">
+                <img src="./image/index/object/08.jpg" alt="">
+              </div>
+              <div class="jourPagePhotoDown">
+                <img src="./image/index/object/09.jpg" alt="">
+                <img src="./image/index/object/07.jpg" alt="">
+              </div>
+            </div>
+            <div class="jourPageText">
+              <h4>Story Updates</h4>
+              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over 9 kg)
+                and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                the other sea otters at the Aqua Wonderland.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hard jourLastPage">
+          <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
+        </div>
+      </div>
+      <div class="home_message_box">
+        <div class="home_message">
+        <textarea id="home_message_input" cols="60" rows="3" placeholder="comment"></textarea>
+        <button id="home_jbtn">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home_adopt">
+    <div class="home_atitle_before">
+      <h3 class="home_adbot_title">ADOPT</h3>
+    </div>
+    <img src="./image/index/background/4-2.png" class="page4_2">
+    <div class="home_adopt_pic">
+      <img src="./image/index/object/indexMain4-1.png" class="page4_platform">
+      <img src="./image/index/object/p4bg-modi.png" class="page4_right_bottom">
+      <!-- <img src="./image/index/object/thankscard.png" class="thanks_card"> -->
+      <!-- <img src="./image/index/object/indexMain6-1.png" class="page4_light"> -->
+      <!-- <div class="home_shadow1"></div>
+      <div class="home_shadow2"></div>
+      <div class="home_shadow3"></div> -->
+
+      <!-- <img src="./image/index/object/indexMain1-3.png" class="page4_crab">
+      <img src="./image/index/object/indexMain1-2.png" class="page4_black"> -->
+      <div class="home_adopt_fish">
+        <!-- <img src="./image/index/object/fish8.png" class="page4_fish"> -->
+        <!-- <img src="./image/index/object/fish15.png" class="page4_shark_left"> -->
+        <!-- <img src="./image/index/object/fish16.png" class="page4_shark_right"> -->
+        <!-- <img src="./image/index/object/fish13.png" class="page4_jellyfish"> -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="home_vote">
+    <div class="home_vtitle_before">
+      <h3 class="home_vote_title">VOTE</h3>
+    </div>
+    <img src="./image/index/background/5-2.png" class="page5_2">
+    <img src="./image/index/background/5-3.png" class="page5_3">
+    <div class="home_vote_pic">
+      <div class="home_adopt_fish">
+        <!-- <img src="./image/index/object/fish17.png" class="page5_squid"> -->
+        <!-- <img src="./image/index/object/fish18.png" class="page5_squid_bot"> -->
+        <img src="./image/index/object/fish19.png" class="page5_shark">
+      </div>
+    </div>
+    <div class="home_vote_main">
+      <div class="vote_left">
+        <img src="./image/index/object/indexMain5-1.png" class="page5_octopus">
+      </div>
+      <div class="page5_vote">
+        <div class="page5_vote_top">
+          <img src="./image/index/object/vote_big.png" class="page5_big">
+          <p>This is a cute dolphin. It needs it to help him get a name. Come and help him get a cute name. The time is only
+            until 10/25.</p>
+        </div>
+        <div class="page5_vote_middle">
+          <button class="home_vote_btn" data-no="1">Amy</button>
+          <button class="home_vote_btn" data-no="2">Billy</button>
+          <button class="home_vote_btn" data-no="3">Cat</button>
+          <button class="home_vote_btn" data-no="4">Dog</button>
+          <button class="home_vote_btn" data-no="5">Ella</button>
+          <button class="home_vote_btn" data-no="6">Sam</button>
+        </div>
+        <div class="page5_vote_bottom">
+          <button id="home_vbtn">Vote</button>
+        </div>
+      </div>
+          <div class="page5_named">
+            <img src="./image/index/object/vote_big.png" class="page5_named_pic">
+            <div class="page5_named_info">
+              <p>Give Me A Name</p>
+              <input type="text">
+              <button id="home_nbtn">Submit</button>
+            </div>
+          </div>
+    </div>
+
+
+  </section>
+  <section class="home_blog">
+    <div class="home_blogTitle_before">
+      <h3 class="home_blog_title">BLOG</h3>
+    </div>
+    <img src="./image/index/background/6-2.png" class="page6_2">
+    <img src="./image/index/background/6-3.png" class="page6_3">
+    <div class="home_blog_pic">
+      <img src="./image/index/object/indexMain6-1.png" class="page6_light">
+      <img src="./image/index/object/indexMain6-2.png" class="page6_platform">
+      <img src="./image/index/object/page_1200_3.png" class="platform_1200">
+        <img src="./image/index/object/arrow_left.png" class="arrow_left">
+        <img src="./image/index/object/arrow_right.png" class="arrow_right">
+    </div>
+    <div class="home_blog_carousel">
+      <div class="owl-carousel owl-theme">
+        <div class="home_carousel_content">
+          <div class="home_carousel_title">
+            <span class="blog_carousel_title">BLOG TITLE 1</span>
+            <img src="./image/index/object/heart.png" class="home_heart">
+            <div class="home_author">
+              <span>By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user">
+              <span>September 17, 2020</span>
+            </div>
+          </div>
+          <div class="blog_carousel_image">
+            <img src="./image/index/object/aqua1.jpeg" alt="">
+          </div>
+          <div class="blog_carousel_text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
+          </div>
+        </div>
+
+        <div class="home_carousel_content">
+          <div class="home_carousel_title">
+            <span class="blog_carousel_title">BLOG TITLE 2</span>
+            <img src="./image/index/object/heart.png" class="home_heart">
+            <div class="home_author">
+              <span>By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user">
+              <span>September 17, 2020</span>
+            </div>
+          </div>
+          <div class="blog_carousel_image">
+            <img src="./image/index/object/aqua1.jpeg" alt="">
+          </div>
+          <div class="blog_carousel_text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever since theLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever since the
+          </div>
+        </div>
+
+        <div class="home_carousel_content">
+          <div class="home_carousel_title">
+            <span class="blog_carousel_title">BLOG TITLE 3</span>
+            <img src="./image/index/object/heart.png" class="home_heart">
+            <div class="home_author">
+              <span>By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user">
+              <span>September 17, 2020</span>
+            </div>
+          </div>
+          <div class="blog_carousel_image">
+            <img src="./image/index/object/aqua1.jpeg" alt="">
+          </div>
+          <div class="blog_carousel_text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever since theLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever since the
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="home_game">
+    <img src="./image/index/background/7-2.png" class="page7_2">
+    <img src="./image/index/background/7-3.png" class="page7_3">
+    <img src="./image/index/background/7-4.png" class="page7_4">
+  </section>
+
+  <!-- boat move -->
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+<script>
+  TweenMax.to('.boat', 10, {
+    xPercent: -800,
+    yPercent: 900,
+    repeat: -1,
+    yoyo: false,
+    ease: Power0.easeNone,
+    delay: 1
+});
+</script>
+
+<!-- turn.js -->
+
+  <script>
+    var flipbook = $('#flipbook');
+    flipbook.turn({
+        width: window.innerWidth * 0.4,
+        height: window.innerHeight * 0.68,
+        // autoCenter: true
+      });
+    $(document).ready(function () {
+      flipbook.turn("page", 2);
+      flipbook.css("left", "7%"); 
+      var home_message = document.getElementsByClassName("home_message_box")[0];
+
+        flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.7);
+        home_message.style.margin = '50px auto 0 auto';
+        home_message.style.width = '50%';
+    });
+    $(window).resize(function () {
+      var win = $(this); //this = window
+      var home_message = document.getElementsByClassName("home_message_box")[0];
+      if (win.width() <= 974) { 
+        
+        flipbook.css("left", "7%"); 
+        flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.7);
+        home_message.style.margin = '50px auto 0 auto';
+        home_message.style.width = '50%';
+      
+      }
+      else{
+        flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.68);
+        flipbook.css("left","25%");
+        // flipbook.css("trnasfoem","translateX(-50%)");
+        home_message.style.margin = '';
+        home_message.style.width = '';
+      }
+
+    });
+  </script>
+
+  <!-- calendar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+
+      //月曆記得改屬性
+      $(".BoXiang_calendar").datepicker({
+        //開始日期為今日
+        startDate: " new date()",
+        //特別標註今天
+        todayHighlight: true,
+      });
+
+
+    </script>
+
+  <script>
+    $(".home_vote_btn").click(function () {
+      activeButton = $(this).data('no'); 
+      $(".home_vote_btn").css("background-color","#ffffff");
+      $(this).css("background-color", "#FBE108");
+      console.log(this);
+    });
+  </script>
+
+  <script>
+    $("div.hamburger_box").on("click", function () {
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+          loop: true,
+          margin: 10,
+          // autoWidth: true,
+          items: 1,
+          responsive: {
+            0: {
+              items: 1
+
+            },
+          }
+          
+        });
+        $('.arrow_right').click(function () {
+        owl.trigger('next.owl.carousel');
+        })
+        $('.arrow_left').click(function () {
+        owl.trigger('prev.owl.carousel');
+      })
+      });
+
+
+  </script>
+
+  <script>
+    document.getElementById("home_jbtn").addEventListener("click", function () {
+        swal("Submit successful", "", "success");
+      });
+    document.getElementById("home_vbtn").addEventListener("click", function () {
+        swal("Vote successful", "", "success");
+      });
+      document.getElementById("home_nbtn").addEventListener("click", function () {
+        swal("Named successful", "", "success");
+      });
+  </script>
+
+  <script>
+      // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+  </script>
+
+</body>
+</html>

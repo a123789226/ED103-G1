@@ -1,0 +1,222 @@
+// @mixin cartStep($bgColor, $borderColor, $color){
+//   width: 80px;
+//   height: 80px;
+//   border-radius: 50%;
+//   background-color: $bgColor;
+//   border: 2px solid $borderColor;
+//   color: $color;
+//   display: inline-block;
+//   position: relative;
+//   @media screen and (max-width: 676px){
+//     width: 60px;
+//     height: 60px; 
+//   }
+//   img{
+//     width: 50px;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     @media screen and (max-width: 676px){
+//       width: 40px;
+//     }
+//   }
+//   +span{
+//     height: 2px;
+//     width: 30px;
+//     display: inline-block;
+//     background-color: $blockYellow;
+//     @media screen and (max-width: 676px){
+//       width: 10px;
+//     }
+//   }
+// }
+
+.ticketPaymentBG{
+  @include BGColor(rgba(77,209,232,1),  rgba(171,224,232,1));
+  @include BG01('bg1-2', 90%);
+  @include BG02('bg2-1', 110%);
+  @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg2-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+.cart2Content{
+  width: 80%;
+  max-width: 1200px;
+  background-color: rgba(0,0,0,.2);
+  margin: 160px auto 50px;
+  padding: 50px;
+  @media screen and (max-width: 676px){
+    padding: 50px 20px;
+  }
+  .cartTitle{
+    @include main_title($keyWhite);
+    margin-bottom: 15px;
+  }
+  .cartSubTitle{
+    @include sub_title($keyWhite);
+    margin-bottom: 30px;
+  }
+
+  .cartStepBox{
+    text-align: center;
+    margin-bottom: 30px;
+    .cartStep{
+      @include cartStep($keyWhite, $blockYellow, $keyBlack);
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+    .active{
+      @include cartStep($blockYellow, $blockYellow, $keyBlack);
+    }
+  }
+
+
+  .paymentBlock{
+    border: 1px solid rgba(0,0,0,.8);
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    @include sub_title($keyWhite);
+    @media screen and (max-width: 676px){
+      font-size: 16px;
+    }
+    .inputBox{
+      width: 540px;
+      margin: 30px auto;
+      @media screen and (max-width: 991px){
+        width: 450px;
+      }
+      @media screen and (max-width: 767px){
+        width: 340px;
+      }
+      @media screen and (max-width: 676px){
+        width: 280px;
+      }
+      @media screen and (max-width: 479px){
+        width: 260px;
+      }
+      label,p{
+        color: $keyGreen;
+        display: inline-block;
+        width: 180px;
+        margin-bottom: 10px;
+        @media screen and (max-width: 991px){
+          display: block;
+        }
+        @media screen and (max-width: 767px){
+          width: initial;
+        }
+      }
+      p:nth-child(2){
+        color: $keyWhite;
+      }
+      input{
+        @include sub_title($keyBlack);
+        height: 40px;
+        padding: 0 10px;
+        @media screen and (max-width: 676px){
+          font-size: 16px;
+          padding: 0 5px;
+        }
+        @media screen and (max-width: 479px){
+          height: 30px;
+        } 
+      }
+      &:first-child{
+        input{
+          width: 70px;
+          @media screen and (max-width: 676px){
+            width: 60px;
+          }
+          @media screen and (max-width: 479px){
+            width: 50px;
+          }
+        }
+      }
+      &:nth-child(2){
+        input{
+          width: 60px;
+          @media screen and (max-width: 676px){
+            width: 50px;
+          }
+        }
+      }
+      &:nth-child(3){
+        input{
+          width: 70px;
+          @media screen and (max-width: 676px){
+            width: 60px;
+          }
+        }
+      }
+      &:nth-child(7){
+        p{
+          color: $blockYellow;
+          font-size: 24px;
+          display: inline-block;
+          @media screen and (max-width: 479px){
+            font-size: 20px;
+          }
+          &:first-child{
+            width: 180px;
+            @media screen and (max-width: 479px){
+              width: 140px;
+            }
+          }
+        }
+      }
+      .discountQuestion{
+        background-color: $blockYellow;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        font-size: 22px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+    .payButtonBox{
+      text-align: center;
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media screen and (max-width: 991px){
+        flex-direction: column-reverse;
+      }
+      
+      a{
+        margin: 0 15px;
+        &:first-child{
+          @media screen and (max-width: 991px){
+            margin-top: 20px;
+          }
+
+        }
+        .ticketPayCancel{
+          @include btn60(200px, white);  
+          @media screen and (max-width: 991px){
+            width: 50%;
+            min-width: 220px;
+          }
+        }
+
+        .ticketPayToCheck{
+          @include btn60(200px, green);
+          @media screen and (max-width: 991px){
+            width: 50%;
+            min-width: 220px;
+          }
+          
+        }
+      }
+    }
+
+  }
+
+}

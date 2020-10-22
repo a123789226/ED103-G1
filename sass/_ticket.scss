@@ -1,0 +1,530 @@
+.ticketBG{
+  @include BGColor(rgba(77,209,232,1),  rgba(171,224,232,1));
+  @include BG01('bg1-2', 90%);
+  @include BG02('bg2-1', 110%);
+  @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg2-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+
+.ticketTitleBox{
+  // background-color: rgba(255, 255, 255, .2);
+  width: 80%;
+  max-width: 1200px;
+}
+
+//購票區
+.ticketTicketBox{
+  // border: 1px solid green;
+  background-color: rgba(255, 255, 255, .2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 50px;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 676px){
+    padding: 0 20px;
+  }
+
+  .ticketMainTitle{
+    @include main_title($keyWhite);
+    padding: 0;
+    width: 100%;
+    margin: 50px 0 30px;
+  }
+
+  .ticketTicketImgBlock{
+    width: 40%;
+
+    @media screen and (max-width: 991px){
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .ticketTicketImg{
+      border: 3px solid white;
+      border-radius: 6px;
+      width: 100%;
+      margin-bottom: 15px;
+      @media screen and (max-width: 991px){
+        width: 49%;
+        margin: 0;
+      }
+      @media screen and (max-width: 479px){
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+    }
+  }
+
+  .ticketTicketContent{
+    // border: 1px solid red;
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 991px){
+      width: 100%;
+    }
+
+    .ticketTicketText{
+      @include text($keyWhite);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .ticketButtonBlock{
+      width: 100%;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 991px){
+        margin-bottom: 10px;
+      }
+
+
+      .ticketButtonBox{
+        border-radius: 6px;
+        background-color: white;
+        height: 60px;
+        box-shadow: $shadow;
+    //  box-shadow: 2px 2px 10px #333333;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 15px;
+        @media screen and (max-width: 676px){
+          height: inherit;
+          padding: 5px 10px;
+        }
+
+        .ticketTicketName, .ticketTicketPrice{
+          @include sub_title($keyBlack);
+          width: 30%;
+          
+          @media screen and (max-width: 676px){
+            font-size: 16px;
+            width: 200px;
+          }
+        }
+        .ticketTicketPrice{
+          @media screen and (max-width: 676px){
+            width: 100px;
+          }
+        }
+        .ticketButtons{
+          // border: 1px solid red;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 120px;
+          .ticketButton{
+            cursor: pointer;       
+            border: none;
+            color: $keyWhite;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: $keyGreen;
+            @include sub_title($keyWhite);
+            outline: none;
+
+            &:hover{
+              background-color: #208686;
+            }
+
+            @media screen and (max-width: 676px){
+              width: 30px;
+              height: 30px;
+            } 
+          }
+          .ticketTicketAmount{
+            @include sub_title($keyBlack);
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+    .ticketTicketTotal{
+      width: 100%;
+      font-size: 24px;
+      font-weight: 400;
+      color: $keyWhite;
+      display: block;
+      text-align: right;
+      padding: 0 30px 30px 0;
+    }
+    .ticketTicketButtonBlock{
+      width: 100%;
+      text-align: right;
+      margin-bottom: 50px;
+      @media screen and (max-width: 479px){
+        text-align: center;
+      }
+      #ticketAddToCart{
+        @include btn60(360px, green);
+        box-shadow: $shadow;
+
+        @media screen and (max-width: 676px){
+          @include btn60(240px, green);
+        }
+      }
+    }
+
+  }
+  
+}
+
+.ticketOverNightBox{
+  border: 1px solid rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .8);
+  padding: 0 50px;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+
+  @media screen and (max-width: 676px){
+    padding: 0 20px;
+  }
+
+  .ticketMainTitle{
+    @include main_title($keyWhite);
+    width: 100%;
+    margin: 30px 0 60px;
+  }
+  .ticketONIntroBlock{
+    padding-top: 40%;
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+
+    @media screen and (max-width: 991px){
+      padding-top: 50%;
+    }
+    @media screen and (max-width: 767px){
+      padding-top: 80%;
+    }
+    @media screen and (max-width: 479px){
+      padding-top: 130%;
+    }
+  
+    > div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      &:hover{
+        a{
+          background-color: $keyGreen;
+          +.ticketONIntroBox{
+            width: 70%;
+            z-index: 2;
+            left: 30%;
+            opacity: 1;
+            transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+          }
+          span{
+            &:first-child{
+              color: $keyWhite;
+            }
+            &:nth-child(2){
+              color: $keyWhite;
+            }
+          }
+        }
+      }
+      > a{
+        border: 1px solid rgba(0, 0, 0, .8);
+        border-radius: 6px;
+        width: 30%;
+        height: 100%;
+        padding: 0px 10px;
+        position: relative;
+        z-index: 3;
+        background: $keyWhite;
+        background-color: rgba(255,255,255, .1);
+
+        @media screen and (max-width: 479px){
+          width: 35%;
+        }
+
+        span{
+          display:block;
+          &:first-child{
+            font-weight: 400;
+            font-size: 24px;
+            color: $keyWhite;
+            padding-top: 10%;
+            transition: color 0.2s linear;
+            @media screen and (max-width: 767px){
+              font-size: 20px;
+            }
+            @media screen and (max-width: 479px){
+              font-size: 16px;
+            }           
+          }
+          &:nth-child(2){
+            color: $keyWhite;
+            font-weight: 400;
+            font-size: 16px;
+            transition: color 0.2s linear;
+            @media screen and (max-width: 767px){
+              font-size: 12px;
+            }            
+          }
+        }
+      }
+      .ticketONIntroBox{
+        width: 0%;
+        height: 400%;
+        position: absolute;
+        z-index: 1;
+        left: 0%;
+        top: 0;
+        opacity: 0;
+        transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out, width 0s ease-in-out 0.6s;
+        padding: 5%;
+
+        @media screen and (max-width: 767px){
+          padding: 10%;
+        }
+        @media screen and (max-width: 479px){
+          padding: 0 10%;
+        }
+        
+        img{
+          width: 49%;
+          display: inline-block;
+          @media screen and (max-width: 479px){
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }
+        p{
+          @include text($keyWhite);
+          margin-top: 20px;
+          @media screen and (max-width: 479px){
+            font-size: 12px;
+          }
+          
+        }
+      }
+    }
+    >div:nth-child(2){
+      top: 25%;
+      div{
+        top: -100%;
+      }
+    }
+    >div:nth-child(3){
+      top: 50%;
+      div{
+        top: -200%;
+      }
+    }
+    >div:nth-child(4){
+      top: 75%;
+      div{
+        top: -300%;
+      }
+    }
+    .ticketONBigImg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: .6s;
+      img{
+        width: 60%;
+        position: absolute;
+        right: 3%;
+        top: 50%;
+        transform: translateY(-50%);
+        @media screen and (max-width: 479px){
+          right: 0%;
+        }
+      }
+    }
+  }
+  .ticketBookingBlock{
+    // border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h4{
+      font-size: $titleFz;
+      font-weight: 400;
+      color: $blockYellow;
+      width: 100%;
+      margin-bottom: 20px;
+      @media screen and (max-width: 991px){
+        text-align: center;
+      }
+    }
+    .ticketCalendarBlock{
+      // border: 1px solid white;
+      width: 40%;
+      @media screen and (max-width: 991px){
+        width: 70%;
+        margin: 0 auto 60px;
+      }
+      @media screen and (max-width: 676px){
+        width: 100%;
+      }
+      .datepicker-inline{
+        background-color: white;
+        width: 100%;
+        padding-top: 80%;
+        position: relative;
+        .table-condensed{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          tr{
+            td, th{
+              width: inherit;
+              height: inherit;
+            }
+            th{
+              font-size: 20px;
+              color: $keyBlack;
+            }
+            td.today{
+              background-color: #ccc;
+            }
+            td.active{
+              background-color: $keyGreen
+            }
+            td{
+              font-size: 18px;
+            }
+          }
+
+        }
+      }
+    }
+    .ticketBooking{
+      width: 55%;
+
+      @media screen and (max-width: 991px){
+        width: 100%;
+      }
+      .ticketAreaRemainBox{
+        width: 100%;
+        margin-bottom: 30px;
+        .ticketAreaRemain{
+          border-radius: 6px 6px 0 0;
+          background-color: $blockYellow;
+          padding: 10px 20px;
+          width: 300px;
+
+          @media screen and (max-width: 676px){
+            padding: 5px 10px;
+            width: 240px;
+          }
+          @media screen and (max-width: 479px){
+            width: 100%;
+          }
+
+          span{
+            @include sub_title($keyBlack);
+            font-weight: 700;
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+          }
+        }
+        .ticketButtonBox{
+          border-radius: 0 6px 6px 6px;
+          background-color: white;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          @media screen and (max-width: 676px){
+            height: inherit;
+            padding: 5px 10px;
+          }
+          @media screen and (max-width: 479px){
+            border-radius: 0 0 6px 6px;
+          }
+          .ticketTicketName, .ticketTicketPrice{
+            @include sub_title($keyBlack);
+            width: 30%;
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+          }
+          .ticketButtons{
+            // border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 120px;
+            .ticketButton{  
+              cursor: pointer;       
+              border: none;
+              color: $keyWhite;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              background-color: $keyGreen;
+              @include sub_title($keyWhite);
+              outline: none;
+              @media screen and (max-width: 676px){
+                width: 30px;
+                height: 30px;
+              }
+              &:hover{
+                background-color: #208686;
+              }
+            }
+            .ticketTicketAmount{
+              @include sub_title($keyBlack);
+            }
+          }
+        }
+      }
+      .ticketONTotal{
+        width: 100%;
+        font-size: 24px;
+        font-weight: 400;
+        color: $keyWhite;
+        display: block;
+        text-align: right;
+        padding: 0 30px 30px 0;
+      }
+      .ticketONButtonBlock{
+        width: 100%;
+        text-align: right;
+        margin-bottom: 50px;
+        @media screen and (max-width: 479px){
+          text-align: center;
+        }
+        a{
+          #ticketBookingButton{
+            @include btn60(360px, green);
+            @media screen and (max-width: 676px){
+              width: 240px;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+

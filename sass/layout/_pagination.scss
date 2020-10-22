@@ -1,0 +1,75 @@
+@mixin pagination_rect($width,$color){
+    width: $width;
+    font-size: 1.25 * $fontbase;
+    font-family: $en;
+    font-weight: $fw_Regular;
+    border: 2px solid $keyGreen;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    color: $keyBlack;
+    @if $color == green{
+        background-color: $keyGreen;
+        color: $keyWhite;
+    }@else if $color == white{
+        background-color: $keyWhite;
+    }@else if $color == yellow{
+        border: 2px solid $blockYellow;
+        background-color: $blockYellow;
+    }
+}
+
+@mixin pagination_circle($color){
+    width: 80px;
+    height: 80px;
+    font-size: 2.25 * $fontbase;
+    font-family: $en;
+    font-weight: $fw_Bold;
+    border: 2px solid $keyGreen;
+    border-radius: 50%;
+    box-shadow: $shadow;
+    color: $keyBlack;
+    @if $color == green{
+        background-color: $keyGreen;
+        color: $keyWhite;
+    }@else if $color == white{
+        background-color: $keyWhite;
+    }@else if $color == yellow{
+        border: 2px solid $blockYellow;
+        background-color: $blockYellow;
+    }
+}
+
+@mixin pagination_pic($width, $height){
+    width: $width;
+    height: $height;
+    border-radius: 6px;
+    opacity: .7;
+    box-shadow: $shadow;
+    position: relative;
+        > .pic_yellow{
+            background-color: $blockYellow;
+            height: $height;
+            position: absolute;
+            left: 0;
+            width: 10%;
+            max-width: 10px;
+        }
+}
+
+@mixin pagination_vertical($width,$color){
+    width: $width;
+    height: 50px;
+    font-size: 1.25 * $fontbase;
+    font-weight: $fw_Regular;
+    font-family: $en;
+    text-align: center;
+    border: 2px solid $keyGreen;
+    box-shadow: $shadow;
+    color: $keyBlack;
+    @if $color == green{
+        background-color: $keyGreen;
+        color: $keyWhite;
+    }@else if $color == white{
+        background-color: $keyWhite;
+    }
+}   

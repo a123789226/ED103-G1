@@ -1,0 +1,33 @@
+//title公版
+@mixin main_title($color){
+    font-size: $titleFz;
+    font-family: $en;
+    font-weight: 700;
+    color: $color;
+    position: relative;
+    &:before{
+        content:'';
+        width: 10px;
+        height: 40px;
+        background-color: $blockYellow;
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin sub_title($color){
+    font-size: $subtitleFz;
+    font-family: $en;
+    font-weight: 400;
+    color: $color;
+}
+
+@mixin text($color){
+    font-size: $fontbase;
+    font-family: $en;
+    font-weight: 300;
+    color: $color;
+    line-height: 1.5 * $fontbase;
+}

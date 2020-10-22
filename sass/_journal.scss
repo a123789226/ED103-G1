@@ -1,0 +1,1163 @@
+@import "./layout/_variables.scss";
+@import "./layout/_reset.scss";
+@import "./layout/_mixins.scss";
+@import "./layout/_button.scss";
+@import "./layout/_font.scss";
+@import "./layout/_header.scss";
+
+
+
+body {
+  background-color: rgb(71, 134, 177);
+  position: relative;
+}
+
+.jourBackground {
+  @include BGColor(rgb(38, 166, 189), rgb(93, 179, 192));
+  @include BG01('bg2-1', 80%);
+  @include BG02('bg3-2', 150%);
+  @include BGLeft('bg2-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg2-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+.jourTitleBox {
+  margin: 160px auto 0px;
+  width: 100%;
+  // border: 1px solid red;
+  padding: 30px 0;
+
+  .jourTitle {
+    @include main_title($keyBlack);
+    text-align: center;
+  }
+
+  .jourSubTitle {
+    @include sub_title($keyBlack);
+    text-align: center;
+    margin: 10px 0 0;
+  }
+}
+
+.jourContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.jourTitle {
+  @include main_title($keyWhite);
+  text-align: center;
+}
+
+.jourSubTitle {
+  @include sub_title($keyWhite);
+  text-align: center;
+}
+
+// Choose Type
+
+.jourTypeSection {
+  margin: 0 auto;
+  // display: inline-block;
+  width: 80%;
+  background-color: rgba(255, 255, 255, .2);
+  max-width: 1200px;
+  padding-top: 10px;
+}
+
+.jourTypeTitle {
+  @include main_title($keyWhite);
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  // border: 3px solid pink;
+}
+
+.jourTypeChoice {
+  margin: 10px auto;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  // border: 3px solid yellow;
+}
+
+.jourType {
+  margin: 10px auto;
+  display: block;
+  width: 20%;
+  overflow: hidden;
+  // border: 3px solid red;
+}
+
+.jourFixPhotoSize {
+  width: 90%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.jourTypePhoto {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.jourTypePhoto:hover {
+  transform: scale(1.5);
+  transition-duration: 1s;
+}
+
+.jourTypeText {
+  @include sub_title($keyWhite);
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+
+// 4本書
+.jourBookContainer.-on {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  // border: 3px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+}
+
+.jourBookContainer {
+  display: none;
+}
+
+
+
+
+// 書本
+.jourBookSection {
+  text-align: center;
+  width: 40%;
+  // border: 3px solid black;
+  // flex: 40%;
+}
+
+
+
+
+.jourBookSection:nth-child(2n) {
+  // transform: translate(0,50%);
+  margin-top: 120px;
+}
+
+
+.jourBook {
+  width: 100%;
+  // height: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+  max-height: 600px;
+  min-width: 270px;
+  // min-height: 360px;
+  display: block;
+  // border: 3px solid deeppink;
+  display: flex;
+  flex-wrap: wrap;
+
+  animation-name: book;
+  animation-duration: 3s;
+  // animation-timing-function: steps(5, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes book {
+  0% {
+    margin-top: 0px;
+  }
+
+  50% {
+    margin-top: 20px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+}
+
+
+.jourBookLeft {
+  background: linear-gradient(to right, #000, #fff);
+  width: 7%;
+  display: inline-block;
+}
+
+.jourBookRight {
+  background-color: #fff;
+  width: 93%;
+  display: inline-block;
+  padding-bottom: 120px;
+  border-radius: 0 6px 6px 0;
+}
+
+.jourBookPhoto {
+  width: 70%;
+  // height: 240px;
+  margin: 20px auto;
+}
+
+img {
+  width: 100%;
+  border-radius: 6px;
+  // box-shadow: #999 2px 2px 10px;
+}
+
+.jourBookName {
+  margin: 0 auto;
+  text-align: center;
+  @include sub_title($keyBlack);
+}
+
+.jourBookText {
+  @include text($keyBlack);
+  margin: 0 auto;
+  text-align: left;
+}
+
+table {
+  margin: 10px auto;
+  text-align: left;
+}
+
+td {
+  padding-left: 20px;
+}
+
+.jourBookShadow {
+  margin: 0 auto;
+  display: block;
+  height: 25px;
+  // background-color: #024282;
+  background: linear-gradient(235deg, #325c7f, #132d42);
+  border-radius: 50%;
+  width: 60%;
+  transform: translate(0%, 60%);
+
+  animation-name: shadow;
+  animation-duration: 3s;
+  // animation-timing-function: steps(5, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes shadow {
+  0% {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  50% {
+    margin-top: 0px;
+    width: 60%;
+  }
+
+  100% {
+    margin-top: 20px;
+    width: 50%;
+  }
+}
+
+.jourStone {
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  // border: 3px solid yellow;
+}
+
+
+
+
+// lightbox
+.jourLightBox {
+  background-color: hsla(0, 0%, 0%, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+
+  /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.closeLightbox {
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.jourBookOpenBtn {
+  cursor: pointer;
+}
+
+div.jourLightBox.-on {
+
+  /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+  opacity: 1;
+  z-index: 15;
+  width: 80%;
+  margin: 0 auto !important;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%
+}
+
+div.jourLightBox.-opacity-zero {
+  /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+  opacity: 0;
+}
+
+/* 元素 article 置中及基本樣式 */
+div.jourLightBox{
+  background-color: hsla(0, 0, 0, 1);
+  width: 100%;
+  // max-width: 800px;
+  box-shadow: 0 0 10px #ddd;
+  // padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//---------------------------------------
+
+
+
+
+
+
+// adopt
+.jourAdoptSection {
+  margin: 0 auto;
+  // display: inline-block;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  padding: 10px 0;
+  display: block;
+}
+
+.jourAdoptContent {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.jourAdoptMainTitle {
+  padding: 50px 0;
+}
+
+.jourAdoptTitle {
+  @include sub_title($keyWhite);
+  text-align: center;
+  width: 100%;
+  // border: 3px solid pink;
+}
+
+.jourAdoptText {
+  @include text($keyWhite);
+  margin: 0 auto;
+  text-align: center;
+  // border: 3px solid yellow;
+}
+
+.jourAdopterSection {
+  @include text($keyWhite);
+  margin: 20px auto 10px auto;
+  text-align: center;
+  font-weight: 400;
+  // border: 3px solid yellow;
+}
+
+.jourAdopterPhoto {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.jourAdopterlist {
+  display: inline-block;
+  // border: 3px solid yellow;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.jourAdopterlist li {
+  display: inline-block;
+}
+
+.jourToAdopt {
+  margin: 0 auto;
+  // border: 3px solid yellow;
+  text-align: center;
+}
+
+.jourLightboxBtn {
+  margin: 20px auto;
+  width: 40%;
+  text-align: center;
+  line-height: $button_height;
+  height: $button_height;
+  color: $keyWhite;
+  background-color: $keyGreen;
+  // border: 3px solid green;
+  border-radius: 30px;
+}
+
+
+
+// comment
+.jourCommentSection {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
+}
+
+.jourCommentContent {
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.jourCommentTitle {
+  @include sub_title($keyBlack);
+  text-align: center;
+  width: 100%;
+
+  // border: 3px solid pink;
+}
+
+.jourCommentText {
+  @include text($keyBlack);
+  margin: 0 auto;
+  text-align: center;
+  // border: 3px solid yellow;
+}
+
+.jourCommentArea {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  border-radius: 6px;
+  padding: 10px 0;
+}
+
+#jourCommentTextarea {
+  margin-top: 20px;
+  border-radius: 6px;
+
+}
+
+// comment list
+.jourCommentList {
+  width: 80%;
+  margin: 0 auto;
+  // border: 3px solid pink;
+  display: block;
+  text-align: center;
+}
+
+.jourCommentList li {
+  margin: 15px auto;
+}
+
+.jourCommentPersonPic {
+  display: inline-block;
+  width: 10%;
+  margin: 0 auto;
+  // border: 3px solid pink;
+  text-align: center;
+}
+
+.jourCommentOrder {
+  display: inline-block;
+  margin: 0 auto;
+  // border: 3px solid pink;
+  width: 85%;
+}
+
+.jourCommentInfo,
+.jourCommentBox {
+  display: block;
+  // border: 3px solid blue;
+  width: 100%;
+}
+
+.jourCommentBox textarea{
+  display: block;
+  margin: 10px auto;
+}
+
+.jourLightboxBtn{
+  display: block;
+  margin: 0 auto;
+}
+
+.jourCommentPersonName {
+  display: inline-block;
+  @include text($keyBlack);
+  text-align: left;
+  // border: 3px solid pink;
+  width: 50%;
+}
+
+.jourCommentTime {
+  display: inline-block;
+  @include text($keyBlack);
+  text-align: right;
+  // border: 3px solid pink;
+  width: 48%;
+}
+
+.jourCommentBox {
+  border-radius: 6px;
+} 
+
+.jourCommentWords {
+  width: 85%;
+  // border: 3px solid pink;
+  display: inline-block;
+  text-align: left;
+  @include text($textBlack);
+}
+
+.jourCommentLike {
+  width: 5%;
+  // border: 3px solid pink;
+  display: inline-block;
+}
+
+.jourCommentReport {
+  width: 5%;
+  // border: 3px solid pink;
+  display: inline-block;
+}
+
+
+
+
+// Adopt lightbox
+.adoptLightBox {
+  // background-color: hsla(0, 0%, 0%, 0.6);
+  // position: relative;
+  // top: 0%;
+
+}
+
+
+
+.adoptSection {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  // border: 3px solid black;
+  height: 100vh;
+}
+
+.adoptInnerSection {
+  width: 90%;
+  margin: 0 auto;
+  border: 3px dotted $keyGreen;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.adoptTitle {
+  @include main_title($keyBlack);
+  margin: 0 auto;
+  text-align: left;
+  width:80%;
+}
+
+.adoptAqua {
+  display: inline-block;
+  width: 35%;
+  // border: 3px solid black;
+  vertical-align: top;
+}
+
+.adoptAqua p {
+  @include sub_title($keyBlack);
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  // border: 3px solid black;
+}
+
+.adoptAqua img {
+  border-radius: 50%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  // border: 3px solid black;
+  padding: 20px;
+}
+
+.adoptProcessContainer {
+  display: inline-block;
+  width: 60%;
+  vertical-align: top;
+  border-radius: 6px;
+  background: rgba(27, 184, 206, .2); 
+}
+
+.adoptProcessContainer h4 {
+  @include sub_title($keyBlack)
+}
+
+// adopt right
+.adoptProcessList {
+  // border: 3px solid blue;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.adoptProcessList h4{
+  @include sub_title($keyBlack);
+  // border: 3px solid blue;
+  padding: 20px 0;
+}
+
+.adoptTabList li {
+  display: inline-block;
+  width: 23%;
+  // border: 3px solid red;
+  vertical-align: top;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.adoptTabList li a.adoptTab {
+  display: block;
+  width: 60px;
+  margin: 0 auto;
+  color: $keyBlack;
+  background-color: $keyWhite;
+  // @include btn40($width, $blockYellow);
+  border-radius: 50%;
+  border: 4px solid $keyGreen;
+  text-align: center;
+  line-height: 56px;
+  font-size: 20px;
+  height: 60px;
+}
+
+.adoptTabList li a.-on {
+  border: none;
+  background-color: $keyGreen;
+  line-height: 56px;
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  border: 4px solid $keyGreen;
+  border-radius: 50%;
+
+}
+
+.adoptTabList li p {
+  display: block;
+  padding: 5px 0;
+}
+
+.adoptProcessContents {
+  // border: 3px solid green;
+  width: 100%;
+  margin: 0 auto;
+  // border: 3px solid blue;
+  text-align: left;
+}
+
+.adoptConfirmAqua {
+  // border: 3px solid orange;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.adoptProcessContents h4 {
+  width: 100%;
+  @include sub_title($keyBlack);
+  padding-top: 10px;
+  // border: 3px solid blue;
+
+}
+
+.aquaNameSection {
+  width: 95%;
+  margin: 0 auto;
+
+}
+
+.adoptProcessContents select {
+  width: 40%;
+  margin: 5px auto;
+  height: 30px;
+}
+
+.adoptAmountSection {
+  width: 95%;
+  // border: 3px solid red;
+  margin: 5px auto;
+}
+
+.adoptConfirmAmount {
+  // border: 3px solid red;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.adoptAmountType {
+  width: 22%;
+  display: inline-block;
+  margin: 0 auto;
+  // border: 3px solid red;
+  // height: 30px;
+}
+
+.adoptConfirmAmount label input {
+  display: inline-block;
+  height: 30px;
+  // box-shadow: $shadow;
+
+}
+
+.adoptSelfAmountType {
+  // width: 40%;
+  display: inline-block;
+  // border: 3px solid red;
+}
+
+.adoptSelfAmountType input {
+  display: inline-block;
+  // border: 3px solid yellow;
+  margin: 0 5px;
+  // box-shadow: $shadow;
+// border-radius: 6px;
+}
+
+.adoptSelfAmountType input:last-child{
+//   box-shadow: $shadow;
+// border-radius: 6px;
+  
+}
+
+.adoptProcessStep {
+  // border: 3px solid red;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.adoptProcessBtn {
+
+  margin: 10px 10px;
+  width: 40%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  color: $keyWhite;
+  background-color: $keyGreen;
+  // border: 3px solid green;
+  border-radius: 20px;
+}
+
+// step 2
+.adoptTab {
+  width: 85%;
+  margin: 0 auto;
+  // border: 2px solid green;
+}
+
+.adoptTab h4 {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.adoptInfo {
+  width: 95%;
+  margin: 5px auto;
+  // border: 2px solid green;
+  @include text($textBlack);
+}
+
+.adoptInfo input{
+  height: 30px;
+  margin-bottom: 5px;
+
+}
+
+.adoptInfo h6 {
+  font-size: 5px;
+  // border: 2px solid red;
+}
+
+.adoptConfirm {
+  width: 95%;
+  margin: 5px auto;
+  // border: 2px solid green;
+  @include text($textBlack);
+}
+
+
+//step3
+.adoptPaymentSection {
+  width: 95%;
+  // border: 3px solid red;
+  margin: 5px auto;
+}
+
+.adoptPayment {
+  margin: 5px auto;
+  width: 100%;
+  // border: 3px solid blue;
+  @include text($textBlack);
+}
+
+.adoptPayment p {
+  margin-top: 5px;
+}
+
+.adoptPayment input{
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+//step 4
+.adoptConfirmSection{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.adoptConfirmCheck{
+  // border: 3px solid blue;
+  width: 100%;
+  vertical-align: top;
+  margin: 0 auto;
+
+}
+
+.adoptConfirm{
+  // border: 2px dotted $keyGreen;
+  margin: 10px 10px;
+  width: 45%;
+  @include sub_title($textBlack);
+  display: inline-block;
+  text-align: left;
+  border-radius: 6px;
+  vertical-align: top;
+
+}
+
+.adoptConfirm h5{
+  // border: 3px solid red;
+  margin: 5px auto;
+  @include text($textBlack);
+  font-weight: 500;
+  background-color: $keyGreen;
+  border-radius: 6px;
+  padding: 5px;
+  height: 30px;
+}
+
+.adoptConfirm input{
+  height: 30px;
+  width: 100%;
+  margin-bottom: 5px;
+
+}
+
+.adoptProcessStepFinal{
+  display: inline-block;
+  width: 100%;
+  // border: 3px solid red;
+}
+
+
+
+
+// turn css
+.jourLightBox {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.jourOpenBookSection {
+  width: 80%;
+  margin: 0 auto;
+  // border: 3px solid white;
+  // background-color: rgba(0,0,0,.8);
+  text-align: center;
+
+}
+
+.jourOpenBookRight {
+  // width: 100%;
+  // border: 3px solid red;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flipbook {
+  width: 80%;
+  background-color: none;
+  width: 800px;
+  height: 600px;
+  // border: 3px solid red;
+  margin: 20px auto !important;
+  text-align: center;
+}
+
+.hard {
+  background-color: #fff;
+  // border: 3px solid white;
+}
+
+.jourPage {
+  background-color: #fff;
+
+}
+
+.jourOpenBook {
+  // border: 3px solid blue;
+}
+
+.jourOpenBookPhoto img {
+  width: 200px;
+}
+
+#flipbook .jourPage {
+  width: 800px;
+  height: 600px;
+  background-color: white;
+  line-height: 1.2;
+  font-size: 20px;
+  text-align: center;
+}
+
+#flipbook .page-wrapper {
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  -o-perspective: 2000px;
+  perspective: 2000px;
+
+}
+
+#flipbook .hard {
+  background: #fff !important;
+  color: #333;
+  -webkit-box-shadow: inset 0 0 5px #666;
+  -moz-box-shadow: inset 0 0 5px #666;
+  -o-box-shadow: inset 0 0 5px #666;
+  -ms-box-shadow: inset 0 0 5px #666;
+  box-shadow: inset 0 0 5px #666;
+  font-weight: bold;
+
+}
+
+#flipbook .odd {
+  background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+  background-image: -webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  -webkit-box-shadow: inset 0 0 5px #666;
+  -moz-box-shadow: inset 0 0 5px #666;
+  -o-box-shadow: inset 0 0 5px #666;
+  -ms-box-shadow: inset 0 0 5px #666;
+  box-shadow: inset 0 0 5px #666;
+
+}
+
+#flipbook .even {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+  background-image: -webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -moz-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -ms-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -o-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: linear-gradient(left, #fff 95%, #dadada 100%);
+  -webkit-box-shadow: inset 0 0 5px #666;
+  -moz-box-shadow: inset 0 0 5px #666;
+  -o-box-shadow: inset 0 0 5px #666;
+  -ms-box-shadow: inset 0 0 5px #666;
+  box-shadow: inset 0 0 5px #666;
+}
+
+// page
+.jourPageContent {
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+  // border: 2px solid red;
+  display: block;
+
+}
+
+.jourPageContent h4 {
+  @include sub_title($keyBlack);
+  padding: 10px 0;
+  display: block;
+}
+
+.jourPagePhotoTop {
+  width: 100%;
+  display: block;
+}
+
+.jourPagePhotoTop img {
+  width: 94%;
+  margin: 5px auto;
+}
+
+.jourPagePhotoDown {
+  display: block;
+  width: 100%;
+  // border: 2px solid blue;
+}
+
+
+.jourPagePhotoDown img {
+  width: 45%;
+  // border: 2px solid green;
+  margin: 5px 5px;
+  text-align: justify;
+}
+
+.jourPageText {
+  // border: 2px solid green;
+  text-align: left;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.jourPageText h4 {
+  @include sub_title($keyBlack);
+}
+
+.jourPageText p {
+  // border: 2px solid green;
+  margin: 0 auto;
+  @include text($textBlack);
+
+}
+
+
+// lastPage
+.jourLastPage h4 {
+  @include sub_title($keyBlack);
+  margin: 200px auto;
+  // border: 2px solid green;
+  width: 80%;
+}
+
+// demobook
+#demobook {
+  width: 80%;
+  background-color: none;
+  width: 600px;
+  height: 450px;
+  // border: 3px solid red;
+  margin: 20px auto !important;
+  text-align: center;
+}
+
+.demobook .jourPageText h4 {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.demobook .jourPageText p {
+  font-size: 8px;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+
+
+
+
+//adopt lightbox
+.jourToAdopt{
+  cursor: pointer;
+  margin: 20px;
+}
+
+.jourToAdopt_close{
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.adoptLightBox{
+  // background-color: hsla(0, 0%, 0%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  // border: 3px solid red;
+
+  
+  /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s;
+}
+
+.adoptLightBox.-on{
+  width: 100%;
+  margin: 0 auto !important;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  background-size: cover;
+  /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+  opacity: 1;
+  z-index: 20;
+  position: absolute;
+  top: 15%;
+  left: 50%
+}
+
+.adoptLightBox.-opacity-zero{
+  /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+  opacity: 0;
+}
+
+/* 元素 article 置中及基本樣式 */
+.adoptLightBox{
+  // background-color: hsla(0, 0%, 0%, 1);
+
+  // background-color: white;
+  width: 80%;
+  border-radius: 10px;
+  // box-shadow: 0 0 10px #ddd;
+  // padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

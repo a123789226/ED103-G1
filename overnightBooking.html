@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <title>Overnight Booking</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="overnightBG">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish3.png" alt="" class="BGFish1">
+    <img src="./image/background/fish1.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="homepage.html" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div id="app">
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">TICKET</h2>
+      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
+    </div> -->
+<!-- 你的code打這下面 -->
+
+    <!-- Sign In -->
+    <div class="memLogin overlay">
+      <form class="LogInForm" id="LogInForm" method="post">
+        <div class="btn_modal_close">
+          <div></div>
+          <div></div>
+        </div>
+        <h3 class="memLogTitle">LOG IN</h3>
+        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+        <div class="memLine">
+          <h5>OR</h5>
+        </div>
+        <p>Don't have an account?</p><br>
+        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+      </form>
+    </div>
+
+    <div class="OvernightContent">
+      <h3 class="bookingTitle">Overnight Booking</h3>
+      <h4 class="bookingSubTitle">
+        Confirm your date and night area, you can go to the next step to make payment
+      </h4>
+        <div class="bookingStepBox">
+          <div class="bookingStep active">
+            <img src="./image/ticket/overnight.svg" alt="">
+          </div>
+          <span></span>
+          <div class="bookingStep">
+            <img src="./image/ticket/ticketMoney.svg" alt="">
+          </div>
+          <span></span>
+          <div class="bookingStep">
+            <img src="./image/ticket/ticketCheck.svg" alt="">
+          </div>
+        </div>
+
+      <div class="bookingTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Overnight Area</th>
+              <th>Date</th>
+              <th>Quantity</th>
+              <th>SubTotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="./image/ticket/bookingDolphin.jpg" alt=""></td>
+              <td>AreaA Dolphinarium</td>
+              <td>10/30</td>
+              <td>{{amountA}}</td>
+              <td>${{priceA*amountA}}</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeA"></td>
+            </tr>
+            <tr>
+              <td><img src="./image/ticket/bookingWhale.jpg" alt=""></td>
+              <td>AreaB Whale House</td>
+              <td>10/30</td>
+              <td>{{amountD}}</td>
+              <td>${{priceB*amountB}}</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeB"></td>
+            </tr>
+            <tr>
+              <td><img src="./image/ticket/bookingSeal.jpg" alt=""></td>
+              <td>AreaC Seal House</td>
+              <td>10/30</td>
+              <td>{{amountD}}</td>
+              <td>${{priceC*amountC}}</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeC"></td>
+            </tr>
+            <tr>
+              <td><img src="./image/ticket/bookingTurtle.jpg" alt=""></td>
+              <td>AreaD Sea Turtle House</td>
+              <td>10/30</td>
+              <td>{{amountD}}</td>
+              <td>${{priceD*amountD}}</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeD"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>{{priceA*amountA+priceB*amountB+priceC*amountC+priceD*amountD}}</span></p>
+      <div class="bookingButtonBox">
+        <a href="ticket.html">
+          <button class="ticketPayCancel">CANCEL</button>
+        </a>
+        <a href="bookingPayment.html">
+          <button class="ticketPayToCheck">NEXT</button>
+        </a>
+      </div>
+    </div>
+
+
+<!-- 你的code打這上面 -->
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        amountA: 3,
+        amountB: 1,
+        amountC: 1,
+        amountD: 1,
+
+        priceA: 80,
+        priceB: 70,
+        priceC: 100,
+        priceD: 90,
+
+      },
+      methods: {
+        removeA(){
+          this.amountA = 0;
+          
+        },
+        removeB(){
+          this.amountB = 0;
+        },
+        removeC(){
+          this.amountC = 0;
+        },
+        removeD(){
+          this.amountD = 0;
+        },
+
+      }
+    });
+
+    //jquery
+    // 漢堡
+    $("div.hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+
+    $("img.trashCan").on("click", function(){
+          $(this).closest("tr").remove();
+    })
+
+    $('.ticketPayCancel').on('click', function(e){
+      e.preventDefault();
+      swal({
+        title: "Want to cancel? Your information will not be saved.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: false
+      }).then((value) => {
+        if(value){
+          window.location = this.closest('a').href
+        }
+      });
+    })
+    
+  // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

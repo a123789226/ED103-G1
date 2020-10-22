@@ -1,0 +1,8 @@
+@mixin pic($width, $shadow:null){
+    width: $width;
+    max-width: 100%;
+    border-radius: 6px;
+    @if $shadow !=null{
+        box-shadow: $shadow;
+    }
+}

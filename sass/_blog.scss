@@ -1,0 +1,568 @@
+// 這是背景
+.blogBackground{
+    @include BGColor(rgb(11, 25, 100),  rgb(26, 64, 95));
+    @include BG01('bg6-1', 80%);
+    @include BG02('bg4-1', 110%);
+    @include BGLeft('bg5-3', 90%, 0%, -10%, -10%);
+    @include BGRight('bg4-2', 90%, 0%, 10%);
+    @include FishMove1(30%, 30%, 10s);
+    @include FishMove2(30%, 60%, 15s);
+  }  
+// 這是大標覆蓋掉顏色
+.blogTitle{
+    color: $keyWhite !important;
+}
+.blogSubTitle{
+    color: $keyWhite !important;
+}
+// 這是標題區
+.blogFirstPort{
+    display: block;
+}
+
+.blogFirstPort{
+    display: flex;
+    flex-direction: row;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    .BlogFirstLeft{
+        h3{
+            @include main_title($keyWhite);
+            font-size: 36px !important;
+            
+        }
+        p{
+                margin: 10px 0 10px 0 ;
+                color: $keyWhite;
+        }
+    }
+    
+        
+    }
+.BlogFirstRight{
+    display: block;
+    width: 80px;
+    // position: relative;
+}
+.blogPostBtn{
+    // position: absolute;
+    width: auto;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 20;
+    // @include btn60(220px,$keyGreen);
+    // color: white;
+    // display: inline-block;
+    // width: 220px;
+    // text-decoration: none;
+    // border: 5px solid #1BB8CE;
+    // border-radius: 30px;
+    // background-color: #1BB8CE;
+    // color: #ffffff;
+    // padding: 0 36px;
+    // font-family: "ROBOTO", serif;
+    // font-size: 24px;
+    >img{
+        transform: translateY(-20px);
+        animation-name: bounce-down;
+        animation-duration: 3s;
+        // animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+@keyframes bounce-down {
+    0%{
+      transform: translateY(-20px);
+    }
+    25% {
+    //  transform: translateY(-30px);
+    }
+    50%{
+     transform: translateY(20px);
+    }
+    75% {
+    //  transform: translateY(30px);
+    }
+    100%{
+      transform: translateY(-20px);
+    }
+}
+// 這是預覽文章(BOOTSTRAP)
+.blogPostSection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    background-color: #fff;
+    border: 2px solid white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.blogMemInfo{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    align-items: baseline;
+}
+.blogPostLeft{
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+}
+
+.blogPostMiddle{
+    display: block;
+    width: 50%;
+    padding: 0 20px;
+}
+.blogMemImg{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 5px;
+
+}
+.blogPostPreview{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 3px solid grey;
+    border-radius: 6px;
+    padding: 5px;
+    overflow: hidden;
+}
+.blogPostPreviewText{
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.blogPostRight{
+    display: block;
+    position: relative;
+}
+.blogIcon{
+    display: flex;
+    width: 70%;
+    margin: 10px 20px;
+    flex-direction: row;
+    text-align: right;
+}
+.blogPoint{
+    text-decoration: none;
+    display: none;
+}
+.blogPostCollected{
+    width: 100%;
+    display: inline-block;
+    vertical-align: center;
+  }
+  .blogPostCollectNum{
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    width: 25px;
+  }
+  .blogPostCollected .blogPostIconAfter{
+    /* font-size: 0px; */
+   display: none;
+   width: 100%;
+   max-width: 25px;
+   cursor: pointer;
+  }
+  .blogPostCollected .blogPostIconBefore{
+    /* font-size: 0px; */
+   display: inline-block;
+   width: 100%;
+   max-width: 25px;
+   cursor: pointer;
+  }
+  .like-active .blogPostIconAfter{
+   /* font-size: 25px; */
+   display: inline-block;
+   cursor: pointer;
+  }
+  .like-active .blogPostIconBefore{
+   /* font-size: 0px; */
+   display: none;
+   cursor: pointer;
+
+  }
+.fa-exclamation-circle{
+    display: block;
+    font-size: 25px;
+    margin-left: 5px;
+    color: $blockYellow;
+    cursor: pointer;
+
+}
+.blogMoreBtnSection{
+    vertical-align: bottom !important;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.blogMoreBtn{
+    @include btn40(120px, yellow);
+}
+
+// 這是light box
+
+.blogPostContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    border: 3px solid black;
+    padding: 5px;
+    width: 90%;
+    max-width: 1300px;
+    height: 95%;
+    max-height: 1300px;
+    z-index: 12;
+}
+.blogPostTitle {
+    @include main_title(black);
+    font-size: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+.blogPostTitleFont {
+    @include sub_title(black);
+    display: inline-block;
+    margin-right: 2%;
+}
+.blogPostCloseButton {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: 1px solid #414040;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+    & > div {
+        position: absolute;
+        border: 1px solid #414040;
+        width: 76%;
+        top: 16px;
+        left: 4px;
+        &:nth-child(1) {
+            transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+            transform: rotate(-45deg);
+        }
+    }
+}
+.blogPostForm {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 80px;
+    height: calc( 100% - 40px);
+}
+.blogPostOwnTitle{
+    margin-bottom: 20px;
+    height: 30px; 
+}
+.blogPostInputTitle{
+    outline: none;
+    border-width: 0 0 1px 0;
+    border-color: #000;
+    margin-right: 0;
+    width: calc(100% - 60px - 20px);
+    font-size: 16px;
+}
+.blogPostTagsSection {
+    display: flex;
+    margin-bottom: 20px;
+    height: 30px;
+}
+.blogPostTagsFont {
+    @include sub_title(black);
+    display: inline-block;
+    margin-right: 2%;
+}
+.blogPostTagsOptions {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    > .blogPostTags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: auto;
+        text-align: center;
+        margin-right: 5%;
+        border: 1px solid Black;
+        border-radius: 5px;
+        outline: none;
+        position: relative;
+        text-decoration: none;
+        background-color: $keyWhite;
+        padding: 5px;
+        transition: all 0.2s ease-in;
+    cursor: pointer;
+        &:hover{
+            cursor: pointer;
+            background-color: $keyGreen;
+            border: 1px solid $keyGreen;
+            color: $keyWhite;
+        }
+    }
+}
+.blogPostTagsOn{
+    background-color: $keyGreen !important;
+    border: 1px solid $keyGreen !important;
+    border-radius: 5px;
+    color: $keyWhite !important;
+}
+.blogPostContentSection {
+    border: solid 2px #000;
+    width: 100%;
+    height: calc( 100% - 50px - 50px - 40px - 15px );
+    padding: 20px;
+    margin-bottom: 15px;
+    overflow-x: hidden;
+}
+.blogPostContentPart1,
+.blogPostContentPart2, 
+.blogPostContentPart3 {
+    position: relative;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+    overflow: hidden;
+    & > div {
+        user-select: text;
+        -webkit-user-select: text;
+        outline-color: #97be70;
+        width: 100%;
+        min-height: 200px;
+        height: 100%;
+    }
+}
+.blogPostWrap {
+    // border: 1px solid red;
+    text-align: center;
+    // display: none;
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    // background-image: url(../image/blog/photos/photo.png);
+    // background-size: 100% cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    cursor: pointer;
+    
+}
+.blogPostBox{
+    display: block;
+    width: 100%;
+    height: 350px;
+}
+.blogPostWrapImg{
+    // background-image: url(../image/blog/photos/photo.png);
+    // opacity: 1;
+    // display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+}
+// .blogUploadImgText {
+//         color: gray;
+//         padding-top: 6%;
+//     }
+
+.blogUploadImg {
+    display: none;
+}
+.blogPostContentText2,
+.blogPostContentText3{
+    width: 100%;
+    height: 350px;
+    background: #cccccc;
+    resize: none;
+    width: 90%;
+    outline: 0;
+    line-height: 30px;
+    font-size: 18px;
+    background: linear-gradient(transparent 90%,#ccc 10%);
+    background-size: 100% 30px;
+    overflow: hidden;
+    border: none;
+}
+
+.blogPostSubmitSection{
+    display: inline-block;
+    margin: 0 auto;
+    
+.blogPostSubmitBtn{
+    @include btn60(200px, $keyGreen);
+    color: $keyWhite;
+    outline: none;
+}
+}
+
+.blogArticleTitle{
+@include main_title($keyWhite);
+position: relative;
+display: flex;
+justify-content: center;
+margin: 150px auto 20px auto;
+}
+.blogArticleContainer{
+display: blcok;
+width: 80%;
+max-width: 1200px;
+margin: 0 auto;
+clear: both;
+}
+.blogArticleContent {
+display: flex; 
+display: flow-root;
+clear: right;
+
+}
+
+.blogArticleImg1{
+display: inline-block;
+flex-wrap: wrap;
+height: auto;
+width: 100%;
+}
+.blogArticleImgRight{
+float: right;
+width: 40%;
+margin-left: 15px;
+
+}
+.blogArticleImgLeft{
+float: left;
+width: 35%;
+height: auto;
+max-width: auto;
+max-height: auto;
+margin-right: 15px;
+
+}
+
+.blogArticleText{
+    display: inline;
+    // width: 100%;
+    height: auto;
+    outline: 0;
+    line-height: 30px;
+    font-size: 18px;
+    color: $keyWhite
+}
+
+
+// LightBox的RWD
+@media screen and (max-width: 767px){
+    .blogPostContainer{
+        width: 100%;
+        height: 100%;
+       
+    } 
+    .blogPostForm {
+        padding: 0px 20px 20px;
+    }
+    .blogPostForm>*:nth-child(-n+2) {
+        margin-bottom: 22px;
+        height: 30px;
+    }
+    .blogPostForm>*:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+       
+    }
+    .blogPostTagsOptions {
+        // border: 1px solid #000;
+        display: flex;
+        width: 90%;
+    }
+    .blogPostTagsOptions > div {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+    }
+    .blogPostTagsOptions > div:nth-child(-n+3) {
+        margin-right: 15px;
+    }
+    
+    .blogPostTags {
+        padding: 5px;
+    }
+    .blogPostContentPart2{
+        display: flex;
+        flex-direction: column-reverse;
+        .blogPostContentText2{
+            display: block;
+            width: 100%;
+            height: 350px;
+        }
+        
+    }
+    .blogPostContentPart3{
+        display: flex;
+        .blogPostContentText3{
+            display: block;
+            width: 100%;
+            height: 350px;
+        }
+        
+    }
+   
+}
+// RWD for fake Post
+@media screen and (max-width: 767px) {
+    .blogArticleContainer{
+        width: 100%;
+    }
+    .blogArticleContent {
+        float: none;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    .blogArticleImgRight,
+    .blogArticleImgLeft{
+        display: flex;
+        width: 80%;
+        margin: 10px auto;
+    }
+    .blogArticleText1 {
+        clear: none;
+        margin-bottom: 15px;
+    }
+    .blogArticleText{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 10px auto;
+    }
+}

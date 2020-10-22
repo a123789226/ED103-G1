@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <title>Ticket</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="ticketBG">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish1.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="homepage.html" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div id="ticketApp">
+    <div class="commonTitleBox ticketTitleBox">
+      <h2 class="commonTitle">TICKET</h2>
+      <h4 class="commonSubTitle">Go buy tickets and go booking for staying overnight in Aqua Wonderland.</h4>
+    </div>
+<!-- 你的code打這下面 -->
+
+    <!-- Sign In -->
+    <div class="memLogin overlay">
+      <form class="LogInForm" id="LogInForm" method="post">
+        <div class="btn_modal_close">
+          <div></div>
+          <div></div>
+        </div>
+        <h3 class="memLogTitle">LOG IN</h3>
+        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+        <div class="memLine">
+          <h5>OR</h5>
+        </div>
+        <p>Don't have an account?</p><br>
+        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+      </form>
+    </div>
+
+    <section class="ticketTicketBox">
+      <h3 class="ticketMainTitle">Buy Ticket</h3>
+      <div class="ticketTicketImgBlock">
+        <img src="./image/ticket/ticketJPG3.jpg" alt="" class="ticketTicketImg1 ticketTicketImg">
+        <img src="./image/ticket/ticketJPG1.jpg" alt="" class="ticketTicketImg3 ticketTicketImg">
+      </div>
+      <div class="ticketTicketContent">
+        <p class="ticketTicketText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!</p>
+        <div class="ticketButtonBlock">
+          <div class="ticketButtonBox">
+            <p class="ticketTicketName">Adult(18-64)</p>
+            <p class="ticketTicketPrice">${{price}}</p>
+            <div class="ticketButtons">
+              <button class="ticketButton" @click="minusAmount">－</button>
+              <p class="ticketTicketAmount" >{{amount}}</p>
+              <button class="ticketButton" @click="addAmount">＋</button>
+            </div>
+          </div>
+          <div class="ticketButtonBox">
+            <p class="ticketTicketName">Kid(4-11)</p>
+            <p class="ticketTicketPrice">${{price2}}</p>
+            <div class="ticketButtons">
+              <button class="ticketButton" @click="minusAmount2">－</button>
+              <p class="ticketTicketAmount" >{{amount2}}</p>
+              <button class="ticketButton" @click="addAmount2">＋</button>
+            </div>
+          </div>
+          <div class="ticketButtonBox">
+            <p class="ticketTicketName">Elder(65-)</p>
+            <p class="ticketTicketPrice">${{price3}}</p>
+            <div class="ticketButtons">
+              <button class="ticketButton" @click="minusAmount3">－</button>
+              <p class="ticketTicketAmount" >{{amount3}}</p>
+              <button class="ticketButton" @click="addAmount3">＋</button>
+            </div>
+          </div>
+        </div>
+        <p class="ticketTicketTotal">Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;{{price * amount + price2 * amount2 + price3 * amount3}}</p>
+        <div class="ticketTicketButtonBlock">
+          <button id="ticketAddToCart" @click="ticketNotice">ADD TO CART</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticketOverNightBox">
+      <h3 class="ticketMainTitle">Overnight Ticket</h3>
+      <div class="ticketONIntroBlock">
+        <div class="ticketAreaSelect">
+          <a href="#" class="ticketToTour">
+            <span>Area A</span>
+            <span>Dolphinarium</span>
+          </a>
+          <div class="ticketONIntroBox">
+            <img src="./image/ticket/ticketA1.jpg"/>
+            <img src="./image/ticket/ticketA2.jpg"/>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe ratione incidunt necessitatibus, quaerat consectetur molestiae quae cum assumenda!</p>
+          </div>
+        </div>
+        <div class="ticketAreaSelect">
+          <a href="#" class="ticketToTour">
+            <span>Area B</span>
+            <span>Whale House</span>
+          </a>
+          <div class="ticketONIntroBox">
+            <img src="./image/ticket/ticketB1.jpg"/>
+            <img src="./image/ticket/ticketB2.jpg"/>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe ratione incidunt necessitatibus, quaerat consectetur molestiae quae cum assumenda!</p>
+          </div>
+        </div>
+        <div class="ticketAreaSelect">
+          <a href="#" class="ticketToTour">
+            <span>Area C</span>
+            <span>Seal House</span>
+          </a>
+          <div class="ticketONIntroBox">
+            <img src="./image/ticket/ticketC1.jpg"/>
+            <img src="./image/ticket/ticketC2.jpg"/>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe ratione incidunt necessitatibus, quaerat consectetur molestiae quae cum assumenda!</p>
+          </div>
+        </div>
+        <div class="ticketAreaSelect">
+          <a href="#" class="ticketToTour">
+            <span>Area D</span>
+            <span>Sea Turtle House</span>
+          </a>
+          <div class="ticketONIntroBox">
+            <img src="./image/ticket/ticketD1.jpg"/>
+            <img src="./image/ticket/ticketD2.jpg"/>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, saepe ratione incidunt necessitatibus, quaerat consectetur molestiae quae cum assumenda!</p>
+          </div>
+        </div>
+        <div class="ticketONBigImg">
+          <img src="./image/ticket/ticketJPG2.jpg"/>
+        </div>
+      </div>
+      <div class="ticketBookingBlock">
+        <h4>Select Date</h4>
+        <div class="ticketCalendarBlock">       
+        </div>
+        <div class="ticketBooking">
+          <div class="ticketAreaRemainBox">
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">{{ARemain}}</span></p>
+            <div class="ticketButtonBox">
+              <p class="ticketTicketName">Area A</p>
+              <p class="ticketTicketPrice">${{APrice}}</p>
+              <div class="ticketButtons">
+                <button class="ticketButton" @click="minusONAmountA">－</button>
+                <p class="ticketTicketAmount" >{{AAmount}}</p>
+                <button class="ticketButton" @click="addONAmountA">＋</button>
+              </div>
+            </div>
+          </div>
+          <div class="ticketAreaRemainBox">
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{BRemain}}</span></p>
+            <div class="ticketButtonBox">
+              <p class="ticketTicketName">Area B</p>
+              <p class="ticketTicketPrice">${{BPrice}}</p>
+              <div class="ticketButtons">
+                <button class="ticketButton" @click="minusONAmountB">－</button>
+                <p class="ticketTicketAmount" >{{BAmount}}</p>
+                <button class="ticketButton" @click="addONAmountB">＋</button>
+              </div>
+            </div>
+          </div>
+          <div class="ticketAreaRemainBox">
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{CRemain}}</span></p>
+            <div class="ticketButtonBox">
+              <p class="ticketTicketName">Area C</p>
+              <p class="ticketTicketPrice">${{CPrice}}</p>
+              <div class="ticketButtons">
+                <button class="ticketButton" @click="minusONAmountC">－</button>
+                <p class="ticketTicketAmount" >{{CAmount}}</p>
+                <button class="ticketButton" @click="addONAmountC">＋</button>
+              </div>
+            </div>
+          </div>
+          <div class="ticketAreaRemainBox">
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{DRemain}}</span></p>
+            <div class="ticketButtonBox">
+              <p class="ticketTicketName">Area D</p>
+              <p class="ticketTicketPrice">${{DPrice}}</p>
+              <div class="ticketButtons">
+                <button class="ticketButton" @click="minusONAmountD">－</button>
+                <p class="ticketTicketAmount" >{{DAmount}}</p>
+                <button class="ticketButton" @click="addONAmountD">＋</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="ticketONTotal">Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;{{APrice * AAmount + BPrice * BAmount + CPrice * CAmount + DPrice * DAmount}}</p>
+          <div class="ticketONButtonBlock">
+            <a href="overnightBooking.html">
+              <button id="ticketBookingButton">Go Booking</button>
+            </a>            
+          </div>
+
+        </div>
+      </div>
+    </section>
+<!-- 你的code打這上面 -->
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    new Vue({
+      el: '#ticketApp',
+      data: {
+        price: 30,
+        price2: 15,
+        price3: 20,
+
+        amount: 0,
+        amount2: 0,
+        amount3: 0,
+
+        APrice: 80,
+        BPrice: 70,
+        CPrice: 100,
+        DPrice: 90,
+
+        AAmount: 0,
+        BAmount: 0,
+        CAmount: 0,
+        DAmount: 0,
+
+        ARemain: 2,
+        BRemain: 0,
+        CRemain: 20,
+        DRemain: 3,
+      },
+      methods: {
+        addAmount(){
+          this.amount++;
+        },
+        minusAmount(){
+          if(this.amount>0){
+            this.amount--;
+          }else{
+            this.amount = 0;
+          };
+        },
+        addAmount2(){
+          this.amount2++;
+        },
+        minusAmount2(){
+          if(this.amount2>0){
+            this.amount2--;
+          }else{
+            this.amount2 = 0;
+          };
+        },
+        addAmount3(){
+          this.amount3++;
+        },
+        minusAmount3(){
+          if(this.amount3>0){
+            this.amount3--;
+          }else{
+            this.amount3 = 0;
+          };
+        },
+        ticketNotice(){
+          if(this.price * this.amount + this.price2 * this.amount2 + this.price3 * this.amount3 == 0){
+            swal("Oops!", "Please select amount of tickets", "warning");
+
+          }else{
+            swal("Great!", "The tickets has successfully added to shopping cart!", "success");
+            this.amount = 0;
+            this.amount2 = 0;
+            this.amount3 = 0;
+          }
+        },
+        minusONAmountA(){
+          if(this.AAmount>0){
+            this.AAmount--;
+          }else{
+            this.AAmount = 0;
+          };
+        },
+        addONAmountA(){
+          if(this.AAmount<this.ARemain){
+            this.AAmount++;
+          }else{
+            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
+          }
+        },
+        minusONAmountB(){
+          if(this.BAmount>0){
+            this.BAmount--;
+          }else{
+            this.BAmount = 0;
+          };
+        },
+        addONAmountB(){
+          if(this.BAmount<this.BRemain){
+            this.BAmount++;
+          }else{
+            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
+          }
+        },
+        minusONAmountC(){
+          if(this.CAmount>0){
+            this.CAmount--;
+          }else{
+            this.CAmount = 0;
+          };
+        },
+        addONAmountC(){
+          if(this.CAmount<this.CRemain){
+            this.CAmount++;
+          }else{
+            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
+          }
+        },
+        minusONAmountD(){
+          if(this.DAmount>0){
+            this.DAmount--;
+          }else{
+            this.DAmount = 0;
+          };
+        },
+        addONAmountD(){
+          if(this.DAmount<this.DRemain){
+            this.DAmount++;
+          }else{
+            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
+          }
+        },
+      }
+    });
+
+
+    // jQuery
+    //漢堡
+    $("div.hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+    // 選擇區域區底圖消失出現
+    $('.ticketAreaSelect').hover(function(){
+      $('.ticketONBigImg').css("opacity","0");
+    },function(){
+      $('.ticketONBigImg').css("opacity","1");
+    });
+
+    //手機板避免連結沒hover效果禁止跳轉功能
+    $('.ticketToTour').on('click', function(e){
+      e.preventDefault();
+    })
+
+    //月曆
+    $('.ticketCalendarBlock').datepicker({
+      startDate: " new date()",
+      todayHighlight: true,
+    });
+
+
+  // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

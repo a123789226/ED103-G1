@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    <title>Aqua Sign Up</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="background" style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div> 
+  <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="memBackground">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header> 
+  <div>
+    <!-- Title -->
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">Big Title</h2>
+      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
+    </div> -->
+  <!-- 你的code打這下面 -->
+
+
+  <main>
+    <!-- Log In -->
+    <div class="memLogin overlay">
+      <form class="LogInForm" id="LogInForm" method="post">
+        <div class="btn_modal_close">
+          <div></div>
+          <div></div>
+        </div>
+        <h3 class="memLogTitle">LOG IN</h3>
+        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+        <div class="memLine">
+          <h5>OR</h5>
+        </div>
+        <p>Don't have an account?</p><br>
+        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+      </form>
+    </div>
+
+    <!-- Sign Up -->
+    <div class="memSignup">
+      <form class="signUpForm" id="signUpForm" method="post">
+        <div class="memSignRight col-md-5">
+          <h3>Register Account</h3>
+          <div class="memSignDetail">
+            <input type="text" name="memName" id="memName" placeholder="Full Name" size="30" required /><br>
+            <input type="text" name="memId" id="memId" placeholder="Username" maxlength="12" size="30" required /><br>
+            <input type="password" maxlength="12" minlength="8" name="memPsw" id="memPsw" onblur="checkpas1();" placeholder="Password" size="30" required /><br>
+            <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" size="30" required><br>
+            <input type="text" name="memPhone" id="memPhone" placeholder="Phone" maxlength="10" size="30" required /><br>
+            <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" size="30" required /><br>
+            <div class="Sex">
+              <input type="radio" name="memSex" id="memSex" value="Male" checked />
+              <label class="memGender">Male</label>
+              <input type="radio" name="memSex" id="memSex" value="Female" />
+              <label class="memGender">Female</label>
+            </div>
+            <input type="date" name="memBirth" id="memBirth" size="30" required><br>
+          </div>
+          <button type="button" class="submitBtnSign" id="submitBtnSign">
+            <p>SIGN UP</p>
+            <a href="#"></a>
+          </button>
+          <h5>Have an account?
+            <a href="#" class="submitBtnLog btn_modal">Log In</a>
+          </h5>
+        </div>
+        <div class="col-md-1"></div>
+        
+        <div class="memSignLeft col-md-6">
+          <div class="memSignImg">
+            <img src="./image/member/Shinnosuke2.jpg" alt="">
+          </div>
+          <label for="memPhoto">
+            <input type="file" name="memImg" id="memPhoto" style="display: none;">
+            Upload Photo
+          </label>
+          <div class="memInter">
+            <h4>Auqa Wonderland Privacy Policy</h4>
+            <p>WE COLLECT INFORMATION FROM AND ABOUT YOU.</p>
+            <p>Contact information. For example, we might collect your name and street address. We might also collect your phone number or email.</p>
+            <p>Payment and billing information. For example, we collect your credit card number and zip code when you buy a ticket.</p>
+            <p>Other information. If you access our services on a web browser, we may collect information about the browser you're using. </p>
+            <p>We might look at what site you came from, or what site you visit when you leave us.</p>
+            <p>If you access our services on your mobile device, we may collect your GPS location or your device's unique identifier.</p> 
+          </div>
+        </div>
+      </form>     
+    </div>
+  </main>
+<!-- 你的code打這上面 -->
+
+  </div>
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script>
+   
+  // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+  </script>
+</body>
+</html>
