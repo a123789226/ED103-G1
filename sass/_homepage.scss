@@ -9,121 +9,108 @@
 .home_page{
   background: $index_bgColor;
   overflow-x: hidden;
-  .container{
-    padding-top: 50px;
-  }
 }
+
 .home_tour{
   padding-top: 50px;
   padding-bottom: 100px;
   // border: 2px solid red;
   overflow: hidden;
-    .home_tour_pic{
-      position: relative;
-      padding-top: 100px;
+  .home_tour_pic{
+    position: relative;
+    padding-top: 100px;
+    .home_role{
+    width: 8%;
+    position: relative;
+    // top: 25%;
+    left: 13%;
+    transform: translateY(-30px);
+    animation-name: home_bounce_down;
+    animation-duration: 3s;
+    // animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     }
+    .home_map{
+      position: relative; 
+      width: 65%;
+      top: 15%;
+      left: 25%;
+    }
+    .home_boat{
+      width: 8%;
+      position: absolute;
+      top: -60%;
+      left: 50%;
+    }
+  }
+
     .home_tour_fish{
       > img{
         position: absolute;
         z-index: -1;
         opacity: .15;
       }
+      .home_fish_left{
+        width: 20%;
+        top: 10%;
+        left: -50%;
+        animation-name: fish_move_left;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .home_fish_right{
+        width: 20%;
+        bottom: 10%;
+        right: -5%;
+        animation-name: fish_move_right;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+       }
+      .fish_middle{
+        left: 13%;
+        bottom: 20%;
+      }
+      .shark_top{
+        top: 10%;
+        right: 10%;
+      }
+      .shark_bottom{
+        bottom: 13%;
+        left: 40%;
+      }
+      .crab{
+        bottom: 20%;
+        left: 5%;
+      }
+      .stingray_middle{
+        top: 10%;
+        left: 42%;
+      }
+      .stingray_left{
+        top: 45%;
+        left: 3%;
+      }
+      .turtle{
+        bottom: 0;
+        left: 23%;
+      }
     }
-  
-  .fish_left{
-    width: 20%;
-    top: 10%;
-    left: -50%;
-    animation-name: fish_move_left;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  .fish_right{
-    width: 20%;
-    bottom: 10%;
-    right: -5%;
-    animation-name: fish_move_right;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  .fish_middle{
-    left: 13%;
-    bottom: 20%;
-  }
-  .shark_top{
-    top: 10%;
-    right: 10%;
-  }
-  .shark_bottom{
-    bottom: 13%;
-    left: 40%;
-  }
-  .crab{
-    bottom: 20%;
-    left: 5%;
-  }
-  .stingray_middle{
-    top: 10%;
-    left: 42%;
-  }
-  .stingray_left{
-    top: 45%;
-    left: 3%;
-  }
-  .turtle{
-    bottom: 0;
-    left: 23%;
-  }
-  .main_content{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-  }
-  .role{
-    width: 8%;
-    position: relative;
-    // top: 25%;
-    left: 13%;
-    transform: translateY(-30px);
-    animation-name: bounce-down;
-    animation-duration: 3s;
-    // animation-delay: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-  .map{
-    position: relative; 
-    width: 65%;
-    top: 15%;
-    left: 25%;
-  }
-  .boat{
-    width: 8%;
-    position: absolute;
-    top: -60%;
-    left: 50%;
-  }
 }
 
-@keyframes bounce-down {
-        0%{
-          transform: translateY(-30px);
-        }
-        25% {
-        //  transform: translateY(-30px);
-        }
-        50%{
-         transform: translateY(30px);
-        }
-        75% {
-        //  transform: translateY(30px);
-        }
-        100%{
-          transform: translateY(-30px);
-        }
+// Keyframes BOUNCE LEFT RIGHT
+@keyframes home_bounce_down {
+  0%{
+    transform: translateY(-30px);
+  }
+  50%{
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(-30px);
+  }
 }
 
 @keyframes fish_move_left{
@@ -148,10 +135,7 @@
 }
 
 
-
-
-
-
+//Ticket page
 
 .home_ticket{
   // padding-top: 100px;
@@ -161,25 +145,17 @@
   background-size: cover;
   overflow: hidden;
   position: relative;
+
+  //home_ticket_title
   > h3{
+    // padding-bottom: 10%;
     @include main_title($keyWhite);
     font-size: 48px;
     position: relative;
     left: 7%;
-    // padding-bottom: 10%;
     z-index: 4;
   }
-  .home_ticket_pic{
-    position: relative;
-    padding-top: 100px;
-  }
-  .home_ticket_fish{
-    > img{
-      position: absolute;
-      z-index: -1;
-      opacity: .15;
-    }
-  }
+  //home_ticket_background
   .page2_2{
     width: 20%;
     position: absolute;
@@ -193,23 +169,32 @@
     right: -1%;
     z-index: -1;
   }
-  .page2_castle{
-    position: absolute;
-    width: 50%;
-    top: 0;
-    left: -15%;
+  //home_ticket_pic
+
+  .home_ticket_pic{
+    position: relative;
+    padding-top: 100px;
+    .page2_castle{
+      position: absolute;
+      width: 50%;
+      top: 0;
+      left: -15%;
+    }
+    .page2_calender{
+      position: absolute;
+      width: 90%;
+      margin-left: 31%;
+      z-index: 1;
+    }
   }
-  .page2_calender{
-    position: absolute;
-    width: 90%;
-    margin-left: 31%;
 
-    z-index: 1;
-  }
-
-
-
-  .page2_fish{
+  .home_ticket_fish{
+    > img{
+      position: absolute;
+      z-index: -1;
+      opacity: .15;
+    }
+    .page2_fish{
     width: 35%;
     left: 10%;
     bottom: 20%;
@@ -218,21 +203,22 @@
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-  }
-  .page2_fish_middle{
-    width: 35%;
-    left: 30%;
-    top: 40%;
-    // z-index: -1;
-    animation-name: fish_move_right;
-    animation-duration: 10s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  .page2_jellyfish{
-    top: 20%;
-    left: 2%;
+    }
+    .page2_fish_middle{
+      width: 35%;
+      left: 30%;
+      top: 40%;
+      // z-index: -1;
+      animation-name: fish_move_right;
+      animation-duration: 10s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .page2_jellyfish{
+      top: 20%;
+      left: 2%;
+    }
   }
 }
 
@@ -244,107 +230,109 @@
   padding-top: 7%;
   padding-bottom: 30%;
   position: relative;
-}
-.home_calendar_booking{
-  color: $blockYellow;
-  font-family: $en;
-  font-size: 36px;
-  position: absolute;
-  left:0;
-  top: 6%;
-  z-index: 3;
-}
-.home_ticket_remaining{
-  width: 30%;
-  padding: 2%;
-  margin-left: 4%;
-  z-index: 3;
-  margin-top: 12%;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, .5);
-  > h3{
-    margin-bottom: 10px;
-  }
-  .home_text_row{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px;
-    > p{
-      width: 68px;
-      // text-align: center;
-    }
-  }
 
-  > a{
-    padding-top: 10%;
-    @include a_button(100%);
-  }
-  .home_booking_btn{
-    @include btn60(87%, $keyWhite);
-    height: 50px;
-    line-height: 40px;
+  .BoXiang_calendar {
+    padding-top: 5%;
+    z-index: 5;
+    //調整月曆寬度
+    width: 50%;
 
-    padding: 0 5%;
-    outline: none;
-    &:hover{
-      background-color: $keyGreen;
-      color: $keyWhite;
-      transition: .2s;
-    }
-
-
-  }
-
-}
-
-
-.BoXiang_calendar {
-  padding-top: 5%;
-  z-index: 5;
-  //調整月曆寬度
-  width: 50%;
-
-  .datepicker-inline {
-    background-color: white;
-    width: 100%;
-    //改用padding-top稱高才容易實現縮放，調成100%就是正方形
-    padding-top: 95%;
-    position: relative;
-    .table-condensed {
+    .datepicker-inline {
+      background-color: white;
       width: 100%;
-      height: 100%;
+      //改用padding-top稱高才容易實現縮放，調成100%就是正方形
+      padding-top: 95%;
+      position: relative;
+      .table-condensed {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        th {
+          //調整年跟月的字大小
+          font-size: 20px;
+          color: $keyBlack;
+        }
+        td.today {
+          background-color: #ccc;
+        }
+        td.active {
+          background-color: $keyGreen;
+        }
+        td {
+          //調整日期的字大小
+          font-size: 18px;
+        }
+      }
+    }
+
+    .home_calendar_booking{
+      color: $blockYellow;
+      font-family: $en;
+      font-size: 36px;
       position: absolute;
-      top: 0;
-      left: 0;
-      th {
-        //調整年跟月的字大小
-        font-size: 20px;
-        color: $keyBlack;
+      left:0;
+      top: 6%;
+      z-index: 3;
+    }
+  }
+  //Remaining
+  .home_ticket_remaining{
+    width: 30%;
+    padding: 2%;
+    margin-left: 4%;
+    z-index: 3;
+    margin-top: 12%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    > h3{
+      margin-bottom: 10px;
+    }
+    .home_text_row{
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+      > p{
+        width: 68px;
+        // text-align: center;
       }
-      td.today {
-        background-color: #ccc;
-      }
-      td.active {
+    }
+
+    > a{
+      padding-top: 10%;
+      @include a_button(100%);
+    }
+    .home_booking_btn{
+      @include btn60(87%, $keyWhite);
+      height: 50px;
+      line-height: 40px;
+
+      padding: 0 5%;
+      outline: none;
+      &:hover{
         background-color: $keyGreen;
-      }
-      td {
-        //調整日期的字大小
-        font-size: 18px;
+        color: $keyWhite;
+        transition: .2s;
       }
     }
   }
 }
 
+//page2 RWD
 @media screen and (max-width: 1200px){
   .home_ticket{
-    .page2_castle{
-      display: none;
-    }
-    .page2_calender{
-        width: 100%;
-        margin-left: 10%;
+    .home_ticket_pic{
+      .page2_castle{
+        display: none;
+      }
+      .page2_calender{
+          width: 100%;
+          margin-left: 10%;
+      }
     }
   }
+
   .calendar_container{
     margin-left: 28%;
     .BoXiang_calendar{
@@ -355,58 +343,57 @@
         margin-right: 0;
       }
     }
-}
     .home_ticket_remaining{
       margin-left: 0;
       margin-top: 6%;
       position: relative;
       left: -3%;
     }
+  }
 }
+
 @media screen and (max-width: 991px){
   .home_ticket{
-    padding-top: 0;
-    .page2_castle{
-      display: block;
-      top: 45%;
-      left: 0;
+    .home_ticket_pic{
+      padding-top: 0;
+      .page2_castle{
+        display: block;
+        top: 45%;
+        left: 0;
+      }
+      .page2_calender{
+        display: none;
+      }  
     }
-    .page2_calender{
-      display: none;
-    }  
   }
   .calendar_container{
     flex-direction: column;
     .BoXiang_calendar{
       width: 80%;
+      .home_calendar_booking{
+        display: none;
+      }
       .datepicker-inline{
         background-color: rgba(255,255,255,.5);
       }
     }
-  }
-  .home_calendar_booking{
-    display: none;
-  }
-  .home_ticket_remaining{
-    padding: 20px;
-    width: 60%;
-    left: 5%;
-    .home_text_row{
-      justify-content: space-around;
-    >p{
+    .home_ticket_remaining{
+      padding: 20px;
+      width: 60%;
+      left: 5%;
+      .home_text_row{
+        justify-content: space-around;
+      }
+      > h3{
+        text-align: center;
+      }
     }
-    }
-    > h3{
-      text-align: center;
-    }
-
   }
-
 }
 
 @media screen and (max-width: 768px){
   .home_ticket{
-    > h3{
+    > .home_ticket_title{
       font-size: 36px;
     }
   }
@@ -416,7 +403,7 @@
       width: 100%;
       font-size: 12px;
       .datepicker-inline{
-        padding-top: 70%;
+        padding-top: 85%;
         .table-condensed
           td{
             font-size: 20px;
@@ -426,36 +413,15 @@
           }
       } 
     }
-  }
-  .home_ticket_remaining{
-    width: 85%;
-    left: 0;
-    margin-left: 0%;
-  }
-
-}
-
-@media screen and (max-width: 768px){
-  .calendar_container {
-    .BoXiang_calendar{
-      .datepicker-inline{
-        padding-top: 85%;
-      } 
+    .home_ticket_remaining{
+      width: 85%;
+      left: 0;
+      margin-left: 0%;
     }
   }
-
 }
 
-
-
-
-
-
-
-
-
-
-
+//Journal Page
 
 .home_journal{
   padding-top: 100px;
@@ -1140,9 +1106,6 @@
         width: 100%;
         padding-top: 2%;
         padding-bottom: 5%;
-        > img{
-          // width: 55% !important;
-        }
       }
     }
   }
@@ -1344,11 +1307,11 @@
 
 }
 
-.jourOpenBook{
+// .jourOpenBook{
   
-  // border: 3px solid blue;
+//   border: 3px solid blue;
 
-}
+// }
 
 .jourOpenBookPhoto img{
   width: 200px;
