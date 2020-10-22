@@ -68,9 +68,15 @@
     }
   }
   // 右邊內容
+<<<<<<< HEAD
   tr{
     font-size: 16px;
   }
+=======
+    tr, td, select{
+      font-size: 16px;
+    }
+>>>>>>> sq
   .mgrContent{
     h3{
       width: 100%;
@@ -186,9 +192,12 @@
             text-align: center;
             line-height: 40px;
           }
+<<<<<<< HEAD
           i{
             font-size: 20px;
           }
+=======
+>>>>>>> sq
           .fa-check-circle:hover, .fa-check-circle:active{
             color: green;
           }
@@ -337,6 +346,12 @@
             .fa-times-circle:hover, .fa-times-circle:active{
               color: red;
             }
+<<<<<<< HEAD
+=======
+            img{
+              width: 100px;
+            }
+>>>>>>> sq
           }
         }
       }
