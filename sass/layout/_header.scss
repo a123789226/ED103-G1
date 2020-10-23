@@ -170,13 +170,13 @@ ul{
         display: none;
         margin-left: 40px;
         // border: 1px solid red;
+        cursor: pointer;
         .hamburger{
           // border: 1px solid blue;
           width: 40px;
           position: relative;
           top: 50%;
           transform: translateY(-50%);
-          cursor: pointer;
           &:hover{
             .hamburger_line{
               background-color: #555;
