@@ -1,6 +1,10 @@
 //title公版
+// h2的設定在_commonTitle.scss一頁至多一個h2，不要去動設定，打好html跟class標籤就會幫你生正確樣式
+
+
+// 這是旁邊有黃色色塊的h3
 @mixin main_title($color){
-    font-size: $titleFz;
+    font-size: 36px;
     font-family: $en;
     font-weight: 700;
     color: $color;
@@ -15,19 +19,51 @@
         left: -20px;
         transform: translateY(-50%);
     }
+    @media screen and (max-width: 479px){
+        font-size: 28px;
+        &::before{
+            width: 10px;
+            height: 30px;
+        }
+      }
 }
 
+//這是h4
 @mixin sub_title($color){
-    font-size: $subtitleFz;
+    font-size: 20px;
     font-family: $en;
     font-weight: 400;
     color: $color;
+    line-height: 1.2 * 20px;
+    @media screen and (max-width: 479px){
+        font-size: 20px;
+      }
 }
 
+
+//這是20px的內文
+@mixin text20($color){
+    font-size: 20px;
+    font-family: $en;
+    font-weight: 400;
+    color: $color;
+    line-height: 1.2 * 20px;
+}
+
+//這是16px的內文
 @mixin text($color){
-    font-size: $fontbase;
+    font-size: 16px;
     font-family: $en;
     font-weight: 300;
     color: $color;
-    line-height: 1.5 * $fontbase;
+    line-height: 1.5 * 16px;
+}
+
+//這是12px的內文
+@mixin text12($color){
+    font-size: 12px;
+    font-family: $en;
+    font-weight: 300;
+    color: $color;
+    line-height: 1.5 * 12px;
 }

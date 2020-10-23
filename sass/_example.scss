@@ -1,0 +1,391 @@
+//開頭"沒有大標"的內容區共同設定
+.ContentWithoutTitle{
+  width: 80%;
+  max-width: 1200px;
+  margin: 150px auto 50px;
+  @media screen and (max-width: 991px){
+    margin: 105px auto 50px;
+  }
+  @media screen and (max-width: 676px){
+    width: 90%;
+  }
+}
+
+// 下面開始半透明區塊
+.descriptionA{
+  @include text($keyWhite);
+  margin-bottom: 50px;
+  color: rgb(255, 218, 8);
+  font-weight: 400;
+}
+
+//A區半透明區塊文字區
+.exampleTextBlockA{
+  padding: 50px;
+  background-color: rgba(255,255,255,.2);
+  @media screen and (max-width: 676px){
+    padding: 20px;
+  }
+}
+//h3旁邊有黃色長方形的大標
+.exampleMainTitleA{
+  @include main_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//h4的次標
+.exampleSubTitleA{
+  @include sub_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//內文，通常用p標籤
+.exampleTextA{
+  @include text($keyWhite);
+  margin-bottom: 10px;
+}
+
+//更小的內文，通常用p或span標籤
+.exampleText12A{
+  @include text12($keyWhite);
+  margin-bottom: 10px;
+}
+
+//半透明區塊按鈕區
+
+.btn50greenA{
+  @include btn50Green;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+
+.btn50whiteA{
+  @include btn50White;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36yellowA{
+  @include btn36Yellow;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+.btn36noneWhiteA{
+  @include btn36NoneWhite;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30greenA{
+  @include btn30Green;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30whiteA{
+  @include btn30White;
+  margin: 10px 10px 10px 0;
+}
+
+.imageA{
+  width: 50%;
+  border: 3px solid white;
+  box-shadow: $shadow2;
+  border-radius: 6px;
+  margin: 10px 10px 10px 0;
+}
+
+.contentBlockA{
+  content: '';
+  width: 300px;
+  height: 200px;
+  margin: 10px 10px 10px 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow2;
+}
+
+//半透明區塊結束
+
+
+// 下面開始白色區塊
+.descriptionB{
+  @include text($keyWhite);
+  margin-bottom: 50px;
+  color: rgb(255, 218, 8);
+  font-weight: 400;
+}
+
+//B區白色區塊文字區
+.exampleTextBlockB{
+  padding: 50px;
+  background-color: rgba(0,0,0,.8);
+  @media screen and (max-width: 676px){
+    padding: 20px;
+  }
+}
+
+//h3旁邊有黃色長方形的大標
+.exampleMainTitleB{
+  @include main_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//h4的次標
+.exampleSubTitleB{
+  @include sub_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//內文，通常用p標籤
+.exampleTextB{
+  @include text($keyWhite);
+  margin-bottom: 10px;
+}
+
+//更小的內文，通常用p或span標籤
+.exampleText12B{
+  @include text12($keyWhite);
+  margin-bottom: 10px;
+}
+
+//黑色區塊按鈕區
+
+.btn50greenB{
+  @include btn50Green;
+  margin: 10px 10px 10px 0;
+}
+
+.btn50whiteB{
+  @include btn50White;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36yellowB{
+  @include btn36Yellow;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36noneWhiteB{
+  @include btn36NoneWhite;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30greenB{
+  @include btn30Green;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30whiteB{
+  @include btn30White;
+  margin: 10px 10px 10px 0;
+}
+
+.imageB{
+  width: 50%;
+  border: 3px solid white;
+  border-radius: 6px;
+  margin: 10px 10px 10px 0;
+}
+
+.contentBlockB{
+  content: '';
+  width: 300px;
+  height: 200px;
+  margin: 10px 10px 10px 0;
+  background-color: white;
+  border-radius: 6px;
+}
+
+//黑色區塊結束
+
+
+
+// 下面開始白色區塊
+.descriptionC{
+  @include text($keyWhite);
+  margin-bottom: 50px;
+  color: rgb(192, 45, 0);
+  font-weight: 400;
+}
+
+//C區白色區塊文字區
+.exampleTextBlockC{
+  padding: 50px;
+  background-color: white;
+  @media screen and (max-width: 676px){
+    padding: 20px;
+  }
+}
+
+//h3旁邊有黃色長方形的大標
+.exampleMainTitleC{
+  @include main_title($keyBlack);
+  margin-bottom: 10px;
+}
+
+//h4的次標
+.exampleSubTitleC{
+  @include sub_title($keyBlack);
+  margin-bottom: 10px;
+}
+
+//內文，通常用p標籤
+.exampleTextC{
+  @include text($textBlack);
+}
+
+//更小的內文，通常用p或span標籤
+.exampleText12C{
+  @include text12($textBlack);
+  margin-bottom: 10px;
+}
+
+//白色區塊按鈕區
+
+.btn50greenC{
+  @include btn50Green;
+  box-shadow: $shadow;
+  margin: 10px 10px 10px 0;
+}
+
+.btn50whiteC{
+  @include btn50White;
+  box-shadow: $shadow;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36yellowC{
+  @include btn36Yellow;
+  box-shadow: $shadow;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36noneWhiteC{
+  @include btn36NoneBlack;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30greenC{
+  @include btn30Green;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30whiteC{
+  @include btn30White;
+  margin: 10px 10px 10px 0;
+}
+
+.imageC{
+  width: 50%;
+  border: 3px solid white;
+  border-radius: 6px;
+  box-shadow: $shadow;
+  margin: 10px 10px 10px 0;
+}
+
+.contentBlockC{
+  content: '';
+  width: 300px;
+  height: 200px;
+  margin: 10px 10px 10px 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
+}
+
+//白色區塊結束
+
+
+// 下面開始全透明區塊
+.descriptionD{
+  @include text($keyWhite);
+  margin-bottom: 50px;
+  color: rgb(255, 218, 8);
+  font-weight: 400;
+}
+
+//D區全透明區塊文字區
+.exampleTextBlockD{
+  padding: 50px;
+  background-color: transparent;
+  @media screen and (max-width: 676px){
+    padding: 20px;
+  }
+}
+
+//h3旁邊有黃色長方形的大標
+.exampleMainTitleD{
+  @include main_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//h4的次標
+.exampleSubTitleD{
+  @include sub_title($keyWhite);
+  margin-bottom: 10px;
+}
+
+//內文，通常用p標籤
+.exampleTextD{
+  @include text($keyWhite);
+}
+
+//更小的內文，通常用p或span標籤
+.exampleText12D{
+  @include text12($keyWhite);
+  margin-bottom: 10px;
+}
+
+//全透明區塊按鈕區
+
+.btn50greenD{
+  @include btn50Green;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+
+.btn50whiteD{
+  @include btn50White;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36yellowD{
+  @include btn36Yellow;
+  box-shadow: $shadow2;
+  margin: 10px 10px 10px 0;
+}
+
+.btn36noneWhiteD{
+  @include btn36NoneWhite;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30greenD{
+  @include btn30Green;
+  margin: 10px 10px 10px 0;
+}
+
+.btn30whiteD{
+  @include btn30White;
+  margin: 10px 10px 10px 0;
+}
+
+.imageD{
+  width: 50%;
+  margin: 10px 10px 10px 0;
+  border: 3px solid white;
+  border-radius: 6px;
+  box-shadow: $shadow2;
+}
+
+.contentBlockD{
+  content: '';
+  width: 300px;
+  height: 200px;
+  margin: 10px 10px 10px 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow2;
+}
+
+//全透明區塊結束

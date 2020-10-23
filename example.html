@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Example</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="ticketBG">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish1.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="homepage.html" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  
+  <div>
+    <!-- !!!沒有大標的網頁就沒有下面這四行!!!! -->
+
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">TITLE EXAMPLE</h2>
+      <h4 class="commonSubTitle">Go buy tickets and go booking for staying overnight in Aqua Wonderland.</h4>
+    </div> -->
+
+<!-- 你的code打這下面 -->
+
+    <div class="ContentWithoutTitle">
+      <!-- 半透明區塊 -->
+      <div class="exampleTextBlockA">
+        <h3 class="exampleMainTitleA">H3 In Content</h3>
+        <p class="descriptionA">
+          h3旁邊有黃色區塊的h3大標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          <br>
+          @include main_title($keyWhite);
+        </p>
+
+        <h4 class="exampleSubTitleA">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionA">
+          h4的副標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          <br>
+          @include sub_title($keyWhite);
+        </p>
+
+        <p class="exampleTextA">Text fontsize16 lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionA">
+          p標籤的內文文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          <br>
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12A">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionA">
+          p標籤或span標籤的小文字，通常用在小且短的資訊，或是較不重要的文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          <br>
+          @include text12($keyWhite);
+        </p>
+
+        <button class="btn50greenA">ADD TO CART</button>
+        <a href="#" class="btn50greenA">ADD TO CART</a>
+        <br>
+        <p class="descriptionA">
+          綠色主按鈕，在半透明底須加上陰影2。
+          <br>
+          <br>
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn50whiteA">ADD TO CART</button>
+        <a href="#" class="btn50whiteA">ADD TO CART</a>
+        <br>
+        <p class="descriptionA">
+          白色主按鈕，若與綠色主按鈕並排，是較不重要的按鈕，在半透明底須加上陰影2。
+          <br>
+          <br>
+          @include btn50White;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn36yellowA">More</button>
+        <a href="#" class="btn36yellowA">More</a>
+        <br>
+        <p class="descriptionA">
+          黃色小按鈕，在半透明底需要加上陰影2。
+          <br>
+          <br>
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn36noneWhiteA">Close</button>
+        <a href="#" class="btn36noneWhiteA">Close</a>
+        <br>
+        <p class="descriptionA">
+          透明小按鈕，要與上面黃色小按鈕並用，是跟黃色小按鈕相比較不重要的按鈕，例如：確定用黃色小按鈕，取消用透明小按鈕，不用陰影。
+          <br>
+          <br>
+          @include btn36NoneWhite;
+        </p>
+
+        <button class="btn30greenA">Hashtag</button>
+        <a href="#" class="btn30greenA">Hashtag</a>
+        <br>
+        <p class="descriptionA">
+          綠色小按鈕，與下面白色小按鈕並用，代表選取中與未被選取狀態的意思。
+          <br>
+          <br>
+          @include btn30Green;
+        </p>
+
+        <button class="btn30whiteA">Hashtag</button>
+        <a href="#" class="btn30whiteA">Hashtag</a>
+        <br>
+        <p class="descriptionA">
+          白色小按鈕，功能同上。
+          <br>
+          <br>
+          @include btn30White;
+        </p>
+
+        <img src="./image/ticket/ticketA1.jpg" class="imageA" alt="">
+        <br>
+        <p class="descriptionA">
+          圖片在半透明區塊，容易融入背景，需加入3px白色框，通常使用6px圓角，並加入陰影2。
+          <br>
+          <br>
+          border: 3px solid white;
+          <br>
+          box-shadow: $shadow2;
+          <br>
+          border-radius: 6px;
+        </p>
+
+        <div class="contentBlockA"></div>
+        <p class="descriptionA">
+          純白色的內容區塊，放在半透明區塊裡，須加上陰影2。
+          <br>
+          <br>
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+      </div>
+
+      <!-- 黑色區塊 -->
+      <div class="exampleTextBlockB">
+        <h3 class="exampleMainTitleB">H3 In Content</h3>
+        <p class="descriptionB">
+          @include main_title($keyWhite);
+        </p>
+        
+        <h4 class="exampleSubTitleB">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionB">
+          @include sub_title($keyWhite);
+        </p>
+        
+        <p class="exampleTextB">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionB">
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12B">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionB">
+          @include text12($keyWhite);
+        </p>
+
+        <button class="btn50greenB">ADD TO CART</button>
+        <a href="#" class="btn50greenB">ADD TO CART</a>
+        <br>
+        <p class="descriptionB">
+          @include btn50Green;
+        </p>
+
+        <button class="btn50whiteB">ADD TO CART</button>
+        <a href="#" class="btn50whiteB">ADD TO CART</a>
+        <br>
+        <p class="descriptionB">
+          @include btn50White;
+        </p>
+
+        <button class="btn36yellowB">More</button>
+        <a href="#" class="btn36yellowB">More</a>
+        <br>
+        <p class="descriptionB">
+          @include btn36Yellow;
+        </p>
+
+        <button class="btn36noneWhiteB">Close</button>
+        <a href="#" class="btn36noneWhiteB">Close</a>
+        <br>
+        <p class="descriptionB">
+          @include btn36NoneWhite;
+        </p>
+
+        <button class="btn30greenB">Hashtag</button>
+        <a href="#" class="btn30greenB">Hashtag</a>
+        <br>
+        <p class="descriptionB">
+          @include btn30Green;
+        </p>
+
+        <button class="btn30whiteB">Hashtag</button>
+        <a href="#" class="btn30whiteB">Hashtag</a>
+        <br>
+        <p class="descriptionB">
+          @include btn30White;
+        </p>
+
+        <img src="./image/ticket/ticketA1.jpg" class="imageB" alt="">
+        <br>
+        <p class="descriptionB">
+          border: 3px solid white;
+          <br>
+          border-radius: 6px;
+        </p>
+
+        <div class="contentBlockB"></div>
+        <p class="descriptionB">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+        </p>
+      </div>
+
+      <!--白色區塊-->
+      <div class="exampleTextBlockC">
+        <h3 class="exampleMainTitleC">H3 In Content</h3>
+        <p class="descriptionC">
+          @include main_title($keyBlack);
+        </p>
+
+        <h4 class="exampleSubTitleC">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionC">
+          @include sub_title($keyBlack);
+        </p>
+
+        <p class="exampleTextC">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionC">
+          @include text($textBlack);
+        </p>
+
+        <p class="exampleText12C">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionC">
+          @include text12($keyWhite);
+        </p>
+
+        <button class="btn50greenC">ADD TO CART</button>
+        <a href="#" class="btn50greenC">ADD TO CART</a>
+        <br>
+        <p class="descriptionC">
+          要加上陰影1，注意陰影有陰影有$shadow跟$shadow2這邊用前者。
+          <br>
+          <br>
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
+        <button class="btn50whiteC">ADD TO CART</button>
+        <a href="#" class="btn50whiteC">ADD TO CART</a>
+        <br>
+        <p class="descriptionC">
+          @include btn50White;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
+        <button class="btn36yellowC">More</button>
+        <a href="#" class="btn36yellowC">More</a>
+        <br>
+        <p class="descriptionC">
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
+        <button class="btn36noneWhiteC">Close</button>
+        <a href="#" class="btn36noneWhiteC">Close</a>
+        <br>
+        <p class="descriptionC">
+          @include btn36NoneBlack;
+        </p>
+
+        <button class="btn30greenC">Hashtag</button>
+        <a href="#" class="btn30greenC">Hashtag</a>
+        <br>
+        <p class="descriptionC">
+          @include btn30Green;
+        </p>
+
+        <button class="btn30whiteC">Hashtag</button>
+        <a href="#" class="btn30whiteC">Hashtag</a>
+        <br>
+        <p class="descriptionC">
+          @include btn30White;
+        </p>
+
+        <img src="./image/ticket/ticketA1.jpg" class="imageC" alt="">
+        <br>
+        <p class="descriptionC">
+          在白底上的圖片不用再加上3px邊框，陰影的話視情況。
+          <br>
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow;（視情況）
+        </p>
+
+        <div class="contentBlockC"></div>
+        <p class="descriptionC">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow;
+        </p>
+        
+      </div>
+
+      <!--全透明區塊區塊-->
+      <div class="exampleTextBlockD">
+        <h3 class="exampleMainTitleD">H3 In Content</h3>
+        <p class="descriptionD">
+          @include main_title($keyWhite);
+        </p>
+
+        <h4 class="exampleSubTitleD">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionD">
+          @include sub_title($keyWhite);
+        </p>
+
+        <p class="exampleTextD">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionD">
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12D">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionD">
+          @include text12($keyWhite);
+        </p>
+
+        <button class="btn50greenD">ADD TO CART</button>
+        <a href="#" class="btn50greenD">ADD TO CART</a>
+        <br>
+        <p class="descriptionD">
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn50whiteD">ADD TO CART</button>
+        <a href="#" class="btn50whiteD">ADD TO CART</a>
+        <br>
+        <p class="descriptionD">
+          @include btn50White;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn36yellowD">More</button>
+        <a href="#" class="btn36yellowD">More</a>
+        <br>
+        <p class="descriptionD">
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <button class="btn36noneWhiteD">Close</button>
+        <a href="#" class="btn36noneWhiteD">Close</a>
+        <br>
+        <p class="descriptionD">
+          @include btn36NoneWhite;
+        </p>
+
+        <button class="btn30greenD">Hashtag</button>
+        <a href="#" class="btn30greenD">Hashtag</a>
+        <br>
+        <p class="descriptionD">
+          @include btn30Green;
+        </p>
+
+        <button class="btn30whiteD">Hashtag</button>
+        <a href="#" class="btn30whiteD">Hashtag</a>
+        <br>
+        <p class="descriptionD">
+          @include btn30White;
+        </p>
+
+        <img src="./image/ticket/ticketA1.jpg" class="imageD" alt="">
+        <br>
+        <p class="descriptionD">
+          border: 3px solid white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+        <div class="contentBlockD"></div>
+        <p class="descriptionD">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
+      </div>
+
+      
+
+    </div>
+
+    
+
+
+
+<!-- 你的code打這上面 -->
+
+  </div>
+
+
+<!--Sign In-->
+  <div class="memLogin overlay">
+    <form class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+
+
+
+    // jQuery
+    //漢堡
+    $("div.hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+
+  // Login彈窗
+  $(function(){
+    // 開啟 Modal 彈跳視窗
+    $("a.btn_modal").on("click", function(){
+      $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+      $("div.overlay").addClass("-opacity-zero");
+      // 設定隔一秒後，移除相關 class
+      setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+      }, 1000);
+    });
+  });
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
