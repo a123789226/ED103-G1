@@ -19,15 +19,15 @@
 
 // title + btn 部分
 .tour_title_block{
-    border:2px solid black;
-    // margin:40px
+    // border:2px solid black;
     padding:50px;
 }
 
 // btn區塊
 .tour_btn{
   width:50%;
-  // border:1px solid blue;
+  margin:0 auto;
+  // border:2px solid orange;
 }
 
 // title區塊
@@ -44,26 +44,22 @@
 .tour_puzzle{
   display:block;
   margin: 0 auto;
+  float:right;
 }
 
 .tour_puzzle_btn{
-    @include btn60(250px, white);
-    @include box-shadow;
+    @include btn50White;
+    box-shadow: $shadow2;
     display:block;
     margin: 0 auto;
 }
 
 .tour_title1{
     @include main_title($keyWhite);
-    margin-left: 150px;
+    margin-left: 0px;
+    // border:5px solid red;
 }
 
-.tour_title2{
-  @include main_title($keyWhite);
-  margin-left: 150px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
 
 
 //地圖與房子
@@ -729,11 +725,6 @@
  filter: brightness(.6);
  
 }
-
-.tour_puzzle_btn{
-    width:150px;
-}
-
 .tour_slide:hover {
   flex-grow:4;
   background-position: top;
