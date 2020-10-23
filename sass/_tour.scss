@@ -250,13 +250,14 @@
 }
 
 .btn_modal_close1{
-  @include btn40(150px, white);
+  @include btn36Yellow;
+  box-shadow: $shadow2;
   margin:10px auto;
   display:block;
 }
 
 .btn_modal_close2{
-  @include btn40(150px, white);
+  @include btn36NoneBlack;
   margin:10px auto;
   display:block;
 }
@@ -269,14 +270,15 @@
 
 /* 元素 article 置中及基本樣式 */
 .tour_overlay1 > article{
-  background-image: url("../image/tour/tour_intro_dolphin1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../image/tour/tour_intro_dolphin1.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   width: 100%;
   height:auto;
   max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -285,15 +287,15 @@
   transform: translate(-50%, -50%);
 }
 
-.tour_overlay1 > article > h3{
-  @include sub_title(brown);
- padding:10px 10px;
- border-bottom: 7px;
- margin:0 auto;
+.tour_overlay1 > article > h4{
+  @include sub_title($keyBlack);
+  padding:10px 10px;
+  border-bottom: 7px;
+  margin:0 auto;
 }
 
 .tour_overlay1 > article > p{
-  @include text(black);
+  @include text($textBlack);
 //  background-color: rgba(232, 247, 31, 0.5);
  padding:10px 10px;
  border-bottom: 7px;
@@ -301,9 +303,10 @@
 }
 
 .tour_overlay1img{
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   padding:5px;
-  border-radius: 7px;
   margin:0 auto;
 }
 
@@ -331,14 +334,15 @@
 }
 
 .tour_overlay2 > article{
-  background-image: url("../image/tour/tour_intro_whale1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../image/tour/tour_intro_whale1.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   width: 100%;
   height:auto;
   max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -363,9 +367,10 @@
 }
 
 .tour_overlay2img{
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   padding:5px;
-  border-radius: 7px;
   margin:0 auto;
 
 }
@@ -394,14 +399,15 @@
 }
 
 .tour_overlay3 > article{
-  background-image: url("../image/tour/tour_intro_seal1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../image/tour/tour_intro_seal1.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   width: 100%;
   height:auto;
   max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -425,9 +431,10 @@
 }
 
 .tour_overlay3img{
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   padding:5px;
-  border-radius: 7px;
   margin:0 auto;
 
 }
@@ -457,14 +464,15 @@
 }
 
 .tour_overlay4 > article{
-  background-image: url("../image/tour/tour_intro_seaturtle1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../image/tour/tour_intro_dolphin1.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   width: 100%;
   height:auto;
   max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -489,9 +497,10 @@
 }
 
 .tour_overlay4img{
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: $shadow;
   padding:5px;
-  border-radius: 7px;
   margin:0 auto;
 
 }

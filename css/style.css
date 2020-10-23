@@ -4013,55 +4013,88 @@ footer {
 }
 
 .btn_modal_close1 {
-  width: 150px;
   display: inline-block;
   cursor: pointer;
-  border: 3px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 24px;
+  border-radius: 6px;
+  padding: 0 18px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #FBE108;
-  height: 40px;
-  line-height: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  height: 36px;
+  line-height: 1.8;
+  text-decoration: none;
   text-align: center;
-  color: #333333;
-  background-color: #ffffff;
-  border: 3px solid #FBE108;
+  color: #ffffff;
+  background-color: #ffae00;
+  border: 3px solid #ffae00;
+  outline: none;
+  -webkit-transition: .05s;
+  transition: .05s;
+  -webkit-box-shadow: #333 0px 2px 6px;
+          box-shadow: #333 0px 2px 6px;
   margin: 10px auto;
   display: block;
 }
 
 .btn_modal_close1:hover {
-  border: 3px solid #ffbb00;
-  background-color: #ffbb00;
+  border: 3px solid #ff8800;
+  background-color: #ff8800;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media screen and (max-width: 479px) {
+  .btn_modal_close1 {
+    height: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .btn_modal_close2 {
-  width: 150px;
   display: inline-block;
   cursor: pointer;
-  border: 3px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 24px;
+  border-radius: 6px;
+  padding: 0 18px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #FBE108;
-  height: 40px;
-  line-height: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  height: 36px;
+  line-height: 1.8;
+  text-decoration: none;
   text-align: center;
+  color: #ffffff;
+  background-color: #ffae00;
+  border: 3px solid #ffae00;
+  outline: none;
+  -webkit-transition: .05s;
+  transition: .05s;
   color: #333333;
-  background-color: #ffffff;
-  border: 3px solid #FBE108;
+  background-color: transparent;
+  border: 3px solid transparent;
   margin: 10px auto;
   display: block;
 }
 
 .btn_modal_close2:hover {
-  border: 3px solid #ffbb00;
-  background-color: #ffbb00;
+  border: 3px solid #ff8800;
+  background-color: #ff8800;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media screen and (max-width: 479px) {
+  .btn_modal_close2 {
+    height: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.btn_modal_close2:hover {
+  color: #ffffff;
+  background-color: #ffae00;
+  border: 3px solid #ffae00;
 }
 
 .tour_overlay1.-opacity-zero {
@@ -4071,15 +4104,13 @@ footer {
 
 /* 元素 article 置中及基本樣式 */
 .tour_overlay1 > article {
-  background-image: url("../image/tour/tour_intro_dolphin1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   width: 100%;
   height: auto;
   max-width: 450px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #ddd;
-          box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -4089,11 +4120,11 @@ footer {
           transform: translate(-50%, -50%);
 }
 
-.tour_overlay1 > article > h3 {
+.tour_overlay1 > article > h4 {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: brown;
+  color: #333333;
   line-height: 24px;
   padding: 10px 10px;
   border-bottom: 7px;
@@ -4101,7 +4132,7 @@ footer {
 }
 
 @media screen and (max-width: 479px) {
-  .tour_overlay1 > article > h3 {
+  .tour_overlay1 > article > h4 {
     font-size: 20px;
   }
 }
@@ -4110,7 +4141,7 @@ footer {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: black;
+  color: #444444;
   line-height: 24px;
   padding: 10px 10px;
   border-bottom: 7px;
@@ -4118,9 +4149,11 @@ footer {
 }
 
 .tour_overlay1img {
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   padding: 5px;
-  border-radius: 7px;
   margin: 0 auto;
 }
 
@@ -4147,15 +4180,13 @@ footer {
 }
 
 .tour_overlay2 > article {
-  background-image: url("../image/tour/tour_intro_whale1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   width: 100%;
   height: auto;
   max-width: 450px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #ddd;
-          box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -4194,9 +4225,11 @@ footer {
 }
 
 .tour_overlay2img {
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   padding: 5px;
-  border-radius: 7px;
   margin: 0 auto;
 }
 
@@ -4223,15 +4256,13 @@ footer {
 }
 
 .tour_overlay3 > article {
-  background-image: url("../image/tour/tour_intro_seal1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   width: 100%;
   height: auto;
   max-width: 450px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #ddd;
-          box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -4270,9 +4301,11 @@ footer {
 }
 
 .tour_overlay3img {
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   padding: 5px;
-  border-radius: 7px;
   margin: 0 auto;
 }
 
@@ -4299,15 +4332,13 @@ footer {
 }
 
 .tour_overlay4 > article {
-  background-image: url("../image/tour/tour_intro_seaturtle1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   width: 100%;
   height: auto;
   max-width: 450px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #ddd;
-          box-shadow: 0 0 10px #ddd;
   padding: 20px;
   line-height: 22px;
   position: absolute;
@@ -4346,9 +4377,11 @@ footer {
 }
 
 .tour_overlay4img {
-  border: 5px solid rgba(192, 138, 138, 0.7);
+  background-color: white;
+  border-radius: 6px;
+  -webkit-box-shadow: #777 0px 2px 6px;
+          box-shadow: #777 0px 2px 6px;
   padding: 5px;
-  border-radius: 7px;
   margin: 0 auto;
 }
 

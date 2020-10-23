@@ -130,7 +130,7 @@
         <!-- 房子的圖文介紹 -->
         <div class="tour_overlay1">
         <article>
-          <h3>Dolphin aquarium</h3>
+          <h4>Dolphin aquarium</h4>
           <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
           <img class="tour_overlay1img" src="./image/tour/tour_intro_dolphin.jpg" alt="error">
           <div class="btn_modal">
@@ -142,7 +142,7 @@
   
         <div class="tour_overlay2">
           <article>
-            <h3>whale aquarium</h3>
+            <h4>whale aquarium</h4>
             <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
             <img class= "tour_overlay2img" src="./image/tour/tour_intro_whale.jpg" alt="error">
             <div class="btn_modal">
@@ -154,7 +154,7 @@
   
           <div class="tour_overlay3">
             <article>
-              <h3>Seal aquarium</h3>
+              <h4>Seal aquarium</h4>
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay3img" src="./image/tour/tour_intro_seal.jpg" alt="error">
               <div class="btn_modal">
@@ -166,7 +166,7 @@
   
           <div class="tour_overlay4">
             <article>
-              <h3>Sea Turtle aquarium</h3>
+              <h4>Sea Turtle aquarium</h4>
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
               <div class="btn_modal">
@@ -267,25 +267,23 @@
       $("ul.main_menu_ul").toggleClass("is-active");
     });
 
-   //點擊第一棟房子:dolphine館, 出現介紹圖文
+
+  //--------點擊第一棟房子:dolphine館, 出現介紹圖文------------
     $(function(){  
   // 開啟 Modal 彈跳視窗
-  $("img.tour_house1").on("click", function(){
+  $("img.tour_house1_hover").on("click", function(){
     $("div.tour_overlay1").addClass("-on");
-  });
-  
+  }); 
   // 關閉 Modal
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay1").addClass("-opacity-zero");
- 
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
     }, 0);
   }); 
 });
-
-//第一棟房子:dolphine館,出現介紹圖文後, 關閉
+//---------第一棟房子:dolphine館,出現介紹圖文後, 按關閉收合----------
 $(function(){  
   // 關閉 Modal
   $("button.btn_modal_close2").on("click", function(){
@@ -297,46 +295,11 @@ $(function(){
   }); 
 });
 
-//第二棟房子:whale館,出現介紹圖文後, 關閉
-$(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay2").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay2").removeClass("-on -opacity-zero");
-    }, 0);
-  }); 
-});
 
-//第三棟房子:seal館,出現介紹圖文後, 關閉
+//---------點擊第二棟房子:whale館, 出現介紹圖文----------------
 $(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay3").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay3").removeClass("-on -opacity-zero");
-    }, 0);
-  }); 
-});
-
-//第四棟房子:sea turtle 館,出現介紹圖文後, 關閉
-$(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay4").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay4").removeClass("-on -opacity-zero");
-    }, 0);
-  }); 
-});
-
-//點擊第二棟房子:whale館, 出現介紹圖文
-$(function(){  
-  $("img.tour_house2").on("click", function(){
-    $("div.tour_overlay2").addClass("-on");
+  $("img.tour_house2_hover").on("click", function(){
+    $("div.tour_overlay3").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
@@ -346,9 +309,22 @@ $(function(){
   });  
 });
 
-//點擊第三棟房子:whale館, 出現介紹圖文
+//----------第二棟房子:whale館,出現介紹圖文後, 關閉收合------------
 $(function(){  
-  $("img.tour_house3").on("click", function(){
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay2").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay2").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
+});
+
+
+//-----------點擊第三棟房子:whale館, 出現介紹圖文----------------
+$(function(){  
+  $("img.tour_house3_hover").on("click", function(){
     $("div.tour_overlay3").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
@@ -358,10 +334,22 @@ $(function(){
     }, 0);
   });  
 });
-
-//點擊第四棟房子:sea turtle館, 出現介紹圖文
+//----------第三棟房子:seal館,出現介紹圖文後, 關閉收合---------
 $(function(){  
-  $("img.tour_house4").on("click", function(){
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay3").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay3").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
+});
+
+
+//-----------點擊第四棟房子:sea turtle館, 出現介紹圖文--------
+$(function(){  
+  $("img.tour_house4_hover").on("click", function(){
     $("div.tour_overlay4").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
@@ -372,9 +360,22 @@ $(function(){
   });  
 });
 
+//第-------四棟房子:sea turtle 館,出現介紹圖文後, 關閉收合---------
+$(function(){  
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay4").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay4").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
+});
+
+
 //點擊地圖的圖文介紹按鈕,會往下移動
 $(function(){
-  $(".btn_modal_close1").on("click", function(e){
+  $("button.btn_modal_close1").on("click", function(e){
     e.preventDefault();
     $('html, body').animate({
       scrollTop: 1000
