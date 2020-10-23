@@ -66,95 +66,160 @@
 
 //地圖與房子
 .tour_map_area{
-  // border: 1px solid red;
+  // border: 5px solid red;
   width:100%;
-}
-
-.tour_island{
-  width: 100%;
   max-width:1200px;
-  // border: 1px solid red;
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  .tour_island{
+    width: 100%;
+    max-width:1200px;
+    // border: 5px solid blue;
+  }
+  .tour_map_house1{
+    // border:2px solid yellow;
+    position: absolute;
+    width: 22%;
+    top: 18%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    .tour_house1{
+      width: 100%;
+      cursor: pointer;
+      position: absolute;
+      display:none;
+    }
+    .tour_house1_hover{
+      position: absolute;
+      width: 100%;
+      filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+      display:none;
+    }
+    .tour_dolphin_wave{
+      position: absolute;
+      width: 45%;
+      transform: translate(55%, -60%);
+      animation-name: jump;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+
+    }
+  }
+  .tour_map_house2{
+    // border:2px solid yellow;
+    position: absolute;
+    width: 22%;
+    top: 18%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    .tour_house2{
+      width: 100%;
+      cursor: pointer;
+      position: absolute;
+      display:none;
+    }
+    .tour_house2_hover{
+      position: absolute;
+      width: 100%;
+      filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+      display:none;
+    }
+    .tour_whale_wave{
+      position: absolute;
+      width: 45%;
+      transform: translate(55%, -60%);
+      animation-name: jump;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
+  .tour_map_house3{
+    // border:2px solid yellow;
+    position: absolute;
+    width: 22%;
+    top: 59%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    .tour_house3{
+      width: 100%;
+      cursor: pointer;
+      position: absolute;
+      display:none;
+    }
+    .tour_house3_hover{
+      position: absolute;
+      width: 100%;
+      filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+      display:none;
+    }
+    .tour_seal_wave{
+      position: absolute;
+      width: 45%;
+      transform: translate(55%, -60%);
+      animation-name: jump;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }   
+  }
+  .tour_map_house4{
+    // border:2px solid yellow;
+    position: absolute;
+    width: 25%;
+    top: 46%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    .tour_house4{
+      width: 100%;
+      cursor: pointer;
+      position: absolute;
+      display:none;
+    }
+    .tour_house4_hover{
+      position: absolute;
+      width: 100%;
+      filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+      display:none;
+    }
+    .tour_seaturtle_wave{
+      position: absolute;
+      width: 45%;
+      transform: translate(55%, -60%);
+      animation-name: jump;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }  
+  }
+
+  @keyframes jump {
+    0%{
+      transform: translate(55%, -60%);
+    }
+    50%{
+      transform: translate(55%, -80%);
+
+    }
+    100%{
+      transform: translate(55%, -60%);
+    }
+  
+  }
+
+  .tour_map_house1, .tour_map_house2, .tour_map_house3, .tour_map_house4{
+    .tour_house_show{
+      display: block;
+      cursor: pointer;
+    }
+  }
 }
 
-.tour_map_area1{
-  display:flex;
-  justify-content: space-evenly;
-  width:100%;
-  margin:10px 0px;
-  // border:1px solid blue;
-}
 
-.tour_map_area2{
-  display:flex;
-  justify-content: space-evenly;
-  // border:10px solid green;
-  width:100%;
-}
 
-.tour_houseA, .tour_houseB{
-  width:20%;
-  display: none;
-  cursor: pointer;
-  // transition: box-shadow 500ms;
-  // &:hover{
-  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
-  //   background-image: url("/image/tour/house1_hover.png");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   border-radius: 7x;
-  //   cursor: pointer;
-  // }
-}
-.tour_houseB{
-  filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
-}
-.tour_house_show{
-  display: block;
-}
-
-// .tour_house2{
-//   width:20%;
-  // transition: box-shadow 500ms;
-  // &:hover{
-  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
-  //   background-image: url("/image/tour/house2_hover.png");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   border-radius: 7x;
-  //   cursor: pointer;
-  // }
-// }
-
-// .tour_house3{
-//   width:20%;
-  // transition: box-shadow 500ms;
-  // &:hover{
-  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
-  //   background-image: url("/image/tour/house3_hover.png");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   border-radius: 7x;
-  //   cursor: pointer;
-  // }
-// }
-
-// .tour_house4{
-//   width:20%;
-  // transition: box-shadow 500ms;
-  // &:hover{
-  //   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.3));
-  //   background-image: url("/image/tour/house4_hover.png");
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   border-radius: 7x;
-  //   cursor: pointer;
-  // }
-// }
 
 .tour_space{
-  margin:100px auto;
+  margin:500px auto;
   border:2px solid green;
   opacity: 0;
 }
@@ -190,20 +255,12 @@
   @include btn40(150px, white);
   margin:10px auto;
   display:block;
-  &:hover{
-    color:white;
-    background-color:#FBE108;
-  }
 }
 
 .btn_modal_close2{
   @include btn40(150px, white);
   margin:10px auto;
   display:block;
-  &:hover{
-    color:white;
-    background-color:#FBE108;
-  }
 }
 
 
@@ -214,10 +271,11 @@
 
 /* 元素 article 置中及基本樣式 */
 .tour_overlay1 > article{
-  background-image: url("/image/tour/tour_intro_dolphin1.jpg");
+  background-image: url("../image/tour/tour_intro_dolphin1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  height:auto;
   max-width: 450px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
@@ -249,7 +307,6 @@
   padding:5px;
   border-radius: 7px;
   margin:0 auto;
-
 }
 
 
@@ -276,10 +333,11 @@
 }
 
 .tour_overlay2 > article{
-  background-image: url("/image/tour/tour_intro_whale1.jpg");
+  background-image: url("../image/tour/tour_intro_whale1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  height:auto;
   max-width: 450px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
@@ -338,10 +396,11 @@
 }
 
 .tour_overlay3 > article{
-  background-image: url("/image/tour/tour_intro_seal1.jpg");
+  background-image: url("../image/tour/tour_intro_seal1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  height:auto;
   max-width: 450px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
@@ -362,7 +421,6 @@
 
 .tour_overlay3 > article > p{
   @include text(black);
-//  background-color: rgba(232, 247, 31, 0.5);
  padding:10px 10px;
  border-bottom: 7px;
  margin:0 auto;
@@ -401,10 +459,11 @@
 }
 
 .tour_overlay4 > article{
-  background-image: url("/image/tour/tour_intro_seaturtle1.jpg");
+  background-image: url("../image/tour/tour_intro_seaturtle1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  height:auto;
   max-width: 450px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ddd;
@@ -442,6 +501,8 @@
 
 //動物
 .tour_row{
+  width:100%;
+  max-width: 1200px;
   display:flex;
   margin:40px auto;
   .tour_slide{
@@ -457,11 +518,10 @@
       padding: 50px 25px;
       color: #fff;
       opacity: 0;
-      word-wrap: break-word;
+
       display: flex;
       height: 100%;
       align-items: center;
-      word-break: break-all;
       .tour_headerimg {
         position: relative;
         flex: 0 1 40%;
@@ -500,7 +560,6 @@
 
         p{
           @include text(black);
-          word-wrap: break-word;
           padding-right:4px;
           padding-left:4px;
         }
@@ -601,6 +660,18 @@
   }
 
 
+.tour_slide:hover {
+  flex-grow:4;
+  background-position: top;
+  background-size: cover;
+  filter: brightness(1);
+  .tour_content {
+      opacity: 1;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+  }
+}
+
 @media screen and (max-width: 767px){
     .tour_row {
       // border:5px solid blue;
@@ -608,19 +679,22 @@
       flex-wrap: wrap;
       flex: 100%;
       .tour_slide {
-          margin: 20px auto;
+          margin: 0px auto;
           flex: 1 1 100%;
           background-position: top!important;
           height: auto;
           .tour_content {
               // border:5px solid yellow;
+              height: auto;;
               flex-direction: column;
-              padding: 20 15px;
+              padding: 10px 10px;
               background-size: cover!important;
               opacity: 0;
               .tour_headerimg {
                 display: block;
-                margin: 20px auto;             
+                margin: 0px auto 20px auto;
+                width: 60%;
+                height:60%;          
               }
               &:hover{
                 transition: all 1s ease-in;
@@ -628,9 +702,9 @@
               }
               .tour_word {
                   // border:5px solid purple;
-                  max-height: 100%;
-                  margin: 15px 0px 0px 0px;
-                  padding: 15px;
+                  max-height: 50%;
+                  margin: 10px 0px 0px 0px;
+                  padding: 5px;
                   width:90%;
                   line-height: 15px;
                }
@@ -647,11 +721,26 @@
 .tour_slide:nth-child(3),
 .tour_slide:nth-child(4) {
  filter: blur(5);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: 100%;
+ filter: brightness(.6);
+ 
 }
 
 .tour_puzzle_btn{
     width:150px;
 }
 
+.tour_slide:hover {
+  flex-grow:4;
+  background-position: top;
+  background-size: cover;
+  filter: brightness(1);
+  .tour_content {
+      opacity: 1;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+  }
 }
-
+}

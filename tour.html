@@ -95,7 +95,7 @@
           <h1 class="tour_title1">Tour</h1>
         </div>  
         <div class="tour_btn">
-          <a href="js-puzzle-master/preTour.html" class="tour_puzzle">
+          <a href="js/js-puzzle-master/preTour.html" class="tour_puzzle">
           <button class="tour_puzzle_btn">Puzzle</button>
           </a>
         </div>        
@@ -104,18 +104,25 @@
       <!-- 大地圖 -->
       <div class="tour_map_area">
         <img class="tour_island" src="./image/tour/tour_island.png" alt="error">
-        <div class="tour_map_area1">
-          <img class="tour_house1 tour_houseA tour_house_show" src="./image/tour/house11.png" alt="error">
-          <img class="tour_house1 tour_houseB" src="./image/tour/house1_hover.png" alt="error">
-          <img class="tour_house2 tour_houseA tour_house_show" src="./image/tour/house22.png" alt="error">   
-          <img class="tour_house2 tour_houseB" src="./image/tour/house2_hover.png" alt="error">   
+        <div class="tour_map_house1">
+          <img class="tour_house1 tour_houseA tour_house_show" src="./image/tour/house1.png" alt="error">
+          <img class="tour_house1_hover tour_houseB" src="./image/tour/house1_hover.png" alt="error">
+          <img class="tour_dolphin_wave" src="./image/tour/tour_dolphin_wave.png" alt="error">
         </div>
-        <div class="tour_map_area2">
-          <img class="tour_house3 tour_houseA tour_house_show" src="./image/tour/house33.png" alt="error">
-          <img class="tour_house3 tour_houseB" src="./image/tour/house3_hover.png" alt="error">
-          <img class="tour_house4 tour_houseA tour_house_show" src="./image/tour/house44.png" alt="error">
-          <img class="tour_house4 tour_houseB" src="./image/tour/house4_hover.png" alt="error">
-  
+        <div class="tour_map_house2">
+          <img class="tour_house2 tour_houseA tour_house_show" src="./image/tour/house2.png" alt="error">   
+          <img class="tour_house2_hover tour_houseB" src="./image/tour/house2_hover.png" alt="error"> 
+          <img class="tour_whale_wave" src="./image/tour/tour_whale_wave.png" alt="error">
+        </div>
+        <div class="tour_map_house3">
+          <img class="tour_house3 tour_houseA tour_house_show" src="./image/tour/house3.png" alt="error">
+          <img class="tour_house3_hover tour_houseB" src="./image/tour/house3_hover.png" alt="error">
+          <img class="tour_seal_wave" src="./image/tour/tour_seal_wave.png" alt="error">  
+        </div>
+        <div class="tour_map_house4">
+          <img class="tour_house4 tour_houseA tour_house_show" src="./image/tour/house4.png" alt="error">
+          <img class="tour_house4_hover tour_houseB" src="./image/tour/house4_hover.png" alt="error">  
+          <img class="tour_seaturtle_wave" src="./image/tour/tour_seaturtle_wave.png" alt="error">
         </div>
       </div> 
   
@@ -270,7 +277,7 @@
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
@@ -282,7 +289,7 @@ $(function(){
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
@@ -294,7 +301,7 @@ $(function(){
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay2").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
@@ -306,7 +313,7 @@ $(function(){
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay3").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
@@ -318,7 +325,7 @@ $(function(){
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay4").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
@@ -331,7 +338,7 @@ $(function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay2").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
@@ -344,7 +351,7 @@ $(function(){
     $("div.tour_overlay3").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay3").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
@@ -357,7 +364,7 @@ $(function(){
     $("div.tour_overlay4").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay4").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
