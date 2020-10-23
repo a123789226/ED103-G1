@@ -4147,11 +4147,6 @@ footer {
   }
 }
 
-.ticketTitleBox {
-  width: 80%;
-  max-width: 1200px;
-}
-
 .ticketTicketBox {
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -4198,6 +4193,12 @@ footer {
   .ticketTicketBox .ticketMainTitle::before {
     width: 10px;
     height: 30px;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .ticketTicketBox .ticketMainTitle {
+    margin: 20px 0 30px;
   }
 }
 
@@ -4491,6 +4492,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 676px) {
+  .ticketOverNightBox .ticketMainTitle {
+    margin: 20px 0 60px;
+  }
+}
+
 .ticketOverNightBox .ticketONIntroBlock {
   padding-top: 40%;
   position: relative;
@@ -4534,6 +4541,19 @@ footer {
   left: 30%;
   opacity: 1;
   transition: left 0.4s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .ticketOverNightBox .ticketONIntroBlock > div:hover a + .ticketONIntroBox {
+    width: 80%;
+    left: 25%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .ticketOverNightBox .ticketONIntroBlock > div:hover a + .ticketONIntroBox {
+    left: 30%;
+  }
 }
 
 .ticketOverNightBox .ticketONIntroBlock > div:hover a span:first-child {
