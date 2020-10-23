@@ -103,12 +103,14 @@
         <p class="descriptionA">
           h3旁邊有黃色區塊的h3大標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
           <br>
+          <br>
           @include main_title($keyWhite);
         </p>
 
         <h4 class="exampleSubTitleA">H4 Sub Title Lorem ipsum dolor sit in content</h4>
         <p class="descriptionA">
           h4的副標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
           <br>
           @include sub_title($keyWhite);
         </p>
@@ -117,12 +119,14 @@
         <p class="descriptionA">
           p標籤的內文文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
           <br>
+          <br>
           @include text($keyWhite);
         </p>
 
         <p class="exampleText12A">Marco Lin 2020/10/23 fontsize12</p>
         <p class="descriptionA">
           p標籤或span標籤的小文字，通常用在小且短的資訊，或是較不重要的文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
           <br>
           @include text12($keyWhite);
         </p>
@@ -132,6 +136,7 @@
         <br>
         <p class="descriptionA">
           綠色主按鈕，在半透明底須加上陰影2。
+          <br>
           <br>
           @include btn50Green;
           <br>
@@ -144,6 +149,7 @@
         <p class="descriptionA">
           白色主按鈕，若與綠色主按鈕並排，是較不重要的按鈕，在半透明底須加上陰影2。
           <br>
+          <br>
           @include btn50White;
           <br>
           box-shadow: $shadow2;
@@ -154,6 +160,7 @@
         <br>
         <p class="descriptionA">
           黃色小按鈕，在半透明底需要加上陰影2。
+          <br>
           <br>
           @include btn36Yellow;
           <br>
@@ -166,6 +173,7 @@
         <p class="descriptionA">
           透明小按鈕，要與上面黃色小按鈕並用，是跟黃色小按鈕相比較不重要的按鈕，例如：確定用黃色小按鈕，取消用透明小按鈕，不用陰影。
           <br>
+          <br>
           @include btn36NoneWhite;
         </p>
 
@@ -174,6 +182,7 @@
         <br>
         <p class="descriptionA">
           綠色小按鈕，與下面白色小按鈕並用，代表選取中與未被選取狀態的意思。
+          <br>
           <br>
           @include btn30Green;
         </p>
@@ -184,6 +193,7 @@
         <p class="descriptionA">
           白色小按鈕，功能同上。
           <br>
+          <br>
           @include btn30White;
         </p>
 
@@ -191,6 +201,7 @@
         <br>
         <p class="descriptionA">
           圖片在半透明區塊，容易融入背景，需加入3px白色框，通常使用6px圓角，並加入陰影2。
+          <br>
           <br>
           border: 3px solid white;
           <br>
@@ -203,6 +214,7 @@
         <p class="descriptionA">
           純白色的內容區塊，放在半透明區塊裡，須加上陰影2。
           <br>
+          <br>
           background-color: white;
           <br>
           border-radius: 6px;
@@ -214,85 +226,267 @@
       <!-- 黑色區塊 -->
       <div class="exampleTextBlockB">
         <h3 class="exampleMainTitleB">H3 In Content</h3>
+        <p class="descriptionB">
+          @include main_title($keyWhite);
+        </p>
+        
         <h4 class="exampleSubTitleB">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionB">
+          @include sub_title($keyWhite);
+        </p>
+        
         <p class="exampleTextB">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionB">
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12B">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionB">
+          @include text12($keyWhite);
+        </p>
+
         <button class="btn50greenB">ADD TO CART</button>
         <a href="#" class="btn50greenB">ADD TO CART</a>
         <br>
+        <p class="descriptionB">
+          @include btn50Green;
+        </p>
+
         <button class="btn50whiteB">ADD TO CART</button>
         <a href="#" class="btn50whiteB">ADD TO CART</a>
         <br>
+        <p class="descriptionB">
+          @include btn50White;
+        </p>
+
         <button class="btn36yellowB">More</button>
         <a href="#" class="btn36yellowB">More</a>
         <br>
+        <p class="descriptionB">
+          @include btn36Yellow;
+        </p>
+
         <button class="btn36noneWhiteB">Close</button>
         <a href="#" class="btn36noneWhiteB">Close</a>
         <br>
+        <p class="descriptionB">
+          @include btn36NoneWhite;
+        </p>
+
         <button class="btn30greenB">Hashtag</button>
         <a href="#" class="btn30greenB">Hashtag</a>
         <br>
+        <p class="descriptionB">
+          @include btn30Green;
+        </p>
+
         <button class="btn30whiteB">Hashtag</button>
         <a href="#" class="btn30whiteB">Hashtag</a>
         <br>
+        <p class="descriptionB">
+          @include btn30White;
+        </p>
+
         <img src="./image/ticket/ticketA1.jpg" class="imageB" alt="">
         <br>
+        <p class="descriptionB">
+          border: 3px solid white;
+          <br>
+          border-radius: 6px;
+        </p>
+
         <div class="contentBlockB"></div>
+        <p class="descriptionB">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+        </p>
       </div>
 
       <!--白色區塊-->
       <div class="exampleTextBlockC">
         <h3 class="exampleMainTitleC">H3 In Content</h3>
+        <p class="descriptionC">
+          @include main_title($keyBlack);
+        </p>
+
         <h4 class="exampleSubTitleC">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionC">
+          @include sub_title($keyBlack);
+        </p>
+
         <p class="exampleTextC">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionC">
+          @include text($textBlack);
+        </p>
+
+        <p class="exampleText12C">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionC">
+          @include text12($keyWhite);
+        </p>
+
         <button class="btn50greenC">ADD TO CART</button>
         <a href="#" class="btn50greenC">ADD TO CART</a>
         <br>
+        <p class="descriptionC">
+          要加上陰影1，注意陰影有陰影有$shadow跟$shadow2這邊用前者。
+          <br>
+          <br>
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
         <button class="btn50whiteC">ADD TO CART</button>
         <a href="#" class="btn50whiteC">ADD TO CART</a>
         <br>
+        <p class="descriptionC">
+          @include btn50White;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
         <button class="btn36yellowC">More</button>
         <a href="#" class="btn36yellowC">More</a>
         <br>
+        <p class="descriptionC">
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow;
+        </p>
+
         <button class="btn36noneWhiteC">Close</button>
         <a href="#" class="btn36noneWhiteC">Close</a>
         <br>
+        <p class="descriptionC">
+          @include btn36NoneBlack;
+        </p>
+
         <button class="btn30greenC">Hashtag</button>
         <a href="#" class="btn30greenC">Hashtag</a>
         <br>
+        <p class="descriptionC">
+          @include btn30Green;
+        </p>
+
         <button class="btn30whiteC">Hashtag</button>
         <a href="#" class="btn30whiteC">Hashtag</a>
         <br>
+        <p class="descriptionC">
+          @include btn30White;
+        </p>
+
         <img src="./image/ticket/ticketA1.jpg" class="imageC" alt="">
         <br>
+        <p class="descriptionC">
+          在白底上的圖片不用再加上3px邊框，陰影的話視情況。
+          <br>
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow;（視情況）
+        </p>
+
         <div class="contentBlockC"></div>
+        <p class="descriptionC">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow;
+        </p>
+        
       </div>
 
       <!--全透明區塊區塊-->
       <div class="exampleTextBlockD">
         <h3 class="exampleMainTitleD">H3 In Content</h3>
+        <p class="descriptionD">
+          @include main_title($keyWhite);
+        </p>
+
         <h4 class="exampleSubTitleD">H4 Sub Title Lorem ipsum dolor sit in content</h4>
+        <p class="descriptionD">
+          @include sub_title($keyWhite);
+        </p>
+
         <p class="exampleTextD">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionD">
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12D">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionD">
+          @include text12($keyWhite);
+        </p>
+
         <button class="btn50greenD">ADD TO CART</button>
         <a href="#" class="btn50greenD">ADD TO CART</a>
         <br>
+        <p class="descriptionD">
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn50whiteD">ADD TO CART</button>
         <a href="#" class="btn50whiteD">ADD TO CART</a>
         <br>
+        <p class="descriptionD">
+          @include btn50White;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn36yellowD">More</button>
         <a href="#" class="btn36yellowD">More</a>
         <br>
+        <p class="descriptionD">
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn36noneWhiteD">Close</button>
         <a href="#" class="btn36noneWhiteD">Close</a>
         <br>
+        <p class="descriptionD">
+          @include btn36NoneWhite;
+        </p>
+
         <button class="btn30greenD">Hashtag</button>
         <a href="#" class="btn30greenD">Hashtag</a>
         <br>
+        <p class="descriptionD">
+          @include btn30Green;
+        </p>
+
         <button class="btn30whiteD">Hashtag</button>
         <a href="#" class="btn30whiteD">Hashtag</a>
         <br>
+        <p class="descriptionD">
+          @include btn30White;
+        </p>
+
         <img src="./image/ticket/ticketA1.jpg" class="imageD" alt="">
         <br>
+        <p class="descriptionD">
+          border: 3px solid white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <div class="contentBlockD"></div>
+        <p class="descriptionD">
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
       </div>
 
       
