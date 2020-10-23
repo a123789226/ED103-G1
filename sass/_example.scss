@@ -12,6 +12,12 @@
 }
 
 // 下面開始半透明區塊
+.descriptionA{
+  @include text($keyWhite);
+  margin-bottom: 40px;
+  color: rgb(252, 229, 21);
+}
+
 //A區半透明區塊文字區
 .exampleTextBlockA{
   padding: 50px;
@@ -35,28 +41,33 @@
 //內文，通常用p標籤
 .exampleTextA{
   @include text($keyWhite);
+  margin-bottom: 20px;
+}
+
+//更小的內文，通常用p或span標籤
+.exampleText12A{
+  @include text12($keyWhite);
 }
 
 //半透明區塊按鈕區
 
 .btn50greenA{
   @include btn50Green;
+  box-shadow: $shadow2;
   margin: 20px 20px 20px 0;
-  box-shadow: $shadow2
 }
 
 .btn50whiteA{
   @include btn50White;
+  box-shadow: $shadow2;
   margin: 20px 20px 20px 0;
-  box-shadow: $shadow2
 }
 
 .btn36yellowA{
   @include btn36Yellow;
+  box-shadow: $shadow2;
   margin: 20px 20px 20px 0;
-  box-shadow: $shadow2
 }
-
 .btn36noneWhiteA{
   @include btn36NoneWhite;
   margin: 20px 20px 20px 0;
@@ -76,6 +87,7 @@
   width: 50%;
   border: 3px solid white;
   box-shadow: $shadow2;
+  border-radius: 6px;
   margin: 20px 20px 20px 0;
 }
 
@@ -83,8 +95,8 @@
   content: '';
   width: 300px;
   height: 200px;
-  background-color: white;
   margin: 20px 20px 20px 0;
+  background-color: white;
   border-radius: 6px;
   box-shadow: $shadow2;
 }

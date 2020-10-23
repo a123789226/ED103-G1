@@ -100,29 +100,115 @@
       <!-- 半透明區塊 -->
       <div class="exampleTextBlockA">
         <h3 class="exampleMainTitleA">H3 In Content</h3>
+        <p class="descriptionA">
+          h3旁邊有黃色區塊的h3大標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          @include main_title($keyWhite);
+        </p>
+
         <h4 class="exampleSubTitleA">H4 Sub Title Lorem ipsum dolor sit in content</h4>
-        <p class="exampleTextA">Text lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionA">
+          h4的副標，視情況使用$keyBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          @include sub_title($keyWhite);
+        </p>
+
+        <p class="exampleTextA">Text fontsize16 lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corporis nemo labore a repudiandae magni accusamus doloribus sint, eos est error illo ratione doloremque animi dolore id hic aliquid eveniet.</p>
+        <p class="descriptionA">
+          p標籤的內文文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          @include text($keyWhite);
+        </p>
+
+        <p class="exampleText12A">Marco Lin 2020/10/23 fontsize12</p>
+        <p class="descriptionA">
+          p標籤或span標籤的小文字，通常用在小且短的資訊，或是較不重要的文字，視情況使用情況使用$textBlack（#333333黑）或是$keyWhite（#ffffff白）顏色。
+          <br>
+          @include text12($keyWhite);
+        </p>
+
         <button class="btn50greenA">ADD TO CART</button>
         <a href="#" class="btn50greenA">ADD TO CART</a>
         <br>
+        <p class="descriptionA">
+          綠色主按鈕，在半透明底須加上陰影2。
+          <br>
+          @include btn50Green;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn50whiteA">ADD TO CART</button>
         <a href="#" class="btn50whiteA">ADD TO CART</a>
         <br>
+        <p class="descriptionA">
+          白色主按鈕，若與綠色主按鈕並排，是較不重要的按鈕，在半透明底須加上陰影2。
+          <br>
+          @include btn50White;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn36yellowA">More</button>
         <a href="#" class="btn36yellowA">More</a>
         <br>
+        <p class="descriptionA">
+          黃色小按鈕，在半透明底需要加上陰影2。
+          <br>
+          @include btn36Yellow;
+          <br>
+          box-shadow: $shadow2;
+        </p>
+
         <button class="btn36noneWhiteA">Close</button>
         <a href="#" class="btn36noneWhiteA">Close</a>
         <br>
+        <p class="descriptionA">
+          透明小按鈕，要與上面黃色小按鈕並用，是跟黃色小按鈕相比較不重要的按鈕，例如：確定用黃色小按鈕，取消用透明小按鈕，不用陰影。
+          <br>
+          @include btn36NoneWhite;
+        </p>
+
         <button class="btn30greenA">Hashtag</button>
         <a href="#" class="btn30greenA">Hashtag</a>
         <br>
+        <p class="descriptionA">
+          綠色小按鈕，與下面白色小按鈕並用，代表選取中與未被選取狀態的意思。
+          <br>
+          @include btn30Green;
+        </p>
+
         <button class="btn30whiteA">Hashtag</button>
         <a href="#" class="btn30whiteA">Hashtag</a>
         <br>
+        <p class="descriptionA">
+          白色小按鈕，功能同上。
+          <br>
+          @include btn30White;
+        </p>
+
         <img src="./image/ticket/ticketA1.jpg" class="imageA" alt="">
         <br>
+        <p class="descriptionA">
+          圖片在半透明區塊，容易融入背景，需加入3px白色框，通常使用6px圓角，並加入陰影2。
+          <br>
+          border: 3px solid white;
+          <br>
+          box-shadow: $shadow2;
+          <br>
+          border-radius: 6px;
+        </p>
+
         <div class="contentBlockA"></div>
+        <p class="descriptionA">
+          純白色的內容區塊，放在半透明區塊裡，須加上陰影2。
+          <br>
+          background-color: white;
+          <br>
+          border-radius: 6px;
+          <br>
+          box-shadow: $shadow2;
+        </p>
       </div>
 
       <!-- 黑色區塊 -->
