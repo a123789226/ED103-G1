@@ -1,36 +1,4 @@
-// @mixin cartStep($bgColor, $borderColor, $color){
-//   width: 80px;
-//   height: 80px;
-//   border-radius: 50%;
-//   background-color: $bgColor;
-//   border: 2px solid $borderColor;
-//   color: $color;
-//   display: inline-block;
-//   position: relative;
-//   @media screen and (max-width: 676px){
-//     width: 60px;
-//     height: 60px; 
-//   }
-//   img{
-//     width: 50px;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     @media screen and (max-width: 676px){
-//       width: 40px;
-//     }
-//   }
-//   +span{
-//     height: 2px;
-//     width: 30px;
-//     display: inline-block;
-//     background-color: $blockYellow;
-//     @media screen and (max-width: 676px){
-//       width: 10px;
-//     }
-//   }
-// }
+
 
 .ticketPaymentBG{
   @include BGColor(rgba(77,209,232,1),  rgba(171,224,232,1));
@@ -46,10 +14,14 @@
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0,0,0,.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
+  @media screen and (max-width: 991px){
+    width: 90%;
+  margin: 105px auto 50px;
+  }
   @media screen and (max-width: 676px){
-    padding: 50px 20px;
+    padding: 20px 20px;
   }
   .cartTitle{
     @include main_title($keyWhite);
@@ -199,7 +171,8 @@
 
         }
         .ticketPayCancel{
-          @include btn60(200px, white);  
+          @include btn50White;
+          width: 200px;
           @media screen and (max-width: 991px){
             width: 50%;
             min-width: 220px;
@@ -207,7 +180,8 @@
         }
 
         .ticketPayToCheck{
-          @include btn60(200px, green);
+          @include btn50Green;
+          width: 200px;
           @media screen and (max-width: 991px){
             width: 50%;
             min-width: 220px;

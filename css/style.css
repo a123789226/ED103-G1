@@ -10916,13 +10916,20 @@ ul.vote_list > li > a.-on {
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .cart2Content {
+    width: 90%;
+    margin: 105px auto 50px;
+  }
 }
 
 @media screen and (max-width: 676px) {
   .cart2Content {
-    padding: 50px 20px;
+    padding: 20px 20px;
   }
 }
 
@@ -11269,30 +11276,63 @@ ul.vote_list > li > a.-on {
 }
 
 .cart2Content .paymentBlock .payButtonBox a .ticketPayCancel {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
   font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
   text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+  border: 4px solid #1BB8CE;
   color: #1BB8CE;
+  width: 200px;
+}
+
+.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .cart2Content .paymentBlock .payButtonBox a .ticketPayCancel {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:hover {
   background-color: #ffffff;
+  color: #1697a8;
+  border: 4px solid #1697a8;
 }
 
-.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:hover {
-  border: 5px solid #208686;
+.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:active {
+  border: 4px solid #106b77;
+  color: #106b77;
 }
 
-.cart2Content .paymentBlock .payButtonBox a .ticketPayCancel:hover {
-  color: white;
-  background-color: #208686;
+@media screen and (max-width: 479px) {
+  .cart2Content .paymentBlock .payButtonBox a .ticketPayCancel {
+    border: 3px solid #1BB8CE;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -11303,29 +11343,43 @@ ul.vote_list > li > a.-on {
 }
 
 .cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  width: 200px;
 }
 
 .cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck:hover {
-  background-color: #208686;
+.cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width: 991px) {
