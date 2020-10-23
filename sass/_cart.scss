@@ -15,10 +15,14 @@
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0,0,0,.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 0;
   padding: 50px;
+  @media screen and (max-width: 991px){
+    margin: 105px auto 0;
+  }
   @media screen and (max-width: 676px){
-    padding: 50px 20px;
+    padding: 20px 20px;
+    width: 90%;
   }
   .cartTitle{
     @include main_title($keyWhite);
@@ -35,13 +39,14 @@
       width: 100%;
       border-radius: 6px;
       overflow: hidden;
+      box-shadow: $shadow2;
       thead{
         background-color: $keyGreen;
         tr{
           th{
             @include sub_title($keyWhite);
             padding: 15px;
-            // border: 1px solid white;
+            text-align: center;
             @media screen and (max-width: 676px){
               padding: 15px 5px;
             }
@@ -100,7 +105,10 @@
                 @include sub_title($keyWhite);
                 outline: none;
                 &:hover{
-                  background-color: #208686;
+                  background-color: $darkGreen;
+                }
+                &:active{
+                  background-color: $clickGreen;
                 }
                 @media screen and (max-width: 676px){
                   width: 30px;
@@ -116,6 +124,7 @@
               }
             }
             img{
+              // max-width: 24px;
               width: 24px;
               cursor: pointer;
             }
@@ -143,10 +152,8 @@
       margin: 20px 0 0;
     }
     .ticketToMoneyButton{
-      @include btn60(300px, green);
-      @media screen and (max-width: 676px){
-        width: 250px;
-      }
+      @include btn50Green;
+      box-shadow: $shadow2;
     }
   }
 

@@ -1,5 +1,9 @@
 header.main_menu + div{
-  min-height: calc(100vh - 30px - 160px);
+  min-height: calc(100vh - 30px - 150px);
+  @media screen and (max-width: 991px){
+  min-height: calc(100vh - 30px - 105px);
+    
+  }
 }
 
 footer{

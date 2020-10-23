@@ -565,7 +565,13 @@ ul {
 }
 
 header.main_menu + div {
-  min-height: calc(100vh - 30px - 160px);
+  min-height: calc(100vh - 30px - 150px);
+}
+
+@media screen and (max-width: 991px) {
+  header.main_menu + div {
+    min-height: calc(100vh - 30px - 105px);
+  }
 }
 
 footer {
@@ -2261,13 +2267,20 @@ footer {
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 0;
   padding: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .cartContent {
+    margin: 105px auto 0;
+  }
 }
 
 @media screen and (max-width: 676px) {
   .cartContent {
-    padding: 50px 20px;
+    padding: 20px 20px;
+    width: 90%;
   }
 }
 
@@ -2320,6 +2333,7 @@ footer {
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
+  box-shadow: #333 0px 2px 6px;
 }
 
 .cartContent .cartTable table thead {
@@ -2333,6 +2347,7 @@ footer {
   color: #ffffff;
   line-height: 24px;
   padding: 15px;
+  text-align: center;
 }
 
 @media screen and (max-width: 479px) {
@@ -2438,7 +2453,11 @@ footer {
 }
 
 .cartContent .cartTable table tbody tr td:nth-child(2) .ticketButton:hover {
-  background-color: #208686;
+  background-color: #1697a8;
+}
+
+.cartContent .cartTable table tbody tr td:nth-child(2) .ticketButton:active {
+  background-color: #106b77;
 }
 
 @media screen and (max-width: 676px) {
@@ -2488,34 +2507,42 @@ footer {
 }
 
 .cartContent a .ticketToMoneyButton {
-  width: 300px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
 }
 
 .cartContent a .ticketToMoneyButton:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.cartContent a .ticketToMoneyButton:hover {
-  background-color: #208686;
+.cartContent a .ticketToMoneyButton:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
 }
 
-@media screen and (max-width: 676px) {
+@media screen and (max-width: 479px) {
   .cartContent a .ticketToMoneyButton {
-    width: 250px;
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
   }
 }
 
