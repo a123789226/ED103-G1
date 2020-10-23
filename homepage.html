@@ -21,6 +21,8 @@
   <script src="/js/owl.carousel.js"></script>
   <!-- alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- Parallax v3.1.0 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 </head>
 
@@ -114,8 +116,27 @@
     <!-- Log In End -->
 
     <div class="home_tour_pic">
-      <img src="./image/index/object/indexMain1-1.png" class="home_role">
+
+      <div class="role_pick" id="role_pick">
+        <img src="./image/index/object/arrow_left.png" class="tour_arrow_left" id="left">
+        <ul class="content" id="content">
+          <li class="role_content"><img src="./image/index/object/indexMain1-1.png" class="home_role home_role1"></li>
+          <li class="role_content"><img src="./image/index/object/indexMain1-2.png" class="home_role home_role2"></li>
+          <li class="role_content"><img src="./image/index/object/indexMain1-3.png" class="home_role home_role3"></li>
+        </ul>
+        <img src="./image/index/object/arrow_right.png" class="tour_arrow_right" id="right">
+      </div>
+
       <img src="./image/index/map/island_2.png" class="home_map">
+      <div class="home_map_container">
+        <div class="move" id="move_move">
+          <img data-depth="0.15" src="./image/index/object/home_p1.png" class="home_p1">
+          <img data-depth="0.15" src="./image/index/object/home_p2.png" class="home_p2">
+          <img data-depth="0.15" src="./image/index/object/home_p3.png" class="home_p3">
+          <img data-depth="0.15" src="./image/index/object/home_p4.png" class="home_p4">
+        </div>
+      </div>
+
       <embed src="./image/index/map/boat.png" class="home_boat" width="1000px"/>
       <div class="home_tour_fish">
         <img src="./image/index/object/finsh1.png" class="home_fish_left">
@@ -557,13 +578,13 @@
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 <script>
-  TweenMax.to('.boat', 10, {
+  TweenMax.to('.home_boat', 10, {
     xPercent: -800,
     yPercent: 900,
     repeat: -1,
     yoyo: false,
     ease: Power0.easeNone,
-    delay: 1
+    // delay: 1
 });
 </script>
 
@@ -695,6 +716,56 @@
     });
   });
   </script>
+  <script>
+    parallaxInstance = new Parallax(document.getElementById("move_move"));
+  </script>
+
+  <script>
+    $(document).ready(function () {
+        let divWidth = $('#role_pick').width();
+        let imgCount = $('#content li').length;
+        console.log(divWidth);
+        console.log(imgCount);
+    
+      $('#content').width(divWidth * imgCount);       //ul的寬度
+      $('#content li').width(divWidth);               //li的寬度
+    
+      function $id(id) {
+        return document.getElementById(id);
+      }
+
+      function move() {
+        var imgContainer = document.querySelector(".content");
+        var imgs = imgContainer.getElementsByTagName("li");
+        var first = imgs[0];
+        imgContainer.appendChild(first);
+      }
+      //==========window.onload
+      window.onload = function () {
+        //==========toLeft.onClick
+        $id("left").onclick = function () {
+          var imgContainer = $id("content");
+          var imgs = imgContainer.querySelectorAll(".role_content");
+          var last = imgs[imgs.length - 1];
+          var first = imgs[0];
+          imgContainer.insertBefore(last, first);
+        }
+        //==========toRight.onclick
+        $id("right").onclick = function () {
+          var imgContainer = $id("content");
+          var imgs = imgContainer.querySelectorAll(".role_content");
+          var first = imgs[0];
+          imgContainer.appendChild(first);
+        }
+        // ................................
+      }    
+    
+    });
+
+
+
+  </script>
+
 
 </body>
 </html>

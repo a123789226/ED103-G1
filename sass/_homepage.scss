@@ -19,13 +19,122 @@
   .home_tour_pic{
     position: relative;
     padding-top: 100px;
-    .home_role{
-    width: 8%;
+    .role_pick{
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      position: relative;
+      top: 25%;
+      left: 12%;
+      overflow: hidden;
+    }
+    .tour_arrow_left{
+      cursor: pointer;
+      pointer-events: auto;
+      position: absolute;
+      width: 10%;
+      top: 50%;
+      left: 15%;
+      z-index: 5;
+    }
+    .tour_arrow_right{
+      cursor: pointer;
+      pointer-events: auto;
+      position: absolute;
+      width: 10%;
+      top: 50%;
+      right: 15%;
+      z-index: 5;
+    }
+    .home_map_container{
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      // background-image: url("../image/index/map/island_2.png");
+      // background-repeat: no-repeat;
+      // width: 70%;
+      // left: 20%;
+      // padding-bottom: 45%;
+      // background-position: 
+      // height: 750px;
+      // top: 15%;
+      // left: 40%;
+      .move{
+        position: absolute;
+        width: 100%;
+        .home_p1{
+          position: absolute;
+          padding-top: 20%;
+          margin-left: 70%;
+          width: 2%;
+          // z-index: 10;
+          // height: 25px;
+        }
+        .home_p2{
+          position: absolute;
+          padding-top: 30%;
+          margin-left: 60%;
+          width: 2%;
+          // z-index: 10;
+          // height: 25px;
+        }
+        .home_p3{
+          position: absolute;
+          padding-top: 20%;
+          margin-left: 45%;
+          width: 2%;
+          // z-index: 10;
+          // height: 25px;
+        }
+        .home_p4{
+          position: absolute;
+          padding-top: 30%;
+          margin-left: 85%;
+          width: 2%;
+          // z-index: 10;
+          // height: 25px;
+        }
+    }
+  }
+    .home_role1{
+    display: inline-block;
+    width: 35%;
     position: relative;
     // top: 25%;
-    left: 13%;
-    transform: translateY(-30px);
+    left: 35%;
+    transform: translateY(50px);
     animation-name: home_bounce_down;
+    animation-duration: 3s;
+    // animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    }
+    .home_role2{
+    display: inline-block;
+    width: 35%;
+    position: relative;
+    // top: 25%;
+    left: 30%;
+    transform: translateY(-50px);
+    animation-name: home_bounce_down2;
+    animation-duration: 3s;
+    // animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    }
+    .home_role3{
+    display: inline-block;
+    width: 35%;
+    position: relative;
+    // top: 25%;
+    left: 33%;
+    transform: translateY(50px);
+    animation-name: home_bounce_down2;
     animation-duration: 3s;
     // animation-delay: 1s;
     animation-iteration-count: infinite;
@@ -35,7 +144,7 @@
       position: relative; 
       width: 65%;
       top: 15%;
-      left: 25%;
+      left: 15%;
     }
     .home_boat{
       width: 8%;
@@ -100,16 +209,49 @@
     }
 }
 
+#content{
+  position: relative;
+}
+#content li{
+  float: left;
+}
+
+
+
+
+
 // Keyframes BOUNCE LEFT RIGHT
 @keyframes home_bounce_down {
   0%{
-    transform: translateY(-30px);
+    transform: translateY(50px);
   }
   50%{
-    transform: translateY(30px);
+    transform: translateY(0px);
   }
   100%{
-    transform: translateY(-30px);
+    transform: translateY(50px);
+  }
+}
+@keyframes home_bounce_down2 {
+  0%{
+    transform: translateY(150px);
+  }
+  50%{
+    transform: translateY(75px);
+  }
+  100%{
+    transform: translateY(150px);
+  }
+}
+@keyframes home_bounce_down3 {
+  0%{
+    transform: translateY(50px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(50px);
   }
 }
 
