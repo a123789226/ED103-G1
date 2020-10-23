@@ -3650,12 +3650,15 @@ footer {
 }
 
 .team_main {
+  width: 100%;
   max-width: 1200px;
   margin: 0px auto;
+  border: 5px solid blue;
 }
 
 .tour_title_block {
-  margin: 40px;
+  border: 2px solid black;
+  padding: 50px;
 }
 
 .tour_btn {

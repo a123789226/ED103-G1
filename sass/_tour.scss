@@ -11,15 +11,17 @@
 }
 
 .team_main{
+  width:100%;
   max-width: 1200px;
   margin:0px auto;
-  // border: 5px solid blue;
+  border: 5px solid blue;
 }
 
 // title + btn 部分
 .tour_title_block{
-    // border:1px solid black;
-    margin:40px
+    border:2px solid black;
+    // margin:40px
+    padding:50px;
 }
 
 // btn區塊
