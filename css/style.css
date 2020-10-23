@@ -8475,6 +8475,81 @@ ul.vote_list > li > a.-on {
   }
 }
 
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardContainer .cardMaterials {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-image: url(https://picsum.photos/300/200?random=22);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardContainer .cardMaterials p {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 24px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 479px) {
+  .cardContainer .cardMaterials p {
+    font-size: 20px;
+  }
+}
+
+.cardContainer .cardMaterials .cardMaterialAnimalOptions {
+  width: 65%;
+  margin: 20px auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialBackgroundOptions {
+  width: 65%;
+  margin: 20px auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialDecoOptions {
+  width: 65%;
+  margin: 20px auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialAnimalBtn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.cardContainer .cardMaterials .cardMaterialBackgroundBtn {
+  text-align: center;
+}
+
+.cardContainer .cardMaterials .cardMaterialDecoBtn {
+  text-align: center;
+}
+
+.cardContainer .cardSectionContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-left: 5%;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent {
+  width: 100%;
+  height: 400px;
+  background-color: lightgreen;
+}
+
 .memBackground {
   width: 100%;
   height: 100vh;
