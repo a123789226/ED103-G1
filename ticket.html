@@ -208,7 +208,7 @@
           <img src="./image/ticket/ticketJPG2.jpg"/>
         </div>
       </div>
-      <div class="ticketBookingBlock">
+      <form class="ticketBookingBlock" action="./overnightBooking.html">
         <h4>Select Date</h4>
         <div class="ticketCalendarBlock">       
         </div>
@@ -264,13 +264,11 @@
 
           <p class="ticketONTotal">Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;{{APrice * AAmount + BPrice * BAmount + CPrice * CAmount + DPrice * DAmount}}</p>
           <div class="ticketONButtonBlock">
-            <a href="overnightBooking.html">
-              <button id="ticketBookingButton">Go Booking</button>
-            </a>            
+            <input type="submit" value="Go Booking" id="ticketBookingButton">         
           </div>
 
         </div>
-      </div>
+      </form>
     </section>
 <!-- 你的code打這上面 -->
 
@@ -446,6 +444,11 @@
       startDate: " new date()",
       todayHighlight: true,
     });
+
+    //防止加減按鈕提交表單
+    $('.ticketButton').on('click', function(){
+      return false;
+    })
 
 
   // Login彈窗

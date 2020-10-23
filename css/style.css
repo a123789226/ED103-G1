@@ -4160,6 +4160,7 @@ footer {
 @media screen and (max-width: 676px) {
   .ticketTicketBox {
     padding: 0 20px;
+    width: 90%;
   }
 }
 
@@ -4218,6 +4219,7 @@ footer {
 .ticketTicketBox .ticketTicketImgBlock .ticketTicketImg {
   border: 3px solid white;
   border-radius: 6px;
+  box-shadow: #333 0px 2px 6px;
   width: 100%;
   margin-bottom: 15px;
 }
@@ -4273,7 +4275,7 @@ footer {
   border-radius: 6px;
   background-color: white;
   height: 60px;
-  box-shadow: #777 0px 2px 6px;
+  box-shadow: #333 0px 2px 6px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -4336,6 +4338,7 @@ footer {
   color: #ffffff;
   line-height: 24px;
   outline: none;
+  transition: .05s;
 }
 
 @media screen and (max-width: 479px) {
@@ -4345,7 +4348,12 @@ footer {
 }
 
 .ticketTicketBox .ticketTicketContent .ticketButtonBlock .ticketButtonBox .ticketButtons .ticketButton:hover {
-  background-color: #208686;
+  background-color: #1697a8;
+  transform: scale(1.05);
+}
+
+.ticketTicketBox .ticketTicketContent .ticketButtonBlock .ticketButtonBox .ticketButtons .ticketButton:active {
+  background-color: #106b77;
 }
 
 @media screen and (max-width: 676px) {
@@ -4374,7 +4382,7 @@ footer {
   width: 100%;
   font-size: 24px;
   font-weight: 400;
-  color: #ffffff;
+  color: #FBE108;
   display: block;
   text-align: right;
   padding: 0 30px 30px 0;
@@ -4393,55 +4401,49 @@ footer {
 }
 
 .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart {
-  width: 360px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
-  box-shadow: #777 0px 2px 6px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+  width: 240px;
 }
 
 .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart:hover {
-  background-color: #208686;
+.ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width: 676px) {
   .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart {
-    width: 240px;
-    display: inline-block;
-    cursor: pointer;
-    border: 5px solid #1BB8CE;
-    border-radius: 30px;
-    padding: 0 36px;
-    font-family: "Roboto", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    background-color: #1BB8CE;
-    height: 60px;
-    line-height: 50px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #1BB8CE;
-  }
-  .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart:hover {
-    border: 5px solid #208686;
-  }
-  .ticketTicketBox .ticketTicketContent .ticketTicketButtonBlock #ticketAddToCart:hover {
-    background-color: #208686;
+    width: 200px;
   }
 }
 
@@ -4457,6 +4459,7 @@ footer {
 @media screen and (max-width: 676px) {
   .ticketOverNightBox {
     padding: 0 20px;
+    width: 90%;
   }
 }
 
@@ -4586,35 +4589,47 @@ footer {
 }
 
 .ticketOverNightBox .ticketONIntroBlock > div > a span:first-child {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 24px;
   color: #ffffff;
+  line-height: 24px;
   padding-top: 10%;
   transition: color 0.2s linear;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 479px) {
   .ticketOverNightBox .ticketONIntroBlock > div > a span:first-child {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .ticketOverNightBox .ticketONIntroBlock > div > a span:first-child {
     font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 24px;
   }
 }
 
 .ticketOverNightBox .ticketONIntroBlock > div > a span:nth-child(2) {
-  color: #ffffff;
-  font-weight: 400;
   font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 24px;
   transition: color 0.2s linear;
 }
 
 @media screen and (max-width: 767px) {
   .ticketOverNightBox .ticketONIntroBlock > div > a span:nth-child(2) {
     font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 18px;
   }
 }
 
@@ -4645,6 +4660,7 @@ footer {
 .ticketOverNightBox .ticketONIntroBlock > div .ticketONIntroBox img {
   width: 49%;
   display: inline-block;
+  border: 3px solid white;
 }
 
 @media screen and (max-width: 479px) {
@@ -4666,6 +4682,10 @@ footer {
 @media screen and (max-width: 479px) {
   .ticketOverNightBox .ticketONIntroBlock > div .ticketONIntroBox p {
     font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 18px;
   }
 }
 
@@ -4703,6 +4723,7 @@ footer {
 }
 
 .ticketOverNightBox .ticketONIntroBlock .ticketONBigImg img {
+  border: 3px solid white;
   width: 60%;
   position: absolute;
   right: 3%;
@@ -4723,11 +4744,19 @@ footer {
 }
 
 .ticketOverNightBox .ticketBookingBlock h4 {
-  font-size: 36px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #FBE108;
+  line-height: 24px;
   width: 100%;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 479px) {
+  .ticketOverNightBox .ticketBookingBlock h4 {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -4910,6 +4939,7 @@ footer {
   color: #ffffff;
   line-height: 24px;
   outline: none;
+  transition: .05s;
 }
 
 @media screen and (max-width: 479px) {
@@ -4926,7 +4956,12 @@ footer {
 }
 
 .ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketAreaRemainBox .ticketButtonBox .ticketButtons .ticketButton:hover {
-  background-color: #208686;
+  background-color: #1697a8;
+  transform: scale(1.05);
+}
+
+.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketAreaRemainBox .ticketButtonBox .ticketButtons .ticketButton:active {
+  background-color: #106b77;
 }
 
 .ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketAreaRemainBox .ticketButtonBox .ticketButtons .ticketTicketAmount {
@@ -4947,7 +4982,7 @@ footer {
   width: 100%;
   font-size: 24px;
   font-weight: 400;
-  color: #ffffff;
+  color: #FBE108;
   display: block;
   text-align: right;
   padding: 0 30px 30px 0;
@@ -4965,35 +5000,49 @@ footer {
   }
 }
 
-.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock a #ticketBookingButton {
-  width: 360px;
+.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock #ticketBookingButton {
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  width: 240px;
 }
 
-.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock a #ticketBookingButton:hover {
-  border: 5px solid #208686;
+.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock #ticketBookingButton:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock a #ticketBookingButton:hover {
-  background-color: #208686;
+.ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock #ticketBookingButton:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock #ticketBookingButton {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width: 676px) {
-  .ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock a #ticketBookingButton {
-    width: 240px;
+  .ticketOverNightBox .ticketBookingBlock .ticketBooking .ticketONButtonBlock #ticketBookingButton {
+    width: 200px;
   }
 }
 
