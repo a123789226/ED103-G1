@@ -3813,6 +3813,7 @@ footer {
 .tour_map_area .tour_map_house1 .tour_dolphin_wave {
   position: absolute;
   width: 45%;
+  cursor: pointer;
   -webkit-transform: translate(55%, -60%);
           transform: translate(55%, -60%);
   -webkit-animation-name: jump;
@@ -3852,6 +3853,7 @@ footer {
 .tour_map_area .tour_map_house2 .tour_whale_wave {
   position: absolute;
   width: 45%;
+  cursor: pointer;
   -webkit-transform: translate(55%, -60%);
           transform: translate(55%, -60%);
   -webkit-animation-name: jump;
@@ -3891,6 +3893,7 @@ footer {
 .tour_map_area .tour_map_house3 .tour_seal_wave {
   position: absolute;
   width: 45%;
+  cursor: pointer;
   -webkit-transform: translate(55%, -60%);
           transform: translate(55%, -60%);
   -webkit-animation-name: jump;
@@ -3930,6 +3933,7 @@ footer {
 .tour_map_area .tour_map_house4 .tour_seaturtle_wave {
   position: absolute;
   width: 45%;
+  cursor: pointer;
   -webkit-transform: translate(55%, -60%);
           transform: translate(55%, -60%);
   -webkit-animation-name: jump;

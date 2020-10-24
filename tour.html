@@ -113,6 +113,7 @@
           <img class="tour_house2 tour_houseA tour_house_show" src="./image/tour/house2.png" alt="error">   
           <img class="tour_house2_hover tour_houseB" src="./image/tour/house2_hover.png" alt="error"> 
           <img class="tour_whale_wave" src="./image/tour/tour_whale_wave.png" alt="error">
+
         </div>
         <div class="tour_map_house3">
           <img class="tour_house3 tour_houseA tour_house_show" src="./image/tour/house3.png" alt="error">
@@ -373,7 +374,7 @@ $(function(){
 });
 
 
-//點擊地圖的圖文介紹按鈕,會往下移動
+//---------點擊地圖的圖文介紹按鈕,會往下移動----------
 $(function(){
   $("button.btn_modal_close1").on("click", function(e){
     e.preventDefault();
@@ -383,19 +384,76 @@ $(function(){
   });
 });
 
-
+//------------當滑鼠移入房子, 出現hover效果-------------
 $('.tour_houseA').hover(function(){
   $(this).toggleClass('tour_house_show');
   $(this).next().toggleClass('tour_house_show');
 },function(){
-
 })
 
+//------------當滑鼠移出房子, 移除hover效果-------------
 $('.tour_houseB').hover(function(){
 },function(){
   $(this).toggleClass('tour_house_show');
   $(this).prev().toggleClass('tour_house_show');
 })
+
+//當滑鼠移入dolphin紅色圈圈, 其底下房子出現hover效果
+$('.tour_dolphin_wave').hover(function(){
+  $('.tour_house1').toggleClass('tour_house_show');
+  $('.tour_house1_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//當滑鼠移出dolphin紅色圈圈, 其底下房子移除hover效果
+$('.tour_dolphin_wave').hover(function(){
+},function(){
+  $('.tour_house1_hover').toggleClass('tour_house_show');
+  $('.tour_house1').toggleClass('tour_house_show');
+})
+
+//當滑鼠移入whale紅色圈圈, 其底下房子出現hover效果
+$('.tour_whale_wave').hover(function(){
+  $('.tour_house2').toggleClass('tour_house_show');
+  $('.tour_house2_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//當滑鼠移出whale紅色圈圈, 其底下房子移除hover效果
+$('.tour_whale_wave').hover(function(){
+},function(){
+  $('.tour_house2_hover').toggleClass('tour_house_show');
+  $('.tour_house2').toggleClass('tour_house_show');
+})
+
+//當滑鼠移入seal紅色圈圈, 其底下房子出現hover效果
+$('.tour_seal_wave').hover(function(){
+  $('.tour_house3').toggleClass('tour_house_show');
+  $('.tour_house3_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//當滑鼠移出seal紅色圈圈, 其底下房子移除hover效果
+$('.tour_seal_wave').hover(function(){
+},function(){
+  $('.tour_house3_hover').toggleClass('tour_house_show');
+  $('.tour_house3').toggleClass('tour_house_show');
+})
+
+//當滑鼠移入sea turtle紅色圈圈, 其底下房子出現hover效果
+$('.tour_seaturtle_wave').hover(function(){
+  $('.tour_house4').toggleClass('tour_house_show');
+  $('.tour_house4_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//當滑鼠移出sea turtle紅色圈圈, 其底下房子移除hover效果
+$('.tour_seaturtle_wave').hover(function(){
+},function(){
+  $('.tour_house4_hover').toggleClass('tour_house_show');
+  $('.tour_house4').toggleClass('tour_house_show');
+})
+
 
    
   </script>
