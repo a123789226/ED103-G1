@@ -22,7 +22,7 @@
   }
   @media screen and (max-width: 676px){
     padding: 20px;
-    width: 95%;
+    width: 90%;
   }
 
   .bookingTitle{
@@ -60,11 +60,13 @@
           th{
             @include sub_title($keyWhite);
             padding: 15px;
-            @media screen and (max-width: 991px){
-              padding: 10px 5px;
-            }
+            text-align: center;
             @media screen and (max-width: 676px){
+              padding: 10px 5px;
               font-size: 16px;
+            }
+            @media screen and (max-width: 479px){
+              font-size: 14px;
             }
             &:first-child{
               width: 120px;
@@ -78,9 +80,9 @@
             // &:nth-child(3){
             //   width: 80px;
             // }
-            &:nth-child(4){
-              width: 70px;
-            }
+            // &:nth-child(4){
+            //   width: 70px;
+            // }
             // &:nth-child(5){
             //   width: 100px;
             // }
@@ -105,6 +107,9 @@
             }
             @media screen and (max-width: 676px){
               font-size: 16px;
+            }
+            @media screen and (max-width: 479px){
+              font-size: 14px;
             }
             &:first-child{
               @media screen and (max-width: 479px){
@@ -140,37 +145,55 @@
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     @media screen and (max-width: 767px){
       flex-direction: column-reverse;
+      align-items: center;
+    }
+    .ticketPayCancel{
+      @include btn50White;
+      width: 200px;
+      margin: 0 30px 0 0;
+      @media screen and (max-width: 767px){
+        margin: 20px 0 0 0;
+      }
+      @media screen and (max-width: 479px){
+        width: 160px;
+      }
+    }
+    .ticketPayToCheck{
+      @include btn50Green;
+      width: 200px;
+      @media screen and (max-width: 479px){
+        width: 160px;
+      }
     }
     
-    a{
-      margin: 0 15px;
-      &:first-child{
-        @media screen and (max-width: 767px){
-          margin-top: 20px;
-        }
+    // a{
+    //   margin: 0 15px;
+    //   &:first-child{
+    //     @media screen and (max-width: 767px){
+    //       margin-top: 20px;
+    //     }
 
-      }
-      .ticketPayCancel{
-        @include btn50White;
-        box-shadow: $shadow2;
-        width: 200px; 
-        @media screen and (max-width: 479px){
-          width: 160px;
-        } 
-      }
+    //   }
+    //   .ticketPayCancel{
+    //     @include btn50White;
+    //     box-shadow: $shadow2;
+    //     width: 200px; 
+    //     @media screen and (max-width: 479px){
+    //       width: 160px;
+    //     } 
+    //   }
 
-      .ticketPayToCheck{
-        @include btn50Green;
-        box-shadow: $shadow2;
-        width: 200px;
-        @media screen and (max-width: 479px){
-          width: 160px;
-        }        
-      }
-    }
+    //   .ticketPayToCheck{
+    //     @include btn50Green;
+    //     box-shadow: $shadow2;
+    //     width: 200px;
+    //     @media screen and (max-width: 479px){
+    //       width: 160px;
+    //     }        
+    //   }
+    // }
   }
 
 }

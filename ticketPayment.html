@@ -149,12 +149,14 @@
           <p>TOTAL PRICE</p><p>${{price-point}}</p>
         </div>
         <div class="payButtonBox">
-          <a href="cart.html">
+          <!-- <a href="cart.html">
             <button class="ticketPayCancel">Cancel</button>
           </a>
           <a href="ticketConfirm.html">
             <button class="ticketPayToCheck">NEXT</button>
-          </a>
+          </a> -->
+          <a href="cart.html" class="ticketPayCancel">CANCEL</a>
+          <button class="ticketPayToCheck">NEXT</button>
         </div>
 
       </form>
@@ -222,7 +224,7 @@
         dangerMode: false
       }).then((value) => {
         if(value){
-          window.location = this.closest('a').href;
+          window.location = this.href;
         }
       });
     })

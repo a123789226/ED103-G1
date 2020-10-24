@@ -111,7 +111,7 @@
       </form>
     </div>
 
-    <div class="booking3Content">
+    <form class="booking3Content" action="homepage.html">
       <h3 class="booking3Title">Confirm Your Order</h3>
       <h4 class="booking3SubTitle">Please confirm that the Overnight Area you booked are correct, and checkout confirmation</h4>
       <div class="booking3StepBox">
@@ -164,18 +164,20 @@
 
 
         <div class="payButtonBox">
-          <a href="bookingPayment.html">
+          <!-- <a href="bookingPayment.html">
             <button class="ticketPayCancel">PREVIOUS</button>
           </a>
           <a href="homepage.html">
             <button class="ticketPayToCheck">SEND</button>
-          </a>
+          </a> -->
+          <a href="bookingPayment.html" class="ticketPayCancel">PREVIOUS</a>
+          <button class="ticketPayToCheck">SEND</button>
         </div>
 
       </div>
 
 
-    </div>
+    </form>
 
 
 <!-- 你的code打這上面 -->
@@ -219,10 +221,6 @@
       $("ul.main_menu_ul").toggleClass("is-active");
     });
     
-    $('.discountQuestion').on('click', function(e){
-      alert('The points you get can be used to offset the purchase amount, 1 point is equivalent to 1 US dollar.');
-      e.preventDefault();
-    });
 
     // $('.ticketPayCancel').on('click', function(e){
     //   var answer = confirm('Do you want to cancel? Your information will not be saved.');
@@ -235,7 +233,8 @@
       e.preventDefault();
       swal("Great!", "You have completed the payment!", "success").then((value) => {
         if(value){
-          window.location = this.closest('a').href;
+        $(this).submit();
+          window.location = "homepage.html";
         }
       })
     })
