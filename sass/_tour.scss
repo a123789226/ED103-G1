@@ -218,14 +218,6 @@
 }
 
 
-
-
-.tour_space{
-  margin:500px auto;
-  border:2px solid green;
-  opacity: 0;
-}
-
 //場館介紹 -- dolphin 館
 .tour_overlay1{
   position: fixed;
@@ -238,7 +230,7 @@
   /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
   opacity: 0;
   z-index: -1;
-  transition: opacity 1s;
+  transition: opacity 0s;
 }
 
 .tour_overlay1.-on{
@@ -274,9 +266,6 @@
 
 /* 元素 article 置中及基本樣式 */
 .tour_overlay1 > article{
-  // background-image: url("../image/tour/tour_intro_dolphin1.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
@@ -325,7 +314,7 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 1s;
+  transition: opacity 0s;
 }
 
 .tour_overlay2.-on{
@@ -338,9 +327,6 @@
 }
 
 .tour_overlay2 > article{
-  // background-image: url("../image/tour/tour_intro_whale1.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
@@ -390,7 +376,7 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 1s;
+  transition: opacity 0s;
 }
 
 .tour_overlay3.-on{
@@ -403,9 +389,6 @@
 }
 
 .tour_overlay3 > article{
-  // background-image: url("../image/tour/tour_intro_seal1.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
@@ -455,7 +438,7 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 1s;
+  transition: opacity 0s;
 }
 
 .tour_overlay4.-on{
@@ -468,9 +451,6 @@
 }
 
 .tour_overlay4 > article{
-  // background-image: url("../image/tour/tour_intro_dolphin1.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;

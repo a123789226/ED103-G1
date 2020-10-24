@@ -3981,12 +3981,6 @@ footer {
   cursor: pointer;
 }
 
-.tour_space {
-  margin: 500px auto;
-  border: 2px solid green;
-  opacity: 0;
-}
-
 .tour_overlay1 {
   position: fixed;
   top: 0;
@@ -3997,8 +3991,8 @@ footer {
   /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
 }
 
 .tour_overlay1.-on {
@@ -4170,8 +4164,8 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
 }
 
 .tour_overlay2.-on {
@@ -4246,8 +4240,8 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
 }
 
 .tour_overlay3.-on {
@@ -4322,8 +4316,8 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
 }
 
 .tour_overlay4.-on {
