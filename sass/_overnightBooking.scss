@@ -15,14 +15,16 @@
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0,0,0,.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
-  @media screen and (max-width: 676px){
-    padding: 50px 20px;
+  @media screen and (max-width: 991px){
+    margin: 105px auto 50px;
   }
-  @media screen and (max-width: 479px){
+  @media screen and (max-width: 676px){
+    padding: 20px;
     width: 95%;
   }
+
   .bookingTitle{
     @include main_title($keyWhite);
     margin-bottom: 15px;
@@ -51,6 +53,7 @@
       border-radius: 6px;
       overflow: hidden;
       width: 100%;
+      box-shadow: $shadow2;
       thead{
         background-color: $keyGreen;
         tr{
@@ -58,14 +61,14 @@
             @include sub_title($keyWhite);
             padding: 15px;
             @media screen and (max-width: 991px){
-              padding: 15px 5px;
+              padding: 10px 5px;
             }
             @media screen and (max-width: 676px){
               font-size: 16px;
             }
             &:first-child{
               width: 120px;
-              @media screen and (max-width: 767px){
+              @media screen and (max-width: 479px){
                 display: none;
               }
             }
@@ -98,13 +101,13 @@
             @include sub_title($keyBlack);
             text-align: center;
             @media screen and (max-width: 991px){
-              padding: 10px 5px;
+              padding: 5px;
             }
             @media screen and (max-width: 676px){
               font-size: 16px;
             }
             &:first-child{
-              @media screen and (max-width: 767px){
+              @media screen and (max-width: 479px){
                 display: none;
               }
             }
@@ -138,33 +141,34 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    @media screen and (max-width: 991px){
+    @media screen and (max-width: 767px){
       flex-direction: column-reverse;
     }
     
     a{
       margin: 0 15px;
       &:first-child{
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 767px){
           margin-top: 20px;
         }
 
       }
       .ticketPayCancel{
-        @include btn60(200px, white);  
-        @media screen and (max-width: 991px){
-          width: 50%;
-          min-width: 220px;
-        }
+        @include btn50White;
+        box-shadow: $shadow2;
+        width: 200px; 
+        @media screen and (max-width: 479px){
+          width: 160px;
+        } 
       }
 
       .ticketPayToCheck{
-        @include btn60(200px, green);
-        @media screen and (max-width: 991px){
-          width: 50%;
-          min-width: 220px;
-        }
-        
+        @include btn50Green;
+        box-shadow: $shadow2;
+        width: 200px;
+        @media screen and (max-width: 479px){
+          width: 160px;
+        }        
       }
     }
   }

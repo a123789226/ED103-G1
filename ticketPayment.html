@@ -206,11 +206,13 @@
     });
 
 
+    // 提示按鈕的alert視窗以及避免button跳轉
     $('.discountQuestion').on('click', function(e){
       swal("What Points do?", "The points you get can be used to offset the purchase amount, 1 point is equivalent to 1 US dollar.", "info");
       e.preventDefault();
     });
 
+    //取消鍵若點選取消才返回購物車頁面，並且為了避免button連至form表單的傳輸位置，按下確認後會跳至外面a標籤的連結目的(購物車)
     $('.ticketPayCancel').on('click', function(e){
       e.preventDefault();
       swal({
@@ -220,7 +222,7 @@
         dangerMode: false
       }).then((value) => {
         if(value){
-          window.location = this.closest('a').href
+          window.location = this.closest('a').href;
         }
       });
     })

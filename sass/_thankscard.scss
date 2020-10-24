@@ -1,0 +1,56 @@
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .cardMaterials{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        background-image: url(https://picsum.photos/300/200?random=22);
+        background-repeat: no-repeat;
+        background-size: cover;
+        p{
+            @include sub_title($keyWhite);
+            margin: 20px auto;
+            text-align: center;
+        }
+        .cardMaterialAnimalOptions{
+            width: 65%;
+            margin: 20px auto;
+        }
+        .cardMaterialBackgroundOptions{
+            width: 65%;
+            margin: 20px auto;
+        }
+        .cardMaterialDecoOptions{
+            width: 65%;
+            margin: 20px auto;
+        }
+        .cardMaterialAnimalBtn{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        .cardMaterialBackgroundBtn{
+            text-align: center;
+        }
+        .cardMaterialDecoBtn{
+            text-align: center;
+        }
+
+    }
+    .cardSectionContainer{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-left: 5%;
+        .cardSectionContent{
+            width: 100%;
+            height: 400px;
+            background-color: lightgreen;
+        }
+
+    }
+}
