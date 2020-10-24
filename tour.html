@@ -398,56 +398,56 @@ $('.tour_houseB').hover(function(){
   $(this).prev().toggleClass('tour_house_show');
 })
 
-//當滑鼠移入dolphin紅色圈圈, 其底下房子出現hover效果
+//----當滑鼠移入dolphin紅色圈圈, 其底下房子出現hover效果------
 $('.tour_dolphin_wave').hover(function(){
   $('.tour_house1').toggleClass('tour_house_show');
   $('.tour_house1_hover').toggleClass('tour_house_show');
 },function(){
 })
 
-//當滑鼠移出dolphin紅色圈圈, 其底下房子移除hover效果
+//-----當滑鼠移出dolphin紅色圈圈, 其底下房子移除hover效果----
 $('.tour_dolphin_wave').hover(function(){
 },function(){
   $('.tour_house1_hover').toggleClass('tour_house_show');
   $('.tour_house1').toggleClass('tour_house_show');
 })
 
-//當滑鼠移入whale紅色圈圈, 其底下房子出現hover效果
+//-----當滑鼠移入whale紅色圈圈, 其底下房子出現hover效果-----
 $('.tour_whale_wave').hover(function(){
   $('.tour_house2').toggleClass('tour_house_show');
   $('.tour_house2_hover').toggleClass('tour_house_show');
 },function(){
 })
 
-//當滑鼠移出whale紅色圈圈, 其底下房子移除hover效果
+//-----當滑鼠移出whale紅色圈圈, 其底下房子移除hover效果-----
 $('.tour_whale_wave').hover(function(){
 },function(){
   $('.tour_house2_hover').toggleClass('tour_house_show');
   $('.tour_house2').toggleClass('tour_house_show');
 })
 
-//當滑鼠移入seal紅色圈圈, 其底下房子出現hover效果
+//-----當滑鼠移入seal紅色圈圈, 其底下房子出現hover效果-----
 $('.tour_seal_wave').hover(function(){
   $('.tour_house3').toggleClass('tour_house_show');
   $('.tour_house3_hover').toggleClass('tour_house_show');
 },function(){
 })
 
-//當滑鼠移出seal紅色圈圈, 其底下房子移除hover效果
+//-----當滑鼠移出seal紅色圈圈, 其底下房子移除hover效果-----
 $('.tour_seal_wave').hover(function(){
 },function(){
   $('.tour_house3_hover').toggleClass('tour_house_show');
   $('.tour_house3').toggleClass('tour_house_show');
 })
 
-//當滑鼠移入sea turtle紅色圈圈, 其底下房子出現hover效果
+//-----當滑鼠移入sea turtle紅色圈圈, 其底下房子出現hover效果-----
 $('.tour_seaturtle_wave').hover(function(){
   $('.tour_house4').toggleClass('tour_house_show');
   $('.tour_house4_hover').toggleClass('tour_house_show');
 },function(){
 })
 
-//當滑鼠移出sea turtle紅色圈圈, 其底下房子移除hover效果
+//-----當滑鼠移出sea turtle紅色圈圈, 其底下房子移除hover效果-----
 $('.tour_seaturtle_wave').hover(function(){
 },function(){
   $('.tour_house4_hover').toggleClass('tour_house_show');
@@ -455,7 +455,60 @@ $('.tour_seaturtle_wave').hover(function(){
 })
 
 
-   
+//-----點擊dolphin紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_dolphin_wave").on("click", function(){
+    $("div.tour_overlay1").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay1").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay1").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊whale紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_whale_wave").on("click", function(){
+    $("div.tour_overlay2").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay2").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay2").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊seal紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_seal_wave").on("click", function(){
+    $("div.tour_overlay3").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay3").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay3").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊sea turtle紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_seaturtle_wave").on("click", function(){
+    $("div.tour_overlay4").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay4").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay4").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+
+ 
   </script>
 </script>
 </body>
