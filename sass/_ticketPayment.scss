@@ -17,10 +17,10 @@
   margin: 150px auto 50px;
   padding: 50px;
   @media screen and (max-width: 991px){
-    width: 90%;
-  margin: 105px auto 50px;
+    margin: 105px auto 50px;
   }
   @media screen and (max-width: 676px){
+    width: 90%;
     padding: 20px 20px;
   }
   .cartTitle{
@@ -86,6 +86,7 @@
         color: $keyWhite;
       }
       input{
+        border: none;
         @include sub_title($keyBlack);
         height: 40px;
         padding: 0 10px;
@@ -158,14 +159,14 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      @media screen and (max-width: 991px){
+      @media screen and (max-width: 767px){
         flex-direction: column-reverse;
       }
       
       a{
         margin: 0 15px;
         &:first-child{
-          @media screen and (max-width: 991px){
+          @media screen and (max-width: 767px){
             margin-top: 20px;
           }
 
@@ -173,20 +174,17 @@
         .ticketPayCancel{
           @include btn50White;
           width: 200px;
-          @media screen and (max-width: 991px){
-            width: 50%;
-            min-width: 220px;
-          }
+          @media screen and (max-width: 479px){
+            width: 160px;
+          } 
         }
 
         .ticketPayToCheck{
           @include btn50Green;
           width: 200px;
-          @media screen and (max-width: 991px){
-            width: 50%;
-            min-width: 220px;
-          }
-          
+          @media screen and (max-width: 479px){
+            width: 160px;
+          } 
         }
       }
     }

@@ -10584,13 +10584,20 @@ ul.vote_list > li > a.-on {
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .cart3Content {
+    margin: 105px auto 50px;
+  }
 }
 
 @media screen and (max-width: 676px) {
   .cart3Content {
-    padding: 50px 20px;
+    padding: 20px;
+    width: 90%;
   }
 }
 
@@ -10701,17 +10708,6 @@ ul.vote_list > li > a.-on {
   border: 1px solid rgba(0, 0, 0, 0.8);
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #ffffff;
-  line-height: 24px;
-}
-
-@media screen and (max-width: 479px) {
-  .cart3Content .confirmBlock {
-    font-size: 20px;
-  }
 }
 
 @media screen and (max-width: 676px) {
@@ -10721,12 +10717,29 @@ ul.vote_list > li > a.-on {
 }
 
 .cart3Content .confirmBlock table {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 24px;
   margin: 50px auto;
   background-color: #ffffff;
   border-radius: 6px;
   overflow: hidden;
   border: 2px solid #ffffff;
   max-width: 90%;
+}
+
+@media screen and (max-width: 479px) {
+  .cart3Content .confirmBlock table {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .cart3Content .confirmBlock table {
+    font-size: 16px;
+  }
 }
 
 .cart3Content .confirmBlock table tbody tr td {
@@ -10783,7 +10796,7 @@ ul.vote_list > li > a.-on {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .cart3Content .confirmBlock .payButtonBox {
     flex-direction: column-reverse;
   }
@@ -10793,76 +10806,121 @@ ul.vote_list > li > a.-on {
   margin: 0 15px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .cart3Content .confirmBlock .payButtonBox a:first-child {
     margin-top: 20px;
   }
 }
 
 .cart3Content .confirmBlock .payButtonBox a .ticketPayCancel {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
   font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
   text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+  border: 4px solid #1BB8CE;
   color: #1BB8CE;
-  background-color: #ffffff;
+  width: 200px;
 }
 
 .cart3Content .confirmBlock .payButtonBox a .ticketPayCancel:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.cart3Content .confirmBlock .payButtonBox a .ticketPayCancel:hover {
-  color: white;
-  background-color: #208686;
+.cart3Content .confirmBlock .payButtonBox a .ticketPayCancel:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .cart3Content .confirmBlock .payButtonBox a .ticketPayCancel {
-    width: 50%;
-    min-width: 220px;
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+.cart3Content .confirmBlock .payButtonBox a .ticketPayCancel:hover {
+  background-color: #ffffff;
+  color: #1697a8;
+  border: 4px solid #1697a8;
+}
+
+.cart3Content .confirmBlock .payButtonBox a .ticketPayCancel:active {
+  border: 4px solid #106b77;
+  color: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .cart3Content .confirmBlock .payButtonBox a .ticketPayCancel {
+    border: 3px solid #1BB8CE;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .cart3Content .confirmBlock .payButtonBox a .ticketPayCancel {
+    width: 160px;
   }
 }
 
 .cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  width: 200px;
 }
 
 .cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck:hover {
-  background-color: #208686;
+.cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck {
-    width: 50%;
-    min-width: 220px;
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .cart3Content .confirmBlock .payButtonBox a .ticketPayToCheck {
+    width: 160px;
   }
 }
 
@@ -10997,13 +11055,13 @@ ul.vote_list > li > a.-on {
 
 @media screen and (max-width: 991px) {
   .cart2Content {
-    width: 90%;
     margin: 105px auto 50px;
   }
 }
 
 @media screen and (max-width: 676px) {
   .cart2Content {
+    width: 90%;
     padding: 20px 20px;
   }
 }
@@ -11228,6 +11286,7 @@ ul.vote_list > li > a.-on {
 }
 
 .cart2Content .paymentBlock .inputBox input {
+  border: none;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -11334,7 +11393,7 @@ ul.vote_list > li > a.-on {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .cart2Content .paymentBlock .payButtonBox {
     flex-direction: column-reverse;
   }
@@ -11344,7 +11403,7 @@ ul.vote_list > li > a.-on {
   margin: 0 15px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .cart2Content .paymentBlock .payButtonBox a:first-child {
     margin-top: 20px;
   }
@@ -11410,10 +11469,9 @@ ul.vote_list > li > a.-on {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .cart2Content .paymentBlock .payButtonBox a .ticketPayCancel {
-    width: 50%;
-    min-width: 220px;
+    width: 160px;
   }
 }
 
@@ -11457,10 +11515,9 @@ ul.vote_list > li > a.-on {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .cart2Content .paymentBlock .payButtonBox a .ticketPayToCheck {
-    width: 50%;
-    min-width: 220px;
+    width: 160px;
   }
 }
 
@@ -11589,18 +11646,19 @@ ul.vote_list > li > a.-on {
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .OvernightContent {
+    margin: 105px auto 50px;
+  }
 }
 
 @media screen and (max-width: 676px) {
   .OvernightContent {
-    padding: 50px 20px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .OvernightContent {
+    padding: 20px;
     width: 95%;
   }
 }
@@ -11753,6 +11811,7 @@ ul.vote_list > li > a.-on {
   border-radius: 6px;
   overflow: hidden;
   width: 100%;
+  box-shadow: #333 0px 2px 6px;
 }
 
 .OvernightContent .bookingTable table thead {
@@ -11776,7 +11835,7 @@ ul.vote_list > li > a.-on {
 
 @media screen and (max-width: 991px) {
   .OvernightContent .bookingTable table thead tr th {
-    padding: 15px 5px;
+    padding: 10px 5px;
   }
 }
 
@@ -11790,7 +11849,7 @@ ul.vote_list > li > a.-on {
   width: 120px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 479px) {
   .OvernightContent .bookingTable table thead tr th:first-child {
     display: none;
   }
@@ -11826,7 +11885,7 @@ ul.vote_list > li > a.-on {
 
 @media screen and (max-width: 991px) {
   .OvernightContent .bookingTable table tbody tr td {
-    padding: 10px 5px;
+    padding: 5px;
   }
 }
 
@@ -11836,7 +11895,7 @@ ul.vote_list > li > a.-on {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 479px) {
   .OvernightContent .bookingTable table tbody tr td:first-child {
     display: none;
   }
@@ -11867,7 +11926,7 @@ ul.vote_list > li > a.-on {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .OvernightContent .bookingButtonBox {
     flex-direction: column-reverse;
   }
@@ -11877,76 +11936,123 @@ ul.vote_list > li > a.-on {
   margin: 0 15px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .OvernightContent .bookingButtonBox a:first-child {
     margin-top: 20px;
   }
 }
 
 .OvernightContent .bookingButtonBox a .ticketPayCancel {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
   font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
   text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+  border: 4px solid #1BB8CE;
   color: #1BB8CE;
-  background-color: #ffffff;
+  box-shadow: #333 0px 2px 6px;
+  width: 200px;
 }
 
 .OvernightContent .bookingButtonBox a .ticketPayCancel:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.OvernightContent .bookingButtonBox a .ticketPayCancel:hover {
-  color: white;
-  background-color: #208686;
+.OvernightContent .bookingButtonBox a .ticketPayCancel:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .OvernightContent .bookingButtonBox a .ticketPayCancel {
-    width: 50%;
-    min-width: 220px;
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+.OvernightContent .bookingButtonBox a .ticketPayCancel:hover {
+  background-color: #ffffff;
+  color: #1697a8;
+  border: 4px solid #1697a8;
+}
+
+.OvernightContent .bookingButtonBox a .ticketPayCancel:active {
+  border: 4px solid #106b77;
+  color: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .OvernightContent .bookingButtonBox a .ticketPayCancel {
+    border: 3px solid #1BB8CE;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .OvernightContent .bookingButtonBox a .ticketPayCancel {
+    width: 160px;
   }
 }
 
 .OvernightContent .bookingButtonBox a .ticketPayToCheck {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+  width: 200px;
 }
 
 .OvernightContent .bookingButtonBox a .ticketPayToCheck:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.OvernightContent .bookingButtonBox a .ticketPayToCheck:hover {
-  background-color: #208686;
+.OvernightContent .bookingButtonBox a .ticketPayToCheck:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 479px) {
   .OvernightContent .bookingButtonBox a .ticketPayToCheck {
-    width: 50%;
-    min-width: 220px;
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .OvernightContent .bookingButtonBox a .ticketPayToCheck {
+    width: 160px;
   }
 }
 
