@@ -14,10 +14,13 @@
   width: 80%;
   max-width: 1200px;
   background-color: rgba(0,0,0,.2);
-  margin: 160px auto 50px;
+  margin: 150px auto 50px;
   padding: 50px;
+  @media screen and (max-width: 991px){
+    margin: 105px auto 50px;
+  }
   @media screen and (max-width: 676px){
-    padding: 50px 20px;
+    padding:20px;
   }
   
   .booking3Title{
@@ -66,8 +69,10 @@
             color: $keyBlack;
             padding: 15px 20px;
             border: 1px solid white;
+            @include sub_title($keyBlack);
             @media screen and (max-width: 676px){
               padding: 10px 10px;
+              font-size: 16px;
             }
             
             &:first-child{
@@ -100,36 +105,54 @@
       margin-bottom: 50px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      @media screen and (max-width: 991px){
+      @media screen and (max-width: 767px){
         flex-direction: column-reverse;
+        align-items: center;
+      }
+      .ticketPayCancel{
+        @include btn50White;
+        width: 200px;
+        margin: 0 30px 0 0;
+        @media screen and (max-width: 767px){
+          margin: 20px 0 0 0;
+        }
+        @media screen and (max-width: 479px){
+          width: 160px;
+        }
+      }
+      .ticketPayToCheck{
+        @include btn50Green;
+        width: 200px;
+        @media screen and (max-width: 479px){
+          width: 160px;
+        }
       }
       
-      a{
-        margin: 0 15px;
-        &:first-child{
-          @media screen and (max-width: 991px){
-            margin-top: 20px;
-          }
+      // a{
+      //   margin: 0 15px;
+      //   &:first-child{
+      //     @media screen and (max-width: 991px){
+      //       margin-top: 20px;
+      //     }
   
-        }
-        .ticketPayCancel{
-          @include btn60(200px, white);  
-          @media screen and (max-width: 991px){
-            width: 50%;
-            min-width: 220px;
-          }
-        }
+      //   }
+      //   .ticketPayCancel{
+      //     @include btn60(200px, white);  
+      //     @media screen and (max-width: 991px){
+      //       width: 50%;
+      //       min-width: 220px;
+      //     }
+      //   }
   
-        .ticketPayToCheck{
-          @include btn60(200px, green);
-          @media screen and (max-width: 991px){
-            width: 50%;
-            min-width: 220px;
-          }
+      //   .ticketPayToCheck{
+      //     @include btn60(200px, green);
+      //     @media screen and (max-width: 991px){
+      //       width: 50%;
+      //       min-width: 220px;
+      //     }
           
-        }
-      }
+      //   }
+      // }
     }
 
   }

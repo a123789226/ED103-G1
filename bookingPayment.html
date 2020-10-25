@@ -153,12 +153,14 @@
           <p>TOTAL PRICE</p><p>${{price-point}}</p>
         </div>
         <div class="payButtonBox">
-          <a href="overnightBooking.html">
+          <!-- <a href="overnightBooking.html">
             <button class="ticketPayCancel">PREVIOUS</button>
           </a>
           <a href="bookingConfirm.html">
             <button class="ticketPayToCheck">NEXT</button>
-          </a>
+          </a> -->
+          <a href="overnightBooking.html" class="ticketPayCancel">PREVIOUS</a>
+          <button class="ticketPayToCheck">NEXT</button>
         </div>
 
       </form>
@@ -185,6 +187,7 @@
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     new Vue({
@@ -208,15 +211,11 @@
       $("ul.main_menu_ul").toggleClass("is-active");
     });
     
+    // 提示按鈕的alert視窗以及避免button跳轉
     $('.discountQuestion').on('click', function(e){
-      alert('The points you get can be used to offset the purchase amount, 1 point is equivalent to 1 US dollar.');
+      swal("What Points do?", "The points you get can be used to offset the purchase amount, 1 point is equivalent to 1 US dollar.", "info");
       e.preventDefault();
     });
-
-    $('.ticketPayCancel').on('click', function(e){
-      e.preventDefault();
-      window.location = this.closest('a').href;
-    })
 
     // Login彈窗
     $(function(){

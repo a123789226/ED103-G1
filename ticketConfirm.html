@@ -112,7 +112,7 @@
       </form>
     </div>
 
-    <div class="cart3Content">
+    <form class="cart3Content" action="homepage.html">
       <h3 class="cartTitle">Confirm Your Order</h3>
       <h4 class="cartSubTitle">Please confirm that the tickets you purchased are correct, and checkout confirmation</h4>
       <div class="cartStepBox">
@@ -157,18 +157,20 @@
 
 
         <div class="payButtonBox">
-          <a href="ticketPayment.html">
+          <!-- <a href="ticketPayment.html">
             <button class="ticketPayCancel">PREVIOUS</button>
           </a>
           <a href="homepage.html">
             <button class="ticketPayToCheck">SEND</button>
-          </a>
+          </a> -->
+          <a href="ticketPayment.html" class="ticketPayCancel">PREVIOUS</a>
+          <button class="ticketPayToCheck">SEND</button>
         </div>
 
       </div>
 
 
-    </div>
+    </form>
 
 
 <!-- 你的code打這上面 -->
@@ -215,7 +217,8 @@
       e.preventDefault();
       swal("Great!", "You have completed the payment!", "success").then((value) => {
         if(value){
-          window.location = this.closest('a').href;
+          $(this).submit();
+          window.location = "homepage.html";
         }
       })
 

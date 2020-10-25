@@ -138,7 +138,7 @@
               <th>Photo</th>
               <th>Overnight Area</th>
               <th>Date</th>
-              <th>Quantity</th>
+              <th>Amount</th>
               <th>SubTotal</th>
               <th></th>
             </tr>
@@ -181,12 +181,14 @@
       </div>
       <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>{{priceA*amountA+priceB*amountB+priceC*amountC+priceD*amountD}}</span></p>
       <div class="bookingButtonBox">
-        <a href="ticket.html">
+        <!-- <a href="ticket.html">
           <button class="ticketPayCancel">CANCEL</button>
         </a>
         <a href="bookingPayment.html">
           <button class="ticketPayToCheck">NEXT</button>
-        </a>
+        </a> -->
+        <a href="ticket.html" class="ticketPayCancel">CANCEL</a>
+        <a href="bookingPayment.html" class="ticketPayToCheck">NEXT</a>
       </div>
     </div>
 
@@ -265,7 +267,7 @@
         dangerMode: false
       }).then((value) => {
         if(value){
-          window.location = this.closest('a').href
+          window.location = this.href
         }
       });
     })
