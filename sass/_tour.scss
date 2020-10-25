@@ -14,7 +14,7 @@
   width:100%;
   max-width: 1200px;
   margin:0px auto;
-  border: 5px solid blue;
+  // border: 5px solid blue;
 }
 
 // title + btn 部分
@@ -48,7 +48,7 @@
 }
 
 .tour_puzzle_btn{
-    @include btn50White;
+    @include btn50Green;
     box-shadow: $shadow2;
     display:block;
     margin: 0 auto;
@@ -58,6 +58,10 @@
     @include main_title($keyWhite);
     margin-left: 0px;
     // border:5px solid red;
+}
+
+.tour_title2{
+  display:none;
 }
 
 
@@ -254,6 +258,7 @@
 
 .btn_modal_close2{
   @include btn36NoneBlack;
+  padding:0 39.5px 0 39.5px;
   margin:10px auto;
   display:block;
 }
@@ -283,15 +288,14 @@
 .tour_overlay1 > article > h4{
   @include sub_title($keyBlack);
   padding:10px 10px;
-  border-bottom: 7px;
-  margin:0 auto;
+  margin:0px auto;
+  margin-bottom:10px;
 }
 
 .tour_overlay1 > article > p{
   @include text($textBlack);
 //  background-color: rgba(232, 247, 31, 0.5);
- padding:10px 10px;
- border-bottom: 7px;
+ padding:0px 10px;
  margin:0 auto;
 }
 
@@ -299,8 +303,7 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
-  padding:5px;
-  margin:0 auto;
+  margin:20px auto;
 }
 
 
@@ -341,15 +344,15 @@
   transform: translate(-50%, -50%);
 }
 
-.tour_overlay2 > article > h3{
-  @include sub_title(brown);
+.tour_overlay2 > article > h4{
+@include sub_title($keyBlack);
  padding:10px 10px;
  border-bottom: 7px;
  margin:0 auto;
 }
 
 .tour_overlay2 > article > p{
-  @include text(black);
+  @include text($textBlack);
 //  background-color: rgba(232, 247, 31, 0.5);
  padding:10px 10px;
  border-bottom: 7px;
@@ -360,9 +363,7 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
-  padding:5px;
-  margin:0 auto;
-
+  margin:20px auto;
 }
 
 
@@ -403,15 +404,15 @@
   transform: translate(-50%, -50%);
 }
 
-.tour_overlay3 > article > h3{
-  @include sub_title(brown);
+.tour_overlay3 > article > h4{
+@include sub_title($keyBlack);
  padding:10px 10px;
  border-bottom: 7px;
  margin:0 auto;
 }
 
 .tour_overlay3 > article > p{
-  @include text(black);
+  @include text($textBlack);
  padding:10px 10px;
  border-bottom: 7px;
  margin:0 auto;
@@ -421,9 +422,7 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
-  padding:5px;
-  margin:0 auto;
-
+  margin:20px auto;
 }
 
 
@@ -465,15 +464,15 @@
   transform: translate(-50%, -50%);
 }
 
-.tour_overlay4 > article > h3{
-  @include sub_title(brown);
+.tour_overlay4 > article > h4{
+ @include sub_title($keyBlack);
  padding:10px 10px;
  border-bottom: 7px;
  margin:0 auto;
 }
 
 .tour_overlay4 > article > p{
-  @include text(black);
+@include text($textBlack);
 //  background-color: rgba(232, 247, 31, 0.5);
  padding:10px 10px;
  border-bottom: 7px;
@@ -484,9 +483,7 @@
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow;
-  padding:5px;
-  margin:0 auto;
-
+  margin:20px auto;
 }
 
 
@@ -496,31 +493,29 @@
   max-width: 1200px;
   display:flex;
   margin:40px auto;
-  border:5px solid purple;
+  // border:5px solid purple;
   .tour_slide{
-    border:5px solid green;
-    // position: relative;
+    // border:5px solid green;
+    position: relative;
     flex: 1;
-    width:100%;
+    widows: 10px;
     height:auto;
     overflow: hidden;
     transition: 0.5s ease-in-out;
-
     .tour_content{
-      border:5px solid blue;
-      // position: relative;
-      // top: 0;
-      padding: 50px 25px;
-      // color: #fff;
+      // border:5px solid blue;
+      position: relative;
+      top: 0;
+      padding: 25px 25px;
       opacity: 0;
       display: flex;
+      width:100%;
       height: 100%;
       align-items: center;
       .tour_headerimg {
         // border:5px solid yellow;
         position: relative;
-        flex: 0 1 50%;
-        top:20px;
+        flex: 0 1 40%;
         border-radius: 6px;
         box-shadow: $shadow;
       }
@@ -528,29 +523,48 @@
         background-color: white;
         border-radius: 6px;
         box-shadow: $shadow;
-        flex: 1 1 50%;
+        flex: 1 1 60%;
         display: flex;
         flex-direction: column;
         padding: 10px 10px;
         // border:5px solid red;
         margin-left: 25px;
-        max-height: 350px;
+        max-width: 400px;
+        max-height: 400px;
         overflow: auto;
         h4 {
           @include sub_title($keyBlack);
           margin:0 auto;
-          padding:4px;
-        }
-        .tour_row_button{
-          @include btn36Yellow;
-          box-shadow: $shadow;
-          display:block;
-          margin:0 auto;
-        }
-        p{
-          @include text($textBlack);
           padding-right:4px;
           padding-left:4px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .btn_modal{
+          display:flex;
+          justify-content: space-evenly;
+          padding:0 10px 0 10px;
+          // border:2px solid red;
+          .tour_row_button1{
+            @include btn36Yellow;
+            box-shadow: $shadow;
+            display:block;
+            margin:20px auto;
+            // border:2px solid red;
+          }
+          .tour_row_button2{
+            @include btn36NoneBlack;
+            margin:20px auto;
+            padding:0 43px 0 43px; 
+            // border:2px solid red;
+            margin-right:0px;
+            display:none;
+          }
+        }      
+          p{
+            @include text($textBlack);
+            padding-right:4px;
+            padding-left:4px;
         }
       }
     }
@@ -571,7 +585,7 @@
   box-shadow: $shadow2;
   filter: brightness(.6);
   .tour_content {
-      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));    
   }
 }
 
@@ -585,7 +599,7 @@
   box-shadow: $shadow2;
   filter: brightness(.6);
   .tour_content {
-      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
   }
 }
 
@@ -599,7 +613,7 @@
   box-shadow: $shadow2;
   filter: brightness(.6);
   .tour_content {
-      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
   }
 }
 
@@ -613,145 +627,242 @@
   box-shadow: $shadow2;
   filter: brightness(.6);
   .tour_content {
-    background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))
+    background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
   }
 }
 
 .tour_slide:hover {
-  flex-grow:4;
-  // background-position: top;
-  // background-size: cover;
+  flex-grow:10;
+  background-position: top;
+  background-size: cover;
   filter: brightness(1);
   .tour_content {
       opacity: 1;
-      // transition: 0.5s;
-      // transition-delay: 0.5s;
+      transition: 0.5s;
+      transition-delay: 0.5s;
   }
 }
 
 
 @media screen and (max-width: 991px){
-      .tour_row{
-        border:5px solid red;
-        flex-wrap: wrap;
-        flex: 100%;
-        .tour_slide{
-          flex: 1 1 50%;
-          .tour_content {
-            border:5px solid yellow;
-            flex-direction: column;
-            // padding: 15px;
-            .tour_headerimg {
-              display: none;
-            }
-      //       .tour_word {
-      //         // border:5px solid purple;
-      //         width:100%;
-      //         max-height: 100%;
-      //         margin:0 auto;
-      //         padding: 15px;
-      //       .tour_row_button{
-      //         margin-right: 0px;
-      //         margin-top: 20px;
-      //       }
-      //     }
-        }
-      }
-    }
+  .tour_title2{
+    display:block;
+    @include sub_title($keyWhite);
+    margin-top:20px;
+    // border: 5px solid red;;
   }
 
+  .tour_row{
+    // border: 5px solid red;;
+    flex-wrap: wrap;
+    flex: 100%;
+    .tour_slide {
+      flex: 1 1 50%;
+      cursor: pointer;
+      &:hover{       
+        flex-grow:4;
+        filter: brightness(1);
+        height:100%;
+      }
+      .tour_content{
+        // border:5px solid yellow;
+        flex-direction: column;
+        opacity: 0;
+        &:hover{
+          opacity:0;
+        }
+        .tour_headerimg{
+          display: none;
+        }
+        .tour_word{
+          margin:0 auto;
+          width:100%;
+          max-height: 100%;
+          h4{
+            // border:5px solid yellow;
+          }
+          p{
+            display:block;
+          }
+          .btn_modal{
+            display:flex;
+            justify-content: space-evenly;
+            padding:0 10px 0 10px;
+            .tour_row_button1{
+              display:block;
+            }
+            .tour_row_button2{
+              @include btn36NoneBlack;
+              margin:20px auto;
+              padding:0 43px 0 43px; 
+              // border:2px solid red;
+              margin-right:0px;
+            }
+          }
+        }
+      } 
+    }  
+  }
+}
 
-// .tour_slide:hover {
-//   flex-grow:4;
-//   background-position: top;
-//   background-size: cover;
-//   filter: brightness(1);
-//   .tour_content {
-//       opacity: 1;
-//       transition: 0.5s;
-//       transition-delay: 0.5s;
-//   }
-// }
+.tour_content_show{
+  opacity:1 ;
+  // border:2px solid red;
+}
+
 
 @media screen and (max-width: 767px){
     .tour_row {
-      border:5px solid deeppink;
+      // border:5px solid deeppink;
       width:80%;
-      // height:80%;
       padding:20px;    
+      margin: 0px auto;
       flex-wrap: wrap;
       flex-direction: column;
       flex: 100%;
       .tour_slide {
-          margin: 10px auto;
-          border:5px solid blue;
-          width:100%;
-          height:100%;
-          // flex: 1 1 100%;
-          // background-position: top!important;
-          // height: auto;
-          
+          margin: 20px auto;
+          // border:5px solid blue;
+          width:500px;
+          height:450px; 
+          cursor: pointer;    
           .tour_content {
-              border:5px solid yellow;
-              // width:100%;
+              // border:5px solid yellow;
+              margin: 0px auto;
               padding:10px;
-              // width:350px;
-              // height:300px;
-              // height: 100%;
-              // flex-direction: column;
-              // padding: 10px 10px;
-              // background-size: cover!important;
               opacity: 0;
               .tour_headerimg {
+                position: relative;
+                top:15px;
                 display: block;
                 margin: 0px auto;
                 width: 70%;
                 height:70%;          
               }
-//               &:hover{
-//                 transition: all 1s ease-in;
-
-//               }
               .tour_word {
-                  // border:5px solid purple;
                   margin:0 auto;
-                  padding:30px 10px 10px 10px;
-                  // width:60%;
-                  // max-height: 350px;
-                  // max-height: 50%;
-                  
-                  // padding: 5px;
-                  // width:90%;
+                  padding:20px 10px 10px 10px;
                   line-height: 5px;
+                  .btn_modal{
+                    // border:5px solid deeppink;
+                    .tour_row_button1{
+                      display:block;
+                    }
+                    .tour_row_button2{
+                      margin-right:0px;
+                      margin:0 auto;
+                      @include btn36NoneBlack;
+                      margin:20px auto;
+                      padding:0 43px 0 43px; 
+                    }
+                  }
                }
                &:hover{
-                opacity:1;
-                // cursor: pointer;             
+                opacity:1;          
               }
             }
         }
     }
 
-// .tour_slide:nth-child(1),
-// .tour_slide:nth-child(2),
-// .tour_slide:nth-child(3),
-// .tour_slide:nth-child(4) {
-//  filter: blur(5);
-//  background-position: center;
-//  background-repeat: no-repeat;
-//  background-size: 100%;
-//  filter: brightness(.6);
- 
-// }
 .tour_slide:hover {
   flex-grow:10;
-//   // background-position: top;
-//   // background-size: cover;
-//   // filter: brightness(1);
-//   // .tour_content {
-//   //     opacity: 1;
-//   //     // transition: 0.5s;
-//   //     // transition-delay: 0.5s;
-//   // }
+  height:100%;
+  }
+}
+
+@media screen and (max-width: 676px){
+  .tour_row{
+    // border: 5px solid red;
+    margin: 0px auto;
+    .tour_slide {
+      // border: 5px solid brown;
+      margin: 20px auto;
+      width:350px;
+      height:300px;
+      opacity:1; 
+      cursor: pointer;
+      &:hover{
+        height:100%;
+      }
+      .tour_content{
+        display:block;
+        .tour_headerimg{
+          display:block;
+        }
+        .tour_word{
+          text-align: center;
+          h4{
+            margin-top:5px;
+          }
+          p{
+            display:block;
+          }
+          .btn_modal{
+            display:flex;
+            flex-direction: column;
+            .tour_row_button1{
+              display:block;
+            }
+            .tour_row_button2{
+              @include btn36NoneBlack;
+              margin:20px auto;
+              padding:0 43px 0 43px; 
+              margin-right:0px;
+              margin:0 auto;
+              display:block;
+            }
+          }
+        }
+      } 
+    }  
+  }
+}
+
+
+@media screen and (max-width: 479px){
+  .tour_row{
+    // border: 5px solid yellow;
+    margin: 0px auto;
+    .tour_slide {
+      // border: 5px solid yellowgreen;
+      margin: 20px auto;
+      width:280px;
+      height:230px;
+      opacity:1; 
+      cursor: pointer;
+      &:hover{
+        height:100%;
+      }
+      .tour_content{
+        margin:0 auto;
+        display:block;
+        .tour_headerimg{
+          display:block;
+        }
+        .tour_word{
+          text-align: center;
+          h4{
+            margin-top:5px;
+          }
+          p{
+            display:block;
+          }
+          .btn_modal{
+            display:flex;
+            flex-direction: column;
+            .tour_row_button1{
+              display:block;
+            }
+            .tour_row_button2{
+              margin-right:0px;
+              margin:0 auto;
+              @include btn36NoneBlack;
+              margin:20px auto;
+              padding:0 43px 0 43px; 
+            }
+          }
+        }
+      } 
+    }  
   }
 }

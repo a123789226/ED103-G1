@@ -181,6 +181,7 @@
       <div class = "tour_title_block">
         <div class="tour_title_area">
           <h1 class="tour_title1">Introduction</h1>
+          <h4 class="tour_title2">Click picture to see more information !</h4>
         </div>  
       </div>
   
@@ -195,7 +196,10 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +214,10 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button">See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
@@ -225,7 +232,10 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
@@ -240,7 +250,10 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
           </div> 
         </div>
       </div>
@@ -370,14 +383,39 @@ $(function(){
 });
 
 //---------點擊地圖的圖文介紹按鈕,會往下移動----------
-$(function(){
-  $("button.btn_modal_close1").on("click", function(e){
-    e.preventDefault();
-    $('html, body').animate({
-      scrollTop: 1000
-    }, 50);
-  });
-});
+// $(function(){
+//   $("button.btn_modal_close1").on("click", function(e){
+//     e.preventDefault();
+//     $('html, body').animate({
+//       scrollTop: 1000
+//     }, 950);
+//   });
+// });
+
+$(document).ready(function() {
+       $(".btn_modal_close1").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $(".btn_modal_close1").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no2").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $(".btn_modal_close1").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $(".btn_modal_close1").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no4").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+     });
+
+
 
 //------------當滑鼠移入房子, 出現hover效果-------------
 $('.tour_houseA').hover(function(){
@@ -503,7 +541,18 @@ $(function(){
 });
 
 
- 
+// ---------四大動物介紹: 按圖片出現介紹文, 按close 恢復原狀---------------
+$('tour_slide').click(function(){
+  $('.tour_content').toggleClass('tour_content_show');
+},function(){
+})
+
+$('.btn_modal_close2').click(function(){
+},function(){
+  $('tour_content').toggleClass('tour_content_show');
+})
+
+
   </script>
 </script>
 </body>
