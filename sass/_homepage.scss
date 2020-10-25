@@ -446,17 +446,8 @@
       @include a_button(100%);
     }
     .home_booking_btn{
-      @include btn60(87%, $keyWhite);
-      height: 50px;
-      line-height: 40px;
-
-      padding: 0 5%;
-      outline: none;
-      &:hover{
-        background-color: $keyGreen;
-        color: $keyWhite;
-        transition: .2s;
-      }
+      @include btn50Green;
+      box-shadow: $shadow2;
     }
   }
 }
@@ -1023,12 +1014,8 @@
   .page5_vote_bottom{
     text-align: center;
     > button{
-      @include btn60(100%, white);
-      &:hover{
-        background-color: $keyGreen;
-        color: $keyWhite;
-        transition: .2s;
-      }
+      @include btn50Green;
+      box-shadow: $shadow2;
     }
   } 
   .page5_named{
@@ -1620,13 +1607,7 @@
     font-size: 20px;
   }
   >button{
-    @include btn60(10%, green);
-    width: auto;
-    height: 30px;
-    line-height: 5px;
-    font-size: 12px;
-    outline: none;
-    padding: 10px;
+    @include btn30Green;
     margin-left: 5%;
   }
 }
