@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Thanks Card</title>
+    <style>
+      
+    </style>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
@@ -98,59 +102,41 @@
 
 <div class="cardContainer">
     <div class="cardMaterials">
-        <div class="cardMaterialAnimal">
+        <div class="cardMaterialAnimal step active">
             <p>Select your favorite animal.</p>
-            <div class="cardMaterialAnimalOptions">
-                <img src="https://picsum.photos/300/200?random=1">
-            </div>
-            <div class="cardMaterialAnimalOptions">
-                <img src="https://picsum.photos/300/200?random=2">
-            </div>
-            <div class="cardMaterialAnimalOptions">
-                <img src="https://picsum.photos/300/200?random=3">
-            </div>
-            <div class="cardMaterialAnimalBtn">
-                <button class="btn50whiteA">BACK</button>
-                <button class="btn50whiteA">NEXT</button>
-            </div>
+            <img src="./image/blog/photos/blogImg01.jpg" alt="">
+            <img src="./image/blog/photos/blogImg02.jpg" alt="">
+            <img src="./image/blog/photos/blogImg03.jpg" alt="">
+              
         </div>
-        <div class="cardMaterialBackground" style="display: none;">
+        <div class="cardMaterialBackground step">
             <p>Select your favorite background.</p>
-            <div class="cardMaterialBackgroundOptions">
-                <img src="https://picsum.photos/300/200?random=4">
-            </div>
-            <div class="cardMaterialBackgroundOptions">
-                <img src="https://picsum.photos/300/200?random=5">
-            </div>
-            <div class="cardMaterialBackgroundOptions">
-                <img src="https://picsum.photos/300/200?random=6">
-            </div>
-            <div class="cardMaterialBackgroundBtn">
-                <button class="btn50whiteA">BACK</button>
-                <button class="btn50whiteA">NEXT</button>
-            </div>
+            <img src="./image/blog/photos/blogPost01.jpg" alt="">
+            <img src="./image/blog/photos/blogPost02.jpg" alt="">
+            <img src="./image/blog/photos/blogPost03.jpg" alt="">
         </div>
-        <div class="cardMaterialDeco" style="display: none;">
+        <div class="cardMaterialDeco step">
             <p>Select your decorations.</p>
-            <div class="cardMaterialDecoOptions">
-                <img src="https://picsum.photos/300/200?random=7">
-            </div>
-            <div class="cardMaterialDecoOptions">
-                <img src="https://picsum.photos/300/200?random=8">
-            </div>
-            <div class="cardMaterialDecoOptions">
-                <img src="https://picsum.photos/300/200?random=9">
-            </div>
-            <div class="cardMaterialDecoBtn">
-                <button class="btn50whiteA">BACK</button>
-                <button class="btn50whiteA">NEXT</button>
-            </div>
+            <img src="./image/blog/photos/blogPost04.jpg" alt="">
+            <img src="./image/blog/photos/blogPost05.jpg" alt="">
+            <img src="./image/blog/photos/blogImg04.jpg" alt="">
+        </div>
+        <div class="cardBtnSection">
+          <button class="btn50whiteA" id="prev" disabled="disabled">BACK</button>
+          <button class="btn50whiteA" id="next">NEXT</button>
         </div>
     </div>
 
     <div class="cardSectionContainer">
         <div class="cardSectionContent">
+      
             <p>Dear Eddie,</p>
+            <div class="cardSelectAnimal">
+              <div class="cardAnimalChosen" style="background-image: url(https://picsum.photos/300/200?random=85);"></div>
+            </div>
+            <div class="cardSelectDeco"><img src="https://picsum.photos/300/200?random=12"></div>
+          </div>
+
         </div>
     </div>
 </div>
@@ -226,12 +212,105 @@
   });
 
 
+// 上一步下一步按鈕控制css的display
+  var index = $(".step.active").index(".step"), 
+    stepsCount = $(".step").length, 
+    prevBtn = $("#prev"), 
+    nextBtn = $("#next"); 
+
+// 上一步
+prevBtn.click(function() { 
+    nextBtn.prop("disabled", false); 
+
+    if (index > 0) { 
+     index--; 
+     $(".step").removeClass("active").eq(index).addClass("active"); 
+    }; 
+
+    if (index === 0) { 
+     $(this).prop("disabled", true); 
+    } 
+}); 
+
+// 下一步
+nextBtn.click(function() { 
+    prevBtn.prop("disabled", false); 
+
+    if (index < stepsCount - 1) { 
+     index++; 
+     $(".step").removeClass("active").eq(index).addClass("active"); 
+    }; 
+
+    if (index === stepsCount - 1) { 
+     $(this).prop("disabled", true); 
+    } 
+}); 
 
 
 
 
 
+// ?????
+var temp = 0;
+$(document).ready(function(){
+    // 點擊換圖
+    $('.cardAnimalChosen, .cardSelectDeco, .front').click(function (){
+        $(this).toggleClass('patternSelected')
+               .siblings().removeClass('patternSelected');
+        if($('.cardAnimalChosen').hasClass('patternSelected')){
+            let img = $('.cardMaterialAnimal img');
+            for (let i = 0; i < img.length; i++) {
+                img[i].addEventListener('click',changeBgPattern)
+            }
+            temp = 1;
+        }else if($('.cardSelectDeco').hasClass('patternSelected')){
+            let img = $('.cardMaterialDeco img');
+            for (let i = 0; i < img.length; i++) {
+                img[i].addEventListener('click',changeBgPattern)
+            }
+            temp = 2;
+        }else if($('.front').hasClass('patternSelected')){
+            let img = $('.cardMaterialAnimal img');
+            for (let i = 0; i < img.length; i++) {
+                img[i].addEventListener('click',changeBgPattern)
+            }
+            temp = 3;
+        }
+    });
+    // 預設選取，點選圖片立即加載
+    // $('.stageView .cardAnimalChosen').addClass('patternSelected');
+    $('.cardAnimalChosen .cardSelectDeco').addClass('patternSelected');
+    let img = $('.cardMaterialAnimal img');
+    for (let i = 0; i < img.length; i++) {
+        img[i].addEventListener('click',changeBgPattern)
+    }
+    // 預設目標區域外，取消選取
+    $(document).mouseup(function(e){
+        // var _con = $('.cardAnimalChosen, .stairsC1, .front');   // 設置目標區域
+        var _con = $('.cardAnimalChosen .cardSelectDeco');   // 設置目標區域
+        if(!_con.is(e.target) && _con.has(e.target).length === 0){ 
+            // $('.cardAnimalChosen, .stairsC1, .front').removeClass('patternSelected');
+            $('.cardAnimalChosen .cardSelectDeco').removeClass('patternSelected');
+        }
+    });
+    // 訂單資訊頁取消選取
+    // $('#orderStage .cardAnimalChosen, #orderStage .stairsC1, #orderStage .front').off('click');
+    $('.cardAnimalChosen .cardSelectDeco').off('click');
+});
 
+function changeBgPattern(){
+    imgSrc = $(this).attr('src');
+    if(temp == 0){
+        $('.cardAnimalChosen').css('backgroundImage', `url(${imgSrc})`);
+    }
+    if(temp == 1){
+        $('.cardAnimalChosen').css('backgroundImage', `url(${imgSrc})`);
+    }
+    else if(temp == 2){
+        $('.cardSelectDeco').css('backgroundImage', `url(${imgSrc})`);
+    }
+
+}
   </script>
 </body>
 </html>

@@ -8504,35 +8504,6 @@ ul.vote_list > li > a.-on {
   }
 }
 
-.cardContainer .cardMaterials .cardMaterialAnimalOptions {
-  width: 65%;
-  margin: 20px auto;
-}
-
-.cardContainer .cardMaterials .cardMaterialBackgroundOptions {
-  width: 65%;
-  margin: 20px auto;
-}
-
-.cardContainer .cardMaterials .cardMaterialDecoOptions {
-  width: 65%;
-  margin: 20px auto;
-}
-
-.cardContainer .cardMaterials .cardMaterialAnimalBtn {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
-.cardContainer .cardMaterials .cardMaterialBackgroundBtn {
-  text-align: center;
-}
-
-.cardContainer .cardMaterials .cardMaterialDecoBtn {
-  text-align: center;
-}
-
 .cardContainer .cardSectionContainer {
   display: block;
   width: 100%;
@@ -8543,7 +8514,53 @@ ul.vote_list > li > a.-on {
 .cardContainer .cardSectionContainer .cardSectionContent {
   width: 100%;
   height: 400px;
-  background-color: lightgreen;
+  background-color: rgba(255, 255, 255, 0.856);
+  position: relative;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardSelectAnimal {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25%;
+  height: auto;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardSelectDeco {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 25%;
+  height: auto;
+}
+
+.cardAnimalChosen {
+  width: 240px;
+  height: 205px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cardAnimalChosen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBtnSection {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
 }
 
 .memBackground {
@@ -13182,40 +13199,43 @@ ul {
 }
 
 .calendar_container .home_ticket_remaining .home_booking_btn {
-  width: 87%;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
-  color: #1BB8CE;
-  background-color: #ffffff;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
   height: 50px;
-  line-height: 40px;
-  padding: 0 5%;
-  outline: none;
-}
-
-.calendar_container .home_ticket_remaining .home_booking_btn:hover {
-  border: 5px solid #208686;
-}
-
-.calendar_container .home_ticket_remaining .home_booking_btn:hover {
-  color: white;
-  background-color: #208686;
-}
-
-.calendar_container .home_ticket_remaining .home_booking_btn:hover {
-  background-color: #1BB8CE;
+  line-height: 42px;
   color: #ffffff;
-  transition: .2s;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+}
+
+.calendar_container .home_ticket_remaining .home_booking_btn:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.calendar_container .home_ticket_remaining .home_booking_btn:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .calendar_container .home_ticket_remaining .home_booking_btn {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -13849,36 +13869,43 @@ td {
 }
 
 .home_vote .page5_vote_bottom > button {
-  width: 100%;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
-  color: #1BB8CE;
-  background-color: #ffffff;
-}
-
-.home_vote .page5_vote_bottom > button:hover {
-  border: 5px solid #208686;
-}
-
-.home_vote .page5_vote_bottom > button:hover {
-  color: white;
-  background-color: #208686;
-}
-
-.home_vote .page5_vote_bottom > button:hover {
-  background-color: #1BB8CE;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  transition: .2s;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+}
+
+.home_vote .page5_vote_bottom > button:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.home_vote .page5_vote_bottom > button:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .home_vote .page5_vote_bottom > button {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 .home_vote .page5_named {
@@ -14512,35 +14539,28 @@ td {
 }
 
 .home_message_box .home_message > button {
-  width: 10%;
   display: inline-block;
   cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
+  border-radius: 6px;
+  padding: 0 24px;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  height: 30px;
+  line-height: 1.8;
+  text-decoration: none;
   text-align: center;
   color: #ffffff;
   background-color: #1BB8CE;
-  width: auto;
-  height: 30px;
-  line-height: 5px;
-  font-size: 12px;
+  border: 1px solid #1BB8CE;
   outline: none;
-  padding: 10px;
+  transition: .05s;
   margin-left: 5%;
 }
 
 .home_message_box .home_message > button:hover {
-  border: 5px solid #208686;
-}
-
-.home_message_box .home_message > button:hover {
-  background-color: #208686;
+  border: 1px solid #1697a8;
+  background-color: #1697a8;
+  transform: scale(1.05);
 }
 /*# sourceMappingURL=style.css.map */

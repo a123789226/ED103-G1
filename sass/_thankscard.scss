@@ -16,29 +16,29 @@
             margin: 20px auto;
             text-align: center;
         }
-        .cardMaterialAnimalOptions{
-            width: 65%;
-            margin: 20px auto;
-        }
-        .cardMaterialBackgroundOptions{
-            width: 65%;
-            margin: 20px auto;
-        }
-        .cardMaterialDecoOptions{
-            width: 65%;
-            margin: 20px auto;
-        }
-        .cardMaterialAnimalBtn{
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-        .cardMaterialBackgroundBtn{
-            text-align: center;
-        }
-        .cardMaterialDecoBtn{
-            text-align: center;
-        }
+        // .cardMaterialAnimalOptions{
+        //     width: 65%;
+        //     margin: 20px auto;
+        // }
+        // .cardMaterialBackgroundOptions{
+        //     width: 65%;
+        //     margin: 20px auto;
+        // }
+        // .cardMaterialDecoOptions{
+        //     width: 65%;
+        //     margin: 20px auto;
+        // }
+        // .cardMaterialAnimalBtn{
+        //     display: inline-block;
+        //     width: 100%;
+        //     text-align: center;
+        // }
+        // .cardMaterialBackgroundBtn{
+        //     text-align: center;
+        // }
+        // .cardMaterialDecoBtn{
+        //     text-align: center;
+        // }
 
     }
     .cardSectionContainer{
@@ -49,8 +49,51 @@
         .cardSectionContent{
             width: 100%;
             height: 400px;
-            background-color: lightgreen;
+            background-color:rgba(255, 255, 255, 0.856);
+            position: relative;
+            .cardSelectAnimal{
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 25%;
+            height: auto;
+        }
+        .cardSelectDeco{
+            position: absolute;
+            bottom: 20%;
+            right: 20%;
+            width: 25%;
+            height: auto;
+        }
         }
 
     }
 }
+.cardAnimalChosen{
+    width: 240px;
+    height: 205px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .cardAnimalChosen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+// 上下一步按鈕位置
+.cardBtnSection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+// 上下一步按鈕控制div的CSS
+.step { 
+    display: none; 
+} 
+
+.step.active { 
+    display: block; 
+} 
