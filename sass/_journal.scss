@@ -8,7 +8,7 @@
 
 
 body {
-  background-color: rgb(71, 134, 177);
+  // background-color: rgb(71, 134, 177);
   position: relative;
 }
 
@@ -20,15 +20,27 @@ body {
   @include BGRight('bg2-4', 90%, 0%, 10%);
   @include FishMove1(30%, 30%, 10s);
   @include FishMove2(30%, 60%, 15s);
+ 
+  @media screen and (max-width: 676px) {
+  @include BGLeft('bg2-3', 90%, 0%, -10%, -20%);
+   
+  }
+
 }
 
 .jourTitleBox {
   margin: 160px auto 0px;
   width: 100%;
-  // border: 1px solid red;
+  border: 1px solid red;
   padding: 30px 0;
+  max-width: 1200px;
+
 
   .jourTitle {
+    // font-size: $mainTitle;
+    // font-family: $en;
+    // font-weight: 700;
+    // color: $keyBlack;
     @include main_title($keyBlack);
     text-align: center;
   }
@@ -43,6 +55,8 @@ body {
 .jourContainer {
   margin: 0 auto;
   text-align: center;
+  width: 80%;
+  max-width: 1200px;
 }
 
 .jourTitle {
@@ -53,6 +67,7 @@ body {
 .jourSubTitle {
   @include sub_title($keyWhite);
   text-align: center;
+  // width: 80%;
 }
 
 // Choose Type
@@ -60,104 +75,127 @@ body {
 .jourTypeSection {
   margin: 0 auto;
   // display: inline-block;
-  width: 80%;
+  width: 100%;
   background-color: rgba(255, 255, 255, .2);
   max-width: 1200px;
   padding-top: 10px;
-}
 
-.jourTypeTitle {
-  @include main_title($keyWhite);
-  width: 80%;
-  margin: 0 auto;
-  text-align: left;
-  // border: 3px solid pink;
-}
+  .jourTypeTitle {
+    @include sub_title($keyWhite);
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    // border: 3px solid pink;
+  }
 
-.jourTypeChoice {
-  margin: 10px auto;
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  // border: 3px solid yellow;
-}
+  .jourTypeChoice {
+    margin: 10px auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 
-.jourType {
-  margin: 10px auto;
-  display: block;
-  width: 20%;
-  overflow: hidden;
-  // border: 3px solid red;
-}
+    // border: 3px solid yellow;
+    @media screen and (max-width: 676px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 
-.jourFixPhotoSize {
-  width: 90%;
-  overflow: hidden;
-  border-radius: 6px;
-}
+  .jourType {
+    margin: 10px auto;
+    display: block;
+    width: 20%;
+    overflow: hidden;
+    text-align: center;
 
-.jourTypePhoto {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-}
+    border: 3px solid red;
 
-.jourTypePhoto:hover {
-  transform: scale(1.5);
-  transition-duration: 1s;
-}
+    @media screen and (max-width: 676px) {
+      flex: 40%;
+    }
+  }
 
-.jourTypeText {
-  @include sub_title($keyWhite);
-  text-decoration: none;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
+  .jourFixPhotoSize {
+    width: 90%;
+    overflow: hidden;
+    border-radius: 6px;
+    margin: 0 auto;
+  }
+
+  .jourTypePhoto {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid red;
+  }
+
+  .jourTypePhoto:hover {
+    transform: scale(1.5);
+    transition-duration: 1s;
+  }
+
+  .jourTypeText {
+    @include sub_title($keyWhite);
+    text-decoration: none;
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+    border: 3px solid white;
+
+  }
 }
 
 
 // 4本書
+
+.jourBookContainer {
+  display: none;
+}
+
 .jourBookContainer.-on {
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  // border: 3px solid white;
+  border: 3px solid white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 60px;
 }
 
-.jourBookContainer {
-  display: none;
-}
-
-
-
-
 // 書本
 .jourBookSection {
   text-align: center;
   width: 40%;
-  // border: 3px solid black;
+  border: 3px solid black;
   // flex: 40%;
+
+  @media screen and (max-width: 676px) {
+    display: block;
+    // background-color: red;
+    width: 100%;
+  margin-top: 50px;
+
+  }
 }
-
-
-
 
 .jourBookSection:nth-child(2n) {
   // transform: translate(0,50%);
   margin-top: 120px;
+
+  @media screen and (max-width: 676px) {
+  margin-top: 50px;
+    
+  }
 }
 
 
 .jourBook {
-  width: 100%;
+  width: 80%;
   // height: 100%;
   margin: 0 auto;
   max-width: 400px;
@@ -168,6 +206,8 @@ body {
   // border: 3px solid deeppink;
   display: flex;
   flex-wrap: wrap;
+  transform: rotateY(-3deg);
+
 
   animation-name: book;
   animation-duration: 3s;
@@ -191,23 +231,26 @@ body {
 
 
 .jourBookLeft {
-  background: linear-gradient(to right, #000, #fff);
+  background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%);
   width: 7%;
   display: inline-block;
 }
 
 .jourBookRight {
+
   background-color: #fff;
   width: 93%;
   display: inline-block;
-  padding-bottom: 120px;
+  // padding-bottom: 120px;
   border-radius: 0 6px 6px 0;
+  height: 100%;
+
 }
 
 .jourBookPhoto {
-  width: 70%;
+  width: 60%;
   // height: 240px;
-  margin: 20px auto;
+  margin: 20px auto 10px auto;
 }
 
 img {
@@ -224,17 +267,25 @@ img {
 
 .jourBookText {
   @include text($keyBlack);
+  font-size: 14px;
   margin: 0 auto;
   text-align: left;
-}
+  width: 90%;
+  padding: 20px 10px;
 
-table {
-  margin: 10px auto;
-  text-align: left;
-}
 
-td {
-  padding-left: 20px;
+  table {
+    margin: 0 auto;
+    text-align: left;
+
+    tr {
+      border-bottom: 1px solid #333;
+    }
+
+    td {
+      padding-left: 20px;
+    }
+  }
 }
 
 .jourBookShadow {
@@ -244,7 +295,7 @@ td {
   // background-color: #024282;
   background: linear-gradient(235deg, #325c7f, #132d42);
   border-radius: 50%;
-  width: 60%;
+  width: 80%;
   transform: translate(0%, 60%);
 
   animation-name: shadow;
@@ -256,24 +307,24 @@ td {
 @keyframes shadow {
   0% {
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
   }
 
   50% {
     margin-top: 0px;
-    width: 60%;
+    width: 70%;
   }
 
   100% {
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
   }
 }
 
 .jourStone {
   margin: 0 auto;
   display: block;
-  width: 80%;
+  width: 100%;
   // border: 3px solid yellow;
 }
 
@@ -286,8 +337,9 @@ td {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 100vh;
+  width: 100%;
+  display: none;
+
 
   /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
   opacity: 0;
@@ -307,34 +359,39 @@ td {
 }
 
 div.jourLightBox.-on {
-
   /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
   opacity: 1;
   z-index: 15;
-  width: 80%;
+  width: 100%;
   margin: 0 auto !important;
   text-align: center;
   position: absolute;
-  top: 15%;
-  left: 50%
+  top: 35%;
+  left: 50%;
+  // border: 5px solid red;
+
+
+
 }
 
-div.jourLightBox.-opacity-zero {
-  /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
-  opacity: 0;
-}
+// div.jourLightBox.-opacity-zero {
+//   /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+//   opacity: 0;
+// }
+
 
 /* 元素 article 置中及基本樣式 */
-div.jourLightBox{
+div.jourLightBox {
   background-color: hsla(0, 0, 0, 1);
   width: 100%;
   // max-width: 800px;
   box-shadow: 0 0 10px #ddd;
   // padding: 10px;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+  // display: none;
 }
 
 //---------------------------------------
@@ -349,40 +406,42 @@ div.jourLightBox{
   margin: 0 auto;
   // display: inline-block;
   width: 100%;
-  background-color: hsla(0, 0%, 0%, 0.8);
+  background-color: hsla(255, 255, 255, 1);
   padding: 10px 0;
   display: block;
 }
 
 .jourAdoptContent {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .jourAdoptMainTitle {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 .jourAdoptTitle {
-  @include sub_title($keyWhite);
+  @include main_title($keyBlack);
   text-align: center;
   width: 100%;
-  // border: 3px solid pink;
+  border: 3px solid pink;
 }
 
 .jourAdoptText {
-  @include text($keyWhite);
+  @include text($keyBlack);
   margin: 0 auto;
   text-align: center;
-  // border: 3px solid yellow;
+  width: 100%;
+  border: 3px solid yellow;
 }
 
 .jourAdopterSection {
-  @include text($keyWhite);
+  @include text($keyBlack);
   margin: 20px auto 10px auto;
   text-align: center;
   font-weight: 400;
-  // border: 3px solid yellow;
+  width: 100%;
+  border: 3px solid yellow;
 }
 
 .jourAdopterPhoto {
@@ -403,15 +462,20 @@ div.jourLightBox{
   display: inline-block;
 }
 
+.jourAdopterlist li img {
+  width: 30px;
+}
+
 .jourToAdopt {
   margin: 0 auto;
-  // border: 3px solid yellow;
+  border: 3px solid yellow;
   text-align: center;
+  width: 100%;
 }
 
 .jourLightboxBtn {
   margin: 20px auto;
-  width: 40%;
+  width: 30%;
   text-align: center;
   line-height: $button_height;
   height: $button_height;
@@ -425,45 +489,44 @@ div.jourLightBox{
 
 // comment
 .jourCommentSection {
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   width: 100%;
   background-color: #fff;
+
 }
 
 .jourCommentContent {
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #000;
   padding: 50px 0;
 }
 
 .jourCommentTitle {
-  @include sub_title($keyBlack);
+  @include sub_title($keyWhite);
   text-align: center;
   width: 100%;
 
-  // border: 3px solid pink;
+  border: 3px solid pink;
 }
 
 .jourCommentText {
-  @include text($keyBlack);
+  @include text($keyWhite);
   margin: 0 auto;
   text-align: center;
-  // border: 3px solid yellow;
+  border: 3px solid yellow;
 }
 
 .jourCommentArea {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
-  background-color: hsla(0, 0%, 0%, 0.8);
-  border-radius: 6px;
-  padding: 10px 0;
+  background-color: hsla(0, 0%, 0%, 1);
+  border: 3px solid yellow;
 }
 
 #jourCommentTextarea {
-  margin-top: 20px;
+  margin: 20px auto;
   border-radius: 6px;
-
 }
 
 // comment list
@@ -501,14 +564,19 @@ div.jourLightBox{
   width: 100%;
 }
 
-.jourCommentBox textarea{
+.jourCommentBox textarea {
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
-.jourLightboxBtn{
+
+
+.jourLightboxBtn {
   display: block;
   margin: 0 auto;
+  text-align: center;
+  border: 3px solid yellow;
+
 }
 
 .jourCommentPersonName {
@@ -523,13 +591,16 @@ div.jourLightBox{
   display: inline-block;
   @include text($keyBlack);
   text-align: right;
-  // border: 3px solid pink;
+  border: 3px solid pink;
   width: 48%;
 }
 
 .jourCommentBox {
+  width: 100%;
+  // border: 3px solid pink;
+  box-shadow: $shadow;
   border-radius: 6px;
-} 
+}
 
 .jourCommentWords {
   width: 85%;
@@ -554,46 +625,75 @@ div.jourLightBox{
 
 
 
-// Adopt lightbox
+// Adopt Html
 .adoptLightBox {
-  // background-color: hsla(0, 0%, 0%, 0.6);
-  // position: relative;
-  // top: 0%;
-
+  // background-color: hsla(255, 255, 255, 0.6);
+  margin: O auto;
+  display: block;
+  width: 100%;
+  // border: 3px solid black;
 }
 
-
-
 .adoptSection {
-  background-color: #fff;
+  // background-color: #fff;
   width: 80%;
   margin: 0 auto;
-  // border: 3px solid black;
-  height: 100vh;
+  border: 3px solid black;
+  max-width: 1200px;
+  padding: 50px;
+  // height: 100vh;
+
+  @media screen and (max-width: 676px) {
+    padding: 20px;
+    width: 90%;
+  }
 }
 
 .adoptInnerSection {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  border: 3px dotted $keyGreen;
+  background-color: hsla(255, 255, 255, 0.8);
+
+  // border: 3px dashed $keyGreen;
   border-radius: 6px;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
   margin-top: 20px;
 }
 
+.adoptTitleBox {
+  // border: 3px dashed $keyGreen;
+}
+
 .adoptTitle {
-  @include main_title($keyBlack);
+  @include main_title($keyWhite);
   margin: 0 auto;
   text-align: left;
-  width:80%;
+  width: 100%;
+  // border: 3px dashed $keyGreen;
+}
+
+.adoptSubTitle {
+  @include sub_title($keyWhite);
+  width: 100%;
+
+  text-align: left;
+  margin: 10px auto 0 auto;
+  // border: 3px dashed $keyGreen;
+
 }
 
 .adoptAqua {
   display: inline-block;
-  width: 35%;
+  width: 33%;
   // border: 3px solid black;
   vertical-align: top;
+
+  @media screen and (max-width: 676px) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .adoptAqua p {
@@ -618,7 +718,14 @@ div.jourLightBox{
   width: 60%;
   vertical-align: top;
   border-radius: 6px;
-  background: rgba(27, 184, 206, .2); 
+  background: rgba(27, 184, 206, .2);
+
+  @media screen and (max-width: 676px) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
 }
 
 .adoptProcessContainer h4 {
@@ -633,7 +740,7 @@ div.jourLightBox{
   text-align: center;
 }
 
-.adoptProcessList h4{
+.adoptProcessList h4 {
   @include sub_title($keyBlack);
   // border: 3px solid blue;
   padding: 20px 0;
@@ -753,13 +860,13 @@ div.jourLightBox{
   // border: 3px solid yellow;
   margin: 0 5px;
   // box-shadow: $shadow;
-// border-radius: 6px;
+  // border-radius: 6px;
 }
 
-.adoptSelfAmountType input:last-child{
-//   box-shadow: $shadow;
-// border-radius: 6px;
-  
+.adoptSelfAmountType input:last-child {
+  //   box-shadow: $shadow;
+  // border-radius: 6px;
+
 }
 
 .adoptProcessStep {
@@ -769,17 +876,25 @@ div.jourLightBox{
   width: 100%;
 }
 
-.adoptProcessBtn {
 
-  margin: 10px 10px;
-  width: 40%;
-  text-align: center;
-  line-height: 40px;
-  height: 40px;
-  color: $keyWhite;
-  background-color: $keyGreen;
-  // border: 3px solid green;
-  border-radius: 20px;
+
+.adoptProcessBtn {
+  @include btn50Green;
+  box-shadow: $shadow2;
+  margin: 10px 5px;
+  // width: 30%;
+  // text-align: center;
+  // line-height: 40px;
+  // height: 40px;
+  // // border: 3px solid green;
+  // border-radius: 20px;
+
+    display: inline-block;
+  
+    @media screen and (max-width: 676px){
+      @include btn30Green;
+
+    }
 }
 
 // step 2
@@ -801,14 +916,14 @@ div.jourLightBox{
   @include text($textBlack);
 }
 
-.adoptInfo input{
+.adoptInfo input {
   height: 30px;
   margin-bottom: 5px;
 
 }
 
 .adoptInfo h6 {
-  font-size: 5px;
+  @include text12($keyBlack);
   // border: 2px solid red;
 }
 
@@ -838,27 +953,31 @@ div.jourLightBox{
   margin-top: 5px;
 }
 
-.adoptPayment input{
+.adoptPayment input {
   height: 30px;
   margin-bottom: 5px;
 }
 
 //step 4
-.adoptConfirmSection{
+.adoptConfirmSection {
   display: block;
   margin: 0 auto;
   text-align: center;
 }
 
-.adoptConfirmCheck{
-  // border: 3px solid blue;
+.adoptConfirmCheck {
+  border: 3px solid blue;
   width: 100%;
   vertical-align: top;
   margin: 0 auto;
 
+
+  @media screen and (max-width: 767px) {
+    text-align: left;
+  }
 }
 
-.adoptConfirm{
+.adoptConfirm {
   // border: 2px dotted $keyGreen;
   margin: 10px 10px;
   width: 45%;
@@ -868,9 +987,17 @@ div.jourLightBox{
   border-radius: 6px;
   vertical-align: top;
 
+  @media screen and (max-width: 767px) {
+    width: 90%;
+  // border: 2px dotted red;
+
+    // margin: 0 auto;
+    text-align: left;
+
+  }
 }
 
-.adoptConfirm h5{
+.adoptConfirm h5 {
   // border: 3px solid red;
   margin: 5px auto;
   @include text($textBlack);
@@ -881,14 +1008,14 @@ div.jourLightBox{
   height: 30px;
 }
 
-.adoptConfirm input{
+.adoptConfirm input {
   height: 30px;
   width: 100%;
   margin-bottom: 5px;
 
 }
 
-.adoptProcessStepFinal{
+.adoptProcessStepFinal {
   display: inline-block;
   width: 100%;
   // border: 3px solid red;
@@ -1008,8 +1135,8 @@ div.jourLightBox{
 
 // page
 .jourPageContent {
-  width: 90%;
-  margin: 10px auto;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   // border: 2px solid red;
   display: block;
@@ -1020,30 +1147,48 @@ div.jourLightBox{
   @include sub_title($keyBlack);
   padding: 10px 0;
   display: block;
+  // border: 2px solid red
+
 }
 
-.jourPagePhotoTop {
+.jourPagePhotoArea{
+  display: inline-block;
   width: 100%;
-  display: block;
+  padding: 0 10px;
+  // border: 2px solid red
 }
 
-.jourPagePhotoTop img {
-  width: 94%;
-  margin: 5px auto;
+.jourPagePhotoLeft {
+  width: 44%;
+  display: inline-block;
+  padding: 4px;
+
 }
 
-.jourPagePhotoDown {
-  display: block;
+.jourPagePhotoLeft img {
   width: 100%;
+  // margin: 0px auto;
+  // border: 2px solid blue;
+}
+
+.jourPagePhotoRight {
+  width: 54%;
+  display: inline-block;
+  padding-right: 4px;
+
   // border: 2px solid blue;
 }
 
 
-.jourPagePhotoDown img {
-  width: 45%;
+.jourPagePhotoRight img {
+  width: 100%;
   // border: 2px solid green;
-  margin: 5px 5px;
+  // margin: 5px 0px;
   text-align: justify;
+}
+
+.jourPagePhotoRight img:first-child{
+  margin-bottom: 10px;
 }
 
 .jourPageText {
@@ -1051,6 +1196,8 @@ div.jourLightBox{
   text-align: left;
   width: 95%;
   margin: 0 auto;
+  padding: 0 10px;
+
 }
 
 .jourPageText h4 {
@@ -1100,64 +1247,14 @@ div.jourLightBox{
 
 
 //adopt lightbox
-.jourToAdopt{
+.jourToAdopt {
   cursor: pointer;
-  margin: 20px;
+  margin: 20px auto;
 }
 
-.jourToAdopt_close{
+.jourToAdopt_close {
   background-color: #fff;
   width: 100%;
   margin: 0 auto;
   text-align: right;
-}
-
-.adoptLightBox{
-  // background-color: hsla(0, 0%, 0%, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 100vh;
-  // border: 3px solid red;
-
-  
-  /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 1s;
-}
-
-.adoptLightBox.-on{
-  width: 100%;
-  margin: 0 auto !important;
-  text-align: center;
-  background-color: hsla(0, 0%, 0%, 0.6);
-  background-size: cover;
-  /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
-  opacity: 1;
-  z-index: 20;
-  position: absolute;
-  top: 15%;
-  left: 50%
-}
-
-.adoptLightBox.-opacity-zero{
-  /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
-  opacity: 0;
-}
-
-/* 元素 article 置中及基本樣式 */
-.adoptLightBox{
-  // background-color: hsla(0, 0%, 0%, 1);
-
-  // background-color: white;
-  width: 80%;
-  border-radius: 10px;
-  // box-shadow: 0 0 10px #ddd;
-  // padding: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
