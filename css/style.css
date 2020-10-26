@@ -4822,8 +4822,6 @@ footer {
     display: block;
   }
   .tour_row .tour_slide .tour_content .tour_word .btn_modal .tour_row_button2 {
-    margin-right: 0px;
-    margin: 0 auto;
     display: inline-block;
     cursor: pointer;
     border-radius: 6px;
@@ -4844,7 +4842,6 @@ footer {
     color: #333333;
     background-color: transparent;
     border: 3px solid transparent;
-    margin: 20px auto;
     padding: 0 43px 0 43px;
   }
   .tour_row .tour_slide .tour_content .tour_word .btn_modal .tour_row_button2:hover {
@@ -4882,7 +4879,12 @@ footer {
 }
 
 @media screen and (max-width: 676px) {
-  .tour_puzzle_btn {
+  .tour_title_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .tour_title_block .tour_btn .tour_puzzle_btn {
     display: inline-block;
     background: #1BB8CE;
     border-radius: 25px;
@@ -4904,12 +4906,12 @@ footer {
     display: block;
     margin: 0 auto;
   }
-  .tour_puzzle_btn:hover {
+  .tour_title_block .tour_btn .tour_puzzle_btn:hover {
     -webkit-animation: hover 1200ms linear 2 alternate;
     animation: hover 1200ms linear 2 alternate;
     background: #1697a8;
   }
-  .tour_puzzle_btn:active {
+  .tour_title_block .tour_btn .tour_puzzle_btn:active {
     -webkit-animation: active 1200ms ease 1 alternate;
     animation: active 1200ms ease 1 alternate;
     background: #106b77;
@@ -4917,7 +4919,7 @@ footer {
 }
 
 @media screen and (max-width: 676px) and (max-width: 479px) {
-  .tour_puzzle_btn {
+  .tour_title_block .tour_btn .tour_puzzle_btn {
     padding: 0px 26px;
     height: 40px;
     line-height: 36px;
@@ -4929,7 +4931,6 @@ footer {
 
 @media screen and (max-width: 676px) {
   .tour_row {
-    border: 5px solid red;
     margin: 0px auto;
   }
   .tour_row .tour_slide {
@@ -4989,7 +4990,7 @@ footer {
     background-color: transparent;
     border: 3px solid transparent;
     margin: 20px auto;
-    padding: 0 43px 0 43px;
+    padding: 0 40.25px 0 40.25px;
     margin-right: 0px;
     margin: 0 auto;
     display: block;
@@ -5076,7 +5077,6 @@ footer {
 
 @media screen and (max-width: 479px) {
   .tour_row {
-    border: 5px solid yellow;
     margin: 0px auto;
   }
   .tour_row .tour_slide {
@@ -5138,7 +5138,7 @@ footer {
     background-color: transparent;
     border: 3px solid transparent;
     margin: 20px auto;
-    padding: 0 43px 0 43px;
+    padding: 0 40.25px 0 40.25px;
   }
   .tour_row .tour_slide .tour_content .tour_word .btn_modal .tour_row_button2:hover {
     border: 3px solid #ff8800;

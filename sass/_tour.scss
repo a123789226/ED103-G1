@@ -749,19 +749,19 @@
                 height:70%;          
               }
               .tour_word {
+                // border:5px solid deeppink;
                   margin:0 auto;
                   padding:20px 10px 10px 10px;
                   line-height: 5px;
                   .btn_modal{
                     // border:5px solid deeppink;
                     .tour_row_button1{
+                      // border:5px solid deeppink;
                       display:block;
                     }
                     .tour_row_button2{
-                      margin-right:0px;
-                      margin:0 auto;
                       @include btn36NoneBlack;
-                      margin:20px auto;
+                      // border:5px solid deeppink;
                       padding:0 43px 0 43px; 
                     }
                   }
@@ -780,16 +780,33 @@
 }
 
 @media screen and (max-width: 676px){
-  .tour_puzzle_btn{
-    @include btn50Green;
+  .tour_title_block{
     // border:5px solid red;
-    box-shadow: $shadow2;
-    padding: 0px 31px;
-    display:block;
-    margin: 0 auto;
-}
+    display:flex;
+    // .tour_title_area{
+    //   border:5px solid red;
+    //   // h1{
+    //   //   border:5px solid red;
+    //   // }
+    // }
+    .tour_btn{
+      // border:5px solid red;
+      // .tour_puzzle{
+      //   border:5px solid red;
+      // }
+      .tour_puzzle_btn{
+        // border:5px solid red;
+        @include btn50Green;
+        box-shadow: $shadow2;
+        padding: 0px 31px;
+        display:block;
+        margin: 0 auto;
+      }
+    }
+  }
+
   .tour_row{
-    border: 5px solid red;
+    // border: 5px solid red;
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid brown;
@@ -823,7 +840,7 @@
             .tour_row_button2{
               @include btn36NoneBlack;
               margin:20px auto;
-              padding:0 43px 0 43px; 
+              padding:0 40.25px 0 40.25px; 
               margin-right:0px;
               margin:0 auto;
               display:block;
@@ -848,13 +865,13 @@
   .tour_puzzle_btn{
     @include btn50Green;
     box-shadow: $shadow2;
-    // border:5px solid red;
+    // border:5px solid green;
     padding: 0px 26px;
     display:block;
     margin: 0 auto;
 }
   .tour_row{
-    border: 5px solid yellow;
+    // border: 5px solid yellow;
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid yellowgreen;
@@ -891,7 +908,7 @@
               margin:0 auto;
               @include btn36NoneBlack;
               margin:20px auto;
-              padding:0 43px 0 43px; 
+              padding:0 40.25px 0 40.25px; 
             }
           }
         }
