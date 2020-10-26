@@ -3696,6 +3696,7 @@ footer {
   font-family: "Roboto", sans-serif;
   -webkit-box-shadow: #333 0px 2px 6px;
           box-shadow: #333 0px 2px 6px;
+  padding: 0 80px;
   display: block;
   margin: 0 auto;
 }
@@ -4881,7 +4882,54 @@ footer {
 }
 
 @media screen and (max-width: 676px) {
+  .tour_puzzle_btn {
+    display: inline-block;
+    background: #1BB8CE;
+    border-radius: 25px;
+    padding: 0px 31px;
+    height: 50px;
+    line-height: 42px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border: 4px solid #ffffff;
+    outline: none;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    -webkit-box-shadow: #333 0px 2px 6px;
+            box-shadow: #333 0px 2px 6px;
+    padding: 0px 31px;
+    display: block;
+    margin: 0 auto;
+  }
+  .tour_puzzle_btn:hover {
+    -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+    background: #1697a8;
+  }
+  .tour_puzzle_btn:active {
+    -webkit-animation: active 1200ms ease 1 alternate;
+    animation: active 1200ms ease 1 alternate;
+    background: #106b77;
+  }
+}
+
+@media screen and (max-width: 676px) and (max-width: 479px) {
+  .tour_puzzle_btn {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 676px) {
   .tour_row {
+    border: 5px solid red;
     margin: 0px auto;
   }
   .tour_row .tour_slide {
@@ -4981,7 +5029,54 @@ footer {
 }
 
 @media screen and (max-width: 479px) {
+  .tour_puzzle_btn {
+    display: inline-block;
+    background: #1BB8CE;
+    border-radius: 25px;
+    padding: 0px 31px;
+    height: 50px;
+    line-height: 42px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border: 4px solid #ffffff;
+    outline: none;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    -webkit-box-shadow: #333 0px 2px 6px;
+            box-shadow: #333 0px 2px 6px;
+    padding: 0px 26px;
+    display: block;
+    margin: 0 auto;
+  }
+  .tour_puzzle_btn:hover {
+    -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+    background: #1697a8;
+  }
+  .tour_puzzle_btn:active {
+    -webkit-animation: active 1200ms ease 1 alternate;
+    animation: active 1200ms ease 1 alternate;
+    background: #106b77;
+  }
+}
+
+@media screen and (max-width: 479px) and (max-width: 479px) {
+  .tour_puzzle_btn {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 479px) {
   .tour_row {
+    border: 5px solid yellow;
     margin: 0px auto;
   }
   .tour_row .tour_slide {

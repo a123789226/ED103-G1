@@ -50,6 +50,7 @@
 .tour_puzzle_btn{
     @include btn50Green;
     box-shadow: $shadow2;
+    padding:0 80px;
     display:block;
     margin: 0 auto;
 }
@@ -779,8 +780,16 @@
 }
 
 @media screen and (max-width: 676px){
+  .tour_puzzle_btn{
+    @include btn50Green;
+    // border:5px solid red;
+    box-shadow: $shadow2;
+    padding: 0px 31px;
+    display:block;
+    margin: 0 auto;
+}
   .tour_row{
-    // border: 5px solid red;
+    border: 5px solid red;
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid brown;
@@ -836,8 +845,16 @@
 
 
 @media screen and (max-width: 479px){
+  .tour_puzzle_btn{
+    @include btn50Green;
+    box-shadow: $shadow2;
+    // border:5px solid red;
+    padding: 0px 26px;
+    display:block;
+    margin: 0 auto;
+}
   .tour_row{
-    // border: 5px solid yellow;
+    border: 5px solid yellow;
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid yellowgreen;
