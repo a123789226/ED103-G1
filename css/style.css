@@ -6701,6 +6701,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .jourTypeTitle:before {
   content: '';
   width: 10px;
@@ -6715,6 +6716,8 @@ body {
 
 =======
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
+=======
+>>>>>>> Marco
 @media screen and (max-width: 479px) {
   .jourTypeSection .jourTypeTitle {
     font-size: 20px;
@@ -6741,11 +6744,16 @@ body {
 
 @media screen and (max-width: 676px) {
   .jourTypeSection .jourTypeChoice {
+<<<<<<< HEAD
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+=======
+    display: flex;
+    flex-wrap: wrap;
+>>>>>>> Marco
   }
 }
 
@@ -6760,9 +6768,13 @@ body {
 
 @media screen and (max-width: 676px) {
   .jourTypeSection .jourType {
+<<<<<<< HEAD
     -webkit-box-flex: 40%;
         -ms-flex: 40%;
             flex: 40%;
+=======
+    flex: 40%;
+>>>>>>> Marco
   }
 }
 
@@ -6781,6 +6793,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .jourTypePhoto:hover {
 =======
 .jourTypeSection .jourTypePhoto:hover {
@@ -6789,6 +6802,11 @@ body {
           transform: scale(1.5);
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
+=======
+.jourTypeSection .jourTypePhoto:hover {
+  transform: scale(1.5);
+  transition-duration: 1s;
+>>>>>>> Marco
 }
 
 .jourTypeSection .jourTypeText {
@@ -6820,11 +6838,15 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   border: 3px solid white;
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+  border: 3px solid white;
+>>>>>>> Marco
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -6865,6 +6887,7 @@ body {
   max-height: 600px;
   min-width: 270px;
   display: block;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6896,6 +6919,15 @@ body {
     margin-top: 0px;
   }
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
+=======
+  border: 3px solid deeppink;
+  display: flex;
+  flex-wrap: wrap;
+  transform: rotateY(-3deg);
+  animation-name: book;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+>>>>>>> Marco
 }
 
 @-webkit-keyframes book {
@@ -6924,6 +6956,7 @@ body {
 }
 
 .jourBookLeft {
+<<<<<<< HEAD
   background: -webkit-gradient(linear, left top, right top, from(#000), to(#fff));
   background: linear-gradient(to right, #000, #fff);
 =======
@@ -6931,6 +6964,9 @@ body {
   background: -webkit-gradient(linear, left top, right top, color-stop(30%, #fff), color-stop(30%, #333), color-stop(70%, #fff));
   background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%);
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
+=======
+  background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%);
+>>>>>>> Marco
   width: 7%;
   display: inline-block;
 }
@@ -7002,6 +7038,7 @@ img {
   background: linear-gradient(235deg, #325c7f, #132d42);
   border-radius: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: 60%;
 =======
   width: 80%;
@@ -7018,17 +7055,27 @@ img {
 }
 
 @-webkit-keyframes shadow {
+=======
+  width: 80%;
+  transform: translate(0%, 60%);
+  animation-name: shadow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shadow {
+>>>>>>> Marco
   0% {
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
   }
   50% {
     margin-top: 0px;
-    width: 60%;
+    width: 70%;
   }
   100% {
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
   }
 =======
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
@@ -7156,8 +7203,12 @@ div.jourLightBox {
   position: absolute;
   top: 50%;
   left: -20px;
+<<<<<<< HEAD
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+=======
+  transform: translateY(-50%);
+>>>>>>> Marco
 }
 
 @media screen and (max-width: 479px) {
@@ -7354,8 +7405,12 @@ div.jourLightBox {
 
 .jourCommentBox {
   width: 100%;
+<<<<<<< HEAD
   -webkit-box-shadow: #777 0px 2px 6px;
           box-shadow: #777 0px 2px 6px;
+=======
+  box-shadow: #777 0px 2px 6px;
+>>>>>>> Marco
   border-radius: 6px;
 }
 
@@ -7679,20 +7734,30 @@ div.jourLightBox {
   outline: none;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
+<<<<<<< HEAD
   -webkit-box-shadow: #333 0px 2px 6px;
           box-shadow: #333 0px 2px 6px;
+=======
+  box-shadow: #333 0px 2px 6px;
+>>>>>>> Marco
   margin: 10px 5px;
   display: inline-block;
 }
 
 .adoptProcessBtn:hover {
+<<<<<<< HEAD
   -webkit-animation: hover 1200ms linear 2 alternate;
+=======
+>>>>>>> Marco
   animation: hover 1200ms linear 2 alternate;
   background: #1697a8;
 }
 
 .adoptProcessBtn:active {
+<<<<<<< HEAD
   -webkit-animation: active 1200ms ease 1 alternate;
+=======
+>>>>>>> Marco
   animation: active 1200ms ease 1 alternate;
   background: #106b77;
 }
@@ -7708,7 +7773,11 @@ div.jourLightBox {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 676px) {
+=======
+@media screen {
+>>>>>>> Marco
   .adoptProcessBtn {
     display: inline-block;
     cursor: pointer;
@@ -7725,14 +7794,21 @@ div.jourLightBox {
     background-color: #1BB8CE;
     border: 1px solid #1BB8CE;
     outline: none;
+<<<<<<< HEAD
     -webkit-transition: .05s;
+=======
+>>>>>>> Marco
     transition: .05s;
   }
   .adoptProcessBtn:hover {
     border: 1px solid #1697a8;
     background-color: #1697a8;
+<<<<<<< HEAD
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
+=======
+    transform: scale(1.05);
+>>>>>>> Marco
   }
 }
 
@@ -8090,6 +8166,7 @@ div.jourLightBox {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .adoptLightBox {
   position: fixed;
   top: 0;
@@ -8135,6 +8212,8 @@ div.jourLightBox {
 
 =======
 >>>>>>> 1b0c8a2bf70cf9db05e9c21b3b0b393c3d8bd247
+=======
+>>>>>>> Marco
 body.voteBLOCK {
   width: 80%;
   margin: 0 auto;
