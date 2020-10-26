@@ -135,7 +135,7 @@
           <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
           <img class="tour_overlay1img" src="./image/tour/tour_intro_dolphin.jpg" alt="error">
           <div class="btn_modal">
-          <button type="button" class="btn_modal_close1">Introduction</button>
+          <button type="button" class="btn_modal_close1" id="btn1">Introduction</button>
           <button type="button" class="btn_modal_close2">Close</button>
           </div>
         </article>
@@ -147,7 +147,7 @@
             <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
             <img class= "tour_overlay2img" src="./image/tour/tour_intro_whale.jpg" alt="error">
             <div class="btn_modal">
-            <button type="button" class="btn_modal_close1">Introduction</button>
+            <button type="button" class="btn_modal_close1" id="btn2">Introduction</button>
             <button type="button" class="btn_modal_close2">Close</button>
             </div>
           </article>
@@ -159,7 +159,7 @@
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay3img" src="./image/tour/tour_intro_seal.jpg" alt="error">
               <div class="btn_modal">
-              <button type="button" class="btn_modal_close1">Introduction</button>
+              <button type="button" class="btn_modal_close1" id="btn3">Introduction</button>
               <button type="button" class="btn_modal_close2">Close</button>
               </div>
             </article>
@@ -171,7 +171,7 @@
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
               <div class="btn_modal">
-              <button type="button" class="btn_modal_close1">Introduction</button>
+              <button type="button" class="btn_modal_close1" id="btn4">Introduction</button>
               <button type="button" class="btn_modal_close2">Close</button>
               </div>
             </article>
@@ -393,22 +393,22 @@ $(function(){
 // });
 
 $(document).ready(function() {
-       $(".btn_modal_close1").click(function() {
+       $("#btn1").click(function() {
          $("html, body").animate({
            scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
-       $(".btn_modal_close1").click(function() {
+       $("#btn2").click(function() {
          $("html, body").animate({
            scrollTop: $("#no2").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
-       $(".btn_modal_close1").click(function() {
+       $("#btn3").click(function() {
          $("html, body").animate({
            scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
-       $(".btn_modal_close1").click(function() {
+       $("#btn4").click(function() {
          $("html, body").animate({
            scrollTop: $("#no4").offset().top }, {duration: 500,easing: "swing"});
          return false;
@@ -542,18 +542,20 @@ $(function(){
 
 
 // ---------四大動物介紹: 按圖片出現介紹文, 按close 恢復原狀---------------
-$('tour_slide').click(function(){
-  $('.tour_content').toggleClass('tour_content_show');
-},function(){
+$('.tour_slide').click(function(){
+  $(this).children().addClass('tour_content_show');
+  $(this).addClass('tour_slide_show');
+  // $('.tour_content').toggleClass('tour_content_show');
 })
 
-$('.btn_modal_close2').click(function(){
-},function(){
-  $('tour_content').toggleClass('tour_content_show');
+$('.tour_row_button2').click(function(e){
+  // $('.tour_content').toggleClass('tour_content_show');
+  $(this).closest('.tour_content').removeClass('tour_content_show');
+  $(this).closest('.tour_slide').removeClass('tour_slide_show');
+  e.stopPropagation();
 })
 
 
-  </script>
 </script>
 </body>
 </html>

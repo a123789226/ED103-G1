@@ -632,7 +632,7 @@
 }
 
 .tour_slide:hover {
-  flex-grow:10;
+  flex-grow:5;
   background-position: top;
   background-size: cover;
   filter: brightness(1);
@@ -659,18 +659,20 @@
     .tour_slide {
       flex: 1 1 50%;
       cursor: pointer;
-      &:hover{       
-        flex-grow:4;
-        filter: brightness(1);
-        height:100%;
-      }
+      // &:hover{       
+      //   flex-grow:4;
+      //   filter: brightness(1);
+      //   // height:100%;
+      // }
       .tour_content{
         // border:5px solid yellow;
         flex-direction: column;
         opacity: 0;
-        &:hover{
-          opacity:0;
-        }
+        transition: 0s;
+        transition-delay: 0s;
+        // &:hover{
+        //   opacity:1;
+        // }
         .tour_headerimg{
           display: none;
         }
@@ -700,15 +702,18 @@
             }
           }
         }
-      } 
+      }
+      .tour_content_show{
+         opacity:1 ;
+         transition: 0s;
+         transition-delay: 0s;
+  // border:2px solid red;
+} 
     }  
   }
 }
 
-.tour_content_show{
-  opacity:1 ;
-  // border:2px solid red;
-}
+
 
 
 @media screen and (max-width: 767px){
@@ -725,12 +730,15 @@
           // border:5px solid blue;
           width:500px;
           height:450px; 
-          cursor: pointer;    
+          cursor: pointer;  
+          transition: 0s;  
           .tour_content {
               // border:5px solid yellow;
               margin: 0px auto;
               padding:10px;
               opacity: 0;
+              transition: 0s;
+              transition-delay: 0s;
               .tour_headerimg {
                 position: relative;
                 top:15px;
@@ -757,17 +765,17 @@
                     }
                   }
                }
-               &:hover{
-                opacity:1;          
-              }
             }
         }
     }
-
-.tour_slide:hover {
-  flex-grow:10;
+.tour_row .tour_slide_show{
   height:100%;
-  }
+}
+.tour_row .tour_slide .tour_content_show{
+  opacity: 1;
+  transition: 0s;
+  transition-delay: 0s;
+}
 }
 
 @media screen and (max-width: 676px){
@@ -779,11 +787,11 @@
       margin: 20px auto;
       width:350px;
       height:300px;
-      opacity:1; 
       cursor: pointer;
-      &:hover{
-        height:100%;
-      }
+      transition: 0s; 
+      // &:hover{
+      //   height:100%;
+      // }
       .tour_content{
         display:block;
         .tour_headerimg{
@@ -816,6 +824,14 @@
       } 
     }  
   }
+.tour_row .tour_slide_show{
+  height:100%;
+}
+.tour_row .tour_slide .tour_content_show{
+  opacity: 1;
+  transition: 0s;
+  transition-delay: 0s;
+}
 }
 
 
@@ -830,9 +846,9 @@
       height:230px;
       opacity:1; 
       cursor: pointer;
-      &:hover{
-        height:100%;
-      }
+      // &:hover{
+      //   height:100%;
+      // }
       .tour_content{
         margin:0 auto;
         display:block;
@@ -865,4 +881,12 @@
       } 
     }  
   }
+.tour_row .tour_slide_show{
+  height:100%;
+}
+.tour_row .tour_slide .tour_content_show{
+  opacity: 1;
+  transition: 0s;
+  transition-delay: 0s;
+}
 }
