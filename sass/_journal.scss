@@ -203,7 +203,7 @@ body {
   min-width: 270px;
   // min-height: 360px;
   display: block;
-  border: 3px solid deeppink;
+  // border: 3px solid deeppink;
   display: flex;
   flex-wrap: wrap;
   transform: rotateY(-3deg);
@@ -891,7 +891,7 @@ div.jourLightBox {
 
     display: inline-block;
   
-    @media screen {
+    @media screen and (max-width: 676px){
       @include btn30Green;
 
     }
