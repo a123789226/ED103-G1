@@ -56,17 +56,23 @@
 }
 
 .mgrHeader{
-  color: #ffffff;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  a{
+  @include btn36NoneWhite;
+  }
 }
 .mgrMain{
-  width: 98%;
+  width: 90%;
   margin: auto;
 }
 
 .mgrrow{
   background-color: rgba(255, 255, 255, .8);
   margin: 10px;
-  // 左邊LIST
+  // 左邊選單
   .mgrList{
     background-color: #eeeeee;
     .mgrImg{
@@ -83,7 +89,7 @@
     .mgrbtn{
       line-height: 50px;
       text-align: center;
-      .mgrTab:hover{
+      .mgrTab:hover, .mgrSignOut:hover{
         background-color: $keyGreen;
         color: #ffffff;
       }
@@ -93,7 +99,7 @@
       text-align: start;
       padding-left: 10px;
     }
-    .mgrTab {
+    .mgrTab, .mgrSignOut {
       margin: 0 auto;
       width: 80%;
       font-size: 20px;
@@ -115,13 +121,17 @@
     }
   }
   // 右邊內容
-    tr, td, select{
-      font-size: 16px;
-    }
+  tr, td, select{
+    font-size: 16px;
+  }
   .mgrContent{
+    button{
+      @include btn36Yellow;
+      box-shadow: $shadow2;
+      margin-bottom: 20px;
+    }
     h3{
-      width: 100%;
-      @include main_title(#333333);
+      @include main_title($keyBlack);
       margin: 30px auto;
     }
     .mgrTab.-on{
