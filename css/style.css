@@ -8483,7 +8483,7 @@ ul.vote_list > li > a.-on {
   display: flex;
   flex-direction: column;
   width: 40%;
-  background-image: url(https://picsum.photos/300/200?random=22);
+  background-color: #1BB8CE;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -8504,6 +8504,39 @@ ul.vote_list > li > a.-on {
   }
 }
 
+.cardContainer .cardMaterials .cardMaterialBackground {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialBackground .cardBgc {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.cardContainer .cardMaterials .cardMaterialAnimal {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialAnimal .cardAnimals {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.cardContainer .cardMaterials .cardMaterialDeco {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.cardContainer .cardMaterials .cardMaterialDeco .cardDeco {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
 .cardContainer .cardSectionContainer {
   display: block;
   width: 100%;
@@ -8514,36 +8547,51 @@ ul.vote_list > li > a.-on {
 .cardContainer .cardSectionContainer .cardSectionContent {
   width: 100%;
   height: 400px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.856);
   position: relative;
-}
-
-.cardContainer .cardSectionContainer .cardSectionContent .cardSelectAnimal {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 25%;
-  height: auto;
-}
-
-.cardContainer .cardSectionContainer .cardSectionContent .cardSelectDeco {
-  position: absolute;
-  bottom: 20%;
-  right: 20%;
-  width: 25%;
-  height: auto;
-}
-
-.cardAnimalChosen {
-  width: 240px;
-  height: 205px;
-  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.cardAnimalChosen img {
+.cardContainer .cardSectionContainer .cardSectionContent p {
+  color: red;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardAnimalChosen {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  background-color: #888;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardAnimalChosen .cardAnimalChosen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardDecoChosen {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: #888;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cardContainer .cardSectionContainer .cardSectionContent .cardDecoChosen .cardDecoChosen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
