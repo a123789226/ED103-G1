@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
 
-
-    <title>Forget Password?</title>
+    <title>Aqua backend</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
@@ -18,7 +19,7 @@
   <!-- 上面是背景的div，先不要動到 -->
 
   <!-- 下面是背景的div，先不要動到 -->
-  <div class="memBackground">
+  <div class="mgrBackground">
     <div class="commonBG00 commonBGSet"></div>
     <div class="commonBG01 commonBGSet"></div>
     <div class="commonBG02 commonBGSet"></div>
@@ -28,13 +29,13 @@
     <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
-  <header class="main_menu">
+  <!-- <header class="main_menu">
     <nav class="main_nav">
       <div class="logo_box">
-        <a href="homepage.html" class="logo">
+        <a href="index.html" class="logo">
           <img src="./image/header/logo.png" alt="">
         </a>
-        <a href="homepage.html" class="logo_text_box">
+        <a href="" class="logo_text_box">
           <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
       </div>
@@ -76,10 +77,10 @@
         </li>
       </ul>
       <div class="header_right">
-        <a href="#" class="member_box btn_modal">
+        <a class="member_box" href="">
           <img src="./image/header/header_member_fish.png" alt="">
         </a>
-        <a class="cart_box" href="cart.html">
+        <a class="cart_box" href="">
           <img src="./image/header/header_cart.png" alt="">
           <span class="cart_amount">1</span>
         </a>
@@ -91,56 +92,28 @@
         </div>
       </div>
     </nav>
-  </header> 
+  </header> -->
   <div>
     <!-- Title -->
     <!-- <div class="commonTitleBox">
       <h2 class="commonTitle">Big Title</h2>
       <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
     </div> -->
-  <!-- 你的code打這下面 -->
-
-
-  <main>
-    <!-- Sign In -->
-    <div class="memLogin overlay">
+    <!-- 你的code打這下面 -->
+    <!-- Log In -->
+    <div class="mgrLogin">
       <form class="LogInForm" id="LogInForm" method="post">
-        <div class="btn_modal_close">
-          <div></div>
-          <div></div>
+        <div class="mgrImg">
+          <img src="./image/header/logo.png" alt="">
+          <h1>Aqua Wonderland</h3>
         </div>
-        <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        <h3 class="mgrLogTitle">BackState</h3>
+        <input type="text" name="mgrId" id="mgrId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="ManagerId" size="30"/><br>
+        <input type="password" name="mgrPsw" id="mgrPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="30"/><br>
         <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <p>Don't have an account?</p><br>
-        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
       </form>
     </div>
-
-    <!-- Forget Password -->
-    <div class="memForget">
-      <form class="forgetForm" id="forgetForm" method="post">
-        <h3 class="memForgetTitle">Trouble Logging In?</h3>
-        <p>Enter your email and we'll send you a link to get back into your account. </p>
-            <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" size="48" required /><br>
-        <button type="button" class="submitBtnFor" id="btnLogin">Send Login Link</button><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <div class="memForLink">
-          <a href="#" class="member_box btn_modal">Back To Login</a>
-          <a href="./memberLogin.html">Create New Account</a>
-        </div>
-      </form>
-    </div>
-  </main>
-<!-- 你的code打這上面 -->
-
+    <!-- 你的code打這上面 -->
   </div>
 
   <footer>
@@ -150,23 +123,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+
+  <!-- 頁籤 -->
   <script>
-   
-  // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
+    
+    // OrderDetail收合
+    $("div.mgrStep").on("click", function(){
+      $(this).next().slideToggle();
+      $(this).find('i').toggleClass('rotate');
     });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
+  
+    // Hamburger
+    $("div.hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
     });
-  });
-  </script>
+
+</script>
 </body>
 </html>
