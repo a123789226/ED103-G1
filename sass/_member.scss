@@ -352,9 +352,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     h3{
-      @include main_title(#ffffff);
+      @include main_title($keyWhite);
       margin-bottom: 20px;
       width: 200px;
+      text-align: left;
     }
     .btn_modal_close{
       position: absolute;
@@ -388,7 +389,7 @@
     }
     p{
       text-align: center;
-      margin: 30px 0 20px 0;
+      margin: 10px;
       color: #ffffff;
     }
     h6{
@@ -401,8 +402,8 @@
     }
     .memLine{
       display: flex;
+      margin-bottom: 20px;
     }
-    
     .memLine::before{
       content: '';
       width: 40%;
@@ -438,13 +439,15 @@
       color: #ffffff;
     }
     .submitBtnLog{
-      @include btn60(200px, green);
-      width: 280px;
-      margin: 30px 0;
+      @include btn50Green;
+      box-shadow: $shadow2;
+      width: 200px;
+      margin-bottom: 20px;
     }
     .submitBtnSign{
-      @include btn60(200px, white);
-      width: 280px;
+      @include btn50White;
+      box-shadow: $shadow2;
+      width: 200px;
     }
   }
 }
@@ -468,9 +471,10 @@
 }
 // signup
 .memSignup{
+  text-align: center;
   .signUpForm{
     width: 800px;
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 20px;
     // border: 1px solid black;
     background-color: rgba(0, 0, 0, .5);
@@ -481,8 +485,9 @@
     transform: translate(-50%, -50%);
     .memSignRight{
       h3{
-        @include main_title(#ffffff);
+        @include main_title($keyWhite);
         margin-bottom: 20px;
+        text-align: left;
       }
       .memSignDetail{
         input {
@@ -495,21 +500,42 @@
           height: 40px;
         }
         .Sex{
+          display: flex;
+          line-height: 40px;
           .memGender{
             color: #ffffff;        
+            text-align: left;
+          }
+          p{
+            color: #ffffff;
+          }
+          input{
+            margin: auto 10px;
+            line-height: 40px;
           }
         }
-      }
-      .submitBtnSign{
-        @include btn60(200px, green);
-        width: 280px;
-      }
-      h5{
-        color: #ffffff;
-        margin: 10px auto;
-        text-align: center;
-        a{
-          color: #1BB8CE;
+        .memBir{
+          display: flex;
+          color: #333333;
+          line-height: 40px;
+          p{
+            color: #ffffff;
+            margin-right: 20px;
+          }
+        }
+        .submitBtnSign{
+          @include btn50Green;
+          box-shadow: $shadow2;
+          width: 300px;
+        }
+        h5{
+          color: #ffffff;
+          text-align: center;
+          margin: 20px auto;
+          a{
+            margin: 10px auto;
+            color: #1BB8CE;
+          }
         }
       }
     }
