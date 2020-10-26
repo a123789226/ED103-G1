@@ -2709,6 +2709,114 @@ footer {
   }
 }
 
+.mgrLogin {
+  text-align: center;
+}
+
+.mgrLogin .LogInForm {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 400px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.mgrLogin .LogInForm .mgrImg img {
+  width: 300px;
+}
+
+.mgrLogin .LogInForm h1 {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 100px;
+}
+
+.mgrLogin .LogInForm h3 {
+  font-size: 36px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+.mgrLogin .LogInForm h3:before {
+  content: '';
+  width: 10px;
+  height: 40px;
+  background-color: #FBE108;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 479px) {
+  .mgrLogin .LogInForm h3 {
+    font-size: 28px;
+  }
+  .mgrLogin .LogInForm h3::before {
+    width: 10px;
+    height: 30px;
+  }
+}
+
+.mgrLogin .LogInForm input {
+  padding: 5px 15px;
+  background: #ffffff;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.mgrLogin .LogInForm input#memId, .mgrLogin .LogInForm input#memPsw {
+  font-size: 14px;
+}
+
+.mgrLogin .LogInForm .submitBtnLog {
+  display: inline-block;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+  width: 300px;
+}
+
+.mgrLogin .LogInForm .submitBtnLog:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.mgrLogin .LogInForm .submitBtnLog:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .mgrLogin .LogInForm .submitBtnLog {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
 .mgrHeader {
   color: #ffffff;
 }
@@ -9183,6 +9291,10 @@ ul.vote_list > li > a.-on {
   display: none;
 }
 
+.memForget {
+  text-align: center;
+}
+
 .memForget .forgetForm {
   margin: 20px auto;
   padding: 20px;
@@ -9334,6 +9446,10 @@ ul.vote_list > li > a.-on {
   background-color: #208686;
 }
 
+.memLogin {
+  text-align: center;
+}
+
 .memLogin .LogInForm {
   margin: 20px auto;
   padding: 20px;
@@ -9354,6 +9470,7 @@ ul.vote_list > li > a.-on {
   position: relative;
   margin-bottom: 20px;
   width: 200px;
+  text-align: left;
 }
 
 .memLogin .LogInForm h3:before {
@@ -9415,7 +9532,7 @@ ul.vote_list > li > a.-on {
 
 .memLogin .LogInForm p {
   text-align: center;
-  margin: 30px 0 20px 0;
+  margin: 10px;
   color: #ffffff;
 }
 
@@ -9431,6 +9548,7 @@ ul.vote_list > li > a.-on {
 
 .memLogin .LogInForm .memLine {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .memLogin .LogInForm .memLine::before {
@@ -9474,59 +9592,106 @@ ul.vote_list > li > a.-on {
 }
 
 .memLogin .LogInForm .submitBtnLog {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
-  text-align: center;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
   color: #ffffff;
-  background-color: #1BB8CE;
-  width: 280px;
-  margin: 30px 0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+  width: 200px;
+  margin-bottom: 20px;
 }
 
 .memLogin .LogInForm .submitBtnLog:hover {
-  border: 5px solid #208686;
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
 }
 
-.memLogin .LogInForm .submitBtnLog:hover {
-  background-color: #208686;
+.memLogin .LogInForm .submitBtnLog:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .memLogin .LogInForm .submitBtnLog {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
 }
 
 .memLogin .LogInForm .submitBtnSign {
-  width: 200px;
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
   font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
   text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+  border: 4px solid #1BB8CE;
   color: #1BB8CE;
+  box-shadow: #333 0px 2px 6px;
+  width: 200px;
+}
+
+.memLogin .LogInForm .submitBtnSign:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.memLogin .LogInForm .submitBtnSign:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .memLogin .LogInForm .submitBtnSign {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+.memLogin .LogInForm .submitBtnSign:hover {
   background-color: #ffffff;
-  width: 280px;
+  color: #1697a8;
+  border: 4px solid #1697a8;
 }
 
-.memLogin .LogInForm .submitBtnSign:hover {
-  border: 5px solid #208686;
+.memLogin .LogInForm .submitBtnSign:active {
+  border: 4px solid #106b77;
+  color: #106b77;
 }
 
-.memLogin .LogInForm .submitBtnSign:hover {
-  color: white;
-  background-color: #208686;
+@media screen and (max-width: 479px) {
+  .memLogin .LogInForm .submitBtnSign {
+    border: 3px solid #1BB8CE;
+  }
 }
 
 .overlay {
@@ -9550,9 +9715,13 @@ ul.vote_list > li > a.-on {
   opacity: 0;
 }
 
+.memSignup {
+  text-align: center;
+}
+
 .memSignup .signUpForm {
   width: 800px;
-  margin-top: 150px;
+  margin-top: 20px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px #ddd;
@@ -9569,6 +9738,7 @@ ul.vote_list > li > a.-on {
   color: #ffffff;
   position: relative;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .memSignup .signUpForm .memSignRight h3:before {
@@ -9602,44 +9772,85 @@ ul.vote_list > li > a.-on {
   height: 40px;
 }
 
+.memSignup .signUpForm .memSignRight .memSignDetail .Sex {
+  display: flex;
+  line-height: 40px;
+}
+
 .memSignup .signUpForm .memSignRight .memSignDetail .Sex .memGender {
   color: #ffffff;
+  text-align: left;
 }
 
-.memSignup .signUpForm .memSignRight .submitBtnSign {
-  width: 200px;
+.memSignup .signUpForm .memSignRight .memSignDetail .Sex p {
+  color: #ffffff;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .Sex input {
+  margin: auto 10px;
+  line-height: 40px;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .memBir {
+  display: flex;
+  color: #333333;
+  line-height: 40px;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .memBir p {
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .submitBtnSign {
   display: inline-block;
-  cursor: pointer;
-  border: 5px solid #1BB8CE;
-  border-radius: 30px;
-  padding: 0 36px;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  background: #1BB8CE;
+  border-radius: 25px;
+  padding: 0px 31px;
+  height: 50px;
+  line-height: 42px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
   font-weight: 700;
-  background-color: #1BB8CE;
-  height: 60px;
-  line-height: 50px;
   text-align: center;
+  border: 4px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  box-shadow: #333 0px 2px 6px;
+  width: 300px;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .submitBtnSign:hover {
+  animation: hover 1200ms linear 2 alternate;
+  background: #1697a8;
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail .submitBtnSign:active {
+  animation: active 1200ms ease 1 alternate;
+  background: #106b77;
+}
+
+@media screen and (max-width: 479px) {
+  .memSignup .signUpForm .memSignRight .memSignDetail .submitBtnSign {
+    padding: 0px 26px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    font-weight: 500;
+  }
+}
+
+.memSignup .signUpForm .memSignRight .memSignDetail h5 {
   color: #ffffff;
-  background-color: #1BB8CE;
-  width: 280px;
+  text-align: center;
+  margin: 20px auto;
 }
 
-.memSignup .signUpForm .memSignRight .submitBtnSign:hover {
-  border: 5px solid #208686;
-}
-
-.memSignup .signUpForm .memSignRight .submitBtnSign:hover {
-  background-color: #208686;
-}
-
-.memSignup .signUpForm .memSignRight h5 {
-  color: #ffffff;
+.memSignup .signUpForm .memSignRight .memSignDetail h5 a {
   margin: 10px auto;
-  text-align: center;
-}
-
-.memSignup .signUpForm .memSignRight h5 a {
   color: #1BB8CE;
 }
 
