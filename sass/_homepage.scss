@@ -15,18 +15,19 @@
   padding-top: 50px;
   padding-bottom: 100px;
   // border: 2px solid red;
-  overflow: hidden;
+  // overflow: hidden;
   .home_tour_pic{
     position: relative;
     padding-top: 100px;
+    padding-bottom: 30%;
     .role_pick{
       display: inline-block;
       width: 300px;
       height: 300px;
       position: relative;
-      top: 25%;
-      left: 12%;
-      overflow: hidden;
+      margin-top: 15%;
+      left: 8%;
+      // overflow: hidden;
     }
     .tour_arrow_left{
       cursor: pointer;
@@ -52,7 +53,7 @@
       width: 100%;
       height: 100%;
       top: 0;
-      left: 0;
+      left: 15%;
       right: 0;
       bottom: 0;
       // background-image: url("../image/index/map/island_2.png");
@@ -65,36 +66,39 @@
       // top: 15%;
       // left: 40%;
       .move{
-        position: absolute;
+        position: absolute !important;
+        height: 100%;
         width: 100%;
+        top: -20%;
         .home_p1{
-          position: absolute;
-          padding-top: 20%;
-          margin-left: 70%;
+          position: absolute !important;
+          // padding-bottom: 20%;
+          left: 50% !important;
+          top: 54% !important;
           width: 2%;
           // z-index: 10;
           // height: 25px;
         }
         .home_p2{
           position: absolute;
-          padding-top: 30%;
-          margin-left: 60%;
+          left: 43% !important;
+          top: 70% !important;
           width: 2%;
           // z-index: 10;
           // height: 25px;
         }
         .home_p3{
           position: absolute;
-          padding-top: 20%;
-          margin-left: 45%;
+          left: 27% !important;
+          top: 55% !important;
           width: 2%;
           // z-index: 10;
           // height: 25px;
         }
         .home_p4{
           position: absolute;
-          padding-top: 30%;
-          margin-left: 85%;
+          top: 70% !important;
+          left: 67% !important;
           width: 2%;
           // z-index: 10;
           // height: 25px;
@@ -107,6 +111,7 @@
     position: relative;
     // top: 25%;
     left: 35%;
+    z-index: 9999;
     transform: translateY(50px);
     animation-name: home_bounce_down;
     animation-duration: 3s;
@@ -141,7 +146,7 @@
     animation-timing-function: ease-in-out;
     }
     .home_map{
-      position: relative; 
+      position: absolute; 
       width: 65%;
       top: 15%;
       left: 15%;
@@ -215,6 +220,74 @@
 #content li{
   float: left;
 }
+
+
+
+
+@media screen and (max-width: 1200px){
+  .home_tour{
+    padding-bottom: 20%;
+    .home_tour_pic{
+      .home_map{
+        left: -4%;
+        width: 80%;
+      }
+      .role_pick{
+        display: none;
+      }
+      .home_map_container{
+        .move{
+          top: 0;
+          .home_p1{
+            left: 39% !important;
+            top: 57% !important;
+          }
+          .home_p2{
+            left: 32% !important;
+            top: 91% !important;
+          }
+          .home_p3{
+            left: 12% !important;
+            top: 58% !important;
+          }
+          .home_p4{
+            left: 60% !important;
+            top: 78% !important;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  .home_tour{
+    .home_tour_pic{
+      .home_map_container{
+        .move{
+          top: 0;
+          .home_p1{
+            left: 40% !important;
+            top: 52% !important;
+          }
+          .home_p2{
+            top: 80% !important;
+          }
+          .home_p3{
+            left: 12% !important;
+            top: 50% !important;
+          }
+          .home_p4{
+            left: 58% !important;
+            top: 71% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 
@@ -425,11 +498,12 @@
     padding: 2%;
     margin-left: 4%;
     z-index: 3;
-    margin-top: 12%;
+    margin-top: 10%;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, .5);
     > h3{
       margin-bottom: 10px;
+      color: #000000;
     }
     .home_text_row{
       display: flex;
@@ -437,6 +511,8 @@
       padding: 5px 10px;
       > p{
         width: 68px;
+        @include text($keyBlack);
+        font-weight: $fw_Regular;
         // text-align: center;
       }
     }
@@ -1016,6 +1092,7 @@
     > button{
       @include btn50Green;
       box-shadow: $shadow2;
+      width: 50%;
     }
   } 
   .page5_named{
@@ -1047,10 +1124,7 @@
         border-radius: 6px;
       }
       button{
-        @include btn60(100%, green);
-        &:hover{
-          opacity: .7;
-        }
+        @include btn50Green;
         .on{
           background-color: $blockYellow;
         }
@@ -1128,6 +1202,9 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  .blog_carousel_text{
+    @include text($keyWhite);
+  }
   .home_blogTitle_before{
     padding-bottom: 5%;
     .home_blog_title{
@@ -1262,7 +1339,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 7;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
     }
   }
@@ -1289,7 +1366,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 6;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
     }
     .arrow_left{
@@ -1334,7 +1411,7 @@
   }
   .home_blog{
     .blog_carousel_text{
-      -webkit-line-clamp: 6;
+      -webkit-line-clamp: 3;
     }
   }
 }
@@ -1410,6 +1487,7 @@
   transform: translateX(-50%);
   margin-top: 5%;
   text-align: center;
+  overflow:hidden
 }
 @media screen and (max-width: 991px){
   .mermaid_1, .mermaid_2, .mermaid_3, .page3_platform{
@@ -1596,19 +1674,20 @@
   border-radius: 6px;
   background-color: rgba(0,0,0,.5);
   padding: 20px;
-  width: 35%;
+  width: 50%;
   .home_message{
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   > textarea{
+    height: 45px;
     border-radius: 6px;
     font-size: 20px;
   }
   >button{
     @include btn30Green;
-    margin-left: 5%;
+    margin-left: 4%;
   }
 }
 }
