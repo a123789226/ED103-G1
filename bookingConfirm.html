@@ -229,15 +229,16 @@
     //   }
     // })
 
-    $('.ticketPayToCheck').on('click', function(e){
-      e.preventDefault();
-      swal("Great!", "You have completed the payment!", "success").then((value) => {
-        if(value){
-        $(this).submit();
-          window.location = "homepage.html";
-        }
-      })
-    })
+    // $('.ticketPayToCheck').on('click', function(e){
+    //   e.preventDefault();
+    //   swal("Great!", "You have completed the payment!", "success").then((value) => {
+    //     if(value){
+    //     $(this).submit();
+    //       window.location = "homepage.html";
+    //     }
+    //   })
+    // })
+    //把它改成跳轉到另一php存到資料庫然後header連到首頁。
 
     // Login彈窗
     $(function(){

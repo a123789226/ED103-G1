@@ -8,18 +8,71 @@
   @include FishMove2(30%, 60%, 15s);
 }
 
+// MGR login
+.mgrLogin{
+  text-align: center;
+  .LogInForm{
+    margin: 20px auto;
+    padding: 20px;
+    // border: 1px solid black;
+    background-color: rgba(0, 0, 0, .5);
+    width: 400px;
+    box-shadow: 0 0 10px #ddd;
+    .mgrImg{
+      // display: flex;
+      img{
+        width: 300px;
+      }
+
+    }
+    h1{
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 100px;
+    }
+    h3{
+      @include main_title(#ffffff);
+      margin-bottom: 20px;
+      width: 200px;
+    }
+    input {
+      padding: 5px 15px; 
+      background:#ffffff; 
+      border:0 none;
+      cursor:pointer;
+      border-radius: 5px; 
+      margin-bottom: 20px;
+      height: 40px;
+    }
+    input#memId, input#memPsw{
+      font-size: 14px;
+    }
+    .submitBtnLog{
+      @include btn50Green;
+      box-shadow: $shadow2;
+      width: 300px;
+    }
+  }
+}
+
 .mgrHeader{
-  color: #ffffff;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  a{
+  @include btn36NoneWhite;
+  }
 }
 .mgrMain{
-  width: 98%;
+  width: 90%;
   margin: auto;
 }
 
 .mgrrow{
   background-color: rgba(255, 255, 255, .8);
   margin: 10px;
-  // 左邊LIST
+  // 左邊選單
   .mgrList{
     background-color: #eeeeee;
     .mgrImg{
@@ -36,7 +89,7 @@
     .mgrbtn{
       line-height: 50px;
       text-align: center;
-      .mgrTab:hover{
+      .mgrTab:hover, .mgrSignOut:hover{
         background-color: $keyGreen;
         color: #ffffff;
       }
@@ -46,7 +99,7 @@
       text-align: start;
       padding-left: 10px;
     }
-    .mgrTab {
+    .mgrTab, .mgrSignOut {
       margin: 0 auto;
       width: 80%;
       font-size: 20px;
@@ -68,13 +121,17 @@
     }
   }
   // 右邊內容
-    tr, td, select{
-      font-size: 16px;
-    }
+  tr, td, select{
+    font-size: 16px;
+  }
   .mgrContent{
+    button{
+      @include btn36Yellow;
+      box-shadow: $shadow2;
+      margin-bottom: 20px;
+    }
     h3{
-      width: 100%;
-      @include main_title(#333333);
+      @include main_title($keyBlack);
       margin: 30px auto;
     }
     .mgrTab.-on{
@@ -393,4 +450,3 @@
     }
   }
 }
-
