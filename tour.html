@@ -83,7 +83,6 @@
     </nav>
   </header>
 
-
   <div>
     <div class="commonTitleBox">
       <h2 class="commonTitle">Welcome to Aqua wonderlander!</h2>
@@ -96,7 +95,7 @@
           <h1 class="tour_title1">Tour</h1>
         </div>  
         <div class="tour_btn">
-          <a href="js-puzzle-master/preTour.html" class="tour_puzzle">
+          <a href="js/js-puzzle-master/preTour.html" class="tour_puzzle">
           <button class="tour_puzzle_btn">Puzzle</button>
           </a>
         </div>        
@@ -105,18 +104,26 @@
       <!-- 大地圖 -->
       <div class="tour_map_area">
         <img class="tour_island" src="./image/tour/tour_island.png" alt="error">
-        <div class="tour_map_area1">
-          <img class="tour_house1 tour_houseA tour_house_show" src="./image/tour/house11.png" alt="error">
-          <img class="tour_house1 tour_houseB" src="./image/tour/house1_hover.png" alt="error">
-          <img class="tour_house2 tour_houseA tour_house_show" src="./image/tour/house22.png" alt="error">   
-          <img class="tour_house2 tour_houseB" src="./image/tour/house2_hover.png" alt="error">   
+        <div class="tour_map_house1">
+          <img class="tour_house1 tour_houseA tour_house_show" src="./image/tour/house1.png" alt="error">
+          <img class="tour_house1_hover tour_houseB" src="./image/tour/house1_hover.png" alt="error">
+          <img class="tour_dolphin_wave" src="./image/tour/tour_dolphin_wave.png" alt="error">
         </div>
-        <div class="tour_map_area2">
-          <img class="tour_house3 tour_houseA tour_house_show" src="./image/tour/house33.png" alt="error">
-          <img class="tour_house3 tour_houseB" src="./image/tour/house3_hover.png" alt="error">
-          <img class="tour_house4 tour_houseA tour_house_show" src="./image/tour/house44.png" alt="error">
-          <img class="tour_house4 tour_houseB" src="./image/tour/house4_hover.png" alt="error">
-  
+        <div class="tour_map_house2">
+          <img class="tour_house2 tour_houseA tour_house_show" src="./image/tour/house2.png" alt="error">   
+          <img class="tour_house2_hover tour_houseB" src="./image/tour/house2_hover.png" alt="error"> 
+          <img class="tour_whale_wave" src="./image/tour/tour_whale_wave.png" alt="error">
+
+        </div>
+        <div class="tour_map_house3">
+          <img class="tour_house3 tour_houseA tour_house_show" src="./image/tour/house3.png" alt="error">
+          <img class="tour_house3_hover tour_houseB" src="./image/tour/house3_hover.png" alt="error">
+          <img class="tour_seal_wave" src="./image/tour/tour_seal_wave.png" alt="error">  
+        </div>
+        <div class="tour_map_house4">
+          <img class="tour_house4 tour_houseA tour_house_show" src="./image/tour/house4.png" alt="error">
+          <img class="tour_house4_hover tour_houseB" src="./image/tour/house4_hover.png" alt="error">  
+          <img class="tour_seaturtle_wave" src="./image/tour/tour_seaturtle_wave.png" alt="error">
         </div>
       </div> 
   
@@ -124,11 +131,11 @@
         <!-- 房子的圖文介紹 -->
         <div class="tour_overlay1">
         <article>
-          <h3>Dolphin aquarium</h3>
+          <h4>Dolphin aquarium</h4>
           <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
           <img class="tour_overlay1img" src="./image/tour/tour_intro_dolphin.jpg" alt="error">
           <div class="btn_modal">
-          <button type="button" class="btn_modal_close1">Introduction</button>
+          <button type="button" class="btn_modal_close1" id="btn1">Introduction</button>
           <button type="button" class="btn_modal_close2">Close</button>
           </div>
         </article>
@@ -136,11 +143,11 @@
   
         <div class="tour_overlay2">
           <article>
-            <h3>whale aquarium</h3>
+            <h4>whale aquarium</h4>
             <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
             <img class= "tour_overlay2img" src="./image/tour/tour_intro_whale.jpg" alt="error">
             <div class="btn_modal">
-            <button type="button" class="btn_modal_close1">Introduction</button>
+            <button type="button" class="btn_modal_close1" id="btn2">Introduction</button>
             <button type="button" class="btn_modal_close2">Close</button>
             </div>
           </article>
@@ -148,11 +155,11 @@
   
           <div class="tour_overlay3">
             <article>
-              <h3>Seal aquarium</h3>
+              <h4>Seal aquarium</h4>
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay3img" src="./image/tour/tour_intro_seal.jpg" alt="error">
               <div class="btn_modal">
-              <button type="button" class="btn_modal_close1">Introduction</button>
+              <button type="button" class="btn_modal_close1" id="btn3">Introduction</button>
               <button type="button" class="btn_modal_close2">Close</button>
               </div>
             </article>
@@ -160,55 +167,68 @@
   
           <div class="tour_overlay4">
             <article>
-              <h3>Sea Turtle aquarium</h3>
+              <h4>Sea Turtle aquarium</h4>
               <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
               <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
               <div class="btn_modal">
-              <button type="button" class="btn_modal_close1">Introduction</button>
+              <button type="button" class="btn_modal_close1" id="btn4">Introduction</button>
               <button type="button" class="btn_modal_close2">Close</button>
               </div>
             </article>
           </div>
   
-        <div class="tour_space"></div>
-  
       <!-- 四個動物圖片的圖文 -->
-      <h1 class="tour_title2">Introduction</h1>
+      <div class = "tour_title_block">
+        <div class="tour_title_area">
+          <h1 class="tour_title1">Introduction</h1>
+          <h4 class="tour_title2">Click picture to see more information !</h4>
+        </div>  
+      </div>
   
       <div class="tour_row">
+        <!-- <div id="no1"></div> -->
         <div class="tour_slide" id="no1">
-          <div class="tour_content">
-            <div class="tour_headerimg">
+          
+          <div class="tour_content" >
+           
+            <div class="tour_headerimg" >
               <img src="./image/tour/tour_dolphin.jpg" alt="error">
+              
             </div>
             <div class="tour_word">
               <h4>Dolphin</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
   
-        <div class="tour_slide" id="no2">
-          <div class="tour_content">
-            <div class="tour_headerimg">
+        <div class="tour_slide"  id="no2" >
+          <div class="tour_content"  >
+            <div class="tour_headerimg" >
               <img src="./image/tour/tour_whale.jpg" alt="error">
             </div>
-            <div class="tour_word">
+            <div class="tour_word" >
               <h4>Whale</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button">See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
   
         <div class="tour_slide" id="no3">
-          <div class="tour_content">
-            <div class="tour_headerimg">
+          <div class="tour_content" >
+            <div class="tour_headerimg" >
               <img src="./image/tour/tour_seal.jpg" alt="error">
             </div>
             <div class="tour_word">
@@ -216,14 +236,17 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
             </div>
           </div>
         </div>
   
-        <div class="tour_slide" id="no4">
-          <div class="tour_content">
-            <div class="tour_headerimg">
+        <div class="tour_slide" id="no4" >
+          <div class="tour_content" >
+            <div class=" tour_headerimg" >
               <img src="./image/tour/tour_sea_turtle.jpg" alt="error">
             </div>
             <div class="tour_word">
@@ -231,7 +254,10 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <a href="journal.html"><button class="tour_row_button" >See Journal</button></a>
+              <div class="btn_modal">
+                <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
+                <button class="tour_row_button2" >Close</button>
+              </div>
           </div> 
         </div>
       </div>
@@ -257,25 +283,23 @@
       $("ul.main_menu_ul").toggleClass("is-active");
     });
 
-   //點擊第一棟房子:dolphine館, 出現介紹圖文
+  //--------點擊第一棟房子:dolphine館, 出現介紹圖文------------
     $(function(){  
   // 開啟 Modal 彈跳視窗
-  $("img.tour_house1").on("click", function(){
+  $("img.tour_house1_hover").on("click", function(){
     $("div.tour_overlay1").addClass("-on");
-  });
-  
+  }); 
   // 關閉 Modal
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay1").addClass("-opacity-zero");
- 
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
-//第一棟房子:dolphine館,出現介紹圖文後, 關閉
+//---------第一棟房子:dolphine館,出現介紹圖文後, 按關閉收合----------
 $(function(){  
   // 關閉 Modal
   $("button.btn_modal_close2").on("click", function(){
@@ -283,111 +307,260 @@ $(function(){
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   }); 
 });
 
-//第二棟房子:whale館,出現介紹圖文後, 關閉
+//---------點擊第二棟房子:whale館, 出現介紹圖文----------------
 $(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay2").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay2").removeClass("-on -opacity-zero");
-    }, 1000);
-  }); 
-});
-
-//第三棟房子:seal館,出現介紹圖文後, 關閉
-$(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay3").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay3").removeClass("-on -opacity-zero");
-    }, 1000);
-  }); 
-});
-
-//第四棟房子:sea turtle 館,出現介紹圖文後, 關閉
-$(function(){  
-  // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
-    $("div.tour_overlay4").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
-    setTimeout(function(){
-      $("div.tour_overlay4").removeClass("-on -opacity-zero");
-    }, 1000);
-  }); 
-});
-
-//點擊第二棟房子:whale館, 出現介紹圖文
-$(function(){  
-  $("img.tour_house2").on("click", function(){
-    $("div.tour_overlay2").addClass("-on");
+  $("img.tour_house2_hover").on("click", function(){
+    $("div.tour_overlay3").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay2").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
-//點擊第三棟房子:whale館, 出現介紹圖文
+//----------第二棟房子:whale館,出現介紹圖文後, 關閉收合------------
 $(function(){  
-  $("img.tour_house3").on("click", function(){
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay2").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay2").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
+});
+
+//-----------點擊第三棟房子:whale館, 出現介紹圖文----------------
+$(function(){  
+  $("img.tour_house3_hover").on("click", function(){
     $("div.tour_overlay3").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay3").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay3").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
-//點擊第四棟房子:sea turtle館, 出現介紹圖文
+//----------第三棟房子:seal館,出現介紹圖文後, 關閉收合---------
 $(function(){  
-  $("img.tour_house4").on("click", function(){
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay3").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay3").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
+});
+
+//-----------點擊第四棟房子:sea turtle館, 出現介紹圖文--------
+$(function(){  
+  $("img.tour_house4_hover").on("click", function(){
     $("div.tour_overlay4").addClass("-on");
   });
   $("button.btn_modal_close1").on("click", function(){
     $("div.tour_overlay4").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay4").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 0);
   });  
 });
 
-//點擊地圖的圖文介紹按鈕,會往下移動
-$(function(){
-  $(".btn_modal_close1").on("click", function(e){
-    e.preventDefault();
-    $('html, body').animate({
-      scrollTop: 1000
-    }, 750);
-  });
+//第-------四棟房子:sea turtle 館,出現介紹圖文後, 關閉收合---------
+$(function(){  
+  // 關閉 Modal
+  $("button.btn_modal_close2").on("click", function(){
+    $("div.tour_overlay4").addClass("-opacity-zero");
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.tour_overlay4").removeClass("-on -opacity-zero");
+    }, 0);
+  }); 
 });
 
+//---------點擊地圖的圖文介紹按鈕,會往下移動----------
+// $(function(){
+//   $("button.btn_modal_close1").on("click", function(e){
+//     e.preventDefault();
+//     $('html, body').animate({
+//       scrollTop: 1000
+//     }, 950);
+//   });
+// });
 
+
+$(document).ready(function() {
+       $("#btn1").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $("#btn2").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $("#btn3").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+       $("#btn4").click(function() {
+         $("html, body").animate({
+           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
+         return false;
+       });
+     });
+
+
+
+//------------當滑鼠移入房子, 出現hover效果-------------
 $('.tour_houseA').hover(function(){
   $(this).toggleClass('tour_house_show');
   $(this).next().toggleClass('tour_house_show');
 },function(){
-
 })
 
+//------------當滑鼠移出房子, 移除hover效果-------------
 $('.tour_houseB').hover(function(){
 },function(){
   $(this).toggleClass('tour_house_show');
   $(this).prev().toggleClass('tour_house_show');
 })
 
-   
-  </script>
+//----當滑鼠移入dolphin紅色圈圈, 其底下房子出現hover效果------
+$('.tour_dolphin_wave').hover(function(){
+  $('.tour_house1').toggleClass('tour_house_show');
+  $('.tour_house1_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//-----當滑鼠移出dolphin紅色圈圈, 其底下房子移除hover效果----
+$('.tour_dolphin_wave').hover(function(){
+},function(){
+  $('.tour_house1_hover').toggleClass('tour_house_show');
+  $('.tour_house1').toggleClass('tour_house_show');
+})
+
+//-----當滑鼠移入whale紅色圈圈, 其底下房子出現hover效果-----
+$('.tour_whale_wave').hover(function(){
+  $('.tour_house2').toggleClass('tour_house_show');
+  $('.tour_house2_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//-----當滑鼠移出whale紅色圈圈, 其底下房子移除hover效果-----
+$('.tour_whale_wave').hover(function(){
+},function(){
+  $('.tour_house2_hover').toggleClass('tour_house_show');
+  $('.tour_house2').toggleClass('tour_house_show');
+})
+
+//-----當滑鼠移入seal紅色圈圈, 其底下房子出現hover效果-----
+$('.tour_seal_wave').hover(function(){
+  $('.tour_house3').toggleClass('tour_house_show');
+  $('.tour_house3_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//-----當滑鼠移出seal紅色圈圈, 其底下房子移除hover效果-----
+$('.tour_seal_wave').hover(function(){
+},function(){
+  $('.tour_house3_hover').toggleClass('tour_house_show');
+  $('.tour_house3').toggleClass('tour_house_show');
+})
+
+//-----當滑鼠移入sea turtle紅色圈圈, 其底下房子出現hover效果-----
+$('.tour_seaturtle_wave').hover(function(){
+  $('.tour_house4').toggleClass('tour_house_show');
+  $('.tour_house4_hover').toggleClass('tour_house_show');
+},function(){
+})
+
+//-----當滑鼠移出sea turtle紅色圈圈, 其底下房子移除hover效果-----
+$('.tour_seaturtle_wave').hover(function(){
+},function(){
+  $('.tour_house4_hover').toggleClass('tour_house_show');
+  $('.tour_house4').toggleClass('tour_house_show');
+})
+
+
+//-----點擊dolphin紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_dolphin_wave").on("click", function(){
+    $("div.tour_overlay1").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay1").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay1").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊whale紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_whale_wave").on("click", function(){
+    $("div.tour_overlay2").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay2").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay2").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊seal紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_seal_wave").on("click", function(){
+    $("div.tour_overlay3").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay3").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay3").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+//-----點擊sea turtle紅色圈圈, 出現介紹圖文-----
+$(function(){  
+  $("img.tour_seaturtle_wave").on("click", function(){
+    $("div.tour_overlay4").addClass("-on");
+  });
+  $("button.btn_modal_close1").on("click", function(){
+    $("div.tour_overlay4").addClass("-opacity-zero");
+    setTimeout(function(){
+      $("div.tour_overlay4").removeClass("-on -opacity-zero");
+    }, 0);
+  });  
+});
+
+
+// ---------四大動物介紹: 按圖片出現介紹文, 按close 恢復原狀---------------
+$('.tour_slide').click(function(){
+  $(this).children().addClass('tour_content_show');
+  $(this).addClass('tour_slide_show');
+  // $('.tour_content').toggleClass('tour_content_show');
+})
+
+$('.tour_row_button2').click(function(e){
+  // $('.tour_content').toggleClass('tour_content_show');
+  $(this).closest('.tour_content').removeClass('tour_content_show');
+  $(this).closest('.tour_slide').removeClass('tour_slide_show');
+  e.stopPropagation();
+})
+
+
 </script>
 </body>
 </html>
