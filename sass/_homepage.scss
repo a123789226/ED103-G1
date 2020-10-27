@@ -4,6 +4,8 @@
 @import "./layout/_button.scss";
 @import "./layout/_font.scss";
 @import "./layout/_header.scss";
+@import "./plugin/owl.carousel";
+@import "./plugin/owl.theme.default";
 
 
 .home_page{
@@ -1034,7 +1036,7 @@
     width: 60%;
   }
   .page5_vote{
-    width: 30%;
+    width: 50%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;

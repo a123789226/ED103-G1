@@ -453,10 +453,16 @@
       <div class="vote_left">
         <img src="./image/index/object/indexMain5-1.png" class="page5_octopus">
       </div>
+
+
+  <div class="vote_carousel">
+    <div class="vote_box" id="vote_box">
+  
       <div class="page5_vote">
         <div class="page5_vote_top">
           <img src="./image/index/object/vote_big.png" class="page5_big">
-          <p>This is a cute dolphin. It needs it to help him get a name. Come and help him get a cute name. The time is only
+          <p>This is a cute dolphin. It needs it to help him get a name. Come and help him get a cute name. The time is
+            only
             until 10/25.</p>
         </div>
         <div class="page5_vote_middle">
@@ -471,14 +477,20 @@
           <button id="home_vbtn">Vote</button>
         </div>
       </div>
-          <div class="page5_named">
-            <img src="./image/index/object/vote_big.png" class="page5_named_pic">
-            <div class="page5_named_info">
-              <p>Give Me A Name</p>
-              <input type="text">
-              <button id="home_nbtn">Submit</button>
-            </div>
-          </div>
+  
+  
+      <div class="page5_named">
+        <img src="./image/index/object/vote_big.png" class="page5_named_pic">
+        <div class="page5_named_info">
+          <p>Give Me A Name</p>
+          <input type="text">
+          <button id="home_nbtn">Submit</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
     </div>
 
 
@@ -811,23 +823,23 @@
 
   <script>
 
-          if (window.innerWidth > 1200) {
+          // if (window.innerWidth > 1200) {
             var animalPath = {
               // autoRotate: true,
               values: [
-                { x: 0, y: 100 },
-                { x: 60, y: 400 },
-                { x: 120, y: 700 },
-                { x: 150, y: 1100 },
-                { x: 120, y: 1500 },
-                { x: 450, y: 2300 },
-                { x: 120, y: 3000 },
-                { x: 60, y: 3700 },
-                { x: 450, y: 4400 },  
-                { x: 120, y: 5200 },
-                { x: 10, y: 6000 },
-                { x: 150, y: 7000 },
-                { x: 1200, y: 8300 },
+                { x: 0, y: '50%' },
+                { x: 60, y: '100%' },
+                { x: 120, y: '150%' },
+                { x: 150, y: '200%' },
+                { x: 120, y: '250%' },
+                { x: 450, y: '300%' },
+                { x: 120, y: '350%' },
+                { x: 60, y: '400%' },
+                { x: 450, y: '450%' },  
+                { x: 120, y: '500%' },
+                { x: 10, y: '550%' },
+                { x: 150, y: '600%' },
+                { x: 1200, y: '800%' },
               ]
             }
             var tween = new TimelineMax();
@@ -846,12 +858,12 @@
               // triggerHook: 300
             })
               .setTween(tween)
-              .duration('880%')
+              .duration('800%')
               // .setPin("#trigger")
               .addIndicators()
               .addTo(controller);
 
-          }  
+          // }  
 
 
 
@@ -867,49 +879,49 @@
 
 
 
-      $(window).resize(function () {
-        console.log(window.innerWidth);
-        if (window.innerWidth > 1200) {
-          var animalPath = {
-            // autoRotate: true,
-            values: [
-              { x: 0, y: 100 },
-              { x: 60, y: 400 },
-              { x: 120, y: 700 },
-              { x: 150, y: 1100 },
-              { x: 120, y: 1500 },
-              { x: 450, y: 2300 },
-              { x: 120, y: 3000 },
-              { x: 60, y: 3700 },
-              { x: 450, y: 4400 },
-              { x: 120, y: 5200 },
-              { x: 10, y: 6000 },
-              { x: 150, y: 7000 },
-              { x: 1200, y: window.Height - 1000 },
-            ]
-          }
-          var tween = new TimelineMax();
-          tween.add(
-            TweenMax.to(".role_content", 20, {
-              bezier: animalPath,
-              // scale: 3,
-              ease: Power0.easeNone
-            })
-          );
-          const controller = new ScrollMagic.Controller();
-          const scene1 = new ScrollMagic.Scene({
-            // triggerElement: "#trigger",
-            // duration: 0.5,
-            offset: 0,
-            // triggerHook: 300
-          })
-            .setTween(tween)
-            .duration('850%')
-            // .setPin("#trigger")
-            .addIndicators()
-            .addTo(controller);
+      // $(window).resize(function () {
+      //   console.log(window.innerWidth);
+      //   if (window.innerWidth > 1200) {
+      //     var animalPath = {
+      //       // autoRotate: true,
+      //       values: [
+      //         { x: 0, y: 100 },
+      //         { x: 60, y: 400 },
+      //         { x: 120, y: 700 },
+      //         { x: 150, y: 1100 },
+      //         { x: 120, y: 1500 },
+      //         { x: 450, y: 2300 },
+      //         { x: 120, y: 3000 },
+      //         { x: 60, y: 3700 },
+      //         { x: 450, y: 4400 },
+      //         { x: 120, y: 5200 },
+      //         { x: 10, y: 6000 },
+      //         { x: 150, y: 7000 },
+      //         { x: 1200, y: window.Height - 1000 },
+      //       ]
+      //     }
+      //     var tween = new TimelineMax();
+      //     tween.add(
+      //       TweenMax.to(".role_content", 20, {
+      //         bezier: animalPath,
+      //         // scale: 3,
+      //         ease: Power0.easeNone
+      //       })
+      //     );
+      //     const controller = new ScrollMagic.Controller();
+      //     const scene1 = new ScrollMagic.Scene({
+      //       // triggerElement: "#trigger",
+      //       // duration: 0.5,
+      //       offset: 0,
+      //       // triggerHook: 300
+      //     })
+      //       .setTween(tween)
+      //       .duration('850%')
+      //       // .setPin("#trigger")
+      //       .addIndicators()
+      //       .addTo(controller);
 
-        }
+      //   }
         // else{
         //   scene1.remove(controller);;
         // }          
@@ -917,12 +929,24 @@
         
         
         
-        });
+        // });
 
 
 
 
   </script>
+
+
+<!-- <script>
+  var index = 0;
+    document.getElementById("vote_box").onclick = function () {
+      this.style.transform = "rotateY(" + (-1 * 180 * ++index) + "deg)";
+    };
+</script> -->
+
+
+
+
 
 </body>
 </html>
