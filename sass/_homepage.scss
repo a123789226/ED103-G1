@@ -12,6 +12,12 @@
   background: $index_bgColor;
   overflow-x: hidden;
 }
+.role_content{
+  position: fixed;
+  left: 8%;
+  top: 48%;
+  z-index: 6;
+}
 
 .home_tour{
   padding-top: 50px;
@@ -38,7 +44,7 @@
       width: 10%;
       top: 50%;
       left: 15%;
-      z-index: 5;
+      z-index: 7;
     }
     .tour_arrow_right{
       cursor: pointer;
@@ -47,7 +53,7 @@
       width: 10%;
       top: 50%;
       right: 15%;
-      z-index: 5;
+      z-index: 7;
     }
     .home_map_container{
       display: inline-block;
@@ -113,7 +119,7 @@
     position: relative;
     // top: 25%;
     left: 35%;
-    z-index: 9999;
+    z-index: 5;
     transform: translateY(50px);
     animation-name: home_bounce_down;
     animation-duration: 3s;
@@ -1036,7 +1042,7 @@
     width: 60%;
   }
   .page5_vote{
-    width: 50%;
+    width: 40%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -1045,7 +1051,7 @@
     padding: 2%;
     z-index: 5;
     position: relative;
-    left: -7%;
+    left: -10%;
   }
   .page5_vote_top{
     width: 100%;
