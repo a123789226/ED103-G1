@@ -128,7 +128,6 @@
       $(imgs[1]).css("display", "none");
       $(imgs[2]).css("display", "block");
       role_pick2 = $("#content").find("li img").first().attr("id");
-      console.log(role_pick2);
     }
     //==========toRight.onclick
     $id("right").onclick = function () {
