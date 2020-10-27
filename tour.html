@@ -186,10 +186,14 @@
       </div>
   
       <div class="tour_row">
-        <div class="tour_slide" id="no1" >
+        <!-- <div id="no1"></div> -->
+        <div class="tour_slide" id="no1">
+          
           <div class="tour_content" >
+           
             <div class="tour_headerimg" >
               <img src="./image/tour/tour_dolphin.jpg" alt="error">
+              
             </div>
             <div class="tour_word">
               <h4>Dolphin</h4>
@@ -392,15 +396,16 @@ $(function(){
 //   });
 // });
 
+
 $(document).ready(function() {
        $("#btn1").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no1").offset().top}, {duration: 500,easing: "swing"});
+           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
        $("#btn2").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no2").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
        $("#btn3").click(function() {
@@ -410,7 +415,7 @@ $(document).ready(function() {
        });
        $("#btn4").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no4").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
          return false;
        });
      });
