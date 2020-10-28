@@ -245,10 +245,10 @@ $(window).resize(function () {
   if (win.width() <= 974) {
 
     flipbook.css("left", "7%");
-    flipbook.turn("size", flipbookEL.clientWidth, flipbookEL.clientHeight);
+    flipbook.turn("size", flipbook.clientWidth, flipbook.clientHeight);
     home_message.style.margin = '50px auto 0 auto';
     home_message.style.width = '50%';
-    $("#flipbook").turn("display", "single");
+    // $("#flipbook").turn("display", "single");
 
   }
   else {
