@@ -4689,7 +4689,8 @@ footer {
     cursor: pointer;
     -webkit-filter: brightness(1);
             filter: brightness(1);
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
   }
   .tour_row .tour_slide .tour_content {
     -webkit-box-orient: vertical;
@@ -4781,6 +4782,9 @@ footer {
     transition: 0s;
     -webkit-transition-delay: 0s;
             transition-delay: 0s;
+  }
+  #no2, #no4 {
+    margin-right: 10px;
   }
 }
 
