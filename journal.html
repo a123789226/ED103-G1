@@ -7,6 +7,7 @@
   <title>Journal</title>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -99,7 +100,7 @@
 
     <!-- Title -->
     <div class="jourTitleBox commonTitleBox">
-      <h2 class="jourTitle commonTitle">JOURNAL</h2>
+      <h2 class="commonTitle">JOURNAL</h2>
       <h4 class="jourSubTitle commonSubTitle">In journal, we have recover diary. Try to read and flip the books to get more about the
         Aquas.</h4>
     </div>
@@ -150,7 +151,7 @@
     <div class="jourOpenBookSection">
       <div class="demobook" id="demobook">
         <!-- cover -->
-        <div class="hard">
+        <div class="hard jourCover">
           <div class="jourOpenBook">
 
             <div class="jourOpenBookRight">
@@ -182,7 +183,7 @@
           </div>
         </div>
         <!-- page 1 -->
-        <div class="hard jourPage1">
+        <div class="hard jourPage1 jourPage">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
             <div class="jourPagePhotoArea">
@@ -281,7 +282,7 @@
 
 
     <!-- 4本書 Dolphin-->
-    <div class="jourBookContainer jourDolphinSection tab1 -on">
+    <div class="jourBookContainer jourDolphinSection tab1 -on animate__animated animate__fadeIn">
       <div class="jourBookSection">
         <a href="#">
 
@@ -455,7 +456,7 @@
     </div>
 
     <!-- 2 本書 Whale -->
-    <div class="jourBookContainer jourWhaleSection tab2">
+    <div class="jourBookContainer jourWhaleSection tab2 animate__animated animate__fadeIn">
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -543,7 +544,7 @@
     </div>
 
     <!-- 3 本書 Seal -->
-    <div class="jourBookContainer jourSealSection tab3">
+    <div class="jourBookContainer jourSealSection tab3 animate__animated animate__fadeIn">
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -674,7 +675,7 @@
     </div>
 
     <!-- 2本書 Turtle -->
-    <div class="jourBookContainer jourSealSection tab4">
+    <div class="jourBookContainer jourSealSection tab4 animate__animated animate__fadeIn">
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -779,13 +780,10 @@
 
     <!-- turn js -->
     <div class="jourOpenBookSection">
-      <div id="flipbook">
+      <div id="flipbook2">
         <!-- cover -->
-        <div class="hard">
+        <div class="hard jourCover">
           <div class="jourOpenBook">
-            <!-- <div class="jourBookLeft">
-  
-              </div> -->
             <div class="jourOpenBookRight jourPage0">
               <div class="jourBookPhoto">
                 <img src="./image/journal/journal_dolphin/00.jpg" alt="">
@@ -1141,7 +1139,7 @@
   <script>
     $("#demobook").turn({
       width: 600,
-      height: 450,
+      height: 420,
       autoCenter: true
     });
   </script>
@@ -1168,7 +1166,7 @@
   </script>
 
   <script>
-    $("#flipbook").turn({
+    $("#flipbook2").turn({
       width: 800,
       height: 600,
       autoCenter: true
