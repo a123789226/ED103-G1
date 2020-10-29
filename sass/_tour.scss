@@ -499,7 +499,7 @@
     // border:5px solid green;
     position: relative;
     flex: 1;
-    widows: 10px;
+    // widows: 10px;
     height:auto;
     overflow: hidden;
     transition: 0.5s ease-in-out;
@@ -738,12 +738,12 @@
       flex-direction: column;
       flex: 100%;
       .tour_slide {
-          margin: 20px auto;
           // border:5px solid blue;
           width:500px;
           height:450px; 
           cursor: pointer;  
-          transition: 0s;  
+          transition: 0s; 
+          margin: 20px; 
           .tour_content {
               // border:5px solid yellow;
               margin: 0px auto;
@@ -821,14 +821,11 @@
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid brown;
-      margin: 20px auto;
       width:350px;
       height:300px;
+      margin: 20px;
       cursor: pointer;
       transition: 0s; 
-      // &:hover{
-      //   height:100%;
-      // }
       .tour_content{
         display:block;
         .tour_headerimg{
@@ -886,14 +883,11 @@
     margin: 0px auto;
     .tour_slide {
       // border: 5px solid yellowgreen;
-      margin: 20px auto;
       width:280px;
       height:230px;
       opacity:1; 
       cursor: pointer;
-      // &:hover{
-      //   height:100%;
-      // }
+      margin: 20px;
       .tour_content{
         margin:0 auto;
         display:block;
