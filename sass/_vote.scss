@@ -8,6 +8,17 @@ body.voteBLOCK{
     
 }
 
+<<<<<<< HEAD
+=======
+.comtitle{
+  color: white !important;
+}
+
+.comtitle2{
+  color: white !important;
+}
+
+>>>>>>> dev
 
 
 .vote_bk{
@@ -86,7 +97,7 @@ ul.vote_list > li > a.-on{
 .vote_info{
   height: 150px;
   background: rgba(0, 0, 0, .7);
-  padding: 0 50px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -134,6 +145,10 @@ ul.vote_list > li > a.-on{
   >p{
   @include text($textBlack);
   padding-left: 5%;
+<<<<<<< HEAD
+=======
+  padding-top: 10px;
+>>>>>>> dev
   }
   >h4{
     color: #1BB8CE;
@@ -227,6 +242,10 @@ ul.vote_list > li > a.-on{
   >p{
   @include text($textBlack);
   padding-left: 5%;
+<<<<<<< HEAD
+=======
+  padding-top: 10px;
+>>>>>>> dev
   }
   >h4{
     color: #1BB8CE;
@@ -366,6 +385,10 @@ ul.vote_list > li > a.-on{
   >p{
   @include text($textBlack);
   padding-left: 5%;
+<<<<<<< HEAD
+=======
+  padding-top: 10px;
+>>>>>>> dev
   }
 }
 
