@@ -9,229 +9,472 @@
 }
 
 .memMain {
-  // border: 1px solid black;
   max-width: 1200px;
   width: 80%;
-  height: 100vh;
-  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  >.row{
+    height: 750px;
+    @media screen and (max-width: 1199px){
+      height: inherit;
+    }
+  }
+  @media screen and (max-width: 1199px){
+    margin-bottom: 50px;
+  }
+  @media screen and (max-width: 991px){
+    margin-top: 105px;
+  }
+  @media screen and (max-width: 676px){
+    width: 90%;
+  }
+  i{
+    cursor: pointer;
+  }
 }
 
 // 左邊list
 .memList {
-  margin-top: 160px;
-  margin-bottom: 100px;
-  background-color: rgba(255, 255, 255, 0.2);
-  height: 88vh;
-  .memImgArea {
-    label {
-      position: absolute;
-      left: 200px;
-      top: 220px;
-      cursor: pointer;
-      i{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  // border: 1px solid red;
+  // height: 80vh;
+  @media screen and (max-width: 1199px){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+    // align-items:stretch;
+  }
+  .memImgBox{
+    @media screen and (max-width: 1199px){
+      width: 25%;
+      margin: 0;
+    }
+    @media screen and (max-width: 767px){
+      width: 40%;
+    }
+    .memImgArea {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      margin: 30px auto;
+      // border: 1px solid blue;
+      @media screen and (max-width: 1199px){
+        margin: 0 0 0 15px;
+      }
+      @media screen and (max-width: 767px){
+        margin: 0;
+      }
+      .memImg{
+        width: 100%;
         position: absolute;
-        left: 200px;
-        top: 200px;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        // border: 3px solid rgb(255, 255, 255);
+        box-shadow: $shadow2;
+        overflow: hidden;
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      label{
+        @include btn36Yellow;
+        box-shadow: $shadow2;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        i{
+          transform: translateY(-20%);
+        }
+      }
+  
+    }
+  }
+
+  
+    // border: 1px solid green;
+    // @media screen and (max-width: 1199px){
+    //   width: 65%;
+    //   margin: 30px 0;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: space-between;
+    // }
+    .memNameBox{
+      // border: 1px solid green;
+      @media screen and (max-width: 1199px){
+        width: 40%;
+      }
+      @media screen and (max-width: 767px){
+        width: 60%;
+      }
+      h3 {
+        color: white;
+        font-size: 28px;
+        text-align: center;
+        @media screen and (max-width: 479px){
+          font-size: 24px;
+        }
+      }
+      .memPointBox{
+        text-align: center;
+        span{
+          @include sub_title($blockYellow);
+        }
       }
     }
-    .memImg {
-      margin: 20px auto;
-      // border: 1px solid black;
-      border-radius: 50%;
-      overflow: hidden;
-      width: 80%;
-      box-shadow: 2px 2px 12px gray;
+    ul{
+      // border: 1px solid red;
+      @media screen and (max-width: 1199px){
+        width: 25%;
+        margin: 0 15px 0 0;
+      }
+      @media screen and (max-width: 767px){
+        width: 100%;
+        margin: 30px 0 0 0 ;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+      }
+      
+      .membtn .memTab:hover{
+        background-color: $keyGreen;
+        color: #ffffff;
+        border: 4px solid $keyWhite;
+      }
+      .membtn {
+        width: 80%;
+        margin: 0 auto;
+        line-height: 50px;
+        text-align: center;
+        @media screen and (max-width: 1199px){
+          width: 100%;
+        }
+        @media screen and (max-width: 767px){
+          width: 30%;
+          margin: 0 5px;
+        }
+        @media screen and (max-width: 479px){
+          width: 45%;
+          // margin: 0 3px;
+        }
+        // @media screen and (max-width: 1199px){
+        //   width: 30%;
+        //   margin: 0 3% 0 0;
+        // }
+        .memTab {
+          margin: 0 auto;
+          width: 100%;
+          @include sub_title($keyBlack);
+          border: 4px solid $keyGreen;
+          border-radius: 6px;
+          line-height: 40px;
+          margin-top: 20px;
+          box-shadow: $shadow2;
+          background-color: #ffffff;
+          @media screen and (max-width: 1199px){
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 30px;
+            margin-top: 0;
+          }
+          @media screen and (max-width: 479px){
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-top: 0;
+          }
+        }
+        .memTab.-on {
+          background-color: $keyGreen;
+          color: #ffffff;
+        }
+      }
     }
-  }
-  h3 {
-    @include main_title($keyWhite);
-  }
-  .membtn .memTab:hover{
-    background-color: #1BB8CE;
-    color: #ffffff;
-  }
-  .membtn {
-    line-height: 50px;
-    text-align: center;
-    a{
-      text-decoration: none;
-      text-align: start;
-      padding-left: 10px;
-    }
-    .memTab {
-      margin: 0 auto;
-      width: 80%;
-      font-size: 20px;
-      font-weight: 400;
-      color: #333333;
-      border: 4px solid #1BB8CE;
-      border-radius: 6px;
-      line-height: 50px;
-      margin-top: 20px;
-      box-shadow: $shadow;
-      background-color: #ffffff;
-    }
-    .memTab.-on {
-      background-color: #1BB8CE;
-      color: #ffffff;
-    }
-  }
+
+  
+
+
+
 }
+
+
+
+
 // 右邊內容
 .memProContent {
+ 
+  @media screen and (max-width: 1199px){
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
   .memTab.-on{
     display: block;
   }
   .memTab{
     display: none;
   }
-  .memProfile, .memBlog, .memThanks, .memAdopt, .memOrder {
+  .memTab {
     // border: 1px solid black;
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 160px;
     background-color: #ffffff;
-    border-radius: 20px;
-    height: 88vh;
-    .memProTitle{
-      display: flex;
-      justify-content: space-between;
+    height: 100%;
+    border-radius: 6px;
+    padding: 0 40px 50px;
+    @media screen and (max-width: 1199px){
+      padding: 0 25px 50px;
+    }
+    @media screen and (max-width: 676px){
+      padding: 0 5px 20px;
     }
     .memAllTitle{
       display: flex;
       flex-flow: column;
-    }
-    h3 {
-      @include main_title(#333333);
-      margin: 20px;
-    }
-    .memSpanPoint{
-      // margin: 20px;
-      width: 180px;
-      height: 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border: 5px solid #1BB8CE;
-      border-radius: 50px;
-      background-color: #ffffff;
-      overflow: hidden;
-      line-height: 40px;
-      position: absolute;
-      top: 175px;
-      right: 30px;
-      .memPointTitle {
-        width: 90px;
-        text-align: center;
-        font-size: 20px;
-        background-color: #1BB8CE;
-        color: #ffffff;
-      }
-      .memPointNumber {
-        width: 90px;
-        font-size: 20px;
-        text-align: center;
-        background-color: #ffffff;
-        color: #1BB8CE;
+      h3 {
+        @include main_title(#333333);
+        margin: 20px 0;
       }
     }
-    .memSpanBlog .memBlogTab:hover{
-      background-color: #FBE108;
-    }
-    .memSpanBlog{
-      display: flex;
-      justify-content: start;
-      margin: 0 0 20px 20px;
-      align-items: baseline;
-      background-color: #ffffff;
-      line-height: 40px;
-      a{
-        text-decoration: none;
-      }
-      .memBlogTab {
-        // margin-right: 20px;
-        text-align: center;
-        margin: 0 auto;
-        width: 100px;
-        font-size: 20px;
-        font-weight: 400;
-        color: #333333;
-        border: 4px solid #FBE108;
-        border-radius: 6px;
-        line-height: 50px;
-        box-shadow: $shadow;
-        background-color: #ffffff;
-      }
-      .memBlogTab.-on {
-        background-color: #FBE108;
-      }
-      .span2{
-        margin-left: 20px;
-      }
-    }
+
+  }
+  .memProfile{
     .memProAll{
       .memProfileContent {
-        margin: auto;
-        border: 1px solid #dadada;
         font-size: 16px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         padding: 20px;
         background-color: #ffffff;
         border-radius: 6px;
         box-shadow: $shadow;
-        width: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
         .memProTit {
-          color: #1BB8CE;
+          color: $keyGreen;
+          width: 80px;
+        }
+        .memProText{
+          width: 80%;
         }
       }
     }
-    .memBlogAll, .memThanksAll, .memAdoptAll{
+  }
+  .memBlog{
+    >ul{
+      margin-bottom: 20px;
+      .memSpanBlog .memBlogTab:hover{
+        background-color: $blockYellow;
+      }
+      .memSpanBlog{
+        display: flex;
+        background-color: #ffffff;
+        line-height: 30px;
+        >div{
+          .memBlogTab {
+            // margin-right: 20px;
+            text-align: center;
+            // margin: 0 auto;
+            width: 100px;
+            font-size: 20px;
+            font-weight: 400;
+            color: #333333;
+            border: 4px solid $blockYellow;
+            border-radius: 6px;
+            // line-height: 50px;
+            box-shadow: $shadow;
+            background-color: #ffffff;
+          }
+          .memBlogTab.-on {
+            background-color: $blockYellow;
+          }
+          .span2{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .memBlogAll{
+      margin-bottom: 30px;
+      height: 520px;
+      overflow-y: scroll;
       .memBlogTab.-on{
         display: block;
       }
       .memBlogTab{
         display: none;
-      }  
-      .memBlogCard:nth-child(2n+1), .memCard:nth-child(2n+1), .memAdoptCard:nth-child(2n+1), .memOrderCard:nth-child(2n+1){
-        background-color: #EEEEEE;
       }
-      .memBlogTable, .memThanksTable, .memAdoptTable{
-        // border: 1px solid black;
-        height: 50vh;
-        width: 90%;
+      .memBlogTable{
+        background-color: white;
         border-radius: 6px;
+        box-shadow: $shadow;
         overflow: hidden;
-        margin: 0 auto;
-        text-align: center;
-        .memBlogForm{
-          background-color: #1BB8CE;
-          line-height: 40px;
-          color: #ffffff;
+        .memBlogCard{
+          padding: 10px 0;
+          align-items: center;
+          
+          .mem_ana, .memFormTitle{
+            &:first-child{
+              @media screen and (max-width: 575px){
+                display: none;
+              }  
+            }
+          }
+          
         }
-        .memBlogContent{
-          line-height: 100px;
-          box-shadow: $shadow;;
-          .mem_ana{
-            line-height: 100px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space : nowrap;
-            i{
-              transition: .3s;
-            }
-            i.rotate{
-              transform: rotate(180deg);
-            }
+        .memBlogCard:nth-child(2n+1){
+          background-color: #EEEEEE;
+        }
+        .memBlogForm:first-child{
+          background-color: $keyGreen;
+          color: #ffffff;
+        } 
+      }
+    }
+  }
+  .memThanks{
+    .memThanksAll{
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: $shadow;
+      overflow: hidden;
+      height: 600px;
+      overflow-y: scroll;
+      .memThanksTable{
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: $shadow;
+        overflow: hidden;
+        .memCard{
+          padding: 10px 0;
+          align-items: center;
+        }
+        .memCard:nth-child(2n+1){
+          background-color: #EEEEEE;
+        }
+        .memBlogForm:first-child{
+          background-color: $keyGreen;
+          color: #ffffff;
+        } 
+      }
+    }
+  }
+  .memAdopt{
+    .memAdoptAll{
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: $shadow;
+      overflow: hidden;
+      height: 600px;
+      overflow-y: scroll;
+      .memAdoptTable{
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: $shadow;
+        overflow: hidden;
+        .memAdoptCard{
+          padding: 10px 0;
+          align-items: center;
+        }
+        .memAdoptCard:nth-child(2n+1){
+          background-color: #EEEEEE;
+        }
+        .memAdoptCard:first-child{
+          background-color: $keyGreen;
+          color: #ffffff;
+        } 
+      }
+    }
+  }
+  .memOrder{
+    >ul{
+      margin-bottom: 20px;
+      .memSpanBlog .memBlogTab:hover{
+        background-color: $blockYellow;
+      }
+      .memSpanBlog{
+        display: flex;
+        background-color: #ffffff;
+        line-height: 30px;
+        >div{
+          .memBlogTab {
+            text-align: center;
+            width: 100px;
+            font-size: 20px;
+            font-weight: 400;
+            color: #333333;
+            border: 4px solid $blockYellow;
+            border-radius: 6px;
+            box-shadow: $shadow;
+            background-color: #ffffff;
           }
-          .memTick{
-            line-height: 40px;
+          .memBlogTab.-on {
+            background-color: $blockYellow;
           }
+          .span2{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    .memOrderAll{
+      height: 520px;
+      overflow-y: scroll;
+      .memBlogTab.-on{
+        display: block;
+      }
+      .memBlogTab{
+        display: none;
+      }
+      .memOrderTable{
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: $shadow;
+        overflow: hidden;
+        .memOrderCard{
+          padding: 20px 0;
+          align-items: center;
           .memStep{
             cursor: pointer;
+            i{
+              transition: .3s;
+              transform: rotate(-180deg);
+            }
+            i.rotate{
+              transform: rotate(0deg);
+            }
           }
           .memStepContent{
+            margin: 30px auto 0;
+            box-shadow: $shadow;
+            border-radius: 6px;
+            overflow: hidden;
             display: none;
+            .memOrderCardDetail{
+              padding: 10px 0;
+            }
+            .memOrderCardDetail:nth-child(2n){
+              background-color: #ffffff;
+            }
+            .memOrderCardDetail:nth-child(2n+1){
+              background-color: #EEEEEE;
+            }
+            .memOrderCardDetail:first-child{
+              background-color: $keyBlack;
+              color: #ffffff;
+            } 
           }
+        }
+        .memOrderCard:nth-child(2n+1){
+          background-color: #EEEEEE;
+        }
+        .memOrderCard:first-child{
+          background-color: $keyGreen;
+          color: #ffffff;
         } 
       }
     }
@@ -245,58 +488,55 @@
   .forgetForm{
     margin: auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, .5);
-    width: 550px;
-    box-shadow: 0 0 10px #ddd;
+    background-color: rgba(0, 0, 0, .8);
     position: absolute;
     left: 50%;
     transform: translate(-50%, 50%);
     h3{
       @include main_title(#ffffff);
       margin-bottom: 20px;
+      text-align: left;
     }
     a{
       @include btn36NoneWhite;
+      width: 220px;
     }
     p{
       text-align: left;
-      margin: 30px 0 20px 0;
+      margin: 20px 0 0  0;
       color: #ffffff;
     }
-    h6{
-      text-align: right;
-    }
-    h5{
-      color: #ffffff;
-      text-align: center;
-      position: relative;
-    }
-    .memLine{
-      display: flex;
-    }
-    .memLine::before{
-      content: '';
-      width: 40%;
-      height: 0;
-      border: 1px solid #ffffff;
-      margin: auto;
-      margin-left: 2%;
-    }
-    .memLine::after{
-      content: '';
-      width: 40%;
-      height: 0;
-      border: 1px solid #ffffff;
-      margin: auto;
-      margin-right: 2%;
-    }
-    form a{
-      font-size: 16px;
-    }
-    .memForLink{
-      display: flex;
-      justify-content: space-between;
-    }
+    // h5{
+    //   color: #ffffff;
+    //   text-align: center;
+    //   position: relative;
+    // }
+    // .memLine{
+    //   display: flex;
+    // }
+    // .memLine::before{
+    //   content: '';
+    //   width: 40%;
+    //   height: 0;
+    //   border-top: 1px solid #ffffff;
+    //   margin: auto;
+    //   margin-left: 2%;
+    // }
+    // .memLine::after{
+    //   content: '';
+    //   width: 40%;
+    //   height: 0;
+    //   border-top: 1px solid #ffffff;
+    //   margin: auto;
+    //   margin-right: 2%;
+    // }
+    // form a{
+    //   font-size: 16px;
+    // }
+    // .memForLink{
+    //   display: flex;
+    //   justify-content: space-between;
+    // }
     input {
       padding: 5px 15px; 
       background:#ffffff; 
@@ -305,17 +545,13 @@
       border-radius: 5px; 
       height: 40px;
       text-align: center;
-    }
-    input#memId, input#memPsw{
-      font-size: 20px;
-    }
-    .memCreat{
-      color: #ffffff;
+      width: 100%;
+      margin: 40px 0 40px;
     }
     .submitBtnFor{
-      @include btn60(200px, green);
-      width: 300px;
-      margin: 30px auto;
+      @include btn50Green;
+      width: 240px;
+      margin: 0 auto 10px;
     }
   }
 }
@@ -324,9 +560,9 @@
 // login
 .memLogin{
   text-align: center;
-  .LogInForm{
-    margin: 20px auto;
-    padding: 20px;
+  #LogInForm{
+    margin: 0 auto;
+    padding: 20px 20px 40px;
     // border: 1px solid black;
     background-color: rgba(0, 0, 0, .5);
     width: 330px;
@@ -335,6 +571,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 6px;
     h3{
       @include main_title($keyWhite);
       margin-bottom: 20px;
@@ -351,7 +588,7 @@
       height: 35px;
       margin-right: 20px;
       cursor: pointer;
-      & > div {
+      > div {
           position: absolute;
           border: 1px solid #ffffff;
           width: 76%;
@@ -370,29 +607,35 @@
     }
     a{
       text-decoration: none;
+      font-size: 14px;
     }
     p{
+      // 先display:none
+      font-size: 12px;
       text-align: center;
       margin: 10px;
       color: #ffffff;
+      display: none;
     }
     h6{
       text-align: right;
+      margin-bottom: 20px;
     }
     h5{
       color: #ffffff;
       text-align: center;
       position: relative;
+      font-size: 16px;
     }
     .memLine{
       display: flex;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
     }
     .memLine::before{
       content: '';
       width: 40%;
       height: 0;
-      border: 1px solid #ffffff;
+      border-top: 1px solid #ffffff;
       margin: auto;
       margin-left: 2%;
     }
@@ -400,7 +643,7 @@
       content: '';
       width: 40%;
       height: 0;
-      border: 1px solid #ffffff;
+      border-top: 1px solid #ffffff;
       margin: auto;
       margin-right: 2%;
     }
@@ -415,23 +658,32 @@
       border-radius: 5px; 
       margin-bottom: 20px;
       height: 40px;
-    }
-    input#memId, input#memPsw{
+      width: 100%;
       font-size: 20px;
+    }
+    #memId{
+      margin-top: 20px;
+    }
+    #memPsw{
+      margin-bottom: 10px;        
     }
     .memCreat{
       color: #ffffff;
     }
     .submitBtnLog{
       @include btn50Green;
-      box-shadow: $shadow2;
-      width: 200px;
+      width: 240px;
       margin-bottom: 20px;
+      @media screen and (max-width: 479px){
+        width: 200px;
+      }
     }
     .submitBtnSign{
       @include btn50White;
-      box-shadow: $shadow2;
-      width: 200px;
+      width: 240px;
+      @media screen and (max-width: 479px){
+        width: 200px;
+      }
     }
   }
 }
