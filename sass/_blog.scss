@@ -213,7 +213,8 @@
     right: 10%;
 }
 .blogMoreBtn{
-    @include btn40(120px, yellow);
+    @include btn36Yellow; 
+    color: $keyWhite !important;
 }
 
 // 這是light box
@@ -225,7 +226,7 @@
     right: 50%;
     transform: translate(50%, -50%);
     background-color: #fff;
-    border: 3px solid black;
+    // border: 3px solid black;
     padding: 5px;
     width: 90%;
     max-width: 1300px;
@@ -301,36 +302,33 @@
 .blogPostTagsOptions {
     display: flex;
     height: 30px;
-    width: 100%;
+    width: 80%;
     > .blogPostTags {
+        @include btn30White;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 25%;
         height: auto;
-        text-align: center;
+        // text-align: center;
         margin-right: 5%;
-        border: 1px solid Black;
-        border-radius: 5px;
-        outline: none;
-        position: relative;
-        text-decoration: none;
-        background-color: $keyWhite;
-        padding: 5px;
-        transition: all 0.2s ease-in;
+        // border: 1px solid Black;
+        // border-radius: 5px;
+        // outline: none;
+        // position: relative;
+        // text-decoration: none;
+        // background-color: $keyWhite;
+        // padding: 5px;
+        // transition: all 0.2s ease-in;
     cursor: pointer;
-        &:hover{
-            cursor: pointer;
-            background-color: $keyGreen;
-            border: 1px solid $keyGreen;
-            color: $keyWhite;
-        }
+   
     }
 }
 .blogPostTagsOn{
+    @include btn30Green;
     background-color: $keyGreen !important;
     border: 1px solid $keyGreen !important;
-    border-radius: 5px;
+    // border-radius: 5px;
     color: $keyWhite !important;
 }
 .blogPostContentSection {
@@ -419,9 +417,7 @@
     margin: 0 auto;
     
 .blogPostSubmitBtn{
-    @include btn60(200px, $keyGreen);
-    color: $keyWhite;
-    outline: none;
+    @include btn50White; 
 }
 }
 
