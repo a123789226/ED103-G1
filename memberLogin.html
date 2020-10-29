@@ -111,8 +111,8 @@
           <div></div>
         </div>
         <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
+        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
         <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
         <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
         <div class="memLine">
@@ -126,32 +126,35 @@
     <!-- Sign Up -->
     <div class="memSignup">
       <form class="signUpForm" id="signUpForm" method="post">
-        <div class="memSignRight col-md-5">
+        <div class="memSignRight col-md-6">
           <h3>Register Account</h3>
           <div class="memSignDetail">
-            <input type="text" name="memName" id="memName" placeholder="Full Name" size="30" required /><br>
-            <input type="text" name="memId" id="memId" placeholder="Username" maxlength="12" size="30" required /><br>
-            <input type="password" maxlength="12" minlength="8" name="memPsw" id="memPsw" onblur="checkpas1();" placeholder="Password" size="30" required /><br>
-            <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" size="30" required><br>
-            <input type="text" name="memPhone" id="memPhone" placeholder="Phone" maxlength="10" size="30" required /><br>
-            <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" size="30" required /><br>
+            <input type="text" name="memName" id="memName" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'" size="30" required /><br>
+            <input type="text" name="memId" id="memId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="30" required /><br>
+            <input type="password" maxlength="12" minlength="8" name="memPsw" id="memPsw" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="30" required /><br>
+            <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br>
+            <input type="text" name="memPhone" id="memPhone" placeholder="Phone Number" onfocus="this.placeholder=''" onblur="this.placeholder='Phone Number'" maxlength="10" size="30" required /><br>
+            <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" size="30" required /><br>
             <div class="Sex">
+              <p>Gender：</p>
               <input type="radio" name="memSex" id="memSex" value="Male" checked />
               <label class="memGender">Male</label>
               <input type="radio" name="memSex" id="memSex" value="Female" />
               <label class="memGender">Female</label>
             </div>
-            <input type="date" name="memBirth" id="memBirth" size="30" required><br>
+            <div class="memBir">
+              <p>Birthday：</p>  
+              <input type="date" name="memBirth" id="memBirth" size="30" required><br>
+            </div>
+            <button type="button" class="submitBtnSign" id="submitBtnSign">
+              <p>SIGN UP</p>
+              <a href="#"></a>
+            </button>
+            <h5>Have an account?
+              <a href="#" class="submitBtnLog btn_modal">Log In</a>
+            </h5>
           </div>
-          <button type="button" class="submitBtnSign" id="submitBtnSign">
-            <p>SIGN UP</p>
-            <a href="#"></a>
-          </button>
-          <h5>Have an account?
-            <a href="#" class="submitBtnLog btn_modal">Log In</a>
-          </h5>
         </div>
-        <div class="col-md-1"></div>
         
         <div class="memSignLeft col-md-6">
           <div class="memSignImg">

@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        background-image: url(https://picsum.photos/300/200?random=22);
+        background-color: $keyGreen;
         background-repeat: no-repeat;
         background-size: cover;
         p{
@@ -16,18 +16,34 @@
             margin: 20px auto;
             text-align: center;
         }
-        // .cardMaterialAnimalOptions{
-        //     width: 65%;
-        //     margin: 20px auto;
-        // }
-        // .cardMaterialBackgroundOptions{
-        //     width: 65%;
-        //     margin: 20px auto;
-        // }
-        // .cardMaterialDecoOptions{
-        //     width: 65%;
-        //     margin: 20px auto;
-        // }
+        .cardMaterialBackground{
+            width: 80%;
+            margin: 0 auto;
+            
+            .cardBgc{
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+        }
+        .cardMaterialAnimal{
+            width: 80%;
+            margin: 20px auto;
+            .cardAnimals{
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+        }
+        .cardMaterialDeco{
+            width: 80%;
+            margin: 20px auto;
+            .cardDeco{
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+        }
         // .cardMaterialAnimalBtn{
         //     display: inline-block;
         //     width: 100%;
@@ -49,38 +65,57 @@
         .cardSectionContent{
             width: 100%;
             height: 400px;
+            padding: 20px;
             background-color:rgba(255, 255, 255, 0.856);
             position: relative;
-            .cardSelectAnimal{
-            position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 25%;
-            height: auto;
-        }
-        .cardSelectDeco{
-            position: absolute;
-            bottom: 20%;
-            right: 20%;
-            width: 25%;
-            height: auto;
-        }
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            p{
+                color: red;
+            } 
+            .cardAnimalChosen{
+                width: 100%;
+                height: 100%;
+                max-width: 300px;
+                max-height: 200px;
+                position: absolute;
+                top: 20%;
+                left: 20%;
+                background-color: #888;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover; 
+              .cardAnimalChosen img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .cardDecoChosen{
+                width: 300px;
+                height: 200px;
+                position: absolute;
+                bottom: 10%;
+                right: 10%;
+                background-color: #888;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover; 
+              .cardDecoChosen img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
         }
 
     }
 }
-.cardAnimalChosen{
-    width: 240px;
-    height: 205px;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; }
-  .cardAnimalChosen img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+
+
+
 
 // 上下一步按鈕位置
 .cardBtnSection{
