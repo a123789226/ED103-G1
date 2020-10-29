@@ -664,7 +664,8 @@
       flex: 1 1 45%;
       cursor: pointer;
       filter: brightness(1);
-      margin:10px;
+      margin-left:10px;
+      margin-bottom:10px;
       // &:hover{       
       //   flex-grow:4;
       //   filter: brightness(1);
@@ -718,6 +719,9 @@
   // border:2px solid red;
 } 
     }  
+  }
+  #no2, #no4{
+    margin-right:10px;
   }
 }
 

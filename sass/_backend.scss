@@ -138,6 +138,38 @@
       display: block;
     }
     .mgrTab{
+      // 內容分頁
+      .mgrSpanTab{
+        display: flex;
+        // justify-content: space-evenly;
+        margin: 20px;
+        .mgrSecTab {
+          // margin-right: 20px;
+          text-align: center;
+          margin: 0 auto;
+          width: 100px;
+          font-size: 20px;
+          font-weight: 400;
+          color: #333333;
+          border: 4px solid #FBE108;
+          border-radius: 6px;
+          line-height: 50px;
+          box-shadow: $shadow;
+          background-color: #ffffff;
+        }
+        .mgrSecTab:hover{
+          background-color: #FBE108;
+        }
+        .span2{
+          margin-left: 20px;
+        }
+        .mgrSecTab.-on {
+          background-color: #FBE108;
+        }
+        a{
+          text-decoration: none;
+        }
+      }
       display: none;
       // CHATBOT
       .mgrChatAll{
@@ -200,31 +232,40 @@
       // ORDER
       .mgrOrderAll{
         text-align: center;
-        .mgrStepContent{
+        .mgrSecTab.-on{
+          display: block;
+        }
+        .mgrSecTab{
           display: none;
-        }
-        .mgrOrderTitle{
-          background-color: $keyGreen;
-          color: #ffffff;
-          height: 40px;
-          line-height: 40px;
-        }
-        .mgrTicketOrder{
-          line-height: 30px;
-          padding: 20px;
-          box-shadow: $shadow;
-          .mgrTitle{
-            i{
-              transition: .3s;
-            }
-            i.rotate{
-              transform: rotate(180deg);
-            }
+        }  
+        .mgrTicketAll, .mgrNightAll{
+          .mgrStepContent{
+            display: none;
           }
-          .mgrOrderDetail{
-            .mgrOrderDetailForm{
-              background-color: $keyGreen;
-              color: #ffffff;
+          .mgrOrderTitle{
+            background-color: $keyGreen;
+            color: #ffffff;
+            height: 40px;
+            line-height: 40px;
+          }
+          .mgrTicketOrder{
+            line-height: 30px;
+            padding: 20px;
+            box-shadow: $shadow;
+            .mgrTitle{
+              i{
+                cursor: pointer;
+                transition: .3s;
+              }
+              i.rotate{
+                transform: rotate(180deg);
+              }
+            }
+            .mgrOrderDetail{
+              .mgrOrderDetailForm{
+                background-color: $keyGreen;
+                color: #ffffff;
+              }
             }
           }
         }
@@ -254,6 +295,55 @@
           }
         }
       }
+      // NIGHTINFO
+      .mgrNightInfoAll{
+        tr{
+          box-shadow: $shadow;
+          th{
+            text-align: center;
+            background-color: $keyGreen;
+            color: #ffffff;
+            height: 40px;
+          }
+          td{
+            text-align: center;
+            line-height: 40px;
+          }
+          i{
+            font-size: 20px;
+          }
+          .fa-check-circle:hover, .fa-check-circle:active{
+            color: green;
+          }
+          .fa-times-circle:hover, .fa-times-circle:active{
+            color: red;
+          }
+        }
+      }
+      // ADOPT
+      .mgrAdoptAll{
+        text-align: center;
+        .mgrAdoptTitle{
+          background-color: $keyGreen;
+          color: #ffffff;
+          height: 40px;
+          line-height: 40px;
+        }
+        .mgrAdoptOrder{
+          line-height: 30px;
+          padding: 20px;
+          box-shadow: $shadow;
+          .mgrTitle{
+            i{
+              cursor: pointer;
+              transition: .3s;
+            }
+            i.rotate{
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
       // JOURNAL
       .mgrJournalAll{
         tr{
@@ -278,37 +368,6 @@
         }
       }
       // JOURNAL MSG
-      .mgrSpanTab{
-        display: flex;
-        // justify-content: space-evenly;
-        margin: 20px;
-        .mgrSecTab {
-          // margin-right: 20px;
-          text-align: center;
-          margin: 0 auto;
-          width: 100px;
-          font-size: 20px;
-          font-weight: 400;
-          color: #333333;
-          border: 4px solid #FBE108;
-          border-radius: 6px;
-          line-height: 50px;
-          box-shadow: $shadow;
-          background-color: #ffffff;
-        }
-        .mgrSecTab:hover{
-          background-color: #FBE108;
-        }
-        .span2{
-          margin-left: 20px;
-        }
-        .mgrSecTab.-on {
-          background-color: #FBE108;
-        }
-        a{
-          text-decoration: none;
-        }
-      }
       .mgrJournalMsgAll{
         .mgrSecTab.-on{
           display: block;
