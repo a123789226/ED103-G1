@@ -722,6 +722,8 @@ div.jourLightBox {
   text-align: center;
   // border: 3px solid black;
   padding: 20px;
+  border: 3px solid #fff;
+  box-shadow: ;
 }
 
 .adoptProcessContainer {
@@ -771,27 +773,28 @@ div.jourLightBox {
   display: block;
   width: 60px;
   margin: 0 auto;
-  color: $keyBlack;
+  color: $keyGreen;
   background-color: $keyWhite;
   // @include btn40($width, $blockYellow);
   border-radius: 50%;
   border: 4px solid $keyGreen;
   text-align: center;
-  line-height: 56px;
+  line-height: 53px;
   font-size: 20px;
   height: 60px;
+  font-weight: 700;
 }
 
 .adoptTabList li a.-on {
   border: none;
   background-color: $keyGreen;
-  line-height: 56px;
+  line-height: 53px;
   font-size: 20px;
   width: 60px;
   height: 60px;
   border: 4px solid $keyGreen;
   border-radius: 50%;
-
+  color: $keyWhite;
 }
 
 .adoptTabList li p {
@@ -1141,6 +1144,7 @@ div.jourLightBox {
   -ms-box-shadow: inset 0 0 5px #666;
   box-shadow: inset 0 0 5px #666;
   font-weight: bold;
+  width: 200px;
 }
 
 #flipbook2 .jourCover{
