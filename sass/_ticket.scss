@@ -312,6 +312,7 @@
           width: 49%;
           display: inline-block;
           border: 3px solid white;
+          border-radius: 6px;
           @media screen and (max-width: 479px){
             width: 100%;
             margin-bottom: 10px;
@@ -354,6 +355,7 @@
       transition: .6s;
       img{
         border: 3px solid white;
+        border-radius: 6px;
         width: 60%;
         position: absolute;
         right: 3%;
@@ -393,6 +395,9 @@
         width: 100%;
         padding-top: 80%;
         position: relative;
+        .datepicker-switch{
+          padding: 10px 0;
+        }
         .table-condensed{
           width: 100%;
           height: 100%;

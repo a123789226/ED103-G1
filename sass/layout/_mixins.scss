@@ -101,36 +101,70 @@
     @media only screen and (min-width: 0px) and (max-width: 767px) { @content; }
   }
   }
-  @mixin cartStep($bgColor, $borderColor, $color){
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: $bgColor;
-    border: 2px solid $borderColor;
-    color: $color;
-    display: inline-block;
-    position: relative;
+
+@mixin cartStep($bgColor, $borderColor, $color){
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $bgColor;
+  border: 2px solid $borderColor;
+  color: $color;
+  display: inline-block;
+  position: relative;
+  @media screen and (max-width: 676px){
+    width: 45px;
+    height: 45px; 
+  }
+  img, p{
+    font-size: 36px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @media screen and (max-width: 676px){
-      width: 60px;
-      height: 60px; 
-    }
-    img{
-      width: 50px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @media screen and (max-width: 676px){
-        width: 40px;
-      }
-    }
-    +span{
-      height: 2px;
+      font-size: 24px;
       width: 30px;
-      display: inline-block;
-      background-color: $blockYellow;
-      @media screen and (max-width: 676px){
-        width: 10px;
+    }
+  }
+  +span{
+    height: 2px;
+    width: 30px;
+    display: inline-block;
+    background-color: $blockYellow;
+    @media screen and (max-width: 676px){
+      width: 10px;
+    }
+  }
+}
+
+@mixin cartStepAnimation{
+  animation-name: stepScale;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+  @keyframes stepScale{
+    0%{
+      width: 60px;
+      height: 60px;
+    }
+    100%{
+      width: 90px;
+      height: 90px;
+    }
+  }
+  img, p{
+    animation-name: stepContentScale;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    @keyframes stepContentScale{
+      0%{
+        width: 40px;
+        font-size: 36px;
+      }
+      100%{
+        width: 60px;
+        font-size: 45px;
       }
     }
   }
+}
