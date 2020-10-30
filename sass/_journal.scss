@@ -723,7 +723,8 @@ div.jourLightBox {
   // border: 3px solid black;
   padding: 20px;
   border: 3px solid #fff;
-  box-shadow: ;
+  
+  @include box-shadow;
 }
 
 .adoptProcessContainer {
@@ -877,11 +878,6 @@ div.jourLightBox {
   // border-radius: 6px;
 }
 
-.adoptSelfAmountType input:last-child {
-  //   box-shadow: $shadow;
-  // border-radius: 6px;
-
-}
 
 .adoptProcessStep {
   // border: 3px solid red;
@@ -1081,11 +1077,6 @@ div.jourLightBox {
   text-align: center;
 }
 
-.hard {
-  // background-color: #fff;
-  // background: linear-gradient(to right,#C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
-}
-
 .even{
   // background-color: #fff;
   background: linear-gradient(to left,#333 0.1%,lightgray .5%, #fff 55%,lightgray 99%);
@@ -1103,13 +1094,6 @@ div.jourLightBox {
 #demobook .p1{
   background: linear-gradient(to right,#C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
 
-}
-
-
-
-
-.jourOpenBook {
-  // border: 3px solid blue;
 }
 
 .jourOpenBookPhoto img {
