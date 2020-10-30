@@ -138,32 +138,68 @@
   }
 }
 
-@mixin cartStepAnimation{
-  animation-name: stepScale;
-  animation-duration: .6s;
-  animation-fill-mode: forwards;
-  @keyframes stepScale{
-    0%{
-      width: 60px;
-      height: 60px;
+
+
+@mixin StepBox{
+  text-align: center;
+  >div{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $keyWhite;
+    border: 2px solid $blockYellow;
+    display: inline-block;
+    position: relative;
+    @media screen and (max-width: 676px){
+      width: 45px;
+      height: 45px; 
     }
-    100%{
-      width: 90px;
-      height: 90px;
+    img, p{
+      font-size: 36px;
+      width: 40px;
+      font-weight: 700;
+      color: $keyBlack;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @media screen and (max-width: 676px){
+        font-size: 24px;
+        width: 30px;
+      }
+    }
+    +span{
+      height: 2px;
+      width: 30px;
+      display: inline-block;
+      background-color: $blockYellow;
+      @media screen and (max-width: 676px){
+        width: 10px;
+      }
+    }
+    &:last-child{
+      margin-right: 0;
     }
   }
-  img, p{
-    animation-name: stepContentScale;
-    animation-duration: .6s;
-    animation-fill-mode: forwards;
-    @keyframes stepContentScale{
+  >div.done{
+    background-color: $blockYellow;
+  }
+  >div.active{
+    background-color: $blockYellow;
+    animation-name: stepScale;
+    animation-duration: 1s;
+    animation-iteration-count: forwards;
+    @keyframes stepScale{
       0%{
-        width: 40px;
-        font-size: 36px;
+        transform: scale(2);
+        background-color: $keyWhite;
+      }
+      90%{
+        transform: scale(1);
+        background-color: $keyWhite;
       }
       100%{
-        width: 60px;
-        font-size: 45px;
+        background-color: $blockYellow;
       }
     }
   }

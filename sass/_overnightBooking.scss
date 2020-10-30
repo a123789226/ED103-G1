@@ -34,18 +34,8 @@
     margin-bottom: 30px;
   }
   .bookingStepBox{
-    text-align: center;
+    @include StepBox;
     margin-bottom: 30px;
-    .bookingStep{
-      @include cartStep($keyWhite, $blockYellow, $keyBlack);
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-    .active{
-      @include cartStep($blockYellow, $blockYellow, $keyBlack);
-      @include cartStepAnimation;
-    }
   }
 
   .bookingTable{

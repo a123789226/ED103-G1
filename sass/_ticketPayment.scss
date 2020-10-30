@@ -33,17 +33,8 @@
   }
 
   .cartStepBox{
-    text-align: center;
+    @include StepBox;
     margin-bottom: 30px;
-    .cartStep{
-      @include cartStep($keyWhite, $blockYellow, $keyBlack);
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-    .active{
-      @include cartStep($blockYellow, $blockYellow, $keyBlack);
-    }
   }
 
 
