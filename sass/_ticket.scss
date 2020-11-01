@@ -126,8 +126,9 @@
           justify-content: space-between;
           width: 120px;
           .ticketButton{
-            cursor: pointer;       
             border: none;
+            box-shadow: $shadow;
+            cursor: pointer;       
             color: $keyWhite;
             border-radius: 50%;
             width: 40px;
@@ -136,6 +137,13 @@
             @include sub_title($keyWhite);
             outline: none;
             transition: .05s;
+            position: relative;
+            span{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
             &:hover{
               background-color: $darkGreen;
               transform: scale(1.05);
@@ -488,6 +496,7 @@
             .ticketButton{  
               cursor: pointer;       
               border: none;
+              box-shadow: $shadow;
               color: $keyWhite;
               border-radius: 50%;
               width: 40px;
@@ -496,6 +505,13 @@
               @include sub_title($keyWhite);
               outline: none;
               transition: .05s;
+              position: relative;
+              span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }              
               @media screen and (max-width: 676px){
                 width: 30px;
                 height: 30px;

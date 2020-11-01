@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="./js/layout/headerCart.js"></script>
+    <script src="./js/ticket/ticket.js"></script>
     <title>Ticket</title>
 </head>
 <body>
@@ -122,37 +123,41 @@
       <div class="ticketTicketContent">
         <p class="ticketTicketText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!</p>
         <div class="ticketButtonBlock">
-          <div class="ticketButtonBox">
+          <div class="ticketButtonBox ticketProduct" id="ticket1">
+            <input type="hidden" value="Adult(18-64)|30|0">
             <p class="ticketTicketName">Adult(18-64)</p>
-            <p class="ticketTicketPrice">${{price}}</p>
+            <p class="ticketTicketPrice"><span>$</span><span>30</span></p>
             <div class="ticketButtons">
-              <button class="ticketButton" @click="minusAmount">－</button>
-              <p class="ticketTicketAmount" >{{amount}}</p>
-              <button class="ticketButton" @click="addAmount">＋</button>
+              <button class="ticketButton"><span>－</span></button>
+              <p class="ticketTicketAmount" >0</p>
+              <button class="ticketButton"><span>＋</span></button>
             </div>
           </div>
-          <div class="ticketButtonBox">
+          <div class="ticketButtonBox ticketProduct" id="ticket2">
+            <input type="hidden" value="Kid(4-11)|15|0">
             <p class="ticketTicketName">Kid(4-11)</p>
-            <p class="ticketTicketPrice">${{price2}}</p>
+            <p class="ticketTicketPrice"><span>$</span><span>15</span></p>
             <div class="ticketButtons">
-              <button class="ticketButton" @click="minusAmount2">－</button>
-              <p class="ticketTicketAmount" >{{amount2}}</p>
-              <button class="ticketButton" @click="addAmount2">＋</button>
+              <button class="ticketButton"><span>－</span></button>
+              <p class="ticketTicketAmount" >0</p>
+              <button class="ticketButton"><span>＋</span></button>
             </div>
           </div>
-          <div class="ticketButtonBox">
+          <div class="ticketButtonBox ticketProduct" id="ticket3">
+            <input type="hidden" value="Elder(65-)|20|0">
             <p class="ticketTicketName">Elder(65-)</p>
-            <p class="ticketTicketPrice">${{price3}}</p>
+            <p class="ticketTicketPrice"><span>$</span><span>20</span></p>
             <div class="ticketButtons">
-              <button class="ticketButton" @click="minusAmount3">－</button>
-              <p class="ticketTicketAmount" >{{amount3}}</p>
-              <button class="ticketButton" @click="addAmount3">＋</button>
+              <button class="ticketButton"><span>－</span></button>
+              <p class="ticketTicketAmount" >0</p>
+              <button class="ticketButton"><span>＋</span></button>
             </div>
           </div>
         </div>
-        <p class="ticketTicketTotal">Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;{{price * amount + price2 * amount2 + price3 * amount3}}</p>
+        <p class="ticketTicketTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
         <div class="ticketTicketButtonBlock">
-          <button id="ticketAddToCart" @click="ticketNotice">ADD TO CART</button>
+          <!-- <button id="ticketAddToCart" @click="ticketNotice">ADD TO CART</button> -->
+          <button id="ticketAddToCart">ADD TO CART</button>
         </div>
       </div>
     </section>
@@ -214,55 +219,55 @@
         </div>
         <div class="ticketBooking">
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">{{ARemain}}</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">2</span></p>
             <div class="ticketButtonBox">
               <p class="ticketTicketName">Area A</p>
-              <p class="ticketTicketPrice">${{APrice}}</p>
+              <p class="ticketTicketPrice"><span>$</span><span>80</span></p>
               <div class="ticketButtons">
-                <button class="ticketButton" @click="minusONAmountA">－</button>
-                <p class="ticketTicketAmount" >{{AAmount}}</p>
-                <button class="ticketButton" @click="addONAmountA">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </div>
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{BRemain}}</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>0</span></p>
             <div class="ticketButtonBox">
               <p class="ticketTicketName">Area B</p>
-              <p class="ticketTicketPrice">${{BPrice}}</p>
+              <p class="ticketTicketPrice"><span>$</span><span>70</span></p>
               <div class="ticketButtons">
-                <button class="ticketButton" @click="minusONAmountB">－</button>
-                <p class="ticketTicketAmount" >{{BAmount}}</p>
-                <button class="ticketButton" @click="addONAmountB">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </div>
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{CRemain}}</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>20</span></p>
             <div class="ticketButtonBox">
               <p class="ticketTicketName">Area C</p>
-              <p class="ticketTicketPrice">${{CPrice}}</p>
+              <p class="ticketTicketPrice"><span>$</span><span>100</span></p>
               <div class="ticketButtons">
-                <button class="ticketButton" @click="minusONAmountC">－</button>
-                <p class="ticketTicketAmount" >{{CAmount}}</p>
-                <button class="ticketButton" @click="addONAmountC">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </div>
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{DRemain}}</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>3</span></p>
             <div class="ticketButtonBox">
               <p class="ticketTicketName">Area D</p>
-              <p class="ticketTicketPrice">${{DPrice}}</p>
+              <p class="ticketTicketPrice"><span>$</span><span>90</span></p>
               <div class="ticketButtons">
-                <button class="ticketButton" @click="minusONAmountD">－</button>
-                <p class="ticketTicketAmount" >{{DAmount}}</p>
-                <button class="ticketButton" @click="addONAmountD">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </div>
             </div>
           </div>
 
-          <p class="ticketONTotal">Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;{{APrice * AAmount + BPrice * BAmount + CPrice * CAmount + DPrice * DAmount}}</p>
+          <p class="ticketONTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
           <div class="ticketONButtonBlock">
             <input type="submit" value="Go Booking" id="ticketBookingButton">         
           </div>
@@ -292,134 +297,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
   <script>
-    new Vue({
-      el: '#ticketApp',
-      data: {
-        price: 30,
-        price2: 15,
-        price3: 20,
-
-        amount: 0,
-        amount2: 0,
-        amount3: 0,
-
-        APrice: 80,
-        BPrice: 70,
-        CPrice: 100,
-        DPrice: 90,
-
-        AAmount: 0,
-        BAmount: 0,
-        CAmount: 0,
-        DAmount: 0,
-
-        ARemain: 2,
-        BRemain: 0,
-        CRemain: 20,
-        DRemain: 3,
-      },
-      methods: {
-        addAmount(){
-          this.amount++;
-        },
-        minusAmount(){
-          if(this.amount>0){
-            this.amount--;
-          }else{
-            this.amount = 0;
-          };
-        },
-        addAmount2(){
-          this.amount2++;
-        },
-        minusAmount2(){
-          if(this.amount2>0){
-            this.amount2--;
-          }else{
-            this.amount2 = 0;
-          };
-        },
-        addAmount3(){
-          this.amount3++;
-        },
-        minusAmount3(){
-          if(this.amount3>0){
-            this.amount3--;
-          }else{
-            this.amount3 = 0;
-          };
-        },
-        ticketNotice(){
-          if(this.price * this.amount + this.price2 * this.amount2 + this.price3 * this.amount3 == 0){
-            swal("Oops!", "Please select amount of tickets", "warning");
-
-          }else{
-            swal("Great!", "The tickets has successfully added to shopping cart!", "success");
-            this.amount = 0;
-            this.amount2 = 0;
-            this.amount3 = 0;
-          }
-        },
-        minusONAmountA(){
-          if(this.AAmount>0){
-            this.AAmount--;
-          }else{
-            this.AAmount = 0;
-          };
-        },
-        addONAmountA(){
-          if(this.AAmount<this.ARemain){
-            this.AAmount++;
-          }else{
-            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
-          }
-        },
-        minusONAmountB(){
-          if(this.BAmount>0){
-            this.BAmount--;
-          }else{
-            this.BAmount = 0;
-          };
-        },
-        addONAmountB(){
-          if(this.BAmount<this.BRemain){
-            this.BAmount++;
-          }else{
-            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
-          }
-        },
-        minusONAmountC(){
-          if(this.CAmount>0){
-            this.CAmount--;
-          }else{
-            this.CAmount = 0;
-          };
-        },
-        addONAmountC(){
-          if(this.CAmount<this.CRemain){
-            this.CAmount++;
-          }else{
-            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
-          }
-        },
-        minusONAmountD(){
-          if(this.DAmount>0){
-            this.DAmount--;
-          }else{
-            this.DAmount = 0;
-          };
-        },
-        addONAmountD(){
-          if(this.DAmount<this.DRemain){
-            this.DAmount++;
-          }else{
-            swal("Limit Reached!", "The quantity has reached the upper limit, and the quantity cannot be increased!", "warning");
-          }
-        },
-      }
-    });
-
-
     // jQuery
     //漢堡
     $("div.hamburger_box").on("click", function(){
