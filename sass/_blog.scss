@@ -17,17 +17,13 @@
 }
 // 這是標題區
 .blogFirstPort{
-    display: block;
-}
-
-.blogFirstPort{
     display: flex;
     flex-direction: row;
     background-color: hsla(0, 0%, 100%, 0.2);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto 30px auto;
-    padding: 20px;
+    padding: 50px;
     .BlogFirstLeft{
         h3{
             @include main_title($keyWhite);
@@ -36,7 +32,7 @@
         }
         p{
                 margin: 10px 0 10px 0 ;
-                color: $keyWhite;
+                @include text($keyWhite);
         }
     }
     
@@ -104,6 +100,17 @@
     border: 2px solid white;
     border-radius: 6px;
     overflow: hidden;
+}
+.card{
+    border: 3px solid $keyWhite;
+    border-radius: 6px;
+
+}
+.card-title{
+    @include sub_title($keyBlack);
+}
+.card-text{
+    @include text($keyBlack);
 }
 .blogMemInfo{
     display: flex;
@@ -214,6 +221,7 @@
 }
 .blogMoreBtn{
     @include btn36Yellow; 
+    box-shadow: $shadow2;
     color: $keyWhite !important;
 }
 
@@ -363,6 +371,10 @@
     text-align: center;
     // display: none;
     display: inline-block;
+    background-image: url(../image/blog/photos/img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     height: auto;
     width: 100%;
     // background-image: url(../image/blog/photos/photo.png);
@@ -385,7 +397,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
 
 }
 // .blogUploadImgText {
@@ -395,6 +407,7 @@
 
 .blogUploadImg {
     display: none;
+    
 }
 .blogPostContentText2,
 .blogPostContentText3{
@@ -447,11 +460,17 @@ display: inline-block;
 flex-wrap: wrap;
 height: auto;
 width: 100%;
+border: 3px solid white; 
+box-shadow: $shadow2; 
+border-radius: 6px;
 }
 .blogArticleImgRight{
 float: right;
 width: 40%;
 margin-left: 15px;
+border: 3px solid white; 
+box-shadow: $shadow2; 
+border-radius: 6px;
 
 }
 .blogArticleImgLeft{
@@ -461,17 +480,16 @@ height: auto;
 max-width: auto;
 max-height: auto;
 margin-right: 15px;
+border: 3px solid white; 
+box-shadow: $shadow2; 
+border-radius: 6px;
 
 }
 
 .blogArticleText{
     display: inline;
     // width: 100%;
-    height: auto;
-    outline: 0;
-    line-height: 30px;
-    font-size: 18px;
-    color: $keyWhite
+    @include text($keyWhite);
 }
 
 
