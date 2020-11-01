@@ -8,6 +8,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -287,7 +288,7 @@
       <div class="jourBookSection">
         <a href="#">
 
-          <div class="jourBook jourBookOpenBtn">
+          <div class="jourBook jourBookOpenBtn" id="jourBookOpenBtn">
             <div class="jourBookLeft">
 
             </div>
@@ -773,10 +774,11 @@
 
   <!-- Lightbox -->
 
-  <div class="jourLightBox">
+  <div class="jourLightBox animate__animated animate__fadeIn">
     <!-- close lightbox -->
     <div class="closeLightbox jourBookOpenBtn_close">
-      <a href="#"><img src="./image/journal/journal_element/close.png" alt=""></a>
+      <div></div>
+      <div></div>
     </div>
 
     <!-- turn js -->
@@ -1030,7 +1032,7 @@
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
                 <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
               </div>
             </div>
           </li>
@@ -1175,7 +1177,7 @@
   </script>
 
   <!-- lightbox open journal-->
-  <script>
+  <!-- <script>
     $(function () {
 
       // 開啟 Modal 彈跳視窗
@@ -1197,33 +1199,25 @@
       });
 
     });
+  </script> -->
+
+
+  <script>
+    document.getElementById('jourBookOpenBtn').onclick = function () {
+      document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
+      document.getElementsByClassName("jourLightBox")[0].style.display = "block";
+      document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
+        document.getElementsByClassName("jourLightBox")[0].style.display = "none";
+      }
+    };
   </script>
+
+
 
   <!-- lightbox adopt-->
-  <script>
-    // $(function () {
-
-    // 開啟 Modal 彈跳視窗
-    // $(".jourToAdopt").on("click", function () {
-    //   $(".adoptLightBox").removeClass("-opacity-zero");
-    //   $(".adoptLightBox").addClass("-on");
-    // });
-
-    // 關閉 Modal
-    // $(".jourToAdopt_close").on("click", function () {
-    //   $(".adoptLightBox").addClass("-opacity-zero");
-    //   $(".adoptLightBox").removeClass("-on");
-
-    // 設定隔一秒後，移除相關 class
-    //   setTimeout(function () {
-    //     $(".jourToAdopt").removeClass("-on -opacity-zero");
-    //   }, 1000);
-    // });
-
-    // });
-  </script>
 
 
+  //
   <!-- adopt-->
   <script>
     id = 1;
