@@ -41,6 +41,14 @@ function doFirst(){
         //刪除該筆<tr>
         this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 
+        //更改header購物車數量
+        let cart_amount = document.getElementsByClassName('cart_amount');
+        if(storage['addTicketList'] == null | storage['addTicketList'] == ''){
+          cart_amount[0].style.display = 'none';
+        }else{
+          cart_amount[0].innerHTML--;
+        }
+
         //跟進來頁面一樣重新判斷storage狀態
         if(storage['addTicketList'] == null | storage['addTicketList'] == ''){
           noTicket();
@@ -125,7 +133,8 @@ function noTicket(){
   let ticketToMoneyButton = document.querySelector('a.ticketToMoneyButton');
   ticketToMoneyButton.innerText = "GO BUY TICKET";
   ticketToMoneyButton.href = './ticket.html';
-
+  let ticketEmpty = document.querySelector('div.ticketEmpty');
+  ticketEmpty.style.display = 'block';
 }
 
 
