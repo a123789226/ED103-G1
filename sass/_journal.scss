@@ -357,16 +357,33 @@ body {
   // border: 3px solid yellow;
 }
 
-
+.jour_bk{
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: black;
+  opacity: .4;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 // lightbox
 .jourLightBox {
-  background-color: #fff;
-  
-  position: absolute;
-  width: 90%;
   display: none;
+  background-color: rgb(0, 0, 0);
+  // background-size: ;;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  // position: fixed; 
+  // padding-top: 200px; /* Location of the box */
+  // left: 0;
+  // top: 0;
+  width: 90%;
+  // height: 100%;
+  /* Full height */
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
@@ -375,6 +392,8 @@ body {
   max-width: 1200px;
   // height: 95%;
   z-index: 12;
+  // overflow: auto;
+  overflow: hidden;
 
   @media screen and (max-width: 676px) {
     position: absolute;
@@ -392,7 +411,8 @@ body {
   border-radius: 5px;
   width: 35px;
   height: 35px;
-  margin-right: 20px;
+  margin: 20px;
+  background-color: #fff;
   cursor: pointer;
 
   &>div {
@@ -410,7 +430,6 @@ body {
       transform: rotate(-45deg);
     }
   }
-
 }
 
 .jourBookOpenBtn {
@@ -434,31 +453,7 @@ div.jourLightBox.-on {
     top: 28%;
     left: 50%;
   }
-
-
 }
-
-// div.jourLightBox.-opacity-zero {
-//   /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
-//   opacity: 0;
-// }
-
-
-/* 元素 article 置中及基本樣式 */
-// div.jourLightBox {
-//   background-color: hsla(0, 0, 0, 1);
-//   width: 100%;
-//   // max-width: 800px;
-//   box-shadow: 0 0 10px #ddd;
-//   // padding: 10px;
-//   position: absolute;
-//   top: 35%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   // display: none;
-// }
-
-//---------------------------------------
 
 
 
@@ -712,17 +707,17 @@ div.jourLightBox.-on {
   }
 }
 
-.adoptInnerSection{
+.adoptInnerSection {
   width: 100%;
   margin: 0 auto;
   background-color: hsla(255, 255, 255, 0.2);
   // border: 3px dashed $keyGreen;
   border-radius: 6px;
   text-align: center;
-padding: 20px 0;
+  padding: 20px 0;
 }
 
-.adoptDetail{
+.adoptDetail {
   display: block;
   width: 100%;
 }
@@ -771,7 +766,7 @@ padding: 20px 0;
   vertical-align: middle;
   border-radius: 6px;
   background: rgba(0, 0, 0, .8);
-    padding: 20px;
+  padding: 20px;
 
   @media screen and (max-width: 676px) {
     display: block;
@@ -793,7 +788,7 @@ padding: 20px 0;
   text-align: center;
 }
 
-.adoptStepTitle{
+.adoptStepTitle {
   @include main_title($keyWhite);
   padding: 0;
   width: 100%;
@@ -805,7 +800,7 @@ padding: 20px 0;
   }
 }
 
-.adoptTabList{
+.adoptTabList {
   @include StepBox;
 }
 
@@ -894,7 +889,8 @@ padding: 20px 0;
 
 
 
-.adoptProcessBtn, .adoptBackBtn {
+.adoptProcessBtn,
+.adoptBackBtn {
   @include btn50Green;
   box-shadow: $shadow2;
   margin: 10px 5px;
@@ -946,6 +942,7 @@ padding: 20px 0;
 .adoptInfo input {
   height: 30px;
   margin-bottom: 5px;
+  font-size: 16px;
 
 }
 
@@ -1049,21 +1046,18 @@ padding: 20px 0;
 }
 
 
-
-
 // turn css
 .jourLightBox {
   width: 80%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .jourOpenBookSection {
   width: 80%;
-  margin: 0 auto;
+  margin: 50px auto !important;
   // border: 3px solid white;
   // background-color: rgba(0,0,0,.8);
   text-align: center;
-
 }
 
 .jourOpenBookRight {
@@ -1102,7 +1096,7 @@ padding: 20px 0;
 
 }
 
-.jourOpenBookPhoto{
+.jourOpenBookPhoto {
   object-fit: cover;
 }
 
@@ -1146,9 +1140,9 @@ padding: 20px 0;
   background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important;
 }
 
-#flipbook2 .jourLastPage, #demobook .jourLastPage {
+#flipbook2 .jourLastPage,
+#demobook .jourLastPage {
   background: linear-gradient(to Left, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important;
-
 }
 
 #flipbook2 .odd {
@@ -1259,7 +1253,7 @@ padding: 20px 0;
 
 
 // lastPage
-.jourLastPage h4{
+.jourLastPage h4 {
   @include sub_title($keyWhite);
   margin: 200px auto;
   // border: 2px solid green;
