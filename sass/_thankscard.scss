@@ -18,22 +18,25 @@
         }
         .cardMaterialBackground{
             width: 80%;
-            margin: 0 auto;
-            
+            margin: 20px auto;
             .cardBgc{
                 width: 100%;
                 height: auto;
                 margin-top: 20px;
+                border: 1px solid $keyWhite;
+                cursor: pointer;
             }
         }
         .cardMaterialAnimal{
             width: 80%;
-            max-width: 100px;
+            // max-width: 100px;
             margin: 20px auto;
             .cardAnimals{
                 width: 100%;
                 height: auto;
                 margin-top: 20px;
+                border: 1px solid $keyWhite;
+                cursor: pointer;
             }
         }
         .cardMaterialDeco{
@@ -43,6 +46,8 @@
                 width: 100%;
                 height: auto;
                 margin-top: 20px;
+                border: 1px solid $keyWhite;
+                cursor: pointer;
             }
         }
         // .cardMaterialAnimalBtn{
@@ -89,14 +94,13 @@
             
             }
             .cardAnimalChosen{
-                display: block;
-                // width: 100%;
-                // height: 100%;
-                width: 100px;
-                height: 150px;
+                width: 100%;
+                height: 100%;
+                max-width: 600px;
+                max-height: 450px;
                 position: absolute;
-                bottom: 10%;
-                right: 5%;
+                bottom: 0%;
+                right: 0%;
                 // background-color: #888;
                 background-repeat: no-repeat;
                 background-position: center;
