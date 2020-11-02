@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Aqua Wonderland</title>
 </head>
-<body>
+<body class="tourBody">
   <!-- 下面是背景的div，先不要動到 -->
   <div class="tourbg">
     <div class="commonBG00 commonBGSet"></div>
@@ -95,7 +95,7 @@
           <h1 class="tour_title1">Tour</h1>
         </div>  
         <div class="tour_btn">
-          <a href="js/js-puzzle-master/preTour.html" class="tour_puzzle">
+          <a href="puzzle.html" class="tour_puzzle">
           <button class="tour_puzzle_btn">Puzzle</button>
           </a>
         </div>        
@@ -280,6 +280,8 @@
         </div>
       </div>
     </main>
+
+    
     <!-- 你的code打這上面 -->
   </div>
 
@@ -404,17 +406,7 @@ $(function(){
   }); 
 });
 
-//---------點擊地圖的圖文介紹按鈕,會往下移動----------
-// $(function(){
-//   $("button.btn_modal_close1").on("click", function(e){
-//     e.preventDefault();
-//     $('html, body').animate({
-//       scrollTop: 1000
-//     }, 950);
-//   });
-// });
-
-
+//---------點擊地圖的圖文介紹按鈕,會往下移動---------
 $(document).ready(function() {
        $("#btn1").click(function() {
          $("html, body").animate({
@@ -437,8 +429,6 @@ $(document).ready(function() {
          return false;
        });
      });
-
-
 
 //------------當滑鼠移入房子, 出現hover效果-------------
 $('.tour_houseA').hover(function(){
@@ -580,5 +570,18 @@ $('.tour_row_button2').click(function(e){
 
 
 </script>
+
+<!-- 每次開瀏覽器會先執行1次拼圖,之後就不會再進行 -->
+<!-- 如果進開瀏覽器name為空値, 就先執行拼圖, 再給name 値"onload"，並且每100毫秒就檢查一次name是否為空値。 -->
+<!-- 因為有給name値"onload"所以不會執行拼圖，必須重新開啟瀏覽器才行 -->
+<script>
+  function openly(){
+          if(window.name==""){
+              window.location.href="./puzzle.html";
+          }
+          window.name="onload";
+  }
+  setTimeout('openly()',100);
+  </script>
 </body>
 </html>
