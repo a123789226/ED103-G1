@@ -489,15 +489,14 @@ border-radius: 6px;
 .blogArticleText{
     // display: inline;
     // width: 100%;
-<<<<<<< HEAD
-    height: auto;
-    outline: 0;
-    line-height: 30px;
-    font-size: 18px;
-    color: $keyWhite;
-=======
+
+    // height: auto;
+    // outline: 0;
+    // line-height: 30px;
+    // font-size: 18px;
+    // color: $keyWhite;
+
     @include text($keyWhite);
->>>>>>> Zac
 }
 
 
