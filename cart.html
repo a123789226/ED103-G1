@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
     <script src="./js/layout/headerCart.js"></script>
+    <script src="./js/ticket/cart.js"></script>
     <title>Cart</title>
 </head>
 <body>
@@ -129,43 +129,29 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <!-- <tr>
               <td>Adult(18-64)</td>
               <td>
-                <button class="ticketButton"><span>－</span></button>
-                <p class="ticketTicketAmount" >0</p>
-                <button class="ticketButton"><span>＋</span></button>
+                <div class="ticketButtons">
+                  <button class="ticketButton"><span>－</span></button>
+                  <p class="ticketTicketAmount" >0</p>
+                  <button class="ticketButton"><span>＋</span></button>
+                </div>
               </td>
               <td><span>$</span><span>80</span></td>
               <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove"></td>
-            </tr>
-            <tr>
-              <td>Kid(4-11)</td>
-              <td>
-                <button class="ticketButton"><span>－</span></button>
-                <p class="ticketTicketAmount" >0</p>
-                <button class="ticketButton"><span>＋</span></button>
-              </td>
-              <td><span>$</span><span>80</span></td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove2"></td>
-            </tr>
-            <tr>
-              <td>Elder(65-)</td>
-              <td>
-                <button class="ticketButton"><span>－</span></button>
-                <p class="ticketTicketAmount" >0</p>
-                <button class="ticketButton"><span>＋</span></button>
-              </td>
-              <td><span>$</span><span>80</span></td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove3"></td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
-      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>123</span></p>
-      <a href="ticketPayment.html">
-        <button class="ticketToMoneyButton">Go To Payment</button>
-      </a>
+      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
+      <div class="ticketEmpty">
+        <!-- <img src="./image/index/object/indexMain2-1.png" alt=""> -->
+        <p>You have not added any tickets to the shopping cart!樣式待修改</p>
+      </div>
+      <div class="cartToPayment">
+        <a class="ticketToMoneyButton" href="ticketPayment.html">Go To Payment</a>
+      </div>
     </div>
 
 
@@ -190,62 +176,6 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    new Vue({
-      el: '#cartApp',
-      data: {
-        price: 30,
-        price2: 15,
-        price3: 20,
-
-        amount: 1,
-        amount2: 1,
-        amount3: 1,
-      },
-      methods: {
-        addAmount(){
-          this.amount++;
-        },
-        minusAmount(){
-          if(this.amount>1){
-            this.amount--;
-          }else{
-            this.amount = 1;
-          };
-        },
-        addAmount2(){
-          this.amount2++;
-        },
-        minusAmount2(){
-          if(this.amount2>1){
-            this.amount2--;
-          }else{
-            this.amount2 = 1;
-          };
-        },
-        addAmount3(){
-          this.amount3++;
-        },
-        minusAmount3(){
-          if(this.amount3>1){
-            this.amount3--;
-          }else{
-            this.amount3 = 1;
-          };
-        },
-        remove(){
-          this.amount = 0;
-          
-        },
-        remove2(){
-          this.amount2 = 0;
-        },
-        remove3(){
-          this.amount3 = 0;
-        },
-      }
-    });
-
-
     //漢堡
     $("div.hamburger_box").on("click", function(){
       $("span.hamburger_line").toggleClass("is-active");

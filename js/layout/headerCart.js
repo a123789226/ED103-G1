@@ -9,7 +9,7 @@ function doFirst(){
     // cart_box[0].removeChild(cart_amount[0]);
     cart_amount[0].style.display = 'none';
   }else{
-    let tickets = ticketString.substr(0, ticketString.length-2).split(', ');
+    tickets = ticketString.substr(0, ticketString.length-2).split(', ');
     cart_amount[0].style.display = 'block';
     cart_amount[0].innerHTML = tickets.length;
   }
@@ -19,6 +19,7 @@ function doFirst(){
   // 目前新增東西到storage不會觸發該事件聆聽(待解)
 
   // window.addEventListener("storage", function(){
+  //   cart_amount[0].innerHTML = tickets.length;
   // });
 
 
