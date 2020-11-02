@@ -1047,8 +1047,7 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-                <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
               </div>
             </div>
           </li>
@@ -1063,9 +1062,7 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-
-                <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
               </div>
             </div>
           </li>
@@ -1080,10 +1077,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-
-                <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
-              </div>
+                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+                </div>
             </div>
           </li>
           <li>
@@ -1097,10 +1092,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-
-                <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
-              </div>
+                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+                </div>
             </div>
           </li>
           <li>
@@ -1114,10 +1107,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-
-                <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
-                <a href="#" class="jourCommentReport"><img src="./image/journal/journal_element/report.png" alt=""></a>
-              </div>
+                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+                </div>
             </div>
           </li>
         </ul>
@@ -1206,6 +1197,7 @@
     document.getElementById('jourBookOpenBtn').onclick = function () {
       document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
       document.getElementsByClassName("jourLightBox")[0].style.display = "block";
+      document.jourLightBox.style.backgroundColor = "white";
       document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
         document.getElementsByClassName("jourLightBox")[0].style.display = "none";
       }
