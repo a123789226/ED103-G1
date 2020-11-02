@@ -98,6 +98,7 @@
                 </h4>
             </div>
             <div class="adoptInnerSection">
+                <h3 class="adoptStepTitle">Start your adoption now</h3>
                 <div class="adoptAqua">
                     <p>Your adopted aqua: Olivia</p>
                     <img src="./image/journal/journal_dolphin/00.jpg" alt="" u>
@@ -105,30 +106,27 @@
                 <!-- right adopt process -->
                 <!-- step 1 -->
                 <div class="adoptProcessContainer">
-                    <div class="adoptProcessList">
-                        <h4>Start your adoption now</h4>
-                        <div class="adoptTabList">
-                            <div class="done">
-                                <p>1</p>
-                            </div>
-                            <span></span>
-                            <div class="done">
-                                <p>2</p>
-                            </div>
-                            <span></span>
-                            <div class="active">
-                                <p>3</p>
-                            </div>
-                            <span></span>
-                            <div class="">
-                                <p>4</p>
-                            </div>
-                        </div>
-                    </div>
-
-
                     <div class="adoptProcessContents">
                         <div class="adoptTab tab1 -on">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="active">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="adoptConfirmAqua">
                                 <form action="">
                                     <h4>Confirm Your Aqua</h4>
@@ -192,6 +190,25 @@
                         <!-- step 2 -->
                         <!-- <div class="adoptProcessContents"> -->
                         <div class="adoptTab tab2">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
+                                    </div>
+                                </div>
+                            </div>
                             <h4>Your information</h4>
                             <div class="adoptInfo">
                                 <p>Name</p>
@@ -216,6 +233,7 @@
                             </div>
 
                             <div class="adoptProcessStep">
+                                <a href="#" class="adoptBackBtn">BACK</a>
                                 <a href="#" class="adoptProcessBtn">NEXT</a>
                             </div>
                         </div>
@@ -223,6 +241,25 @@
                         <!-- step 3 -->
                         <!-- <div class="adoptProcessContents"> -->
                         <div class="adoptTab tab3">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
+                                    </div>
+                                </div>
+                            </div>
                             <h4>Payment detail</h4>
                             <div class="adoptPaymentSection">
 
@@ -254,6 +291,7 @@
 
 
                             <div class="adoptProcessStep">
+                                <a href="#" class="adoptBackBtn">BACK</a>
                                 <a href="#" class="adoptProcessBtn">NEXT</a>
                             </div>
 
@@ -264,8 +302,26 @@
                         <!-- step 4 -->
                         <!-- <div class="adoptProcessContents"> -->
                         <div class="adoptConfirmSection adoptTab tab4">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>4</p>
+                                    </div>
+                                </div>
+                            </div>
                             <h4>Adoption confirm</h4>
-
                             <div class="adoptConfirmCheck">
                                 <div class="adoptConfirm">
                                     <h5>Adopted Aqua</h5>
@@ -331,8 +387,8 @@
                             </div>
 
                             <div class="adoptProcessStep adoptProcessStepFinal">
-                                <a href="#" class="adoptProcessBtn">REVISE</a>
-                                <a href="javascript:;" id="demo1" class="adoptProcessBtn">ADOPT</a>
+                                <a href="#" class="adoptBackBtn">BACK</a>
+                                <a href="./journal.html" id="demo1" class="adoptProcessBtn">ADOPT</a>
                             </div>
                         </div>
                     </div>
@@ -363,6 +419,18 @@
                 });
                 $(`.adoptTabList li:nth-child(${id}) a`).addClass('-on');
 
+            });
+
+            $('.adoptBackBtn').on('click', function () {
+                $(`.adoptProcessContents .adoptTab:nth-child(${id})`).css({
+                    'display': 'none'
+                });
+                $(`.adoptTabList li a`).removeClass('-on');
+                id -= 1;
+                $(`.adoptProcessContents .adoptTab:nth-child(${id})`).css({
+                    'display': 'block'
+                });
+                $(`.adoptTabList li:nth-child(${id}) a`).addClass('-on');
             });
 
 
