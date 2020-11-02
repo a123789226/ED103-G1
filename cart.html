@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="./js/layout/headerCart.js"></script>
     <title>Cart</title>
 </head>
 <body>
@@ -131,37 +132,37 @@
             <tr>
               <td>Adult(18-64)</td>
               <td>
-                <button class="ticketButton" @click="minusAmount">－</button>
-                <span class="ticketTicketAmount" >{{amount}}</span>
-                <button class="ticketButton" @click="addAmount">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </td>
-              <td>${{price*amount}}</td>
+              <td><span>$</span><span>80</span></td>
               <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove"></td>
             </tr>
             <tr>
               <td>Kid(4-11)</td>
               <td>
-                <button class="ticketButton" @click="minusAmount2">－</button>
-                <span class="ticketTicketAmount" >{{amount2}}</span>
-                <button class="ticketButton" @click="addAmount2">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </td>
-              <td>${{price2*amount2}}</td>
+              <td><span>$</span><span>80</span></td>
               <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove2"></td>
             </tr>
             <tr>
               <td>Elder(65-)</td>
               <td>
-                <button class="ticketButton" @click="minusAmount3">－</button>
-                <span class="ticketTicketAmount" >{{amount3}}</span>
-                <button class="ticketButton" @click="addAmount3">＋</button>
+                <button class="ticketButton"><span>－</span></button>
+                <p class="ticketTicketAmount" >0</p>
+                <button class="ticketButton"><span>＋</span></button>
               </td>
-              <td>${{price3*amount3}}</td>
+              <td><span>$</span><span>80</span></td>
               <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove3"></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>{{price * amount + price2 * amount2 + price3 * amount3}}</span></p>
+      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>123</span></p>
       <a href="ticketPayment.html">
         <button class="ticketToMoneyButton">Go To Payment</button>
       </a>
