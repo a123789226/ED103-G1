@@ -135,11 +135,11 @@
             </tr> -->
             <tr class="priceTr"> 
               <td>Price</td>
-              <td><span>$</span><span>240</span></td>
+              <td><span>$</span><span>0</span></td>
             </tr>
             <tr>
               <td>Discount Points</td>
-              <td><span>0</span><span>&nbsp;points</span></td>
+              <td><span id="point"><?=$_POST["point"]?></span><span>&nbsp;points</span></td>
             </tr>
             <tr>
               <td>Total Price</td>
