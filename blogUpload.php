@@ -102,185 +102,88 @@
       <h4 class="commonSubTitle blogSubTitle">Share Your Story with Aqua Wonderland.</h4>
     </div>
 <!-- 你的code打這下面 -->
-<!-- Log In -->
-<div class="memLogin overlay">
-  <form class="LogInForm" id="LogInForm" method="post">
-    <div class="btn_modal_close">
-      <div></div>
-      <div></div>
+<div class="blogUploadInPhp"></div>
+        <!-- header 的高度 -->
+        <?php
+        session_start();
+        if(isset($_SESSION["memId"])){
+            $errMsg = "";
+            try {
+                require_once("./php/connectBook.php");
+                $pdo->beginTransaction();
+                // 取得上傳檔案數量
+                $fileCount = count($_FILES['upFile']['name']);
+                echo "fileCount = ", $fileCount, "<br>";
+                $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic,
+        			   blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus, blogMark, blogTags)
+                values('{$_SESSION["memNo"]}', :blogTitle, :piGeneralContent,
+                       '', :blogContent1, '', :blogContent2, '', :blogTags, now(), '0' )";
+                $products = $pdo->prepare( $sql );
+                $products -> bindValue(":blogTitle", $_POST["blogTitle"]);
+                $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
+                $products -> bindValue(":blogContent2", $_POST["blogContent2"]);
+                $products -> bindValue(":blogTags", $_POST["blogTags"]);
+                $products -> execute();
+                    //取得自動創號的key值
+                $blogNo = $pdo->lastInsertId();
+
+                foreach ($_FILES["upFile"]["error"] as $i => $errorCode) {
+                //.......確定是否上傳成功
+                    if( $_FILES["upFile"]["error"][$i] == UPLOAD_ERR_OK){
+                        //先檢查images資料夾存不存在
+                        if( file_exists("img") === false){
+                            mkdir("img");
+                        }
+                        //將檔案copy到要放的路徑
+                        // $fileInfoArr = pathinfo($_FILES["upFile"]["name"][$i]);
+                        // $fileName = "{$piNo}_{$i}.{$fileInfoArr["extension"]}";  //8.gif
+                        $fileName = "{$_FILES['upFile']['name'][$i]}";
+                        $from = $_FILES["upFile"]["tmp_name"][$i];
+                        $to = "img/postPhotos/$fileName";
+                            if(copy( $from, $to)===true){
+                            //將檔案名稱寫回資料庫
+                        }else{
+                            $pdo->rollBack();
+                        }
+                    }else{
+                        echo "錯誤代碼 : {$_FILES["upFile"]["error"][$i]} <br>";
+                        echo "新增失敗<br>";
+                    }
+                }//foreach
+
+                $sql = "update blog set blogPic = :blogPic, blogPic1=:blogPic1, blogPic2=:blogPic2 where blogNo = $blogNo";
+                $fileLocation0 = "img/postPhotos/{$_FILES['upFile']['name'][0]}";
+                $fileLocation1 = "img/postPhotos/{$_FILES['upFile']['name'][1]}";
+                $fileLocation2 = "img/postPhotos/{$_FILES['upFile']['name'][2]}";
+                $products = $pdo->prepare($sql);
+                $products -> bindValue(":blogPic", $fileLocation0);
+                $products -> bindValue(":blogPic1", $fileLocation1);
+                $products -> bindValue(":blogPic2", $fileLocation2);
+                $products -> execute();
+                echo $fileLocation0, "<br>";
+                echo $fileLocation1, "<br>";
+                echo $fileLocation2, "<br>";
+                echo "新增成功~";
+
+                $sql = "update member set point = point + :point where memNo = {$_SESSION["memNo"]}";
+
+                $meminfo = $pdo->prepare($sql);
+                $meminfo -> bindValue(":point", $_POST["point"]);
+                $meminfo -> execute();
+                // echo $fileName, "<br>";
+                $pdo->commit();
+                header("Location:./blogPost.php");
+            } catch (PDOException $e) {
+                // $pdo->rollBack();
+                $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+                $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+            }
+            echo $errMsg;
+        }else{
+            echo "您尚未登入，請登入後再發文";
+        }
+        ?>
     </div>
-    <h3 class="memLogTitle">LOG IN</h3>
-    <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-    <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-    <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-    <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-    <div class="memLine">
-      <h5>OR</h5>
-    </div>
-    <p>Don't have an account?</p><br>
-    <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-  </form>
-</div>
-<!-- 部落格發文區塊 -->
-<div class="blogFirstPort">
-    <div class="BlogFirstLeft">
-      <h3>Blog Tips& Get Points</h3>
-          <p>
-            <span>Thanks for visiting Aqua Wonderland. If there's any memorial things here, do not hesitate to post your story and share with anyone else.</span><br>
-            <span>1. What you need to do is to hit the crab in the right side and share your story.</span><br>
-            <span>2. Whenever the story you share, we will reward you 1000 points for your further adoption or discount.</span>
-          </p>
-    </div>
-</div>
-
-<div data-toggle="tooltip" data-placement="top" title="Hit me to post" id="blogCrabTooltip" class="BlogFirstRight">
-  <a href="#" class="blogPostBtn" id="blogPostSectionStart"><img src="./image/blog/photos/crab.png" alt=""></a>
-</div>
-
-
-<!-- 預覽文章 PHP-->
-
-
-<div class="container" class="blogPostSection">
-  <div class="row">
-  <?php
-  try {
-    require_once('./php/connectBook.php');
-    $sql = "select * from blog order by blogTime desc";
-    $products = $pdo->query($sql);
-    $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
-    }catch (PDOException $e){
-      echo "錯誤行號 : " . $e->getLine() . "<br>";
-      echo "錯誤訊息 : " . $e->getMessage() . "<br>";
-      echo "系統暫時連不上請聯絡維護人員";
-    }
-?>
-  <?php
-    foreach($prodRows as $i => $prodRow) {
-      if($i%2 == 0 ){
-      $align = "left";
-      }else{
-      $align = "right";
-      }
-      ?>
-    <div class="col-12 col-md-12 ">
-      <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="./image/blog/photos/blogImg01.jpg" class="card-img blogPostLeft">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title" class="sub_title"><?=$prodRow["blogTitle"]?></h4>
-              <div class="blogMemInfo">
-                <div class="blogMemName"><?=$prodRow["memNo"]?></div>
-                <img src="https://picsum.photos/40/40?random=02" class="blogMemImg">
-                <span>|&nbsp;</span>
-                <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
-              </div>
-              <div class="blogPostPreview">
-                <p class="card-text" class="previewText"><?=$prodRow["blogContent1"]?></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2" class="blogPostRight">
-            <div class="blogIcon">
-              <div class="blogIconCollect">
-                <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum"><?=$prodRow["blogMark"]?></div>
-               </div>
-              </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-          </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <?php
-      }
-      ?>
-  </div>
-</div>
-
-
-<!-- 這是發文區 light box((display: none;)) -->
-  <!--標題＆關閉按鈕  -->
-  <div class="blogPostContainer anim ed animate__fadeIn"  style="display: none; z-index: 999;">
-    <div class="blogPostTitle">
-      <h3>Post your own blog</h3>
-      <div class="blogPostCloseButton">
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  
-  
-  <!-- PO文內容 -->
-  <form class="blogPostForm" action="blogUpload.php" method="post" enctype="multipart/form-data">
-    <label for="blogInsertTitle" class="blogPostOwnTitle">
-      <span class="blogPostTitleFont">Title</span>
-      <input type="text" class="blogPostInputTitle" placeholder="Please insert title">
-    </label>
-    <div class="blogPostTagsSection">
-      <span class="blogPostTagsFont">Tags</span>
-      <div class="blogPostTagsOptions">
-        <div class="blogPostTags">Dolphin</div>
-        <div class="blogPostTags">Whale</div>
-        <div class="blogPostTags">Seal</div>
-        <div class="blogPostTags">Turtle</div>
-        <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogPostTag"/>
-      </div>
-    </div>
-    
-    <div class="blogPostContentSection">
-      <div class="blogPostContentPart1">
-        <label for="img1" class="blogPostWrap" id="blogPostWrapImg1" title="CLICK TO UPLOAD IMAGE">
-          <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg" src="./image/blog/photos/photo.png" alt="" style="width: 100px;height: 100px;"> -->
-            <!-- <div class="blogPostWrapImg"></div> -->
-          <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-            <input class="blogUploadImg" type="file" name="upFile[]" id="img1" accept="image/gif, image/jpeg, image/png">
-          </div>
-        </label>
-      </div>
-      <div class="blogPostContentPart2">
-        <div class="blogPostContentText2" contenteditable="true">
-        <input class="blogPostContentTextInput1" type="hidden" value="" name="blogContent1"/>
-        </div>
-        <label for="img2" class="blogPostWrap" id="blogPostWrapImg2" title="CLICK TO UPLOAD IMAGE">
-          <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
-          <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-          <input class="blogUploadImg" type="file" name="upFile[]" id="img2" accept="image/gif, image/jpeg, image/png">
-          </div>
-        </label>
-        <!-- <input class="blogPostContentText1" type="text"> -->
-       
-      </div>
-      <div class="blogPostContentPart3">
-        <label for="img3" class="blogPostWrap" id="blogPostWrapImg3" title="CLICK TO UPLOAD IMAGE">
-          <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
-            <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-            <input class="blogUploadImg" type="file" name="upFile[]" id="img3" accept="image/gif, image/jpeg, image/png">
-          </div>
-        </label>
-        <div class="blogPostContentText2" contenteditable="true">
-        <input class="blogPostContentTextInput3" type="hidden" value="" name="blogContent2"/>
-        </div>
-      </div>
-    </div>
-    <div class="blogPostSubmitSection">
-    <button type="submit" class="blogPostSubmitBtn">Submit</button>
-    </div>
-  </form>
-  </div>
-
-  <!-- 發文區結束 -->
-
 <!-- 你的code打這上面 -->
 
   </div>
