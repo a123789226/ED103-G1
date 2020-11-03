@@ -746,7 +746,16 @@ div.jourLightBox.-on {
   margin: 0 auto;
   text-align: center;
   padding: 20px 0;
+  display: inline-block;
   // border: 3px solid black;
+}
+
+.adoptAqua input{
+  display: inline-block;
+  padding: 20px 0;
+  width: 100px;
+  margin: 0 10px;
+  height: 30px;
 }
 
 .adoptAqua img {
@@ -802,6 +811,11 @@ div.jourLightBox.-on {
 
 .adoptTabList {
   @include StepBox;
+}
+
+.adoptedAqua{
+  display: inline-block; 
+  padding: 10px;
 }
 
 .adoptProcessContents {
@@ -890,7 +904,7 @@ div.jourLightBox.-on {
 
 
 .adoptProcessBtn,
-.adoptBackBtn {
+.adoptBackBtn{
   @include btn50Green;
   box-shadow: $shadow2;
   margin: 10px 5px;
@@ -905,7 +919,6 @@ div.jourLightBox.-on {
 
   @media screen and (max-width: 676px) {
     padding: 0 15px;
-
   }
 }
 
