@@ -1,7 +1,69 @@
+const now = new Date()
+let time = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+
+let vue_remaining = new Vue({
+  el: '#vue_remaining',
+  data: {
+    date: time,
+    remain: 20,
+  },
+  mounted() {
+    $("#startDate").datepicker({
+      //開始日期為今日
+      startDate: " new date()",
+      format: "yyyy-mm-dd",
+      //特別標註今天
+      todayHighlight: true,
+    }).on(
+      "changeDate", (e) => { this.date = e.format() }
+    );
+
+    // axios.get('/aqua_rem.php', {
+    //   nightDate: '2020-11-01',     
+
+    // })
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    var params = new URLSearchParams();
+    params.append('key', 'value');
+
+    axios.post('../aqua_rem.php', params)
+      .then(function (res) {
+        console.log(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+
+  },
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // document.ready = function () {
-  
+
   //Boat move
   TweenMax.to('.home_boat', 10, {
     xPercent: -800,
@@ -39,12 +101,15 @@
   }
 
   //calendar
-  $(".BoXiang_calendar").datepicker({
-    //開始日期為今日
-    startDate: " new date()",
-    //特別標註今天
-    todayHighlight: true,
-  });
+  // $(".BoXiang_calendar").datepicker({
+  //   //開始日期為今日
+  //   startDate: " new date()",
+  //   format: "yyyy-mm-dd",
+  //   //特別標註今天
+  //   todayHighlight: true,
+  // });
+
+
 
   //Vote Button
   $(".home_vote_btn").click(function () {
@@ -261,3 +326,20 @@ $(window).resize(function () {
   }
 
 });
+
+
+
+
+
+
+  // $('.BoXiang_calendar').datepicker()
+  //   .on('changeDate', function (e) {
+  //     time = e.format();
+  //     console.log(time);
+  //   });
+
+
+
+
+
+
