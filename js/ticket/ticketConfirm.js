@@ -32,8 +32,9 @@ function doFirst(){
   }
 
   let point = document.getElementById('point');
-  console.log(point.innerText)
-  
+  let newTotalPrice = document.getElementById('newTotalPrice');
+  total -= parseInt(point.innerText);
+  newTotalPrice.innerText = total;
   
 }
 

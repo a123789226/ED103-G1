@@ -143,7 +143,7 @@
             </tr>
             <tr>
               <td>Total Price</td>
-              <td><span>$</span><span>0</span></td>
+              <td><span>$</span><span id="newTotalPrice">0</span></td>
             </tr>
           </tbody>
         </table>
