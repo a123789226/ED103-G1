@@ -1,12 +1,15 @@
-const now = new Date()
-let time = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
+let now = new Date();
+let time = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+console.log(time);
 
 let vue_remaining = new Vue({
   el: '#vue_remaining',
   data: {
     date: time,
-    remain: 20,
+    remain_1: 0,
+    remain_2: 0,
+    remain_3: 0,
+    remain_4: 0,
   },
   mounted() {
     $("#startDate").datepicker({
@@ -16,33 +19,47 @@ let vue_remaining = new Vue({
       //特別標註今天
       todayHighlight: true,
     }).on(
-      "changeDate", (e) => { this.date = e.format() }
+      "changeDate", (e) => { this.date = e.format()}
     );
 
-    // axios.get('/aqua_rem.php', {
-    //   nightDate: '2020-11-01',     
-
-    // })
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
     var params = new URLSearchParams();
-    params.append('key', 'value');
+    params.append('nightDate', this.$data.date);
 
-    axios.post('../aqua_rem.php', params)
+    // let bbb = 0;
+    axios.post('aqua_rem.php', params)
       .then(function (res) {
-        console.log(res);
+        console.log(res.data.area1Capacity);
+        vue_remaining.remain_1 = res.data.area1Capacity - res.data.area1Order;
+        vue_remaining.remain_2 = res.data.area2Capacity - res.data.area2Order;
+        vue_remaining.remain_3 = res.data.area3Capacity - res.data.area3Order;
+        vue_remaining.remain_4 = res.data.area4Capacity - res.data.area4Order;
       })
       .catch(function (err) {
         console.log(err);
       });
 
-
+      
   },
+  
+  watch: {
+    date(newValue){
+    var params = new URLSearchParams();
+    params.append('nightDate', newValue);
+
+    // let bbb = 0;
+    axios.post('aqua_rem.php', params)
+      .then(function (res) {
+        console.log(vue_remaining.remain_1);
+        vue_remaining.remain_1 = res.data.area1Capacity - res.data.area1Order;
+        vue_remaining.remain_2 = res.data.area2Capacity - res.data.area2Order;
+        vue_remaining.remain_3 = res.data.area3Capacity - res.data.area3Order;
+        vue_remaining.remain_4 = res.data.area4Capacity - res.data.area4Order;
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    }
+  }
 
 
 
