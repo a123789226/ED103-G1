@@ -42,6 +42,7 @@ $name = explode(",",$_GET['name']);
     <title>AQUA WONDERLAND</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/journal/adopt.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -135,7 +136,7 @@ $name = explode(",",$_GET['name']);
                     <h3 class="adoptStepTitle">Start Your Adoption</h3>
                 
                     <div class="adoptAqua">
-                        <p style="display: inline-block;">Your adopted aqua: <?=$name[0]?></p>
+                        <p style="display: inline-block;" id="adoptAquaName">Your adopted aqua: <?=$name[0]?></p>
                         <img src="<?=$name[1]?>" alt="">
                     </div>
                     <!-- right adopt process -->
@@ -205,8 +206,8 @@ $name = explode(",",$_GET['name']);
                                     </div> -->
 
                                     <div class="adoptAmountSection">
-                                        <label class="adoptSelfAmountType" for="hund5">
-                                            <input type="radio" name="amountType" id="hund5">$<input type="text">
+                                        <label class="adoptSelfAmountType" for="adoptAmount">
+                                        $<input type="text" name="amountType" id="adoptAmount">
                                         </label>
                                     </div>
                                 </div>
@@ -244,24 +245,24 @@ $name = explode(",",$_GET['name']);
                                 <h4>Your information</h4>
                                 <div class="adoptInfo">
                                     <p>Name</p>
-                                    <input type="text" name="firstname" placeholder="first name" id="adoptfirstname">
-                                    <input type="text" name="lastname" placeholder="last name" id="adoptlastname">
+                                    <input type="text" name="firstname" placeholder="first name" id="adoptFirstname">
+                                    <input type="text" name="lastname" placeholder="last name" id="adoptLastname">
                                 </div>
 
                                 <div class="adoptInfo">
                                     <p>Email</p>
-                                    <input type="text" name="email" id="adoptemail">
+                                    <input type="text" name="email" id="adoptEmail">
                                     <h6>*Your receipt will be emailed here</h6>
                                 </div>
 
                                 <div class="adoptInfo">
                                     <p>Phone number</p>
-                                    <input type="number" name="phone" id="adoptphone">
+                                    <input type="number" name="phone" id="adoptPhone">
                                 </div>
 
                                 <div class="adoptInfo">
                                     <p>Leave message to Aqua</p>
-                                    <textarea name="adoptmessage" id="adoptmessage" cols="44" rows="6"></textarea>
+                                    <textarea name="adoptmessage" id="adoptMessage" cols="44" rows="6"></textarea>
                                 </div>
 
                                 <div class="adoptProcessStep">
@@ -357,13 +358,13 @@ $name = explode(",",$_GET['name']);
                                     <div class="adoptConfirm">
                                         <h5>Adopted Aqua</h5>
                                         <!-- <input type="text"> -->
-                                        <p></p>
+                                        <p id="adoptAquaNameResult"></p>
                                     </div>
 
                                     <div class="adoptConfirm">
                                         <h5>Adopt amount</h5>
                                         <!-- <input type="text"> -->
-                                        <p></p>
+                                        <p id="adoptAmountResult"></p>
                                     </div>
                                 </div>
 
@@ -372,30 +373,31 @@ $name = explode(",",$_GET['name']);
                                     <div class="adoptConfirm">
                                         <h5>Your information</h5>
                                         <div class="adoptInfo">
-                                            <p>Name</p>
                                             <!-- <input type="text" placeholder="first name"> -->
-                                            <p></p>
+                                            <p>First name:</p> 
+                                            <p id="adoptFirstnameResult"></p>
                                             <!-- <input type="text" placeholder="last name"> -->
-                                            <p></p>
+                                            <p>Last name:</p>
+                                            <p id="adoptLastnameResult"></p>
                                         </div>
 
                                         <div class="adoptInfo">
                                             <p>Email</p>
                                             <!-- <input type="text"> -->
-                                            <p></p>
+                                            <p id="adoptEmailResult"></p>
                                             <h6 class="adoptReceipt">*Your receipt will be emailed here</h6>
                                         </div>
 
                                         <div class="adoptInfo">
                                             <p>Phone number</p>
                                             <!-- <input type="text"> -->
-                                            <p></p>
+                                            <p id="adoptPhoneResult"></p>
                                         </div>
 
                                         <div class="adoptInfo">
                                             <p>Leave message to Aqua</p>
                                             <!-- <textarea name="adoptmessage" id="adoptmessage" cols="23" rows="6"></textarea> -->
-                                            <p></p>
+                                            <p id="adoptMessageResult"></p>
                                         </div>
                                     </div>
 
