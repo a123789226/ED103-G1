@@ -469,8 +469,8 @@
   }
   
   .puzzles-content.show {
-    -webkit-animation: fadeIn 2s forwards;
-            animation: fadeIn 2s forwards;
+    -webkit-animation: puzzle_fadeIn 2s forwards;
+            animation: puzzle_fadeIn 2s forwards;
     -webkit-animation-delay: 2.5s;
             animation-delay: 2.5s;
   }
@@ -1069,7 +1069,7 @@
     }
   }
   
-  @-webkit-keyframes fadeIn {
+  @-webkit-keyframes puzzle_fadeIn {
     from {
       opacity: 0;
       -webkit-transform: translateX(0px);
@@ -1082,7 +1082,7 @@
     }
   }
   
-  @keyframes fadeIn {
+  @keyframes puzzle_fadeIn {
     from {
       opacity: 0;
       -webkit-transform: translateX(0px);
