@@ -235,7 +235,9 @@
   /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
   opacity: 0;
   z-index: -1;
-  transition: opacity 0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+
 }
 
 .tour_overlay1.-on{
@@ -318,7 +320,8 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .tour_overlay2.-on{
@@ -378,7 +381,8 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .tour_overlay3.-on{
@@ -428,7 +432,7 @@
 
 
 
-//場館介紹 -- Sea turtle 館
+//場館介紹 -- turtle 館
 .tour_overlay4{
   position: fixed;
   top: 0;
@@ -438,7 +442,8 @@
   background-color: hsla(0, 0%, 0%, .5);
   opacity: 0;
   z-index: -1;
-  transition: opacity 0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .tour_overlay4.-on{
@@ -503,6 +508,9 @@
     height:auto;
     overflow: hidden;
     transition: 0.5s ease-in-out;
+    .tour_slide_word{
+      display:none;
+    }
     .tour_content{
       // border:5px solid blue;
       position: relative;
@@ -519,6 +527,9 @@
         flex: 0 1 40%;
         border-radius: 6px;
         box-shadow: $shadow;
+        img{
+          border-radius: 6px;
+        }
       }
       .tour_word {
         background-color: white;
@@ -535,9 +546,8 @@
         overflow: auto;
         h4 {
           @include sub_title($keyBlack);
-          margin:0 auto;
-          padding-right:4px;
-          padding-left:4px;
+          padding-right:10px;
+          padding-left:10px;
           margin-top: 20px;
           margin-bottom: 20px;
         }
@@ -564,8 +574,8 @@
         }      
           p{
             @include text($textBlack);
-            padding-right:4px;
-            padding-left:4px;
+            padding-right:10px;
+            padding-left:10px;
         }
       }
     }
@@ -666,6 +676,29 @@
       filter: brightness(1);
       margin-left:10px;
       margin-bottom:10px;
+      .tour_slide_word{
+        display:block;
+        // border:5px solid red;
+        position: absolute;
+        bottom:70px;
+        padding:50px;
+        h4{
+          @include sub_title($keyWhite);
+          font-weight: bold;
+        }
+        p{
+          @include text($keyWhite);
+          padding-top:20px;
+          padding-bottom:20px;
+          font-weight: bold;
+        }
+          .tour_row_button3{
+            @include btn36Yellow;
+            box-shadow: $shadow2;
+            display:block;
+            margin:0px auto;
+        }    
+      }
       // &:hover{       
       //   flex-grow:4;
       //   filter: brightness(1);
@@ -689,7 +722,6 @@
           max-height: 100%;
           h4{
             // border:5px solid yellow;
-            margin:0 auto;
           }
           p{
             display:block;
@@ -744,6 +776,29 @@
           cursor: pointer;  
           transition: 0s; 
           margin: 20px; 
+          .tour_slide_word{
+            display:block;
+            // border:5px solid red;
+            position: absolute;
+            bottom:70px;
+            padding:50px;
+            h4{
+              @include sub_title($keyWhite);
+              font-weight: bold;
+            }
+            p{
+              @include text($keyWhite);
+              padding-top:20px;
+              padding-bottom:20px;
+              font-weight: bold;
+            }
+              .tour_row_button3{
+                @include btn36Yellow;
+                box-shadow: $shadow2;
+                display:block;
+                margin:0px auto;
+            }
+          }
           .tour_content {
               // border:5px solid yellow;
               margin: 0px auto;
@@ -761,7 +816,6 @@
               }
               .tour_word {
                 // border:5px solid deeppink;
-                  margin:0 auto;
                   padding:20px 10px 10px 10px;
                   line-height: 5px;
                   .btn_modal{
@@ -826,6 +880,29 @@
       margin: 20px;
       cursor: pointer;
       transition: 0s; 
+      .tour_slide_word{
+        display:block;
+        // border:5px solid red;
+        position: absolute;
+        bottom:10px;
+        padding:30px;
+        h4{
+          @include sub_title($keyWhite);
+          font-weight: bold;
+        }
+        p{
+          @include text($keyWhite);
+          padding-top:20px;
+          padding-bottom:20px;
+          font-weight: bold;
+        }
+          .tour_row_button3{
+            @include btn36Yellow;
+            box-shadow: $shadow2;
+            display:block;
+            margin:0px auto;
+        }
+      }
       .tour_content{
         display:block;
         .tour_headerimg{
@@ -888,6 +965,29 @@
       opacity:1; 
       cursor: pointer;
       margin: 20px;
+      .tour_slide_word{
+        display:block;
+        // border:5px solid red;
+        position: absolute;
+        bottom:0px;
+        padding:30px;
+        h4{
+          @include sub_title($keyWhite);
+          font-weight: bold;
+        }
+        p{
+          @include text12($keyWhite);
+          padding-top:20px;
+          padding-bottom:20px;
+          font-weight: bold;
+        }
+          .tour_row_button3{
+            @include btn36Yellow;
+            box-shadow: $shadow2;
+            display:block;
+            margin:0px auto;
+        }
+      }      
       .tour_content{
         margin:0 auto;
         display:block;

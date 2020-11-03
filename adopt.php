@@ -99,8 +99,8 @@
                 <div class="adoptInnerSection">
                     <h3 class="adoptStepTitle">Start Your Adoption</h3>
                     <div class="adoptAqua">
-                        <p style="display: inline-block;">Your adopted aqua:</p><input type="text" name="adoptedAqua" maxlength="20">
-                        <img src="./image/journal/journal_dolphin/00.jpg" alt="">
+                        <p>Your adopted aqua: Olivia</p>
+                        <img src="./image/journal/journal_dolphin/00.jpg" alt="" u>
                     </div>
                     <!-- right adopt process -->
                     <!-- step 1 -->
@@ -317,6 +317,18 @@
                                         </div>
                                     </div>
                                 </div>
+<?php
+    echo "<h5>Adopted Aqua</h5>", $_POST["adoptedAqua"];
+    echo "<h5>Adopt amount</h5>", $_POST["amountType"];
+    echo "<p>Name</p>", $_POST["firstname"],$_POST["lastname"];
+    echo "<p>Email</p>", $_POST["email"];
+    echo "<p>Phone number</p>", $_POST["phone"];
+    echo "<p>Leave message to Aqua</p>", $_POST["adoptmessage"];
+    echo "<p>Name on card</p>", $_POST["cardname"];
+    echo "<p>Card number</p>", $_POST["cardnumber"];
+    echo "<p>Expiry date</p>", $_POST["carddate"];
+    echo "<p>Security code</p>", $_POST["cardcode"];  
+?>
                                 <h4>Adoption confirm</h4>
                                 <div class="adoptConfirmCheck">
                                     <div class="adoptConfirm">

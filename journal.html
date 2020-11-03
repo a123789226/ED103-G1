@@ -769,11 +769,11 @@
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 
+  <div class="jour_bk"></div>
 
 
 
   <!-- Lightbox -->
-
   <div class="jourLightBox animate__animated animate__fadeIn">
     <!-- close lightbox -->
     <div class="closeLightbox jourBookOpenBtn_close">
@@ -977,7 +977,7 @@
 
       </div>
       <div class="jourToAdopt">
-        <a href="./adopt.html" class="jourLightboxBtn">ADOPT</a>
+        <a href="./adopt.html"><button class=" jourLightboxBtn">ADOPT</button></a>
       </div>
       <p class="jourAdopterSection">Current Adopter</p>
       <div class="jourAdopterPhoto">
@@ -1077,8 +1077,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
-                </div>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+              </div>
             </div>
           </li>
           <li>
@@ -1092,8 +1092,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
-                </div>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+              </div>
             </div>
           </li>
           <li>
@@ -1107,8 +1107,8 @@
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">What an impressice journal. Olivia is cute, and I hope she will recover
                   soon.</h5>
-                  <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
-                </div>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+              </div>
             </div>
           </li>
         </ul>
@@ -1197,13 +1197,15 @@
     document.getElementById('jourBookOpenBtn').onclick = function () {
       document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
       document.getElementsByClassName("jourLightBox")[0].style.display = "block";
-      document.jourLightBox.style.backgroundColor = "white";
       document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
         document.getElementsByClassName("jourLightBox")[0].style.display = "none";
       }
     };
   </script>
 
+<script>
+  $('.jour_bk').css({'display':'none'});
+</script>
 
 
   <!-- lightbox adopt-->

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
-    <title>TicketPayment</title>
+    <script src="./js/layout/headerCart.js"></script>
+    <script src="./js/ticket/ticketPayment.js"></script>
+    <title>Aqua Wonderland</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
@@ -137,16 +138,16 @@
           <label>SECURITY CODE</label><input type="text">
         </div>
         <div class="inputBox">
-          <p>TICKET PRICE</p><p>${{price}}</p>
+          <p>TICKET PRICE</p><p><span>$</span><span id="ticketTotal">0</span></p>
         </div>
         <div class="inputBox">
-          <p>YOUR POINT</p><p>5000 Points</p>
+          <p>YOUR POINT</p><p><span id="points">300</span><span>&nbsp;Points</span></p>
         </div>
         <div class="inputBox">
-          <label>DISCOUNT POINT</label><input type="text" v-model="point"><button class="discountQuestion">?</button>
+          <label>DISCOUNT POINT</label><input type="text" id="typePoints"><button class="discountQuestion">?</button>
         </div>
         <div class="inputBox">
-          <p>TOTAL PRICE</p><p>${{price-point}}</p>
+          <p>TOTAL PRICE</p><p><span>$&nbsp;</span><span id="newTotalPrice">0</span></p>
         </div>
         <div class="payButtonBox">
           <!-- <a href="cart.html">
@@ -186,17 +187,6 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    new Vue({
-      el: '#app',
-      data: {
-        price: 270,
-        point: 0,
-      },
-      methods: {
-
-      }
-    });
-
 
     //jquery
 
