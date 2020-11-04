@@ -66,14 +66,20 @@ function doFirst(){
   let fixedTotalPrice = total;
   typePoints.addEventListener('blur', function(){
     if(parseInt(this.value) > parseInt(points.innerText)){
-      this.value = '';
+      this.value = 0;
+      total = fixedTotalPrice;
+      newTotalPrice.innerText = total;
       swal("Warning!", "The number of points entered cannot exceed the number of points you own!", "warning");
     }else if(parseInt(this.value) > fixedTotalPrice){
-      this.value = '';
+      this.value = 0;
+      total = fixedTotalPrice;
+      newTotalPrice.innerText = total;
       swal("Warning!", "The number of points you entered has exceeded the discount range of the amount!", "warning");
     }else if(this.value == ''){
       //輸入空值的情況
-      this.value = '';
+      this.value = 0;
+      total = fixedTotalPrice;
+      newTotalPrice.innerText = total;
     }else{
       //input重新輸入值時，total需校正回來
       total = fixedTotalPrice;

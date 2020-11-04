@@ -126,7 +126,7 @@
           <img src="./image/ticket/ticketCheck.svg" alt="">
         </div>
       </div>
-      <form class="paymentBlock" action="ticketConfirm.html">
+      <form class="paymentBlock" action="ticketConfirm.php" method="POST">
 
         <div class="inputBox">
           <label>CARD NUMBER</label><input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">
@@ -144,7 +144,7 @@
           <p>YOUR POINT</p><p><span id="points">300</span><span>&nbsp;Points</span></p>
         </div>
         <div class="inputBox">
-          <label>DISCOUNT POINT</label><input type="text" id="typePoints"><button class="discountQuestion">?</button>
+          <label>DISCOUNT POINT</label><input type="text" id="typePoints" name="point" value="0"><button class="discountQuestion">?</button>
         </div>
         <div class="inputBox">
           <p>TOTAL PRICE</p><p><span>$&nbsp;</span><span id="newTotalPrice">0</span></p>

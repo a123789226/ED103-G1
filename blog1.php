@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
     <script src  ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Aqua Blog</title>
@@ -114,7 +118,7 @@
       <h5>OR</h5>
     </div>
     <p>Don't have an account?</p><br>
-    <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
   </form>
 </div>
 <!-- 部落格發文區塊 -->
@@ -133,9 +137,32 @@
   <a href="#" class="blogPostBtn" id="blogPostSectionStart"><img src="./image/blog/photos/crab.png" alt=""></a>
 </div>
 
-<!-- 預覽文章 -->
+
+<!-- 預覽文章 PHP-->
+
+
 <div class="container" class="blogPostSection">
   <div class="row">
+  <?php
+  try {
+    require_once('./php/connectBook.php');
+    $sql = "select * from blog order by blogTime desc";
+    $products = $pdo->query($sql);
+    $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
+    }catch (PDOException $e){
+      echo "錯誤行號 : " . $e->getLine() . "<br>";
+      echo "錯誤訊息 : " . $e->getMessage() . "<br>";
+      echo "系統暫時連不上請聯絡維護人員";
+    }
+?>
+  <?php
+    foreach($prodRows as $i => $prodRow) {
+      if($i%2 == 0 ){
+      $align = "left";
+      }else{
+      $align = "right";
+      }
+      ?>
     <div class="col-12 col-md-12 ">
       <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
         <div class="row no-gutters">
@@ -144,15 +171,15 @@
           </div>
           <div class="col-md-6">
             <div class="card-body">
-              <h4 class="card-title" class="sub_title">Amazing Trip</h4>
+              <h4 class="card-title" class="sub_title"><?=$prodRow["blogTitle"]?></h4>
               <div class="blogMemInfo">
-                <div class="blogMemName">By Tony Stark</div>
+                <div class="blogMemName"><?=$prodRow["memNo"]?></div>
                 <img src="https://picsum.photos/40/40?random=02" class="blogMemImg">
                 <span>|&nbsp;</span>
-                <div class="blogMemDate">Oct 18 2020</div>
+                <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
               </div>
               <div class="blogPostPreview">
-                <p class="card-text" >Get up-close encounters with some of the world’s most fascinating underwater life as you pay a visit to this beautiful abode to marine life. Considered one of the biggest and best aquariums in the world, Okinawa Churaumi Aquarium houses 740 species including the gigantic whale shark.</p>
+                <p class="card-text" class="previewText"><?=$prodRow["blogContent1"]?></p>
               </div>
             </div>
           </div>
@@ -162,7 +189,7 @@
                 <div class="blogPostCollected">
                    <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
                    <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum">12</div>
+                   <div class="blogPostCollectNum"><?=$prodRow["blogMark"]?></div>
                </div>
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
@@ -172,181 +199,16 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- 預覽文章 -->
-<div class="container" class="blogPostSection">
-  <div class="row">
-    <div class="col-12 col-md-12 ">
-      <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="./image/blog/photos/blogImg02.jpg" class="card-img blogPostLeft">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title" class="sub_title">Safe these Creature!!!</h4>
-              <div class="blogMemInfo">
-                <div class="blogMemName">By Black Widow</div>
-                <img src="https://picsum.photos/40/40?random=74" class="blogMemImg">
-                <span>|&nbsp;</span>
-                <div class="blogMemDate">Oct 5 2020</div>
-              </div>
-              <div class="blogPostPreview">
-                <p class="card-text" >More than 100,000 underwater animals can be observed at S.E.A. Aquarium which promises a marine life experience that won’t soon be forgotten. With over 50 different habitats, each experience is different and more exciting than the next.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2" class="blogPostRight">
-            <div class="blogIcon">
-              <div class="blogIconCollect">
-                <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum">25</div>
-               </div>
-              </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-          </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 預覽文章 -->
-<div class="container" class="blogPostSection">
-  <div class="row">
-    <div class="col-12 col-md-12 ">
-      <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="./image/blog/photos/blogImgWrong.jpeg" class="card-img blogPostLeft">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title" class="sub_title">Ｗelcome to Asgard</h4>
-              <div class="blogMemInfo">
-                <div class="blogMemName">By Thor</div>
-                <img src="https://picsum.photos/40/40?random=04" class="blogMemImg">
-                <span>|&nbsp;</span>
-                <div class="blogMemDate">Sep 28 2020</div>
-              </div>
-              <div class="blogPostPreview">
-                <p class="card-text" >Asgard, Old Norse Ásgardr, in Norse mythology, the dwelling place of the gods, comparable to the Greek Mount Olympus. Legend divided Asgard into 12 or more realms, including Valhalla, the home of Odin and the abode of heroes slain in earthly battle; Thrudheim, the realm of Thor; and Breidablik, the home of Balder.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2" class="blogPostRight">
-            <div class="blogIcon">
-              <div class="blogIconCollect">
-                <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum">1</div>
-               </div>
-              </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-          </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 預覽文章 -->
-<div class="container" class="blogPostSection">
-  <div class="row">
-    <div class="col-12 col-md-12 ">
-      <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="./image/blog/photos/blogImg03.jpg" class="card-img blogPostLeft">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title" class="sub_title">The BEST night to get along with.</h4>
-              <div class="blogMemInfo">
-                <div class="blogMemName">By Captain America</div>
-                <img src="https://picsum.photos/40/40?random=06" class="blogMemImg">
-                <span>|&nbsp;</span>
-                <div class="blogMemDate">Sep 17 2020</div>
-              </div>
-              <div class="blogPostPreview">
-                <p class="card-text" >Not only is it home to the world’s largest collection of sand sharks, but the Dubai Aquarium & Underwater Zoo houses the world’s largest suspended aquarium. Enjoy this experience via behind the scenes access or through a glass-bottom boat tour with submersible simulator features.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2" class="blogPostRight">
-            <div class="blogIcon">
-              <div class="blogIconCollect">
-                <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum">89</div>
-               </div>
-              </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-          </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 預覽文章 -->
-<div class="container" class="blogPostSection">
-  <div class="row">
-    <div class="col-12 col-md-12 ">
-      <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="./image/blog/photos/blogImg04.jpg" class="card-img blogPostLeft">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title" class="sub_title">Turtles are so lovely!!!</h4>
-              <div class="blogMemInfo">
-                <div class="blogMemName">By Black Panther</div>
-                <img src="https://picsum.photos/40/40?random=08" class="blogMemImg">
-                <span>|&nbsp;</span>
-                <div class="blogMemDate">Sep 8 2020</div>
-              </div>
-              <div class="blogPostPreview">
-                <p class="card-text" >A vast variety of fish, amphibians, and corals of all colors await you at this must-see aquarium in Chengdu. Ramp up your sense of adventure by choosing one of the diving attractions or enjoy a quiet walk with family and friends while observing the vast marine life on display.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2" class="blogPostRight">
-            <div class="blogIcon">
-              <div class="blogIconCollect">
-                <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
-                   <div class="blogPostCollectNum">43</div>
-               </div>
-              </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-          </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php
+      }
+      ?>
   </div>
 </div>
 
 
 <!-- 這是發文區 light box((display: none;)) -->
   <!--標題＆關閉按鈕  -->
-  <div class="blogPostContainer animate__animated animate__fadeIn"  style="display: none; z-index: 999;">
+  <div class="blogPostContainer anim ed animate__fadeIn"  style="display: none; z-index: 999;">
     <div class="blogPostTitle">
       <h3>Post your own blog</h3>
       <div class="blogPostCloseButton">
@@ -357,7 +219,7 @@
   
   
   <!-- PO文內容 -->
-  <form class="blogPostForm" action="">
+  <form class="blogPostForm" action="blogUpload.php" method="post" enctype="multipart/form-data">
     <label for="blogInsertTitle" class="blogPostOwnTitle">
       <span class="blogPostTitleFont">Title</span>
       <input type="text" class="blogPostInputTitle" placeholder="Please insert title">
@@ -369,6 +231,7 @@
         <div class="blogPostTags">Whale</div>
         <div class="blogPostTags">Seal</div>
         <div class="blogPostTags">Turtle</div>
+        <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogPostTag"/>
       </div>
     </div>
     
@@ -379,17 +242,19 @@
           <!-- <img class="blogPostWrapImg" src="./image/blog/photos/photo.png" alt="" style="width: 100px;height: 100px;"> -->
             <!-- <div class="blogPostWrapImg"></div> -->
           <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-            <input class="blogUploadImg" type="file" name="img1" id="img1">
+            <input class="blogUploadImg" type="file" name="upFile[]" id="img1" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
       </div>
       <div class="blogPostContentPart2">
-        <div class="blogPostContentText2" contenteditable="true"></div>
+        <div class="blogPostContentText2" contenteditable="true">
+        <input class="blogPostContentTextInput1" type="hidden" value="" name="blogContent1"/>
+        </div>
         <label for="img2" class="blogPostWrap" id="blogPostWrapImg2" title="CLICK TO UPLOAD IMAGE">
           <div class="blogPostBox">
           <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
           <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-          <input class="blogUploadImg" type="file" name="img1" id="img2">
+          <input class="blogUploadImg" type="file" name="upFile[]" id="img2" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
         <!-- <input class="blogPostContentText1" type="text"> -->
@@ -400,10 +265,12 @@
           <div class="blogPostBox">
           <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
             <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
-            <input class="blogUploadImg" class="blogInsertTextZone" type="file" name="img1" id="img3">
+            <input class="blogUploadImg" type="file" name="upFile[]" id="img3" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
-        <div class="blogPostContentText3" contenteditable="true"></div>
+        <div class="blogPostContentText2" contenteditable="true">
+        <input class="blogPostContentTextInput3" type="hidden" value="" name="blogContent2"/>
+        </div>
       </div>
     </div>
     <div class="blogPostSubmitSection">
@@ -598,4 +465,3 @@ function changed(e) {
 </div>
 </body>
 </html>
-

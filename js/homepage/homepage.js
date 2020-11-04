@@ -1,7 +1,86 @@
+let now = new Date();
+let time = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+console.log(time);
+
+let vue_remaining = new Vue({
+  el: '#vue_remaining',
+  data: {
+    date: time,
+    remain_1: 0,
+    remain_2: 0,
+    remain_3: 0,
+    remain_4: 0,
+  },
+  mounted() {
+    $("#startDate").datepicker({
+      //開始日期為今日
+      startDate: " new date()",
+      format: "yyyy-mm-dd",
+      //特別標註今天
+      todayHighlight: true,
+    }).on(
+      "changeDate", (e) => { this.date = e.format()}
+    );
+
+    var params = new URLSearchParams();
+    params.append('nightDate', this.$data.date);
+
+    // let bbb = 0;
+    axios.post('aqua_rem.php', params)
+      .then(function (res) {
+        console.log(res.data.area1Capacity);
+        vue_remaining.remain_1 = res.data.area1Capacity - res.data.area1Order;
+        vue_remaining.remain_2 = res.data.area2Capacity - res.data.area2Order;
+        vue_remaining.remain_3 = res.data.area3Capacity - res.data.area3Order;
+        vue_remaining.remain_4 = res.data.area4Capacity - res.data.area4Order;
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+      
+  },
+  
+  watch: {
+    date(newValue){
+    var params = new URLSearchParams();
+    params.append('nightDate', newValue);
+
+    // let bbb = 0;
+    axios.post('aqua_rem.php', params)
+      .then(function (res) {
+        console.log(vue_remaining.remain_1);
+        vue_remaining.remain_1 = res.data.area1Capacity - res.data.area1Order;
+        vue_remaining.remain_2 = res.data.area2Capacity - res.data.area2Order;
+        vue_remaining.remain_3 = res.data.area3Capacity - res.data.area3Order;
+        vue_remaining.remain_4 = res.data.area4Capacity - res.data.area4Order;
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    }
+  }
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // document.ready = function () {
-  
+
   //Boat move
   TweenMax.to('.home_boat', 10, {
     xPercent: -800,
@@ -39,12 +118,15 @@
   }
 
   //calendar
-  $(".BoXiang_calendar").datepicker({
-    //開始日期為今日
-    startDate: " new date()",
-    //特別標註今天
-    todayHighlight: true,
-  });
+  // $(".BoXiang_calendar").datepicker({
+  //   //開始日期為今日
+  //   startDate: " new date()",
+  //   format: "yyyy-mm-dd",
+  //   //特別標註今天
+  //   todayHighlight: true,
+  // });
+
+
 
   //Vote Button
   $(".home_vote_btn").click(function () {
@@ -261,3 +343,20 @@ $(window).resize(function () {
   }
 
 });
+
+
+
+
+
+
+  // $('.BoXiang_calendar').datepicker()
+  //   .on('changeDate', function (e) {
+  //     time = e.format();
+  //     console.log(time);
+  //   });
+
+
+
+
+
+
