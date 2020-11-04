@@ -356,13 +356,13 @@ $name = explode(",",$_GET['name']);
                                 <h4>ADOPTION CONFIRM</h4>
                                 <div class="adoptConfirmCheck">
                                     <div class="adoptConfirm">
-                                        <h5>Adopted Aqua</h5>
+                                        <h5>ADOPTED AQUA</h5>
                                         <!-- <input type="text"> -->
                                         <p id="adoptAquaNameResult"></p>
                                     </div>
 
                                     <div class="adoptConfirm">
-                                        <h5>Adopt Amount</h5>
+                                        <h5>ADOPT AMOUNT</h5>
                                         <!-- <input type="text"> -->
                                         <label class="adoptFrontTitle" for="adoptAmount">$</label>
                                         <p id="adoptAmountResult"></p>

@@ -1212,8 +1212,6 @@
 
   <!-- lightbox adopt-->
 
-
-  //
   <!-- adopt-->
   <script>
     id = 1;
