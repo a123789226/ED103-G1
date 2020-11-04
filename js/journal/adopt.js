@@ -56,6 +56,38 @@ function doFirst(){
         adoptMessageResult.innerText = adoptMessage.value;
      });
 
+      //CardName
+      let adoptCardname = document.getElementById('adoptCardname');
+      let adoptCardnameResult = document.getElementById('adoptCardnameResult');
+  
+      adoptCardname.addEventListener('blur', function(){
+        adoptCardnameResult.innerText = adoptCardname.value;
+      });
+
+       //CardNumber
+       let adoptCardnumber = document.getElementById('adoptCardnumber');
+       let adoptCardnumberResult = document.getElementById('adoptCardnumberResult');
+   
+       adoptCardnumber.addEventListener('blur', function(){
+        adoptCardnumberResult.innerText = adoptCardnumber.value;
+       });
+
+       //Carddate
+       let adoptCarddate = document.getElementById('adoptCarddate');
+       let adoptCarddateResult = document.getElementById('adoptCarddateResult');
+   
+       adoptCarddate.addEventListener('blur', function(){
+        adoptCarddateResult.innerText = adoptCarddate.value;
+       });
+
+       //Cardcode
+       let adoptCardcode = document.getElementById('adoptCardcode');
+       let adoptCardcodeResult = document.getElementById('adoptCardcodeResult');
+   
+       adoptCardcode.addEventListener('blur', function(){
+        adoptCardcodeResult.innerText = adoptCardcode.value;
+       });
+
 
 
 }

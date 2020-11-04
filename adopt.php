@@ -189,7 +189,7 @@ $name = explode(",",$_GET['name']);
                                 </div>
 
                                 <div class="adoptConfirmAmount">
-                                    <h4>Adopt amount</h4>
+                                    <h4>ADOPT AMOUNT</h4>
                                     <!-- <div class="adoptAmountSection">
                                         <label class="adoptAmountType" for="hund">
                                             <input type="radio" name="amountType" checked="checked" id="hund">$100
@@ -206,9 +206,9 @@ $name = explode(",",$_GET['name']);
                                     </div> -->
 
                                     <div class="adoptAmountSection">
-                                        <label class="adoptSelfAmountType" for="adoptAmount">
-                                        $<input type="text" name="amountType" id="adoptAmount">
-                                        </label>
+                                        <label class="adoptFrontTitle" for="adoptAmount">$</label>
+                                        <input type="text" name="amountType" id="adoptAmount">
+                                        
                                     </div>
                                 </div>
                                 <div class="adoptProcessStep">
@@ -242,26 +242,26 @@ $name = explode(",",$_GET['name']);
                                         </div>
                                     </div>
                                 </div>
-                                <h4>Your information</h4>
+                                <h4>YOUR INFORMATION</h4>
                                 <div class="adoptInfo">
-                                    <p>Name</p>
+                                <label class="adoptFrontTitle">Name</label>
                                     <input type="text" name="firstname" placeholder="first name" id="adoptFirstname">
                                     <input type="text" name="lastname" placeholder="last name" id="adoptLastname">
                                 </div>
 
                                 <div class="adoptInfo">
-                                    <p>Email</p>
+                                <label class="adoptFrontTitle" for="adoptEmail">Email</label>
                                     <input type="text" name="email" id="adoptEmail">
                                     <h6>*Your receipt will be emailed here</h6>
                                 </div>
 
                                 <div class="adoptInfo">
-                                    <p>Phone number</p>
+                                <label class="adoptFrontTitle" for="adoptPhone">Phone number</label>
                                     <input type="number" name="phone" id="adoptPhone">
                                 </div>
 
                                 <div class="adoptInfo">
-                                    <p>Leave message to Aqua</p>
+                                <label class="adoptFrontTitle" for="adoptMessage">Leave message to Aqua</label>
                                     <textarea name="adoptmessage" id="adoptMessage" cols="44" rows="6"></textarea>
                                 </div>
 
@@ -293,7 +293,7 @@ $name = explode(",",$_GET['name']);
                                         </div>
                                     </div>
                                 </div>
-                                <h4>Payment detail</h4>
+                                <h4>PAYMENT DETIAL</h4>
                                 <div class="adoptPaymentSection">
 
                                     <!-- <div class="adoptPayment">
@@ -302,22 +302,22 @@ $name = explode(",",$_GET['name']);
                                     </div> -->
 
                                     <div class="adoptPayment">
-                                        <p>Name on card</p>
+                                         <label class="adoptFrontTitle" for="adoptCardname">Name on Card</label>
                                         <input type="text" name="cardname" id="adoptCardname">
                                     </div>
 
                                     <div class="adoptPayment">
-                                        <p>Card number</p>
+                                        <label class="adoptFrontTitle" for="adoptCardnumber">Card Number</label>
                                         <input type="number" name="cardnumber" id="adoptCardnumber">
                                     </div>
 
                                     <div class="adoptPayment">
-                                        <p>Expiry date</p>
+                                        <label class="adoptFrontTitle" for="adoptCarddate">Effective Date</label>
                                         <input type="text" name="carddate" placeholder="MM/YY" id="adoptCarddate">
                                     </div>
 
                                     <div class="adoptPayment">
-                                        <p>Security code</p>
+                                        <label class="adoptFrontTitle" for="adoptCardcode">Security Code</label>
                                         <input type="number" name="cardcode" id="adoptCardcode">
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@ $name = explode(",",$_GET['name']);
                                         </div>
                                     </div>
                                 </div>
-                                <h4>Adoption confirm</h4>
+                                <h4>ADOPTION CONFIRM</h4>
                                 <div class="adoptConfirmCheck">
                                     <div class="adoptConfirm">
                                         <h5>Adopted Aqua</h5>
@@ -362,8 +362,9 @@ $name = explode(",",$_GET['name']);
                                     </div>
 
                                     <div class="adoptConfirm">
-                                        <h5>Adopt amount</h5>
+                                        <h5>Adopt Amount</h5>
                                         <!-- <input type="text"> -->
+                                        <label class="adoptFrontTitle" for="adoptAmount">$</label>
                                         <p id="adoptAmountResult"></p>
                                     </div>
                                 </div>
@@ -371,61 +372,61 @@ $name = explode(",",$_GET['name']);
 
                                 <div class="adoptConfirmCheck">
                                     <div class="adoptConfirm">
-                                        <h5>Your information</h5>
+                                        <h5>YOUR INFORMATION</h5>
                                         <div class="adoptInfo">
                                             <!-- <input type="text" placeholder="first name"> -->
-                                            <p>First name:</p> 
+                                            <label class="adoptFrontTitle">First name:</label>
                                             <p id="adoptFirstnameResult"></p>
                                             <!-- <input type="text" placeholder="last name"> -->
-                                            <p>Last name:</p>
+                                            <label class="adoptFrontTitle">Last name:</label>
                                             <p id="adoptLastnameResult"></p>
                                         </div>
 
                                         <div class="adoptInfo">
-                                            <p>Email</p>
+                                            <label class="adoptFrontTitle">Email:</label>
                                             <!-- <input type="text"> -->
                                             <p id="adoptEmailResult"></p>
                                             <h6 class="adoptReceipt">*Your receipt will be emailed here</h6>
                                         </div>
 
                                         <div class="adoptInfo">
-                                            <p>Phone number</p>
+                                            <label class="adoptFrontTitle">Phone Number:</label>
                                             <!-- <input type="text"> -->
                                             <p id="adoptPhoneResult"></p>
                                         </div>
 
                                         <div class="adoptInfo">
-                                            <p>Leave message to Aqua</p>
+                                            <label class="adoptFrontTitle">Leave Message to Aqua:</label>
                                             <!-- <textarea name="adoptmessage" id="adoptmessage" cols="23" rows="6"></textarea> -->
                                             <p id="adoptMessageResult"></p>
                                         </div>
                                     </div>
 
                                     <div class="adoptConfirm">
-                                        <h5>Payment detail</h5>
+                                        <h5>PAYMENT DETIAL</h5>
 
                                         <div class="adoptPayment">
-                                            <p>Name on card</p>
+                                            <label class="adoptFrontTitle">Name on Card:</label>
                                             <!-- <input type="text"> -->
-                                            <p></p>
+                                            <p id="adoptCardnameResult"></p>
                                         </div>
 
                                         <div class="adoptPayment">
-                                            <p>Card number</p>
+                                            <label class="adoptFrontTitle">Card Number:</label>
                                             <!-- <input type="text"> -->
-                                            <p></p>
+                                            <p id="adoptCardnumberResult"></p>
                                         </div>
 
                                         <div class="adoptPayment">
-                                            <p>Expiry date</p>
+                                            <label class="adoptFrontTitle">Effective Date:</label>
                                             <!-- <input type="text" placeholder="MM/YY"> -->
-                                            <p></p>
+                                            <p id="adoptCarddateResult"></p>
                                         </div>
 
                                         <div class="adoptPayment">
-                                            <p>Security code</p>
+                                            <label class="adoptFrontTitle">Security Code:</label>
                                             <!-- <input type="number"> -->
-                                            <p></p>
+                                            <p id="adoptCardcodeResult"></p>
                                         </div>
                                     </div>
                                 </div>
