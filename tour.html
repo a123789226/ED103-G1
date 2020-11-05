@@ -287,7 +287,7 @@
       <div class="gameUniqueClass">
       <div class = "tour_game_title_block">
         <div class="tour_game_title_area">
-          <h1 class="tour_game_title1">Play a game to earn tokens!</h1>
+          <h1 class="tour_game_title1">Play a game to earn points!</h1>
         </div>  
       </div>
 
@@ -295,7 +295,6 @@
             <div id="app">
                 <div class="loading"></div>
         
-                <h1 class="winNum">0</h1>
                 <a class="gamePlayBtn"><img src="./image/game/play.png" alt=""></a>
                 <div class="over">
                     <div class="box">
@@ -316,6 +315,55 @@
                 </div>
             </div>
         </body>
+
+        <!-- 得到分數 -->
+        <form action="">
+          <div class="game_point_block">
+          <p class="game_title">Earn : </p> 
+          <p class="winNum">0</p>
+          <p class="game_point">points!</p>
+          </div>
+        </form>
+        <input type="button" name="save" value="Save" class="game_btn">
+
+        <!-- 遊戲燈箱 -->
+        <div class="game_overlay">
+          <article>
+            <h3>Points have been renewing !</h3>
+            <div>
+              <span id="game_memName">Member Name : </span>
+              <span id="memName2">&nbsp;</span>
+            </div>
+            <div>
+              <span id="game_old_point">Old points :  </span>
+              <span id="point">&nbsp; </span>
+            </div>
+            <div>
+              <span id="game_new_point">New points :  </span>
+              <span class="lightboxwinNum">0</span>
+            </div>
+            <input type="button" class="game_btn_close" value="close">
+          </article>
+        </div>
+
+        <!-- 會員燈箱：登入 -->
+        <div id="lightBox" style="display:none">
+          <table border="1" align="center" cellspacing="0" id="tableLogin">
+          <tr><td>帳號</td><td><input type="text" name="memId" id="memId"></td></tr>
+          <tr><td>密碼</td><td><input type="password" name="memPsw" id="memPsw"></td></tr>
+          <tr><td colspan="2" align="center">
+                  <input type="button" id="btnLogin" value="登入">
+                  <input type="button" id="btnLoginCancel" value="取消">
+              </td></tr>
+          </table>
+          </div>
+  
+        <!-- 右上角登入bar -->
+        <div id="game_bar">
+        <span id="memName">&nbsp;</span>
+        <span id="spanLogin">登入</span>
+        </div>
+        
     </div>
 
    
@@ -325,7 +373,102 @@
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
+   
+   <!------------------------------遊戲的code--------------------------->
+   <script>
+     //--------------遊戲: 會員登入頁面-------------
+     function $id(id){
+    return document.getElementById(id);
+    }	
+    let member;
 
+    function showLoginForm(){
+      if($id('spanLogin').innerHTML == "登入"){
+        $id('lightBox').style.display = 'block';
+      }else{//登出
+        $id('memName').innerHTML = '&nbsp';
+        $id('memName2').innerHTML = '&nbsp';
+        $id('spanLogin').innerHTML = '登入';
+      }
+
+    }//showLoginForm
+
+    function sendForm(){
+      //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上 
+      let memId = $id("memId").value;  
+      let memPsw = $id("memPsw").value; 
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        member = JSON.parse(xhr.responseText);
+        console.log(member);
+        if(member.memId){
+          $id("memName").innerText = member.memName;
+          $id("memName2").innerText = member.memName;
+          $id("point").innerText = member.oldPoint;
+          $id('spanLogin').innerHTML = '登出';
+          //將登入表單上的資料清空，並隱藏起來
+          $id('lightBox').style.display = 'none';
+          $id('memId').value = '';
+          $id('memPsw').value = '';          
+        }else{
+            window.alert("帳密錯誤~");
+        }
+      }
+
+      xhr.open("Post", "tourgame_json.php", true);
+      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+      let loginInfoObj = {memId,memPsw};
+
+      let loginInfo = JSON.stringify(loginInfoObj);
+      let data_info = `loginInfo=${loginInfo}`;
+      xhr.send(data_info); 
+    }
+
+    function cancelLogin(){
+      //將登入表單上的資料清空，並將燈箱隱藏起來
+      $id('lightBox').style.display = 'none';
+      $id('memId').value = '';
+      $id('memPsw').value = '';
+    }
+
+    function init(){
+      //===設定spanLogin.onclick 事件處理程序是 showLoginForm
+
+      $id('spanLogin').onclick = showLoginForm;
+
+      //===設定btnLogin.onclick 事件處理程序是 sendForm
+      $id('btnLogin').onclick = sendForm;
+
+      //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
+      $id('btnLoginCancel').onclick = cancelLogin;
+
+  
+    }; //window.onload
+
+    // window.addEventListener("load",init,false);
+
+    //----------------遊戲: 點save 按鈕, 觸發事件: new point 去抓資料庫的更新值-----------------
+    window.addEventListener("load", function(){
+      // alert(0)
+      document.querySelector(".game_btn").addEventListener("click", function(){
+        // alert(111)
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+          //
+        }
+        // let url = `updateGamePoint.php?memId=${member.memId}&point=${member.point+document.querySelector(".lightboxwinNum").innerText}`;
+        //從updateGamePoint.php抓某會員與該會員的點數值，並在class=lightboxwinNum的地方印出來。(div,p,span等是用.innerText印出 / input 是用.value印出)
+        let url = `updateGamePoint.php?memId=${member.memId}&point=${document.querySelector(".lightboxwinNum").innerText}`;
+        // console.log(url)
+        xhr.open("get", url, true);
+        xhr.send(null);        
+      },false);
+    }, false);
+    window.addEventListener("load",init,false);
+     
+   //-----------------------------------------------------------------------
+
+   </script>
    <!--AOS-->
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    <script>
@@ -656,6 +799,7 @@ $('.tour_row_button2').click(function(e){
         let isStart = false;	//是否點擊開始遊戲
         let Hp = 100;			//總血量
         let winNum = 0; 		//吃到的金幣數
+        let lightboxwinNum = 0; 		//吃到的
         let Positions = 1;		//方向判斷
         let isKeydown = false;	//是否按下鍵盤
     
@@ -709,7 +853,10 @@ $('.tour_row_button2').click(function(e){
                     exportRoot.removeChild(Coin); //移除金幣元件
                     // winNum ++;
                     winNum = winNum + 10;
+                    //新點數=舊點數+
+                    lightboxwinNum = winNum + parseInt(document.querySelector("#point").innerText);
                     document.querySelector(".winNum").innerHTML = winNum;
+                    document.querySelector(".lightboxwinNum").innerHTML = lightboxwinNum;
                 }
             })
         }, 1000)
@@ -808,6 +955,30 @@ $('.tour_row_button2').click(function(e){
         fnStartAnimation();
     }
     </script>
+
+    <!------------------ 遊戲燈箱 ------------------>
+<script>
+      $(function(){
+  
+  // 開啟 Modal 彈跳視窗
+  $(".game_btn").on("click", function(){
+    $("div.game_overlay").addClass("-on");
+  });
+  
+  // 關閉 Modal
+  $(".game_btn_close").on("click", function(){
+    $("div.game_overlay").addClass("-opacity-zero");
+    
+    // 設定隔一秒後，移除相關 class
+    setTimeout(function(){
+      $("div.game_overlay").removeClass("-on -opacity-zero");
+    }, 50);
+  });
+  
+});
+
+
+</script>
 
 </body>
 </html>

@@ -1,10 +1,62 @@
+//game 燈箱
+// #lightBox{
+//     position: fixed;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(66,66,66,.6);
+// }
+// #tableLogin{
+//     position: absolute;
+//     width: 300px;
+//     top: 0;
+//     right: 0;
+//     bottom: 25%;
+//     left: 0;
+//     margin:auto;
+//     background-color:#FFCCDD;
+//     border:1px dotted deepPink;
+//   }
+// #tableLogin  td{
+//     padding:2px 2px;
+//     height:20px;
+//     border-style:none;
+//     border-bottom:1px dotted deeppink;
+//   }
+
+// #tableLogin  input{
+//     background-color:#FFCCDD;
+//     font-size:16px;
+//     padding-left:2px;
+//   }
+// #btnLogin,#btnLoginCancel{margin-left:5px;padding:2px;} 
+
+// #spanLogin:hover{
+//     cursor:pointer;
+//     text-decoration:underline;
+//     margin-left:20px;
+//   }
+
+//game 登入bar
+#game_bar{
+    position: fixed;
+    top:150px;
+    right: 30px;
+    @include sub_title($keyWhite);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+// 大標題
 .gameUniqueClass{
     // border:5px solid red;
     width:100%;
     max-width: 1200px;
     margin:50px auto;
+    margin-bottom:150px;
 .tour_game_title_block{
-    padding:50px;
+    padding:70px;
     .tour_game_title_area{
         width:100%;
         .tour_game_title1{
@@ -15,6 +67,102 @@
 
 }
 
+// 分數
+.game_point_block{
+    max-width:500px;
+    margin:10px auto;
+    display:flex;
+    justify-content: space-around;
+    .game_title{
+        @include sub_title($keyWhite);
+        font-size: 36px;
+        margin:20px auto;
+    }
+    .winNum{
+        @include sub_title($keyWhite);
+        font-size: 36px;
+        color:deeppink;
+        font-weight: bold;
+        margin:20px auto;
+        padding-right: 20px;
+        padding-left: 40px;
+    }
+    .game_point{
+        @include sub_title($keyWhite);
+        font-size: 36px;  
+        margin:20px auto;
+    }
+}
+
+// save按鈕
+.game_btn{
+    @include btn50White;
+    box-shadow: $shadow2;
+    display:block;
+    margin:10px auto;
+    cursor: pointer;
+}
+
+
+// 燈箱
+.game_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    
+    /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+  }
+
+  .game_overlay.-on{
+    
+    /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+    opacity: 1;
+    z-index: 9999;
+  }
+  
+  .game_overlay.-opacity-zero{
+    /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+    opacity: 0;
+  }
+  
+  .game_overlay > article{
+    width: 90%;
+    max-width: 350px;
+    line-height: 30px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow2;
+    border:7px solid rgb(156, 227, 248);
+    h3{
+        @include sub_title($keyBlack);
+        line-height: 60px;
+    }
+    p{
+        @include text($textBlack);
+        line-height: 40px;
+    }
+    .game_btn_close{
+        cursor: pointer;
+        @include btn36Yellow;
+        box-shadow: $shadow2;
+        display:block;
+        margin: 0px auto;
+        margin-top:10px;
+    }
+  }
+
+// ----------遊戲區塊----------
 *{
     padding: 0;
     margin: 0;
@@ -35,6 +183,7 @@ canvas{
     height: 400px;
     position: relative;
     margin:0 auto;
+    margin-bottom: 60px;
     >h1.winNum{
         top: 10px;
         left: 30px;
