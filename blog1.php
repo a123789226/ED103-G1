@@ -222,7 +222,7 @@
   <form class="blogPostForm" action="blogUpload.php" method="post" enctype="multipart/form-data">
     <label for="blogInsertTitle" class="blogPostOwnTitle">
       <span class="blogPostTitleFont">Title</span>
-      <input type="text" class="blogPostInputTitle" placeholder="Please insert title">
+      <input type="text" class="blogPostInputTitle" name="blogTitle" placeholder="Please insert title">
     </label>
     <div class="blogPostTagsSection">
       <span class="blogPostTagsFont">Tags</span>
@@ -231,7 +231,7 @@
         <div class="blogPostTags">Whale</div>
         <div class="blogPostTags">Seal</div>
         <div class="blogPostTags">Turtle</div>
-        <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogPostTag"/>
+        <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogTags"/>
       </div>
     </div>
     
@@ -247,8 +247,8 @@
         </label>
       </div>
       <div class="blogPostContentPart2">
-        <div class="blogPostContentText2" contenteditable="true">
-        <input class="blogPostContentTextInput1" type="hidden" value="" name="blogContent1"/>
+        <div class="blogPostContentText2" contenteditable="true" id="content2">
+        <input class="blogPostContentTextInput1" type="hidden" value="" name="blogContent1" id="inputContent2"/>
         </div>
         <label for="img2" class="blogPostWrap" id="blogPostWrapImg2" title="CLICK TO UPLOAD IMAGE">
           <div class="blogPostBox">
@@ -441,6 +441,15 @@ function changed(e) {
   });
 };
 
+function doFirst(){
+  let content2 = document.getElementById('content2');
+  let inputContent2 = document.getElementById('inputContent2');
+  content2.addEventListener('blur', function(){
+    inputContent2.value = content2.innerText;
+  })
+}
+
+window.addEventListener('load', doFirst);
   </script>
 
 
