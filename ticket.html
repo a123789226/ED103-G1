@@ -350,6 +350,26 @@
     });
   });
 
+  // 非同步放入門票資訊
+
+
+  function doFirst(){
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+      ticketsRow = JSON.parse(xhr.responseText);
+      showTickets();
+      console.log(ticketsRow);
+    }
+    xhr.open("get", "./php/ticketInfo.php",false);
+    xhr.send(null);
+  }
+
+  function showTickets(){
+    
+  }
+
+  window.addEventListener('load', doFirst);
+
 
 
 
