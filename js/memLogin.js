@@ -6,13 +6,13 @@ let member;
 function showLoginForm() {
     //檢查登入bar面版上 spanLogin 的字是登入或登出
     //如果是登入，就顯示登入用的燈箱(memLightBox)
-    //如果是登出登出登出登出登出
+    //如果是登出
     //將登入bar面版上，登入者資料清空 
     //spanLogin的字改成登入
     //將頁面上的使用者資料清掉
     if ($id('spanLogin').innerHTML == "登入") {
         $id('memLightBox').style.display = 'block';
-    } else {//登出
+    } else { // 登出
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             $id('memName').innerHTML = '&nbsp';

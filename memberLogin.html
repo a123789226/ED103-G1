@@ -116,7 +116,7 @@
         <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
         <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
         <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <input type="submit" class="submitBtnLog" id="btnLogin" value="LOG IN" onclick="getMember()"><br>
+        <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN" onclick="getMember()"><br>
         <div class="memLine">
           <h5>OR</h5>
         </div>
@@ -140,9 +140,9 @@
             <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" size="30" required /><br>
             <div class="Sex">
               <p>Gender：</p>
-              <input type="radio" name="memSex" id="memSex" value="Male" checked />
+              <input type="radio" name="memSex" id="memSex1" value="Male" checked />
               <label class="memGender">Male</label>
-              <input type="radio" name="memSex" id="memSex" value="Female" />
+              <input type="radio" name="memSex" id="memSex2" value="Female" />
               <label class="memGender">Female</label>
             </div>
             <div class="memBir">
@@ -213,7 +213,7 @@
   // 註冊判斷帳號/暱稱是否使用過（這還沒好）
   function checkId() {
     var idCheck = $("#memId").val();
-    if (idCheck.length == "") { //帳號
+    if (idCheck.length == "") { // 帳號
       swal("密碼長度錯誤", "6~12字以內", "error");
       // alert('暱稱不可空白');
       return;
@@ -222,7 +222,7 @@
     var mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var mailCheck = $("#memEmail").val();
     if (mailCheck.match(mail) == null) { //信箱
-      swal("Email格式不正確", "請確認Email", "error");
+      swal("Enter a valid email address.", "請確認Email", "error");
       return;
     }
 
