@@ -1,54 +1,49 @@
 <?php 
-try {
-	require("connectAqua.php");
-	
-	$sql = "select * from `member` where memId=:memId and memPsw=:memPsw";
-	$member = $pdo->prepare($sql);
-	$member->bindValue(":memId", $_POST["memId"]);
-	$member->bindValue(":memPsw", $_POST["memPsw"]);
-    $member->execute();
-    
-    // if($member->rowCount()==0){
-    //     echo "notFound";
-    // }else{
-    //     $memRow = $member->fetch(PDO::FETCH_ASSOC);
-    //     session_start();
-    //     $_SESSION["memNo"] = $memRow["memNo"];
-    //     $_SESSION["memId"] = $memRow["memId"];
-    //     $_SESSION["memName"] = $memRow["memName"];
 
-    //     $member= ["memNo"=>$_SESSION["memNo"],"memId"=>$_SESSION["memId"],"memName"=>$_SESSION["memName"],"memPsw"=>$_SESSION["memPsw"],"memPic"=>$_SESSION["memPic"],"memPoint"=>$_SESSION["memPoint"],"memStatus"=>$_SESSION["memStatus"]];
-    //     echo json_encode($member);
-    // }
+try {
+require("connectAqua.php");
+
+$sql = "select * from `member` where memId=:memId and memPsw=:memPsw and memStatus=0;";
+$member = $pdo->prepare($sql);
+$member->bindValue(":memId", $_POST["memId"]);
+$member->bindValue(":memPsw", $_POST["memPsw"]);
+$member->execute();
+  
+  if($member->rowCount()==0){ // 查無此人
+    echo "{}";
+  }else{ // 登入成功
+    // 自資料庫中取回資料
+    $memRow = $member->fetch(PDO::FETCH_ASSOC);
+    // 將登入會員資料寫入session
+    session_start();
+    $_SESSION["memNo"] = $memRow["memNo"];
+    $_SESSION["memName"] = $memRow["memName"];
+    $_SESSION["memId"] = $memRow["memId"];
+    $_SESSION["memPsw"] = $memRow["memPsw"];
+    $_SESSION["memEmal"] = $memRow["memEmail"];
+    $_SESSION["memSex"] = $memRow["memSex"];
+    $_SESSION["memPhone"] = $memRow["memPhone"];
+    $_SESSION["memBirth"] = $memRow["memBirth"];
+    $_SESSION["memPic"] = $memRow["memPic"];
+    $_SESSION["Point"] = $memRow["Point"];
+
+    $result = array("memNo"=>$memRow["memNo"],
+                    "memName"=>$memRow["memName"],
+                    "memId"=>$memRow["memId"],
+                    "memPsw"=>$memRow["memPsw"],
+                    "memEmail"=>$memRow["memEmail"],
+                    "memSex"=>$memRow["memSex"],
+                    "memPhone"=>$memRow["memPhone"],
+                    "memBirth"=>$memRow["memBirth"],
+                    "memPic"=>$memRow["memPic"],
+                    "Point"=>$memRow["Point"]);
+    
+    $json = json_encode($result);
+    // 送出登入者的資料
+    echo $json;
+  }
 } catch (PDOException $e) {  
-    echo "錯誤行號 : ".$e -> getLine(). "<br>";
-    echo "錯誤原因 : ".$e -> getMessage(). "<br>";
-    echo "系統無法連線<br>";
-      
+	$error = array("errorMsg"=>$e->getMessage());
+  	echo json_encode($error);//{"errorMsg":"......."}
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Examples</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="" rel="stylesheet">
-</head>
-<body>
-<?php 
-if($errMsg !=""){
-	echo "<div>$errMsg</div>";
-}elseif($member->rowCount() == 0){
-	echo "<center>帳密錯誤~</center>";
-}else{
-	//取回登入者資料
-	$memRow = $member->fetch(PDO::FETCH_ASSOC);
-	echo $memRow["memName"], ",恭喜成功😭<br>";
-}
-?>	
-    
-</body>
-</html>

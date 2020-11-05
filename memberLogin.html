@@ -11,7 +11,7 @@
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
 
-    <title>Aqua Sign Up</title>
+    <title>Aqua Wonderland</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
@@ -77,6 +77,8 @@
         </li>
       </ul>
       <div class="header_right">
+        <span id="memName">&nbsp;</span> <!-- 使用者姓名 -->
+        <span id="spanLogin">登入</span>
         <a href="#" class="member_box btn_modal">
           <img src="./image/header/header_member_fish.png" alt="">
         </a>
@@ -104,17 +106,17 @@
 
   <main>
     <!-- Log In -->
-    <div class="memLogin overlay">
-      <form action="memLogin.php" class="LogInForm" id="LogInForm" method="post">
+    <div id="memLightBox" class="memLogin overlay">
+      <form action="" class="LogInForm" id="LogInForm" method="post">
         <div class="btn_modal_close">
           <div></div>
           <div></div>
         </div>
         <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+        <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
         <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
         <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <input type="submit" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+        <input type="submit" class="submitBtnLog" id="btnLogin" value="LOG IN" onclick="getMember()"><br>
         <div class="memLine">
           <h5>OR</h5>
         </div>
@@ -130,7 +132,8 @@
           <h3>Register Account</h3>
           <div class="memSignDetail">
             <input type="text" name="memName" id="memName" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'" size="30" required /><br>
-            <input type="text" name="memId" id="memId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="30" required /><br>
+            <input type="text" name="memId" id="memId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="30" required />
+            <!-- <input type="button" id="btnCheckId" value="Check"><span id="idMsg"></span> -->
             <input type="password" maxlength="12" minlength="8" name="memPsw" id="memPsw" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="30" required /><br>
             <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br>
             <input type="text" name="memPhone" id="memPhone" placeholder="Phone Number" onfocus="this.placeholder=''" onblur="this.placeholder='Phone Number'" maxlength="10" size="30" required /><br>
@@ -187,6 +190,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/memLogin.js"></script>
 
   <script>
    
@@ -205,6 +209,124 @@
       }, 1000);
     });
   });
+
+  // 註冊判斷帳號/暱稱是否使用過（這還沒好）
+  function checkId() {
+    var idCheck = $("#memId").val();
+    if (idCheck.length == "") { //帳號
+      swal("密碼長度錯誤", "6~12字以內", "error");
+      // alert('暱稱不可空白');
+      return;
+    }
+
+    var mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var mailCheck = $("#memEmail").val();
+    if (mailCheck.match(mail) == null) { //信箱
+      swal("Email格式不正確", "請確認Email", "error");
+      return;
+    }
+
+    var pswCheck = $("#memPsw").val();
+    if (pswCheck.length < 6 ^ pswCheck.length > 12) { //密碼
+      swal("密碼長度錯誤", "6~12字以內", "error");
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          swal(xhr.responseText);
+          if (xhr.responseText == '帳號註冊成功') {
+            if (localStorage.getItem('web') == null) { //註冊成功
+              swal(xhr.responseText); //回傳php回應的值
+              $(".swal-button--confirm").click(function () {
+                $("#signUpForm").submit();
+                window.location.href = './memberProfile.html';
+              })
+            } else {
+              let redirection = localStorage.getItem('web');
+              $("#signUpForm").submit();
+              window.location.href = redirection;
+            }
+          }
+        } else {
+          // alert(xhr.status); 
+        }
+      }
+    }
+
+    xhr.open("post", "./memberSignup.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    let data_info = `memId=${$id("memId").value}&memName=${$id("memName").value}&memPsw=${$id("memPsw").value}&memEmail=${$id("memEmail").value}`;
+    xhr.send(data_info);
+  }
+
+
+  window.addEventListener("load", function () {
+    document.getElementById("btnSignUp").addEventListener("click", checkId, false);
+  }, false);
+
+  // 確認密碼
+  $(".tip").hide();
+  $(".tip_length").hide();
+
+  function checkpas1() { //當第一個密碼框失去焦點時，觸發checkpas1事件
+    var pas1 = document.getElementById("memPsw").value;
+    var pas2 = document.getElementById("repassword").value;
+
+    if (pas1.length < 8 ^ pas1.length > 12) {
+      $(".tip_length").show();
+    } else {
+      $(".tip_length").hide();
+    }
+  }
+
+  function checkpas() { //當第一個密碼框失去焦點時，觸發checkpas2件
+    var pas1 = document.getElementById("memPsw").value;
+    var pas2 = document.getElementById("repassword").value; //獲取兩個密碼框的值
+    if (pas1 !== pas2) {
+      $(".tip").show(); //當兩個密碼不相等時則顯示錯誤資訊
+      // alert('密碼不一致')
+      $('.submitBtnSign').attr('disabled', true)
+      $('.submitBtnSign').css('cursor', 'not-allowed')
+    } else {
+      $(".tip").hide();
+      // alert('密碼一致')
+      $('.submitBtnSign').attr('disabled', false)
+      $('.submitBtnSign').css('cursor', 'pointer')
+    }
+  }
+
+  // 長度判斷
+  $('#memId').on('input', function (e) {
+    var $that = $(this),
+      limit = 12;                            //定義所需字節數
+    $that.attr('maxlength', limit);
+    setTimeout(function () {
+      var value = $that.val(),
+        reg = /[\u4e00-\u9fa5]/g,
+        notReg = /\w/g;
+      var Cn = value.match(reg);
+      var En = value.match(notReg);
+      if (Cn) {
+        limit = limit - (Cn.length * 2);
+      }
+      if (En) {
+
+        limit = limit - En.length;
+      }
+      if (limit <= 0) {
+        var finalLen = value.length + limit;
+        value = value.substring(0, finalLen);
+        $that.attr('maxlength', limit);
+        $that[0].value = value;
+      }
+    }, 0);
+
+  });
+  
   </script>
 </body>
 </html>
