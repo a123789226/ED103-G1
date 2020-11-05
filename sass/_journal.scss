@@ -179,7 +179,9 @@ body {
 
 }
 
-// 書本
+// 下方書本
+
+
 .jourBookSection {
   text-align: center;
   width: 40%;
@@ -357,7 +359,7 @@ body {
   // border: 3px solid yellow;
 }
 
-.jour_bk{
+.jour_bk {
   width: 100%;
   height: 100%;
   display: none;
@@ -750,7 +752,7 @@ div.jourLightBox.-on {
   // border: 3px solid black;
 }
 
-.adoptAqua input{
+.adoptAqua input {
   display: inline-block;
   padding: 20px 0;
   width: 100px;
@@ -813,8 +815,8 @@ div.jourLightBox.-on {
   @include StepBox;
 }
 
-.adoptedAqua{
-  display: inline-block; 
+.adoptedAqua {
+  display: inline-block;
   padding: 10px;
 }
 
@@ -903,7 +905,7 @@ div.jourLightBox.-on {
 
 
 .adoptProcessBtn,
-.adoptBackBtn{
+.adoptBackBtn {
   @include btn50Green;
   box-shadow: $shadow2;
   margin: 10px 5px;
@@ -948,7 +950,7 @@ div.jourLightBox.-on {
 
 }
 
-.adoptInfo p{
+.adoptInfo p {
   @include text($keyGreen);
 }
 
@@ -972,7 +974,7 @@ div.jourLightBox.-on {
   @include text($keyWhite);
 }
 
-.adoptConfirmTitle{
+.adoptConfirmTitle {
   @include text($keyGreen);
 
 }
@@ -1051,14 +1053,14 @@ div.jourLightBox.-on {
   height: 30px;
 }
 
-.adoptConfirm .adoptConfirmTitle{
+.adoptConfirm .adoptConfirmTitle {
   height: 30px;
   width: 100%;
   margin-bottom: 5px;
   color: $keyGreen;
 }
 
-.adoptConfirm p{
+.adoptConfirm p {
   height: 30px;
   width: 100%;
   margin-bottom: 5px;
@@ -1081,9 +1083,10 @@ div.jourLightBox.-on {
 .jourOpenBookSection {
   width: 80%;
   margin: 50px auto !important;
-  // border: 3px solid white;
+  border: 3px solid white;
   // background-color: rgba(0,0,0,.8);
   text-align: center;
+  display: block;
 }
 
 .jourOpenBookRight {
@@ -1117,7 +1120,10 @@ div.jourLightBox.-on {
 }
 
 
-#demobook .p1 {
+#demobook .p1,
+#demobook1 .p1,
+#demobook2 .p1,
+#demobook3 .p1 {
   background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
 
 }
@@ -1167,7 +1173,10 @@ div.jourLightBox.-on {
 }
 
 #flipbook2 .jourLastPage,
-#demobook .jourLastPage {
+#demobook .jourLastPage,
+#demobook1 .jourLastPage,
+#demobook2 .jourLastPage,
+#demobook3 .jourLastPage {
   background: linear-gradient(to Left, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important;
 }
 
@@ -1212,56 +1221,99 @@ div.jourLightBox.-on {
 
 .jourPageContent h4 {
   @include sub_title($keyBlack);
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   display: block;
   // border: 2px solid red
 }
 
 .jourPagePhotoArea {
-  display: inline-block;
+  display: block;
   width: 100%;
-  padding: 0 10px;
-  // border: 2px solid red
+  height: 260px;
+  padding: 0 15px;
+  border: 1px solid red;
+}
+
+.jourPagePhotoArea1 {
+  display: block;
+  width: 100%;
+  height: 350px;
+  padding: 0 30px;
+  border: 1px solid red;
 }
 
 .jourPagePhotoLeft {
-  width: 44%;
-  max-width: 150px;
-  max-height: 260px;
-  object-fit: cover;
-  display: inline-block;
-  padding: 4px;
-
-}
-
-.jourPagePhotoLeft img {
+  // width: 44%;
   width: 100%;
-  // margin: 0px auto;
-  // border: 2px solid blue;
-}
-
-.jourPagePhotoRight {
-  width: 54%;
-  max-width: 200px;
-  max-height: 260px;
-  object-fit: cover;
-  display: inline-block;
-  padding-right: 4px;
-
-  // border: 2px solid blue;
-}
-
-
-.jourPagePhotoRight img {
-  width: 100%;
+  padding: 0 15px;
+  height: 160px;
   display: block;
-  // border: 2px solid green;
-  // margin: 5px 0px;
-  text-align: justify;
+  margin: 0px auto 10px auto;
+  border: 1px solid blue;
+  position: relative;
 }
 
-.jourPagePhotoRight img:first-child {
-  margin-bottom: 10px;
+.jourPagePhotoLeft1 {
+  // width: 44%;
+  width: 100%;
+  padding: 0 30px;
+  height: 220px;
+  display: block;
+  margin: 0px auto 10px auto;
+  border: 1px solid blue;
+  position: relative;
+}
+
+.jourPagePhotoLeft img, .jourPagePhotoLeft1 img {
+  width: 100%;
+  margin: 0px auto;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.jourPagePhotoRight{
+  // width: 54%;
+  width: 100%;
+  height: 90px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.jourPagePhotoRight1{
+  width: 100%;
+  height: 120px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.jourPagePhotoRightInner {
+  width: 130px;
+  border: 1px solid green;
+  position: relative;
+}
+
+.jourPagePhotoRightInner1 {
+  width: 160px;
+  border: 1px solid green;
+  position: relative;
+}
+
+.jourPagePhotoRightInner img, .jourPagePhotoRightInner1 img {
+  // width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
 }
 
 .jourPageText {
@@ -1270,10 +1322,21 @@ div.jourLightBox.-on {
   width: 95%;
   margin: 0 auto;
   padding: 0 10px;
+}
 
+.jourPageText1 {
+  // border: 2px solid green;
+  text-align: left;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .jourPageText h4 {
+  @include sub_title($keyBlack);
+}
+
+.jourPageText1 h4 {
   @include sub_title($keyBlack);
 }
 
@@ -1281,7 +1344,22 @@ div.jourLightBox.-on {
   // border: 2px solid green;
   margin: 0 auto;
   @include text($textBlack);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 
+.jourPageText1 p {
+  // border: 2px solid green;
+  margin: 0 auto;
+  @include text($textBlack);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 
@@ -1295,7 +1373,10 @@ div.jourLightBox.-on {
 }
 
 // demobook
-#demobook {
+#demobook,
+#demobook1,
+#demobook2,
+#demobook3 {
   width: 80%;
   background-color: none;
   width: 600px;
@@ -1305,17 +1386,22 @@ div.jourLightBox.-on {
   text-align: center;
 }
 
-.demobook .jourPageText h4 {
+.demobook .jourPageText h4,
+.demobook1 .jourPageText h4,
+.demobook2 .jourPageText h4 .demobook3 .jourPageText h4 {
   font-size: 16px;
   line-height: 1;
 }
 
-.demobook .jourPageText p {
+.demobook .jourPageText p,
+.demobook1 .jourPageText p,
+.demobook2 .jourPageText p,
+.demobook3 .jourPageText p {
   font-size: 8px;
   line-height: 1.4;
   overflow: hidden;
 }
-    
+
 
 //adopt lightbox
 .jourToAdopt {
