@@ -7,6 +7,20 @@ function ticketFirst(){
     storage['addTicketList'] = '';
   }
 
+  // 每張票的box(三張門票+四張夜宿票)票名跟票價來自票的value
+  let ticketButtonBox = document.querySelectorAll('div.ticketButtonBox');
+  for(let i = 0; i < ticketButtonBox.length; i++){
+    let ticketValue = ticketButtonBox[i].querySelector('input').value;
+    let ticketNameBox = ticketButtonBox[i].querySelector('p.ticketTicketName');
+    let ticketPriceBox = ticketButtonBox[i].querySelector('p.ticketTicketPrice').querySelectorAll('span')[1];
+    let ticketName = ticketValue.split('|')[0];
+    let ticketPrice = ticketValue.split('|')[1];
+    
+    ticketNameBox.innerText = ticketName;
+    ticketPriceBox.innerText = ticketPrice;
+
+  }
+
   //++--按鈕的功能
   let ticketButtons =document.querySelectorAll('.ticketButtons');
   let ticketTicketTotal = document.querySelectorAll('p.ticketTicketTotal span')[1];
@@ -76,21 +90,21 @@ function ticketFirst(){
       for(let i = 0; i < ticketProduct.length; i++){      
         //如果票的數量不為0則執行加入Info進入storage
         if(ticketAmount[i].innerText != 0){
-          let ticketInfo = document.querySelector(`#ticket${i+1} input`).value;
+          let ticketInfo = document.querySelectorAll('div.ticketProduct')[i].querySelector('input').value;
           let ticketName = ticketInfo.split('|')[0];
           let ticketPrice = ticketInfo.split('|')[1];
           let ticketNewInfo = `${ticketName}|${ticketPrice}|${ticketAmount[i].innerText}`;
           
           // 判斷storage裡面已經有那張票，那存入storage的Info他後面的數字會變成累加
-          if(storage[ticketProduct[i].id]){
-            let ticketStorageAmount = storage.getItem(ticketProduct[i].id).split('|')[2];
+          if(storage[`ticket${i+1}`]){
+            let ticketStorageAmount = storage.getItem(`ticket${i+1}`).split('|')[2];
             let ticketNewAmount = parseInt(ticketStorageAmount) + parseInt(ticketAmount[i].innerText);
             ticketNewInfo = `${ticketName}|${ticketPrice}|${ticketNewAmount}`
           }else{
-            storage['addTicketList'] += ticketProduct[i].id + ', ';
+            storage['addTicketList'] += `ticket${i+1}` + ', ';
           }
           // 將判別後的Info塞入storage，key值為那張票的id
-          storage[ticketProduct[i].id] = ticketNewInfo;
+          storage[`ticket${i+1}`] = ticketNewInfo;
           
         }
       }
