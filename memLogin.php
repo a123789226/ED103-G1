@@ -20,7 +20,7 @@ try {
       $_SESSION["memName"] = $memRow["memName"];
       $_SESSION["memId"] = $memRow["memId"];
       $_SESSION["memPsw"] = $memRow["memPsw"];
-      $_SESSION["memEmal"] = $memRow["memEmail"];
+      $_SESSION["memEmail"] = $memRow["memEmail"];
       $_SESSION["memSex"] = $memRow["memSex"];
       $_SESSION["memPhone"] = $memRow["memPhone"];
       $_SESSION["memBirth"] = $memRow["memBirth"];
