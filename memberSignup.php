@@ -8,7 +8,7 @@ try{
   $member->execute();
 
   //如果找得到資料，取回資料，送出xml文件
-  if($member->rowCount() == 0 ){ // 無此會員資料
+  if($member->rowCount()==0){ // 無此會員資料
     echo "notFound";
   }else{ 
    $sql = "INSERT INTO member(memId, memName, memPsw, memPhone, memEmail, memSex, memBirth)

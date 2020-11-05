@@ -132,8 +132,8 @@
           <h3>Register Account</h3>
           <div class="memSignDetail">
             <input type="text" name="memName" id="memName" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'" size="30" required /><br>
-            <input type="text" name="memId" id="memId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="20" required />
-            <input type="button" id="btnCheckId" value="Check"><span id="idMsg"></span>
+            <input type="text" name="memId" id="memId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="30" required />
+            <!-- <input type="button" id="btnCheckId" value="Check"><span id="idMsg"></span> -->
             <input type="password" maxlength="12" minlength="8" name="memPsw" id="memPsw" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="30" required /><br>
             <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br>
             <input type="text" name="memPhone" id="memPhone" placeholder="Phone Number" onfocus="this.placeholder=''" onblur="this.placeholder='Phone Number'" maxlength="10" size="30" required /><br>
@@ -210,7 +210,7 @@
     });
   });
 
-  // 註冊判斷帳號/暱稱是否使用過
+  // 註冊判斷帳號/暱稱是否使用過（這還沒好）
   function checkId() {
     var idCheck = $("#memId").val();
     if (idCheck.length == "") { //帳號

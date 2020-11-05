@@ -1,4 +1,5 @@
 <?php 
+// SQ專用
 $dsn = "mysql:host=127.0.0.1;port=3306;dbname=ed103g1;charset=utf8";
 $user = "root";
 $password = "root";

@@ -9,7 +9,7 @@ $member->bindValue(":memId", $_POST["memId"]);
 $member->bindValue(":memPsw", $_POST["memPsw"]);
 $member->execute();
   
-  if($member->rowCount() == 0 ){ // 查無此人
+  if($member->rowCount()==0){ // 查無此人
     echo "{}";
   }else{ // 登入成功
     // 自資料庫中取回資料
