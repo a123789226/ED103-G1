@@ -93,16 +93,16 @@
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
         <li class="main_menu_li active">
-          <a href="blog.html" class="li_logo">
+          <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
           </a>
-          <a href="blog.html" class="li_text">BLOG</a>
+          <a href="blog1.php" class="li_text">BLOG</a>
         </li>
       </ul>
       <div class="header_right">
         <span class="member_box btn_modal" id="btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish.png'">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
         </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
@@ -297,33 +297,32 @@
   }
 
   // 長度判斷
-  $('#memId').on('input', function (e) {
-    var $that = $(this),
-      limit = 12;                            //定義所需字節數
-    $that.attr('maxlength', limit);
-    setTimeout(function () {
-      var value = $that.val(),
-        reg = /[\u4e00-\u9fa5]/g,
-        notReg = /\w/g;
-      var Cn = value.match(reg);
-      var En = value.match(notReg);
-      if (Cn) {
-        limit = limit - (Cn.length * 2);
-      }
-      if (En) {
+  // $('#memId').on('input', function (e) {
+  //   var $that = $(this),
+  //     limit = 12;                            //定義所需字節數
+  //   $that.attr('maxlength', limit);
+  //   setTimeout(function () {
+  //     var value = $that.val(),
+  //       reg = /[\u4e00-\u9fa5]/g,
+  //       notReg = /\w/g;
+  //     var Cn = value.match(reg);
+  //     var En = value.match(notReg);
+  //     if (Cn) {
+  //       limit = limit - (Cn.length * 2);
+  //     }
+  //     if (En) {
 
-        limit = limit - En.length;
-      }
-      if (limit <= 0) {
-        var finalLen = value.length + limit;
-        value = value.substring(0, finalLen);
-        $that.attr('maxlength', limit);
-        $that[0].value = value;
-      }
-    }, 0);
+  //       limit = limit - En.length;
+  //     }
+  //     if (limit <= 0) {
+  //       var finalLen = value.length + limit;
+  //       value = value.substring(0, finalLen);
+  //       $that.attr('maxlength', limit);
+  //       $that[0].value = value;
+  //     }
+  //   }, 0);
 
-  });
-  
+  // });  
   </script>
 </body>
 </html>

@@ -10,6 +10,7 @@ if(isset($_SESSION["memId"]) === true){
 									"memPhone"=>$_SESSION["memPhone"],
 									"memBirth"=>$_SESSION["memBirth"],
 									"memPic"=>$_SESSION["memPic"],
+									"memStatus"=>$_SESSION["memStatus"],
 									"point"=>$_SESSION["point"]);
 	echo json_encode($result);
 }else{

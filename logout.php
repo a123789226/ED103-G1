@@ -10,6 +10,7 @@ unset($_SESSION["memSex"]);
 unset($_SESSION["memPhone"]);
 unset($_SESSION["memBirth"]);
 unset($_SESSION["memPic"]);
+unset($_SESSION["memStatus"]);
 unset($_SESSION["point"]);
 
 // session_destroy();

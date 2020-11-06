@@ -26,6 +26,7 @@ function doSignOut() {
     }
     xhr.open("get", "logout.php", true);
     xhr.send(null);
+    // alert('登出成功');
 
 
 }//showLoginForm
@@ -39,11 +40,21 @@ function sendForm() {
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
         if (member.memId) {
-            //將登入表單上的資料清空
-            $id('memId').value = '';
-            $id('memPsw').value = '';
-            // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
-            afterLogin();
+            if(member.memStatus == 0){  //沒停權
+                //將登入表單上的資料清空
+                $id('memId').value = '';
+                $id('memPsw').value = '';
+                // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
+                afterLogin();
+            }else{ //停權
+                swal("Sorry!", "Your account has been suspended", "error", {button: "OK"});
+                //將登入表單上的資料清空
+                $id('memId').value = '';
+                $id('memPsw').value = '';
+                // 執行登出的動作(清理session等等動作)
+                doSignOut();
+            }
+
         } else {
             $id('memId').value = '';
             $id('memPsw').value = '';
@@ -125,4 +136,24 @@ function init() {
 }; //window.onload
 
 window.addEventListener("load", init, false);
+
+
+
+// Login彈窗
+$(function(){
+    // 開啟 Modal 彈跳視窗
+    $(".btn_modal").on("click", function(){
+        $("div.overlay").addClass("-on");
+    });
+    // 關閉 Modal
+    $("div.btn_modal_close").on("click", function(){
+        $("div.overlay").addClass("-opacity-zero");
+        $('#memId').val('');
+        $('#memPsw').val('');
+      // 設定隔0.5秒後，移除相關 class
+        setTimeout(function(){
+            $("div.overlay").removeClass("-on -opacity-zero");
+        }, 500);
+    });
+});
 

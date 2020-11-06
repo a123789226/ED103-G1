@@ -40,20 +40,3 @@ window.addEventListener('load', doFirst);
 
 
 
-// Login彈窗
-$(function(){
-  // 開啟 Modal 彈跳視窗
-  $(".btn_modal").on("click", function(){
-    $("div.overlay").addClass("-on");
-  });
-  // 關閉 Modal
-  $("div.btn_modal_close").on("click", function(){
-    $("div.overlay").addClass("-opacity-zero");
-    $('#memId').val('');
-    $('#memPsw').val('');
-    // 設定隔0.5秒後，移除相關 class
-    setTimeout(function(){
-      $("div.overlay").removeClass("-on -opacity-zero");
-    }, 500);
-  });
-});

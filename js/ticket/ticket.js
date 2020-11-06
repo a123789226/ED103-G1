@@ -137,6 +137,7 @@ function changeCartNumber(){
   }else{
     let tickets = ticketString.substr(0, ticketString.length-2).split(', ');
     cart_amount[0].style.display = 'block';
+    cart_amount[0].style.backgroundColor = 'rgb(228, 37, 37)'
     cart_amount[0].innerHTML = tickets.length;
   }
 }

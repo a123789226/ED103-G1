@@ -2,7 +2,7 @@
 try {
   require("connectAqua.php");
 
-  $sql = "select * from `member` where memId=:memId and memPsw=:memPsw and memStatus=0;";
+  $sql = "select * from `member` where memId=:memId and memPsw=:memPsw;";
   
   $member = $pdo->prepare($sql);
   $member->bindValue(":memId", $_POST["memId"]);
@@ -25,6 +25,7 @@ try {
       $_SESSION["memPhone"] = $memRow["memPhone"];
       $_SESSION["memBirth"] = $memRow["memBirth"];
       $_SESSION["memPic"] = $memRow["memPic"];
+      $_SESSION["memStatus"] = $memRow["memStatus"];
       $_SESSION["point"] = $memRow["point"];
 
       $result = array("memNo"=>$memRow["memNo"],
@@ -36,6 +37,7 @@ try {
                       "memPhone"=>$memRow["memPhone"],
                       "memBirth"=>$memRow["memBirth"],
                       "memPic"=>$memRow["memPic"],
+                      "memStatus"=>$memRow["memStatus"],
                       "point"=>$memRow["point"]);
       
       $json = json_encode($result);
