@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -29,7 +29,31 @@
     <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- 下面是Log In -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- 上面是Log In -->
+  
+  <!-- 下面是header -->
   <header class="main_menu">
+    <!-- 主導覽列 -->
     <nav class="main_nav">
       <div class="logo_box">
         <a href="homepage.html" class="logo">
@@ -77,14 +101,12 @@
         </li>
       </ul>
       <div class="header_right">
-        <span id="memName">&nbsp;</span> <!-- 使用者姓名 -->
-        <span id="spanLogin">登入</span>
-        <a href="#" class="member_box btn_modal" id="btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish.png'">
+        </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
+          <span class="cart_amount"></span>
         </a>
         <div class="hamburger_box" id="hamburger_box">
           <div class="hamburger">
@@ -94,7 +116,18 @@
         </div>
       </div>
     </nav>
+    
+    <!-- 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
+    </div>
   </header> 
+
+  <!-- 上面是header -->
+  
+  
   <div>
     <!-- Title -->
     <!-- <div class="commonTitleBox">
@@ -105,30 +138,10 @@
 
 
   <main>
-    <!-- Log In -->
-    <div id="memLightBox" class="memLogin overlay">
-      <form action="" class="LogInForm" id="LogInForm" method="post">
-        <div class="btn_modal_close">
-          <div></div>
-          <div></div>
-        </div>
-        <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
-        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <p>Don't have an account?</p><br>
-        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-      </form>
-    </div>
-
     <!-- Sign Up -->
-    <div class="memSignup">
-      <form class="signUpForm" id="signUpForm" method="post">
-        <div class="memSignRight col-md-6">
+    <div class="memSignup container">
+      <form class="signUpForm row" id="signUpForm" method="post">
+        <div class="memSignRight col-12 col-md-6">
           <h3>Register Account</h3>
           <div class="memSignDetail">
             <input type="text" name="memName" id="memName" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'" size="30" required /><br>
@@ -147,19 +160,17 @@
             </div>
             <div class="memBir">
               <p>Birthday：</p>  
-              <input type="date" name="memBirth" id="memBirth" size="30" required><br>
+              <input type="date" name="memBirth" id="memBirth" required><br>
             </div>
             <button type="button" class="submitBtnSign" id="submitBtnSign">
               <p>SIGN UP</p>
-              <a href="#"></a>
             </button>
-            <h5>Have an account?
-              <a href="#" class="submitBtnLog btn_modal">Log In</a>
-            </h5>
+            <h5>Have an account?</ht>
+            <h5 class="submitBtnLog btn_modal">Log In</h5>
           </div>
         </div>
         
-        <div class="memSignLeft col-md-6">
+        <div class="memSignLeft col-12 col-md-6">
           <div class="memSignImg">
             <img src="./image/member/Shinnosuke2.jpg" alt="">
           </div>
@@ -188,10 +199,11 @@
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src  ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"></script>
   <script src="./js/memLogin.js"></script>
-  <script src="./js/layout/headerHam.js"></script>
+  <script src="./js/layout/header.js"></script>
 
   <script>
    
@@ -250,7 +262,7 @@
 
 
   window.addEventListener("load", function () {
-    document.getElementById("btnSignUp").addEventListener("click", checkId, false);
+    document.getElementById("submitBtnSign").addEventListener("click", checkId, false);
   }, false);
 
   // 確認密碼

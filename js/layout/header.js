@@ -14,6 +14,7 @@ function doFirst(){
     }else{
       tickets = ticketString.substr(0, ticketString.length-2).split(', ');
       cart_amount[0].style.display = 'block';
+      cart_amount[0].style.backgroundColor = 'rgb(228, 37, 37)'
       cart_amount[0].innerHTML = tickets.length;
     }
   }
@@ -42,15 +43,17 @@ window.addEventListener('load', doFirst);
 // Login彈窗
 $(function(){
   // 開啟 Modal 彈跳視窗
-  $("a.btn_modal").on("click", function(){
+  $(".btn_modal").on("click", function(){
     $("div.overlay").addClass("-on");
   });
   // 關閉 Modal
   $("div.btn_modal_close").on("click", function(){
     $("div.overlay").addClass("-opacity-zero");
-    // 設定隔一秒後，移除相關 class
+    $('#memId').val('');
+    $('#memPsw').val('');
+    // 設定隔0.5秒後，移除相關 class
     setTimeout(function(){
       $("div.overlay").removeClass("-on -opacity-zero");
-    }, 1000);
+    }, 500);
   });
 });
