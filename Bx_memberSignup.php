@@ -1,11 +1,23 @@
 <?php
 try{
-  require_once("connect_Aqua.php");
+  require_once("connect_aqua.php");
 
   $sql = "select * from member where memId=:memId";
 
+    $memName = $_POST['memName'];
+    $memId = $_POST['memId'];
+    $memPsw = $_POST['memPsw'];
+    $memPhone = $_POST['memPhone'];
+    $memEmail = $_POST['memEmail'];
+    $memSex = $_POST['memSex'];
+    $memBirth = $_POST['memBirth'];
+    $memPic = $_POST['memPic'];
+
+
+
+
   $member = $pdo->prepare($sql);
-  $member->bindValue(":memId", $_POST["memId"]);
+  $member->bindValue(":memId", $memId);
   $member->execute();
 
   // 判斷帳號是否有人使用
@@ -14,10 +26,10 @@ try{
     }else{ 
     require_once("connect_aqua.php");
 
-    $sql = "INSERT INTO member(memId, memName, memPsw, memPhone, memEmail, memSex, memBirth)
-    VALUES ('$memId', '$memName','$memPsw','$memPhone','$memEmail','$memSex','$memBirth');";
+    $sql1 = "INSERT INTO member(memId, memName, memPsw, memPhone, memEmail, memSex, memBirth, memPic)
+    VALUES ('$memId', '$memName','$memPsw','$memPhone','$memEmail','$memSex','$memBirth', '$memPic');";
 
-    $member = $pdo->prepare($sql);
+    $member = $pdo->prepare($sql1);
     $member->bindValue(":memId", $memId);
     $member->bindValue(":memName", $memName);
     $member->bindValue(":memPsw", $memPsw);
@@ -25,6 +37,7 @@ try{
     $member->bindValue(":memEmail", $memEmail);
     $member->bindValue(":memSex", $memSex);
     $member->bindValue(":memBirth", $memBirth);
+    $member->bindValue(":memPic", $memPic);
     $member ->execute();
     
     $memRow = $member->fetch(PDO::FETCH_ASSOC);

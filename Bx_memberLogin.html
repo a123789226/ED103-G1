@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    <title>Aqua Wonderland</title>
+</head>
+<body>
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="background" style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div> 
+  <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- 下面是背景的div，先不要動到 -->
+  <div class="memBackground">
+    <div class="commonBG00 commonBGSet"></div>
+    <div class="commonBG01 commonBGSet"></div>
+    <div class="commonBG02 commonBGSet"></div>
+    <div class="commonBGLeft commonBGSet"></div>
+    <div class="commonBGRight commonBGSet"></div>
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
+  </div> 
+  <!-- 上面是背景的div，先不要動到 -->
+  <header class="main_menu">
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
+        </a>
+        <a href="" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
+        </a>
+      </div>
+      <ul class="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog.html" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog.html" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <span id="memName">&nbsp;</span> <!-- 使用者姓名 -->
+        <span id="spanLogin">Login</span>
+        <a href="#" class="member_box btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="">
+        </a>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount">1</span>
+        </a>
+        <div class="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active"></span>
+            <span class="hamburger_cross">&times;</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header> 
+  <div>
+    <!-- Title -->
+    <!-- <div class="commonTitleBox">
+      <h2 class="commonTitle">Big Title</h2>
+      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
+    </div> -->
+  <!-- 你的code打這下面 -->
+
+
+  <main>
+    <!-- Log In -->
+    <div id="memLightBox" class="memLogin overlay">
+      <form action="" class="LogInForm" id="LogInForm" method="post">
+
+        <div class="btn_modal_close">
+          <div></div>
+          <div></div>
+        </div>
+
+        <h3 class="memLogTitle">LOG IN</h3>
+        
+        <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+        
+        <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+        
+        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+        
+        <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+        
+        <div class="memLine">
+          <h5>OR</h5>
+        </div>
+        
+        <p>Don't have an account?</p><br>
+        
+        <a href="./BX_memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+     
+        </form>
+    
+    </div>
+
+    <!-- Sign Up -->
+    <div class="memSignup">
+
+      <form class="signUpForm" id="signUpForm" method="post">
+
+        <div class="memSignRight col-md-6">
+
+          <h3>Register Account</h3>
+
+          <div class="memSignDetail">
+
+            <input type="text" name="signMemName" id="signMemName" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'" size="30" required /><br>
+
+            <input type="text" name="signMemId" id="signMemId" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" maxlength="12" size="30" required />
+
+            <!-- <input type="button" id="btnCheckId" value="Check"><span id="idMsg"></span> -->
+            <input type="password" maxlength="12" minlength="8" name="signMemPsw" id="signMemPsw" placeholder="Password" onfocus="this.placeholder=''" onblur="checkpas1();"  size="30" required /><br><span class="tip_length" style="color: red;">密碼長度錯誤</span>
+
+            <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br><span class="tip" style="color: red;">輸入密碼不一致</span>
+
+            <input type="text" name="memPhone" id="memPhone" placeholder="Phone Number" onfocus="this.placeholder=''" onblur="this.placeholder='Phone Number'" maxlength="10" size="30" required /><br>
+
+            <input type="email" name="memEmail" id="memEmail" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" size="30" required /><br>
+
+            <div class="Sex">
+              <p>Gender：</p>
+              <input type="radio" name="memSex" id="memSex1" value="Male" checked />
+              <label class="memGender">Male</label>
+              <input type="radio" name="memSex" id="memSex2" value="Female" />
+              <label class="memGender">Female</label>
+            </div>
+
+            <div class="memBir">
+              <p>Birthday：</p>  
+              <input type="date" name="memBirth" id="memBirth" size="30" required><br>
+            </div>
+
+            <button type="button" class="submitBtnSign" id="submitBtnSign">
+              <p>SIGN UP</p>
+              <a href="#"></a>
+            </button>
+
+            <h5>Have an account?
+              <a href="#" class="submitBtnLog btn_modal">Log In</a>
+            </h5>
+
+          </div>
+
+        </div>
+        
+        <div class="memSignLeft col-md-6">
+
+          <div class="memSignImg">
+            <img src="./image/member/Shinnosuke2.jpg" alt="">
+          </div>
+
+          <label for="memPhoto">
+            <input type="file" name="memImg" id="memPhoto" style="display: none;">
+            Upload Photo
+          </label>
+
+
+          <div class="memInter">
+            <h4>Auqa Wonderland Privacy Policy</h4>
+            <p>WE COLLECT INFORMATION FROM AND ABOUT YOU.</p>
+            <p>Contact information. For example, we might collect your name and street address. We might also collect your phone number or email.</p>
+            <p>Payment and billing information. For example, we collect your credit card number and zip code when you buy a ticket.</p>
+            <p>Other information. If you access our services on a web browser, we may collect information about the browser you're using. </p>
+            <p>We might look at what site you came from, or what site you visit when you leave us.</p>
+            <p>If you access our services on your mobile device, we may collect your GPS location or your device's unique identifier.</p> 
+          </div>
+
+        </div>
+
+      </form>   
+        
+    </div>
+  </main>
+<!-- 你的code打這上面 -->
+
+  </div>
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="./js/BX_memLogin.js"></script>
+
+  <script>
+   
+
+
+  // 註冊判斷帳號/暱稱是否使用過（這還沒好）
+  function checkId() {
+    console.log($("#signMemName").val());
+
+
+    let idCheck = $("#signMemId").val();
+    if (idCheck.length < 5 ^ idCheck.length > 12) { // 帳號
+      swal("帳號長度錯誤", "請輸入5~12字以內", "error");
+      // alert('暱稱不可空白');
+      return;
+    }
+
+    let pswCheck = $("#signMemPsw").val();
+    if (pswCheck.length < 6 ^ pswCheck.length > 12) { //密碼
+      swal("密碼長度錯誤", "6~12字以內", "error");
+      return;
+    }
+
+    let phoneCheck = $("#memPhone").val();
+    if (phoneCheck.length != 10) { //密碼
+      swal("電話長度錯誤", "長度為10個字元", "error");
+      return;
+    }
+
+    let mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    let mailCheck = $("#memEmail").val();
+    if (mailCheck.match(mail) == null) { //信箱
+      swal("Enter a valid email address.", "請確認Email", "error");
+      return;
+    }
+
+    let sexTrans = $("input[name='memSex']:checked").val();
+    if(sexTrans == 'Male'){
+      sexTrans = 'M';
+    }else{
+      sexTrans = 'F';
+    }
+    console.log(sexTrans);
+    
+
+    let birthCheck = $("#memBirth").val();
+    if (birthCheck == "") { //密碼
+      swal("請填寫出生日", "", "error");
+      return;
+    }
+
+
+    let picCheck = $("#memPhoto").val();
+    if (picCheck != '') {
+      picName = picCheck.substring((picCheck.lastIndexOf("\\")) + 1);
+    } else {
+      swal("請選擇大頭貼", "", "error");
+      return;
+    }
+
+    
+
+
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          swal(xhr.responseText);
+          if (xhr.responseText == '帳號註冊成功') {
+            if (localStorage.getItem('web') == null) { //註冊成功
+              swal(xhr.responseText); //回傳php回應的值
+              $(".swal-button--confirm").click(function () {
+                $("#signUpForm").submit();
+                window.location.href = './memberProfile.html';
+              })
+            } else {
+              let redirection = localStorage.getItem('web');
+              $("#signUpForm").submit();
+              window.location.href = redirection;
+            }
+          }
+        } else {
+          // alert(xhr.status); 
+        }
+      }
+    }
+
+    xhr.open("post", "./Bx_memberSignup.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    let data_info = `memId=${$id("signMemId").value}&memName=${$id("signMemName").value}&memPsw=${$id("signMemPsw").value}&memPhone=${$id("memPhone").value}&memEmail=${$id("memEmail").value}&memSex=${sexTrans}&memBirth=${$id("memBirth").value}&memPic=${picName}`;
+    xhr.send(data_info);
+  }
+
+
+//   window.addEventListener("load", function () {
+    document.getElementById("submitBtnSign").addEventListener("click", checkId, false);
+//   }, false);
+
+  // 確認密碼
+  $(".tip").hide();
+  $(".tip_length").hide();
+
+  function checkpas1() { //當第一個密碼框失去焦點時，觸發checkpas1事件
+    var pas1 = document.getElementById("signMemPsw").value;
+    var pas2 = document.getElementById("repassword").value;
+
+    if (pas1.length < 8 ^ pas1.length > 12) {
+      $(".tip_length").show();
+    } else {
+      $(".tip_length").hide();
+    }
+  }
+
+  function checkpas() { //當第一個密碼框失去焦點時，觸發checkpas2件
+    var pas1 = document.getElementById("signMemPsw").value;
+    var pas2 = document.getElementById("repassword").value; //獲取兩個密碼框的值
+    if (pas1 !== pas2) {
+      $(".tip").show(); //當兩個密碼不相等時則顯示錯誤資訊
+      // alert('密碼不一致')
+      $('.submitBtnSign').attr('disabled', true)
+      $('.submitBtnSign').css('cursor', 'not-allowed')
+    } else {
+      $(".tip").hide();
+      // alert('密碼一致')
+      $('.submitBtnSign').attr('disabled', false)
+      $('.submitBtnSign').css('cursor', 'pointer')
+    }
+  }
+
+  // 長度判斷
+  $('#memId').on('input', function (e) {
+    var $that = $(this),
+      limit = 12;                            //定義所需字節數
+    $that.attr('maxlength', limit);
+    setTimeout(function () {
+      var value = $that.val(),
+        reg = /[\u4e00-\u9fa5]/g,
+        notReg = /\w/g;
+      var Cn = value.match(reg);
+      var En = value.match(notReg);
+      if (Cn) {
+        limit = limit - (Cn.length * 2);
+      }
+      if (En) {
+
+        limit = limit - En.length;
+      }
+      if (limit <= 0) {
+        var finalLen = value.length + limit;
+        value = value.substring(0, finalLen);
+        $that.attr('maxlength', limit);
+        $that[0].value = value;
+      }
+    }, 0);
+
+  });
+  
+  </script>
+</body>
+</html>
