@@ -103,29 +103,38 @@
     </div>
 <!-- 你的code打這下面 -->
 <div class="blogUploadInPhp"></div>
-        <!-- header 的高度 -->
         <?php
+        $_SESSION["memId"]='Mark123';
+        $_SESSION["memNo"]='1';
         session_start();
-        if(isset($_SESSION["memId"])){
-            $errMsg = "";
+        // if(isset($_SESSION["memId"])){
+        //     $errMsg = "";
             try {
                 require_once("./php/connectBook.php");
                 $pdo->beginTransaction();
                 // 取得上傳檔案數量
                 $fileCount = count($_FILES['upFile']['name']);
                 echo "fileCount = ", $fileCount, "<br>";
-                $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic,
-        			   blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus, blogMark, blogTags)
-                values('{$_SESSION["memNo"]}', :blogTitle, :piGeneralContent,
-                       '', :blogContent1, '', :blogContent2, '', :blogTags, now(), '0' )";
+                // INSERT INTO postinfo ( memNo, piTitle,  piGeneralContent,
+        		// 	   piTitlePic, piTitleContent, piFloatLeftPic, piFloatLeftContent, piFloatRightPic, piFloatRightContent,
+                //        piTime, piStatus)
+                // values('2', '測試title2', '',
+                //        '', 'block1內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
+                //        '', 'block2內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
+                //        '', 'block3內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
+                //        now(), '0' );
+                $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic, blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus,
+                       blogMark, blogTags)
+                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '123', :blogTags)"; 
+                // $sql = "INSERT INTO `products` (`psn`, `pname`, `price`, `author`, `pages`, `image`) values(null, :pname, :price, :author, :pages, '' )";
                 $products = $pdo->prepare( $sql );
                 $products -> bindValue(":blogTitle", $_POST["blogTitle"]);
                 $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
                 $products -> bindValue(":blogContent2", $_POST["blogContent2"]);
                 $products -> bindValue(":blogTags", $_POST["blogTags"]);
-                $products -> execute();
+                // $products -> execute();
                     //取得自動創號的key值
-                $blogNo = $pdo->lastInsertId();
+                $piNo = $pdo->lastInsertId();
 
                 foreach ($_FILES["upFile"]["error"] as $i => $errorCode) {
                 //.......確定是否上傳成功
@@ -139,11 +148,13 @@
                         // $fileName = "{$piNo}_{$i}.{$fileInfoArr["extension"]}";  //8.gif
                         $fileName = "{$_FILES['upFile']['name'][$i]}";
                         $from = $_FILES["upFile"]["tmp_name"][$i];
-                        $to = "img/postPhotos/$fileName";
+                        $to = "img/blogPost/$fileName";
                             if(copy( $from, $to)===true){
                             //將檔案名稱寫回資料庫
+                            // update postinfo set piTitlePic='11.jpg', piFloatLeftPic='12.jpg', piFloatRightPic='13.jpg' where piNo = 1;
+                            // $sql = "update postinfo set piTitlePic = :piTitlePic where piNo = $piNo";
                         }else{
-                            $pdo->rollBack();
+                            // $pdo->rollBack();
                         }
                     }else{
                         echo "錯誤代碼 : {$_FILES["upFile"]["error"][$i]} <br>";
@@ -152,36 +163,43 @@
                 }//foreach
 
                 $sql = "update blog set blogPic = :blogPic, blogPic1=:blogPic1, blogPic2=:blogPic2 where blogNo = $blogNo";
-                $fileLocation0 = "img/postPhotos/{$_FILES['upFile']['name'][0]}";
-                $fileLocation1 = "img/postPhotos/{$_FILES['upFile']['name'][1]}";
-                $fileLocation2 = "img/postPhotos/{$_FILES['upFile']['name'][2]}";
+                // $sql = "update products set image = :image where psn = 7";
+                // $fileLocation0 = "img/postarticleregion/{$piNo}_0.{$fileInfoArr["extension"]}";
+                // $fileLocation1 = "img/postarticleregion/{$piNo}_1.{$fileInfoArr["extension"]}";
+                // $fileLocation2 = "img/postarticleregion/{$piNo}_2.{$fileInfoArr["extension"]}";
+                $fileLocation0 = "img/blogPost/{$_FILES['upFile']['name'][0]}";
+                $fileLocation1 = "img/blogPost/{$_FILES['upFile']['name'][1]}";
+                $fileLocation2 = "img/blogPost/{$_FILES['upFile']['name'][2]}";
                 $products = $pdo->prepare($sql);
                 $products -> bindValue(":blogPic", $fileLocation0);
                 $products -> bindValue(":blogPic1", $fileLocation1);
                 $products -> bindValue(":blogPic2", $fileLocation2);
-                $products -> execute();
+                // $products -> execute();
                 echo $fileLocation0, "<br>";
                 echo $fileLocation1, "<br>";
                 echo $fileLocation2, "<br>";
+                // echo $fileName, "<br>";
                 echo "新增成功~";
+                // $pdo->commit();
 
                 $sql = "update member set point = point + :point where memNo = {$_SESSION["memNo"]}";
+                // $sql = "update meminfo set memPoint = memPoint+300 where memNo = 1";
 
-                $meminfo = $pdo->prepare($sql);
-                $meminfo -> bindValue(":point", $_POST["point"]);
-                $meminfo -> execute();
+                $member = $pdo->prepare($sql);
+                $member -> bindValue(":point", $_POST["point"]);
+                // $member -> execute();
                 // echo $fileName, "<br>";
                 $pdo->commit();
-                header("Location:./blogPost.php");
+                header("Location:./blog1.php");
             } catch (PDOException $e) {
                 // $pdo->rollBack();
                 $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
                 $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
             }
             echo $errMsg;
-        }else{
-            echo "您尚未登入，請登入後再發文";
-        }
+        // }else{
+        //     echo "您尚未登入，請登入後再發文";
+        // }
         ?>
     </div>
 <!-- 你的code打這上面 -->

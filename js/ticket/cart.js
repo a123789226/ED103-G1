@@ -67,7 +67,7 @@ function doFirst(){
       let ticketInfo = storage.getItem(ticketId);
       let ticketName = ticketInfo.split('|')[0];
       let ticketPrice = ticketInfo.split('|')[1];
-      let ticketNewInfo = ''
+      let ticketNewInfo = '';
       
       //--按鈕
       minusButton.addEventListener('click', function(){

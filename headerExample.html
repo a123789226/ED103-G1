@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/ticket/cart.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
-  <div class="cartBG">
+  <div class="memBackground">
     <div class="commonBG00 commonBGSet"></div>
     <div class="commonBG01 commonBGSet"></div>
     <div class="commonBG02 commonBGSet"></div>
     <div class="commonBGLeft commonBGSet"></div>
     <div class="commonBGRight commonBGSet"></div>
     <img src="./image/background/fish1.png" alt="" class="BGFish1">
-    <img src="./image/background/fish1.png" alt="" class="BGFish2">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
-
 
   <!-- Log In開始 -->
   <div id="memLightBox" class="memLogin overlay">
@@ -117,72 +115,33 @@
 
   </header> 
 
-
-  <div id="cartApp">
+  <!-- header結束 -->
+  
+  
+  <div>
+    <!-- Title -->
     <!-- <div class="commonTitleBox">
-      <h2 class="commonTitle">TICKET</h2>
+      <h2 class="commonTitle">Big Title</h2>
       <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
     </div> -->
-<!-- 你的code打這下面 -->
-
-    <div class="cartContent">
-      <h3 class="cartTitle">Ticket Cart</h3>
-      <h4 class="cartSubTitle">
-        Confirm the tickets you have added to the shopping cart.</h4>
-
-      <div class="cartTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Ticket</th>
-              <th>Quantity</th>
-              <th>SubTotal</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr>
-              <td>Adult(18-64)</td>
-              <td>
-                <div class="ticketButtons">
-                  <button class="ticketButton"><span>－</span></button>
-                  <p class="ticketTicketAmount" >0</p>
-                  <button class="ticketButton"><span>＋</span></button>
-                </div>
-              </td>
-              <td><span>$</span><span>80</span></td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="remove"></td>
-            </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
-      <div class="ticketEmpty">
-        <p>No Tickets In The Cart!</p>
-        <img src="./image/index/object/indexMain3-1.png" alt="">
-      </div>
-      <div class="cartToPayment">
-        <a class="ticketToMoneyButton" href="ticketPayment.html">Go To Payment</a>
-      </div>
-    </div>
+  <!-- 你的code打這下面 -->
 
 
 <!-- 你的code打這上面 -->
 
   </div>
 
-
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
-  
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/memLogin.js"></script>
   <script src="./js/layout/header.js"></script>
 
   <script>
-
+    // 自己寫的js、jq如果要放html內要寫在這裡唷
   </script>
 </body>
 </html>
