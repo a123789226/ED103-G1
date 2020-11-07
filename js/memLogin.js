@@ -1,3 +1,32 @@
+//header判斷是否登入
+
+// function loginStatus() {
+//     if ($('#memNameInProfileBlock').html() === '') {
+//         // alert ('還沒登入');
+//         var kkk = window.location.href;
+//         kkk = kkk.substring(kkk.lastIndexOf('/'))
+//         if (kkk != '/memberlogin.html') {
+//             let url = window.location.href;
+//             localStorage.setItem('web', url);
+//             window.location.href = './memberlogin.html';
+//         } else {
+//             localStorage.setItem('web', './memberProfile.html');
+//             window.location.href = './memberlogin.html';
+//         }
+//     } else {
+//         // alert('已經登入');
+//         window.location.href = './memberProfile.html';
+//     }
+// }
+
+
+
+
+
+
+
+
+
 function $id(id) {
     return document.getElementById(id);
 }
@@ -134,6 +163,9 @@ function init() {
 
 
 }; //window.onload
+
+// $('#memberPic').click(loginStatus);
+
 
 window.addEventListener("load", init, false);
 

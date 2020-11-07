@@ -40,9 +40,14 @@ try{
     $member->bindValue(":memPic", $memPic);
     $member ->execute();
     
-    $memRow = $member->fetch(PDO::FETCH_ASSOC);
     session_start();
-
+    $sql = "select * from member where memId=:memId";
+    $member = $pdo->prepare($sql);
+    $member->bindValue(":memId", $memId);
+    $member->execute();
+    
+    $memRow = $member->fetch(PDO::FETCH_ASSOC);
+    
     $_SESSION["memNo"] = $memRow["memNo"];
     $_SESSION["memId"] = $memRow["memId"];
     $_SESSION["memName"] = $memRow["memName"];
