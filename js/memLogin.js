@@ -52,6 +52,7 @@ function doSignOut() {
         $id('memberPic').classList.remove('memberImg');
         $id('memberPic').title = 'Log In';
         $id('memberPic').style.transition = '0.5s cubic-bezier(.44,-1.25,1,.31)';
+        member = {};
     }
     xhr.open("get", "logout.php", true);
     xhr.send(null);
