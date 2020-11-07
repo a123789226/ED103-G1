@@ -104,11 +104,11 @@
 <!-- 你的code打這下面 -->
 <div class="blogUploadInPhp"></div>
         <?php
-        $_SESSION["memId"]='Mark123';
-        $_SESSION["memNo"]='1';
+        // $_SESSION["memId"]='Mark123';
+        // $_SESSION["memNo"]='1';
         session_start();
-        // if(isset($_SESSION["memId"])){
-        //     $errMsg = "";
+        if(isset($_SESSION["memId"])){
+            $errMsg = "";
             try {
                 require_once("./php/connectBook.php");
                 $pdo->beginTransaction();
@@ -132,9 +132,9 @@
                 $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
                 $products -> bindValue(":blogContent2", $_POST["blogContent2"]);
                 $products -> bindValue(":blogTags", $_POST["blogTags"]);
-                // $products -> execute();
+                $products -> execute();
                     //取得自動創號的key值
-                $piNo = $pdo->lastInsertId();
+                $blogNo = $pdo->lastInsertId();
 
                 foreach ($_FILES["upFile"]["error"] as $i => $errorCode) {
                 //.......確定是否上傳成功
@@ -197,9 +197,9 @@
                 $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
             }
             echo $errMsg;
-        // }else{
-        //     echo "您尚未登入，請登入後再發文";
-        // }
+        }else{
+            echo "您尚未登入，請登入後再發文";
+        }
         ?>
     </div>
 <!-- 你的code打這上面 -->
