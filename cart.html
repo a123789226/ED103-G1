@@ -182,7 +182,21 @@
   <script src="./js/layout/header.js"></script>
 
   <script>
+    function checkCartLink(){
+      // 沒有會員不能前往結帳判定
+      let ticketToMoneyButton = document.getElementsByClassName('ticketToMoneyButton');
+      ticketToMoneyButton[0].addEventListener("click", function(e){
+        if(member.memId){ 
+          //do nothing
+        }else{  
+          e.preventDefault();
+          let overlay = document.getElementsByClassName('overlay');
+          overlay[0].classList.add('-on');
+        }
+      });
+    }
 
+    window.addEventListener('load', checkCartLink);
   </script>
 </body>
 </html>
