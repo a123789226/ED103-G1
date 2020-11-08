@@ -162,7 +162,9 @@
   <?php
   try {
     require_once('./php/connectBook.php');
-    $sql = "select * from blog order by blogTime desc";
+    // $sql = "select * from blog join member order by blogNo desc";
+    $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
+    FROM blog b JOIN member m ON (b.memNo = m.memNo) ORDER BY blogNo DESC";
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
     }catch (PDOException $e){
@@ -189,8 +191,8 @@
             <div class="card-body">
               <h4 class="card-title" class="sub_title"><?=$prodRow["blogTitle"]?></h4>
               <div class="blogMemInfo">
-                <div class="blogMemName"><?=$prodRow["memNo"]?></div>
-                <img src="https://picsum.photos/40/40?random=02" class="blogMemImg">
+                <div class="blogMemName">By&nbsp<?=$prodRow["memName"]?></div>
+                <img src="<?php $prodRow["memPic"];?>"  class="blogMemImg">
                 <span>|&nbsp;</span>
                 <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
               </div>
@@ -210,7 +212,7 @@
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
           </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
+          <div class="blogMoreBtnSection"><a href='./blogPost.php?blogNo=<?=$prodRow["blogNo"]?>' class="blogMoreBtn">More</a></div>
           </div>
         </div>
       </div>
