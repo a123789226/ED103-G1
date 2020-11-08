@@ -137,7 +137,7 @@
         <p class="ticketTicketText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!</p>
         <div class="ticketButtonBlock">
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Adult(18-64)|30|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -147,7 +147,7 @@
             </div>
           </div>
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Kid(4-11)|15|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -157,7 +157,7 @@
             </div>
           </div>
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Elder(65-)|20|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -235,8 +235,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">2</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area A|80|0">
-              <p class="ticketTicketName">Area A</p>
-              <p class="ticketTicketPrice"><span>$</span><span>80</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -248,8 +248,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>0</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area B|70|0">
-              <p class="ticketTicketName">Area B</p>
-              <p class="ticketTicketPrice"><span>$</span><span>70</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -261,8 +261,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>20</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area C|100|0">
-              <p class="ticketTicketName">Area C</p>
-              <p class="ticketTicketPrice"><span>$</span><span>100</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -274,8 +274,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>3</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area D|90|0">
-              <p class="ticketTicketName">Area D</p>
-              <p class="ticketTicketPrice"><span>$</span><span>90</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -345,22 +345,25 @@
   // 非同步放入門票資訊
 
 
-  function doFirst(){
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function(){
-      ticketsRow = JSON.parse(xhr.responseText);
-      showTickets();
-      console.log(ticketsRow);
-    }
-    xhr.open("get", "./php/ticketInfo.php",false);
-    xhr.send(null);
-  }
+  // function doFirstTicket(){
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.onload = function(){
+  //     ticketsRow = JSON.parse(xhr.responseText);
+  //     showTickets(ticketsRow);
+  //     // console.log(ticketsRow);
+  //   }
+  //   xhr.open("get", "./ticketInfo.php",false);
+  //   xhr.send(null);
+  // }
 
-  function showTickets(){
-    
-  }
+  // function showTickets(item){
+  //   let ticketProduct = document.querySelectorAll('div.ticketProduct input');
+  //   for(let i=0; i<ticketProduct.length; i++){
+  //     ticketProduct[i].value = `${item.ticketType}|${item.ticketPrice}|0`
+  //   }
+  // }
 
-  window.addEventListener('load', doFirst);
+  // window.addEventListener('load', doFirstTicket);
 
 
 
