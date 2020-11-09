@@ -79,7 +79,7 @@ let vue_remaining = new Vue({
 
 
 
-// document.ready = function () {
+
 
   //Boat move
   TweenMax.to('.home_boat', 10, {
@@ -90,41 +90,6 @@ let vue_remaining = new Vue({
     ease: Power0.easeNone,
   });
 
-  //Book
-  var flipbook = $('#flipbook');
-  flipbook.turn({
-    width: window.innerWidth * 0.5,
-    height: window.innerHeight * 0.7,
-    autoCenter: true
-  });
-
-  flipbook.turn("page", 2);
-  var win = $(this); //this = window
-  var home_message = document.getElementsByClassName("home_message_box")[0];
-
-  if (win.width() <= 974) {
-    flipbook.css("left", "7%");
-    flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.6);
-    home_message.style.margin = '50px auto 0 auto';
-    home_message.style.width = '50%';
-    $("#flipbook").turn("display", "single");
-  }else {
-    flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.7);
-    flipbook.css("left", "30%");
-    // flipbook.css("trnasfoem","translateX(-50%)");
-    home_message.style.margin = '';
-    home_message.style.width = '';
-    $("#flipbook").turn("display", "double");
-  }
-
-  //calendar
-  // $(".BoXiang_calendar").datepicker({
-  //   //開始日期為今日
-  //   startDate: " new date()",
-  //   format: "yyyy-mm-dd",
-  //   //特別標註今天
-  //   todayHighlight: true,
-  // });
 
 
 
@@ -159,9 +124,9 @@ let vue_remaining = new Vue({
   })
 
   //Alert style
-  document.getElementById("home_jbtn").addEventListener("click", function () {
-    swal("Submit successful", "", "success");
-  });
+  // document.getElementById("home_jbtn").addEventListener("click", function () {
+  //   swal("Submit successful", "", "success");
+  // });
   document.getElementById("home_vbtn").addEventListener("click", function () {
     swal("Vote successful", "", "success");
   });
@@ -319,26 +284,54 @@ let vue_remaining = new Vue({
     .addIndicators()
     .addTo(controller);
 
-// }
+
+
+
+
+
+
+//Book
+var flipbook = $('#flipbook');
+flipbook.turn({
+  width: window.innerWidth * 0.5,
+  height: window.innerHeight * 0.7,
+  autoCenter: true
+});
+
+flipbook.turn("page", 2);
+var win = $(this); //this = window
+var home_message = document.getElementsByClassName("home_message_box")[0];
+
+if (win.width() <= 576) {
+  flipbook.css("left", "7%");
+  flipbook.turn("size", window.innerWidth * 0.8, window.innerHeight * 0.5);
+
+} else if (win.width() <= 974){
+  flipbook.css("left", "15%");
+  flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.75);
+}else{
+  flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.75);
+  flipbook.css("left", "45%");
+  // flipbook.css("trnasfoem","translateX(-50%)");
+  $("#flipbook").turn("display", "double");
+}
+
+
 
 $(window).resize(function () {
-  var win = $(this); //this = window
-  var home_message = document.getElementsByClassName("home_message_box")[0];
-  if (win.width() <= 974) {
-
+  let win = $(this); //this = window
+  if (win.width() <= 576) {
     flipbook.css("left", "7%");
-    flipbook.turn("size", flipbook.clientWidth, flipbook.clientHeight);
-    home_message.style.margin = '50px auto 0 auto';
-    home_message.style.width = '50%';
-    // $("#flipbook").turn("display", "single");
+    flipbook.turn("size", window.innerWidth * 0.8, window.innerHeight * 0.5);
 
-  }
-  else {
-    flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.68);
-    flipbook.css("left", "25%");
+  } else if (win.width() <= 974) {
+
+    flipbook.css("left", "15%");
+    flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.75);
+  } else {
+    flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.7);
+    flipbook.css("left", "45%");
     // flipbook.css("trnasfoem","translateX(-50%)");
-    home_message.style.margin = '';
-    home_message.style.width = '';
     $("#flipbook").turn("display", "double");
   }
 
@@ -347,16 +340,49 @@ $(window).resize(function () {
 
 
 
+// let vue_journal = new Vue({
+//   el: '#vue_journal',
+//   data: {
+//     no: null,
+//     content: [],
+
+//   },
+//   mounted() {
 
 
-  // $('.BoXiang_calendar').datepicker()
-  //   .on('changeDate', function (e) {
-  //     time = e.format();
-  //     console.log(time);
-  //   });
+//     // var params = new URLSearchParams();
+//     // params.append('nightDate', this.$data.date);
+
+//     // let bbb = 0;
+//     axios.post('home_journal.php')
+//       .then(function (res) {
+//         vue_journal.no = res.data[0].aquaNo;
+//         for(let i =0; i<res.data.length ; i++){
+//           vue_journal.content[i] = res.data[i];
+//           console.log(typeof(res.data[0].aquaNo));
+//         }
+//       })
+//       .catch(function (err) {
+//         console.log(err);
+//       });
+
+
+//   },
 
 
 
+// })
 
+$.ajax({
+  url: 'home_journal.php',
+  type: 'get',
+  dataType: 'json',
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (data) {
+    console.log('出錯啦 data : ' + JSON.stringify(data));
+  },
+})
 
 

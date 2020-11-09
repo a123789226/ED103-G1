@@ -57,6 +57,8 @@ try{
     $_SESSION["memSex"] = $memRow["memSex"];
     $_SESSION["memBirth"] = $memRow["memBirth"];
     $_SESSION["point"] = $memRow["point"];
+    $_SESSION["memPic"] = $memRow["memPic"];
+    $_SESSION["memStatus"] = $memRow["memStatus"];
         
     //送出登入者的姓名資料
     $result = array("memNo"=>$memRow["memNo"], 
