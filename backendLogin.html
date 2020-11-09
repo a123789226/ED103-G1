@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="./css/style.css">
-    
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+  <link rel="stylesheet" href="./css/style.css">
 
-    <title>Aqua BackState</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <title>Aqua BackState</title>
 </head>
+
 <body>
   <!-- 下面是背景的div，先不要動到 -->
-  <div class="background" style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div> 
+  <div class="background"
+    style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;">
+  </div>
   <!-- 上面是背景的div，先不要動到 -->
 
   <!-- 下面是背景的div，先不要動到 -->
@@ -27,7 +31,7 @@
     <div class="commonBGRight commonBGSet"></div>
     <img src="./image/background/fish1.png" alt="" class="BGFish1">
     <img src="./image/background/fish2.png" alt="" class="BGFish2">
-  </div> 
+  </div>
   <!-- 上面是背景的div，先不要動到 -->
   <!-- <header class="main_menu">
     <nav class="main_nav">
@@ -113,9 +117,11 @@
           <h1>Aqua Wonderland</h3>
         </div>
         <h3 class="mgrLogTitle">BackState</h3>
-        <input type="text" name="mgrId" id="mgrId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="ManagerId" size="30"/><br>
-        <input type="password" name="mgrPsw" id="mgrPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="30"/><br>
-        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
+        <input type="text" name="mgrId" id="mgrId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+          placeholder="ManagerId" size="30" /><br>
+        <input type="password" name="mgrPsw" id="mgrPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+          placeholder="Password" size="30" /><br>
+        <button type="submit" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
       </form>
     </div>
     <!-- 你的code打這上面 -->
@@ -127,24 +133,26 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/mgrLogin.js"></script>
 
 
   <!-- 頁籤 -->
   <script>
-    
+
     // OrderDetail收合
-    $("div.mgrStep").on("click", function(){
+    $("div.mgrStep").on("click", function () {
       $(this).next().slideToggle();
       $(this).find('i').toggleClass('rotate');
     });
-  
+
     // Hamburger
-    $("div.hamburger_box").on("click", function(){
+    $("div.hamburger_box").on("click", function () {
       $("span.hamburger_line").toggleClass("is-active");
       $("span.hamburger_cross").toggleClass("is-active");
       $("ul.main_menu_ul").toggleClass("is-active");
     });
 
-</script>
+  </script>
 </body>
+
 </html>
