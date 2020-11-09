@@ -1,32 +1,3 @@
-//header判斷是否登入
-
-// function loginStatus() {
-//     if ($('#memNameInProfileBlock').html() === '') {
-//         // alert ('還沒登入');
-//         var kkk = window.location.href;
-//         kkk = kkk.substring(kkk.lastIndexOf('/'))
-//         if (kkk != '/memberlogin.html') {
-//             let url = window.location.href;
-//             localStorage.setItem('web', url);
-//             window.location.href = './memberlogin.html';
-//         } else {
-//             localStorage.setItem('web', './memberProfile.html');
-//             window.location.href = './memberlogin.html';
-//         }
-//     } else {
-//         // alert('已經登入');
-//         window.location.href = './memberProfile.html';
-//     }
-// }
-
-
-
-
-
-
-
-
-
 function $id(id) {
     return document.getElementById(id);
 }
@@ -53,6 +24,7 @@ function doSignOut() {
         $id('memberPic').title = 'Log In';
         $id('memberPic').style.transition = '0.5s cubic-bezier(.44,-1.25,1,.31)';
         member = {};
+        window.location.href = 'homepage.html';
     }
     xhr.open("get", "logout.php", true);
     xhr.send(null);
