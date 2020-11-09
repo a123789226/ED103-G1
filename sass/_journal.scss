@@ -185,7 +185,7 @@ body {
 .jourBookSection {
   text-align: center;
   width: 40%;
-  border: 3px solid black;
+  // border: 3px solid black;
   // flex: 40%;
 
   @media screen and (max-width: 676px) {
@@ -215,13 +215,12 @@ body {
   max-height: 600px;
   min-width: 270px;
   // min-height: 360px;
-  border: 3px solid deeppink;
+  // border: 3px solid deeppink;
   display: flex;
   flex-wrap: wrap;
   // transform: rotateY(-3deg);
   box-shadow: 6px 7px 0px #C4C4C4;
   border-radius: 10px;
-  overflow: hidden;
 
   animation-name: book;
   animation-duration: 3s;
@@ -284,6 +283,19 @@ body {
   margin: 0 auto;
   text-align: center;
   @include sub_title($keyWhite);
+}
+
+a.jourBookName {
+  text-align: center;
+  @include btn50Green;
+  box-shadow: $shadow2;
+  margin: 10px 5px;
+
+  display: inline-block;
+
+  @media screen and (max-width: 676px) {
+    padding: 0 15px;
+  }
 }
 
 .jourBookText {
@@ -694,7 +706,7 @@ div.jourLightBox.-on {
 .adoptSection {
   width: 80%;
   margin: 0 auto;
-  border: 3px solid black;
+  // border: 3px solid black;
   max-width: 1200px;
   padding: 50px;
 
@@ -1078,7 +1090,7 @@ div.jourLightBox.-on {
 .jourOpenBookSection {
   width: 80%;
   margin: 50px auto !important;
-  border: 3px solid white;
+  // border: 3px solid white;
   // background-color: rgba(0,0,0,.8);
   text-align: center;
   display: block;
@@ -1209,7 +1221,7 @@ div.jourLightBox.-on {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  // border: 2px solid red;
+  border: 2px solid red;
   display: block;
 
 }
@@ -1222,6 +1234,7 @@ div.jourLightBox.-on {
 }
 
 .jourPagePhotoArea {
+  margin: 0 auto;
   display: block;
   width: 100%;
   height: 260px;
@@ -1239,7 +1252,7 @@ div.jourLightBox.-on {
 
 .jourPagePhotoLeft {
   // width: 44%;
-  width: 100%;
+  width: 95%;
   padding: 0 15px;
   height: 160px;
   display: block;
@@ -1274,8 +1287,9 @@ div.jourLightBox.-on {
 }
 
 .jourPagePhotoRight{
-  // width: 54%;
-  width: 100%;
+  // width: 54%;.
+  margin: 0px auto;
+  width: 95%;
   height: 90px;
   border: 1px solid blue;
   display: flex;
@@ -1294,7 +1308,7 @@ div.jourLightBox.-on {
 }
 
 .jourPagePhotoRightInner {
-  width: 130px;
+  width: 120px;
   border: 1px solid green;
   position: relative;
   border-radius: 6px;
@@ -1320,9 +1334,9 @@ div.jourLightBox.-on {
 .jourPageText {
   // border: 2px solid green;
   text-align: left;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .jourPageText1 {
