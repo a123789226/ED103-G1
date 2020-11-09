@@ -1,8 +1,5 @@
 body.voteBLOCK{
-  width: 80%;
   margin: 0 auto;
-  max-width: 1200px;
-  height: 3000px;
   color: #ffffff;
   font-family: 'ROBOTO';
     
@@ -29,10 +26,11 @@ body.voteBLOCK{
 }
 
 .vote_container{
-  width:1200px;
+  width:80%;
   background: rgba(255, 255, 255, .2);
   margin:auto;
   margin-top:50px;
+  margin-bottom: 50px;
 }
 
 
@@ -47,7 +45,7 @@ body.voteBLOCK{
 
 /* 頁籤列表 */
 ul.vote_list{
-  width: 80%;
+  width: 100%;
   list-style: none;
   margin: 0 auto;
   text-align: center;
@@ -113,16 +111,18 @@ ul.vote_list > li > a.-on{
 
 
 /* 頁籤內容區塊 */
-.vote_contents{
-  height: 2500px;
-}
+// .vote_contents{
+//   height: 2500px;
+// }
 .vote_contents .vote{
   display: none;
   margin: 0 auto;
+  
+  
 }
 .vote_contents .vote.-on{
   display: block;
-  height: 2000px;
+  // height: 2000px;
   margin: 0 auto;
 }
 
@@ -131,26 +131,23 @@ ul.vote_list > li > a.-on{
 
 .nominate{
   width: 40%;
-  height: 35%;
   margin: 0 auto;
   display: inline-block;
   margin-left: 6.5%;
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow2;
+  padding-bottom: 20px;
   >p{
   @include text($textBlack);
   padding-left: 5%;
   padding-top: 10px;
   }
   >h4{
-    color: #1BB8CE;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 10px;  
-    margin-top: 20px;
-    margin-bottom: 10px;
+  @include sub_title($keyGreen); 
+    margin: 20px 0 10px 20px;
   }
 }
 
@@ -163,20 +160,20 @@ ul.vote_list > li > a.-on{
 .nominate .vote_img{
   position: relative;
   >img{
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
   display: inline-block;
   border: 3px solid white;
   border-radius: 6px;
   box-shadow: $shadow2;
+  object-fit: cover;
   
   }
 }
 
 .nominate .vote_img  a.journal{
   position: absolute;
-  top:80%;
-  left:67%;
+  top:87%;
+  left:80%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -187,9 +184,9 @@ ul.vote_list > li > a.-on{
 
 .name{
   width: 90%;
-  height: 30%;
   background: rgba(0, 0, 0, .8);
   margin: auto;
+  text-align: center;
   > input{
   height: 40px;
   display: block;
@@ -202,49 +199,37 @@ ul.vote_list > li > a.-on{
   >.btn{
   @include btn50Green;
   box-shadow: $shadow2;  
-  // margin: 0 auto;
-  margin-left: 33%;
+  margin-bottom: 20px;
   }
   > h4{
-  color: #1BB8CE;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 10px;  
-  margin-top: 20px;
-  margin-bottom: 10px;
+  @include sub_title($keyGreen); 
+    padding: 20px 0 20px 0;
   }
 }
 
 
 
 
-.name h4{
-  padding-left: 0px;
-  text-align: center;
-}
 
 .vote_nav{
   width: 40%;
-  height: 47%;
   margin: 0 auto;
   display: inline-block;
   margin-left: 6.5%;
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow2;
+  padding-bottom: 20px;
   >p{
   @include text($textBlack);
   padding-left: 5%;
   padding-top: 10px;
   }
   >h4{
-    color: #1BB8CE;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 10px;  
-    margin-top: 20px;
-    margin-bottom: 10px;
+    @include sub_title($keyGreen); 
+    padding: 20px 0 10px 20px;
   }
 }
 
@@ -252,19 +237,19 @@ ul.vote_list > li > a.-on{
 .vote_nav .vote_img{
   position: relative;
   >img{
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
   display: inline-block;
   border: 3px solid white;
   border-radius: 6px;
   box-shadow: $shadow2;
+  object-fit: cover;
   } 
 }
 
 .vote_nav .vote_img a.journal{
   position: absolute;
-  top:80%;
-  left:67%;
+  top:87%;
+  left:80%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -293,6 +278,7 @@ ul.vote_list > li > a.-on{
   outline: none;
   cursor: pointer;
   margin-bottom: 20px;
+
   }
   >.btn_2:hover{
   width: 200px;
@@ -313,65 +299,43 @@ ul.vote_list > li > a.-on{
   margin-bottom: 20px;
   }
   >h4{
-  color: #1BB8CE;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 10px;
+  @include sub_title($keyGreen); 
+    padding: 20px 0 20px 0;
   }
 }  
 
 
-
-.vote_nav .name h4{
-  padding-left: 0px;
-  text-align: center;
-
-}
-
-
-
-
-
 .finished{
   width: 80%;
-  height: 20%;
-  margin: 0 auto;
   display: block;
   margin:0 auto;
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 50px;
   background-color: white;
   border-radius: 6px;
   box-shadow: $shadow2;
   >h4{
-    color: #1BB8CE;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 10px;  
-    margin-top: 20px;
-    margin-bottom: 10px;
+    @include sub_title($keyGreen); 
+    padding: 20px 0 10px 20px;
   }
   
-}
-
-.finished h4{
-  width: 40%;
-  margin-right: 0;
-
 }
 
 
 .finished .vote_img{
   position: relative;
   width: 50%;
-  height: 80%;
+  // height: 80%;
   display: inline-block;
+  margin-bottom: 20px;
   >img{
-  width: 90%;
+  width: 100%;
   margin-left: 5%;
   display: inline-block;
   border: 3px solid white;
   border-radius: 6px;
   box-shadow: $shadow2;
+  
   }
   >p{
   @include text($textBlack);
@@ -382,8 +346,8 @@ ul.vote_list > li > a.-on{
 
 .finished .vote_img a.journal{
   position: absolute;
-  top:55%;
-  left:52%;
+  top:64%;
+  left:60%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -391,23 +355,16 @@ ul.vote_list > li > a.-on{
 .finished .vote_img img{
   width: 75%;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 
 
 .finished .vote_all{
   width: 25%;
-  height: 45%;
+  // height: 45%;
   display: inline-block;
   position: absolute;
-  >h3{
-  color: #1BB8CE;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 10px;
-  font-size: 36px;
-  font-weight: 700;
-  }
 
 }
 
@@ -424,7 +381,7 @@ ul.vote_list > li > a.-on{
   margin-bottom: 15px;
   width: 100%;
   background: #eee;
-  height: 30px;
+  height: 35px;
   border-radius: 4px;
   transition: 0.4s linear;
   transition-property: width, background-color;
@@ -446,14 +403,14 @@ ul.vote_list > li > a.-on{
   display: block;
   background: rgba(0, 0, 0, 0.1);
   padding: 0 20px;
-  height: 30px;
+  height: 35px;
   line-height: 35px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
 .skillbar-bar {
-  height: 30px;
+  height: 35px;
   width: 0px;
   background: #6adcfa;
 }
@@ -492,41 +449,41 @@ ul.vote_list > li > a.-on{
 // -----------------
 
 
-@media screen and (min-width: 1200px) and (max-width: 1530px){
-  .vote_container{
-  width:80%;
+// @media screen and (min-width: 1200px) and (max-width: 1530px){
+//   .vote_container{
+//   width:80%;
 
-  }
-}
+//   }
+// }
 
 
-@media screen and (min-width: 992px) and (max-width: 1199px){
-  .vote_container{
-  width:80%;
+// @media screen and (min-width: 992px) and (max-width: 1199px){
+//   .vote_container{
+//   width:80%;
 
-  }
-}
+//   }
+// }
 
-@media screen and (min-width: 768px) and (max-width: 991px){
-  .vote_container{
-  width:80%;
+// @media screen and (min-width: 768px) and (max-width: 991px){
+//   .vote_container{
+//   width:80%;
 
-  }
-}
+//   }
+// }
 
-@media screen and (min-width: 576px) and (max-width: 767px){
-  .vote_container{
-  width:80%;
+// @media screen and (min-width: 576px) and (max-width: 767px){
+//   .vote_container{
+//   width:80%;
 
-  }
-}
+//   }
+// }
 
-@media screen and (max-width: 575px){
-  .vote_container{
-  width:80%;
+// @media screen and (max-width: 575px){
+//   .vote_container{
+//   width:80%;
 
-  }
-}
+//   }
+// }
 
 
 // --------------
@@ -602,21 +559,21 @@ ul.vote_list > li > a.-on{
 //   height: 2500px;
 // }
 
-@media screen and (min-width: 768px) and (max-width: 991px){
-  .vote_contents{
-  height: 4500px;
-}
-}
-@media screen and (min-width: 576px) and (max-width: 767px){
-  .vote_contents{
-  height: 4500px;
-}
-}
-@media screen and (max-width: 575px){
-  .vote_contents{
-  height: 4500px;
-}
-}
+// @media screen and (min-width: 768px) and (max-width: 991px){
+//   .vote_contents{
+//   height: 4500px;
+// }
+// }
+// @media screen and (min-width: 576px) and (max-width: 767px){
+//   .vote_contents{
+//   height: 4500px;
+// }
+// }
+// @media screen and (max-width: 575px){
+//   .vote_contents{
+//   height: 4500px;
+// }
+// }
 
 // ------------------
 
@@ -665,40 +622,38 @@ ul.vote_list > li > a.-on{
 @media screen and (min-width: 1200px) and (max-width: 1530px){
   .nominate .vote_img  a.journal{
   width: 30%;
-  left:62%;
-  top:75%;
+  left:65%;
+  top:82%;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px){
   .nominate .vote_img  a.journal{
   width: 35%;
-  padding: 0 5px;
-  left:57%;
-  top:70%;
+  left:59%;
+  top:76%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .nominate .vote_img  a.journal{
   width: 35%;
-  left:57%;
-  top:78%;
+  left:61%;
+  top:85%;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px){
   .nominate .vote_img  a.journal{
   width: 35%;
-  left:57%;
-  top:78%;
+  left:60%;
+  top:82%;
   }
 }
 @media screen and (max-width: 575px){
   .nominate .vote_img  a.journal{
   width: 35%;
-  padding: 0 5px;
-  left:57%;
-  top:70%;
+  left:60%;
+  top:80%;
   }
 }
 
@@ -721,18 +676,12 @@ ul.vote_list > li > a.-on{
   > input{
   width: 80%;
   }
-  >.btn{
-    margin-left: 28%;
-  }
   }
 }
 @media screen and (max-width: 575px){
     .name{
   > input{
   width: 80%;
-  }
-  >.btn{
-    margin-left: 21%;
   }
   }
 }
@@ -771,41 +720,36 @@ ul.vote_list > li > a.-on{
 @media screen and (min-width: 1200px) and (max-width: 1530px){
   .vote_nav .vote_img a.journal{
     width: 30%;
-    padding: 6px 10px;
-    left:62%;
-    top:75%;
+    left:65%;
+    top:82%;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px){
   .vote_nav .vote_img a.journal{
   width: 35%;
-  padding: 6px 10px;
-  left:57%;
-  top:70%;
+  left:59%;
+  top:76%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .vote_nav .vote_img a.journal{
     width: 35%;
-    padding: 6px 10px;
-    left:57%;
-    top:78%;
+    left:61%;
+    top:85%;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
   .vote_nav .vote_img a.journal{
     width: 35%;
-    padding: 6px 10px;
-    left:57%;
-    top:78%;
+    left:60%;
+    top:82%;
   }
 }
 @media screen and (max-width: 575px){
   .vote_nav .vote_img a.journal{
     width: 35%;
-    padding: 6px 10px;
-    left:57%;
-    top:70%;
+    left:60%;
+    top:80%;
   }
 }
 
@@ -887,46 +831,36 @@ ul.vote_list > li > a.-on{
 @media screen and (min-width: 1200px) and (max-width: 1530px){
   .finished .vote_img a.journal{
     width: 30%;
-    padding: 0 10px;
-    padding-top: 8px;
-    top:40%;
-    left:47%;
+    top:56%;
+    left:46%;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px){
   .finished .vote_img a.journal{
     width: 30%;
-    padding: 0 10px;
-    padding-top: 8px;
-    top:55%;
-    left:55%;
+    top:66%;
+    left:52%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .finished .vote_img a.journal{
     width: 30%;
-    padding: 0 10px;
-    padding-top: 8px;
-    top:42%;
-    left:55%;
+    top:60%;
+    left:50%;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
   .finished .vote_img a.journal{
     width: 30%;
-    padding: 0 10px;
-    padding-top: 8px;
-    top:38%;
-    left:55%;
+    top:49%;
+    left:50%;
   }
 }
 @media screen and (max-width: 575px){
   .finished .vote_img a.journal{
     width: 40%;
-    padding: 0 10px;
-    padding-top: 8px;
-    top:27%;
-    left:45%;
+    top:42%;
+    left:40%;
   }
 }
 
