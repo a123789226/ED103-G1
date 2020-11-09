@@ -115,20 +115,24 @@ ul{
       margin-right: 40px;
       align-items: center;
       .member_box{
-        border: 4px solid $keyBlack;
         border: 3px solid $keyBlack;
-        width: 50px;
-        height: 50px;
+        width: 54px;
+        height: 54px;
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         margin-right: 10px;
         transition: .5s;
+        background-color: #333333;
+        cursor: pointer;
         &:hover{
           transform: translateY(-10%);
           img{
-            transform: translate(0, -50%);
+            transform: translate(10%, -50%);
             transition: .5s cubic-bezier(.44,-1.25,1,.31);
+          }
+          img.memberImg{
+            transform: translate(-50%, -50%);
           }
         }
         img{
@@ -137,9 +141,17 @@ ul{
           transform: translate(20%, -50%);
           transition: .5s linear;
         }
+        img.memberImg{
+          min-width: 100%;
+          min-height: 100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          object-fit: cover;
+          
+        }
       }
       .cart_box{
-        width: 50px;
+        width: 54px;
         position: relative;
         img{
           transition: .5s linear;
@@ -156,7 +168,7 @@ ul{
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          background-color: rgb(228, 37, 37);
+          // background-color: rgb(228, 37, 37);
           color: white;
           text-align: center;
           line-height: 32px;
@@ -240,6 +252,35 @@ ul{
       }
     }
   }
+  .memProfileBlock{
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: $shadow2;
+    display: none;
+    .memNameInProfileBlock{
+      margin: 20px 0 20px;
+      span{
+        @include sub_title($keyBlack);
+        font-weight: 700;
+      }
+    }
+    .memProfileLink{
+      width: 165px;
+      @include btn36Yellow;
+      box-shadow: $shadow2; 
+    }
+    #SignOutLink{
+      width: 165px;
+      @include btn36Yellow;
+      box-shadow: $shadow2; 
+      margin: 15px 0 20px;
+    }
+  }
 }
 
 
@@ -304,17 +345,17 @@ ul{
         right: 0;
         margin-right: 20px;
         .member_box{
-          width: 30px;
-          height: 30px;
+          width: 40px;
+          height: 40px;
         }
         .cart_box{
-          width: 30px;
+          width: 40px;
           .cart_amount{
             width: 20px;
             height: 20px;
             line-height: 22px;
-            top: -8px;
-            right: -15px;
+            top: -6px;
+            right: -10px;
           }
         }
         .hamburger_box{
@@ -322,5 +363,36 @@ ul{
         }
       }
     }
+    .memProfileBlock{
+      top: 80px;
+      right: 70px;
+      width: 200px;
+      #SignOutLink{
+        margin: 10px 0 20px;
+      }
+    }
   }
 }
+
+@media screen and (max-width: 489px){
+  .main_menu{
+    .main_nav{
+      .header_right{
+        .hamburger_box{
+          margin-left: 15px;
+        }
+      }
+    }
+    .memProfileBlock{
+      right: 45px;
+      .memNameInProfileBlock{
+        span{
+          @include text($keyBlack);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+

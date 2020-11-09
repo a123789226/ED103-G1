@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/layout/headerCart.js"></script>
     <script src="./js/ticket/ticket.js"></script>
     <title>Aqua Wonderland</title>
 </head>
@@ -21,25 +20,49 @@
     <img src="./image/background/fish1.png" alt="" class="BGFish2">
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- Log In開始 -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- Log In結束 -->
+  
+  <!-- header開始 -->
   <header class="main_menu">
+    <!-- header第一區塊 主導覽列 -->
     <nav class="main_nav">
       <div class="logo_box">
         <a href="homepage.html" class="logo">
           <img src="./image/header/logo.png" alt="">
         </a>
-        <a href="homepage.html" class="logo_text_box">
+        <a href="" class="logo_text_box">
           <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
       </div>
-      <ul class="main_menu_ul">
-        <li class="main_menu_li">
+      <ul class="main_menu_ul" id="main_menu_ul">
+        <li class="main_menu_li active">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
             <img src="./image/header/header_tour_cover.png" alt="">
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li">
+        <li class="main_menu_li active">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
@@ -53,38 +76,48 @@
           </a>
           <a href="ticket.html" class="li_text">TICKET</a>
         </li>
-        <li class="main_menu_li">
+        <li class="main_menu_li active">
           <a href="vote.html" class="li_logo">
             <img src="./image/header/header_vote.png" alt="">
             <img src="./image/header/header_vote_cover.png" alt="">
           </a>
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
-        <li class="main_menu_li">
-          <a href="blog.html" class="li_logo">
+        <li class="main_menu_li active">
+          <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
           </a>
-          <a href="blog.html" class="li_text">BLOG</a>
+          <a href="blog1.php" class="li_text">BLOG</a>
         </li>
       </ul>
       <div class="header_right">
-        <a href="#" class="member_box btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+        </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
+          <span class="cart_amount"></span>
         </a>
-        <div class="hamburger_box">
+        <div class="hamburger_box" id="hamburger_box">
           <div class="hamburger">
-            <span class="hamburger_line is-active"></span>
-            <span class="hamburger_cross">&times;</span>
+            <span class="hamburger_line is-active" id="hamburger_line"></span>
+            <span class="hamburger_cross" id="hamburger_cross">&times;</span>
           </div>
         </div>
       </div>
     </nav>
-  </header>
+    
+    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
+    </div>
+
+  </header> 
+
+  <!-- header結束 -->
 
 
   <div id="ticketApp">
@@ -93,26 +126,6 @@
       <h4 class="commonSubTitle">Go buy tickets and go booking for staying overnight in Aqua Wonderland.</h4>
     </div>
 <!-- 你的code打這下面 -->
-
-    <!-- Sign In -->
-    <div class="memLogin overlay">
-      <form class="LogInForm" id="LogInForm" method="post">
-        <div class="btn_modal_close">
-          <div></div>
-          <div></div>
-        </div>
-        <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <p>Don't have an account?</p><br>
-        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-      </form>
-    </div>
 
     <section class="ticketTicketBox">
       <h3 class="ticketMainTitle">Buy Ticket</h3>
@@ -124,7 +137,7 @@
         <p class="ticketTicketText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex tempore in, ea ipsum expedita et dicta architecto nostrum nulla magni fugiat sit consequatur quae voluptates mollitia voluptate, placeat fugit praesentium!</p>
         <div class="ticketButtonBlock">
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Adult(18-64)|30|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -134,7 +147,7 @@
             </div>
           </div>
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Kid(4-11)|15|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -144,7 +157,7 @@
             </div>
           </div>
           <div class="ticketButtonBox ticketProduct">
-            <input type="hidden" value="Elder(65-)|20|0">
+            <input type="hidden">
             <p class="ticketTicketName">ticketName</p>
             <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
             <div class="ticketButtons">
@@ -222,8 +235,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">2</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area A|80|0">
-              <p class="ticketTicketName">Area A</p>
-              <p class="ticketTicketPrice"><span>$</span><span>80</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -235,8 +248,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>0</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area B|70|0">
-              <p class="ticketTicketName">Area B</p>
-              <p class="ticketTicketPrice"><span>$</span><span>70</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -248,8 +261,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>20</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area C|100|0">
-              <p class="ticketTicketName">Area C</p>
-              <p class="ticketTicketPrice"><span>$</span><span>100</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -261,8 +274,8 @@
             <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>3</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area D|90|0">
-              <p class="ticketTicketName">Area D</p>
-              <p class="ticketTicketPrice"><span>$</span><span>90</span></p>
+              <p class="ticketTicketName">TicketName</p>
+              <p class="ticketTicketPrice"><span>$</span><span>ticketPrice</span></p>
               <div class="ticketButtons">
                 <button class="ticketButton"><span>－</span></button>
                 <p class="ticketTicketAmount" >0</p>
@@ -300,14 +313,10 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="./js/memLogin.js"></script>
+  <script src="./js/layout/header.js"></script>
   <script>
     // jQuery
-    //漢堡
-    $("div.hamburger_box").on("click", function(){
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
     // 選擇區域區底圖消失出現
     $('.ticketAreaSelect').hover(function(){
       $('.ticketONBigImg').css("opacity","0");
@@ -326,49 +335,35 @@
       todayHighlight: true,
     });
 
-    
-    
     //防止加減按鈕提交表單
     $('.ticketButton').on('click', function(){
       return false;
     })
 
 
-  // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
 
   // 非同步放入門票資訊
 
 
-  function doFirst(){
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function(){
-      ticketsRow = JSON.parse(xhr.responseText);
-      showTickets();
-      console.log(ticketsRow);
-    }
-    xhr.open("get", "./php/ticketInfo.php",false);
-    xhr.send(null);
-  }
+  // function doFirstTicket(){
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.onload = function(){
+  //     ticketsRow = JSON.parse(xhr.responseText);
+  //     showTickets(ticketsRow);
+  //     // console.log(ticketsRow);
+  //   }
+  //   xhr.open("get", "./ticketInfo.php",false);
+  //   xhr.send(null);
+  // }
 
-  function showTickets(){
-    
-  }
+  // function showTickets(item){
+  //   let ticketProduct = document.querySelectorAll('div.ticketProduct input');
+  //   for(let i=0; i<ticketProduct.length; i++){
+  //     ticketProduct[i].value = `${item.ticketType}|${item.ticketPrice}|0`
+  //   }
+  // }
 
-  window.addEventListener('load', doFirst);
+  // window.addEventListener('load', doFirstTicket);
 
 
 

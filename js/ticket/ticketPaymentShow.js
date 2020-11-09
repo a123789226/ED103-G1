@@ -1,32 +1,3 @@
-//header判斷是否登入
-
-// function loginStatus() {
-//     if ($('#memNameInProfileBlock').html() === '') {
-//         // alert ('還沒登入');
-//         var kkk = window.location.href;
-//         kkk = kkk.substring(kkk.lastIndexOf('/'))
-//         if (kkk != '/memberlogin.html') {
-//             let url = window.location.href;
-//             localStorage.setItem('web', url);
-//             window.location.href = './memberlogin.html';
-//         } else {
-//             localStorage.setItem('web', './memberProfile.html');
-//             window.location.href = './memberlogin.html';
-//         }
-//     } else {
-//         // alert('已經登入');
-//         window.location.href = './memberProfile.html';
-//     }
-// }
-
-
-
-
-
-
-
-
-
 function $id(id) {
     return document.getElementById(id);
 }
@@ -110,6 +81,9 @@ function getMemberInfo() {
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
                 $id('memberPic').style.transition = '0s';
+                
+                //秀點數
+                showPoint();
             }
         } else { //error
             alert(xhr.status);
@@ -146,22 +120,39 @@ function showMemberProfileBox(){
     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
+//秀點數
+function showPoint(){
+  $id('points').innerText = member.point;
+}
+
+
+// 確認真的要登出嗎
+function doSignOutCheck(){
+  swal({
+    title: "Want to Sign Out? Your information will not be saved.",
+    icon: "warning",
+    buttons: true,
+    dangerMode: false
+  }).then((value) => {
+    if(value){
+      // 真的選擇登出執行登出函數並跳轉首頁
+      doSignOut();
+      window.location = "./homepage.html";
+    }
+  });
+}
 
 
 function init() {
-    // alert('123');
     //-----------------------檢查是否已登入
     getMemberInfo();
 
-    // abc();
-
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut
 
-    $id('SignOutLink').onclick = doSignOut;
+    $id('SignOutLink').onclick = doSignOutCheck;
 
     //===設定btnLogin.onclick 事件處理程序是 sendForm
     $id('btnLogin').onclick = sendForm;
-
 
 }; //window.onload
 

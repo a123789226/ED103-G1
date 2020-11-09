@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
-  <div class="bookingPaymentBG">
+  <div class="memBackground">
     <div class="commonBG00 commonBGSet"></div>
     <div class="commonBG01 commonBGSet"></div>
     <div class="commonBG02 commonBGSet"></div>
     <div class="commonBGLeft commonBGSet"></div>
     <div class="commonBGRight commonBGSet"></div>
-    <img src="./image/background/fish3.png" alt="" class="BGFish1">
-    <img src="./image/background/fish1.png" alt="" class="BGFish2">
+    <img src="./image/background/fish1.png" alt="" class="BGFish1">
+    <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div> 
+  <!-- 上面是背景的div，先不要動到 -->
 
   <!-- Log In開始 -->
   <div id="memLightBox" class="memLogin overlay">
@@ -116,125 +116,121 @@
   </header> 
 
   <!-- header結束 -->
-
-  <div id="app">
+  
+  
+  <div>
+    <!-- Title -->
     <!-- <div class="commonTitleBox">
-      <h2 class="commonTitle">TICKET</h2>
+      <h2 class="commonTitle">Big Title</h2>
       <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
     </div> -->
-<!-- 你的code打這下面 -->
+  <!-- 你的code打這下面 -->
 
-
-
-    <div class="booking2Content">
-      <h3 class="booking2Title">Overnight Payment</h3>
-      <h4 class="booking2SubTitle">
-        Use credit card for checkout, you can also use points for discount.</h4>
-      <div class="booking2StepBox">
-        <div class="booking2Step done">
-          <img src="./image/ticket/overnight.svg" alt="">
-        </div>
-        <span></span>
-        <div class="booking2Step active">
-          <img src="./image/ticket/ticketMoney.svg" alt="">
-        </div>
-        <span></span>
-        <div class="booking2Step">
-          <img src="./image/ticket/ticketCheck.svg" alt="">
-        </div>
-      </div>
-      
-      <form class="bookingPaymentBlock" action="bookingConfirm.html">
-        <div class="inputBox">
-          <label>CARD NUMBER</label><input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">
-        </div>
-        <div class="inputBox">
-          <label >EFFECTIVE DATE</label><input type="text">&nbsp;/&nbsp;<input type="text">
-        </div>
-        <div class="inputBox">
-          <label>SECURITY CODE</label><input type="text">
-        </div>
-        <div class="inputBox">
-          <p>TICKET PRICE</p><p>${{price}}</p>
-        </div>
-        <div class="inputBox">
-          <p>YOUR POINT</p><p>5000 Points</p>
-        </div>
-        <div class="inputBox">
-          <label>DISCOUNT POINT</label><input type="text" v-model="point"><button class="discountQuestion">?</button>
-        </div>
-        <div class="inputBox">
-          <p>TOTAL PRICE</p><p>${{price-point}}</p>
-        </div>
-        <div class="payButtonBox">
-          <!-- <a href="overnightBooking.html">
-            <button class="ticketPayCancel">PREVIOUS</button>
-          </a>
-          <a href="bookingConfirm.html">
-            <button class="ticketPayToCheck">NEXT</button>
-          </a> -->
-          <a href="overnightBooking.html" class="ticketPayCancel">PREVIOUS</a>
-          <button class="ticketPayToCheck">NEXT</button>
-        </div>
-
-      </form>
-
-
-    </div>
-
-
-<!-- 你的code打這上面 -->
+    <button id="test" style="margin-top: 180px;">alert看member.memId值</button>
+    <br>
+    <button id="test2" style="margin-top: 30px;">非登入狀態跳燈箱，登入狀態則alert該會員Id</button>
+    <br>
+    <a href="./homepage.html" id="test3" style="margin-top: 30px; color: white; border: 1px solid white;">非登入狀態阻止頁面跳轉，登入狀態則跳到首頁</a>
+    <br>
+    <button id="test4" style="margin-top: 30px;">是會員的話，透過ajax非同步執行某php程式，非會員阻止按鈕預設行為，跳出登入燈箱</button>
+    <br>
+  <!-- 你的code打這上面 -->
 
   </div>
-
-
-
-
-
-
-
-
-
-
 
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/memLogin.js"></script>
   <script src="./js/layout/header.js"></script>
+
   <script>
-    new Vue({
-      el: '#app',
-      data: {
-        price: 500,
-        point: 0,
-      },
-      methods: {
+    // 自己寫的js、jq如果要放html內要寫在這裡唷
 
-      }
-    });
-
-
-    //jquery
-
+    // 這個checkMemberLogin函數是用來判別會員有沒有登入用
+    // 由於要用到./js/memLogin.js內在整個作用域宣告的變數 member
+    // 所以這這個<script>順序一定要在他下面
     
-    // 提示按鈕的alert視窗以及避免button跳轉
-    $('.discountQuestion').on('click', function(e){
-      swal("What Points do?", "The points you get can be used to offset the purchase amount, 1 point is equivalent to 1 US dollar.", "info");
-      e.preventDefault();
-    });
+    
+    function checkMemberLogin(){
+      // 頁面剛加載完成，在memLogin.js內會透過ajax將變數member的值回傳
+
+      // 由於"checkMemberLogin這個函數"與"memLogin.js一開始給予member值的函數"是同時進行
+      // 所以此時member在這裡還是undefined的唷
+      // 你可以打開試試看看
+      // console.log(member);
+      // 因為memLogin.js是大家共用的，也不能在memLogin下面新增自己的東西，所以會有這樣的問題啦= =
+
+      // 上面看不懂沒關係
+      // 你只要知道當網頁有建立事件聆聽的物件，啟動事件時，變數member已經是可以使用的東西就好
+      // 若現在是登入狀態，那member是一筆有會員資料的物件；若非登入狀態，那member為{}物件
+
+      // 下面的例子，畫面上有一個id為test的按鈕
+      // 當觸發click事件
+      // 他會判別member.memId是否為真
+      document.getElementById('test').addEventListener("click", function(){
+        if(member.memId){ //member有memId這個Key值所以它存在，那即是登入狀態
+          alert(`是登入狀態，member.memId=${member.memId}`);
+        }else{  //member長這樣 {} ，它裡面沒有任何Key值，所以是非登入狀態
+          alert(`非登入狀態，member.memId=${member.memId}`);
+        }
+      });
+
+
+      //範例2，非登入狀態跳燈箱，登入狀態則alert該會員Id按鈕
+      document.getElementById('test2').addEventListener("click", function(){
+        if(member.memId){ //是登入狀態
+          alert(member.memId);
+        }else{  //非登入狀態，跳出登入燈箱
+          let overlay = document.getElementsByClassName('overlay');
+          overlay[0].classList.add('-on');
+        }
+      });
+
+      //範例3，非登入狀態阻止頁面跳轉，登入狀態則跳到首頁的按鈕
+      document.getElementById('test3').addEventListener("click", function(e){
+        if(member.memId){ //是登入狀態
+          //跳去<a>標籤指的位置
+        }else{  //非登入狀態，阻止按鈕預設行為，跳出登入燈箱
+          e.preventDefault();
+          let overlay = document.getElementsByClassName('overlay');
+          overlay[0].classList.add('-on');
+        }
+      });
+
+      // 範例4，是會員的話，透過ajax非同步執行某php程式，非會員阻止按鈕預設行為，跳出登入燈箱
+      document.getElementById('test4').addEventListener("click", function(e){
+        if(member.memId){ //是登入狀態
+          alert('請看註解');
+        //ajax指令可以打在這裡
+        // 需要登入動作才去執行的php通常都會需要寫入會員的資料
+        // 這時候就可以透過member物件啦
+        // 例如php的sql需要接收memId
+        // 那指定的php路徑就可以是
+        let url = `某某某.php?memId=${member.memId}`;
+        // 之類的
+        
+        // 還有很多種形式，可是暫時不知道怎麼解釋，請大家參照董董ajax資料包的東西去寫ajax指令Q_Q
+
+        }else{  //非登入狀態，阻止按鈕預設行為，跳出登入燈箱
+          e.preventDefault();
+          let overlay = document.getElementsByClassName('overlay');
+          overlay[0].classList.add('-on');
+        }
+      });
 
 
 
 
 
+    }
 
 
-
-
+    // 頁面加載完成後執行checkMemberLogin，這個要放，然後把你要執行的JS都放在checkMemberLogin內比較保險唷
+    window.addEventListener('load', checkMemberLogin);
 
   </script>
 </body>

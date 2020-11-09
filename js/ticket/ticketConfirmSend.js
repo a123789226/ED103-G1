@@ -1,29 +1,3 @@
-//header判斷是否登入
-
-// function loginStatus() {
-//     if ($('#memNameInProfileBlock').html() === '') {
-//         // alert ('還沒登入');
-//         var kkk = window.location.href;
-//         kkk = kkk.substring(kkk.lastIndexOf('/'))
-//         if (kkk != '/memberlogin.html') {
-//             let url = window.location.href;
-//             localStorage.setItem('web', url);
-//             window.location.href = './memberlogin.html';
-//         } else {
-//             localStorage.setItem('web', './memberProfile.html');
-//             window.location.href = './memberlogin.html';
-//         }
-//     } else {
-//         // alert('已經登入');
-//         window.location.href = './memberProfile.html';
-//     }
-// }
-
-
-
-
-
-
 
 
 
@@ -146,26 +120,78 @@ function showMemberProfileBox(){
     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
+// 確認真的要登出嗎
+function doSignOutCheck(){
+  swal({
+    title: "Want to Sign Out? Your information will not be saved.",
+    icon: "warning",
+    buttons: true,
+    dangerMode: false
+  }).then((value) => {
+    if(value){
+      // 真的選擇登出執行登出函數並跳轉首頁
+      doSignOut();
+      window.location = "./homepage.html";
+    }
+  });
+}
+
+// 修改會員點數
+function alterTicketDiscountPoint(){
+  // console.log(member);
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if( xhr.status == 200){ //status : OK
+      console.log(xhr.responseText);
+      insertTicketOrder();
+    }else{
+      alert( xhr.status);
+    }
+  }
+  let newPoint = parseInt(member.point) - $id('point').innerText;
+  // console.log(newPoint);
+  let url = `AlterTicketDiscountPoint.php?memId=${member.memId}&point=${newPoint}`;
+  xhr.open("get", url, true);
+  xhr.send(null); 
+}
+
+// 新增會員訂單
+function insertTicketOrder(){
+  let xhr = new XMLHttpRequest();
+
+  xhr.onload = function(){
+      if( xhr.status == 200){ //status : OK
+        console.log(xhr.responseText);
+      }else{
+        alert( xhr.status);
+      }
+  }  
+  xhr.open("post", "InsertTicketOrder.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  //送出資料
+  let OrderTime = new Date().toISOString().substring(0, 10);
+  let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("newTotalPrice").innerText}`;
+  xhr.send(data_info);
+}
 
 
 function init() {
-    // alert('123');
     //-----------------------檢查是否已登入
     getMemberInfo();
 
-    // abc();
-
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut
 
-    $id('SignOutLink').onclick = doSignOut;
+    $id('SignOutLink').onclick = doSignOutCheck;
 
     //===設定btnLogin.onclick 事件處理程序是 sendForm
     $id('btnLogin').onclick = sendForm;
 
+    //點下送出觸發修改點數
+    $id('ticketPayToCheck').onclick = alterTicketDiscountPoint;
 
-}; //window.onload
+};
 
-// $('#memberPic').click(loginStatus);
+
 
 
 window.addEventListener("load", init, false);

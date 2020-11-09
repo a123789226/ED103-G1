@@ -71,8 +71,8 @@ try{
 
     $json = json_encode($result);
     // 送出登入者的資料
-    // echo $json;
-    echo "帳號註冊成功";
+    echo $json;
+    echo "Succeed";
     }
   } catch (PDOException $e) {  
     $error = array("errorMsg"=>$e->getMessage());
