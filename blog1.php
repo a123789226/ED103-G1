@@ -30,97 +30,113 @@
   <img src="./image/background/fish1.png" alt="" class="BGFish2">
 </div> 
 <!-- 上面是背景的div，先不要動到 -->
-<header class="main_menu">
-  <nav class="main_nav">
-    <div class="logo_box">
-      <a href="homepage.html" class="logo">
-        <img src="./image/header/logo.png" alt="">
-      </a>
-      <a href="homepage.html" class="logo_text_box">
-        <h1 class="logo_text">AQUA WONDERLAND</h1>
-      </a>
-    </div>
-    <ul class="main_menu_ul">
-      <li class="main_menu_li">
-        <a href="tour.html" class="li_logo">
-          <img src="./image/header/header_tour.png" alt="">
-          <img src="./image/header/header_tour_cover.png" alt="">
+
+  <!-- Log In開始 -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- Log In結束 -->
+  
+  <!-- header開始 -->
+  <header class="main_menu">
+    <!-- header第一區塊 主導覽列 -->
+    <nav class="main_nav">
+      <div class="logo_box">
+        <a href="homepage.html" class="logo">
+          <img src="./image/header/logo.png" alt="">
         </a>
-        <a href="tour.html" class="li_text">TOUR</a>
-      </li>
-      <li class="main_menu_li">
-        <a href="journal.html" class="li_logo">
-          <img src="./image/header/header_journal.png" alt="">
-          <img src="./image/header/header_journal_cover.png" alt="">
+        <a href="" class="logo_text_box">
+          <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
-        <a href="journal.html" class="li_text">JOURNAL</a>
-      </li>
-      <li class="main_menu_li">
-        <a href="ticket.html" class="li_logo">
-          <img src="./image/header/header_ticket.png" alt="">
-          <img src="./image/header/header_ticket_cover.png" alt="">
+      </div>
+      <ul class="main_menu_ul" id="main_menu_ul">
+        <li class="main_menu_li active">
+          <a href="tour.html" class="li_logo">
+            <img src="./image/header/header_tour.png" alt="">
+            <img src="./image/header/header_tour_cover.png" alt="">
+          </a>
+          <a href="tour.html" class="li_text">TOUR</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="journal.html" class="li_logo">
+            <img src="./image/header/header_journal.png" alt="">
+            <img src="./image/header/header_journal_cover.png" alt="">
+          </a>
+          <a href="journal.html" class="li_text">JOURNAL</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="ticket.html" class="li_logo">
+            <img src="./image/header/header_ticket.png" alt="">
+            <img src="./image/header/header_ticket_cover.png" alt="">
+          </a>
+          <a href="ticket.html" class="li_text">TICKET</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="vote.html" class="li_logo">
+            <img src="./image/header/header_vote.png" alt="">
+            <img src="./image/header/header_vote_cover.png" alt="">
+          </a>
+          <a href="vote.html" class="li_text">VOTE</a>
+        </li>
+        <li class="main_menu_li active">
+          <a href="blog1.php" class="li_logo">
+            <img src="./image/header/header_blog.png" alt="">
+            <img src="./image/header/header_blog_cover.png" alt="">
+          </a>
+          <a href="blog1.php" class="li_text">BLOG</a>
+        </li>
+      </ul>
+      <div class="header_right">
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+        </span>
+        <a class="cart_box" href="cart.html">
+          <img src="./image/header/header_cart.png" alt="">
+          <span class="cart_amount"></span>
         </a>
-        <a href="ticket.html" class="li_text">TICKET</a>
-      </li>
-      <li class="main_menu_li">
-        <a href="vote.html" class="li_logo">
-          <img src="./image/header/header_vote.png" alt="">
-          <img src="./image/header/header_vote_cover.png" alt="">
-        </a>
-        <a href="vote.html" class="li_text">VOTE</a>
-      </li>
-      <li class="main_menu_li active">
-        <a href="blog.html" class="li_logo">
-          <img src="./image/header/header_blog.png" alt="">
-          <img src="./image/header/header_blog_cover.png" alt="">
-        </a>
-        <a href="blog.html" class="li_text">BLOG</a>
-      </li>
-    </ul>
-    <div class="header_right">
-      <a href="#" class="member_box btn_modal">
-        <img src="./image/header/header_member_fish.png" alt="">
-      </a>
-      <a class="cart_box" href="cart.html">
-        <img src="./image/header/header_cart.png" alt="">
-        <span class="cart_amount">1</span>
-      </a>
-      <div class="hamburger_box">
-        <div class="hamburger">
-          <span class="hamburger_line is-active"></span>
-          <span class="hamburger_cross">&times;</span>
+        <div class="hamburger_box" id="hamburger_box">
+          <div class="hamburger">
+            <span class="hamburger_line is-active" id="hamburger_line"></span>
+            <span class="hamburger_cross" id="hamburger_cross">&times;</span>
+          </div>
         </div>
       </div>
+    </nav>
+    
+    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
     </div>
-  </nav>
-</header>
 
+  </header> 
+
+  <!-- header結束 -->
+  
  
-  <div>
+<div>
     <div class="commonTitleBox">
       <h2 class="commonTitle blogTitle">BLOG</h2>
       <h4 class="commonSubTitle blogSubTitle">Share Your Story with Aqua Wonderland.</h4>
     </div>
 <!-- 你的code打這下面 -->
-<!-- Log In -->
-<div class="memLogin overlay">
-  <form class="LogInForm" id="LogInForm" method="post">
-    <div class="btn_modal_close">
-      <div></div>
-      <div></div>
-    </div>
-    <h3 class="memLogTitle">LOG IN</h3>
-    <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-    <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-    <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-    <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-    <div class="memLine">
-      <h5>OR</h5>
-    </div>
-    <p>Don't have an account?</p><br>
-    <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-  </form>
-</div>
+
 <!-- 部落格發文區塊 -->
 <div class="blogFirstPort">
     <div class="BlogFirstLeft">
@@ -146,7 +162,9 @@
   <?php
   try {
     require_once('./php/connectBook.php');
-    $sql = "select * from blog order by blogTime desc";
+    // $sql = "select * from blog join member order by blogNo desc";
+    $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
+    FROM blog b JOIN member m ON (b.memNo = m.memNo) ORDER BY blogNo DESC";
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
     }catch (PDOException $e){
@@ -173,8 +191,8 @@
             <div class="card-body">
               <h4 class="card-title" class="sub_title"><?=$prodRow["blogTitle"]?></h4>
               <div class="blogMemInfo">
-                <div class="blogMemName"><?=$prodRow["memNo"]?></div>
-                <img src="https://picsum.photos/40/40?random=02" class="blogMemImg">
+                <div class="blogMemName">By&nbsp<?=$prodRow["memName"]?></div>
+                <img src='<?=$prodRow["memPic"]?>' class="blogMemImg">
                 <span>|&nbsp;</span>
                 <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
               </div>
@@ -194,7 +212,7 @@
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
           </div>
-          <div class="blogMoreBtnSection"><a href="./blogPost.html" class="blogMoreBtn">More</a></div>
+          <div class="blogMoreBtnSection"><a href='./blogPost.php?blogNo=<?=$prodRow["blogNo"]?>' class="blogMoreBtn">More</a></div>
           </div>
         </div>
       </div>
@@ -219,7 +237,7 @@
   
   
   <!-- PO文內容 -->
-  <form class="blogPostForm" action="blogUpload.php" method="post" enctype="multipart/form-data">
+  <form class="blogPostForm" action="blogInsert.php" method="post" enctype="multipart/form-data">
     <label for="blogInsertTitle" class="blogPostOwnTitle">
       <span class="blogPostTitleFont">Title</span>
       <input type="text" class="blogPostInputTitle" name="blogTitle" placeholder="Please insert title">
@@ -227,10 +245,10 @@
     <div class="blogPostTagsSection">
       <span class="blogPostTagsFont">Tags</span>
       <div class="blogPostTagsOptions">
-        <div class="blogPostTags">Dolphin</div>
-        <div class="blogPostTags">Whale</div>
-        <div class="blogPostTags">Seal</div>
-        <div class="blogPostTags">Turtle</div>
+        <div class="blogPostTags" value="Dolphin">Dolphin</div>
+        <div class="blogPostTags" value="Whale">Whale</div>
+        <div class="blogPostTags" value="Seal">Seal</div>
+        <div class="blogPostTags" value="Turtle">Turtle</div>
         <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogTags"/>
       </div>
     </div>
@@ -239,40 +257,34 @@
       <div class="blogPostContentPart1">
         <label for="img1" class="blogPostWrap" id="blogPostWrapImg1" title="CLICK TO UPLOAD IMAGE">
           <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg" src="./image/blog/photos/photo.png" alt="" style="width: 100px;height: 100px;"> -->
-            <!-- <div class="blogPostWrapImg"></div> -->
-          <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
             <input class="blogUploadImg" type="file" name="upFile[]" id="img1" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
       </div>
+
       <div class="blogPostContentPart2">
         <div class="blogPostContentText2" contenteditable="true" id="content2">
         <input class="blogPostContentTextInput1" type="hidden" value="" name="blogContent1" id="inputContent2"/>
         </div>
         <label for="img2" class="blogPostWrap" id="blogPostWrapImg2" title="CLICK TO UPLOAD IMAGE">
           <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
-          <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
           <input class="blogUploadImg" type="file" name="upFile[]" id="img2" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
-        <!-- <input class="blogPostContentText1" type="text"> -->
-       
       </div>
+
       <div class="blogPostContentPart3">
         <label for="img3" class="blogPostWrap" id="blogPostWrapImg3" title="CLICK TO UPLOAD IMAGE">
           <div class="blogPostBox">
-          <!-- <img class="blogPostWrapImg"  src="./image/blog/photos/photo.png" alt=""> -->
-            <!-- <p class="blogUploadImgText">Click for uploading image</p> -->
             <input class="blogUploadImg" type="file" name="upFile[]" id="img3" accept="image/gif, image/jpeg, image/png">
           </div>
         </label>
-        <div class="blogPostContentText2" contenteditable="true">
-        <input class="blogPostContentTextInput3" type="hidden" value="" name="blogContent2"/>
+        <div class="blogPostContentText2" contenteditable="true" id="content3">
+        <input class="blogPostContentTextInput3" type="hidden" value="" name="blogContent2" id="inputContent3"/>
         </div>
       </div>
     </div>
+
     <div class="blogPostSubmitSection">
     <button type="submit" class="blogPostSubmitBtn">Submit</button>
     </div>
@@ -306,15 +318,6 @@
     $(".blogPostTags").removeClass("blogPostTagsOn");
     $(this).toggleClass("blogPostTagsOn");
     });
-//漢堡
-$("div.hamburger_box").on("click", function(){
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-      // $("ul.main_menu_ul").slideToggle();
-      // $("header.main_menu").toggleClass("removeShadow");
-    });
-
 //  ---------這裡是SweetAlert---------
 
 $('.blogIconReport').on('click', function(){
@@ -442,35 +445,23 @@ function changed(e) {
 };
 
 function doFirst(){
+  //文章區塊一放入input傳至後台
   let content2 = document.getElementById('content2');
   let inputContent2 = document.getElementById('inputContent2');
   content2.addEventListener('blur', function(){
     inputContent2.value = content2.innerText;
   })
+  //文章區塊放入input傳至後台
+  let content3 = document.getElementById('content3');
+  let inputContent3 = document.getElementById('inputContent3');
+  content3.addEventListener('blur', function(){
+    inputContent3.value = content3.innerText;
+  })
 }
 
 window.addEventListener('load', doFirst);
-  </script>
-
-
-<script>
-  // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
 </script>
-
-</div>
+<script src="./js/memLogin.js"></script>
+<script src="./js/layout/header.js"></script>
 </body>
 </html>

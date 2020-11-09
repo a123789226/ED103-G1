@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("../connectAqua.php");
+	require_once("./connectAqua.php");
   $sql = "select * from ticket_info";
   $tickets = $pdo->query($sql);
   $tickets->execute();

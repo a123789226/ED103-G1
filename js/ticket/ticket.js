@@ -7,6 +7,15 @@ function ticketFirst(){
     storage['addTicketList'] = '';
   }
 
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    ticketsRow = JSON.parse(xhr.responseText);
+    showTickets(ticketsRow);
+    console.log(ticketsRow);
+  }
+  xhr.open("get", "./ticketInfo.php",false);
+  xhr.send(null);
+
   // 每張票的box(三張門票+四張夜宿票)票名跟票價來自票的value
   let ticketButtonBox = document.querySelectorAll('div.ticketButtonBox');
   for(let i = 0; i < ticketButtonBox.length; i++){
@@ -139,6 +148,13 @@ function changeCartNumber(){
     cart_amount[0].style.display = 'block';
     cart_amount[0].style.backgroundColor = 'rgb(228, 37, 37)'
     cart_amount[0].innerHTML = tickets.length;
+  }
+}
+
+function showTickets(item){
+  let ticketProduct = document.querySelectorAll('div.ticketProduct input');
+  for(let i=0; i<ticketProduct.length; i++){
+    ticketProduct[i].value = `${item[i].ticketType}|${item[i].ticketPrice}|0`
   }
 }
 

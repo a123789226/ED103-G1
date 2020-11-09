@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/layout/headerCart.js"></script>
     <script src="./js/ticket/ticketConfirm.js"></script>
     <title>Aqua Wonderland</title>
 </head>
@@ -127,7 +126,7 @@
     </div> -->
 <!-- 你的code打這下面 -->
 
-    <form class="cart3Content" action="homepage.html">
+    <form class="cart3Content">
       <h3 class="cartTitle">Confirm Your Order</h3>
       <h4 class="cartSubTitle">Please confirm that the tickets you purchased are correct, and checkout confirmation</h4>
       <div class="cartStepBox">
@@ -165,7 +164,7 @@
 
         <div class="payButtonBox">
           <a href="ticketPayment.html" class="ticketPayCancel">PREVIOUS</a>
-          <button class="ticketPayToCheck">SEND</button>
+          <input type="button" class="ticketPayToCheck" value="SEND" id="ticketPayToCheck">
         </div>
 
       </div>
@@ -194,27 +193,9 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/memLogin.js"></script>
+  <script src="./js/ticket/ticketConfirmSend.js"></script>
   <script src="./js/layout/header.js"></script>
   <script>
-
-
-    //jquery
-
-    // $('.ticketPayToCheck').on('click', function(e){
-    //   e.preventDefault();
-    //   swal("Great!", "You have completed the payment!", "success").then((value) => {
-    //     if(value){
-    //       $(this).submit();
-    //       window.location = "homepage.html";
-    //     }
-    //   })
-
-    // })
-    //把它改成跳轉到另一php存到資料庫然後header連到首頁。
-
-
-
   </script>
 </body>
 </html>
