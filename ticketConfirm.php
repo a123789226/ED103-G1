@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/ticket/ticketConfirm.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
@@ -193,6 +192,7 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/ticket/ticketConfirm.js"></script>
   <script src="./js/ticket/ticketConfirmSend.js"></script>
   <script src="./js/layout/header.js"></script>
   <script>
