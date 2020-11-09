@@ -135,7 +135,7 @@ body {
     display: block;
     margin: 0 auto;
     // border: 3px solid red;
-    opacity: 0.5;
+    opacity: 0.8;
 
   }
 
@@ -210,19 +210,18 @@ body {
 
 .jourBook {
   width: 80%;
-  // height: 100%;
   margin: 0 auto;
   max-width: 400px;
   max-height: 600px;
   min-width: 270px;
   // min-height: 360px;
-  display: block;
-  // border: 3px solid deeppink;
+  border: 3px solid deeppink;
   display: flex;
   flex-wrap: wrap;
-  transform: rotateY(-3deg);
+  // transform: rotateY(-3deg);
   box-shadow: 6px 7px 0px #C4C4C4;
   border-radius: 10px;
+  overflow: hidden;
 
   animation-name: book;
   animation-duration: 3s;
@@ -248,16 +247,12 @@ body {
 .jourBookLeft {
   // background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%,#A52B2B 70%);
   background: linear-gradient(to right, #C43535 0%, #A52B2B 30%, #7A2929 40%, #7A2929 60%, #A52B2B 60%);
-  // background: linear-gradient(to righrgb(7, 6, 5)306 0%, #aa7304 30%, #6d4a03 40%, #6d4a03 60%, #aa7304 60%);
-
   width: 7%;
+  
   display: inline-block;
-
 }
 
 .jourBookRight {
-
-  // background-color: #fff;
   width: 93%;
   display: inline-block;
   // padding-bottom: 120px;
@@ -1251,6 +1246,7 @@ div.jourLightBox.-on {
   margin: 0px auto 10px auto;
   border: 1px solid blue;
   position: relative;
+  border-radius: 6px;
 }
 
 .jourPagePhotoLeft1 {
@@ -1262,6 +1258,8 @@ div.jourLightBox.-on {
   margin: 0px auto 10px auto;
   border: 1px solid blue;
   position: relative;
+  border-radius: 6px;
+
 }
 
 .jourPagePhotoLeft img, .jourPagePhotoLeft1 img {
@@ -1283,6 +1281,7 @@ div.jourLightBox.-on {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
+  // border-radius: 6px;
 }
 
 .jourPagePhotoRight1{
@@ -1298,12 +1297,14 @@ div.jourLightBox.-on {
   width: 130px;
   border: 1px solid green;
   position: relative;
+  border-radius: 6px;
 }
 
 .jourPagePhotoRightInner1 {
   width: 160px;
   border: 1px solid green;
   position: relative;
+  border-radius: 6px;
 }
 
 .jourPagePhotoRightInner img, .jourPagePhotoRightInner1 img {
