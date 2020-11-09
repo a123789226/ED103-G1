@@ -164,12 +164,12 @@
 
                 $sql = "update blog set blogPic = :blogPic, blogPic1=:blogPic1, blogPic2=:blogPic2 where blogNo = $blogNo";
                 // $sql = "update products set image = :image where psn = 7";
-                // $fileLocation0 = "img/postarticleregion/{$piNo}_0.{$fileInfoArr["extension"]}";
-                // $fileLocation1 = "img/postarticleregion/{$piNo}_1.{$fileInfoArr["extension"]}";
-                // $fileLocation2 = "img/postarticleregion/{$piNo}_2.{$fileInfoArr["extension"]}";
-                $fileLocation0 = "img/blogPost/{$_FILES['upFile']['name'][0]}";
-                $fileLocation1 = "img/blogPost/{$_FILES['upFile']['name'][1]}";
-                $fileLocation2 = "img/blogPost/{$_FILES['upFile']['name'][2]}";
+                $fileLocation0 = "img/blogPost/{$blogNo}_0.{$fileInfoArr["extension"]}";
+                $fileLocation1 = "img/blogPost/{$blogNo}_1.{$fileInfoArr["extension"]}";
+                $fileLocation2 = "img/blogPost/{$blogNo}_2.{$fileInfoArr["extension"]}";
+                // $fileLocation0 = "img/blogPost/{$_FILES['upFile']['name'][0]}";
+                // $fileLocation1 = "img/blogPost/{$_FILES['upFile']['name'][1]}";
+                // $fileLocation2 = "img/blogPost/{$_FILES['upFile']['name'][2]}";
                 $products = $pdo->prepare($sql);
                 $products -> bindValue(":blogPic", $fileLocation0);
                 $products -> bindValue(":blogPic1", $fileLocation1);

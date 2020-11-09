@@ -192,7 +192,7 @@
               <h4 class="card-title" class="sub_title"><?=$prodRow["blogTitle"]?></h4>
               <div class="blogMemInfo">
                 <div class="blogMemName">By&nbsp<?=$prodRow["memName"]?></div>
-                <img src="<?php $prodRow["memPic"];?>"  class="blogMemImg">
+                <img src='<?=$prodRow["memPic"]?>' class="blogMemImg">
                 <span>|&nbsp;</span>
                 <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
               </div>
@@ -245,10 +245,10 @@
     <div class="blogPostTagsSection">
       <span class="blogPostTagsFont">Tags</span>
       <div class="blogPostTagsOptions">
-        <div class="blogPostTags">Dolphin</div>
-        <div class="blogPostTags">Whale</div>
-        <div class="blogPostTags">Seal</div>
-        <div class="blogPostTags">Turtle</div>
+        <div class="blogPostTags" value="Dolphin">Dolphin</div>
+        <div class="blogPostTags" value="Whale">Whale</div>
+        <div class="blogPostTags" value="Seal">Seal</div>
+        <div class="blogPostTags" value="Turtle">Turtle</div>
         <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogTags"/>
       </div>
     </div>
@@ -445,12 +445,13 @@ function changed(e) {
 };
 
 function doFirst(){
+  //文章區塊一放入input傳至後台
   let content2 = document.getElementById('content2');
   let inputContent2 = document.getElementById('inputContent2');
   content2.addEventListener('blur', function(){
     inputContent2.value = content2.innerText;
   })
-  
+  //文章區塊放入input傳至後台
   let content3 = document.getElementById('content3');
   let inputContent3 = document.getElementById('inputContent3');
   content3.addEventListener('blur', function(){
