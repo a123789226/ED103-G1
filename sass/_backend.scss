@@ -65,7 +65,7 @@
   }
 }
 .mgrMain{
-  width: 90%;
+  width: 98%;
   margin: auto;
 }
 
@@ -173,18 +173,24 @@
       display: none;
       // CHATBOT
       .mgrChatAll{
-        text-align: center;
-        .mgrChatTitle{
-          background-color: $keyGreen;
-          color: #ffffff;
-          height: 40px;
-          line-height: 40px;
-        }
-        .mgrChatKey{
-          line-height: 30px;
-          padding: 20px;
+        tr{
           box-shadow: $shadow;
-          .mgrcontent2, .mgrcontent3{
+          th{
+            text-align: center;
+            background-color: $keyGreen;
+            color: #ffffff;
+            height: 40px;
+          }
+          td{
+            text-align: center;
+            line-height: 40px;
+          }
+          i{
+            font-size: 20px;
+          }
+        }
+        .backChatbotTable{
+          td:nth-child(2){
             text-align: left;
           }
         }
@@ -201,9 +207,10 @@
           }
           td{
             text-align: center;
+            line-height: 40px;
           }
           i{
-            font-size: 36px;
+            font-size: 20px;
           }
           .fa-check-circle:hover, .fa-check-circle:active{
             color: green;
@@ -216,17 +223,25 @@
       // AQUA
       .mgrAquaAll{
         tr{
-          td{
-            margin: 20px;
-            line-height: 40px;
-          }
-          td:first-child{
+          box-shadow: $shadow;
+          th{
+            text-align: center;
             background-color: $keyGreen;
             color: #ffffff;
+            height: 40px;
           }
-          // td:nth-child(2){
-          //   box-shadow: $shadow;
-          // }
+          td{
+            text-align: center;
+          }
+          i{
+            font-size: 20px;
+          }
+          .fa-check-circle:hover, .fa-check-circle:active{
+            color: green;
+          }
+          .fa-times-circle:hover, .fa-times-circle:active{
+            color: red;
+          }
         }
       }
       // ORDER
