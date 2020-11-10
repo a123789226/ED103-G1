@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
@@ -162,39 +161,39 @@
             <tr>
               <td><img src="./image/ticket/bookingDolphin.jpg" alt=""></td>
               <td>AreaA Dolphinarium</td>
-              <td>10/30</td>
-              <td>{{amountA}}</td>
-              <td>${{priceA*amountA}}</td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeA"></td>
+              <td>Date</td>
+              <td>1</td>
+              <td>Price</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan"></td>
             </tr>
             <tr>
               <td><img src="./image/ticket/bookingWhale.jpg" alt=""></td>
               <td>AreaB Whale House</td>
-              <td>10/30</td>
-              <td>{{amountD}}</td>
-              <td>${{priceB*amountB}}</td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeB"></td>
+              <td>Date</td>
+              <td>1</td>
+              <td>Price</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan"></td>
             </tr>
             <tr>
               <td><img src="./image/ticket/bookingSeal.jpg" alt=""></td>
               <td>AreaC Seal House</td>
-              <td>10/30</td>
-              <td>{{amountD}}</td>
-              <td>${{priceC*amountC}}</td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeC"></td>
+              <td>Date</td>
+              <td>1</td>
+              <td>Price</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan"></td>
             </tr>
             <tr>
               <td><img src="./image/ticket/bookingTurtle.jpg" alt=""></td>
               <td>AreaD Sea Turtle House</td>
-              <td>10/30</td>
-              <td>{{amountD}}</td>
-              <td>${{priceD*amountD}}</td>
-              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" @click="removeD"></td>
+              <td>Date</td>
+              <td>1</td>
+              <td>Price</td>
+              <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan"></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>{{priceA*amountA+priceB*amountB+priceC*amountC+priceD*amountD}}</span></p>
+      <p class="ticketCartTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
       <div class="bookingButtonBox">
         <!-- <a href="ticket.html">
           <button class="ticketPayCancel">CANCEL</button>
@@ -228,53 +227,11 @@
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/memLogin.js"></script>
+  <script src="./js/ticket/overnightBookingMember.js"></script>
   <script src="./js/layout/header.js"></script>
+  <script src="./js/ticket/overnightBooking.js"></script>
   <script>
-    new Vue({
-      el: '#app',
-      data: {
-        amountA: 3,
-        amountB: 1,
-        amountC: 1,
-        amountD: 1,
-
-        priceA: 80,
-        priceB: 70,
-        priceC: 100,
-        priceD: 90,
-
-      },
-      methods: {
-        removeA(){
-          this.amountA = 0;
-          
-        },
-        removeB(){
-          this.amountB = 0;
-        },
-        removeC(){
-          this.amountC = 0;
-        },
-        removeD(){
-          this.amountD = 0;
-        },
-
-      }
-    });
-
     //jquery
-    // 漢堡
-    $("div.hamburger_box").on("click", function(){
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
-
-    $("img.trashCan").on("click", function(){
-          $(this).closest("tr").remove();
-    })
-
     $('.ticketPayCancel').on('click', function(e){
       e.preventDefault();
       swal({
@@ -284,35 +241,11 @@
         dangerMode: false
       }).then((value) => {
         if(value){
-          window.location = this.href
+          window.location = this.href;
         }
       });
     })
     
-  // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
-
-
-
-
-
-
-
-
-
   </script>
 </body>
 </html>
