@@ -1,84 +1,87 @@
 var storage = localStorage;
 
 function doFirst(){
-  
+  tableInnerHTML = '';
+  total = 0;
 
+  for(let i = 0; i < 4; i++){
+    if(storage[`night${i+1}`]){
+      let nightInfo = storage.getItem(`night${i+1}`);
+      // console.log(nightInfo);
 
-  // let ticketString = storage.getItem('addTicketList');
-  // let tickets = ticketString.substr(0, ticketString.length-2).split(', ');
-
-  // tableInnerHTML = '';
-  // total = 0;
-  // // 取storage有存的票的資訊
-  // for(let key in tickets){
-  //   let ticketInfo = storage.getItem(tickets[key]);
+      createList(nightInfo, i);
     
-  //   // 將storage內有的票都變成購物車清單(html架構字串)並加總storage內票的價格(total)
-  //   createCartList(ticketInfo, tickets[key]);
-  // }
-  // //架構塞到tbody內
-  // let tableContent = document.querySelector('tbody');
-  // tableContent.innerHTML = tableInnerHTML;
-  
-  // let ticketCartTotal = document.querySelectorAll('p.ticketCartTotal span')[1];
-  // ticketCartTotal.innerText = total;
+    }
+  }
 
-  // //替垃圾桶建立事件聆聽
-  // for(i = 0; i< tickets.length; i++){
-  //   let trashCan = document.querySelectorAll('.trashCan');
-  //   trashCan[i].addEventListener('click', function(){
-  //     let ticketId = this.parentNode.parentNode.id;
-  //     //更改總金額
-  //     let subTotal = this.parentNode.previousElementSibling.children[1].innerText;
-  //     total -= parseInt(subTotal);
-  //     ticketCartTotal.innerText = total;
+  // 架構塞到tbody內
+  let tableContent = document.querySelector('tbody');
+  tableContent.innerHTML = tableInnerHTML;
 
-  //     //清除storage
-  //     storage.removeItem(ticketId);
-  //     storage['addTicketList'] = storage['addTicketList'].replace(`${ticketId}, `, '');
+  // 總價改變
+  let ticketCartTotal = document.querySelectorAll('p.ticketCartTotal span')[1];
+  ticketCartTotal.innerText = total;
 
-  //     //刪除該筆<tr>
-  //     this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+  //替垃圾桶建立事件聆聽
 
-  //     //更改header購物車數量
-  //     let cart_amount = document.getElementsByClassName('cart_amount');
-  //     if(storage['addTicketList'] == null | storage['addTicketList'] == ''){
-  //       cart_amount[0].style.display = 'none';
-  //     }else{
-  //       cart_amount[0].innerHTML--;
-  //     }
+  for(let i = 0; i < 4; i++){
+    if(storage[`night${i+1}`]){
+      let trashDelete = document.getElementById(`trash${i+1}`);
+      trashDelete.addEventListener('click', function(){
+        let nightInfo = storage.getItem(`night${i+1}`);
+        let nightPrice = nightInfo.split('|')[1];
+        let nightAmount = nightInfo.split('|')[2];
 
-  //     //跟進來頁面一樣重新判斷storage狀態
-  //     if(storage['addTicketList'] == null | storage['addTicketList'] == ''){
-  //       noTicket();
-  //     }
-  //   })
-  // }
+        //更改總金額
+        total -= parseInt(nightPrice) * parseInt(nightAmount);
+        ticketCartTotal.innerText = total;
 
+        //清除storage
+        storage.removeItem(`night${i+1}`);
+
+        // 刪除該筆<tr>
+        this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+
+        // 檢查storage是否為空
+        checkStorageEmpty();
+
+      })
+    }
+  }
 
 }
 
-function createCartList(ticketValue, ticketId){
-  // let ticketName = ticketValue.split('|')[0];
-  // let ticketPrice = ticketValue.split('|')[1];
-  // let ticketAmount = ticketValue.split('|')[2];
-  
-  // let ticketList = `<tr id="${ticketId}">
-  //   <td>${ticketName}</td>
-  //   <td>
-  //     <div class="ticketButtons">
-  //       <button class="ticketButton"><span>－</span></button>
-  //       <p class="ticketTicketAmount">${ticketAmount}</p>
-  //       <button class="ticketButton"><span>＋</span></button>
-  //     </div>
-  //   </td>
-  //   <td><span>$</span><span class="subTotal">${ticketPrice * ticketAmount}</span></td>
-  //   <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" id="${ticketId}Delete"></td>
-  // </tr>`
+function createList(nightValue, index){
+  let nightName = nightValue.split('|')[0];
+  let nightPrice = nightValue.split('|')[1];
+  let nightAmount = nightValue.split('|')[2];
+  let nightDate = nightValue.split('|')[3];
 
-  // // 將每筆票的list組成字串
-  // tableInnerHTML += ticketList;
-  // total += ticketPrice * ticketAmount;
+  let nightList = `<tr id="night${index+1}">
+                    <td><img src="./image/ticket/night${index+1}.jpg" alt=""></td>
+                    <td>${nightName}</td>
+                    <td>${nightDate}</td>
+                    <td>${nightAmount}</td>
+                    <td>${parseInt(nightPrice) * parseInt(nightAmount)}</td>
+                    <td><img src="./image/ticket/ticketDelete.svg" alt="" class="trashCan" id="trash${index+1}"></td>
+                  </tr>`;
+
+  // 將每筆夜宿票html結構累加
+  tableInnerHTML += nightList;
+  total += nightPrice * nightAmount;
+}
+
+// 檢查storage是否為空，空的話跳出提示，並且五秒後跳回購票頁面
+function checkStorageEmpty(){
+  if(storage['night1'] || storage['night2'] || storage['night3'] || storage['night4']){
+  }else{
+    swal("Oops", "You have canceled all overnight tickets. The page will turn to ticket page in 5 seconds!", "warning", {button: "Go To Ticket Page"}).then((value) => {
+      if(value){
+        window.location = "ticket.html";
+      }
+    });
+    setTimeout("location.href='ticket.html';", 5000); 
+  }
 }
 
 
