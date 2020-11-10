@@ -163,87 +163,89 @@
             <div class="mgrTab tab1 mgrChatbot -on">
               <h3>CHATBOT</h3>
               <button class="ngrChatbotAdd">Add</button>
-              <div class="mgrChatAll">
-                <div class="col-md-12 mgrChatTitle">
-                  <div class="col-md-1 mgrTitle">No</div>
-                  <div class="col-md-3 mgrTitle">Question</div>
-                  <div class="col-md-5 mgrTitle">Reply</div>
-                  <div class="col-md-2 mgrTitle">Keywords</div>
-                  <div class="col-md-1 mgrTitle">Edit</div>
-                </div>
-                <div class="col-md-12 mgrChatKey word1">
-                  <div class="col-md-1 mgrTitle">1</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">哈囉</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">您好，歡迎來到Aqua Wonderland！</div>
-                  <div class="col-md-2 mgrTitle">Hello</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+              <table class="mgrChatAll">
+                <tr class="mgrChatTitle">
+                  <th width="50">No</th>
+                  <th width="100">Question</th>
+                  <th width="150">Reply</th>
+                  <th width="80">Keywords</th>
+                  <th width="50">Edit</th>
+                </tr>
+                <tbody id="backChatbotTable">
+                  <tr class="mgrChatKey word1">
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle mgrcontent2">哈囉</td>
+                    <td class="mgrTitle mgrcontent3">您好，歡迎來到Aqua Wonderland！</td>
+                    <td class="mgrTitle">Hello</td>
+                    <td class="mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </td>
+                  </tr>
+                  <!-- <div class="col-md-12 mgrChatKey word2">
+                    <div class="col-md-1 mgrTitle">2</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">有幾個區域？</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">我們一共有四個區域哦！</div>
+                    <div class="col-md-2 mgrTitle">Area</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word2">
-                  <div class="col-md-1 mgrTitle">2</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">有幾個區域？</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">我們一共有四個區域哦！</div>
-                  <div class="col-md-2 mgrTitle">Area</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+                  <div class="col-md-12 mgrChatKey word3">
+                    <div class="col-md-1 mgrTitle">3</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">如何購票？</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面進行購票</div>
+                    <div class="col-md-2 mgrTitle">Ticket</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word3">
-                  <div class="col-md-1 mgrTitle">3</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">如何購票？</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面進行購票</div>
-                  <div class="col-md-2 mgrTitle">Ticket</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+                  <div class="col-md-12 mgrChatKey word4">
+                    <div class="col-md-1 mgrTitle">4</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">想要過夜</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面有更詳細的夜宿說明</div>
+                    <div class="col-md-2 mgrTitle">Night</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word4">
-                  <div class="col-md-1 mgrTitle">4</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">想要過夜</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">請到訂票頁面有更詳細的夜宿說明</div>
-                  <div class="col-md-2 mgrTitle">Night</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+                  <div class="col-md-12 mgrChatKey word5">
+                    <div class="col-md-1 mgrTitle">5</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">如何替海豚提名呢</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">Vote頁面裡的Naming可直接替海豚命名哦！</div>
+                    <div class="col-md-2 mgrTitle">Vote</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word5">
-                  <div class="col-md-1 mgrTitle">5</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">如何替海豚提名呢</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">Vote頁面裡的Naming可直接替海豚命名哦！</div>
-                  <div class="col-md-2 mgrTitle">Vote</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+                  <div class="col-md-12 mgrChatKey word6">
+                    <div class="col-md-1 mgrTitle">6</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">積分獲得方法</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">可以到首頁進行遊戲獲得積分；也可以藉由登入至Journal留言及Blog發文獲得積分哦！</div>
+                    <div class="col-md-2 mgrTitle">Point</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word6">
-                  <div class="col-md-1 mgrTitle">6</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">積分獲得方法</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">可以到首頁進行遊戲獲得積分；也可以藉由登入至Journal留言及Blog發文獲得積分哦！</div>
-                  <div class="col-md-2 mgrTitle">Point</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
+                  <div class="col-md-12 mgrChatKey worf7">
+                    <div class="col-md-1 mgrTitle">7</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">如何贊助？</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">可以到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt哦！Adopt之後還會寄送感謝函感謝您的認養</div>
+                    <div class="col-md-2 mgrTitle">Adopt</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 mgrChatKey worf7">
-                  <div class="col-md-1 mgrTitle">7</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">如何贊助？</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">可以到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt哦！Adopt之後還會寄送感謝函感謝您的認養</div>
-                  <div class="col-md-2 mgrTitle">Adopt</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
-                  </div>
-                </div>
-                <div class="col-md-12 mgrChatKey word8">
-                  <div class="col-md-1 mgrTitle">8</div>
-                  <div class="col-md-3 mgrTitle mgrcontent2">感謝函好漂亮哦！如何獲得呢？</div>
-                  <div class="col-md-5 mgrTitle mgrcontent3">只要到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt就有機會獲得感謝函哦！</div>
-                  <div class="col-md-2 mgrTitle">Thankscard</div>
-                  <div class="col-md-1 mgrTitle">
-                    <i class="fas fa-pen"></i>
-                  </div>
-                </div>
-              </div>
+                  <div class="col-md-12 mgrChatKey word8">
+                    <div class="col-md-1 mgrTitle">8</div>
+                    <div class="col-md-3 mgrTitle mgrcontent2">感謝函好漂亮哦！如何獲得呢？</div>
+                    <div class="col-md-5 mgrTitle mgrcontent3">只要到Journal頁面瀏覽Aqua們的恢復狀態進行Adopt就有機會獲得感謝函哦！</div>
+                    <div class="col-md-2 mgrTitle">Thankscard</div>
+                    <div class="col-md-1 mgrTitle">
+                      <i class="fas fa-pen"></i>
+                    </div>
+                  </div> -->
+                </tbody>
+              </table>
             </div>
             <!-- CHATBOT END -->
             <!-- MEMBER -->
@@ -264,50 +266,52 @@
                   <th width="150">Status</th>
                   <th width="100">Operation</th>
                 </tr>
-                <tr class=" mgrMemKey word1">
-                  <td class="mgrTitle">1</td>
-                  <td class="mgrTitle">Shinnosuke</td>
-                  <td class="mgrTitle">Shin</td>
-                  <td class="mgrTitle">shin0722</td>
-                  <td class="mgrTitle">shin0722@gmail.com</td>
-                  <td class="mgrTitle">Male</td>
-                  <td class="mgrTitle">0987-654321</td>
-                  <td class="mgrTitle">1994-07-22</td>
-                  <td class="mgrTitle"><img src="./image/member/Shinnosuke2.jpg" alt=""></td>
-                  <td class="mgrTitle">88</td>
-                  <td class="mgrTitle">
-                    <select>
-                      <option value="1">正常</option>
-                      <option value="2">停權</option>
-                    </select>
-                  </td>
-                  <td class="mgrTitle">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-times-circle"></i>
-                  </td>
-                </tr>
-                <tr class=" mgrMemKey word2">
-                  <td class="mgrTitle">2</td>
-                  <td class="mgrTitle">Shinnosuke</td>
-                  <td class="mgrTitle">Shin</td>
-                  <td class="mgrTitle">shin0722</td>
-                  <td class="mgrTitle">shin0722@gmail.com</td>
-                  <td class="mgrTitle">Male</td>
-                  <td class="mgrTitle">0987-654321</td>
-                  <td class="mgrTitle">1994-07-22</td>
-                  <td class="mgrTitle"><img src="./image/member/Shinnosuke3.png" alt=""></td>
-                  <td class="mgrTitle">88</td>
-                  <td class="mgrTitle">
-                    <select>
-                      <option value="1">正常</option>
-                      <option value="2">停權</option>
-                    </select>
-                  </td>
-                  <td class="mgrTitle">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-times-circle"></i>
-                  </td>
-                </tr>
+                <tbody id="backMemberTable">
+                  <tr class=" mgrMemKey word1">
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">Shinnosuke</td>
+                    <td class="mgrTitle">Shin</td>
+                    <td class="mgrTitle">shin0722</td>
+                    <td class="mgrTitle">shin0722@gmail.com</td>
+                    <td class="mgrTitle">Male</td>
+                    <td class="mgrTitle">0987-654321</td>
+                    <td class="mgrTitle">1994-07-22</td>
+                    <td class="mgrTitle"><img src="./image/member/Shinnosuke2.jpg" alt=""></td>
+                    <td class="mgrTitle">88</td>
+                    <td class="mgrTitle">
+                      <select>
+                        <option value="1">正常</option>
+                        <option value="2">停權</option>
+                      </select>
+                    </td>
+                    <td class="mgrTitle">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-times-circle"></i>
+                    </td>
+                  </tr>
+                  <tr class=" mgrMemKey word2">
+                    <td class="mgrTitle">2</td>
+                    <td class="mgrTitle">Shinnosuke</td>
+                    <td class="mgrTitle">Shin</td>
+                    <td class="mgrTitle">shin0722</td>
+                    <td class="mgrTitle">shin0722@gmail.com</td>
+                    <td class="mgrTitle">Male</td>
+                    <td class="mgrTitle">0987-654321</td>
+                    <td class="mgrTitle">1994-07-22</td>
+                    <td class="mgrTitle"><img src="./image/member/Shinnosuke3.png" alt=""></td>
+                    <td class="mgrTitle">88</td>
+                    <td class="mgrTitle">
+                      <select>
+                        <option value="1">正常</option>
+                        <option value="2">停權</option>
+                      </select>
+                    </td>
+                    <td class="mgrTitle">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-times-circle"></i>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <!-- MEMBER END -->
@@ -316,150 +320,177 @@
               <h3>AQUA</h3>
               <button type="submit">Add</button>
               <table class="mgrAquaAll">
-                <tr align=center auto class="mgrAquaNo">
-                  <td width="150">AquaNo</td>
-                  <td width="150">1</td>
-                  <td width="150">2</td>
-                  <td width="150">3</td>
-                  <td width="150">4</td>
-                  <td width="150">5</td>
+                <tr>
+                  <th width="50">No</th>
+                  <th width="150">Type</th>
+                  <th width="150">Name</th>
+                  <th width="150">Age</th>
+                  <th width="150">Sex</th>
+                  <th width="150">Arrive Date</th>
+                  <th width="150">Rescue Location</th>
+                  <th width="150">Aqua Story</th>
+                  <th width="50">Recover Status</th>
+                  <th width="150">Release Date</th>
+                  <th width="150">Release Location</th>
+                  <th width="150">Aqua Pic</th>
+                  <th width="150">Adopt Number</th>
+                  <th width="150">Adopt Amount</th>
+                  <th width="150">Name Status</th>
+                  <th width="150">Name Start</th>
+                  <th width="150">Name End</th>
+                  <th width="150">Vote Start</th>
+                  <th width="150">Vote End</th>
+                  <th width="100">Edit</th>
                 </tr> 
-                <tr align=center auto class="mgrAquaType">
-                  <td width="150">Type</td>
-                  <td width="150">Dolphin</td>
-                  <td width="150">Seal</td>
-                  <td width="150">Sea Turtle</td>
-                  <td width="150">Whale</td>
-                  <td width="150">Seal</td>
+                <tbody id="backAquaTable">
+                  <tr>
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">Dolphin</td>
+                    <td class="mgrTitle">Lulu</td>
+                    <td class="mgrTitle">23</td>
+                    <td class="mgrTitle">F</td>
+                    <td class="mgrTitle">2020-06-29</td>
+                    <td class="mgrTitle">Pacific</td>
+                    <td class="mgrTitle">A was found stranded and rescued near North Bay, and found to have two marks, one likely the result of a shark attack
+                    that had healed and the other a tumor, but it was in a more stable condition than she was found.</td>
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">Pacific</td>
+                    <td class="mgrTitle">2020-10-29</td>
+                    <td class="mgrTitle">Pacific</td>
+                    <td class="mgrTitle">image01.jpg</td>
+                    <td class="mgrTitle">20</td>
+                    <td class="mgrTitle">2380</td>
+                    <td class="mgrTitle">0</td>
+                    <td class="mgrTitle">2020-10-29</td>
+                    <td class="mgrTitle">2020-10-29</td>
+                    <td class="mgrTitle">2020-10-29</td>
+                    <td class="mgrTitle">2020-10-29</td>
+                    <td class="mgrTitle">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-times-circle"></i>
+                    </td>
+                  </tr> 
                 </tr> 
-                <tr align=center class="mgrAquaName">
-                  <td width="150">Name</td>
-                  <td width="150">Lulu</td>
-                  <td width="150"><a href="#">Naming</a></td>
-                  <td width="150"><a href="#">Voting</a></td>
-                  <td width="150">Harley</td>
-                  <td width="150">Loki</td>
+                  </tr> 
+                </tr> 
+                  </tr> 
+                </tr> 
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaAge">
-                  <td width="150">Age</td>
-                  <td width="150">3</td>
-                  <td width="150">4</td>
-                  <td width="150">5</td>
-                  <td width="150">4</td>
-                  <td width="150">6</td>
+                  </tr> 
+                </tr> 
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaSex">
-                  <td width="150">Sex</td>
-                  <td width="150">F</td>
-                  <td width="150">M</td>
-                  <td width="150">M</td>
-                  <td width="150">F</td>
-                  <td width="150">F</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaArrive">
-                  <td width="150">Arrive Date</td>
-                  <td width="150">2019-01-23</td>
-                  <td width="150">2019-03-11</td>
-                  <td width="150">2020-06-16</td>
-                  <td width="150">2020-10-21</td>
-                  <td width="150">2020-11-27</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaRescue">
-                  <td width="150">Rescue Location</td>
-                  <td width="150">Philippines</td>
-                  <td width="150">Taiwan</td>
-                  <td width="150">Philippines</td>
-                  <td width="150">Taiwan</td>
-                  <td width="150">Taiwan</td>
+                  </tr> 
+                </tr> 
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaRecover">
-                  <td width="150">Recover Status</td>
-                  <td width="150">Recovered</td>
-                  <td width="150">Recovered</td>
-                  <td width="150">Recovering</td>
-                  <td width="150">Recovering</td>
-                  <td width="150">Recovering</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaRelease">
-                  <td width="150">Release Date</td>
-                  <td width="150">2019-12-31</td>
-                  <td width="150">2020-03-21</td>
-                  <td width="150">null</td>
-                  <td width="150">null</td>
-                  <td width="150">null</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaReleaseLoc">
-                  <td width="150">Release Location</td>
-                  <td width="150">Philippines</td>
-                  <td width="150">Taiwan</td>
-                  <td width="150">null</td>
-                  <td width="150">null</td>
-                  <td width="150">null</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaPic">
-                  <td width="150">Aqua Pic</td>
-                  <td width="150"><img src="./image/member/memBlog.jpg" alt=""></td>
-                  <td width="150"><img src="./image/member/memblogseal.jpg" alt=""></td>
-                  <td width="150"><img src="./image/member/memBlogseaturtle.jpg" alt=""></td>
-                  <td width="150"><img src="./image/member/memblog1.jpg" alt=""></td>
-                  <td width="150"><img src="./image/member/memblogseal.jpg" alt=""></td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaAdoptNum">
-                  <td width="150">Adopt Total Number</td>
-                  <td width="150">21</td>
-                  <td width="150">42</td>
-                  <td width="150">31</td>
-                  <td width="150">8</td>
-                  <td width="150">100</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaAdoptAmt">
-                  <td width="150">Adopt Total Amount</td>
-                  <td width="150">NT$800</td>
-                  <td width="150">NT$7,600</td>
-                  <td width="150">NT$5,400</td>
-                  <td width="150">NT$200</td>
-                  <td width="150">NT$10,700</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaNameStatus">
-                  <td width="150">Name Status</td>
-                  <td width="150">Voted</td>
-                  <td width="150">Voting</td>
-                  <td width="150">Voting</td>
-                  <td width="150">Naming</td>
-                  <td width="150">Naming</td>
+                  </tr> 
+                </tr> 
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaNameStart">
-                  <td width="150">Name Start</td>
-                  <td width="150">2019-02-02</td>
-                  <td width="150">2019-05-21</td>
-                  <td width="150">2020-07-27</td>
-                  <td width="150">2020-11-27</td>
-                  <td width="150">2020-12-31</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaNameEnd">
-                  <td width="150">Name End</td>
-                  <td width="150">2019-02-16</td>
-                  <td width="150">2019-06-04</td>
-                  <td width="150">2020-08-10</td>
-                  <td width="150">2020-12-10</td>
-                  <td width="150">2021-01-14</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaVoteStart">
-                  <td width="150">Vote Start</td>
-                  <td width="150">2019-02-17</td>
-                  <td width="150">2019-06-05</td>
-                  <td width="150">2020-08-11</td>
-                  <td width="150">2020-12-11</td>
-                  <td width="150">2021-01-15</td>
+                  </tr> 
                 </tr>
-                <tr align=center auto class="mgrAquaVoteEnd">
-                  <td width="150">Vote End</td>
-                  <td width="150">2019-03-03</td>
-                  <td width="150">2019-06-19</td>
-                  <td width="150">2020-08-25</td>
-                  <td width="150">2020-12-25</td>
-                  <td width="150">2021-01-29</td>
+                  </tr> 
                 </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr> 
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr> 
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr> 
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tr>
+                  </tr> 
+                </tbody>
               </table>
             </div>
             <!-- AQUA END -->
@@ -494,20 +525,20 @@
                       <i class="fa fa-angle-down fa-lg"></i>
                     </div>
                     <div class="mgrOrderDetail mgrStepContent">
-                      <div class="col-md-12 mgrOrderDetailForm">
-                        <div class="col-md-2 mgrDetailTitle">Item No</div>
-                        <div class="col-md-2 mgrDetailTitle">Order No</div>
-                        <div class="col-md-2 mgrDetailTitle">Ticket No</div>
-                        <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
-                        <div class="col-md-2 mgrDetailTitle">Total</div>
-                      </div>
-                      <div class="col-md-12 mgrTicketItem1">
-                        <div class="col-md-2 mgrTick">1</div>
-                        <div class="col-md-2 mgrTick">1</div>
-                        <div class="col-md-2 mgrTick">1</div>
-                        <div class="col-md-2 mgrTick">2</div>
-                        <div class="col-md-2 mgrTick">NT$1,000</div>
-                      </div>
+                    <div class="mgrOrderDetailForm">
+                      <div class="col-md-2 mgrDetailTitle">Item No</div>
+                      <div class="col-md-2 mgrDetailTitle">Order No</div>
+                      <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+                      <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+                      <div class="col-md-2 mgrDetailTitle">Total</div>
+                    </div>
+                    <div class="mgrTicketItem1">
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">2</div>
+                      <div class="col-md-2 mgrTick">NT$1,000</div>
+                    </div>
                       <div class="col-md-12 mgrTicketItem2">
                         <div class="col-md-2 mgrTick">2</div>
                         <div class="col-md-2 mgrTick">1</div>
@@ -535,7 +566,7 @@
                       <i class="fa fa-angle-down fa-lg"></i>
                     </div>
                     <div class="mgrOrderDetail mgrStepContent">
-                      <div class="col-md-12 mgrOrderDetailForm">
+                      <div class="mgrOrderDetailForm">
                         <div class="col-md-2 mgrDetailTitle">Item No</div>
                         <div class="col-md-2 mgrDetailTitle">Order No</div>
                         <div class="col-md-2 mgrDetailTitle">Area No</div>
@@ -543,7 +574,7 @@
                         <div class="col-md-2 mgrDetailTitle">Total</div>
                         <div class="col-md-2 mgrDetailTitle">Night Date</div>
                       </div>
-                      <div class="col-md-12 mgrTicketItem1">
+                      <div class="mgrTicketItem1">
                         <div class="col-md-2 mgrTick">1</div>
                         <div class="col-md-2 mgrTick">1</div>
                         <div class="col-md-2 mgrTick">Dolphin</div>
@@ -949,23 +980,25 @@
                     <th width="200" class="mgrTitle">Status</th>
                     <th width="200" class="mgrTitle">Operation</th>
                   </tr>
-                  <tr class="mgrNominateDetail">
-                    <td class="mgrTitle">1</td>
-                    <td class="mgrTitle">2</td>
-                    <td class="mgrTitle">2</td>
-                    <td class="mgrTitle">Shinnosuke</td>
-                    <td class="mgrTitle">11244</td>
-                    <td class="mgrTitle">
-                      <select>
-                        <option value="1">Succeeded</option>
-                        <option value="2">Reject</option>
-                      </select>
-                    </td>
-                    <td class="mgrTitle">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times-circle"></i>
-                    </td>
-                  </tr>
+                  <tbody id="backNominateTable">
+                    <tr class="mgrNominateDetail">
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">2</td>
+                      <td class="mgrTitle">2</td>
+                      <td class="mgrTitle">Shinnosuke</td>
+                      <td class="mgrTitle">11244</td>
+                      <td class="mgrTitle">
+                        <select>
+                          <option value="1">Succeeded</option>
+                          <option value="2">Reject</option>
+                        </select>
+                      </td>
+                      <td class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -984,22 +1017,24 @@
                     <th width="100" class="mgrTitle">Status</th>
                     <th width="100" class="mgrTitle">Operation</th>
                   </tr>
-                  <tr class="mgrManagerDetail">
-                    <td class="mgrTitle">1</td>
-                    <td class="mgrTitle">AQUA</td>
-                    <td class="mgrTitle">aqua001</td>
-                    <td class="mgrTitle">Wonder</td>
-                    <td class="mgrTitle">
-                      <select>
-                        <option value="1">正常</option>
-                        <option value="2">停權</option>
-                      </select>
-                    </td>
-                    <td class="mgrTitle">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times-circle"></i>
-                    </td>
-                  </tr>
+                  <tbody id="backManagerTable">
+                    <tr class="mgrManagerDetail">
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">AQUA</td>
+                      <td class="mgrTitle">aqua001</td>
+                      <td class="mgrTitle">Wonder</td>
+                      <td class="mgrTitle">
+                        <select>
+                          <option value="1">正常</option>
+                          <option value="2">停權</option>
+                        </select>
+                      </td>
+                      <td class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -1017,53 +1052,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/backend.js"></script>
 
 
-  <!-- 頁籤 -->
-  <script>
-    // backend主頁籤
-    $(function(){
-      $("a.mgrTab").on("click", function(e){
-        e.preventDefault();
-        
-        /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-        $(this).closest("ul").find("a.mgrTab").removeClass("-on");
-        $(this).addClass("-on");
-        
-        /* 找到對應的頁籤內容，加上 -on 來顯示 */
-        $("div.mgrTab").removeClass("-on");
-        $("div.mgrTab." + $(this).attr("data-target")).addClass("-on");
-      });
-    });
-
-    // backend內容頁籤
-    $(function(){
-      $("a.mgrSecTab").on("click", function(e){
-        e.preventDefault();
-        
-        /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-        $(this).closest("ul").find("a.mgrSecTab").removeClass("-on");
-        $(this).addClass("-on");
-        
-        /* 找到對應的頁籤內容，加上 -on 來顯示 */
-        $("div.mgrSecTab").removeClass("-on");
-        $("div.mgrSecTab." + $(this).attr("data-target")).addClass("-on");
-      });
-    });
-    
-    // OrderDetail收合
-    $("div.mgrStep").on("click", function(){
-      $(this).next().slideToggle();
-      $(this).find('i').toggleClass('rotate');
-    });
-  
-    // Hamburger
-    $("div.hamburger_box").on("click", function(){
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
-
-</script>
+ 
 </body>
 </html>
