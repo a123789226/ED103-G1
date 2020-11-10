@@ -185,7 +185,7 @@
       <div class="card mb-12" style="max-width: 1200px; margin-bottom: 30px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="./image/blog/photos/blogImg01.jpg" class="card-img blogPostLeft">
+            <img src='<?=$prodRow["blogPic"]?>' class="card-img blogPostLeft">
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -196,8 +196,8 @@
                 <span>|&nbsp;</span>
                 <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
               </div>
-              <div class="blogPostPreview">
-                <p class="card-text" class="previewText"><?=$prodRow["blogContent1"]?></p>
+              <div class="blogPostPreview" id="previewText">
+                <p class="card-text" ><?=$prodRow["blogContent1"]?></p>
               </div>
             </div>
           </div>
@@ -460,6 +460,20 @@ function doFirst(){
 }
 
 window.addEventListener('load', doFirst);
+</script>
+<script>
+  // 多行變.....
+// var el = document.getElementsByClassName('blogPostPreview');
+// var text = el.innerText;
+// var n = el.offsetHeight;
+// for(i=0; i<text.length; i++){
+//   el.innerHTML = text.substr(0, i);
+//   if(n < el.scrollHeight){
+//     el.style.overflow = 'hidden';
+//     el.innerHTML = text.substr(o, i-3) + '...';
+//     break;
+//   }
+// }
 </script>
 <script src="./js/memLogin.js"></script>
 <script src="./js/layout/header.js"></script>
