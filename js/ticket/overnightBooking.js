@@ -75,7 +75,7 @@ function createList(nightValue, index){
 function checkStorageEmpty(){
   if(storage['night1'] || storage['night2'] || storage['night3'] || storage['night4']){
   }else{
-    swal("Oops", "You have canceled all overnight tickets. The page will turn to ticket page in 5 seconds!", "warning", {button: "Go To Ticket Page"}).then((value) => {
+    swal("Oops", "You have canceled all overnight tickets. You can click the button turn to ticket page, or the page will change in 5 seconds!", "warning", {button: "Go To Ticket Page"}).then((value) => {
       if(value){
         window.location = "ticket.html";
       }

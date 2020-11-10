@@ -1,9 +1,7 @@
-
-
-
 function $id(id) {
     return document.getElementById(id);
 }
+
 let member;
 
 function doSignOut() {   
@@ -148,7 +146,7 @@ function alterTicketDiscountPoint(){
       // 新增會員訂單
       insertTicketOrder();
     }else{
-      alert(xhr.status);
+      alert( xhr.status);
     }
   }
   let newPoint = parseInt(member.point) - $id('point').innerText;

@@ -147,7 +147,7 @@
             </tr> -->
             <tr class="priceTr"> 
               <td>Price</td>
-              <td><span>$</span><span>0</span></td>
+              <td><span>$</span><span id="TotalPrice">0</span></td>
             </tr>
             <tr>
               <td>Discount Points</td>

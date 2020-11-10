@@ -1,6 +1,3 @@
-
-
-
 function $id(id) {
     return document.getElementById(id);
 }
@@ -33,7 +30,7 @@ function doSignOut() {
     // alert('登出成功');
 
 
-}//showLoginForm
+}
 
 //按下登入執行
 function sendForm() {
@@ -84,6 +81,9 @@ function getMemberInfo() {
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
                 $id('memberPic').style.transition = '0s';
+                
+                //秀點數
+                showPoint();
             }
         } else { //error
             alert(xhr.status);
@@ -120,6 +120,12 @@ function showMemberProfileBox(){
     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
+//秀點數
+function showPoint(){
+  $id('points').innerText = member.point;
+}
+
+
 // 確認真的要登出嗎
 function doSignOutCheck(){
   swal({
@@ -136,98 +142,6 @@ function doSignOutCheck(){
   });
 }
 
-// 修改會員點數
-function alterTicketDiscountPoint(){
-  // console.log(member);
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-    if( xhr.status == 200){ //status : OK
-      // Alter points success!
-      // console.log(xhr.responseText);
-
-      // 新增會員訂單
-      insertTicketOrder();
-    }else{
-      alert(xhr.status);
-    }
-  }
-  let newPoint = parseInt(member.point) - $id('point').innerText;
-  // console.log(newPoint);
-  let url = `AlterTicketDiscountPoint.php?memId=${member.memId}&point=${newPoint}`;
-  xhr.open("get", url, true);
-  xhr.send(null); 
-}
-
-// 新增會員訂單
-function insertTicketOrder(){
-  let xhr = new XMLHttpRequest();
-
-  xhr.onload = function(){
-      if( xhr.status == 200){ //status : OK
-        // xhr.responseText值為新增訂單的流水號(ticketOrderNo)
-        // console.log(xhr.responseText);
-        let ticketOrderNo = xhr.responseText;
-
-        // 新增會員訂單明細
-        insertTicketOrderList(ticketOrderNo);
-      }else{
-        alert(xhr.status);
-      }
-  }  
-  xhr.open("post", "InsertTicketOrder.php", true);
-  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  //送出資料
-  let OrderTime = new Date().toISOString().substring(0, 10);
-  let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("TotalPrice").innerText}`;
-  xhr.send(data_info);
-}
-
-// 新增會員訂單明細
-function insertTicketOrderList(ticketOrderNo){
-  let ticketString = storage.getItem('addTicketList');
-  let tickets = ticketString.substr(0, ticketString.length-2).split(', ');
-  
-  // 有幾筆票的資料就做幾次ajax去執行php新增訂單明細
-  for(let key in tickets){
-    let ticketInfo = storage.getItem(tickets[key]);
-    let ticketType = ticketInfo.split('|')[0];
-    let ticketPrice = ticketInfo.split('|')[1];
-    let ticketPerson = ticketInfo.split('|')[2];
-    
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function(){
-      if( xhr.status == 200){ //status : OK
-        // 新增成功
-        // console.log(xhr.responseText);
-
-        // 清空storage的資料
-        cleanStorage(tickets[key]);
-      }else{
-        alert(xhr.status);
-      }
-    }  
-    xhr.open("post", "InsertTicketOrderList.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    //送出資料
-    let data_info =`ticketOrderNo=${ticketOrderNo}&ticketType=${ticketType}&ticketPerson=${ticketPerson}&ticketPrice=${ticketPrice}`;
-    xhr.send(data_info);
-  }
-}
-
-// 清空storage的資料後，跳出成功結帳視窗並連結頁面跳轉。
-function cleanStorage(ticketId){
-  storage.removeItem(ticketId);
-  storage['addTicketList'] = storage['addTicketList'].replace(`${ticketId}, `, '');
-  console.log('清除該筆storage');
-  swal("Good job!", "You have completed the payment. The page will change in 5 seconds!", "success", {button: "Go To Member Profile!"}).then((value) => {
-    if(value){
-      window.location = "memberProfile.html";
-    }
-  });
-  setTimeout("location.href='memberProfile.html';", 5000); 
-};
-
 
 function init() {
     //-----------------------檢查是否已登入
@@ -240,12 +154,9 @@ function init() {
     //===設定btnLogin.onclick 事件處理程序是 sendForm
     $id('btnLogin').onclick = sendForm;
 
-    //點下送出觸發修改點數
-    $id('ticketPayToCheck').onclick = alterTicketDiscountPoint;
+}; //window.onload
 
-};
-
-
+// $('#memberPic').click(loginStatus);
 
 
 window.addEventListener("load", init, false);
