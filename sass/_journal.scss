@@ -166,7 +166,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  // border: 3px solid white;
+  border: 3px solid white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -180,20 +180,29 @@ body {
 }
 
 // 下方書本
-
+#jourBooks {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 3px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
 .jourBookSection {
   text-align: center;
   width: 40%;
-  // border: 3px solid black;
+  border: 3px solid black;
   // flex: 40%;
+  margin: 0 auto;
+
 
   @media screen and (max-width: 676px) {
     display: block;
     // background-color: red;
     width: 100%;
     margin-top: 50px;
-
   }
 }
 
@@ -226,6 +235,15 @@ body {
   animation-duration: 3s;
   // animation-timing-function: steps(5, end);
   animation-iteration-count: infinite;
+
+  @media screen and (max-width: 676px) {
+    min-width: 240px;
+    border: 3px solid yellow;
+    max-height: 480px;
+    min-height: 360px;
+
+
+  }
 }
 
 @keyframes book {
@@ -247,7 +265,7 @@ body {
   // background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%,#A52B2B 70%);
   background: linear-gradient(to right, #C43535 0%, #A52B2B 30%, #7A2929 40%, #7A2929 60%, #A52B2B 60%);
   width: 7%;
-  
+
   display: inline-block;
 }
 
@@ -305,6 +323,7 @@ a.jourBookName {
   text-align: left;
   width: 80%;
   padding: 20px 10px;
+  // border: 3px solid white;
 
 
   table {
@@ -315,6 +334,7 @@ a.jourBookName {
     tr {
       border-bottom: 1px solid rgba(255, 255, 255, .5);
       font-size: 16px;
+      // border: 3px solid white;
 
     }
 
@@ -323,6 +343,21 @@ a.jourBookName {
       font-size: 16px;
 
     }
+  }
+
+  .jourAquaStory {
+    margin: 0 auto;
+    padding: 5px 25px;
+  }
+
+  .jourAquaStory h5 {
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .jourAquaStory p {
+    line-height: 20px;
   }
 }
 
@@ -1094,6 +1129,10 @@ div.jourLightBox.-on {
   // background-color: rgba(0,0,0,.8);
   text-align: center;
   display: block;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .jourOpenBookRight {
@@ -1221,7 +1260,7 @@ div.jourLightBox.-on {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  border: 2px solid red;
+  // border: 2px solid red;
   display: block;
 
 }
@@ -1239,7 +1278,7 @@ div.jourLightBox.-on {
   width: 100%;
   height: 260px;
   padding: 0 15px;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .jourPagePhotoArea1 {
@@ -1247,7 +1286,7 @@ div.jourLightBox.-on {
   width: 100%;
   height: 350px;
   padding: 0 30px;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .jourPagePhotoLeft {
@@ -1257,7 +1296,7 @@ div.jourLightBox.-on {
   height: 160px;
   display: block;
   margin: 0px auto 10px auto;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   position: relative;
   border-radius: 6px;
 }
@@ -1269,13 +1308,13 @@ div.jourLightBox.-on {
   height: 220px;
   display: block;
   margin: 0px auto 10px auto;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   position: relative;
-  border-radius: 6px;
 
 }
 
-.jourPagePhotoLeft img, .jourPagePhotoLeft1 img {
+.jourPagePhotoLeft img,
+.jourPagePhotoLeft1 img {
   width: 100%;
   margin: 0px auto;
   object-fit: cover;
@@ -1284,24 +1323,26 @@ div.jourLightBox.-on {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
+  border-radius: 6px;
+
 }
 
-.jourPagePhotoRight{
+.jourPagePhotoRight {
   // width: 54%;.
   margin: 0px auto;
   width: 95%;
   height: 90px;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   // border-radius: 6px;
 }
 
-.jourPagePhotoRight1{
+.jourPagePhotoRight1 {
   width: 100%;
   height: 120px;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -1309,19 +1350,20 @@ div.jourLightBox.-on {
 
 .jourPagePhotoRightInner {
   width: 120px;
-  border: 1px solid green;
+  // border: 1px solid green;
   position: relative;
   border-radius: 6px;
 }
 
 .jourPagePhotoRightInner1 {
   width: 160px;
-  border: 1px solid green;
+  // border: 1px solid green;
   position: relative;
   border-radius: 6px;
 }
 
-.jourPagePhotoRightInner img, .jourPagePhotoRightInner1 img {
+.jourPagePhotoRightInner img,
+.jourPagePhotoRightInner1 img {
   // width: 100%;
   object-fit: cover;
   position: absolute;
@@ -1329,6 +1371,8 @@ div.jourLightBox.-on {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
+  border-radius: 6px;
+
 }
 
 .jourPageText {
@@ -1416,6 +1460,59 @@ div.jourLightBox.-on {
   line-height: 1.4;
   overflow: hidden;
 }
+
+
+
+// jourbook RWD
+#jourSliderBoard {
+  /*div*/
+  border: 1px solid #ccc;
+  width: 60%;
+  height: 550px;
+  margin: 100px auto;
+
+  overflow: hidden;
+}
+
+#jourContent {
+  /*ul*/
+  position: relative;
+}
+
+#jourContent li {
+  /*li*/
+  float: left;
+}
+
+#jourBookPageButton {
+  /* border: 1px solid red; */
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+#jourBookPageButton li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ccc;
+
+  display: inline-block;
+  margin: 5px;
+}
+
+#jourBookPageButton li.clickMe {
+  background: #888;
+}
+
+
+
+
+
+
+
+
+
 
 
 //adopt lightbox
