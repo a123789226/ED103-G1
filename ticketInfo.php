@@ -5,7 +5,6 @@ try {
   $tickets = $pdo->query($sql);
   $tickets->execute();
 
-
   if( $tickets->rowCount() == 0 ){ //找不到
     //傳回看起來空空的JSON字串
     echo '{}';
