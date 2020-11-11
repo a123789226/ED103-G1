@@ -148,7 +148,7 @@ function alterTicketDiscountPoint(){
       // 新增會員訂單
       insertTicketOrder();
     }else{
-      alert( xhr.status);
+      alert(xhr.status);
     }
   }
   let newPoint = parseInt(member.point) - $id('point').innerText;
@@ -178,7 +178,7 @@ function insertTicketOrder(){
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   //送出資料
   let OrderTime = new Date().toISOString().substring(0, 10);
-  let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("newTotalPrice").innerText}`;
+  let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("TotalPrice").innerText}`;
   xhr.send(data_info);
 }
 

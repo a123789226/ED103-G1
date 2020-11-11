@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
@@ -128,7 +127,7 @@
 
     <form class="booking3Content" action="homepage.html">
       <h3 class="booking3Title">Confirm Your Order</h3>
-      <h4 class="booking3SubTitle">Please confirm that the Overnight Area you booked are correct, and checkout confirmation</h4>
+      <h4 class="booking3SubTitle">Please confirm that the Overnight Area you booked are correct, and checkout confirmation!</h4>
       <div class="booking3StepBox">
         <div class="booking3Step done">
           <img src="./image/ticket/overnight.svg" alt="">
@@ -146,47 +145,33 @@
 
         <table>
           <tbody>
-            <tr>
+            <tr> 
+              <td>Booking Date</td>
+              <td id="nightDate">2020-01-01</td>
+            </tr>
+            <!-- <tr>
               <td>Area</td>
               <td><span>AreaA Dolphinarium</span><span>*</span><span>3</span></td>
-            </tr>
-            <tr>
-              <td>Area</td>
-              <td><span>AreaB Whale House</span><span>*</span><span>1</span></td>
-            </tr>
-            <tr>
-              <td>Area</td>
-              <td><span>AreaC Seal House</span><span>*</span><span>1</span></td>
-            </tr>
-            <tr>
-              <td>Area</td>
-              <td><span>AreaD Sea Turtle House</span><span>*</span><span>1</span></td>
-            </tr>
-            <tr>
+            </tr> -->
+            <tr class="priceTr"> 
               <td>Price</td>
-              <td><span>$</span><span>500</span></td>
+              <td><span>$</span><span id="TotalPrice">0</span></td>
             </tr>
             <tr>
               <td>Discount Points</td>
-              <td><span>30</span><span>&nbsp;points</span></td>
+              <td><span id="point"><?=$_POST["point"]?></span><span>&nbsp;points</span></td>
             </tr>
             <tr>
               <td>Total Price</td>
-              <td><span>$</span><span>470</span></td>
+              <td><span>$</span><span id="newTotalPrice">0</span></td>
             </tr>
           </tbody>
         </table>
 
 
         <div class="payButtonBox">
-          <!-- <a href="bookingPayment.html">
-            <button class="ticketPayCancel">PREVIOUS</button>
-          </a>
-          <a href="homepage.html">
-            <button class="ticketPayToCheck">SEND</button>
-          </a> -->
           <a href="bookingPayment.html" class="ticketPayCancel">PREVIOUS</a>
-          <button class="ticketPayToCheck">SEND</button>
+          <input type="button" class="ticketPayToCheck" value="SEND" id="ticketPayToCheck">
         </div>
 
       </div>
@@ -215,53 +200,8 @@
   
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/memLogin.js"></script>
+  <script src="./js/ticket/bookingConfirm.js"></script>
+  <script src="./js/ticket/bookingConfirmSend.js"></script>
   <script src="./js/layout/header.js"></script>
-  <script>
-    // new Vue({
-    //   el: '#ticketApp',
-    //   data: {
-
-    //   },
-    //   methods: {
-
-    //   }
-    // });
-
-
-    //jquery
-
-
-    
-
-    // $('.ticketPayCancel').on('click', function(e){
-    //   var answer = confirm('Do you want to cancel? Your information will not be saved.');
-    //   if(answer == false){
-    //     e.preventDefault();
-    //   }
-    // })
-
-    // $('.ticketPayToCheck').on('click', function(e){
-    //   e.preventDefault();
-    //   swal("Great!", "You have completed the payment!", "success").then((value) => {
-    //     if(value){
-    //     $(this).submit();
-    //       window.location = "homepage.html";
-    //     }
-    //   })
-    // })
-    //把它改成跳轉到另一php存到資料庫然後header連到首頁。
-
-
-
-
-
-
-
-
-
-
-
-  </script>
 </body>
 </html>

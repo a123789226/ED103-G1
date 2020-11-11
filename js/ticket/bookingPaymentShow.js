@@ -24,14 +24,13 @@ function doSignOut() {
         $id('memberPic').title = 'Log In';
         $id('memberPic').style.transition = '0.5s cubic-bezier(.44,-1.25,1,.31)';
         member = {};
-        // window.location.href = 'homepage.html';
     }
     xhr.open("get", "logout.php", true);
     xhr.send(null);
     // alert('登出成功');
 
 
-}//showLoginForm
+}
 
 //按下登入執行
 function sendForm() {
@@ -82,6 +81,9 @@ function getMemberInfo() {
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
                 $id('memberPic').style.transition = '0s';
+                
+                //秀點數
+                showPoint();
             }
         } else { //error
             alert(xhr.status);
@@ -118,22 +120,39 @@ function showMemberProfileBox(){
     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
+//秀點數
+function showPoint(){
+  $id('points').innerText = member.point;
+}
+
+
+// 確認真的要登出嗎
+function doSignOutCheck(){
+  swal({
+    title: "Want to Sign Out? Your information will not be saved.",
+    icon: "warning",
+    buttons: true,
+    dangerMode: false
+  }).then((value) => {
+    if(value){
+      // 真的選擇登出執行登出函數並跳轉首頁
+      doSignOut();
+      window.location = "./homepage.html";
+    }
+  });
+}
 
 
 function init() {
-    // alert('123');
     //-----------------------檢查是否已登入
     getMemberInfo();
 
-    // abc();
-
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut
 
-    $id('SignOutLink').onclick = doSignOut;
+    $id('SignOutLink').onclick = doSignOutCheck;
 
     //===設定btnLogin.onclick 事件處理程序是 sendForm
     $id('btnLogin').onclick = sendForm;
-
 
 }; //window.onload
 
