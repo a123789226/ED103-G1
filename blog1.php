@@ -283,6 +283,7 @@
         <input class="blogPostContentTextInput3" type="hidden" value="" name="blogContent2" id="inputContent3"/>
         </div>
       </div>
+      <input class="blogGetPoint" type="hidden" value="" name="point" />
     </div>
 
     <div class="blogPostSubmitSection">
@@ -304,14 +305,14 @@
   <script>
   // ---------這裡是jQuery---------
   // 愛心點擊換圖＆數字增加
-  $(".blogPostCollected").click(function() {
-  if ($(this).hasClass("like-active")) {
-    $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) - 1)
-  } else {
-    $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) + 1)
-  }
-  $(this).toggleClass('like-active');
-  });
+  // $(".blogPostCollected").click(function() {
+  // if ($(this).hasClass("like-active")) {
+  //   $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) - 1)
+  // } else {
+  //   $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) + 1)
+  // }
+  // $(this).toggleClass('like-active');
+  // });
 
   // 發文頁面 tag選擇
     $(".blogPostTags").on("click", function(){
@@ -459,6 +460,22 @@ function doFirst(){
   })
 }
 
+
+
+// 分數獲得
+// let postWord = (  document.getElementsByClassName("blogPostContentTextInput2")[0].value.length
+//                 + document.getElementsByClassName("blogPostContentTextInput3")[1].value.length);
+// let postPoint = 0;
+//              if(postPoint<1000){
+//               postWord = postPoint;
+//              } else {
+//               postWord = postPoint*2;
+//              }
+//              console.log("總字數 : ", postWord);
+//              console.log("點數 : ", postWord);
+//              alert(`您目前輸入的「總字數」為 : ${postPoint}\n獲得的「點數」為 : ${postWord}\n請至 [ 會員中心 ] - [ 會員資訊 ] 選項中的 "紅利點數" 欄位做確認。`);
+//              document.getElementsByClassName("blogGetPoint")[0].value = postPoint;
+
 window.addEventListener('load', doFirst);
 </script>
 <script>
@@ -477,5 +494,6 @@ window.addEventListener('load', doFirst);
 </script>
 <script src="./js/memLogin.js"></script>
 <script src="./js/layout/header.js"></script>
+<script src="./js/collect.js"></script>
 </body>
 </html>
