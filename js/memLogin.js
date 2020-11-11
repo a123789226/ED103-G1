@@ -124,7 +124,6 @@ function init() {
     // alert('123');
     //-----------------------檢查是否已登入
     getMemberInfo();
-
     // abc();
 
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut

@@ -300,7 +300,7 @@ flipbook.turn({
 
 flipbook.turn("page", 2);
 var win = $(this); //this = window
-var home_message = document.getElementsByClassName("home_message_box")[0];
+// var home_message = document.getElementsByClassName("home_message_box")[0];
 
 if (win.width() <= 576) {
   flipbook.css("left", "7%");
@@ -313,7 +313,7 @@ if (win.width() <= 576) {
   flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.75);
   flipbook.css("left", "45%");
   // flipbook.css("trnasfoem","translateX(-50%)");
-  $("#flipbook").turn("display", "double");
+  // $("#flipbook").turn("display", "double");。。
 }
 
 
@@ -378,10 +378,18 @@ $.ajax({
   type: 'get',
   dataType: 'json',
   success: function (data) {
-    console.log(data);
+    console.log($('#flipbook .page-wrapper .jourPage6 .jourPageContent > h4').text());
+    // console.log($('.jourPage1 .jourPageText > h4').text(data[0].jourStory));
+    for(let i=0; i<data.length; i++){
+      // console.log($(`.jourPage${(i + 1)} .jourPageContent > h4`).text());
+      $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
+      $(`.jourPage${(i + 1)} .jourPageText > h4`).text(`Story Update${i+1}`);
+      $(`.jourPage${(i+1)} .jourPageText > p`).text(data[i].jourContent);
+    }
+
   },
   error: function (data) {
-    console.log('出錯啦 data : ' + JSON.stringify(data));
+    console.log(JSON.stringify(data));
   },
 })
 
