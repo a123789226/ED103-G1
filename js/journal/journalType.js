@@ -56,6 +56,8 @@ function chooseAquaType(){
         }
         let jourBooks = document.getElementById('jourBooksDolphin');
         jourBooks.innerHTML = bookCoverHTML;
+        openBook();
+
         
     }
     xhr.open("Get", "journalTypeDolphin.php", true);
@@ -118,6 +120,8 @@ function chooseAquaType(){
         
         let jourBooks = document.getElementById('jourBooksWhale');
         jourBooks.innerHTML = bookCoverHTML;
+        openBook();
+
         
     }
     xhrWhale.open("Get", "journalTypeWhale.php", true);
@@ -179,6 +183,8 @@ xhrSeal.onload = function(){
     
     let jourBooks = document.getElementById('jourBooksSeal');
     jourBooks.innerHTML = bookCoverHTML;
+    openBook();
+
     
 }
 xhrSeal.open("Get", "journalTypeSeal.php", true);
@@ -241,6 +247,8 @@ xhrTurtle.onload = function(){
     
     let jourBooks = document.getElementById('jourBooksTurtle');
     jourBooks.innerHTML = bookCoverHTML;
+    openBook();
+
     
 }
 xhrTurtle.open("Get", "journalTypeTurtle.php", true);
@@ -249,6 +257,15 @@ xhrTurtle.send(null);
 
 }
 
+function openBook(){
+    document.getElementById('jourBookOpenBtn').onclick = function () {
+        // document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
+        document.getElementsByClassName("jourLightBox")[0].style.display = "block";
+        document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
+          document.getElementsByClassName("jourLightBox")[0].style.display = "none";
+        }
+      };
+}
 
 // }
 
