@@ -139,40 +139,66 @@ function doSignOutCheck(){
 
 // -----------------------------------------
 
-let areaType;
-let areaPrice;
-let nightAmount;
-let nightDate;
 
 // 檢查區域人數
 function checkRemain(){
-  for(let i = 0; i < 4; i++){
-    if(storage[`night${i+1}`]){
-      nightInfo = storage.getItem(`night${i+1}`);
-      areaType = nightInfo.split('|')[0];
-      areaPrice = nightInfo.split('|')[1];
-      nightAmount = nightInfo.split('|')[2];
-      nightDate = nightInfo.split('|')[3];
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if(xhr.status == 200){ //status : OK
+      let areaRemain = JSON.parse(xhr.responseText);
+      console.log(areaRemain);
+      
+      let nightTypeAmount = 0;
+      let nightCheckAmount = 0;
+      let nightCheckMsg = '';
+      for(let i = 0; i < 4; i++){
+        if(storage[`night${i+1}`]){
+          // 先判斷storage內共有幾種夜宿票
+          nightTypeAmount++;
 
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function(){
-        if(xhr.status == 200){ //status : OK
-          let areaRemain = JSON.parse(xhr.responseText);
-          console.log(areaRemain);
-          console.log(parseInt(areaRemain.capacity) - parseInt(areaRemain.orderPerson));
-        }else{
-          alert(xhr.status);
+          let nightInfo = storage.getItem(`night${i+1}`);
+          let areaType = nightInfo.split('|')[0];
+          let nightAmount = nightInfo.split('|')[2];
+          
+          // 若該區域 (剩餘人數-目前訂單累積人數) >= 購買的票數，代表還有位置 
+          if((parseInt(areaRemain[i].capacity) - parseInt(areaRemain[i].orderPerson)) >= nightAmount){
+            // 該區域判定可以訂購
+            nightCheckAmount++;
+          }else{
+            // 額滿的區域名稱以字串列出
+            nightCheckMsg += ` and ${areaType}`;
+          }
         }
       }
-      let url = `bookingCheckRemain.php?areaType=${areaType}&nightDate=${nightDate}`;
-      xhr.open("get", url, true);
-      xhr.send(null);
+      // console.log(nightTypeAmount);
+      // console.log(nightCheckAmount);
+      // console.log(nightCheckMsg.substr(4, nightCheckMsg.length));
+      let newNightCheckMsg = nightCheckMsg.substr(5, nightCheckMsg.length);
+
+      if(nightTypeAmount == nightCheckAmount){ //訂的區域都有剩餘空間
+
+        // 繼續付款流程，修改會員點數
+        alterNightDiscountPoint();
+
+      }else{  //有區域沒有剩餘空間
+        swal("Sorry!", `The remaining overnight space in ${newNightCheckMsg} is not enough! Please reselect your overnight area!`, "error", {button: "Go Booking!"}).then((value) => {
+          if(value){
+            window.location = "ticket.html#ticketOverNightBox";
+          }
+        });
+        setTimeout("location.href='ticket.html#ticketOverNightBox';", 5000); 
+      }
+    }else{
+      alert(xhr.status);
     }
   }
+  let url = `bookingCheckRemain.php?nightDate=${$id('nightDate').innerText}`;
+  xhr.open("get", url, true);
+  xhr.send(null);
 }
 
 // 修改會員點數
-function alterTicketDiscountPoint(){
+function alterNightDiscountPoint(){
   // console.log(member);
   let xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -181,7 +207,7 @@ function alterTicketDiscountPoint(){
       // console.log(xhr.responseText);
 
       // 新增會員訂單
-      insertTicketOrder();
+      insertNightOrder();
     }else{
       alert(xhr.status);
     }
@@ -194,66 +220,65 @@ function alterTicketDiscountPoint(){
 }
 
 // 新增會員訂單
-function insertTicketOrder(){
+function insertNightOrder(){
   let xhr = new XMLHttpRequest();
 
   xhr.onload = function(){
       if( xhr.status == 200){ //status : OK
-        // xhr.responseText值為新增訂單的流水號(ticketOrderNo)
+        // xhr.responseText值為新增訂單的流水號(nightOrderNo)
         // console.log(xhr.responseText);
-        let ticketOrderNo = xhr.responseText;
+        let nightOrderNo = xhr.responseText;
 
         // 新增會員訂單明細
-        insertTicketOrderList(ticketOrderNo);
+        insertNightOrderList(nightOrderNo);
       }else{
         alert(xhr.status);
       }
   }  
-  xhr.open("post", "InsertTicketOrder.php", true);
+  xhr.open("post", "InsertNightOrder.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   // 送出資料
   let OrderTime = new Date().toISOString().substring(0, 10);
-  let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("TotalPrice").innerText}`;
+  let data_info =`memNo=${member.memNo}&nightOrderDate=${OrderTime}&nightTotalPrice=${$id("TotalPrice").innerText}`;
   xhr.send(data_info);
 }
 
 // 新增會員訂單明細
-function insertTicketOrderList(ticketOrderNo){
-  let ticketString = storage.getItem('addTicketList');
-  let tickets = ticketString.substr(0, ticketString.length-2).split(', ');
-
+function insertNightOrderList(nightOrderNo){
   // 有幾筆票的資料就做幾次ajax去執行php新增訂單明細
-  for(let key in tickets){
-    let ticketInfo = storage.getItem(tickets[key]);
-    let ticketType = ticketInfo.split('|')[0];
-    let ticketPrice = ticketInfo.split('|')[1];
-    let ticketPerson = ticketInfo.split('|')[2];
-    
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function(){
-      if( xhr.status == 200){ //status : OK
-        // 新增成功
-        // console.log(xhr.responseText);
-
-        // 清空storage的資料
-        cleanStorage(tickets[key]);
-      }else{
-        alert(xhr.status);
-      }
-    }  
-    xhr.open("post", "InsertTicketOrderList.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    //送出資料
-    let data_info =`ticketOrderNo=${ticketOrderNo}&ticketType=${ticketType}&ticketPerson=${ticketPerson}&ticketPrice=${ticketPrice}`;
-    xhr.send(data_info);
+  for(let i = 0; i < 4; i++){
+    if(storage[`night${i+1}`]){
+      let nightInfo = storage.getItem(`night${i+1}`);
+      let nightType = nightInfo.split('|')[0];
+      let nightPrice = nightInfo.split('|')[1];
+      let nightPerson = nightInfo.split('|')[2];
+      let nightDate = nightInfo.split('|')[3];
+      
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if( xhr.status == 200){ //status : OK
+          // 新增成功
+          // console.log(xhr.responseText);
+  
+          // 清空storage的資料
+          cleanStorage(`night${i+1}`);
+        }else{
+          alert(xhr.status);
+        }
+      }  
+      xhr.open("post", "InsertNightOrderList.php", true);
+      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      
+      //送出資料
+      let data_info =`nightOrderNo=${nightOrderNo}&nightType=${nightType}&nightPerson=${nightPerson}&nightPrice=${nightPrice}&nightDate=${nightDate}`;
+      xhr.send(data_info);
+    }
   }
 }
 
 // 清空storage的資料後，跳出成功結帳視窗並連結頁面跳轉。
-function cleanStorage(ticketId){
-  storage.removeItem(ticketId);
-  storage['addTicketList'] = storage['addTicketList'].replace(`${ticketId}, `, '');
+function cleanStorage(nightId){
+  storage.removeItem(nightId);
   console.log('清除該筆storage');
   swal("Good job!", "You have completed the payment. The page will change in 5 seconds!", "success", {button: "Go To Member Profile!"}).then((value) => {
     if(value){
