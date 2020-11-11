@@ -97,7 +97,7 @@
   <div>
     <div class="mgrHeader">
       <a href="homepage.html">Back to Aqua</a>
-      <a href="backendLogin.html">Sign Out</a>
+      <a href="index.html">Sign Out</a>
     </div>
     <!-- Title -->
     <!-- <div class="commonTitleBox">
@@ -319,28 +319,28 @@
             <div class="mgrTab tab3 mgrAqua">
               <h3>AQUA</h3>
               <button type="submit">Add</button>
-              <table width="2500" class="mgrAquaAll">
-                <tr width="2500">
+              <table class="mgrAquaAll">
+                <tr>
                   <th width="50">No</th>
-                  <th width="100">Type</th>
-                  <th width="100">Name</th>
-                  <th width="50">Age</th>
-                  <th width="50">Sex</th>
+                  <th width="150">Type</th>
+                  <th width="150">Name</th>
+                  <th width="150">Age</th>
+                  <th width="150">Sex</th>
                   <th width="150">Arrive Date</th>
                   <th width="150">Rescue Location</th>
-                  <th width="300">Aqua Story</th>
+                  <th width="150">Aqua Story</th>
                   <th width="50">Recover Status</th>
                   <th width="150">Release Date</th>
                   <th width="150">Release Location</th>
-                  <th width="200">Aqua Pic</th>
-                  <th width="50">Adopt Number</th>
-                  <th width="50">Adopt Amount</th>
-                  <th width="50">Name Status</th>
+                  <th width="150">Aqua Pic</th>
+                  <th width="150">Adopt Number</th>
+                  <th width="150">Adopt Amount</th>
+                  <th width="150">Name Status</th>
                   <th width="150">Name Start</th>
                   <th width="150">Name End</th>
                   <th width="150">Vote Start</th>
                   <th width="150">Vote End</th>
-                  <th width="50">Edit</th>
+                  <th width="100">Edit</th>
                 </tr> 
                 <tbody id="backAquaTable">
                   <tr>
@@ -387,95 +387,83 @@
                   </div>
                 </div>
               </ul>
-              <div class="mgrOrderAll">
+              <div class="col-md-12 mgrOrderAll">
                 <div class="mgrTicketAll mgrSecTab1 mgrSecTab -on">
-                  <table>
-                    <tr class="mgrOrderTitle">
-                      <th width="150" class="mgrTitle">Order No</th>
-                      <th width="150" class="mgrTitle">Member No</th>
-                      <th width="150" class="mgrTitle">Order Date</th>
-                      <th width="150" class="mgrTitle">Total</th>
-                      <th width="150" class="mgrTitle">Detail</th>
-                    </tr>
-                    <tbody id="backTicketOrderTable">
-                      <tr class="mgrTicketOrder word1">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">2019-08-23</td>
-                        <td class="mgrTitle">NT$1,600</td>
-                        <td class="mgrTitle mgrStep">View
-                          <i class="fa fa-angle-down fa-lg"></i>
-                        </td>
-                        <div class="mgrOrderDetail mgrStepContent">
-                          <!-- <table>
-                            <tr class="mgrOrderDetailForm">
-                              <th class="mgrDetailTitle">Item No</th>
-                              <th class="mgrDetailTitle">Order No</th>
-                              <th class="mgrDetailTitle">Ticket No</th>
-                              <th class="mgrDetailTitle">Ticket Person</th>
-                              <th class="mgrDetailTitle">Total</th>
-                            </tr>
-                            <tbody id="backTicketOrderListTable">
-                              <tr class="mgrTicketItem1">
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">NT$1,000</td>
-                              </tr>
-                              <tr class="mgrTicketItem2">
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">NT$600</td>
-                              </tr>
-                            </tbody>
-                          </table> -->
-                        </div>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="col-md-12 mgrOrderTitle">
+                    <div class="col-md-2 mgrTitle">Order No</div>
+                    <div class="col-md-2 mgrTitle">Member No</div>
+                    <div class="col-md-4 mgrTitle">Order Date</div>
+                    <div class="col-md-2 mgrTitle">Total</div>
+                    <div class="col-md-2 mgrTitle">Detail</div>
+                  </div>
+                  <div class="col-md-12 mgrTicketOrder word1">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2019-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$1,600</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <div class="mgrOrderDetail mgrStepContent">
+                    <div class="mgrOrderDetailForm">
+                      <div class="col-md-2 mgrDetailTitle">Item No</div>
+                      <div class="col-md-2 mgrDetailTitle">Order No</div>
+                      <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+                      <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+                      <div class="col-md-2 mgrDetailTitle">Total</div>
+                    </div>
+                    <div class="mgrTicketItem1">
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">1</div>
+                      <div class="col-md-2 mgrTick">2</div>
+                      <div class="col-md-2 mgrTick">NT$1,000</div>
+                    </div>
+                      <div class="col-md-12 mgrTicketItem2">
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">NT$600</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="mgrNightAll mgrSecTab2 mgrSecTab">
-                  <table>
-                    <tr class="mgrOrderTitle">
-                      <th class="mgrTitle">Order No</th>
-                      <th class="mgrTitle">Member No</th>
-                      <th class="mgrTitle">Order Date</th>
-                      <th class="mgrTitle">Total</th>
-                      <th class="mgrTitle">Detail</th>
-                    </tr>
-                    <tbody id="backNightOrderTable">
-                      <tr class="mgrTicketOrder">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">2020-08-23</td>
-                        <td class="mgrTitle">NT$8,400</td>
-                        <td class="mgrTitle mgrStep">View
-                          <i class="fa fa-angle-down fa-lg"></i>
-                        </td>
-                        <!-- <div class="mgrOrderDetail mgrStepContent">
-                          <div class="mgrOrderDetailForm">
-                            <div class="mgrDetailTitle">Item No</div>
-                            <div class="mgrDetailTitle">Order No</div>
-                            <div class="mgrDetailTitle">Area No</div>
-                            <div class="mgrDetailTitle">Night Person</div>
-                            <div class="mgrDetailTitle">Total</div>
-                            <div class="mgrDetailTitle">Night Date</div>
-                          </div>
-                          <div class="mgrTicketItem1">
-                            <div class="mgrTick">1</div>
-                            <div class="mgrTick">1</div>
-                            <div class="mgrTick">Dolphin</div>
-                            <div class="mgrTick">4</div>
-                            <div class="mgrTick">NT$8,400</div>
-                            <div class="mgrTick">2020-12-31</div>
-                          </div>
-                        </div> -->
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="col-md-12 mgrOrderTitle">
+                    <div class="col-md-2 mgrTitle">Order No</div>
+                    <div class="col-md-2 mgrTitle">Member No</div>
+                    <div class="col-md-4 mgrTitle">Order Date</div>
+                    <div class="col-md-2 mgrTitle">Total</div>
+                    <div class="col-md-2 mgrTitle">Detail</div>
+                  </div>
+                  <div class="col-md-12 mgrTicketOrder">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2020-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$8,400</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <div class="mgrOrderDetail mgrStepContent">
+                      <div class="mgrOrderDetailForm">
+                        <div class="col-md-2 mgrDetailTitle">Item No</div>
+                        <div class="col-md-2 mgrDetailTitle">Order No</div>
+                        <div class="col-md-2 mgrDetailTitle">Area No</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Person</div>
+                        <div class="col-md-2 mgrDetailTitle">Total</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Date</div>
+                      </div>
+                      <div class="mgrTicketItem1">
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">Dolphin</div>
+                        <div class="col-md-2 mgrTick">4</div>
+                        <div class="col-md-2 mgrTick">NT$8,400</div>
+                        <div class="col-md-2 mgrTick">2020-12-31</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -605,7 +593,7 @@
                 <tr class="mgrJournalTitle">
                   <th width="100">Journal No</th>
                   <th width="100">Aqua No</th>
-                  <th width="100">Story</th>
+                  <th width="100">Title</th>
                   <th width="300">Content</th>
                   <th width="100">Pic1</th>
                   <th width="100">Pic2</th>
@@ -613,21 +601,19 @@
                   <th width="100">Date</th>
                   <th width="60">Edit</th>
                 </tr>
-                <tbody id="backJournalTable">
-                  <tr class=" mgrJournalDetail">
-                    <td class="mgrTitle">1</td>
-                    <td class="mgrTitle">1</td>
-                    <td class="mgrTitle">Eating Status</td>
-                    <td class="mgrTitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</td>
-                    <td class="mgrTitle"><img src="./image/member/mgrdop.jpg" alt=""></td>
-                    <td class="mgrTitle"><img src="./image/member/mgrdop1.jpg" alt=""></td>
-                    <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
-                    <td class="mgrTitle">2019-07-22</td>
-                    <td class="mgrTitle">
-                      <i class="fas fa-pen"></i>
-                    </td>
-                  </tr>
-                </tbody>
+                <tr class=" mgrJournalDetail">
+                  <td class="mgrTitle">1</td>
+                  <td class="mgrTitle">1</td>
+                  <td class="mgrTitle">Eating Status</td>
+                  <td class="mgrTitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.</td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop.jpg" alt=""></td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop1.jpg" alt=""></td>
+                  <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
+                  <td class="mgrTitle">2019-07-22</td>
+                  <td class="mgrTitle">
+                    <i class="fas fa-pen"></i>
+                  </td>
+                </tr>
               </table>
             </div>
             <!-- JOURNAL END -->
@@ -658,42 +644,40 @@
                       <th width="100" class="mgrTitle">Select</th>
                       <th width="100" class="mgrTitle">Operation</th>
                     </tr>
-                    <tbody id="backJournalMsgTable">
-                      <tr width="100" class=" mgrJournalMsgDetail">
-                        <td width="100" class="mgrTitle">1</td>
-                        <td width="100" class="mgrTitle">2</td>
-                        <td width="100" class="mgrTitle">1</td>
-                        <td width="300" class="mgrTitle">Aqua wonderland! </td>
-                        <td width="200" class="mgrTitle">2020-09-11 08:11</td>
-                        <td width="100" class="mgrTitle">
-                          <select class="mgrMsgStatus">
-                            <option value="1">顯示</option>
-                            <option value="2">隱藏</option>
-                          </select>
-                        </td>
-                        <td width="100" class="mgrTitle">
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-times-circle"></i>
-                        </td>
-                      </tr>
-                      <tr width="100"class=" mgrJournalMsgDetail">
-                        <td width="100" class="mgrTitle">2</td>
-                        <td width="100" class="mgrTitle">11</td>
-                        <td width="100" class="mgrTitle">3</td>
-                        <td width="300" class="mgrTitle">Aqua! HAHA</td>
-                        <td width="200" class="mgrTitle">2020-11-19 04:27</td>
-                        <td width="100" class="mgrTitle">
-                          <select class="mgrMsgStatus">
-                            <option value="1">顯示</option>
-                            <option value="2">隱藏</option>
-                          </select>
-                        </td>
-                        <td width="100" class="mgrTitle">
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-times-circle"></i>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr width="100" class=" mgrJournalMsgDetail">
+                      <td width="100" class="mgrTitle">1</td>
+                      <td width="100" class="mgrTitle">2</td>
+                      <td width="100" class="mgrTitle">1</td>
+                      <td width="300" class="mgrTitle">Aqua wonderland! </td>
+                      <td width="200" class="mgrTitle">2020-09-11 08:11</td>
+                      <td width="100" class="mgrTitle">
+                        <select class="mgrMsgStatus">
+                          <option value="1">顯示</option>
+                          <option value="2">隱藏</option>
+                        </select>
+                      </td>
+                      <td width="100" class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
+                    <tr width="100"class=" mgrJournalMsgDetail">
+                      <td width="100" class="mgrTitle">2</td>
+                      <td width="100" class="mgrTitle">11</td>
+                      <td width="100" class="mgrTitle">3</td>
+                      <td width="300" class="mgrTitle">Aqua! HAHA</td>
+                      <td width="200" class="mgrTitle">2020-11-19 04:27</td>
+                      <td width="100" class="mgrTitle">
+                        <select class="mgrMsgStatus">
+                          <option value="1">顯示</option>
+                          <option value="2">隱藏</option>
+                        </select>
+                      </td>
+                      <td width="100" class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
                   </table>
                 </div>
                 <div class="mgrJournalMsgTable mgrSecTab2 mgrSecTab">
@@ -708,26 +692,24 @@
                       <th width="200" class="mgrTitle">Select</th>
                       <th width="200" class="mgrTitle">Operation</th>
                     </tr>
-                    <tbody id="backJournalMsgRepTable">
-                      <tr class="mgrJournalMsgDetail2">
-                        <td width="100" class="mgrTitle">1</td>
-                        <td width="100" class="mgrTitle">2</td>
-                        <td width="100" class="mgrTitle">1</td>
-                        <td width="100" class="mgrTitle">2</td>
-                        <td width="200" class="mgrTitle">與Aqua無關</td>
-                        <td width="200" class="mgrTitle">2020-09-11</td>
-                        <td width="200" class="mgrTitle">
-                          <select>
-                            <option value="1">Succeeded</option>
-                            <option value="2">Reject</option>
-                          </select>
-                        </td>
-                        <td width="100" class="mgrTitle">
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-times-circle"></i>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr class="mgrJournalMsgDetail2">
+                      <td width="100" class="mgrTitle">1</td>
+                      <td width="100" class="mgrTitle">2</td>
+                      <td width="100" class="mgrTitle">1</td>
+                      <td width="100" class="mgrTitle">2</td>
+                      <td width="200" class="mgrTitle">與Aqua無關</td>
+                      <td width="200" class="mgrTitle">2020-09-11</td>
+                      <td width="200" class="mgrTitle">
+                        <select>
+                          <option value="1">Succeeded</option>
+                          <option value="2">Reject</option>
+                        </select>
+                      </td>
+                      <td width="100" class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
                   </table>
                 </div>
               </div>
@@ -805,37 +787,35 @@
                       <th width="100" class="mgrTitle">Status</th>
                       <th width="200" class="mgrTitle">Operation</th>
                     </tr>
-                    <tbody id="backBlogTable">
-                      <tr class="mgrBlogDetail">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">That's great time</td>
-                        <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
-                        <td class="mgrTitle">Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                          9 kg) and
-                          has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
-                          the other sea otters at the Aqua Wonderland.</td>
-                        <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
-                        <td class="mgrTitle">Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                          9 kg) and
-                          has transitioned to a p for him will be the introduction to one of
-                          the other sea otters at the Aqua Wonderland.</td>
-                        <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
-                        <td class="mgrTitle">#dolphin</td>
-                        <td class="mgrTitle">2020-10-20</td>
-                        <td class="mgrTitle">112</td>
-                        <td class="mgrTitle">
-                          <select class="mgrMsgStatus">
-                            <option value="1">顯示</option>
-                            <option value="2">隱藏</option>
-                          </select>
-                        </td>
-                        <td class="mgrTitle">
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-times-circle"></i>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr class="mgrBlogDetail">
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">2</td>
+                      <td class="mgrTitle">That's great time</td>
+                      <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
+                      <td class="mgrTitle">Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                        9 kg) and
+                        has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                        the other sea otters at the Aqua Wonderland.</td>
+                      <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
+                      <td class="mgrTitle">Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                        9 kg) and
+                        has transitioned to a p for him will be the introduction to one of
+                        the other sea otters at the Aqua Wonderland.</td>
+                      <td class="mgrTitle"><img src="./image/member/mgrdop2.jpg" alt=""></td>
+                      <td class="mgrTitle">#dolphin</td>
+                      <td class="mgrTitle">2020-10-20</td>
+                      <td class="mgrTitle">112</td>
+                      <td class="mgrTitle">
+                        <select class="mgrMsgStatus">
+                          <option value="1">顯示</option>
+                          <option value="2">隱藏</option>
+                        </select>
+                      </td>
+                      <td class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
                   </table>
                 </div>
                 <div class="mgrSecTab2 mgrSecTab">
@@ -848,40 +828,36 @@
                       <th width="100" class="mgrTitle">Status</th>
                       <th width="200" class="mgrTitle">Operation</th>
                     </tr>
-                    <tbody id="backBlogRepTable">
-                      <tr class="mgrBlogDetail">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">不當言詞</td>
-                        <td class="mgrTitle">
-                          <select>
-                            <option value="1">Succeeded</option>
-                            <option value="2">Reject</option>
-                          </select>
-                        </td>
-                        <td class="mgrTitle">
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-times-circle"></i>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr class="mgrBlogDetail">
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">2</td>
+                      <td class="mgrTitle">2</td>
+                      <td class="mgrTitle">不當言詞</td>
+                      <td class="mgrTitle">
+                        <select>
+                          <option value="1">Succeeded</option>
+                          <option value="2">Reject</option>
+                        </select>
+                      </td>
+                      <td class="mgrTitle">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                      </td>
+                    </tr>
                   </table>
                 </div>
                 <div class="mgrSecTab3 mgrSecTab">
                   <table>
                     <tr class="mgrBlogTitle">
-                      <th width="200" class="mgrTitle">Mark No</th>
+                      <th width="200" class="mgrTitle">Report No</th>
                       <th width="200" class="mgrTitle">Blog No</th>
                       <th width="200" class="mgrTitle">Member No</th>
                     </tr>
-                    <tbody id="backBlogMarkTable">
-                      <tr class="mgrBlogDetail">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                      </tr>
-                    </tbody>
+                    <tr class="mgrBlogDetail">
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">1</td>
+                      <td class="mgrTitle">2</td>
+                    </tr>
                   </table>
                 </div>
               </div>
