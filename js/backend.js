@@ -135,11 +135,122 @@ function backendDoFirst(){
   // document.getElementById('backTicketOrderTable').innerHTML = ticketOrderhtml;
 
 
+  // backTicketInfo
+  let backTicketInfoxhr = new XMLHttpRequest();
+  backTicketInfoxhr.onload = function () {
+    backTicketInfoRow = JSON.parse(backTicketInfoxhr.responseText);
+    console.log(backTicketInfoRow);
+  }
+  backTicketInfoxhr.open("get", "./backTicketInfo.php", false);
+  backTicketInfoxhr.send(null);
+
+  let ticketInfohtml = "";
+  for (let i = 0; i < backTicketInfoRow.length; i++) {
+    ticketInfohtml += `
+    <tr>
+      <td>${backTicketInfoRow[i].ticketNo}</td>
+      <td>${backTicketInfoRow[i].ticketType}</td>
+      <td>${backTicketInfoRow[i].ticketPrice}</td>
+      <td>        
+        <i class="fas fa-pen"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backTicketInfoTable').innerHTML = ticketInfohtml;
+
+
+  // backNightInfo
+  let backNightInfoxhr = new XMLHttpRequest();
+  backNightInfoxhr.onload = function () {
+    backNightInfoRow = JSON.parse(backNightInfoxhr.responseText);
+    console.log(backNightInfoRow);
+  }
+  backNightInfoxhr.open("get", "./backNightInfo.php", false);
+  backNightInfoxhr.send(null);
+
+  let nightInfohtml = "";
+  for (let i = 0; i < backNightInfoRow.length; i++) {
+    nightInfohtml += `
+    <tr>
+      <td>${backNightInfoRow[i].areaNo}</td>
+      <td>${backNightInfoRow[i].areaCapacity}</td>
+      <td>${backNightInfoRow[i].areaPrice}</td>
+      <td>        
+        <i class="fas fa-pen"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backNightInfoTable').innerHTML = nightInfohtml;
+
+
+  // backAdopt
+  let backAdoptxhr = new XMLHttpRequest();
+  backAdoptxhr.onload = function () {
+    backAdoptRow = JSON.parse(backAdoptxhr.responseText);
+    console.log(backAdoptRow);
+  }
+  backAdoptxhr.open("get", "./backAdopt.php", false);
+  backAdoptxhr.send(null);
+
+  let adopthtml = "";
+  for (let i = 0; i < backAdoptRow.length; i++) {
+    adopthtml += `
+    <tr>
+      <td>${backAdoptRow[i].adoptNo}</td>
+      <td>${backAdoptRow[i].memNo}</td>
+      <td>${backAdoptRow[i].aquaNo}</td>
+      <td>${backAdoptRow[i].adoptDate}</td>
+      <td>${backAdoptRow[i].adoptDollar}</td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backAdoptTable').innerHTML = adopthtml;
 
 
 
 
-  
+
+
+
+
+
+  // backThankscard
+  let backThankscardxhr = new XMLHttpRequest();
+  backThankscardxhr.onload = function () {
+    backThankscardRow = JSON.parse(backThankscardxhr.responseText);
+    console.log(backThankscardRow);
+  }
+  backThankscardxhr.open("get", "./backThankscard.php", false);
+  backThankscardxhr.send(null);
+
+  let thankscardhtml = "";
+  for (let i = 0; i < backThankscardRow.length; i++) {
+    thankscardhtml += `
+    <tr>
+      <td>${backThankscardRow[i].cardNo}</td>
+      <td>${backThankscardRow[i].memNo}</td>
+      <td>${backThankscardRow[i].memName}</td>
+      <td>${backThankscardRow[i].memEmail}</td>
+      <td>${backThankscardRow[i].cardFile}</td>
+      <td>
+        <select>
+          <option value="1">已分享</option>
+          <option value="2">未分享</option>
+        </select>
+      </td>
+      <td>        
+        <a href="#">Resend</a>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backThankscardTable').innerHTML = thankscardhtml;
 
 
   // backBlog
