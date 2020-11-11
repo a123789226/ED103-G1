@@ -10,7 +10,7 @@
 
 //   	echo "error";
 // }
-
+// document.querySelector(".winNum").innerHTML = winNum;
 
 try{
   require_once("./connectAqua.php");

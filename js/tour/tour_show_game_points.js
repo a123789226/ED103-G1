@@ -48,7 +48,8 @@ function sendForm() {
                 $id('memPsw').value = '';
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
-                showPoint();
+                // showPoint();
+                // update_old_point();
             }else{ //停權
                 swal("Sorry!", "Your account has been suspended", "error", {button: "OK"});
                 //將登入表單上的資料清空
@@ -85,6 +86,7 @@ function getMemberInfo() {
                 afterLogin();
                 $id('memberPic').style.transition = '0s';
                 // showPoint();
+                // update_old_point();
             }else{
                 //do nothing
             }
@@ -97,14 +99,15 @@ function getMemberInfo() {
     xhr.send(null);
 }
 
-
+//=============================================================
 //從後台資料庫抓會員與點數並在前台印出來
-function showPoint(){
-    console.log(member);
-    $id('memName2').innerText = member.memName;
-    $id('point').innerText = member.point;
-}
+// function showPoint(){
+//     console.log(member);
+//     $id('memName2').innerText = member.memName;
+//     $id('point').innerText = member.point;
+// }
 
+//==============================================================
 // 資料庫更新遊戲點數
 // function show_game_light_box() {
 //     let xhr = new XMLHttpRequest();
@@ -116,8 +119,25 @@ function showPoint(){
 // }
 // window.addEventListener("load",init,false);
 
+//===============================================================
+//點擊遊戲的play, 重新去抓資料庫的point
+// function update_old_point() {
+//     let point = $id("point").value;
+//     let xhr = new XMLHttpRequest();
+//     xhr.onload = function () {
+//         member = JSON.parse(xhr.responseText);
+//         $id('point').innerText = member.point;
+//         xhr.open("get", "getMemberInfo.php", true);
+//         xhr.send(null);
+// }
 
+//===============================================================
+//點擊遊戲的play, 重新去抓資料庫的point
+function update_old_point() {
+    $id('point').innerText = member.point;
+}
 
+//==============================================================
 //點擊save按鈕開燈箱
 function show_game_light_box(){
     if (member.memId){
@@ -136,6 +156,12 @@ function show_game_light_box(){
 //點擊close按鈕關燈箱
 function close_game_light_box(){
     $("div.game_overlay").removeClass("-on -opacity-zero");
+    document.querySelector(".winNum").innerHTML = 0;
+    getMemberInfo();
+    $id('point').innerText = member.point;
+    document.querySelector(".lightboxwinNum").innerHTML = '';
+    
+    // document.querySelector(".lightboxwinNum").innerHTML = 0;
 }
 
 
@@ -143,6 +169,8 @@ function close_game_light_box(){
 function afterLogin(){
     // 會員名稱出現
     $id("memNameInProfileBlock").innerText = member.memName;
+    $id('memName2').innerText = member.memName;
+    $id('point').innerText = member.point;
     // 頭像背景變白
     $id('btn_modal').style.backgroundColor = '#ffffff';
     // 更換圖片
@@ -151,7 +179,7 @@ function afterLogin(){
     $id('memberPic').title = 'Member Profile';
     // 關閉登入燈箱
     $id('memLightBox').style.display = 'none';
-    $id('btn_modal').addEventListener('click', showMemberProfileBox);
+    $id('btn_modal').addEventListener('click', showMemberProfileBox);   
 }
 
 // 點擊頭像控制小窗打開
@@ -164,9 +192,11 @@ function showMemberProfileBox(){
 function init() {
     //===點擊燈箱
     $id('game_btn').onclick = show_game_light_box;
-    // //===關閉燈箱的close按鈕
+    //===關閉燈箱的close按鈕
     $id('game_btn_close').onclick = close_game_light_box;
-    //-----------------------檢查是否已登入
+    //===點擊遊戲的play按鈕重新去資料庫抓point
+    // $id('gamePlayBtn').onclick = update_old_point;
+    //===檢查是否已登入
     getMemberInfo();
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut
     $id('SignOutLink').onclick = doSignOut;
@@ -212,8 +242,22 @@ window.addEventListener("load", function(){
         //從updateGamePoint.php抓某會員與該會員的點數值，並在class=lightboxwinNum的地方印出來。(div,p,span等是用.innerText印出 / input 是用.value印出)
         // let url = `updateGamePoint.php?memId=${document.querySelector("#memNameInProfileBlock").innerText}`;
         let url = `updateGamePoint.php?memId=${member.memId}&point=${document.querySelector(".lightboxwinNum").innerText}`;
+        // let url = `updateGamePoint.php?memId=${member.memId}&point=${member.point + document.querySelector(".winNum").innerText}`;
         // console.log(url)
         xhr.open("get", url, true);
         xhr.send(null);        
       },false);
     }, false);
+
+
+// window.addEventListener("load", function(){
+//       document.querySelector(".gamePlayBtn").addEventListener("click", function(){
+//         // let point = $id("point").value;
+//         let xhr = new XMLHttpRequest();
+//         xhr.onload = function(){
+//         $id('point').innerText = member.point;
+//         }
+//         xhr.open("get", "getMemberInfo.php", true);
+//         xhr.send(null);  
+//       },false);
+//     }, false);
