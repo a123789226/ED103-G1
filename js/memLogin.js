@@ -29,8 +29,6 @@ function doSignOut() {
     xhr.open("get", "logout.php", true);
     xhr.send(null);
     // alert('登出成功');
-
-
 }//showLoginForm
 
 //按下登入執行
@@ -75,17 +73,17 @@ function sendForm() {
 function getMemberInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
-        if (xhr.status == 200) { //success
-            member = JSON.parse(xhr.responseText);
-            if (member.memId) {
-                // alert('已登入');
-                // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
-                afterLogin();
-                $id('memberPic').style.transition = '0s';
-            }
-        } else { //error
-            alert(xhr.status);
+      if (xhr.status == 200) { //success
+        member = JSON.parse(xhr.responseText);
+        if (member.memId) {
+          // alert('已登入');
+          // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
+          afterLogin();
+          $id('memberPic').style.transition = '0s';
         }
+      } else { //error
+        alert(xhr.status);
+      }
     }
 
     xhr.open("get", "getMemberInfo.php", true);
@@ -94,50 +92,56 @@ function getMemberInfo() {
 
 // 登入後會做的一些事情，透過getMemberInfo()及SendForm登入成功後觸發
 function afterLogin(){
-    // 會員名稱出現
-    $id("memNameInProfileBlock").innerText = member.memName;
-    // 頭像背景變白
-    $id('btn_modal').style.backgroundColor = '#ffffff';
-    // 更換圖片
-    $id('memberPic').src = `./image/memPic/${member.memPic}`;
-    $id('memberPic').classList.add('memberImg');
-    $id('memberPic').title = 'Member Profile';
-    // 關閉登入燈箱
-    $id('memLightBox').style.display = 'none';
+  // 會員名稱出現
+  $id("memNameInProfileBlock").innerText = member.memName;
+  // 頭像背景變白
+  $id('btn_modal').style.backgroundColor = '#ffffff';
+  // 更換圖片
+  $id('memberPic').src = `./image/memPic/${member.memPic}`;
+  $id('memberPic').classList.add('memberImg');
+  $id('memberPic').title = 'Member Profile';
+  // 關閉登入燈箱
+  $id('memLightBox').style.display = 'none';
 
-    // $id('btn_modal').classList.add('controlProfile');
-    // let controlProfile = document.getElementsByClassName('controlProfile');
-    // controlProfile[0].addEventListener('click', function(){
-    //     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
-    // })
-    $id('btn_modal').addEventListener('click', showMemberProfileBox);
+  // $id('btn_modal').classList.add('controlProfile');
+  // let controlProfile = document.getElementsByClassName('controlProfile');
+  // controlProfile[0].addEventListener('click', function(){
+  //     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
+  // })
+  $id('btn_modal').addEventListener('click', showMemberProfileBox);
 }
 
 // 點擊頭像控制小窗打開
 function showMemberProfileBox(){
-    $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
+  $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
 
 
 function init() {
+<<<<<<< HEAD
     // alert('123');
     //-----------------------檢查是否已登入
     getMemberInfo();
     // abc();
+=======
+  // alert('123');
+  //-----------------------檢查是否已登入
+  getMemberInfo();
 
-    //===設定SignOutLink.onclick 事件處理程序是 doSignOut
+  // abc();
+>>>>>>> SQ
 
-    $id('SignOutLink').onclick = doSignOut;
+  //===設定SignOutLink.onclick 事件處理程序是 doSignOut
 
-    //===設定btnLogin.onclick 事件處理程序是 sendForm
-    $id('btnLogin').onclick = sendForm;
+  $id('SignOutLink').onclick = doSignOut;
 
+  //===設定btnLogin.onclick 事件處理程序是 sendForm
+  $id('btnLogin').onclick = sendForm;
 
 }; //window.onload
 
 // $('#memberPic').click(loginStatus);
-
 
 window.addEventListener("load", init, false);
 
@@ -145,19 +149,19 @@ window.addEventListener("load", init, false);
 
 // Login彈窗
 $(function(){
-    // 開啟 Modal 彈跳視窗
-    $(".btn_modal").on("click", function(){
-        $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-        $("div.overlay").addClass("-opacity-zero");
-        $('#memId').val('');
-        $('#memPsw').val('');
-      // 設定隔0.5秒後，移除相關 class
-        setTimeout(function(){
-            $("div.overlay").removeClass("-on -opacity-zero");
-        }, 500);
-    });
+  // 開啟 Modal 彈跳視窗
+  $(".btn_modal").on("click", function(){
+    $("div.overlay").addClass("-on");
+  });
+  // 關閉 Modal
+  $("div.btn_modal_close").on("click", function(){
+    $("div.overlay").addClass("-opacity-zero");
+    $('#memId').val('');
+    $('#memPsw').val('');
+  // 設定隔0.5秒後，移除相關 class
+    setTimeout(function(){
+        $("div.overlay").removeClass("-on -opacity-zero");
+    }, 500);
+  });
 });
 
