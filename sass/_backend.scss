@@ -337,25 +337,20 @@
       }
       // ADOPT
       .mgrAdoptAll{
-        text-align: center;
-        .mgrAdoptTitle{
-          background-color: $keyGreen;
-          color: #ffffff;
-          height: 40px;
-          line-height: 40px;
-        }
-        .mgrAdoptOrder{
-          line-height: 30px;
-          padding: 20px;
+        tr{
           box-shadow: $shadow;
-          .mgrTitle{
-            i{
-              cursor: pointer;
-              transition: .3s;
-            }
-            i.rotate{
-              transform: rotate(180deg);
-            }
+          th{
+            text-align: center;
+            background-color: $keyGreen;
+            color: #ffffff;
+            height: 40px;
+          }
+          td{
+            text-align: center;
+            line-height: 40px;
+          }
+          i{
+            font-size: 20px;
           }
         }
       }
