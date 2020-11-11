@@ -56,7 +56,7 @@
 }
 
 .mgrHeader{
-  width: 90%;
+  width: 98%;
   display: flex;
   justify-content: space-between;
   margin: 10px auto;
@@ -222,6 +222,9 @@
       }
       // AQUA
       .mgrAquaAll{
+        width: 1500px;
+      overflow-y: hidden;
+      overflow-x: auto;
         tr{
           box-shadow: $shadow;
           th{
@@ -396,8 +399,9 @@
           td{
             text-align: center;
             padding: 5px;
+            height: 40px;
             i{
-              font-size: 36px;
+              font-size: 20px;
             }
             .fa-check-circle:hover, .fa-check-circle:active{
               color: green;
@@ -425,7 +429,7 @@
             }
           }
           i{
-            font-size: 36px;
+            font-size: 20px;
           }
           .fa-check-circle:hover, .fa-check-circle:active{
             color: green;
@@ -454,8 +458,9 @@
           td{
             text-align: center;
             padding: 5px;
+            height: 40px;
             i{
-              font-size: 36px;
+              font-size: 20px;
             }
             .fa-check-circle:hover, .fa-check-circle:active{
               color: green;
@@ -480,7 +485,7 @@
             text-align: center;
             padding: 5px;
             i{
-              font-size: 36px;
+              font-size: 20px;
             }
             .fa-check-circle:hover, .fa-check-circle:active{
               color: green;
@@ -505,7 +510,7 @@
             text-align: center;
             padding: 5px;
             i{
-              font-size: 36px;
+              font-size: 20px;
             }
             .fa-check-circle:hover, .fa-check-circle:active{
               color: green;
