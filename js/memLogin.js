@@ -24,7 +24,7 @@ function doSignOut() {
         $id('memberPic').title = 'Log In';
         $id('memberPic').style.transition = '0.5s cubic-bezier(.44,-1.25,1,.31)';
         member = {};
-        window.location.href = 'homepage.html';
+        // window.location.href = 'homepage.html';
     }
     xhr.open("get", "logout.php", true);
     xhr.send(null);

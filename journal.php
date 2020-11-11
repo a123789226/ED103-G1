@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/memLogin.js"></script>
+  <script src="./js/layout/header.js"></script>
 
 </head>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <!-- <script src="./vendors/jquery/jquery-3.5.1.min.js"></script> -->
 <!-- <script src="./vendors/popper/popper.min.js"></script> -->
 <!-- <script src="./vendors/bootstrap/js/bootstrap.min.js"></script> -->
-<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 
 <body>
 
@@ -31,17 +32,42 @@
     <img src="./image/background/fish1.png" alt="" class="BGFish2">
   </div>
   <!-- 上面是背景的div，先不要動到 -->
+  <!-- Log In開始 -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25" /><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25" /><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- Log In結束 -->
+
+  <!-- header開始 -->
   <header class="main_menu">
+    <!-- header第一區塊 主導覽列 -->
     <nav class="main_nav">
       <div class="logo_box">
-        <a href="index.html" class="logo">
+        <a href="homepage.html" class="logo">
           <img src="./image/header/logo.png" alt="">
         </a>
         <a href="" class="logo_text_box">
           <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
       </div>
-      <ul class="main_menu_ul">
+      <ul class="main_menu_ul" id="main_menu_ul">
         <li class="main_menu_li">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
@@ -71,31 +97,41 @@
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
         <li class="main_menu_li">
-          <a href="blog.html" class="li_logo">
+          <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
           </a>
-          <a href="blog.html" class="li_text">BLOG</a>
+          <a href="blog1.php" class="li_text">BLOG</a>
         </li>
       </ul>
       <div class="header_right">
-        <a class="member_box loginModal" href="">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
-        <a class="cart_box" href="">
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic"
+            onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+        </span>
+        <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
+          <span class="cart_amount"></span>
         </a>
-        <div class="hamburger_box">
+        <div class="hamburger_box" id="hamburger_box">
           <div class="hamburger">
-            <span class="hamburger_line is-active"></span>
-            <span class="hamburger_cross">&times;</span>
+            <span class="hamburger_line is-active" id="hamburger_line"></span>
+            <span class="hamburger_cross" id="hamburger_cross">&times;</span>
           </div>
         </div>
       </div>
     </nav>
+
+    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
+    </div>
+
   </header>
 
+  <!-- header結束 -->
 
   <div class="jourContainer">
 
@@ -149,142 +185,159 @@
         </div>
       </div>
     </div>
-    <!-- 最上本書 -->
-    <div class="jourOpenBookSection">
-      <div class="demobook" id="demobook">
-        <!-- cover -->
-        <div class="hard jourCover">
-          <div class="jourOpenBook">
-
-            <div class="jourOpenBookRight">
-              <div class="jourBookPhoto">
-                <img src="./image/journal/journal_dolphin/00.jpg" alt="">
-              </div>
-              <div class="jourBookName">Olivia</div>
-              <div class="jourBookText">
-                <table>
-                  <tr>
-                    <th>Aqua No.</th>
-                    <td>No. 1</td>
-                  </tr>
-                  <tr>
-                    <th>Aqua Name</th>
-                    <td>Olivia</td>
-                  </tr>
-                  <tr>
-                    <th>Found Location</th>
-                    <td>North Bay</td>
-                  </tr>
-                  <tr>
-                    <th>Arrival Date</th>
-                    <td>August 8th, 2020</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- page 1 -->
-        <div class="hard jourPage1 jourPage">
-          <div class="jourPageContent">
-            <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
-              </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
-              </div>
-            </div>
-            <div class="jourPageText">
-              <h4>Story Updates</h4>
-              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                9 kg) and
-                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
-                the other sea otters at the Aqua Wonderland.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- page 2 -->
-        <div class="jourPage jourPage2">
-          <div class="jourPageContent">
-            <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
-              </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
-              </div>
-            </div>
-            <div class="jourPageText">
-              <h4>Story Updates</h4>
-              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                9 kg) and
-                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
-                the other sea otters at the Aqua Wonderland.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- page 3 -->
-        <div class="jourPage jourPage3">
-          <div class="jourPageContent">
-            <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
-              </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
-              </div>
-            </div>
-            <div class="jourPageText">
-              <h4>Story Updates</h4>
-              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                9 kg) and
-                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
-                the other sea otters at the Aqua Wonderland.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- page 4 -->
-        <div class="jourPage jourPage4">
-          <div class="jourPageContent">
-            <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
-              </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
-              </div>
-            </div>
-            <div class="jourPageText">
-              <h4>Story Updates</h4>
-              <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                9 kg) and
-                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
-                the other sea otters at the Aqua Wonderland.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="hard jourLastPage">
-          <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
-        </div>
-      </div>
-    </div>
-
 
     <!-- 4本書 Dolphin-->
     <div class="jourBookContainer jourDolphinSection tab1 -on animate__animated animate__fadeIn">
+      <!-- 最上本書 -->
+      <div class="jourOpenBookSection">
+        <div class="demobook" id="demobook">
+          <!-- cover -->
+          <div class="hard jourCover">
+            <div class="jourOpenBook">
+
+              <div class="jourOpenBookRight">
+                <div class="jourBookPhoto">
+                  <img src="./image/journal/journal_dolphin/00.jpg" alt="">
+                </div>
+                <div class="jourBookName">Olivia</div>
+                <div class="jourBookText">
+                  <table>
+                    <tr>
+                      <th>Aqua No.</th>
+                      <td>No. 1</td>
+                    </tr>
+                    <tr>
+                      <th>Aqua Name</th>
+                      <td>Olivia</td>
+                    </tr>
+                    <tr>
+                      <th>Found Location</th>
+                      <td>North Bay</td>
+                    </tr>
+                    <tr>
+                      <th>Arrival Date</th>
+                      <td>August 8th, 2020</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- page 1 -->
+          <div class="hard jourPage1 jourPage">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 2 -->
+          <div class="jourPage jourPage2">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 3 -->
+          <div class="jourPage jourPage3">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 4 -->
+          <div class="jourPage jourPage4">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hard jourLastPage">
+            <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下方書 -->
       <div class="jourBookSection">
         <a href="#">
 
@@ -294,9 +347,9 @@
             </div>
             <div class="jourBookRight">
               <div class="jourBookPhoto">
-                <img src="././image/journal/journal_dolphin/00.jpg" alt="">
+                <img src="././image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourBookName">abby</div>
+              <div class="jourBookName">Olivia</div>
               <div class="jourBookText">
                 <table>
                   <tr>
@@ -338,7 +391,7 @@
               <div class="jourBookPhoto">
                 <img src="././image/journal/journal_dolphin/02.jpg" alt="">
               </div>
-              <div class="jourBookName">bob</div>
+              <div class="jourBookName">Olivia</div>
               <div class="jourBookText">
                 <table>
                   <tr>
@@ -459,6 +512,156 @@
 
     <!-- 2 本書 Whale -->
     <div class="jourBookContainer jourWhaleSection tab2 animate__animated animate__fadeIn">
+      <!-- 上方書 -->
+      <div class="jourOpenBookSection">
+        <div class="demobook1" id="demobook1">
+          <!-- cover -->
+          <div class="hard jourCover">
+            <div class="jourOpenBook">
+
+              <div class="jourOpenBookRight">
+                <div class="jourBookPhoto">
+                  <img src="./image/journal/journal_whale/00.jpg" alt="">
+                </div>
+                <div class="jourBookName">Olivia</div>
+                <div class="jourBookText">
+                  <table>
+                    <tr>
+                      <th>Aqua No.</th>
+                      <td>No. 1</td>
+                    </tr>
+                    <tr>
+                      <th>Aqua Name</th>
+                      <td>Olivia</td>
+                    </tr>
+                    <tr>
+                      <th>Found Location</th>
+                      <td>North Bay</td>
+                    </tr>
+                    <tr>
+                      <th>Arrival Date</th>
+                      <td>August 8th, 2020</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- page 1 -->
+          <div class="hard jourPage1 jourPage">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 2 -->
+          <div class="jourPage jourPage2">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 3 -->
+          <div class="jourPage jourPage3">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 4 -->
+          <div class="jourPage jourPage4">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hard jourLastPage">
+            <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下方書 -->
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -547,6 +750,157 @@
 
     <!-- 3 本書 Seal -->
     <div class="jourBookContainer jourSealSection tab3 animate__animated animate__fadeIn">
+      <!-- 上方書 -->
+      <div class="jourOpenBookSection">
+        <div class="demobook2" id="demobook2">
+          <!-- cover -->
+          <div class="hard jourCover">
+            <div class="jourOpenBook">
+
+              <div class="jourOpenBookRight">
+                <div class="jourBookPhoto">
+                  <img src="./image/journal/journal_seal/00.jpg" alt="">
+                </div>
+                <div class="jourBookName">Olivia</div>
+                <div class="jourBookText">
+                  <table>
+                    <tr>
+                      <th>Aqua No.</th>
+                      <td>No. 1</td>
+                    </tr>
+                    <tr>
+                      <th>Aqua Name</th>
+                      <td>Olivia</td>
+                    </tr>
+                    <tr>
+                      <th>Found Location</th>
+                      <td>North Bay</td>
+                    </tr>
+                    <tr>
+                      <th>Arrival Date</th>
+                      <td>August 8th, 2020</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- page 1 -->
+          <div class="hard jourPage1 jourPage">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 2 -->
+          <div class="jourPage jourPage2">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 3 -->
+          <div class="jourPage jourPage3">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 4 -->
+          <div class="jourPage jourPage4">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hard jourLastPage">
+            <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 下方書 -->
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -678,6 +1032,156 @@
 
     <!-- 2本書 Turtle -->
     <div class="jourBookContainer jourSealSection tab4 animate__animated animate__fadeIn">
+      <!-- 上方書 -->
+      <div class="jourOpenBookSection">
+        <div class="demobook3" id="demobook3">
+          <!-- cover -->
+          <div class="hard jourCover">
+            <div class="jourOpenBook">
+
+              <div class="jourOpenBookRight">
+                <div class="jourBookPhoto">
+                  <img src="./image/journal/journal_dolphin/00.jpg" alt="">
+                </div>
+                <div class="jourBookName">Olivia</div>
+                <div class="jourBookText">
+                  <table>
+                    <tr>
+                      <th>Aqua No.</th>
+                      <td>No. 1</td>
+                    </tr>
+                    <tr>
+                      <th>Aqua Name</th>
+                      <td>Olivia</td>
+                    </tr>
+                    <tr>
+                      <th>Found Location</th>
+                      <td>North Bay</td>
+                    </tr>
+                    <tr>
+                      <th>Arrival Date</th>
+                      <td>August 8th, 2020</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- page 1 -->
+          <div class="hard jourPage1 jourPage">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 2 -->
+          <div class="jourPage jourPage2">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 3 -->
+          <div class="jourPage jourPage3">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- page 4 -->
+          <div class="jourPage jourPage4">
+            <div class="jourPageContent">
+              <h4>Sep 15 2020</h4>
+              <div class="jourPagePhotoArea">
+                <div class="jourPagePhotoLeft">
+                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRight">
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                  </div>
+                  <div class="jourPagePhotoRightInner">
+                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="jourPageText">
+                <h4>Story Updates</h4>
+                <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
+                  9 kg) and
+                  has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
+                  the other sea otters at the Aqua Wonderland.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hard jourLastPage">
+            <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下方書 -->
       <div class="jourBookSection ">
         <a href="">
           <div class="jourBook">
@@ -819,16 +1323,20 @@
         <div class="hard jourPage1">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
                 9
@@ -843,16 +1351,20 @@
         <div class="jourPage jourPage2">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
                 9
@@ -867,16 +1379,20 @@
         <div class="jourPage jourPage3">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
                 9
@@ -891,16 +1407,20 @@
         <div class="jourPage jourPage4">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
                 9
@@ -915,20 +1435,25 @@
         <div class="jourPage jourPage5">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
-                9kg) and has transitioned to a diet of solid food. The next big step for him will be the introduction to
-                one of
+                9
+                kg) and
+                has transitioned to a diet of solid food. The next big step for him will be the introduction to one of
                 the other sea otters at the Aqua Wonderland.</p>
             </div>
           </div>
@@ -938,16 +1463,20 @@
         <div class="hard jourPage6">
           <div class="jourPageContent">
             <h4>Sep 15 2020</h4>
-            <div class="jourPagePhotoArea">
-              <div class="jourPagePhotoLeft">
-                <img src="./image/journal/journal_dolphin/24.jpg" alt="">
+            <div class="jourPagePhotoArea1">
+              <div class="jourPagePhotoLeft1">
+                <img src="./image/journal/journal_dolphin/23.jpg" alt="">
               </div>
-              <div class="jourPagePhotoRight">
-                <img src="./image/journal/journal_dolphin/25.jpg" alt="">
-                <img src="./image/journal/journal_dolphin/26.jpg" alt="">
+              <div class="jourPagePhotoRight1">
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                </div>
+                <div class="jourPagePhotoRightInner1">
+                  <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                </div>
               </div>
             </div>
-            <div class="jourPageText">
+            <div class="jourPageText1">
               <h4>Story Updates</h4>
               <p>Olivia is now over 3 months old. He's made great progress, gained a lot of weight (now weighing over
                 9
@@ -977,9 +1506,9 @@
 
       </div>
       <div class="jourToAdopt">
-          <form action="./adopt.php" method="GET">
-              <button class=" jourLightboxBtn" name="name">ADOPT</button></a>
-          </form>
+        <form action="./adopt.php" method="GET">
+          <button class=" jourLightboxBtn" name="name">ADOPT</button></a>
+        </form>
       </div>
       <p class="jourAdopterSection">Current Adopter</p>
       <div class="jourAdopterPhoto">
@@ -1119,18 +1648,6 @@
   </div>
 
 
-  <script>
-    $("div.hamburger_box").on("click", function () {
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-      // $("ul.main_menu_ul").slideToggle();
-      // $("header.main_menu").toggleClass("removeShadow");
-    });
-  </script>
-
-  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-  <!-- <script type="text/javascript" src="turn.min.js"></script> -->
   <script type="text/javascript" src="./js/turn.js"></script>
   <script>
     $("#demobook").turn({
@@ -1140,9 +1657,48 @@
     });
   </script>
   <script>
-    var dbook = $("#demobook");
+    let dbook = $("#demobook");
     $(document).ready(function () {
       dbook.turn("page", 2);
+    });
+  </script>
+  <script>
+    $("#demobook1").turn({
+      width: 600,
+      height: 420,
+      autoCenter: true
+    });
+  </script>
+  <script>
+    let dbook1 = $("#demobook1");
+    $(document).ready(function () {
+      dbook1.turn("page", 2);
+    });
+  </script>
+  <script>
+    $("#demobook2").turn({
+      width: 600,
+      height: 420,
+      autoCenter: true
+    });
+  </script>
+  <script>
+    let dbook2 = $("#demobook2");
+    $(document).ready(function () {
+      dbook2.turn("page", 2);
+    });
+  </script>
+  <script>
+    $("#demobook3").turn({
+      width: 600,
+      height: 420,
+      autoCenter: true
+    });
+  </script>
+  <script>
+    let dbook3 = $("#demobook3");
+    $(document).ready(function () {
+      dbook3.turn("page", 2);
     });
   </script>
   <script>
@@ -1197,7 +1753,7 @@
 
   <script>
     document.getElementById('jourBookOpenBtn').onclick = function () {
-      document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
+      // document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
       document.getElementsByClassName("jourLightBox")[0].style.display = "block";
       document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
         document.getElementsByClassName("jourLightBox")[0].style.display = "none";
@@ -1205,9 +1761,19 @@
     };
   </script>
 
-<script>
-  $('.jour_bk').css({'display':'none'});
-</script>
+  <script>
+    $('.jour_bk').css({
+      'display': 'none'
+    });
+  </script>
+
+  <script>
+    $('#jourBookOpenBtn').on('click', function () {
+      let jourBookName = $(this).find('.jourBookName').text();
+      let jourBookSrc = $(this).find('.jourBookPhoto img').attr('src');
+      $('form button').val(`${jourBookName},${jourBookSrc}`);
+    });
+  </script>
 
 
   <!-- lightbox adopt-->
@@ -1253,11 +1819,7 @@
 
   <!-- adopt succeed -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-    document.getElementById("demo1").addEventListener("click", function () {
-      swal("Adopt Succeed!", "Thank you for your adoption!", "success");
-    });
-  </script>
+
 
   <!-- Message -->
   <script>
@@ -1323,35 +1885,6 @@
       // }
     }
   </script>
-
-  <script>
-    // Login彈窗
-    $(function () {
-      // 開啟 Modal 彈跳視窗
-      $("a.LoginModal").on("click", function () {
-        $("div.overlay").addClass("-on");
-      });
-      // 關閉 Modal
-      $("button.btn_modal_close").on("click", function () {
-        $("div.overlay").addClass("-opacity-zero");
-        // 設定隔一秒後，移除相關 class
-        setTimeout(function () {
-          $("div.overlay").removeClass("-on -opacity-zero");
-        }, 1000);
-      });
-    });
-  </script>
-
-  <script>
-      $('#jourBookOpenBtn').on('click',function(){
-        let jourBookName = $(this).find('.jourBookName').text();
-        let jourBookSrc = $(this).find('.jourBookPhoto img').attr('src');
-        $('form button').val(`${jourBookName},${jourBookSrc}`);
-      });
-
-
-  </script>
-
 
 </body>
 

@@ -121,7 +121,7 @@
 
                 $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic, blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus,
                        blogMark, blogTags)
-                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '123', :blogTags)"; 
+                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '0', :blogTags)"; 
                 $products = $pdo->prepare( $sql );
                 $products -> bindValue(":blogTitle", $_POST["blogTitle"]);
                 $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
@@ -177,16 +177,14 @@
                 echo "新增成功~";
                 // $pdo->commit();
 
-                $sql = "update member set point = point + :point where memNo = {$_SESSION["memNo"]}";
-                // $sql = "update meminfo set memPoint = memPoint+300 where memNo = 1";
+                $sql = "update member set point = point + :point+500 where memNo = {$_SESSION["memNo"]}";
 
-                // $member = $pdo->prepare($sql);
-                // $member -> bindValue(":point", $_POST["point"]);
-                // $member -> execute();
-                // echo $fileName, "<br>";
+                $member = $pdo->prepare($sql);
+                $member -> bindValue(":point", $_POST["point"]);
+                $member -> execute();
                 $pdo->commit();
                 echo "commit success! <br>";
-                // header("Location:./blog1.php");
+                header("Location:./blog1.php");
             } catch (PDOException $e) {
                 // $pdo->rollBack();
                 $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";

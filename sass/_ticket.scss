@@ -104,27 +104,28 @@
           height: inherit;
           padding: 5px 10px;
         }
-
-        .ticketTicketName, .ticketTicketPrice{
+        .ticketTicketName{
           @include sub_title($keyBlack);
-          width: 30%;
-          
+          width: 40%;
           @media screen and (max-width: 676px){
             font-size: 16px;
-            width: 200px;
           }
         }
         .ticketTicketPrice{
+          @include sub_title($keyBlack);
+          // width: 30%;
           @media screen and (max-width: 676px){
-            width: 100px;
+            font-size: 16px;
           }
         }
         .ticketButtons{
-          // border: 1px solid red;
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 120px;
+          @media screen and (max-width: 676px){
+            width: 90px;
+          }
           .ticketButton{
             border: none;
             box-shadow: $shadow;
@@ -160,6 +161,9 @@
           .ticketTicketAmount{
             @include sub_title($keyBlack);
             padding: 0 10px;
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            } 
           }
         }
       }
@@ -395,7 +399,7 @@
         width: 70%;
         margin: 0 auto 60px;
       }
-      @media screen and (max-width: 676px){
+      @media screen and (max-width: 479px){
         width: 100%;
       }
       .datepicker-inline{
@@ -441,6 +445,11 @@
       @media screen and (max-width: 991px){
         width: 100%;
       }
+      .ticketShowDate{
+        @include sub_title($keyWhite);
+        margin-bottom: 30px;
+      }
+
       .ticketAreaRemainBox{
         width: 100%;
         margin-bottom: 30px;
@@ -480,9 +489,16 @@
           @media screen and (max-width: 479px){
             border-radius: 0 0 6px 6px;
           }
-          .ticketTicketName, .ticketTicketPrice{
+          .ticketTicketName{
             @include sub_title($keyBlack);
-            width: 30%;
+            width: 40%;
+            @media screen and (max-width: 676px){
+              font-size: 16px;
+            }
+          }
+          .ticketTicketPrice{
+            @include sub_title($keyBlack);
+            // width: 30%;
             @media screen and (max-width: 676px){
               font-size: 16px;
             }
@@ -493,6 +509,9 @@
             align-items: center;
             justify-content: space-between;
             width: 120px;
+            @media screen and (max-width: 676px){
+              width: 90px;
+            }
             .ticketButton{  
               cursor: pointer;       
               border: none;
@@ -526,6 +545,9 @@
             }
             .ticketTicketAmount{
               @include sub_title($keyBlack);
+              @media screen and (max-width: 676px){
+                font-size: 16px;
+              }
             }
           }
         }
