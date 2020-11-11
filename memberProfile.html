@@ -10,6 +10,12 @@
 
     <link rel="stylesheet" href="./css/style.css">
     
+  <!-- vue -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+  
+  <!-- axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
     <title>Aqua Member</title>
 </head>
@@ -26,7 +32,32 @@
     <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
+  <!-- Log In開始 -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25" /><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25" /><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- Log In結束 -->
+  
+  <!-- header開始 -->
   <header class="main_menu">
+    <!-- header第一區塊 主導覽列 -->
     <nav class="main_nav">
       <div class="logo_box">
         <a href="homepage.html" class="logo">
@@ -36,7 +67,7 @@
           <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
       </div>
-      <ul class="main_menu_ul">
+      <ul class="main_menu_ul" id="main_menu_ul">
         <li class="main_menu_li active">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
@@ -66,61 +97,42 @@
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
         <li class="main_menu_li active">
-          <a href="blog.html" class="li_logo">
+          <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
           </a>
-          <a href="blog.html" class="li_text">BLOG</a>
+          <a href="blog1.php" class="li_text">BLOG</a>
         </li>
       </ul>
       <div class="header_right">
-        <a href="#" class="member_box btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic"
+            onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+        </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
+          <span class="cart_amount"></span>
         </a>
-        <div class="hamburger_box">
+        <div class="hamburger_box" id="hamburger_box">
           <div class="hamburger">
-            <span class="hamburger_line is-active"></span>
-            <span class="hamburger_cross">&times;</span>
+            <span class="hamburger_line is-active" id="hamburger_line"></span>
+            <span class="hamburger_cross" id="hamburger_cross">&times;</span>
           </div>
         </div>
       </div>
     </nav>
-  </header>
-
-
-
-  <div>  
-    <!-- Log In -->
-    <div class="memLogin overlay">
-      <form class="LogInForm" id="LogInForm" method="post">
-        <div class="btn_modal_close">
-          <div></div>
-          <div></div>
-        </div>
-        <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <p>Don't have an account?</p><br>
-        <a href="./memberLogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-      </form>
+  
+    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
     </div>
-    <!-- Title -->
-    <!-- <div class="commonTitleBox">
-      <h2 class="commonTitle">Big Title</h2>
-      <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
-    </div> -->
-    <!-- 你的code打這下面 -->
-
-    <main>
+  
+  </header>
+  
+  <!-- header結束 -->
+    <main id="vue_member">
 
 
       <div class="container memMain">
@@ -141,10 +153,10 @@
             </div>
 
               <div class="memNameBox">
-                <h3>Shinnosuke</h3>
+                <h3>{{name}}</h3>
                 <div class="memPointBox">
                   <span>Point:</span>
-                  <span id="memPoint">300</span>
+                  <span id="memPoint">{{point}}</span>
                 </div>
               </div>
 
@@ -174,44 +186,81 @@
             <div class="memTab tab1 memProfile -on">
               <div class="memAllTitle">
                 <h3>Profile</h3>
+                <button style="width: 250px;" id="edit_profile">Edit Profile</button>
               </div>
               <div class="memProAll">
                 <div class="memName memProfileContent">
                   <div class="memProTit">Name</div>
-                  <div class="memProText">Shinnosuke</div>
+                  <div class="memProText">{{name}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memUsername memProfileContent">
                   <div class="memProTit">Username</div>
-                  <div class="memProText">tony1021</div>
+                  <div class="memProText">{{id}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memPsw memProfileContent">
                   <div class="memProTit">Password</div>
-                  <div class="memProText">*******</div>
+                  <div class="memProText">{{password}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memGender memProfileContent">
                   <div class="memProTit">Gender</div>
-                  <div class="memProText">Male</div>
+                  <div class="memProText">{{sex}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memEmail memProfileContent">
                   <div class="memProTit">Email</div>
-                  <div class="memProText">tony1021@gmail.com</div>
+                  <div class="memProText">{{email}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memMobile memProfileContent">
                   <div class="memProTit">Phone</div>
-                  <div class="memProText">0987-654321</div>
+                  <div class="memProText">{{phone}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
                 <div class="memBirth memProfileContent">
                   <div class="memProTit">Birthday</div>
-                  <div class="memProText">1995-10-21</div>
+                  <div class="memProText">{{birth}}</div>
                   <i class="fas fa-pen"></i>
                 </div>
               </div>
+
+              <!-- <div class="memProAll member_edit">
+                <div class="memName memProfileContent">
+                  <div class="memProTit">Name</div>
+                  <input class="memProText" v-model='name'>
+                </div>
+                <div class="memUsername memProfileContent">
+                  <div class="memProTit">Username</div>
+                  <input class="memProText" v-model='id'>
+                </div>
+                <div class="memPsw memProfileContent">
+                  <div class="memProTit">Password</div>
+                  <input class="memProText" v-model='password'>
+                </div>
+                <div class="memGender memProfileContent">
+                  <div class="memProTit">Gender</div>
+                  <input class="memProText" v-model='sex'>
+                </div>
+                <div class="memEmail memProfileContent">
+                  <div class="memProTit">Email</div>
+                  <input class="memProText" v-model='email'>
+                </div>
+                <div class="memMobile memProfileContent">
+                  <div class="memProTit">Phone</div>
+                  <input class="memProText" v-model='phone'>
+                </div>
+                <div class="memBirth memProfileContent">
+                  <div class="memProTit">Birthday</div>
+                  <input class="memProText" v-model='birth'>
+                </div>
+                <div class="profile_btn">
+                  <button>Confirm</button>
+                  <button>Cancel</button>
+                </div>
+              </div> -->
+
             </div>
           
             <!-- Blog Record -->
@@ -952,70 +1001,51 @@
   </footer>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src  ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"></script>
-  <script src="./js/memLogin.js"></script>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src  ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./js/memLogin.js"></script> -->
+  <script src="./js/layout/header.js"></script>
+  <script src="./js/memProfile.js"></script>
 
   <!-- 頁籤 -->
   <script>
   // member主頁籤
-  $(function(){
-    $("a.memTab").on("click", function(e){
-      e.preventDefault();
+  // $(function(){
+  //   $("a.memTab").on("click", function(e){
+  //     e.preventDefault();
       
-      /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-      $(this).closest("ul").find("a.memTab").removeClass("-on");
-      $(this).addClass("-on");
+  //     /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+  //     $(this).closest("ul").find("a.memTab").removeClass("-on");
+  //     $(this).addClass("-on");
       
-      /* 找到對應的頁籤內容，加上 -on 來顯示 */
-      $("div.memTab").removeClass("-on");
-      $("div.memTab." + $(this).attr("data-target")).addClass("-on");
-    });
-  });
+  //     /* 找到對應的頁籤內容，加上 -on 來顯示 */
+  //     $("div.memTab").removeClass("-on");
+  //     $("div.memTab." + $(this).attr("data-target")).addClass("-on");
+  //   });
+  // });
 
-  // member次頁籤
-  $(function(){
-    $("a.memBlogTab").on("click", function(e){
-      e.preventDefault();
+  // // member次頁籤
+  // $(function(){
+  //   $("a.memBlogTab").on("click", function(e){
+  //     e.preventDefault();
       
-      /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-      $(this).closest("ul").find("a.memBlogTab").removeClass("-on");
-      $(this).addClass("-on");
+  //     /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+  //     $(this).closest("ul").find("a.memBlogTab").removeClass("-on");
+  //     $(this).addClass("-on");
       
-      /* 找到對應的頁籤內容，加上 -on 來顯示 */
-      $("div.memBlogTab").removeClass("-on");
-      $("div.memBlogTab." + $(this).attr("data-target")).addClass("-on");
-    });
-  });
+  //     /* 找到對應的頁籤內容，加上 -on 來顯示 */
+  //     $("div.memBlogTab").removeClass("-on");
+  //     $("div.memBlogTab." + $(this).attr("data-target")).addClass("-on");
+  //   });
+  // });
 
-  // OrderDetail收合
-  $("div.memStep").on("click", function(){
-    $(this).next().slideToggle();
-    $(this).find('i').toggleClass('rotate');
-  });
+  // // OrderDetail收合
+  // $("div.memStep").on("click", function(){
+  //   $(this).next().slideToggle();
+  //   $(this).find('i').toggleClass('rotate');
+  // });
 
-  // Hamburger
-  $("div.hamburger_box").on("click", function(){
-    $("span.hamburger_line").toggleClass("is-active");
-    $("span.hamburger_cross").toggleClass("is-active");
-    $("ul.main_menu_ul").toggleClass("is-active");
-  });
 
-  // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
 
 </script>
 </body>

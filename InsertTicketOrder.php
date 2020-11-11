@@ -1,8 +1,9 @@
 <?php
 try{
-  require_once("connect_aqua.php");
+  require_once("connectAqua.php");
 
   $sql = "INSERT INTO ticket_order(memNo, ticketOrderDate, ticketTotalPrice)
+  -- OUTPUT Inserted.ticketOrderNo
   VALUES (?, ?, ?);";
 
   $member = $pdo->prepare($sql);
@@ -11,7 +12,10 @@ try{
   $member->bindValue(3, $_POST['ticketTotalPrice']);
   $member ->execute();
 
-  echo "Insert Ticket Order Success";
+  // 取得新增這筆欄位的流水號(定義為ticketOrderNo)
+  $ticketOrderNo = $pdo->lastInsertId();
+
+  echo $ticketOrderNo;
     
   } catch (PDOException $e) {  
     $error = array("errorMsg"=>$e->getMessage());

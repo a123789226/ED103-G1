@@ -237,7 +237,7 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/sweetalert.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src  ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/memLogin.js"></script>
   <script src="./js/layout/header.js"></script>
@@ -400,6 +400,17 @@
     //   }, 0);
 
     // });
+
+  function checkmember(){
+    // alert("123");
+    if (member.memId) { //是登入狀態
+          window.location.href = 'memberProfile.html';
+        } else {  //非登入狀態，阻止按鈕預設行為，跳出登入燈箱
+    }
+  }
+
+  window.setTimeout('checkmember()', 200);
+
 
   </script>
 </body>

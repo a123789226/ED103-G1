@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="./js/ticket/bookingPayment.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
@@ -144,7 +144,7 @@
         </div>
       </div>
       
-      <form class="bookingPaymentBlock" action="bookingConfirm.html">
+      <form class="bookingPaymentBlock" action="bookingConfirm.php" method="POST">
         <div class="inputBox">
           <label>CARD NUMBER</label><input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">&nbsp;-&nbsp;<input type="text">
         </div>
@@ -155,16 +155,16 @@
           <label>SECURITY CODE</label><input type="text">
         </div>
         <div class="inputBox">
-          <p>TICKET PRICE</p><p>${{price}}</p>
+          <p>TICKET PRICE</p><p><span>$</span><span id="nightTotal">0</span></p>
         </div>
         <div class="inputBox">
-          <p>YOUR POINT</p><p>5000 Points</p>
+          <p>YOUR POINT</p><p><span id="points"></span><span>&nbsp;Points</span></p>
         </div>
         <div class="inputBox">
-          <label>DISCOUNT POINT</label><input type="text" v-model="point"><button class="discountQuestion">?</button>
+          <label>DISCOUNT POINT</label><input type="text" id="typePoints" name="point" value="0"><button class="discountQuestion">?</button>
         </div>
         <div class="inputBox">
-          <p>TOTAL PRICE</p><p>${{price-point}}</p>
+          <p>TOTAL PRICE</p><p><span>$&nbsp;</span><span id="newTotalPrice">0</span></p>
         </div>
         <div class="payButtonBox">
           <!-- <a href="overnightBooking.html">
@@ -203,20 +203,9 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/memLogin.js"></script>
+  <script src="./js/ticket/bookingPaymentShow.js"></script>
   <script src="./js/layout/header.js"></script>
   <script>
-    new Vue({
-      el: '#app',
-      data: {
-        price: 500,
-        point: 0,
-      },
-      methods: {
-
-      }
-    });
-
 
     //jquery
 

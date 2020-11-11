@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/ticket/ticket.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Aqua Wonderland</title>
 </head>
 <body>
@@ -226,13 +227,14 @@
           <img src="./image/ticket/ticketJPG2.jpg"/>
         </div>
       </div>
-      <form class="ticketBookingBlock" action="./overnightBooking.html">
-        <h4>Select Date</h4>
+      <div class="ticketBookingBlock" id="app">
+        <h4>Select Booking Date</h4>
         <div class="ticketCalendarBlock">       
         </div>
         <div class="ticketBooking">
+          <div class="ticketShowDate"><span>DATE&nbsp;&nbsp;</span><span>{{date}}</span></div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span class="ticketRemainNumber">2</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{remain_1}}</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area A|80|0">
               <p class="ticketTicketName">TicketName</p>
@@ -245,7 +247,7 @@
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>0</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{remain_2}}</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area B|70|0">
               <p class="ticketTicketName">TicketName</p>
@@ -258,7 +260,7 @@
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>20</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{remain_3}}</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area C|100|0">
               <p class="ticketTicketName">TicketName</p>
@@ -271,7 +273,7 @@
             </div>
           </div>
           <div class="ticketAreaRemainBox">
-            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>3</span></p>
+            <p class="ticketAreaRemain"><span>Remaining Vacancies：</span>&nbsp;&nbsp;&nbsp;<span>{{remain_4}}</span></p>
             <div class="ticketButtonBox">
               <input type="hidden" value="Area D|90|0">
               <p class="ticketTicketName">TicketName</p>
@@ -286,11 +288,12 @@
 
           <p class="ticketONTotal"><span>Total&nbsp;&nbsp;&nbsp;&nbsp;$&nbsp;</span><span>0</span></p>
           <div class="ticketONButtonBlock">
-            <input type="submit" value="Go Booking" id="ticketBookingButton">         
+            <input type="button" value="GO BOOKING" id="ticketBookingButton">
+            <!-- <a href="./overnightBooking.html" id="ticketBookingButton">GO BOOKING</a>          -->
           </div>
 
         </div>
-      </form>
+      </div>
     </section>
 <!-- 你的code打這上面 -->
 
@@ -315,66 +318,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
   <script src="./js/memLogin.js"></script>
   <script src="./js/layout/header.js"></script>
-  <script>
-    // jQuery
-    // 選擇區域區底圖消失出現
-    $('.ticketAreaSelect').hover(function(){
-      $('.ticketONBigImg').css("opacity","0");
-    },function(){
-      $('.ticketONBigImg').css("opacity","1");
-    });
+  <script src="./js/ticket/ticket.js"></script>
 
-    //手機板避免連結沒hover效果禁止跳轉功能
-    $('.ticketToTour').on('click', function(e){
-      e.preventDefault();
-    })
-
-    //月曆
-    $('.ticketCalendarBlock').datepicker({
-      startDate: " new date()",
-      todayHighlight: true,
-    });
-
-    //防止加減按鈕提交表單
-    $('.ticketButton').on('click', function(){
-      return false;
-    })
-
-
-
-  // 非同步放入門票資訊
-
-
-  // function doFirstTicket(){
-  //   let xhr = new XMLHttpRequest();
-  //   xhr.onload = function(){
-  //     ticketsRow = JSON.parse(xhr.responseText);
-  //     showTickets(ticketsRow);
-  //     // console.log(ticketsRow);
-  //   }
-  //   xhr.open("get", "./ticketInfo.php",false);
-  //   xhr.send(null);
-  // }
-
-  // function showTickets(item){
-  //   let ticketProduct = document.querySelectorAll('div.ticketProduct input');
-  //   for(let i=0; i<ticketProduct.length; i++){
-  //     ticketProduct[i].value = `${item.ticketType}|${item.ticketPrice}|0`
-  //   }
-  // }
-
-  // window.addEventListener('load', doFirstTicket);
-
-
-
-
-
-
-
-
-
-
-
-  </script>
 </body>
 </html>
+
+

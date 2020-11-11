@@ -1,5 +1,7 @@
-
-
+<?php
+        ob_start();
+        session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -106,7 +108,8 @@
         <?php
         // $_SESSION["memId"]='Mark123';
         // $_SESSION["memNo"]='1';
-        session_start();
+        // ob_start();
+        // session_start();
         if(isset($_SESSION["memId"])){
             $errMsg = "";
             try {
@@ -115,18 +118,10 @@
                 // 取得上傳檔案數量
                 $fileCount = count($_FILES['upFile']['name']);
                 echo "fileCount = ", $fileCount, "<br>";
-                // INSERT INTO postinfo ( memNo, piTitle,  piGeneralContent,
-        		// 	   piTitlePic, piTitleContent, piFloatLeftPic, piFloatLeftContent, piFloatRightPic, piFloatRightContent,
-                //        piTime, piStatus)
-                // values('2', '測試title2', '',
-                //        '', 'block1內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
-                //        '', 'block2內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
-                //        '', 'block3內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容',
-                //        now(), '0' );
+
                 $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic, blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus,
                        blogMark, blogTags)
-                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '123', :blogTags)"; 
-                // $sql = "INSERT INTO `products` (`psn`, `pname`, `price`, `author`, `pages`, `image`) values(null, :pname, :price, :author, :pages, '' )";
+                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '0', :blogTags)"; 
                 $products = $pdo->prepare( $sql );
                 $products -> bindValue(":blogTitle", $_POST["blogTitle"]);
                 $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
@@ -144,17 +139,19 @@
                             mkdir("img");
                         }
                         //將檔案copy到要放的路徑
-                        // $fileInfoArr = pathinfo($_FILES["upFile"]["name"][$i]);
-                        // $fileName = "{$piNo}_{$i}.{$fileInfoArr["extension"]}";  //8.gif
-                        $fileName = "{$_FILES['upFile']['name'][$i]}";
+                        $fileInfoArr = pathinfo($_FILES["upFile"]["name"][$i]);
+                        // $fileName = "{$_FILES['upFile']['name'][$i]}";
+                        
                         $from = $_FILES["upFile"]["tmp_name"][$i];
-                        $to = "img/blogPost/$fileName";
-                            if(copy( $from, $to)===true){
+                        $fileLocation[$i] = $to = "img/blogPost/{$blogNo}_{$i}.{$fileInfoArr["extension"]}";
+                        // $to = "img/blogPost/$fileName";
+                            if( ($result = copy( $from, $to))===true){
                             //將檔案名稱寫回資料庫
-                            // update postinfo set piTitlePic='11.jpg', piFloatLeftPic='12.jpg', piFloatRightPic='13.jpg' where piNo = 1;
-                            // $sql = "update postinfo set piTitlePic = :piTitlePic where piNo = $piNo";
                         }else{
-                            // $pdo->rollBack();
+                          echo "-----", $result, "<br>";
+                            $pdo->rollBack();
+                          // break;
+                          exit("新增失敗, $from , to : $to");
                         }
                     }else{
                         echo "錯誤代碼 : {$_FILES["upFile"]["error"][$i]} <br>";
@@ -163,33 +160,30 @@
                 }//foreach
 
                 $sql = "update blog set blogPic = :blogPic, blogPic1=:blogPic1, blogPic2=:blogPic2 where blogNo = $blogNo";
-                // $sql = "update products set image = :image where psn = 7";
-                $fileLocation0 = "img/blogPost/{$blogNo}_0.{$fileInfoArr["extension"]}";
-                $fileLocation1 = "img/blogPost/{$blogNo}_1.{$fileInfoArr["extension"]}";
-                $fileLocation2 = "img/blogPost/{$blogNo}_2.{$fileInfoArr["extension"]}";
-                // $fileLocation0 = "img/blogPost/{$_FILES['upFile']['name'][0]}";
-                // $fileLocation1 = "img/blogPost/{$_FILES['upFile']['name'][1]}";
-                // $fileLocation2 = "img/blogPost/{$_FILES['upFile']['name'][2]}";
+                // $fileInfoArr0 = pathinfo($_FILES["upFile"]["name"][0]);
+                // $fileInfoArr1 = pathinfo($_FILES["upFile"]["name"][1]);
+                // $fileInfoArr2 = pathinfo($_FILES["upFile"]["name"][2]);
+                // $fileLocation0 = "img/blogPost/{$blogNo}_0.{$fileInfoArr0["extension"]}";
+                // $fileLocation1 = "img/blogPost/{$blogNo}_1.{$fileInfoArr1["extension"]}";
+                // $fileLocation2 = "img/blogPost/{$blogNo}_2.{$fileInfoArr2["extension"]}";
                 $products = $pdo->prepare($sql);
-                $products -> bindValue(":blogPic", $fileLocation0);
-                $products -> bindValue(":blogPic1", $fileLocation1);
-                $products -> bindValue(":blogPic2", $fileLocation2);
-                // $products -> execute();
-                echo $fileLocation0, "<br>";
-                echo $fileLocation1, "<br>";
-                echo $fileLocation2, "<br>";
-                // echo $fileName, "<br>";
+                $products -> bindValue(":blogPic", $fileLocation[0]);
+                $products -> bindValue(":blogPic1", $fileLocation[1]);
+                $products -> bindValue(":blogPic2", $fileLocation[2]);
+                $products -> execute();
+                echo $fileLocation[0], "<br>";
+                echo $fileLocation[1], "<br>";
+                echo $fileLocation[2], "<br>";
                 echo "新增成功~";
                 // $pdo->commit();
 
-                $sql = "update member set point = point + :point where memNo = {$_SESSION["memNo"]}";
-                // $sql = "update meminfo set memPoint = memPoint+300 where memNo = 1";
+                $sql = "update member set point = point + :point+500 where memNo = {$_SESSION["memNo"]}";
 
                 $member = $pdo->prepare($sql);
                 $member -> bindValue(":point", $_POST["point"]);
-                // $member -> execute();
-                // echo $fileName, "<br>";
+                $member -> execute();
                 $pdo->commit();
+                echo "commit success! <br>";
                 header("Location:./blog1.php");
             } catch (PDOException $e) {
                 // $pdo->rollBack();
