@@ -1,4 +1,4 @@
-<script>
+
   $('#doPost').on('click',function(){
     // if('尚未登入'){
 
@@ -38,4 +38,3 @@
 
   });
 
-</script>
