@@ -227,7 +227,7 @@
       .mgrAquaAll{
         display: block;
         width: 100%;
-        height: 100%;
+        height: 900px;
         overflow: scroll;
         tr{
           box-shadow: $shadow;
@@ -254,41 +254,50 @@
       // ORDER
       .mgrOrderAll{
         text-align: center;
+        height: 600px;
+        overflow-y: scroll;
         .mgrSecTab.-on{
           display: block;
         }
         .mgrSecTab{
           display: none;
         }  
-        .mgrTicketAll, .mgrNightAll{
-          .mgrStepContent{
-            display: none;
-          }
-          .mgrOrderTitle{
-            background-color: $keyGreen;
-            color: #ffffff;
-            height: 40px;
-            line-height: 40px;
-          }
-          .mgrTicketOrder{
-            line-height: 30px;
-            padding: 20px;
-            box-shadow: $shadow;
-            .mgrTitle{
+        .mgrOrderTable{
+          text-align: center;
+          border-radius: 6px;
+          box-shadow: $shadow;
+          overflow: hidden;
+          .mgrOrderCard{
+            padding: 20px 0;
+            align-items: center;
+            .mgrStep{
+              cursor: pointer;
               i{
-                cursor: pointer;
                 transition: .3s;
+                transform: rotate(0deg);
               }
               i.rotate{
                 transform: rotate(180deg);
               }
             }
-            .mgrOrderDetail{
-              .mgrOrderDetailForm{
-                background-color: $keyGreen;
-                color: #ffffff;
-              }
+          }
+          .mgrStepContent{
+            margin: 30px auto 0;
+            box-shadow: $shadow;
+            border-radius: 6px;
+            overflow: hidden;
+            display: none;
+            .mgrOrderCardDetail{
+              padding: 10px 0;
             }
+            .mgrOrderCardDetail:first-child{
+              background-color: $keyBlack;
+              color: #ffffff;
+            } 
+          }
+          .mgrOrderCard:first-child{
+            background-color: $keyGreen;
+            color: #ffffff;
           }
         }
       }
@@ -363,6 +372,10 @@
       }
       // JOURNAL
       .mgrJournalAll{
+        display: block;
+        width: 100%;
+        height: 900px;
+        overflow: scroll;
         tr{
           box-shadow: $shadow;
           th{
