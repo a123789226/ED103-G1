@@ -260,9 +260,12 @@ xhrTurtle.send(null);
 function openBook(){
     document.getElementById('jourBookOpenBtn').onclick = function () {
         // document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
+        document.getElementsByClassName("jour_bk")[0].style.display = "block";
         document.getElementsByClassName("jourLightBox")[0].style.display = "block";
         document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
           document.getElementsByClassName("jourLightBox")[0].style.display = "none";
+          document.getElementsByClassName("jour_bk")[0].style.display = "none";
+
         }
       };
 }
