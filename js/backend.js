@@ -377,12 +377,7 @@ function backendDoFirst(){
       <td>${backThankscardRow[i].memName}</td>
       <td>${backThankscardRow[i].memEmail}</td>
       <td>${backThankscardRow[i].cardFile}</td>
-      <td>
-        <select>
-          <option value="1">已分享</option>
-          <option value="2">未分享</option>
-        </select>
-      </td>
+      <td>${backThankscardRow[i].cardStatus}</td>
       <td>        
         <a href="#">Resend</a>
       </td>
