@@ -18,6 +18,12 @@
 // $_POST["nameEnd"]="2020-10-20";
 // $_POST["voteStart"]="2020-10-22";
 // $_POST["voteEnd"]="2020-10-29";
+
+if($_POST["releaseDate"]==''){
+  $relaeseDate=null;
+}else{
+  $releaseDate=$_POST["releaseDate"];
+}
 	try {
     require("./connectAqua.php");
 		$sql = "update aqua set aquaType=:aquaType, aquaName=:aquaName, aquaAge=:aquaAge, aquaSex=:aquaSex, arriveDate=:arriveDate, rescueLoc=:rescueLoc, jourStory=:jourStory, recoverStatus=:recoverStatus,releaseDate=:releaseDate, releaseLoc=:releaseLoc, aquaPic=:aquaPic, adoptTotalNum=:adoptTotalNum, adoptTotalAmt=:adoptTotalAmt, nameStatus=:nameStatus, nameStart=:nameStart, nameEnd=:nameEnd, voteStart=:voteStart, voteEnd=:voteEnd where aquaNo=:aquaNo";
@@ -31,7 +37,7 @@
     $aqua->bindValue(":rescueLoc", $_POST["rescueLoc"]);
     $aqua->bindValue(":jourStory", $_POST["jourStory"]);
     $aqua->bindValue(":recoverStatus", $_POST["recoverStatus"]);
-    $aqua->bindValue(":releaseDate", $_POST["releaseDate"]);
+    $aqua->bindValue(":releaseDate", $releaseDate);
     $aqua->bindValue(":releaseLoc", $_POST["releaseLoc"]);
     $aqua->bindValue(":aquaPic", $_POST["aquaPic"]);
     $aqua->bindValue(":adoptTotalNum", $_POST["adoptTotalNum"]);
