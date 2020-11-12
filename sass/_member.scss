@@ -447,10 +447,10 @@
             cursor: pointer;
             i{
               transition: .3s;
-              transform: rotate(-180deg);
+              transform: rotate(0deg);
             }
             i.rotate{
-              transform: rotate(0deg);
+              transform: rotate(180deg);
             }
           }
           .memStepContent{
