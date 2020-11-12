@@ -80,24 +80,24 @@ function backendDoFirst(){
     aquahtml += `
     <tr>
       <td>${backAquaRow[i].aquaNo}</td>
-      <td>${backAquaRow[i].aquaType}</td>
-      <td>${backAquaRow[i].aquaName}</td>
-      <td>${backAquaRow[i].aquaAge}</td>
-      <td>${backAquaRow[i].aquaSex}</td>
-      <td>${backAquaRow[i].arriveDate}</td>
-      <td>${backAquaRow[i].rescueLoc}</td>
-      <td>${backAquaRow[i].jourStory}</td>
-      <td>${backAquaRow[i].recoverStatus}</td>
-      <td>${backAquaRow[i].releaseDate}</td>
-      <td>${backAquaRow[i].releaseLoc}</td>
-      <td>${backAquaRow[i].aquaPic}</td>
-      <td>${backAquaRow[i].adoptTotalNum}</td>
-      <td>${backAquaRow[i].adoptTotalAmt}</td>
-      <td>${backAquaRow[i].nameStatus}</td>
-      <td>${backAquaRow[i].nameStart}</td>
-      <td>${backAquaRow[i].nameEnd}</td>
-      <td>${backAquaRow[i].voteStart}</td>
-      <td>${backAquaRow[i].voteEnd}</td>
+      <td><input type="text" value="${backAquaRow[i].aquaType}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaName}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaAge}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaSex}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].arriveDate}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].rescueLoc}" size="10"></td>
+      <td><textarea rows="2" cols="20">${backAquaRow[i].jourStory}</textarea></td>
+      <td><input type="text" value="${backAquaRow[i].recoverStatus}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].releaseDate}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].releaseLoc}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaPic}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalNum}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalAmt}" size="5"></td>
+      <td><input type="text" value="${backAquaRow[i].nameStatus}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].nameStart}" size="10"></td>
+      <td><input type="date" value="${backAquaRow[i].nameEnd}" size="10"</td>
+      <td><input type="date" value="${backAquaRow[i].voteStart}" size="10"</td>
+      <td><input type="date" value="${backAquaRow[i].voteEnd}" size="10"</td>
       <td>
         <i class="fas fa-pen"></i>
       </td>
@@ -106,6 +106,31 @@ function backendDoFirst(){
   }
 
   document.getElementById('backAquaTable').innerHTML = aquahtml;
+
+
+  // backAqua 修改
+  // let editTicketInfo = document.querySelectorAll("i.editTicketInfo");
+  // for (let i = 0; i < editTicketInfo.length; i++) {
+  //   editTicketInfo[i].addEventListener("click", function () {
+  //     let ticketNumber = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+  //     let ticketType = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+  //     let ticketPrice = editTicketInfo[i].parentNode.previousElementSibling.children[0].value;
+  //     // alert(ticketPrice);
+
+  //     let xhrEditTicket = new XMLHttpRequest();
+  //     xhrEditTicket.onload = function () {
+  //       ticketInfoEdit = xhrEditTicket.responseText;
+  //       console.log(ticketInfoEdit);
+  //       swal("Edit Succeed!", "", "success");
+  //       // alert('異動成功');
+  //     }
+
+  //     xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);
+  //     xhrEditTicket.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  //     let data_info = `ticketNo=${ticketNumber}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
+  //     xhrEditTicket.send(data_info);
+  //   })
+  // }
 
 
   // backTicketOrder
@@ -231,7 +256,8 @@ function backendDoFirst(){
       xhrEditTicket.onload = function () {
         ticketInfoEdit = xhrEditTicket.responseText;
         console.log(ticketInfoEdit);
-        alert('異動成功');
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
       }
     
       xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);

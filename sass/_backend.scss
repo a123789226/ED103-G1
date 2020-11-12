@@ -225,9 +225,8 @@
       }
       // AQUA
       .mgrAquaAll{
-        width: 1500px;
-      overflow-y: hidden;
-      overflow-x: auto;
+        width: 800px;
+        overflow-x: scroll;
         tr{
           box-shadow: $shadow;
           th{
