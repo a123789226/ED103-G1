@@ -84,22 +84,22 @@ function backendDoFirst(){
       <td><input type="text" value="${backAquaRow[i].aquaName}" size="10"></td>
       <td><input type="text" value="${backAquaRow[i].aquaAge}" size="3"></td>
       <td><input type="text" value="${backAquaRow[i].aquaSex}" size="3"></td>
-      <td><input type="date" value="${backAquaRow[i].arriveDate}" size="10"></td>
+      <td><input type="date" value="${backAquaRow[i].arriveDate}" size="15"></td>
       <td><input type="text" value="${backAquaRow[i].rescueLoc}" size="10"></td>
       <td><textarea rows="2" cols="20">${backAquaRow[i].jourStory}</textarea></td>
       <td><input type="text" value="${backAquaRow[i].recoverStatus}" size="3"></td>
-      <td><input type="date" value="${backAquaRow[i].releaseDate}" size="10"></td>
+      <td><input type="date" value="${backAquaRow[i].releaseDate}" size="15"></td>
       <td><input type="text" value="${backAquaRow[i].releaseLoc}" size="10"></td>
       <td><input type="text" value="${backAquaRow[i].aquaPic}" size="10"></td>
       <td><input type="text" value="${backAquaRow[i].adoptTotalNum}" size="3"></td>
       <td><input type="text" value="${backAquaRow[i].adoptTotalAmt}" size="5"></td>
       <td><input type="text" value="${backAquaRow[i].nameStatus}" size="3"></td>
-      <td><input type="date" value="${backAquaRow[i].nameStart}" size="10"></td>
-      <td><input type="date" value="${backAquaRow[i].nameEnd}" size="10"</td>
-      <td><input type="date" value="${backAquaRow[i].voteStart}" size="10"</td>
-      <td><input type="date" value="${backAquaRow[i].voteEnd}" size="10"</td>
+      <td><input type="date" value="${backAquaRow[i].nameStart}" size="15"></td>
+      <td><input type="date" value="${backAquaRow[i].nameEnd}" size="15"</td>
+      <td><input type="date" value="${backAquaRow[i].voteStart}" size="15"</td>
+      <td><input type="date" value="${backAquaRow[i].voteEnd}" size="15"</td>
       <td>
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editAqua"></i>
       </td>
     </tr> 
     `
@@ -109,28 +109,44 @@ function backendDoFirst(){
 
 
   // backAqua 修改
-  // let editTicketInfo = document.querySelectorAll("i.editTicketInfo");
-  // for (let i = 0; i < editTicketInfo.length; i++) {
-  //   editTicketInfo[i].addEventListener("click", function () {
-  //     let ticketNumber = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
-  //     let ticketType = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
-  //     let ticketPrice = editTicketInfo[i].parentNode.previousElementSibling.children[0].value;
-  //     // alert(ticketPrice);
+  let editAqua = document.querySelectorAll("i.editAqua");
+  for (let i = 0; i < editAqua.length; i++) {
+    editAqua[i].addEventListener("click", function () {
+      let aquaNo = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let aquaType = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaName = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaAge = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaSex = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let arriveDate = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let rescueLoc = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourStory = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let recoverStatus = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let releaseDate = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let releaseLoc = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaPic = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let adoptTotalNum = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let adoptTotalAmt = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameStatus = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameStart = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameEnd = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let voteStart = editAqua[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let voteEnd = editAqua[i].parentNode.previousElementSibling.children[0].value;
+      // alert(adoptTotalNum);
 
-  //     let xhrEditTicket = new XMLHttpRequest();
-  //     xhrEditTicket.onload = function () {
-  //       ticketInfoEdit = xhrEditTicket.responseText;
-  //       console.log(ticketInfoEdit);
-  //       swal("Edit Succeed!", "", "success");
-  //       // alert('異動成功');
-  //     }
+      let xhrEditAqua = new XMLHttpRequest();
+      xhrEditAqua.onload = function () {
+        AquaEdit = xhrEditAqua.responseText;
+        console.log(AquaEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
 
-  //     xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);
-  //     xhrEditTicket.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  //     let data_info = `ticketNo=${ticketNumber}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
-  //     xhrEditTicket.send(data_info);
-  //   })
-  // }
+      xhrEditAqua.open("Post", "EditbackAqua.php", true);
+      xhrEditAqua.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `aquaNo=${aquaNo}&aquaType=${aquaType}&aquaName=${aquaName}&aquaAge=${aquaAge}&aquaSex=${aquaSex}&arriveDate=${arriveDate}&rescueLoc=${rescueLoc}&jourStory=${jourStory}&recoverStatus=${recoverStatus}&releaseDate=${releaseDate}&releaseLoc=${releaseLoc}&aquaPic=${aquaPic}&adoptTotalNum=${adoptTotalNum}&adoptTotalAmt=${adoptTotalAmt}&nameStatus=${nameStatus}&nameStart=${nameStart}&nameEnd=${nameEnd}&voteStart=${voteStart}&voteEnd=${voteEnd}`;
+      xhrEditAqua.send(data_info);
+    })
+  }
 
 
   // backTicketOrder
@@ -247,7 +263,7 @@ function backendDoFirst(){
   let editTicketInfo = document.querySelectorAll("i.editTicketInfo");
   for (let i = 0; i < editTicketInfo.length; i++){
     editTicketInfo[i].addEventListener("click", function(){
-      let ticketNumber = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let ticketNo = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
       let ticketType = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
       let ticketPrice = editTicketInfo[i].parentNode.previousElementSibling.children[0].value;
       // alert(ticketPrice);
@@ -262,7 +278,7 @@ function backendDoFirst(){
     
       xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);
       xhrEditTicket.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      let data_info = `ticketNo=${ticketNumber}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
+      let data_info = `ticketNo=${ticketNo}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
       xhrEditTicket.send(data_info);
     })
   }
@@ -642,7 +658,7 @@ $(function(){
 });
 
 // OrderDetail收合
-$("div.mgrStep").on("click", function(){
+$("div.mgrSecTab1").on("click",'.mgrStep', function(){
   $(this).next().slideToggle();
   $(this).find('i').toggleClass('rotate');
 });
