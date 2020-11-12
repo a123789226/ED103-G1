@@ -1,7 +1,7 @@
 <?php 
 try {
 	require_once("./connectAqua.php");
-  $sql = "select * from aqua where aquaType = 'dolphin'";
+  $sql = "select * from aqua where aquaType = 'turtle' order by arriveDate DESC";
   $aquatypes = $pdo->prepare($sql);
   $aquatypes->execute();
 

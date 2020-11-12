@@ -104,13 +104,12 @@
       <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
     </div> -->
     <!-- 你的code打這下面 -->
-    <div class="mgrProfileBlock" id="mgrProfileBlock" style="display: none;">
-      <p class="mgrNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="mgrNameInProfileBlock"></span></p>
-      <a href="./mgrberProfile.html" class="mgrProfileLink">Backend</a>
-      <p id="SignOutLink">Sign Out</p>
+    <div id="bar" style="position: absolute;top:0;right: 20px">
+        <span id="mgrName">&nbsp;</span> <!-- 使用者姓名 -->
+        <span id="spanLogin">Log In</span>
     </div>
     <!-- Log In -->
-    <div class="mgrLogin">
+    <div class="mgrLogin" id="mgrLogin">
       <form class="LogInForm" id="LogInForm" method="post">
         <div class="mgrImg">
           <img src="./image/header/logo.png" alt="">
@@ -132,6 +131,7 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="./js/mgrLogin.js"></script>
 
