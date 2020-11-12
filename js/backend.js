@@ -206,16 +206,47 @@ function backendDoFirst(){
     ticketInfohtml += `
     <tr>
       <td>${backTicketInfoRow[i].ticketNo}</td>
-      <td>${backTicketInfoRow[i].ticketType}</td>
-      <td>${backTicketInfoRow[i].ticketPrice}</td>
+      <td><input type="text" value="${backTicketInfoRow[i].ticketType}"></td>
+      <td><input type="text" value="${backTicketInfoRow[i].ticketPrice}"></td>
       <td>        
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editTicketInfo"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backTicketInfoTable').innerHTML = ticketInfohtml;
+
+
+  // backTicketInfo 修改
+  let editTicketInfo = document.querySelectorAll("i.editTicketInfo");
+  for (let i = 0; i < editTicketInfo.length; i++){
+    editTicketInfo[i].addEventListener("click", function(){
+      let ticketNumber = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let ticketType = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let ticketPrice = editTicketInfo[i].parentNode.previousElementSibling.children[0].value;
+      // alert(ticketPrice);
+
+      let xhrEditTicket = new XMLHttpRequest();
+      xhrEditTicket.onload = function () {
+        ticketInfoEdit = xhrEditTicket.responseText;
+        console.log(ticketInfoEdit);
+        alert('異動成功');
+      }
+    
+      xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);
+      xhrEditTicket.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `ticketNo=${ticketNumber}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
+      xhrEditTicket.send(data_info);
+    })
+  }
+
+
+
+
+
+
+
 
 
   // backNightInfo
