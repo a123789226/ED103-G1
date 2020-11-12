@@ -20,6 +20,7 @@ try{
     $comment-> bindValue(':JOURNO',$_REQUEST['journo']);
     $comment-> bindValue(':WORD',$_REQUEST['word']);
     $comment-> execute();
+    $commentId = $pdo->lastInsertId();
 
     // echo $test[0] , $test[1] , '<br>' , $_REQUEST['RES_MESSAGE_WORD'];
     if($comment->rowCount()==0){
