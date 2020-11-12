@@ -153,79 +153,109 @@ function backendDoFirst(){
   let backTicketOrderxhr = new XMLHttpRequest();
   backTicketOrderxhr.onload = function () {
     backTicketOrderRow = JSON.parse(backTicketOrderxhr.responseText);
-    console.log(backTicketOrderRow);
+    // console.log(backTicketOrderRow.length);
+    let orderHtml = '';
+    for (let i = 0; i < backTicketOrderRow.length; i++) {
+      if (i == 0) {
+        orderHtml += `
+        <div class="col-md-12 mgrTicketOrder word1">
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketOrderNo}</div>
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].memNo}</div>
+          <div class="col-md-4 mgrTitle">${backTicketOrderRow[i].ticketOrderDate}</div>
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketTotalPrice}</div>
+          <div class="col-md-2 mgrTitle mgrStep">View
+            <i class="fa fa-angle-down fa-lg"></i>
+          </div>
+          <div class="mgrOrderDetail mgrStepContent">
+            <div class="col-md-12 mgrOrderDetailForm">
+              <div class="col-md-2 mgrDetailTitle">Item No</div>
+              <div class="col-md-2 mgrDetailTitle">Order No</div>
+              <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+              <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+              <div class="col-md-2 mgrDetailTitle">Total</div>
+            </div>
+            <div class="col-md-12 mgrTicketItem1">
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketItemNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketOrderNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketPerson}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketListPrice}</div>
+            </div> `
+      } else if (backTicketOrderRow[i - 1].ticketOrderNo == backTicketOrderRow[i].ticketOrderNo) {
+        orderHtml += `
+            <div class="col-md-12 mgrTicketItem1">
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketItemNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketOrderNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketPerson}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketListPrice}</div>
+            </div> `
+      } else {
+        orderHtml += `
+          </div>
+        </div>
+        <div class="col-md-12 mgrTicketOrder word1">
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketOrderNo}</div>
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].memNo}</div>
+          <div class="col-md-4 mgrTitle">${backTicketOrderRow[i].ticketOrderDate}</div>
+          <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketTotalPrice}</div>
+          <div class="col-md-2 mgrTitle mgrStep">View
+            <i class="fa fa-angle-down fa-lg"></i>
+          </div>
+          <div class="mgrOrderDetail mgrStepContent">
+            <div class="col-md-12 mgrOrderDetailForm">
+              <div class="col-md-2 mgrDetailTitle">Item No</div>
+              <div class="col-md-2 mgrDetailTitle">Order No</div>
+              <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+              <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+              <div class="col-md-2 mgrDetailTitle">Total</div>
+            </div>
+            <div class="col-md-12 mgrTicketItem1">
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketItemNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketOrderNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketNo}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketPerson}</div>
+              <div class="col-md-2 mgrTick">${backTicketOrderRow[i].ticketListPrice}</div>
+            </div> `
+      }
+      orderHtml += `
+          </div>
+        </div>`
+      document.getElementById('backTicketOrderTable').innerHTML += orderHtml;
+    }
   }
-  backTicketOrderxhr.open("get", "./backTicketOrder.php", false);
+  backTicketOrderxhr.open("get", "./backticket_order.php", false);
   backTicketOrderxhr.send(null);
 
-  let ticketOrderhtml = "";
-  for (let i = 0; i < backTicketOrderRow.length; i++) {
-    ticketOrderhtml += `
-    <tr>
-      <td>${backTicketOrderRow[i].ticketOrderNo}</td>
-      <td>${backTicketOrderRow[i].memNo}</td>
-      <td>${backTicketOrderRow[i].ticketOrderDate}</td>
-      <td>${backTicketOrderRow[i].ticketTotalPrice}</td>
-      <td class="mgrTitle mgrStep">View
-        <i class="fa fa-angle-down fa-lg"></i>
-      </td>
-    </tr>
-    `
-  }
-
-  document.getElementById('backTicketOrderTable').innerHTML = ticketOrderhtml;
+  
 
 
-  // backTicketOrderList
-  // let backTicketOrderListxhr = new XMLHttpRequest();
-  // backTicketOrderListxhr.onload = function () {
-  //   backTicketOrderListRow = JSON.parse(backTicketOrderListxhr.responseText);
-  //   console.log(backTicketOrderListRow);
+
+  // backNightOrder
+  // let backNightOrderxhr = new XMLHttpRequest();
+  // backNightOrderxhr.onload = function () {
+  //   backNightOrderRow = JSON.parse(backNightOrderxhr.responseText);
+  //   console.log(backNightOrderRow);
   // }
-  // backTicketOrderListxhr.open("get", "./backTicketOrderList.php", false);
-  // backTicketOrderListxhr.send(null);
+  // backNightOrderxhr.open("get", "./backNightOrder.php", false);
+  // backNightOrderxhr.send(null);
 
-  // let ticketOrderListhtml = "";
-  // for (let i = 0; i < backTicketOrderListRow.length; i++) {
-  //   ticketOrderListhtml += `
+  // let nightOrderhtml = "";
+  // for (let i = 0; i < backNightOrderRow.length; i++) {
+  //   nightOrderhtml += `
   //   <tr>
-  //     <td>${backTicketOrderListRow[i].ticketItemNo}</td>
-  //     <td>${backTicketOrderListRow[i].ticketOrderNo}</td>
-  //     <td>${backTicketOrderListRow[i].ticketNo}</td>
-  //     <td>${backTicketOrderListRow[i].ticketPerson}</td>
-  //     <td>${backTicketOrderListRow[i].ticketListPrice}</td>
+  //     <td>${backNightOrderRow[i].nightOrderNo}</td>
+  //     <td>${backNightOrderRow[i].memNo}</td>
+  //     <td>${backNightOrderRow[i].nightOrderDate}</td>
+  //     <td>${backNightOrderRow[i].nightTotalPrice}</td>
+  //     <td class="mgrTitle mgrStep">View
+  //       <i class="fa fa-angle-down fa-lg"></i>
+  //     </td>
   //   </tr>
   //   `
   // }
 
-  // document.getElementById('backTicketOrderListTable').innerHTML = ticketOrderListhtml;
-
-
-  // backNightOrder
-  let backNightOrderxhr = new XMLHttpRequest();
-  backNightOrderxhr.onload = function () {
-    backNightOrderRow = JSON.parse(backNightOrderxhr.responseText);
-    console.log(backNightOrderRow);
-  }
-  backNightOrderxhr.open("get", "./backNightOrder.php", false);
-  backNightOrderxhr.send(null);
-
-  let nightOrderhtml = "";
-  for (let i = 0; i < backNightOrderRow.length; i++) {
-    nightOrderhtml += `
-    <tr>
-      <td>${backNightOrderRow[i].nightOrderNo}</td>
-      <td>${backNightOrderRow[i].memNo}</td>
-      <td>${backNightOrderRow[i].nightOrderDate}</td>
-      <td>${backNightOrderRow[i].nightTotalPrice}</td>
-      <td class="mgrTitle mgrStep">View
-        <i class="fa fa-angle-down fa-lg"></i>
-      </td>
-    </tr>
-    `
-  }
-
-  document.getElementById('backNightOrderTable').innerHTML = nightOrderhtml;
+  // document.getElementById('backNightOrderTable').innerHTML = nightOrderhtml;
 
 
 
@@ -658,7 +688,12 @@ $(function(){
 });
 
 // OrderDetail收合
-$("div.mgrSecTab1").on("click",'.mgrStep', function(){
+$("div.mgrSecTab1").on("click",'div.mgrStep', function(){
+  $(this).next().slideToggle();
+  $(this).find('i').toggleClass('rotate');
+});
+
+$("div.mgrStep").on("click", function () {
   $(this).next().slideToggle();
   $(this).find('i').toggleClass('rotate');
 });
