@@ -143,7 +143,7 @@
             <div class="memImgBox">
               <div class="memImgArea">
                 <div class="memImg">
-                  <img src="./image/member/Shinnosuke2.jpg" alt="">
+                  <img src="./image/member/Shinnosuke2.jpg" id="memBigImg">
                 </div>
                 <label for="memPhoto">
                   <input type="file" name="memImg" id="memPhoto" style="display: none;">Edit
@@ -188,7 +188,7 @@
                 <h3>Profile</h3>
                 <button style="width: 250px;" id="edit_profile">Edit Profile</button>
               </div>
-              <div class="memProAll">
+              <div class="memProAll" id="showMem">
                 <div class="memName memProfileContent">
                   <div class="memProTit">Name</div>
                   <div class="memProText">{{name}}</div>
@@ -226,14 +226,14 @@
                 </div>
               </div>
 
-              <!-- <div class="memProAll member_edit">
+              <div class="memProAll member_edit" id="editMem" style="display: none;">
                 <div class="memName memProfileContent">
                   <div class="memProTit">Name</div>
-                  <input class="memProText" v-model='name'>
+                  <div class="memProText">{{name}}</div>
                 </div>
                 <div class="memUsername memProfileContent">
                   <div class="memProTit">Username</div>
-                  <input class="memProText" v-model='id'>
+                  <div class="memProText">{{id}}</div>
                 </div>
                 <div class="memPsw memProfileContent">
                   <div class="memProTit">Password</div>
@@ -241,7 +241,7 @@
                 </div>
                 <div class="memGender memProfileContent">
                   <div class="memProTit">Gender</div>
-                  <input class="memProText" v-model='sex'>
+                  <div class="memProText">{{sex}}</div>
                 </div>
                 <div class="memEmail memProfileContent">
                   <div class="memProTit">Email</div>
@@ -256,10 +256,10 @@
                   <input class="memProText" v-model='birth'>
                 </div>
                 <div class="profile_btn">
-                  <button>Confirm</button>
-                  <button>Cancel</button>
+                  <button id="edit_confirm" v-on:click="edit_confirm">Confirm</button>
+                  <button id="edit_cancel">Cancel</button>
                 </div>
-              </div> -->
+              </div>
 
             </div>
           
@@ -292,154 +292,32 @@
                     <div class="mem_ana col-4 col-sm-2">#dolphin</div>
                     <div class="mem_ana col-2 col-sm-2">
                       <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
+                        <!-- <i class="fas fa-pen"></i>
+                        <i class="fas fa-trash-alt"></i> -->
                       </div>
                     </div>
                   </div>
-                  <div class="memBlogContent memBlogCard row">
+                  <!-- <div class="memBlogContent memBlogCard row">
                     <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
                     <div class="mem_ana col-6 col-sm-6">That's Great!</div>
                     <div class="mem_ana col-4 col-sm-2">#whale</div>
                     <div class="mem_ana col-2 col-sm-2">
                       <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
                       </div>
                     </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlog1.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">That's Great!</div>
-                    <div class="mem_ana col-4 col-sm-2">#whale</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
+                  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
                 <div class="memBlogTable memBlogTab2 memBlogTab container">
                   <div class="memBlogForm memBlogCard row">
@@ -458,16 +336,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="memBlogContent memBlogCard row">
-                    <div class="mem_ana col-2 col-sm-2"><img src="./image/member/memBlogseaturtle.jpg" alt=""></div>
-                    <div class="mem_ana col-6 col-sm-6">Funny!</div>
-                    <div class="mem_ana col-4 col-sm-2">#seaturtle</div>
-                    <div class="mem_ana col-2 col-sm-2">
-                      <div class="memBlogClick">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -482,43 +351,14 @@
                   <div class="memBlogForm memCard row">
                     <div class="memFormTitle col-3 col-sm-3">Date</div>
                     <div class="memFormTitle col-4 col-sm-4 col-lg-3">Recipient</div>
-                    <div class="memFormTitle col-5 col-sm-5 col-lg-6">Address</div>
+                    <div class="memFormTitle col-5 col-sm-5 col-lg-6">Email</div>
                   </div>
                   <div class="memBlogContent memCard row">
                     <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
                     <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
                     <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
                   </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
-                  <div class="memBlogContent memCard row">
-                    <div class="mem_ana col-3 col-sm-2">2020-10-21</div>
-                    <div class="mem_ana col-4 col-sm-4 col-lg-3">Shinnosuke</div>
-                    <div class="mem_ana col-5 col-sm-5 col-lg-6">No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320, Taiwan</div>
-                  </div>
+
 
                 </div>
               </div>
@@ -543,126 +383,6 @@
                     <div class="col-3 col-sm-3 mem_ana">NT$2,000</div>
                     <div class="col-3 col-sm-3 mem_ana">Succeed</div>
                   </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-10-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">seaturtle</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
-                  <div class="row memBlogContent memAdoptCard">
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-21</div>
-                    <div class="col-3 col-sm-3 mem_ana">whale</div>
-                    <div class="col-3 col-sm-3 mem_ana">NT$1,500</div>
-                    <div class="col-3 col-sm-3 mem_ana">Succeed</div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -675,7 +395,7 @@
               <ul>
                 <div class="memSpanBlog">
                   <div>
-                    <a href="#" data-target="memBlogTab1" class="memBlogTab -on">Ticket</a>
+                    <a href="#" data-target="memOrderTab1" class="memBlogTab -on">Ticket</a>
                   </div>
                   <div>
                     <a href="#" data-target="memBlogTab2" class="memBlogTab span2">Night</a>
@@ -686,7 +406,7 @@
               <div class="memOrderAll">
 
                 <!-- ticket part -->
-                <div class="memOrderTable memBlogTab1 memBlogTab -on container">
+                <div class="memOrderTable memOrderTab1 memBlogTab -on container">
                   <!-- Ticket Title -->
                   <div class="memBlogForm memOrderCard row">
                     <div class="col-2 col-sm-2 memFormTitle">Order No.</div>
@@ -724,126 +444,7 @@
                       </div>
                     </div>
                   </div>
-                  <!-- ticket 002 -->
-                  <div class="memBlogContent memOrderCard row">
-                    <div class="col-2 col-sm-2 mem_ana">002</div>
-                    <div class="col-4 col-sm-4 mem_ana">$<span>90</span></div>
-                    <div class="col-4 col-sm-4 mem_ana">2020-10-21</div>
-                    <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
-                      <i class="fa fa-angle-down fa-lg"></i>
-                    </div>
 
-                    <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
-                      <div class="row memBlogForm memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Adult</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>60</span></div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Child</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>15</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ticket 003 -->
-                  <div class="memBlogContent memOrderCard row">
-                    <div class="col-2 col-sm-2 mem_ana">003</div>
-                    <div class="col-4 col-sm-4 mem_ana">$<span>90</span></div>
-                    <div class="col-4 col-sm-4 mem_ana">2020-10-21</div>
-                    <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
-                      <i class="fa fa-angle-down fa-lg"></i>
-                    </div>
-
-                    <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
-                      <div class="row memBlogForm memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Adult</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>60</span></div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Child</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>15</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ticket 004 -->
-                  <div class="memBlogContent memOrderCard row">
-                    <div class="col-2 col-sm-2 mem_ana">004</div>
-                    <div class="col-4 col-sm-4 mem_ana">$<span>90</span></div>
-                    <div class="col-4 col-sm-4 mem_ana">2020-10-21</div>
-                    <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
-                      <i class="fa fa-angle-down fa-lg"></i>
-                    </div>
-
-                    <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
-                      <div class="row memBlogForm memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Adult</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>60</span></div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Child</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>15</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ticket 005 -->
-                  <div class="memBlogContent memOrderCard row">
-                    <div class="col-2 col-sm-2 mem_ana">005</div>
-                    <div class="col-4 col-sm-4 mem_ana">$<span>90</span></div>
-                    <div class="col-4 col-sm-4 mem_ana">2020-10-21</div>
-                    <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
-                      <i class="fa fa-angle-down fa-lg"></i>
-                    </div>
-
-                    <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
-                      <div class="row memBlogForm memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Adult</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>60</span></div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Child</div>
-                        <div class="col-3 col-sm-3 memTick">2</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>15</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>30</span></div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <!-- overnight part -->
@@ -887,31 +488,7 @@
                       </div>
                     </div>
                   </div>
-                  <!-- overnight 002 -->
-                  <div class="memBlogContent memOrderCard row">
-                    <div class="col-2 col-sm-2 mem_ana">002</div>
-                    <div class="col-3 col-sm-3 mem_ana">2020-11-30</div>
-                    <div class="col-2 col-sm-2 mem_ana">$<span>400</span></div>
-                    <div class="col-3 col-sm-3 mem_ana">2020-10-25</div>
-                    <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
-                      <i class="fa fa-angle-down fa-lg"></i>
-                    </div>
 
-                    <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
-                      <div class="row memBlogForm memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memFormTitle">AreaNo.</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                        <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                      </div>
-                      <div class="row memBlogContent memOrderCardDetail">
-                        <div class="col-3 col-sm-3 memTick">Whale</div>
-                        <div class="col-3 col-sm-3 memTick">4</div>
-                        <div class="col-3 col-sm-3 memTick">$<span>100</span></div>
-                        <div class="col-3 col-sm-3 memTick">$<span>400</span></div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <!-- <div class="memBlogTable memBlogTab2 memBlogTab">

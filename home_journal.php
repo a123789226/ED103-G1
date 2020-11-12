@@ -4,7 +4,6 @@ try {
 require("connect_aqua.php");
 
 $sql = "select * from journal where aquaNo = 1 order by jourDate";
-// $sql = "select c.aquaNo, c.journalTitle, c.journalContent, c.jourPic1, c.jourPic2, c.jourPic3, editDate from journal j  join journal_content c on (j.aquaNo = c.aquaNo) where j.aquaNo = 1 order by editDate;";
 $journal = $pdo->prepare($sql);
 $journal->execute();
   
@@ -20,40 +19,12 @@ $journal->execute();
         $i = 0;
         foreach($journalRows as $journalRow)
         {
-
-        // $aquaNo = $journalRow["aquaNo"];
-        // $journalTitle = $journalRow["journalTitle"];
-        // $journalContent = $journalRow["journalContent"];
-        // $editDate = $journalRow["editDate"];
-        // echo "$aquaNo<br>";
-        // echo "$journalTitle<br>";
-        // echo "$journalContent<br>";
-        // echo "$editDate<br>";
-
         $result[$i] = array("aquaNo"=>$journalRow["aquaNo"], "jourStory"=>$journalRow["jourStory"],
             "jourContent"=>$journalRow["jourContent"], "jourPic1"=>$journalRow["jourPic1"],"jourPic2"=>$journalRow["jourPic2"],"jourPic3"=>$journalRow["jourPic3"],"jourDate"=>$journalRow["jourDate"],);
             $i++;
 
       }
-            echo  json_encode($result);;
-
-
-
-
-
-
-
-    // $result = array("aquaNo"=>$journalRow["aquaNo"],
-    //                 "journalTitle"=>$journalRow["journalTitle"],
-    //                 "journalContent"=>$journalRow["journalContent"],
-    //                 "jourPic1"=>$journalRow["jourPic1"],
-    //                 "jourPic2"=>$journalRow["jourPic2"],
-    //                 "jourPic3"=>$journalRow["jourPic3"],
-    //                 "editDate"=>$journalRow["editDate"]);
-    
-    // $json = json_encode($result);
-    // // 送出登入者的資料
-    // echo $json;
+            echo  json_encode($result);
   }
 } catch (PDOException $e) {  
 	$error = array("errorMsg"=>$e->getMessage());
