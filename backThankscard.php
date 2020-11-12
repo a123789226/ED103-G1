@@ -1,7 +1,7 @@
 <?php 
 	try {
 		require("./connectAqua.php");
-		$sql = "select * from thankscard";
+		$sql = "select t.cardNo, t.memNo, m.memName, m.memEmail, t.cardFile, t.cardStatus from member m JOIN thankscard t ON t.memNo = m.memNo";
 		$thankscard = $pdo->query($sql);
 		$thankscard->execute();
 		

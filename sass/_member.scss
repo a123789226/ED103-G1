@@ -233,10 +233,15 @@
     }
     .memAllTitle{
       display: flex;
-      flex-flow: column;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
       h3 {
         @include main_title(#333333);
         margin: 20px 0;
+      }
+      button{
+        @include btn50Green();
       }
     }
 
@@ -841,5 +846,18 @@
         }
       }
     }
+  }
+}
+
+
+
+//profile
+.profile_btn{
+  text-align: center;
+  #edit_confirm{
+    @include btn36Yellow();
+  }
+  #edit_cancel{
+    @include btn36NoneBlack();
   }
 }

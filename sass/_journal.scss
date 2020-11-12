@@ -270,13 +270,15 @@ body {
 }
 
 .jourBookRight {
-  width: 93%;
+  // width: 93%;
+  background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
+
   display: inline-block;
   // padding-bottom: 120px;
-  border-radius: 0 6px 6px 0;
+  border-radius: 3px 10px 10px 3px;
   height: 100%;
-  // background-image: url("../image/journal/journal_element/jourcover.svg");
-  background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+  // background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
+  // background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
   // background: linear-gradient(45deg, #6d4a03 1%, #aa7304 20%, #f2a306 50%, #aa7304 80%, #6d4a03 99%);
 }
 
@@ -322,7 +324,7 @@ a.jourBookName {
   margin: 0 auto;
   text-align: left;
   width: 80%;
-  padding: 20px 10px;
+  padding: 20px 10px 20px 20px;
   // border: 3px solid white;
 
 
@@ -440,9 +442,10 @@ a.jourBookName {
   overflow: hidden;
 
   @media screen and (max-width: 676px) {
+    width: 100%;
     position: absolute;
-    top: 28%;
-    left: 50%;
+    top: 50%;
+    left: -50%;
     width: 100%;
   }
 }
@@ -493,9 +496,11 @@ div.jourLightBox.-on {
   // border: 5px solid red;
 
   @media screen and (max-width: 676px) {
+    width: 100%;
+
     position: absolute;
-    top: 28%;
-    left: 50%;
+    top: 50%;
+    left: -50%;
   }
 }
 
@@ -1120,6 +1125,10 @@ div.jourLightBox.-on {
 .jourLightBox {
   width: 80%;
   margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .jourOpenBookSection {
@@ -1143,6 +1152,7 @@ div.jourLightBox.-on {
 }
 
 #flipbook2 {
+  display: block;
   width: 80%;
   background-color: none;
   width: 800px;
@@ -1150,6 +1160,10 @@ div.jourLightBox.-on {
   // border: 3px solid red;
   margin: 20px auto !important;
   text-align: center;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .even {
@@ -1169,7 +1183,8 @@ div.jourLightBox.-on {
 #demobook .p1,
 #demobook1 .p1,
 #demobook2 .p1,
-#demobook3 .p1 {
+#demobook3 .p1,
+.demobook .p1 {
   background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
 
 }
@@ -1463,55 +1478,314 @@ div.jourLightBox.-on {
 
 
 
-// jourbook RWD
-#jourSliderBoard {
-  /*div*/
-  border: 1px solid #ccc;
-  width: 60%;
-  height: 550px;
-  margin: 100px auto;
+// jourbook (lightbox) RWD
 
-  overflow: hidden;
-}
-
-#jourContent {
-  /*ul*/
-  position: relative;
-}
-
-#jourContent li {
-  /*li*/
-  float: left;
-}
-
-#jourBookPageButton {
-  /* border: 1px solid red; */
-  text-align: center;
-  width: 100%;
-  height: 50px;
-}
-
-#jourBookPageButton li {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ccc;
-
-  display: inline-block;
-  margin: 5px;
-}
-
-#jourBookPageButton li.clickMe {
-  background: #888;
+@media screen and (min-width: 768px) {
+  .jourOpenBookSectionRwd {
+    display: none;
+  }
 }
 
 
+@media screen and (max-width: 767px) {
+
+  #jourSliderBoard {
+    /*div*/
+    /* border: 1px solid blue; */
+    /* width: 400px;
+    height: 600px; */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  #jourContent {
+    /*ul*/
+    position: relative;
+    /* border: 1px solid blue; */
+
+  }
+
+  #jourContent li {
+    /*li*/
+    float: left;
+
+  }
+
+  /* button */
+  #jourContentButton {
+    border: 1px solid red;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+  }
+
+  #jourContentButton li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+
+    display: inline-block;
+    margin: 5px;
+  }
+
+  #jourContentButton li.clickMe {
+    background: #888;
+  }
+
+  .jourOpenBookSectionRwd {
+    width: 100%;
+    margin: 50px auto !important;
+    border: 3px solid green;
+    text-align: center;
+    display: block;
+  }
+
+  #flipbook2Rwd {
+    display: block;
+    background-color: none;
+    width: 320px;
+    height: 480px;
+    /* border: 3px solid yellow; */
+    margin: 20px auto !important;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  #flipbook2Rwd .jourPage {
+    width: 360px;
+    /* height: 540px; */
+    background-color: white;
+    line-height: 1.2;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(to left, lightgray .5%, #fff 55%, lightgray 99%);
+
+  }
 
 
 
+  #flipbook2Rwd .jourCover {
+    /* background:s linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important; */
+
+  }
 
 
 
+  #flipbook2Rwd .jourOpenBookRight {
+    width: 100%;
+    /* height: 600px; */
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+    /* background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%); */
+    /* background-color: lightcoral; */
+    border-radius: 10px;
+    padding: 15px 0;
+  }
+
+  #flipbook2Rwd .jourPagePhotoArea {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 260px;
+    padding: 0 15px;
+    border: 1px solid orange;
+    background-color: lightgreen;
+  }
+
+  #flipbook2Rwd .jourBookPhoto {
+    width: 60%;
+    /* height: 240px; */
+    margin: 20px auto 10px auto;
+    /* overflow: hidden; */
+  }
+
+  #flipbook2Rwd .jourBookPhoto img {
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0px 2px 6px #555;
+
+    /* border: 2px solid white; */
+  }
+
+
+
+  #flipbook2Rwd .jourBookName {
+    margin: 0 auto;
+    text-align: center;
+    /* @include sub_title($keyWhite); */
+  }
+
+
+
+  #flipbook2Rwd .jourBookText {
+    /* @include text($keyWhite); */
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: left;
+    width: 80%;
+    padding: 20px 10px;
+    /* border: 3px solid white; */
+  }
+
+  #flipbook2Rwd table {
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: none;
+  }
+
+
+  #flipbook2Rwd tr {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    font-size: 16px;
+    /* border: 3px solid white; */
+  }
+
+
+  #flipbook2Rwd td {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+
+  #flipbook2Rwd .jourAquaStory {
+    margin: 0 auto;
+    padding: 5px 25px;
+  }
+
+  #flipbook2Rwd .jourAquaStory h5 {
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  #flipbook2Rwd .jourAquaStory p {
+    line-height: 20px;
+  }
+
+
+  #flipbook2Rwd .jourPageContent {
+    width: 100%;
+    height: 600px;
+
+    margin: 0 auto;
+    text-align: center;
+    /* border: 2px solid red; */
+    display: block;
+  }
+
+  #flipbook2Rwd .jourPageContent h4 {
+    /* @include sub_title($keyBlack); */
+    padding: 5px 0;
+    display: block;
+    /* border: 2px solid red */
+  }
+
+  #flipbook2Rwd .jourPagePhotoArea1 {
+    /* display: block; */
+    width: 90%;
+    height: 320px;
+    padding: 0px;
+    /* border: 1px solid red; */
+    /* background-color: lightblue; */
+    margin: 0px auto;
+  }
+
+  #flipbook2Rwd .jourPagePhotoLeft1 {
+    width: 100%;
+    padding: 0px;
+    height: 180px;
+    display: block;
+    margin: 0px auto 10px auto;
+    /* border: 1px solid blue; */
+    position: relative;
+
+  }
+
+  .jourPagePhotoLeft img,
+  #flipbook2Rwd .jourPagePhotoLeft1 img {
+    width: 100%;
+    margin: 0px auto;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border-radius: 6px;
+  }
+
+
+  #flipbook2Rwd .jourPagePhotoRightInner1 {
+    width: 155px;
+    /* border: 3px solid green; */
+    position: relative;
+    border-radius: 6px;
+  }
+
+
+
+  #flipbook2Rwd .jourPagePhotoRight1 {
+    width: 100%;
+    height: 120px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .jourPagePhotoRightInner img,
+  #flipbook2Rwd .jourPagePhotoRightInner1 img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  #flipbook2Rwd .jourPageText1 {
+    /* border: 2px solid green; */
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  #flipbook2Rwd .jourPageText1 h4 {
+    /* @include sub_title($keyBlack); */
+  }
+
+  #flipbook2Rwd .jourPageText1 p {
+    /* border: 2px solid green; */
+    margin: 0 auto;
+    /* @include text($textBlack); */
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  #flipbook2Rwd .jourLastPage {
+    /* background: linear-gradient(to Left, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important; */
+    background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+    border: 2px solid blue;
+
+  }
+
+
+  #flipbook2Rwd .jourLastPage {
+    width: 100%;
+    height: 100%;
+  }
+}
 
 
 

@@ -80,26 +80,26 @@ function backendDoFirst(){
     aquahtml += `
     <tr>
       <td>${backAquaRow[i].aquaNo}</td>
-      <td>${backAquaRow[i].aquaType}</td>
-      <td>${backAquaRow[i].aquaName}</td>
-      <td>${backAquaRow[i].aquaAge}</td>
-      <td>${backAquaRow[i].aquaSex}</td>
-      <td>${backAquaRow[i].arriveDate}</td>
-      <td>${backAquaRow[i].rescueLoc}</td>
-      <td>${backAquaRow[i].jourStory}</td>
-      <td>${backAquaRow[i].recoverStatus}</td>
-      <td>${backAquaRow[i].releaseDate}</td>
-      <td>${backAquaRow[i].releaseLoc}</td>
-      <td>${backAquaRow[i].aquaPic}</td>
-      <td>${backAquaRow[i].adoptTotalNum}</td>
-      <td>${backAquaRow[i].adoptTotalAmt}</td>
-      <td>${backAquaRow[i].nameStatus}</td>
-      <td>${backAquaRow[i].nameStart}</td>
-      <td>${backAquaRow[i].nameEnd}</td>
-      <td>${backAquaRow[i].voteStart}</td>
-      <td>${backAquaRow[i].voteEnd}</td>
+      <td><input type="text" value="${backAquaRow[i].aquaType}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaName}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaAge}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaSex}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].arriveDate}" size="15"></td>
+      <td><input type="text" value="${backAquaRow[i].rescueLoc}" size="10"></td>
+      <td><textarea rows="2" cols="20">${backAquaRow[i].jourStory}</textarea></td>
+      <td><input type="text" value="${backAquaRow[i].recoverStatus}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].releaseDate}" size="15"></td>
+      <td><input type="text" value="${backAquaRow[i].releaseLoc}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].aquaPic}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalNum}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalAmt}" size="5"></td>
+      <td><input type="text" value="${backAquaRow[i].nameStatus}" size="3"></td>
+      <td><input type="date" value="${backAquaRow[i].nameStart}" size="15"></td>
+      <td><input type="date" value="${backAquaRow[i].nameEnd}" size="15"</td>
+      <td><input type="date" value="${backAquaRow[i].voteStart}" size="15"</td>
+      <td><input type="date" value="${backAquaRow[i].voteEnd}" size="15"</td>
       <td>
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editAqua"></i>
       </td>
     </tr> 
     `
@@ -108,31 +108,129 @@ function backendDoFirst(){
   document.getElementById('backAquaTable').innerHTML = aquahtml;
 
 
-  // backTicketOrder
-  // let backTicketOrderxhr = new XMLHttpRequest();
-  // backTicketOrderxhr.onload = function () {
-  //   backTicketOrderRow = JSON.parse(backTicketOrderxhr.responseText);
-  //   console.log(backTicketOrderRow);
-  // }
-  // backTicketOrderxhr.open("get", "./backTicketOrder.php", false);
-  // backTicketOrderxhr.send(null);
+  // backAqua 修改
+  let editAqua = document.querySelectorAll("i.editAqua");
+  for (let i = 0; i < editAqua.length; i++) {
+    editAqua[i].addEventListener("click", function () {
+      let aquaNo = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let aquaType = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaName = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaAge = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaSex = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let arriveDate = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let rescueLoc = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourStory = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let recoverStatus = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let releaseDate = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let releaseLoc = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let aquaPic = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let adoptTotalNum = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let adoptTotalAmt = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameStatus = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameStart = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let nameEnd = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let voteStart = editAqua[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let voteEnd = editAqua[i].parentNode.previousElementSibling.children[0].value;
+      // alert(adoptTotalNum);
 
-  // let ticketOrderhtml = "";
-  // for (let i = 0; i < backTicketOrderRow.length; i++) {
-  //   ticketOrderhtml += `
-  //   <div class="mgrTicketOrder word1">
-  //     <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketOrderNo}</div>
-  //     <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].memNo}</div>
-  //     <div class="col-md-4 mgrTitle">${backTicketOrderRow[i].ticketOrderDate}</div>
-  //     <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketTotalPrice}</div>
-  //     <div class="col-md-2 mgrTitle mgrStep">View
-  //       <i class="fa fa-angle-down fa-lg"></i>
-  //     </div>
-  //   </div>
+      let xhrEditAqua = new XMLHttpRequest();
+      xhrEditAqua.onload = function () {
+        AquaEdit = xhrEditAqua.responseText;
+        console.log(AquaEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditAqua.open("Post", "EditbackAqua.php", true);
+      xhrEditAqua.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `aquaNo=${aquaNo}&aquaType=${aquaType}&aquaName=${aquaName}&aquaAge=${aquaAge}&aquaSex=${aquaSex}&arriveDate=${arriveDate}&rescueLoc=${rescueLoc}&jourStory=${jourStory}&recoverStatus=${recoverStatus}&releaseDate=${releaseDate}&releaseLoc=${releaseLoc}&aquaPic=${aquaPic}&adoptTotalNum=${adoptTotalNum}&adoptTotalAmt=${adoptTotalAmt}&nameStatus=${nameStatus}&nameStart=${nameStart}&nameEnd=${nameEnd}&voteStart=${voteStart}&voteEnd=${voteEnd}`;
+      xhrEditAqua.send(data_info);
+    })
+  }
+
+
+  // backTicketOrder
+  let backTicketOrderxhr = new XMLHttpRequest();
+  backTicketOrderxhr.onload = function () {
+    backTicketOrderRow = JSON.parse(backTicketOrderxhr.responseText);
+    console.log(backTicketOrderRow);
+  }
+  backTicketOrderxhr.open("get", "./backTicketOrder.php", false);
+  backTicketOrderxhr.send(null);
+
+  let ticketOrderhtml = "";
+  for (let i = 0; i < backTicketOrderRow.length; i++) {
+    ticketOrderhtml += `
+    <tr>
+      <td>${backTicketOrderRow[i].ticketOrderNo}</td>
+      <td>${backTicketOrderRow[i].memNo}</td>
+      <td>${backTicketOrderRow[i].ticketOrderDate}</td>
+      <td>${backTicketOrderRow[i].ticketTotalPrice}</td>
+      <td class="mgrTitle mgrStep">View
+        <i class="fa fa-angle-down fa-lg"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backTicketOrderTable').innerHTML = ticketOrderhtml;
+
+
+  // backTicketOrderList
+  // let backTicketOrderListxhr = new XMLHttpRequest();
+  // backTicketOrderListxhr.onload = function () {
+  //   backTicketOrderListRow = JSON.parse(backTicketOrderListxhr.responseText);
+  //   console.log(backTicketOrderListRow);
+  // }
+  // backTicketOrderListxhr.open("get", "./backTicketOrderList.php", false);
+  // backTicketOrderListxhr.send(null);
+
+  // let ticketOrderListhtml = "";
+  // for (let i = 0; i < backTicketOrderListRow.length; i++) {
+  //   ticketOrderListhtml += `
+  //   <tr>
+  //     <td>${backTicketOrderListRow[i].ticketItemNo}</td>
+  //     <td>${backTicketOrderListRow[i].ticketOrderNo}</td>
+  //     <td>${backTicketOrderListRow[i].ticketNo}</td>
+  //     <td>${backTicketOrderListRow[i].ticketPerson}</td>
+  //     <td>${backTicketOrderListRow[i].ticketListPrice}</td>
+  //   </tr>
   //   `
   // }
 
-  // document.getElementById('backTicketOrderTable').innerHTML = ticketOrderhtml;
+  // document.getElementById('backTicketOrderListTable').innerHTML = ticketOrderListhtml;
+
+
+  // backNightOrder
+  let backNightOrderxhr = new XMLHttpRequest();
+  backNightOrderxhr.onload = function () {
+    backNightOrderRow = JSON.parse(backNightOrderxhr.responseText);
+    console.log(backNightOrderRow);
+  }
+  backNightOrderxhr.open("get", "./backNightOrder.php", false);
+  backNightOrderxhr.send(null);
+
+  let nightOrderhtml = "";
+  for (let i = 0; i < backNightOrderRow.length; i++) {
+    nightOrderhtml += `
+    <tr>
+      <td>${backNightOrderRow[i].nightOrderNo}</td>
+      <td>${backNightOrderRow[i].memNo}</td>
+      <td>${backNightOrderRow[i].nightOrderDate}</td>
+      <td>${backNightOrderRow[i].nightTotalPrice}</td>
+      <td class="mgrTitle mgrStep">View
+        <i class="fa fa-angle-down fa-lg"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backNightOrderTable').innerHTML = nightOrderhtml;
+
+
+
+
+
 
 
   // backTicketInfo
@@ -149,16 +247,48 @@ function backendDoFirst(){
     ticketInfohtml += `
     <tr>
       <td>${backTicketInfoRow[i].ticketNo}</td>
-      <td>${backTicketInfoRow[i].ticketType}</td>
-      <td>${backTicketInfoRow[i].ticketPrice}</td>
+      <td><input type="text" value="${backTicketInfoRow[i].ticketType}"></td>
+      <td><input type="text" value="${backTicketInfoRow[i].ticketPrice}"></td>
       <td>        
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editTicketInfo"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backTicketInfoTable').innerHTML = ticketInfohtml;
+
+
+  // backTicketInfo 修改
+  let editTicketInfo = document.querySelectorAll("i.editTicketInfo");
+  for (let i = 0; i < editTicketInfo.length; i++){
+    editTicketInfo[i].addEventListener("click", function(){
+      let ticketNo = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let ticketType = editTicketInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let ticketPrice = editTicketInfo[i].parentNode.previousElementSibling.children[0].value;
+      // alert(ticketPrice);
+
+      let xhrEditTicket = new XMLHttpRequest();
+      xhrEditTicket.onload = function () {
+        ticketInfoEdit = xhrEditTicket.responseText;
+        console.log(ticketInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+    
+      xhrEditTicket.open("Post", "EditbackTicketInfo.php", true);
+      xhrEditTicket.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `ticketNo=${ticketNo}&ticketType=${ticketType}&ticketPrice=${ticketPrice}`;
+      xhrEditTicket.send(data_info);
+    })
+  }
+
+
+
+
+
+
+
 
 
   // backNightInfo
@@ -212,11 +342,94 @@ function backendDoFirst(){
   document.getElementById('backAdoptTable').innerHTML = adopthtml;
 
 
+  // backJournal
+  let backJournalxhr = new XMLHttpRequest();
+  backJournalxhr.onload = function () {
+    backJournalRow = JSON.parse(backJournalxhr.responseText);
+    console.log(backJournalRow);
+  }
+  backJournalxhr.open("get", "./backJournal.php", false);
+  backJournalxhr.send(null);
+
+  let journalhtml = "";
+  for (let i = 0; i < backJournalRow.length; i++) {
+    journalhtml += `
+    <tr>
+      <td>${backJournalRow[i].jourNo}</td>
+      <td>${backJournalRow[i].aquaNo}</td>
+      <td>${backJournalRow[i].jourStory}</td>
+      <td>${backJournalRow[i].jourContent}</td>
+      <td>${backJournalRow[i].jourPic1}</td>
+      <td>${backJournalRow[i].jourPic2}</td>
+      <td>${backJournalRow[i].jourPic3}</td>
+      <td>${backJournalRow[i].jourDate}</td>
+      <td>
+        <i class="fas fa-pen"></i>
+      </td>
+</tr>
+    `
+  }
+
+  document.getElementById('backJournalTable').innerHTML = journalhtml;
 
 
+  // backJournalMsg
+  let backJournalMsgxhr = new XMLHttpRequest();
+  backJournalMsgxhr.onload = function () {
+    backJournalMsgRow = JSON.parse(backJournalMsgxhr.responseText);
+    console.log(backJournalMsgRow);
+  }
+  backJournalMsgxhr.open("get", "./backJournalMsg.php", false);
+  backJournalMsgxhr.send(null);
+
+  let journalMsghtml = "";
+  for (let i = 0; i < backJournalMsgRow.length; i++) {
+    journalMsghtml += `
+    <tr>
+      <td>${backJournalMsgRow[i].msgNo}</td>
+      <td>${backJournalMsgRow[i].memNo}</td>
+      <td>${backJournalMsgRow[i].jourNo}</td>
+      <td>${backJournalMsgRow[i].msgContent}</td>
+      <td>${backJournalMsgRow[i].msgTime}</td>
+      <td>${backJournalMsgRow[i].msgStatus}</td>
+      <td>
+        <i class="fas fa-pen"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backJournalMsgTable').innerHTML = journalMsghtml;
 
 
+  // backJournalMsgRep
+  let backJournalMsgRepxhr = new XMLHttpRequest();
+  backJournalMsgRepxhr.onload = function () {
+    backJournalMsgRepRow = JSON.parse(backJournalMsgRepxhr.responseText);
+    console.log(backJournalMsgRepRow);
+  }
+  backJournalMsgRepxhr.open("get", "./backJournalMsgRep.php", false);
+  backJournalMsgRepxhr.send(null);
 
+  let journalMsgRephtml = "";
+  for (let i = 0; i < backJournalMsgRepRow.length; i++) {
+    journalMsgRephtml += `
+    <tr>
+      <td>${backJournalMsgRepRow[i].msgReprtNo}</td>
+      <td>${backJournalMsgRepRow[i].memNo}</td>
+      <td>${backJournalMsgRepRow[i].jourNo}</td>
+      <td>${backJournalMsgRepRow[i].msgNo}</td>
+      <td>${backJournalMsgRepRow[i].msgReportStatus}</td>
+      <td>${backJournalMsgRepRow[i].msgReportReason}</td>
+      <td>${backJournalMsgRepRow[i].msgReportDate}</td>
+      <td>
+        <i class="fas fa-pen"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backJournalMsgRepTable').innerHTML = journalMsgRephtml;
 
 
   // backThankscard
@@ -237,12 +450,7 @@ function backendDoFirst(){
       <td>${backThankscardRow[i].memName}</td>
       <td>${backThankscardRow[i].memEmail}</td>
       <td>${backThankscardRow[i].cardFile}</td>
-      <td>
-        <select>
-          <option value="1">已分享</option>
-          <option value="2">未分享</option>
-        </select>
-      </td>
+      <td>${backThankscardRow[i].cardStatus}</td>
       <td>        
         <a href="#">Resend</a>
       </td>
@@ -254,38 +462,91 @@ function backendDoFirst(){
 
 
   // backBlog
-  // let bacBlogxhr = new XMLHttpRequest();
-  // bacBlogxhr.onload = function () {
-  //   backBlogRow = JSON.parse(bacBlogxhr.responseText);
-  //   console.log(backBlogRow);
-  // }
-  // bacBlogxhr.open("get", "./backBlog.php", false);
-  // bacBlogxhr.send(null);
+  let backBlogxhr = new XMLHttpRequest();
+  backBlogxhr.onload = function () {
+    backBlogRow = JSON.parse(backBlogxhr.responseText);
+    console.log(backBlogRow);
+  }
+  backBlogxhr.open("get", "./backBlog.php", false);
+  backBlogxhr.send(null);
 
-  // let bloghtml = "";
-  // for (let i = 0; i < backBlogRow.length; i++) {
-  //   bloghtml += `
-  //   <tr>
-  //     <td>${backBlogRow[i].nameNo}</td>
-  //     <td>${backBlogRow[i].memNo}</td>
-  //     <td>${backBlogRow[i].aquaNo}</td>
-  //     <td>${backBlogRow[i].nomName}</td>
-  //     <td>${backBlogRow[i].votedNum}</td>
-  //     <td>
-  //       <select>
-  //         <option value="1">Succeeded</option>
-  //         <option value="2">Reject</option>
-  //       </select>
-  //     </td>
-  //     <td>
-  //       <i class="fas fa-check-circle"></i>
-  //       <i class="fas fa-times-circle"></i>
-  //     </td>
-  //   </tr>
-  //   `
-  // }
+  let bloghtml = "";
+  for (let i = 0; i < backBlogRow.length; i++) {
+    bloghtml += `
+    <tr>
+      <td>${backBlogRow[i].blogNo}</td>
+      <td>${backBlogRow[i].memNo}</td>
+      <td>${backBlogRow[i].blogTitle}</td>
+      <td>${backBlogRow[i].blogPic}</td>
+      <td>${backBlogRow[i].blogContent1}</td>
+      <td>${backBlogRow[i].blogPic1}</td>
+      <td>${backBlogRow[i].blogContent2}</td>
+      <td>${backBlogRow[i].blogPic2}</td>
+      <td>${backBlogRow[i].blogTime}</td>
+      <td>${backBlogRow[i].blogMark}</td>
+      <td>${backBlogRow[i].blogTags}</td>
+      <td>${backBlogRow[i].blogStatus}</td>
+      <td>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-times-circle"></i>
+      </td>
+    </tr>
+    `
+  }
 
-  // document.getElementById('backBlogTable').innerHTML = bloghtml;
+  document.getElementById('backBlogTable').innerHTML = bloghtml;
+
+
+  // backBlogReport
+  let backBlogRepxhr = new XMLHttpRequest();
+  backBlogRepxhr.onload = function () {
+    backBlogRepRow = JSON.parse(backBlogRepxhr.responseText);
+    console.log(backBlogRepRow);
+  }
+  backBlogRepxhr.open("get", "./backBlogReport.php", false);
+  backBlogRepxhr.send(null);
+
+  let blogRephtml = "";
+  for (let i = 0; i < backBlogRepRow.length; i++) {
+    blogRephtml += `
+    <tr>
+      <td>${backBlogRepRow[i].blogReportNo}</td>
+      <td>${backBlogRepRow[i].blogNo}</td>
+      <td>${backBlogRepRow[i].memNo}</td>
+      <td>${backBlogRepRow[i].blogReportReason}</td>
+      <td>${backBlogRepRow[i].blogReportStatus}</td>
+      <td>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-times-circle"></i>
+      </td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backBlogRepTable').innerHTML = blogRephtml;
+
+
+  // backBlogMark
+  let backBlogMarkxhr = new XMLHttpRequest();
+  backBlogMarkxhr.onload = function () {
+    backBlogMarkRow = JSON.parse(backBlogMarkxhr.responseText);
+    console.log(backBlogMarkRow);
+  }
+  backBlogMarkxhr.open("get", "./backBlogMark.php", false);
+  backBlogMarkxhr.send(null);
+
+  let blogMarkhtml = "";
+  for (let i = 0; i < backBlogMarkRow.length; i++) {
+    blogMarkhtml += `
+    <tr>
+      <td>${backBlogMarkRow[i].blogMarkNo}</td>
+      <td>${backBlogMarkRow[i].memNo}</td>
+      <td>${backBlogMarkRow[i].blogNo}</td>
+    </tr>
+    `
+  }
+
+  document.getElementById('backBlogMarkTable').innerHTML = blogMarkhtml;
 
 
   // backNominate
@@ -397,7 +658,7 @@ $(function(){
 });
 
 // OrderDetail收合
-$("div.mgrStep").on("click", function(){
+$("div.mgrSecTab1").on("click",'.mgrStep', function(){
   $(this).next().slideToggle();
   $(this).find('i').toggleClass('rotate');
 });

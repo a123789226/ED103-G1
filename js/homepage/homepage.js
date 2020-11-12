@@ -368,7 +368,7 @@ $(window).resize(function () {
 
 
 //   },
-
+// document.getElementsByClassName('jourPage6')[0];
 
 
 // })
@@ -378,9 +378,15 @@ $.ajax({
   type: 'get',
   dataType: 'json',
   success: function (data) {
-    console.log($('#flipbook .page-wrapper .jourPage6 .jourPageContent > h4').text());
+    // console.log();
+    // let day = document.getElementsByClassName('jourPage6')[0].getElementsByClassName('jourPageContent')[0].getElementsByTagName('h4')[0];
+    // console.log(day);
+    // console.log($('#flipbook .page-wrapper .jourPage6 .jourPageContent > h4').text());
     // console.log($('.jourPage1 .jourPageText > h4').text(data[0].jourStory));
     for(let i=0; i<data.length; i++){
+      // let day = document.getElementsByClassName('page-wrapper')[i].querySelector(`.jourPage${i + 1} .jourPageContent`).getElementsByTagName('h4')[0];
+      // console.log(day);
+      // day = data[i].jourDate;
       // console.log($(`.jourPage${(i + 1)} .jourPageContent > h4`).text());
       $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
       $(`.jourPage${(i + 1)} .jourPageText > h4`).text(`Story Update${i+1}`);
