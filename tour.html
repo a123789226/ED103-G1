@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src="./js/layout/header.js"></script>
+    <script src="./js/tour/tour_weather.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Aqua Wonderland</title>
 </head>
@@ -63,28 +64,28 @@
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
           </a>
           <a href="journal.html" class="li_text">JOURNAL</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="ticket.html" class="li_logo">
             <img src="./image/header/header_ticket.png" alt="">
             <img src="./image/header/header_ticket_cover.png" alt="">
           </a>
           <a href="ticket.html" class="li_text">TICKET</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="vote.html" class="li_logo">
             <img src="./image/header/header_vote.png" alt="">
             <img src="./image/header/header_vote_cover.png" alt="">
           </a>
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
@@ -126,6 +127,17 @@
     </div>
     <!-- 你的code打這下面 -->
     <main class="team_main">
+      <div id="tour_locationName">
+        <p id="tour_current_status">Current Weather Status :</p>  
+        <p id="tour_date"></p>      
+        <span id="tour_temp"></span>
+        <span id="tour_degree">&nbsp &deg;C</span>
+        <span id="tour_weather"></span>
+        <img id="tour_weather_img1" src="./image/tour/tour_sun.png" />
+        <img id="tour_weather_img2" src="./image/tour/tour_raining.png" />
+        <img id="tour_weather_img3" src="./image/tour/tour_cloud.png" />
+        <img id="tour_weather_img4" src="./image/tour/tour_moon.png" />
+      </div>
       <!-- 標題 與 拼圖按鈕 -->
       <div class = "tour_title_block">
         <div class="tour_title_area">
