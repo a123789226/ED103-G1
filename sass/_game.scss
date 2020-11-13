@@ -1,40 +1,3 @@
-//game 燈箱
-// #lightBox{
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(66,66,66,.6);
-// }
-// #tableLogin{
-//     position: absolute;
-//     width: 300px;
-//     top: 0;
-//     right: 0;
-//     bottom: 25%;
-//     left: 0;
-//     margin:auto;
-//     background-color:#FFCCDD;
-//     border:1px dotted deepPink;
-//   }
-// #tableLogin  td{
-//     padding:2px 2px;
-//     height:20px;
-//     border-style:none;
-//     border-bottom:1px dotted deeppink;
-//   }
-
-// #tableLogin  input{
-//     background-color:#FFCCDD;
-//     font-size:16px;
-//     padding-left:2px;
-//   }
-// #btnLogin,#btnLoginCancel{margin-left:5px;padding:2px;} 
-
-// #spanLogin:hover{
-//     cursor:pointer;
-//     text-decoration:underline;
-//     margin-left:20px;
-//   }
 
 //game 登入bar
 #game_bar{
@@ -56,7 +19,7 @@
     margin:50px auto;
     margin-bottom:150px;
 .tour_game_title_block{
-    padding:70px;
+    padding:50px;
     .tour_game_title_area{
         width:100%;
         .tour_game_title1{
@@ -286,4 +249,10 @@ a.gamePlayBtn{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+}
+
+@media screen and (max-width: 991px){
+    .gameUniqueClass{
+        display: none;
+    }
 }

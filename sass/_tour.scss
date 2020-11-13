@@ -16,71 +16,122 @@
   // border: 5px solid blue;
 }
 
+//-------天氣API---------
 #tour_locationName{
+  // border:5px solid blue;
   width:100%;
   max-width:1200px;
-  padding:50px;
-  padding-bottom: 20px;
-  #tour_current_status{
-  @include main_title($keyWhite);
+  padding:50px 0 50px 0;
+  margin:0px auto;
+  margin-bottom:50px;
+  position: relative;
+  #tour_weather_time{
+  @include sub_title($keyBlack);
+  width:30%;
+  text-align:center;
+  color:rgb(255, 255, 255);
+  font-size: 30px;
+  margin:0 auto;
   margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: #333 0px 2px 6px;
+  padding:10px;
+  border-radius: 8px;
   }
   #tour_date{
-  @include sub_title($keyWhite);
+  // border:2px solid blue;
+  @include sub_title($keyBlack);
+  font-size: 28px;
+  font-weight:bold;
+  text-align: center;
+  width:100%;
+  margin:0 auto;
   margin-bottom: 50px;
   }
+  #tour_weather_area{
+  // border:2px solid red; 
+  text-align: center;
+  margin:0px auto;  
+  position: relative;
+  width:100%;
   #tour_temp{
-  @include sub_title($keyWhite);
+  // border:2px solid green;
+  @include sub_title($keyBlack);
+  // font-size:180%;
+  font-size:35px;
+  font-weight:bold;
+  text-align: center;
+  margin-left:0px;
   }
   #tour_degree{
-  @include sub_title($keyWhite);
+  // border:2px solid blue;
+  @include sub_title($keyBlack);
+  // font-size:150%;
+  font-size:35px;
+  font-weight:bold;
+  text-align:center;
   padding-right:10px;
   }
-  #tour_weather{
-  @include sub_title($keyWhite);
-  }
+}
+ #tour_weather_img_area{
+   position: relative;
+   margin-bottom:30px;
+   animation-name: weather_img_scale;
+   animation-timing-function: ease-in-out;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
   #tour_weather_img1{
-  // border:3px solid orange;
-  margin-left:10px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width:6%;
-  left: 320px;
-  top:450px;
-  display:none;
-  display:block;
-  }
-  #tour_weather_img2{
-  // border:3px solid orange;
-  margin-left:10px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width:6%;
-  left: 320px;
-  top:450px;
-  display:none;
-  }
-  #tour_weather_img3{
-    // border:3px solid orange;
     margin-left:10px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    width:6%;
-    left: 320px;
-    top:450px;
+    width:14%;
+    left:34%;
+    transform: translate(50%, 30%);
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
     display:none;
-  }
-  #tour_weather_img4{
-    // border:3px solid orange;
+    }
+    #tour_weather_img2{
     margin-left:10px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    width:6%;
-    left: 320px;
-    top:445px;
+    width:18%;
+    left:31%;
+    transform: translate(50%, 30%);
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
     display:none;
+    }
+    #tour_weather_img3{
+    // border:5px solid blue;
+    margin-left:10px;
+    position:absolute;
+    width:18%;
+    left:31%;
+    transform: translate(50%, 30%);
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+    display:none;
+    }
+    #tour_weather_img4{
+    margin-left:10px;
+    position: absolute;
+    width:18%;
+    left:31%;
+    transform: translate(50%, 30%);
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+    display:none;
+    }
+ }
+}
+
+@keyframes weather_img_scale {
+  0%{
+    transform: scaleX(1) scaleY(1) scaleZ(1);
+  }
+  50%{
+    transform: scaleX(1.05) scaleY(1.05) scaleZ(1.05);
+  }
+  100%{
+    transform: scaleX(1) scaleY(1) scaleZ(1);
   }
 }
+
 
 // title + btn 部分
 .tour_title_block{
@@ -312,21 +363,21 @@
   z-index: 1;
 }
 
-.btn_modal{
+.tour_btn_modal{
   display:flex;
   justify-content: space-evenly;
 }
 
-.btn_modal_close1{
+.tour_btn_modal_close1{
   @include btn36Yellow;
   box-shadow: $shadow2;
   margin:10px auto;
   display:block;
 }
 
-.btn_modal_close2{
+.tour_btn_modal_close2{
   @include btn36NoneBlack;
-  padding:0 39.5px 0 39.5px;
+  padding:0 43.84px 0 43.85px;
   margin:10px auto;
   display:block;
 }
@@ -616,7 +667,7 @@
           margin-top: 20px;
           margin-bottom: 20px;
         }
-        .btn_modal{
+        .tour_btn_modal{
           display:flex;
           justify-content: space-evenly;
           padding:0 10px 0 10px;
@@ -723,11 +774,15 @@
 }
 
 @media screen and (max-width: 991px){
+  .tour_puzzle_btn{
+    display: none;
+  }
   .tour_title2{
     display:block;
     @include sub_title($keyWhite);
     margin-top:20px;
-    // border: 5px solid red;;
+    width:150%;
+    // border: 5px solid red;
   }
 
   .tour_row{
@@ -790,7 +845,7 @@
           p{
             display:block;
           }
-          .btn_modal{
+          .tour_btn_modal{
             display:flex;
             justify-content: space-evenly;
             padding:0 10px 0 10px;
@@ -825,6 +880,55 @@
 
 
 @media screen and (max-width: 767px){
+ #tour_locationName{
+  //  border:5px solid blue;
+   #tour_weather_time{
+    //  border:5px solid blue;
+     width:40%;
+     line-height:30px;
+     font-size:30px;
+   }
+   #tour_date{
+     font-size:28px;
+   }
+   #tour_weather_area{
+    //  border:5px solid blue;
+     #tour_temp{
+       font-size:35px;
+     }
+     #tour_degree{
+       font-size:35px;
+     }
+   }
+   #tour_weather_img_area{
+    //  border:5px solid blue;
+    #tour_weather_img1{
+      width:20%;
+      left:26%;
+      transform: translate(50%, 30%);
+    }
+    #tour_weather_img2{
+      width:25%;
+      left:23%;
+      transform: translate(50%, 30%);
+    }
+    #tour_weather_img3{
+      width:25%;
+      left:23%;
+      transform: translate(50%, 30%);
+    }
+    #tour_weather_img4{
+      width:25%;
+      left:23%;
+      transform: translate(50%, 30%);
+    }
+   }
+ } 
+
+ .tour_title2{
+  width:400px;
+  // border: 5px solid red;
+}
     .tour_row {
       // border:5px solid deeppink;
       width:80%;
@@ -882,7 +986,7 @@
                 // border:5px solid deeppink;
                   padding:20px 10px 10px 10px;
                   line-height: 5px;
-                  .btn_modal{
+                  .tour_btn_modal{
                     // border:5px solid deeppink;
                     .tour_row_button1{
                       // border:5px solid deeppink;
@@ -909,31 +1013,73 @@
 }
 
 @media screen and (max-width: 676px){
+  #tour_locationName{
+    // border:5px solid orange;
+    margin-top:0px;
+    margin-bottom:20px;
+    #tour_weather_time{
+      // border:5px solid orange;
+      font-size: 20px;
+      margin-top:10px;
+      margin-bottom:30px;
+      line-height:20px;
+    }
+    #tour_date{
+      // border:5px solid orange;
+      font-size: 18px;
+      margin-bottom:20px;
+    }
+    #tour_weather_area{
+      // border:5px solid orange;
+      #tour_temp{
+        // border:5px solid orange;
+        font-size: 30px;
+      }
+      #tour_degree{
+        // border:5px solid orange;
+        font-size: 30px;
+      }
+    }
+    #tour_weather_img_area{
+      // border:5px solid orange;
+      #tour_weather_img1{
+        // border:5px solid orange;
+      }
+      #tour_weather_img2{
+        // border:5px solid orange;
+      }
+      #tour_weather_img3{
+        // border:5px solid orange;
+      }
+      #tour_weather_img4{
+        // border:5px solid orange;
+      }
+    }
+  }
   .tour_title_block{
     // border:5px solid red;
     display:flex;
-    // .tour_title_area{
-    //   border:5px solid red;
-    //   // h1{
-    //   //   border:5px solid red;
-    //   // }
-    // }
+    .tour_title_area{
+      width:0%;
+    }
     .tour_btn{
+      width:0%;
       // border:5px solid red;
-      // .tour_puzzle{
-      //   border:5px solid red;
-      // }
       .tour_puzzle_btn{
-        // border:5px solid red;
-        @include btn50Green;
-        box-shadow: $shadow2;
-        padding: 0px 31px;
-        display:block;
-        margin: 0 auto;
+        display:none;
+        // @include btn50Green;
+        // box-shadow: $shadow2;
+        // padding: 0px 31px;
+        // display:block;
+        // margin: 0 auto;
       }
     }
   }
 
+  .tour_title2{
+    width:400px;
+    // border: 5px solid green;
+  }
   .tour_row{
     // border: 5px solid red;
     margin: 0px auto;
@@ -980,7 +1126,7 @@
           p{
             display:block;
           }
-          .btn_modal{
+          .tour_btn_modal{
             display:flex;
             flex-direction: column;
             .tour_row_button1{
@@ -1011,13 +1157,58 @@
 
 
 @media screen and (max-width: 479px){
-  .tour_puzzle_btn{
-    @include btn50Green;
-    box-shadow: $shadow2;
+  #tour_locationName{
     // border:5px solid green;
-    padding: 0px 26px;
-    display:block;
-    margin: 0 auto;
+    #tour_weather_time{
+      // border:5px solid green;
+      width:53%;
+    }
+    #tour_date{
+      // border:5px solid green;
+    }
+    #tour_weather_area{
+      // border:5px solid green;
+      #tour_temp{
+      // border:5px solid green;
+      }
+      #tour_degree{
+      // border:5px solid green;
+      }
+    }
+    #tour_weather_img_area{
+      // border:5px solid green;
+      margin-bottom: 0px;
+      #tour_weather_img1{
+      // border:5px solid green;
+      left:25%;
+      transform: translate(50%, 30%);
+      }
+      #tour_weather_img2{
+      // border:5px solid green;
+      left:20%;
+      transform: translate(50%, 30%);
+      }
+      #tour_weather_img3{
+      // border:5px solid green;
+      left:20%;
+      transform: translate(50%, 30%);
+      }
+      #tour_weather_img4{
+      // border:5px solid green;
+      left:20%;
+      transform: translate(50%, 30%);
+      }
+    }
+  }
+
+  .tour_puzzle_btn{
+    display:none;
+    // @include btn50Green;
+    // box-shadow: $shadow2;
+    // // border:5px solid green;
+    // padding: 0px 26px;
+    // display:block;
+    // margin: 0 auto;
 }
   .tour_row{
     // border: 5px solid yellow;
@@ -1066,7 +1257,7 @@
           p{
             display:block;
           }
-          .btn_modal{
+          .tour_btn_modal{
             display:flex;
             flex-direction: column;
             .tour_row_button1{

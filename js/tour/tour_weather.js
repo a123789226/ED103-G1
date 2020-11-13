@@ -23,18 +23,29 @@ $(document).ready(function(){
                       if(weatherElement[j].elementName=="Weather"){
                           let weather = weatherElement[j].elementValue;
                           console.log(weather);
-                          document.getElementById('tour_weather').append(weather);
-                      }
-                      // if(weatherElement[j].elementValue=="tour_img1"){
-                      //     let 
-                      //     let tour_img1 = 晴;
-                      //     let tour_img2 = 多雲;
-                      //     let tour_img3 = 雨;
-                      //     console.log(tour_img1);
-                          // tour_weather_img.src = ""
-
-                      //     // document.getElementById('tour_weather_img').append(weather);                          
-                      // }
+                          // weather = '晴'; //測試: 強制印出 "晴"
+                          // document.getElementById('tour_weather').innerText = weather;  //測試: 印出weather 變數的值
+                          // document.getElementById('tour_weather').append(weather); 也可以 
+                          
+                          //==顯示照片
+                          //條件1: 設變數nowa 為new Date(); 當"時" 大於18，顯示月亮照片
+                          let nowa = new Date();
+                          if(nowa.getHours() >=18){
+                            document.querySelector("#tour_weather_img4").style.display = 'block';
+                          }else{
+                          //==條件1底下有三個條件
+                          //條件1-1: 當搜尋weather 裡有晴字不為-1 (找不到) 時，印出照片img1
+                          if(weather.search('晴') != -1){
+                            document.querySelector("#tour_weather_img1").style.display = 'block';
+                          //條件1-2: 當搜尋weather 裡有雨字不為-1 (找不到) 時，印出照片img2
+                          }else if(weather.search('雨') != -1){
+                            document.querySelector("#tour_weather_img2").style.display = 'block';
+                          //條件1-3: 以上皆非，則印出照片img3
+                          }else{
+                            document.querySelector("#tour_weather_img3").style.display = 'block';
+                          }
+                        }
+                      }                     
                 }
               }
           }
@@ -42,11 +53,9 @@ $(document).ready(function(){
 });          
 });
 
-
-
-
+//顯示現在日氣及幾點幾分
 window.addEventListener('load',function(){
   let now = new Date();
-  let message = `${now.toLocaleDateString()} at ${now.getHours()} : ${now.getMinutes()}`;
+  let message = `${now.toLocaleDateString()} ${now.getHours()} : ${now.getMinutes()}`;
   document.getElementById('tour_date').innerText = message;
 });
