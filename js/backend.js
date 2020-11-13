@@ -568,7 +568,7 @@ function backendDoFirst(){
         jourEdit = xhrEditJournal.responseText;
         // console.log(jourEdit);
         swal("Edit Succeed!", "", "success");
-        // alert('異動成功');
+        alert('異動成功');
       }
 
       xhrEditJournal.open("Post", "EditbackJournal.php", true);
