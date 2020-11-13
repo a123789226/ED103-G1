@@ -1,45 +1,17 @@
 <?php
-// $Errmsg = '';
-// try{
-//     // require_once('url');
-//     $dsn='mysql:
-//             host=localhost,
-//             port=3306,
-//             dbname=ed103g1,
-//             charset=utf8';
-//     $user='root';
-//     $password='root';
-//     $options=array(PDO::ATTR_CASE=>CASE_NATURAL,
-//                     PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-
-//     $pdo = new PDO($dsn,$user,$password,$options);    
-
-//     $sql = '';
-
-//     exec曾改山 query搜尋(select) prepare(全)....where name=:name;
-
-        // prepare:
-        // $data -> bindValue(':name',$_POST['name']);
-
-
-// }catch(PDOException $e){
-//     $e.= '錯誤內容：' . $e->getMessage() . '<br>';
-//     $e.= '錯誤行數：' . $e->getLine() . '<br>';
-// }
-
 $name = explode(",",$_GET['name']);
 // $name[0] 名字
 // $name[1] 圖片
 
 ?>
-
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUA WONDERLAND</title>
+    <title>Adopt</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/memLogin.js"></script>
@@ -58,8 +30,8 @@ $name = explode(",",$_GET['name']);
             <img src="./image/background/fish1.png" alt="" class="BGFish1">
             <img src="./image/background/fish1.png" alt="" class="BGFish2">
         </div>
-       <!-- Log In開始 -->
-       <div id="memLightBox" class="memLogin overlay">
+        <!-- Log In開始 -->
+        <div id="memLightBox" class="memLogin overlay">
             <form action="" class="LogInForm" id="LogInForm" method="post">
                 <div class="btn_modal_close">
                     <div></div>
@@ -172,41 +144,40 @@ $name = explode(",",$_GET['name']);
                     <br>A custom social media badge to share your adoption with the world
                 </h4>
             </div>
-            <form action="XXX.php" method="POST">
-                <div class="adoptInnerSection">
-                    <h3 class="adoptStepTitle">Start Your Adoption</h3>
-                
-                    <div class="adoptAqua">
-                        <p style="display: inline-block;" id="adoptAquaName">Your adopted aqua: <?=$name[0]?></p>
-                        <img src="<?=$name[1]?>" alt="">
-                    </div>
-                    <!-- right adopt process -->
-                    <!-- step 1 -->
-                    <div class="adoptProcessContainer">
-                        <div class="adoptProcessContents">
-                            <div class="adoptTab tab1 -on">
-                                <div class="adoptProcessList">
-                                    <div class="adoptTabList">
-                                        <div class="active">
-                                            <p>1</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>2</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>3</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>4</p>
-                                        </div>
+            <div class="adoptInnerSection">
+                <h3 class="adoptStepTitle">Start Your Adoption</h3>
+                <div class="adoptAqua">
+                    <p style="display: inline-block;">Your adopted aqua:<span></span></p>
+                    <!-- <input type="text" name="adoptedAqua" maxlength="20"> -->
+                    <img src="./image/journal/journal_dolphin/00.jpg" alt="">
+                </div>
+                <!-- right adopt process -->
+                <!-- step 1 -->
+                <div class="adoptProcessContainer">
+                    <div class="adoptProcessContents">
+                        <div class="adoptTab tab1 -on">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="active">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="adoptConfirmAqua">
-                                    <!-- <h4>Confirm Your Aqua</h4>
+                            <div class="adoptConfirmAqua">
+                                <!-- <h4>Confirm Your Aqua</h4>
                                         <div class="aquaNameSection">
                                             <select name="aqua" id="aquaName">
                                                 <optgroup label="Dolphin">
@@ -227,11 +198,11 @@ $name = explode(",",$_GET['name']);
                                                 </optgroup>
                                             </select>
                                         </div> -->
-                                </div>
+                            </div>
 
-                                <div class="adoptConfirmAmount">
-                                    <h4>ADOPT AMOUNT</h4>
-                                    <!-- <div class="adoptAmountSection">
+                            <div class="adoptConfirmAmount">
+                                <h4>ADOPT AMOUNT</h4>
+                                <!-- <div class="adoptAmountSection">
                                         <label class="adoptAmountType" for="hund">
                                             <input type="radio" name="amountType" checked="checked" id="hund">$100
                                         </label>
@@ -246,243 +217,247 @@ $name = explode(",",$_GET['name']);
                                         </label>
                                     </div> -->
 
-                                    <div class="adoptAmountSection">
-                                        <label class="adoptFrontTitle" for="adoptAmount">$</label>
-                                        <input type="text" name="amountType" id="adoptAmount">
-                                        
-                                    </div>
-                                </div>
-                                <div class="adoptProcessStep">
-                                    <a href="#" class="adoptProcessBtn">ADOPT NOW</a>
-                                </div>
+                                <div class="adoptAmountSection">
+                                    <label class="adoptFrontTitle" for="adoptAmount">$</label>
+                                    <input type="text" name="amountType" id="adoptAmount">
 
+                                </div>
                             </div>
-                            <!-- </div> -->
+                            <div class="adoptProcessStep">
+                                <a href="#" class="adoptProcessBtn">ADOPT NOW</a>
+                            </div>
+
+                        </div>
+                        <!-- </div> -->
 
 
 
-                            <!-- step 2 -->
-                            <!-- <div class="adoptProcessContents"> -->
-                            <div class="adoptTab tab2">
-                                <div class="adoptProcessList">
-                                    <div class="adoptTabList">
-                                        <div class="done">
-                                            <p>1</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="active">
-                                            <p>2</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>3</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>4</p>
-                                        </div>
+                        <!-- step 2 -->
+                        <!-- <div class="adoptProcessContents"> -->
+                        <div class="adoptTab tab2">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
                                     </div>
                                 </div>
-                                <h4>YOUR INFORMATION</h4>
-                                <div class="adoptInfo">
+                            </div>
+                            <h4>YOUR INFORMATION</h4>
+                            <div class="adoptInfo">
                                 <label class="adoptFrontTitle">Name</label>
-                                    <input type="text" name="firstname" placeholder="first name" id="adoptFirstname">
-                                    <input type="text" name="lastname" placeholder="last name" id="adoptLastname">
-                                </div>
-
-                                <div class="adoptInfo">
-                                <label class="adoptFrontTitle" for="adoptEmail">Email</label>
-                                    <input type="text" name="email" id="adoptEmail">
-                                    <h6>*Your receipt will be emailed here</h6>
-                                </div>
-
-                                <div class="adoptInfo">
-                                <label class="adoptFrontTitle" for="adoptPhone">Phone number</label>
-                                    <input type="number" name="phone" id="adoptPhone">
-                                </div>
-
-                                <div class="adoptInfo">
-                                <label class="adoptFrontTitle" for="adoptMessage">Leave message to Aqua</label>
-                                    <textarea name="adoptmessage" id="adoptMessage" cols="44" rows="6"></textarea>
-                                </div>
-
-                                <div class="adoptProcessStep">
-                                    <a href="#" class="adoptBackBtn">BACK</a>
-                                    <a href="#" class="adoptProcessBtn">NEXT</a>
-                                </div>
+                                <input type="text" name="firstname" placeholder="first name" id="adoptFirstname">
+                                <input type="text" name="lastname" placeholder="last name" id="adoptLastname">
                             </div>
 
-                            <!-- step 3 -->
-                            <!-- <div class="adoptProcessContents"> -->
-                            <div class="adoptTab tab3">
-                                <div class="adoptProcessList">
-                                    <div class="adoptTabList">
-                                        <div class="done">
-                                            <p>1</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="done">
-                                            <p>2</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="active">
-                                            <p>3</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="">
-                                            <p>4</p>
-                                        </div>
+                            <div class="adoptInfo">
+                                <label class="adoptFrontTitle" for="adoptEmail">Email</label>
+                                <input type="text" name="email" id="adoptEmail">
+                                <h6>*Your receipt will be emailed here</h6>
+                            </div>
+
+                            <div class="adoptInfo">
+                                <label class="adoptFrontTitle" for="adoptPhone">Phone number</label>
+                                <input type="number" name="phone" id="adoptPhone">
+                            </div>
+
+                            <div class="adoptInfo">
+                                <label class="adoptFrontTitle" for="adoptMessage">Leave message to Aqua</label>
+                                <textarea name="adoptmessage" id="adoptMessage" cols="44" rows="6"></textarea>
+                            </div>
+
+                            <div class="adoptProcessStep">
+                                <a href="#" class="adoptBackBtn">BACK</a>
+                                <a href="#" class="adoptProcessBtn">NEXT</a>
+                            </div>
+                        </div>
+
+                        <!-- step 3 -->
+                        <!-- <div class="adoptProcessContents"> -->
+                        <div class="adoptTab tab3">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="">
+                                        <p>4</p>
                                     </div>
                                 </div>
-                                <h4>PAYMENT DETIAL</h4>
-                                <div class="adoptPaymentSection">
+                            </div>
+                            <h4>PAYMENT DETIAL</h4>
+                            <div class="adoptPaymentSection">
 
-                                    <!-- <div class="adoptPayment">
+                                <!-- <div class="adoptPayment">
                                         <p>Payment amount</p>
                                         <p>$500</p>
                                     </div> -->
 
-                                    <div class="adoptPayment">
-                                         <label class="adoptFrontTitle" for="adoptCardname">Name on Card</label>
-                                        <input type="text" name="cardname" id="adoptCardname">
-                                    </div>
-
-                                    <div class="adoptPayment">
-                                        <label class="adoptFrontTitle" for="adoptCardnumber">Card Number</label>
-                                        <input type="number" name="cardnumber" id="adoptCardnumber">
-                                    </div>
-
-                                    <div class="adoptPayment">
-                                        <label class="adoptFrontTitle" for="adoptCarddate">Effective Date</label>
-                                        <input type="text" name="carddate" placeholder="MM/YY" id="adoptCarddate">
-                                    </div>
-
-                                    <div class="adoptPayment">
-                                        <label class="adoptFrontTitle" for="adoptCardcode">Security Code</label>
-                                        <input type="number" name="cardcode" id="adoptCardcode">
-                                    </div>
+                                <div class="adoptPayment">
+                                    <label class="adoptFrontTitle" for="adoptCardname">Name on Card</label>
+                                    <input type="text" name="cardname" id="adoptCardname">
                                 </div>
 
-
-                                <div class="adoptProcessStep">
-                                    <a href="#" class="adoptBackBtn">BACK</a>
-                                    <a href="#" class="adoptProcessBtn">NEXT</a>
+                                <div class="adoptPayment">
+                                    <label class="adoptFrontTitle" for="adoptCardnumber">Card Number</label>
+                                    <input type="number" name="cardnumber" id="adoptCardnumber">
                                 </div>
 
+                                <div class="adoptPayment">
+                                    <label class="adoptFrontTitle" for="adoptCarddate">Effective Date</label>
+                                    <input type="text" name="carddate" placeholder="MM/YY" id="adoptCarddate">
+                                </div>
+
+                                <div class="adoptPayment">
+                                    <label class="adoptFrontTitle" for="adoptCardcode">Security Code</label>
+                                    <input type="number" name="cardcode" id="adoptCardcode">
+                                </div>
                             </div>
 
 
-                            <!-- step 4 -->
-                            <!-- <div class="adoptProcessContents"> -->
-                            <div class="adoptConfirmSection adoptTab tab4">
-                                <div class="adoptProcessList">
-                                    <div class="adoptTabList">
-                                        <div class="done">
-                                            <p>1</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="done">
-                                            <p>2</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="done">
-                                            <p>3</p>
-                                        </div>
-                                        <span></span>
-                                        <div class="active">
-                                            <p>4</p>
-                                        </div>
+                            <div class="adoptProcessStep">
+                                <a href="#" class="adoptBackBtn">BACK</a>
+                                <a href="#" class="adoptProcessBtn">NEXT</a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- step 4 -->
+                        <!-- <div class="adoptProcessContents"> -->
+                        <div class="adoptConfirmSection adoptTab tab4">
+                            <div class="adoptProcessList">
+                                <div class="adoptTabList">
+                                    <div class="done">
+                                        <p>1</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>2</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="done">
+                                        <p>3</p>
+                                    </div>
+                                    <span></span>
+                                    <div class="active">
+                                        <p>4</p>
                                     </div>
                                 </div>
-                                <h4>ADOPTION CONFIRM</h4>
-                                <div class="adoptConfirmCheck">
-                                    <div class="adoptConfirm">
-                                        <h5>ADOPTED AQUA</h5>
+                            </div>
+                            <h4>ADOPTION CONFIRM</h4>
+                            <div class="adoptConfirmCheck">
+                                <div class="adoptConfirm">
+                                    <h5>Adopted Aqua</h5>
+                                    <!-- <input type="text"> -->
+                                    <p id="adoptAquaNameResult"></p>
+                                </div>
+
+                                <div class="adoptConfirm">
+                                    <h5>Adopt Amount</h5>
+                                    <!-- <input type="text"> -->
+                                    <label class="adoptFrontTitle" for="adoptAmount">$</label>
+                                    <p id="adoptAmountResult"></p>
+                                </div>
+                            </div>
+
+
+                            <div class="adoptConfirmCheck">
+                                <div class="adoptConfirm">
+                                    <h5>YOUR INFORMATION</h5>
+                                    <div class="adoptInfo">
+                                        <!-- <input type="text" placeholder="first name"> -->
+                                        <label class="adoptFrontTitle">First name:</label>
+                                        <p id="adoptFirstnameResult"></p>
+                                        <!-- <input type="text" placeholder="last name"> -->
+                                        <label class="adoptFrontTitle">Last name:</label>
+                                        <p id="adoptLastnameResult"></p>
+                                    </div>
+
+                                    <div class="adoptInfo">
+                                        <label class="adoptFrontTitle">Email:</label>
                                         <!-- <input type="text"> -->
-                                        <p id="adoptAquaNameResult"></p>
+                                        <p id="adoptEmailResult"></p>
+                                        <h6 class="adoptReceipt">*Your receipt will be emailed here</h6>
                                     </div>
 
-                                    <div class="adoptConfirm">
-                                        <h5>ADOPT AMOUNT</h5>
+                                    <div class="adoptInfo">
+                                        <label class="adoptFrontTitle">Phone Number:</label>
                                         <!-- <input type="text"> -->
-                                        <label class="adoptFrontTitle" for="adoptAmount">$</label>
-                                        <p id="adoptAmountResult"></p>
+                                        <p id="adoptPhoneResult"></p>
+                                    </div>
+
+                                    <div class="adoptInfo">
+                                        <label class="adoptFrontTitle">Leave Message to Aqua:</label>
+                                        <!-- <textarea name="adoptmessage" id="adoptmessage" cols="23" rows="6"></textarea> -->
+                                        <p id="adoptMessageResult"></p>
                                     </div>
                                 </div>
 
+                                <div class="adoptConfirm">
+                                    <h5>PAYMENT DETIAL</h5>
 
-                                <div class="adoptConfirmCheck">
-                                    <div class="adoptConfirm">
-                                        <h5>YOUR INFORMATION</h5>
-                                        <div class="adoptInfo">
-                                            <!-- <input type="text" placeholder="first name"> -->
-                                            <label class="adoptFrontTitle">First name:</label>
-                                            <p id="adoptFirstnameResult"></p>
-                                            <!-- <input type="text" placeholder="last name"> -->
-                                            <label class="adoptFrontTitle">Last name:</label>
-                                            <p id="adoptLastnameResult"></p>
-                                        </div>
-
-                                        <div class="adoptInfo">
-                                            <label class="adoptFrontTitle">Email:</label>
-                                            <!-- <input type="text"> -->
-                                            <p id="adoptEmailResult"></p>
-                                            <h6 class="adoptReceipt">*Your receipt will be emailed here</h6>
-                                        </div>
-
-                                        <div class="adoptInfo">
-                                            <label class="adoptFrontTitle">Phone Number:</label>
-                                            <!-- <input type="text"> -->
-                                            <p id="adoptPhoneResult"></p>
-                                        </div>
-
-                                        <div class="adoptInfo">
-                                            <label class="adoptFrontTitle">Leave Message to Aqua:</label>
-                                            <!-- <textarea name="adoptmessage" id="adoptmessage" cols="23" rows="6"></textarea> -->
-                                            <p id="adoptMessageResult"></p>
-                                        </div>
+                                    <div class="adoptPayment">
+                                        <label class="adoptFrontTitle">Name on Card:</label>
+                                        <!-- <input type="text"> -->
+                                        <p id="adoptCardnameResult"></p>
                                     </div>
 
-                                    <div class="adoptConfirm">
-                                        <h5>PAYMENT DETIAL</h5>
+                                    <div class="adoptPayment">
+                                        <label class="adoptFrontTitle">Card Number:</label>
+                                        <!-- <input type="text"> -->
+                                        <p id="adoptCardnumberResult"></p>
+                                    </div>
 
-                                        <div class="adoptPayment">
-                                            <label class="adoptFrontTitle">Name on Card:</label>
-                                            <!-- <input type="text"> -->
-                                            <p id="adoptCardnameResult"></p>
-                                        </div>
+                                    <div class="adoptPayment">
+                                        <label class="adoptFrontTitle">Effective Date:</label>
+                                        <!-- <input type="text" placeholder="MM/YY"> -->
+                                        <p id="adoptCarddateResult"></p>
+                                    </div>
 
-                                        <div class="adoptPayment">
-                                            <label class="adoptFrontTitle">Card Number:</label>
-                                            <!-- <input type="text"> -->
-                                            <p id="adoptCardnumberResult"></p>
-                                        </div>
-
-                                        <div class="adoptPayment">
-                                            <label class="adoptFrontTitle">Effective Date:</label>
-                                            <!-- <input type="text" placeholder="MM/YY"> -->
-                                            <p id="adoptCarddateResult"></p>
-                                        </div>
-
-                                        <div class="adoptPayment">
-                                            <label class="adoptFrontTitle">Security Code:</label>
-                                            <!-- <input type="number"> -->
-                                            <p id="adoptCardcodeResult"></p>
-                                        </div>
+                                    <div class="adoptPayment">
+                                        <label class="adoptFrontTitle">Security Code:</label>
+                                        <!-- <input type="number"> -->
+                                        <p id="adoptCardcodeResult"></p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="adoptProcessStep adoptProcessStepFinal">
-                                    <a href="#" class="adoptBackBtn">BACK</a>
-                                    <button class="adoptProcessBtn" type="button">ADOPT</button>
-                                </div>
+                            <div class="adoptProcessStep adoptProcessStepFinal">
+                                <a href="#" class="adoptBackBtn">BACK</a>
+                                <button class="adoptProcessBtn" type="button">ADOPT</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./js/memLogin.js"></script>
+    <script src="./js/layout/header.js"></script>
 
     <script>
         id = 1; //全域變數
@@ -535,14 +510,13 @@ $name = explode(",",$_GET['name']);
         });
     </script>
 
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- adopt succeed -->
     <script>
         document.getElementById("demo1").addEventListener("click", function () {
             swal("Adopt Succeed!", "Thank you for your adoption!", "success");
         });
     </script>
-
 
 </body>
 

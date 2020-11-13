@@ -264,19 +264,21 @@ body {
 .jourBookLeft {
   // background: linear-gradient(to right, #fff 30%, #333 30%, #fff 70%,#A52B2B 70%);
   background: linear-gradient(to right, #C43535 0%, #A52B2B 30%, #7A2929 40%, #7A2929 60%, #A52B2B 60%);
-  width: 7%;
+  // width: 7%;
 
-  display: inline-block;
+  display: none;
 }
 
 .jourBookRight {
-  width: 93%;
+  // width: 93%;
+  background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
+
   display: inline-block;
   // padding-bottom: 120px;
-  border-radius: 0 6px 6px 0;
-  height: 100%;
-  // background-image: url("../image/journal/journal_element/jourcover.svg");
-  background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+  border-radius: 3px 10px 10px 3px;
+  // height: 100%;
+  // background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
+  // background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
   // background: linear-gradient(45deg, #6d4a03 1%, #aa7304 20%, #f2a306 50%, #aa7304 80%, #6d4a03 99%);
 }
 
@@ -322,7 +324,7 @@ a.jourBookName {
   margin: 0 auto;
   text-align: left;
   width: 80%;
-  padding: 20px 10px;
+  padding: 20px 10px 20px 20px;
   // border: 3px solid white;
 
 
@@ -415,6 +417,20 @@ a.jourBookName {
 
 
 // lightbox
+.jour_bk {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  // display: none;
+  z-index: 5;
+}
+
+.jour_bk .-on {
+  display: block;
+}
+
+
 .jourLightBox {
   display: none;
   background-color: rgb(0, 0, 0);
@@ -440,10 +456,10 @@ a.jourBookName {
   overflow: hidden;
 
   @media screen and (max-width: 676px) {
-    position: absolute;
-    top: 28%;
-    left: 50%;
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: -50%;
   }
 }
 
@@ -493,9 +509,11 @@ div.jourLightBox.-on {
   // border: 5px solid red;
 
   @media screen and (max-width: 676px) {
+    width: 100%;
+
     position: absolute;
-    top: 28%;
-    left: 50%;
+    top: 50%;
+    left: -50%;
   }
 }
 
@@ -1120,6 +1138,10 @@ div.jourLightBox.-on {
 .jourLightBox {
   width: 80%;
   margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .jourOpenBookSection {
@@ -1143,6 +1165,7 @@ div.jourLightBox.-on {
 }
 
 #flipbook2 {
+  display: block;
   width: 80%;
   background-color: none;
   width: 800px;
@@ -1150,6 +1173,10 @@ div.jourLightBox.-on {
   // border: 3px solid red;
   margin: 20px auto !important;
   text-align: center;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .even {
@@ -1169,7 +1196,8 @@ div.jourLightBox.-on {
 #demobook .p1,
 #demobook1 .p1,
 #demobook2 .p1,
-#demobook3 .p1 {
+#demobook3 .p1,
+.demobook .p1 {
   background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
 
 }
@@ -1463,59 +1491,327 @@ div.jourLightBox.-on {
 
 
 
-// jourbook RWD
-#jourSliderBoard {
-  /*div*/
-  border: 1px solid #ccc;
-  width: 60%;
-  height: 550px;
-  margin: 100px auto;
+// jourbook (lightbox) RWD
 
-  overflow: hidden;
+@media screen and (min-width: 768px) {
+  .jourOpenBookSectionRwd {
+    display: none;
+  }
 }
 
-#jourContent {
-  /*ul*/
-  position: relative;
-}
 
-#jourContent li {
-  /*li*/
-  float: left;
-}
+@media screen and (max-width: 767px) {
 
-#jourBookPageButton {
-  /* border: 1px solid red; */
-  text-align: center;
-  width: 100%;
-  height: 50px;
-}
+  .jourOpenBookSectionRwd {
+    width: 100%;
+    margin: 80px auto 50px auto !important;
+    // border: 3px solid green;
+    text-align: center;
+    display: block;
+  }
 
-#jourBookPageButton li {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ccc;
 
+  #jourSliderBoard {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 320px;
+    height: 480px;
+  }
+
+  #jourContentRwd {
+    /*ul*/
+    position: relative;
+    /* border: 1px solid blue; */
+  }
+
+  #jourContentRwd li {
+    /*li*/
+    float: left;
+  }
+
+  /* button */
+  #jourContentButton {
+    // border: 3px solid white;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+  }
+
+  #jourContentButton li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    // border: 3px solid white;
+
+    display: inline-block;
+    margin: 5px;
+  }
+
+  #jourContentButton li.clickMe {
+    background: #888;
+  }
+
+  #flipbook2Rwd {
+    display: block;
+    background-color: none;
+    width: 320px;
+    height: 480px;
+    /* border: 3px solid yellow; */
+    margin: 20px auto !important;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .jourPageRwd {
+    width: 320px;
+    /* height: 540px; */
+    // background-color: white;
+    line-height: 1.2;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(to left, lightgray .5%, #fff 55%, lightgray 99%);
+  }
+
+  .jourOpenBookRightRwd {
+    // width: 100%;
+    width: 320px;
+    height: 480px;
+    margin: 0 auto;
+    text-align: center;
+    // background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+    background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
+    //  background-color: lightcoral;
+    border-radius: 10px;
+    padding: 15px 0;
+  }
+
+  #flipbook2Rwd .jourPagePhotoArea1Rwd {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 260px;
+    padding: 0 20px;
+    // border: 1px solid orange;
+    // background-color: lightgreen;
+  }
+
+  #flipbook2Rwd .jourBookPhotoRwd {
+    width: 60%;
+    /* height: 240px; */
+    margin: 20px auto 10px auto;
+    /* overflow: hidden; */
+  }
+
+  #flipbook2Rwd .jourBookPhotoRwd img {
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0px 2px 6px #555;
+
+    /* border: 2px solid white; */
+  }
+
+
+
+  #flipbook2Rwd .jourBookNameRwd {
+    margin: 0 auto;
+    text-align: center;
+    @include sub_title($keyWhite);
+    text-align: center;
+    @include btn50Green;
+    box-shadow: $shadow2;
   display: inline-block;
-  margin: 5px;
+  }
+
+
+
+  #flipbook2Rwd .jourBookTextRwd {
+    @include text($keyWhite);
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: left;
+    width: 80%;
+    padding: 20px 10px;
+    /* border: 3px solid white; */
+  }
+
+  #flipbook2Rwd table {
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: none;
+  }
+
+
+  #flipbook2Rwd tr {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    font-size: 16px;
+    /* border: 3px solid white; */
+  }
+
+
+  #flipbook2Rwd td {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+
+  .jourAquaStoryRwd {
+    margin: 0 auto;
+    padding: 5px 25px;
+  }
+
+  .jourAquaStoryRwd h5 {
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .jourAquaStoryRwd p {
+    line-height: 20px;
+  }
+
+
+  .jourPageContentRwd {
+    width: 100%;
+    height: 480px;
+
+    margin: 0 auto;
+    text-align: center;
+    /* border: 2px solid red; */
+    display: block;
+  }
+
+  .jourPageContentRwd h4 {
+    /* @include sub_title($keyBlack); */
+    padding: 5px 0;
+    display: block;
+    // border: 2px solid red;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .jourPagePhotoArea1Rwd {
+    /* display: block; */
+    width: 85%;
+    height: 260px;
+    padding: 0px;
+    // border: 2px solid red;
+    // background-color: lightblue;
+    margin: 0px auto;
+  }
+
+  .jourPagePhotoLeft1Rwd {
+    width: 100%;
+    padding: 0px;
+    height: 150px;
+    display: block;
+    margin: 0px auto 10px auto;
+    /* border: 1px solid blue; */
+    position: relative;
+
+  }
+
+  .jourPagePhotoLeft1Rwd img {
+    width: 100%;
+    margin: 0px auto;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border-radius: 6px;
+  }
+
+
+  .jourPagePhotoRightInner1Rwd {
+    width: 130px;
+    // border: 3px solid green;
+    position: relative;
+    border-radius: 6px;
+  }
+
+
+
+  .jourPagePhotoRight1Rwd {
+    width: 100%;
+    height: 90px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .jourPagePhotoRightInner1Rwd img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  .jourPageText1Rwd {
+    /* border: 2px solid green; */
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  .jourPageText1Rwd h4 {
+    /* @include sub_title($keyBlack); */
+    text-align: left;
+
+  }
+
+  .jourPageText1Rwd p {
+    /* border: 2px solid green; */
+    margin: 0 auto;
+    /* @include text($textBlack); */
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+    width: 95%;
+    text-align: left;
+  }
+
+  .jourLastPageRwd {
+    /* background: linear-gradient(to Left, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important; */
+    background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
+    // border: 2px solid blue;
+    width: 320px;
+    height: 480px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .jourLastPageText {
+    // color: white;
+    @include sub_title($keyWhite);
+    // border: 2px solid green;
+    width: 80%;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 200px;
+  }
 }
-
-#jourBookPageButton li.clickMe {
-  background: #888;
-}
-
-
-
-
-
-
-
 
 
 
 
 //adopt lightbox
+
+
 .jourToAdopt {
   cursor: pointer;
   margin: 20px auto;

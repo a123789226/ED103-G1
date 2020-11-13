@@ -388,32 +388,32 @@ $(function () {
                                         </div>
 
                                         <div class="col-11 col-sm-11 memOrderDetail memStepContent container">
-                                        <div class="row memBlogForm memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                                        </div>
-                                        <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
-                                        </div>
+                                            <div class="row memBlogForm memOrderCardDetail">
+                                                <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Amount</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Price</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
+                                            </div>
+                                            <div class="row memBlogContent memOrderCardDetail">
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            </div>
                                 `
                             }else if(res.data[i-1].ticketOrderNo == res.data[i].ticketOrderNo){
                                 orderHtml += `
-                                        <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
-                                        </div>
+                                            <div class="row memBlogContent memOrderCardDetail">
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            </div>
                                 `
                             }else{
                                 orderHtml += `
-                                </div>
-                                </div>
+                                        </div>
+                                    </div>
                                     <div class="memBlogContent memOrderCard row">
                                         <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
                                         <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
@@ -423,25 +423,27 @@ $(function () {
                                         </div>
 
                                         <div class="col-11 col-sm-11 memOrderDetail memStepContent container">
-                                        <div class="row memBlogForm memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Amount</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Price</div>
-                                            <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
-                                        </div>
-                                        <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
-                                        </div>
+                                            <div class="row memBlogForm memOrderCardDetail">
+                                                <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Amount</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Price</div>
+                                                <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
+                                            </div>
+                                            <div class="row memBlogContent memOrderCardDetail">
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
+                                                <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
+                                                <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            </div>
                                 `
                             }
 
                             
                         }
-                        orderHtml +=`</div>
-                        </div>`
+                        orderHtml +=`   
+                                        </div>
+                                    </div>`
+                                    
                         orderContainer.innerHTML += orderHtml;
                     })
                     .catch(function (err) {

@@ -162,7 +162,6 @@
             <!-- CHATBOT -->
             <div class="mgrTab tab1 mgrChatbot -on">
               <h3>CHATBOT</h3>
-              <button class="ngrChatbotAdd">Add</button>
               <table class="mgrChatAll">
                 <tr class="mgrChatTitle">
                   <th width="50">No</th>
@@ -264,7 +263,7 @@
                   <th width="100">Photo</th>
                   <th width="60">Point</th>
                   <th width="150">Status</th>
-                  <th width="100">Operation</th>
+                  <th width="100">Edit</th>
                 </tr>
                 <tbody id="backMemberTable">
                   <tr class=" mgrMemKey word1">
@@ -340,7 +339,7 @@
                   <th width="150">Name End</th>
                   <th width="150">Vote Start</th>
                   <th width="150">Vote End</th>
-                  <th width="50">Edit</th>
+                  <th width="100">Edit</th>
                 </tr> 
                 <tbody id="backAquaTable">
                   <tr>
@@ -387,95 +386,151 @@
                   </div>
                 </div>
               </ul>
+              <!-- Order All -->
               <div class="mgrOrderAll">
-                <div class="mgrTicketAll mgrSecTab1 mgrSecTab -on">
-                  <table>
-                    <tr class="mgrOrderTitle">
-                      <th width="150" class="mgrTitle">Order No</th>
-                      <th width="150" class="mgrTitle">Member No</th>
-                      <th width="150" class="mgrTitle">Order Date</th>
-                      <th width="150" class="mgrTitle">Total</th>
-                      <th width="150" class="mgrTitle">Detail</th>
-                    </tr>
-                    <tbody id="backTicketOrderTable">
-                      <tr class="mgrTicketOrder word1">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">2019-08-23</td>
-                        <td class="mgrTitle">NT$1,600</td>
-                        <td class="mgrTitle mgrStep">View
-                          <i class="fa fa-angle-down fa-lg"></i>
-                        </td>
-                        <div class="mgrOrderDetail mgrStepContent">
-                          <!-- <table>
-                            <tr class="mgrOrderDetailForm">
-                              <th class="mgrDetailTitle">Item No</th>
-                              <th class="mgrDetailTitle">Order No</th>
-                              <th class="mgrDetailTitle">Ticket No</th>
-                              <th class="mgrDetailTitle">Ticket Person</th>
-                              <th class="mgrDetailTitle">Total</th>
-                            </tr>
-                            <tbody id="backTicketOrderListTable">
-                              <tr class="mgrTicketItem1">
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">NT$1,000</td>
-                              </tr>
-                              <tr class="mgrTicketItem2">
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">1</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">2</td>
-                                <td class="mgrTick">NT$600</td>
-                              </tr>
-                            </tbody>
-                          </table> -->
-                        </div>
-                      </tr>
-                    </tbody>
-                  </table>
+
+                <!-- ticket part -->
+                <div id="backTicketOrderTable" class="mgrOrderTable mgrSecTab1 mgrSecTab -on container">
+                  <!-- Ticket Title -->
+                  <div class="row mgrOrderTitle mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">Order No</div>
+                    <div class="col-md-2 mgrTitle">Member No</div>
+                    <div class="col-md-4 mgrTitle">Order Date</div>
+                    <div class="col-md-2 mgrTitle">Total</div>
+                    <div class="col-md-2 mgrTitle">Detail</div>
+                  </div>
+                  <div class="row mgrTicketOrder mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2019-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$1,600</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <!-- Ticket Detail 1 -->
+                    <div class="mgrOrderDetail mgrStepContent container">
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrDetailTitle">Item No</div>
+                        <div class="col-md-2 mgrDetailTitle">Order No</div>
+                        <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+                        <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+                        <div class="col-md-2 mgrDetailTitle">Total</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-3 mgrTick">NT$1,000</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-3 mgrTick">NT$600</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mgrTicketOrder mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2019-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$1,600</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <!-- Ticket Detail 1 -->
+                    <div class="mgrOrderDetail mgrStepContent container">
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrDetailTitle">Item No</div>
+                        <div class="col-md-2 mgrDetailTitle">Order No</div>
+                        <div class="col-md-2 mgrDetailTitle">Ticket No</div>
+                        <div class="col-md-2 mgrDetailTitle">Ticket Person</div>
+                        <div class="col-md-2 mgrDetailTitle">Total</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-3 mgrTick">NT$1,000</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-2 mgrTick">2</div>
+                        <div class="col-md-3 mgrTick">NT$600</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="mgrNightAll mgrSecTab2 mgrSecTab">
-                  <table>
-                    <tr class="mgrOrderTitle">
-                      <th class="mgrTitle">Order No</th>
-                      <th class="mgrTitle">Member No</th>
-                      <th class="mgrTitle">Order Date</th>
-                      <th class="mgrTitle">Total</th>
-                      <th class="mgrTitle">Detail</th>
-                    </tr>
-                    <tbody id="backNightOrderTable">
-                      <tr class="mgrTicketOrder">
-                        <td class="mgrTitle">1</td>
-                        <td class="mgrTitle">2</td>
-                        <td class="mgrTitle">2020-08-23</td>
-                        <td class="mgrTitle">NT$8,400</td>
-                        <td class="mgrTitle mgrStep">View
-                          <i class="fa fa-angle-down fa-lg"></i>
-                        </td>
-                        <!-- <div class="mgrOrderDetail mgrStepContent">
-                          <div class="mgrOrderDetailForm">
-                            <div class="mgrDetailTitle">Item No</div>
-                            <div class="mgrDetailTitle">Order No</div>
-                            <div class="mgrDetailTitle">Area No</div>
-                            <div class="mgrDetailTitle">Night Person</div>
-                            <div class="mgrDetailTitle">Total</div>
-                            <div class="mgrDetailTitle">Night Date</div>
-                          </div>
-                          <div class="mgrTicketItem1">
-                            <div class="mgrTick">1</div>
-                            <div class="mgrTick">1</div>
-                            <div class="mgrTick">Dolphin</div>
-                            <div class="mgrTick">4</div>
-                            <div class="mgrTick">NT$8,400</div>
-                            <div class="mgrTick">2020-12-31</div>
-                          </div>
-                        </div> -->
-                      </tr>
-                    </tbody>
-                  </table>
+
+                <!-- Night Part -->
+                <div id="backNightOrderTable" class="mgrOrderTable mgrSecTab2 mgrSecTab container">
+                  <!-- Night Title -->
+                  <div class="row mgrOrderTitle mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">Order No</div>
+                    <div class="col-md-2 mgrTitle">Member No</div>
+                    <div class="col-md-4 mgrTitle">Order Date</div>
+                    <div class="col-md-2 mgrTitle">Total</div>
+                    <div class="col-md-2 mgrTitle">Detail</div>
+                  </div>
+                  <div class="row mgrTicketOrder mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2020-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$8,400</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <div class="mgrOrderDetail mgrStepContent container">
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrDetailTitle">Item No</div>
+                        <div class="col-md-2 mgrDetailTitle">Order No</div>
+                        <div class="col-md-2 mgrDetailTitle">Area No</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Person</div>
+                        <div class="col-md-2 mgrDetailTitle">Total</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Date</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">Dolphin</div>
+                        <div class="col-md-2 mgrTick">4</div>
+                        <div class="col-md-2 mgrTick">NT$8,400</div>
+                        <div class="col-md-2 mgrTick">2020-12-31</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mgrTicketOrder mgrOrderCard">
+                    <div class="col-md-2 mgrTitle">1</div>
+                    <div class="col-md-2 mgrTitle">2</div>
+                    <div class="col-md-4 mgrTitle">2020-08-23</div>
+                    <div class="col-md-2 mgrTitle">NT$8,400</div>
+                    <div class="col-md-2 mgrTitle mgrStep">View
+                      <i class="fa fa-angle-down fa-lg"></i>
+                    </div>
+                    <div class="mgrOrderDetail mgrStepContent container">
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrDetailTitle">Item No</div>
+                        <div class="col-md-2 mgrDetailTitle">Order No</div>
+                        <div class="col-md-2 mgrDetailTitle">Area No</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Person</div>
+                        <div class="col-md-2 mgrDetailTitle">Total</div>
+                        <div class="col-md-2 mgrDetailTitle">Night Date</div>
+                      </div>
+                      <div class="row mgrOrderCardDetail">
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">1</div>
+                        <div class="col-md-2 mgrTick">Dolphin</div>
+                        <div class="col-md-2 mgrTick">4</div>
+                        <div class="col-md-2 mgrTick">NT$8,400</div>
+                        <div class="col-md-2 mgrTick">2020-12-31</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -575,26 +630,24 @@
             <!-- ADOPT -->
             <div class="mgrTab tab7 mgrAdopt">
               <h3>ADOPT</h3>
-              <div class="mgrAdoptAll">
-                <table>
-                  <tr class="mgrAdoptTitle">
-                    <th width="100"class="mgrTitle">Adopt No</th>
-                    <th width="100" class="mgrTitle">Member No</th>
-                    <th width="100" class="mgrTitle">Aqua No</th>
-                    <th width="100" class="mgrTitle">Adopt Date</th>
-                    <th width="100" class="mgrTitle">Dollar</th>
+              <table class="mgrAdoptAll">
+                <tr class="mgrAdoptTitle">
+                  <th width="100"class="mgrTitle">Adopt No</th>
+                  <th width="100" class="mgrTitle">Member No</th>
+                  <th width="100" class="mgrTitle">Aqua No</th>
+                  <th width="100" class="mgrTitle">Adopt Date</th>
+                  <th width="100" class="mgrTitle">Dollar</th>
+                </tr>
+                <tbody id="backAdoptTable">
+                  <tr class="mgrAdoptOrder word1">
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">1</td>
+                    <td class="mgrTitle">2019-08-23</td>
+                    <td class="mgrTitle">NT$1,600</td>
                   </tr>
-                  <tbody id="backAdoptTable">
-                    <tr class="mgrAdoptOrder word1">
-                      <td class="mgrTitle">1</td>
-                      <td class="mgrTitle">1</td>
-                      <td class="mgrTitle">1</td>
-                      <td class="mgrTitle">2019-08-23</td>
-                      <td class="mgrTitle">NT$1,600</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                </tbody>
+              </table>
             </div>
             <!-- ADOPT END -->
             <!-- JOURNAL -->
