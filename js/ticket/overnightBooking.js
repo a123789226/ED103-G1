@@ -58,7 +58,7 @@ function createList(nightValue, index){
   let nightDate = nightValue.split('|')[3];
 
   let nightList = `<tr id="night${index+1}">
-                    <td><img src="./image/ticket/night${index+1}.jpg" alt=""></td>
+                    <td><img src="./image/ticket/nightTicket${index+1}.png" alt=""></td>
                     <td>${nightName}</td>
                     <td>${nightDate}</td>
                     <td>${nightAmount}</td>
