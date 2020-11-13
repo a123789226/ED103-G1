@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("./connectAqua.php");
-  $sql = "select o.ticketOrderNo, o.memNo, o.ticketOrderDate, o.ticketTotalPrice, l.ticketItemNo, l.ticketNo, l.ticketPerson, l.ticketListPrice from ticket_order_list l JOIN ticket_order o ON o.ticketOrderNo = l.ticketOrderNo";
+  $sql = "select o.ticketOrderNo, o.memNo, o.ticketOrderDate, o.ticketTotalPrice, l.ticketItemNo, l.ticketNo, l.ticketPerson, l.ticketListPrice from ticket_order_list l JOIN ticket_order o ON o.ticketOrderNo = l.ticketOrderNo order by o.ticketOrderNo";
  
   $ticket = $pdo->prepare($sql);
   $ticket->execute();

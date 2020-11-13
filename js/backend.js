@@ -223,13 +223,6 @@ function backendDoFirst(){
     for (let i = 0; i < backTicketOrderRow.length; i++) {
       if (i == 0) {
         backTicketOrderHtml += `
-          <div class="row mgrOrderTitle mgrOrderCard">
-            <div class="col-md-2 mgrTitle">Order No</div>
-            <div class="col-md-2 mgrTitle">Member No</div>
-            <div class="col-md-4 mgrTitle">Order Date</div>
-            <div class="col-md-2 mgrTitle">Total</div>
-            <div class="col-md-2 mgrTitle">Detail</div>
-          </div>
           <div class="mgrTicketOrder mgrOrderCard row">
             <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].ticketOrderNo}</div>
             <div class="col-md-2 mgrTitle">${backTicketOrderRow[i].memNo}</div>
@@ -238,7 +231,7 @@ function backendDoFirst(){
             <div class="col-md-2 mgrTitle mgrStep">View
               <i class="fa fa-angle-down fa-lg"></i>
             </div>
-            <div class="mgrOrderDetail mgrStepContent container">
+            <div class="mgrOrderDetail col-md-11 mgrStepContent container" style="text-align:center;">
               <div class="row mgrOrderCardDetail">
                 <div class="col-md-2 mgrDetailTitle"></div>
                 <div class="col-md-2 mgrDetailTitle">Item No</div>
@@ -277,7 +270,7 @@ function backendDoFirst(){
             <div class="col-md-2 mgrTitle mgrStep">View
               <i class="fa fa-angle-down fa-lg"></i>
             </div>
-            <div class="mgrOrderDetail mgrStepContent container">
+            <div class="mgrOrderDetail col-md-11 mgrStepContent container" style="text-align:center;">
               <div class="row mgrOrderCardDetail">
                 <div class="col-md-2 mgrDetailTitle"></div>
                 <div class="col-md-2 mgrDetailTitle">Item No</div>
@@ -295,11 +288,11 @@ function backendDoFirst(){
                 <div class="col-md-2 mgrTick"></div>
               </div> `
       }
-      backTicketOrderHtml += `
-          </div>
-        </div>`
-      document.getElementById('backTicketOrderTable').innerHTML = backTicketOrderHtml;
     }
+    backTicketOrderHtml += `
+        </div>
+      </div>`
+    document.getElementById('backTicketOrderTable').innerHTML += backTicketOrderHtml;
   }
 
   backTicketOrderxhr.open("get", "./backTicketOrder.php", false);
@@ -387,11 +380,11 @@ function backendDoFirst(){
                 <div class="col-md-2 mgrTick">${backNightOrderRow[i].nightDate}</div>
               </div> `
       }
-      backNightOrderHtml += `
-            </div>
-          </div> `
-      document.getElementById('backNightOrderTable').innerHTML = backNightOrderHtml;
     }
+    backNightOrderHtml += `
+          </div>
+        </div> `
+    document.getElementById('backNightOrderTable').innerHTML = backNightOrderHtml;
   }
 
   backNightOrderxhr.open("get", "./backNightOrder.php", false);

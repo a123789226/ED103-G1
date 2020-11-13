@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("./connectAqua.php");
-  $sql = "select o.nightOrderNo, o.memNo, o.nightOrderDate, o.nightTotalPrice, l.nightItemNo, l.areaNo, l.nightPerson, l.nightListPrice, l.nightDate from night_order_list l JOIN night_order o ON o.nightOrderNo = l.nightOrderNo";
+  $sql = "select o.nightOrderNo, o.memNo, o.nightOrderDate, o.nightTotalPrice, l.nightItemNo, l.areaNo, l.nightPerson, l.nightListPrice, l.nightDate from night_order_list l JOIN night_order o ON o.nightOrderNo = l.nightOrderNo order by o.nightOrderNo";
  
   $night = $pdo->prepare($sql);
   $night->execute();
