@@ -4,12 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqua Wonderland</title>
   <link rel="stylesheet" href="./css/style.css">
-  <title>VOTE</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
 </head>
 
 <body class="voteBLOCK">
@@ -24,32 +20,56 @@
     <img src="./image/background/fish1.png" alt="" class="BGFish2">
   </div>
   <!-- 上面是背景的div，先不要動到 -->
+
+  <!-- Log In開始 -->
+  <div id="memLightBox" class="memLogin overlay">
+    <form action="" class="LogInForm" id="LogInForm" method="post">
+      <div class="btn_modal_close">
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="memLogTitle">LOG IN</h3>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+      <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+      <div class="memLine">
+        <h5>OR</h5>
+      </div>
+      <p>Don't have an account?</p><br>
+      <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+    </form>
+  </div>
+  <!-- Log In結束 -->
+  
+  <!-- header開始 -->
   <header class="main_menu">
+    <!-- header第一區塊 主導覽列 -->
     <nav class="main_nav">
       <div class="logo_box">
         <a href="homepage.html" class="logo">
           <img src="./image/header/logo.png" alt="">
         </a>
-        <a href="homepage.html" class="logo_text_box">
+        <a href="" class="logo_text_box">
           <h1 class="logo_text">AQUA WONDERLAND</h1>
         </a>
       </div>
-      <ul class="main_menu_ul">
-        <li class="main_menu_li ">
+      <ul class="main_menu_ul" id="main_menu_ul">
+        <li class="main_menu_li active">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
             <img src="./image/header/header_tour_cover.png" alt="">
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li ">
+        <li class="main_menu_li active">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
           </a>
           <a href="journal.html" class="li_text">JOURNAL</a>
         </li>
-        <li class="main_menu_li ">
+        <li class="main_menu_li active">
           <a href="ticket.html" class="li_logo">
             <img src="./image/header/header_ticket.png" alt="">
             <img src="./image/header/header_ticket_cover.png" alt="">
@@ -63,62 +83,52 @@
           </a>
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
-        <li class="main_menu_li ">
-          <a href="blog.html" class="li_logo">
+        <li class="main_menu_li active">
+          <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
           </a>
-          <a href="blog.html" class="li_text">BLOG</a>
+          <a href="blog1.php" class="li_text">BLOG</a>
         </li>
       </ul>
       <div class="header_right">
-        <a href="#" class="member_box btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
+        <span class="member_box btn_modal" id="btn_modal">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+        </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
+          <span class="cart_amount"></span>
         </a>
-        <div class="hamburger_box">
+        <div class="hamburger_box" id="hamburger_box">
           <div class="hamburger">
-            <span class="hamburger_line is-active"></span>
-            <span class="hamburger_cross">&times;</span>
+            <span class="hamburger_line is-active" id="hamburger_line"></span>
+            <span class="hamburger_cross" id="hamburger_cross">&times;</span>
           </div>
         </div>
       </div>
     </nav>
-  </header>
+    
+    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+      <p id="SignOutLink">Sign Out</p>
+    </div>
+
+  </header> 
+
+  <!-- header結束 -->
 
 
   <div>
     <div class="commonTitleBox VoteTitleBox">
-      <h2 class="commonTitle comtitle">VOTE</h2>
-      <h4 class="commonSubTitle comtitle2">You can view the creatures that are in the process of nomination, as well as those that
-        are
-        voting for naming. In
-        addition, you can also watch the activity record of the polls that have finished.</h4>
+      <h2 class="commonTitle">VOTE</h2>
+      <h4 class="commonSubTitle">You can view the creatures that are in the process of nomination, including nomination, voting and history record.</h4>
     </div>
     <!-- 你的code打這下面 -->
+       
     <div class="vote_container">
-          <!-- Sign In -->
-    <div class="memLogin overlay">
-      <form class="LogInForm" id="LogInForm" method="post">
-        <div class="btn_modal_close">
-          <div></div>
-          <div></div>
-        </div>
-        <h3 class="memLogTitle">LOG IN</h3>
-        <input type="text" name="memId" id="memId" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" size="35"/><br>
-        <input type="password" name="memPsw" id="memPsw" minlength="8" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" size="35"/><br>
-        <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
-        <button type="button" class="submitBtnLog" id="btnLogin">LOG IN</button><br>
-        <div class="memLine">
-          <h5>OR</h5>
-        </div>
-        <p>Don't have an account?</p><br>
-        <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
-      </form>
-    </div>
+
 
       <div class="vote_block">
         <ul class="vote_list">
@@ -136,30 +146,63 @@
         <div class="vote vote1 -on">
           <div class="vote_info">
             <div class="vote_subtitle">NOMINATE</div>
-            <p>敲敲鍵盤，為你喜歡的動物取個漂亮的名字吧!</p>
-
+            <p class="vote_text">Please nominate a name for this marine creatures!</p>
           </div>
-          <div class="nominate nominate1">
-            <h4>Creature: Dolphin</h4>
-            <div class="vote_img">
-              <img src="./image/vote/vote01.jpg">
-              <a href="journal.html" class="journal">Journal</a>
+          
+          <div id="nominateCreatureBlock">
+            
+            <div class="nominate">
+              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
+              <div class="vote_img">
+                <img src="./image/vote/vote01.jpg">
+                <a href="journal.html" class="journal">Journal</a>
+              </div>            
+              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
+              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
+              <div class="nominateInputBox">
+                <h4>Create A Name</h4>
+                <input type="test" name="nominateName">
+                <button class="nominateSubmit">SUBMIT</button>
+              </div> 
+            </div>
+
+            <div class="nominate">
+              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
+              <div class="vote_img">
+                <img src="./image/vote/vote01.jpg">
+                <a href="journal.html" class="journal">Journal</a>
+              </div>            
+              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
+              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
+              <div class="nominateInputBox">
+                <h4>Create A Name</h4>
+                <input type="test" name="nominateName">
+                <button class="nominateSubmit">SUBMIT</button>
+              </div> 
+            </div>
+
+            <div class="nominate">
+              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
+              <div class="vote_img">
+                <img src="./image/vote/vote01.jpg">
+                <a href="journal.html" class="journal">Journal</a>
+              </div>            
+              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
+              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
+              <div class="nominateInputBox">
+                <h4>Create A Name</h4>
+                <input type="test" name="nominateName">
+                <button class="nominateSubmit">SUBMIT</button>
+              </div> 
             </div>
 
             
-            <p>Nominating deadline: 2020/10/25</p>
-            <p>Current nominated number: 8</p>
-            <div class="name">
-              <h4>Create A Name</h4>
-              <input type="test" name="creat_name">
-              <button type="submit" id="nominate_botton_1" class="btn">SUBMIT</button>
 
-
-            </div>
 
           </div>
 
-          <div class="nominate nominate2">
+
+          <!-- <div class="nominate nominate2">
             <h4>Creature: Dolphin</h4>
             <div class="vote_img">
               <img src="./image/vote/vote02.jpg">
@@ -256,7 +299,7 @@
 
             </div>
 
-          </div>
+          </div> -->
         </div>
 
 
@@ -265,7 +308,7 @@
         <div class="vote vote2">
           <div class="vote_info">
             <div class="vote_subtitle">VOTE</div>
-            <p>來為可愛的動物選個適合牠的名字，投票吧!</p>
+            <p class="vote_text">來為可愛的動物選個適合牠的名字，投票吧!</p>
 
           </div>
           <div class="vote_nav vote_nav1">
@@ -373,7 +416,7 @@
         <div class="vote vote3">
           <div class="vote_info">
             <div class="vote_subtitle">FINISHED</div>
-            <p>來看看動物們的命名結果~</p>
+            <p class="vote_text">來看看動物們的命名結果~</p>
 
           </div>
           <div class="finished">
@@ -668,6 +711,10 @@
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/memLogin.js"></script>
+  <script src="./js/layout/header.js"></script>
   <script>
     $(function () {
       $("a.vote").on("click", function (e) {
@@ -753,18 +800,6 @@
       console.log(this);
     });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-
-    $("div.hamburger_box").on("click", function () {
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-      // $("ul.main_menu_ul").slideToggle();
-      // $("header.main_menu").toggleClass("removeShadow");
-    });
-
-  </script>
   <script>
     jQuery('.skillbar').each(function () {
       jQuery(this).find('.skillbar-bar').animate({
@@ -773,23 +808,7 @@
     });
   </script>
 
-<script>
-    // Login彈窗
-    $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
-</script>
+
 </body>
 
 </html>
