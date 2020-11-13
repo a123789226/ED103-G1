@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./connect_aqua.php");
+  require_once("./connectAqua.php");
   $sql = "select c.cardDate, c.cardName, c.memEmail from thankscard c join member m on(c.memNo = m .memNo) where m.memId =:id;";
  
   $member = $pdo->prepare($sql);

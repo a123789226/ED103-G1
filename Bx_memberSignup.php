@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("connect_aqua.php");
+  require_once("connectAqua.php");
 
   $sql = "select * from member where memId=:memId";
 

@@ -1,7 +1,7 @@
 <?php 
 
 try {
-require("connect_aqua.php");
+require("connectAqua.php");
 
 $sql = "select * from journal where aquaNo = 1 order by jourDate";
 $journal = $pdo->prepare($sql);

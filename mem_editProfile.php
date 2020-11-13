@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./connect_aqua.php");
+  require_once("./connectAqua.php");
   $sql = "update member set memPsw=:password, memEmail=:email, memPhone = :phone, memBirth = :birth where memId=:id";
   // $sql = "select areaNo, sum(nightPerson) as sum from `night_order_list` where nightDate=:nightDate group by areaNo"; 
  
