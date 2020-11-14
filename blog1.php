@@ -211,6 +211,7 @@
                </div>
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
+              <input type="hidden" name="blogReportReason" id="blogReportReason">
           </div>
           <div class="blogMoreBtnSection"><a href='./blogPost.php?blogNo=<?=$prodRow["blogNo"]?>' class="blogMoreBtn">More</a></div>
           </div>
@@ -321,31 +322,56 @@
     });
 //  ---------這裡是SweetAlert---------
 
+// $('.blogIconReport').on('click', function(){
+  
+//   swal({
+//     title: "Do you want to report this post?",
+//     icon: "warning",
+//     buttons: {
+//       Btn: false,
+//       Cancel: {
+//         text: "Cancel",
+//         visible: true
+//       },
+//       Confirm: {
+//         text: "Confirm",
+//         visible: true
+//       }
+//     }
+//   })
+//   .then((value) => {
+//     if(value == "Confirm"){
+//       swal({
+//       title: "Succeed!",
+//       icon: "success",
+//     });
+//     }
+//   })
+// })
+
+
+
+
 $('.blogIconReport').on('click', function(){
   swal({
-    title: "Do you want to report this post?",
-    icon: "warning",
-    buttons: {
-      Btn: false,
-      Cancel: {
-        text: "Cancel",
-        visible: true
-      },
-      Confirm: {
-        text: "Confirm",
-        visible: true
-      }
-    }
-  })
-  .then((value) => {
-    if(value == "Confirm"){
-      swal({
-      title: "Succeed!",
-      icon: "success",
-    });
-    }
-  });
-
+  title: "An input!",
+  text: "Write something interesting:",
+  type: "input",
+  showCancelButton: true,
+  closeOnConfirm: false,
+  animation: "slide-from-top",
+  inputPlaceholder: "Write something"
+},
+function(inputValue){
+  if (inputValue === false) return false;
+  
+  if (inputValue === "") {
+    swal.showInputError("You need to write something!");
+    return false
+  }
+  
+  swal("Nice!", "You wrote: " + inputValue, "success");
+});
 })
   // ---------這裡是JavaScript---------
   // 燈箱開關
@@ -491,7 +517,27 @@ window.addEventListener('load', doFirst);
 //     break;
 //   }
 // }
+
+
+
+
+
+$(document).on('click', '#blogIconReportBtn'), function(){
+  //使用$(document).on()的原因是如果id為submit的按鈕是一開始沒有載入、透過ajax互動後才產生的DOM，那用$().click會抓不到，需以$(document).on()才行
+  var name = $('#blogReportReason').val();
+  $.ajax({
+     url:'../../php/blogReport.php',
+     method:'POST',
+     data:{
+        name:name
+     },
+     success:function(res){
+
+     }
+  })
+}
 </script>
+<script src="./js/blog/blogReport.js"></script>
 <script src="./js/memLogin.js"></script>
 <script src="./js/layout/header.js"></script>
 <script src="./js/collect.js"></script>
