@@ -8,39 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Thanks Card</title>
     <style>
-      canvas {
-  border: 1px solid #000;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  position: relative;
-}
-
-
-input[type="file"] {
-  display: none;
-}
-
-img {
-  display: inline-block;
-  border: 1px solid #eaeaea;
-  height: 100px;
-  width: 100px;
-}
-
-[draggable] {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-    cursor: move;
-}
+      
     </style>
 </head>
 <body>
@@ -163,33 +131,6 @@ img {
 
 <!-- 你的code打這下面 -->
 
-
-
-<div class="options">
-  <button id="imageUploader" >上傳</button>
-  <input type="file" id="file">
-</div>
-拖曳圖片
-<div id="imgset">
-<img id="defaultImg" src="https://www.pakutaso.com/shared/img/thumb/neko1869IMG_9074_TP_V.jpg" alt="" draggable>
- <img src="https://picsum.photos/200/300?random=2">
- <img src="https://picsum.photos/200/300?random=6">
- <img class="cardBgc" src="./image/thanksCard/background1.png" alt="">
- <img class="cardBgc" src="./image/thanksCard/background2.png" alt="">
- <img class="cardBgc" src="./image/thanksCard/background3.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal1.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal2.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal3.png" alt="">
- <img class="cardDeco" src="./image/thanksCard/deco1.png" alt="">
-            <img class="cardDeco" src="./image/thanksCard/deco2.png" alt="">
-            <img class="cardDeco" src="./image/thanksCard/deco3.png" alt="">
-   
-</div>
-<div class="cardMaterials">
-        
-<canvas id="canvas"></canvas>
-
-
 <div class="cardContainer">
     <div class="cardMaterials">
         <div class="cardMaterialBackground step active">
@@ -218,7 +159,7 @@ img {
     </div>
 
     <!-- 圖片位置 -->
-    <div class="cardSectionContainer"  id="chart3">
+    <div class="cardSectionContainer">
         <div class="cardSectionContent">
           <div class="cardSelectText">
             <p>Thank you for your donation,<br>
@@ -226,8 +167,9 @@ img {
             </p>
             </div>
             <div class="cardSelectAnimal"></div>
-            <div class="cardAnimalChosen"></div>
-            <div class="cardDecoChosen"></div>
+              <div class="cardAnimalChosen"></div>
+              <div class="cardDecoChosen"></div>
+            
             
             </div>
             <!-- <div class="cardSelectDeco" style="background-image: url(https://picsum.photos/300/200?random=89);"></div>></div> -->
@@ -236,7 +178,11 @@ img {
         </div>
     </div>
 </div>
-<a href="#" id="a" download>點選下載圖片</a>
+
+
+<!-- 你的code打這上面 -->
+
+  </div>
 
 
 <!--Sign In-->
@@ -397,71 +343,6 @@ function changeBgPattern3(){
 
 
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.min.js"></script>
-<script>
-  const canvas = new fabric.Canvas('canvas', {
-  width: 500,
-  height: 500
-})
-
-const $ = (id) => document.getElementById(id)
-const imageUploader = $('imageUploader')
-const file = $('file')
-const imgset = $('imgset')
-const defaultImg = $('defaultImg')
-let movingImage
-let imgDragOffset = {
-  offsetX: 0,
-  offsetY: 0
-}
-function uploadFile (e) {
-  file.click()
-}
-
-function saveImg (e) {
-  if( e.target.tagName.toLowerCase() === 'img' ){
-    imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
-    imgDragOffset.offsetY = e.clientY - e.target.offsetTop
-    movingImage = e.target
-  }
-}
-
-function handleFile () {
-  const fileReader = new FileReader();
-  fileReader.readAsDataURL(this.files[0])
-  fileReader.onload = (e) => {
-    // 圖片 base64
-    const dataURL = e.target.result
-    const img = document.createElement('img')
-    img.draggable = true
-    img.src = dataURL
-    img.click = saveImg
-    imgset.appendChild(img)
-  }
-}
-
-function dropImg (e) {
-  const {offsetX, offsetY} = e.e
-  const image = new fabric.Image(movingImage, {
-    width: movingImage.naturalWidth,
-    height: movingImage.naturalHeight,
-    scaleX: 100 / movingImage.naturalWidth,
-    scaleY: 100 / movingImage.naturalHeight,
-    top: offsetY - imgDragOffset.offsetY,
-    left: offsetX - imgDragOffset.offsetX
-  })
-  canvas.add(image)
-}
-
-imageUploader.addEventListener('click', uploadFile, true)
-file.addEventListener('change', handleFile)
-canvas.on('drop', dropImg)
-
-// defaultImg.addEventListener('mousedown', saveImg)
-imgset.addEventListener('mousedown', saveImg)
-
-
-</script>
   <script src="./js/memLogin.js"></script>
   <script src="./js/layout/header.js"></script>
 </body>

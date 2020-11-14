@@ -313,10 +313,18 @@
         }
         img{
           position: absolute;
-          top: 0%;
+          top: 50%;
           left:  0%;
-          width: 50px;
-          transform: translate(-30%, -10%) rotate(-30deg);
+          width: 25%;
+          min-width: 50px;
+          transform: translate(20%, -50%);
+          @media screen and (max-width: 991px){
+            transform: translate(-10%, -50%);
+          }
+          @media screen and (max-width: 479px){
+            top: 20%;
+            transform: translate(-10%, -50%);
+          }
         }
       }
       .ticketONIntroBox{
