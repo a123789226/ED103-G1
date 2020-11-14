@@ -53,6 +53,9 @@ function backendDoFirst(){
     })
   }
 
+
+
+
   // backMember
   let backMemberxhr = new XMLHttpRequest();
   backMemberxhr.onload = function () {
@@ -110,6 +113,8 @@ function backendDoFirst(){
       xhrEditMember.send(data_info);
     })
   }
+
+
 
 
   // backAqua
@@ -214,6 +219,8 @@ function backendDoFirst(){
   }
 
 
+
+
   // backTicketOrder
   let backTicketOrderxhr = new XMLHttpRequest();
   backTicketOrderxhr.onload = function () {
@@ -231,7 +238,7 @@ function backendDoFirst(){
             <div class="col-md-2 mgrTitle mgrStep">View
               <i class="fa fa-angle-down fa-lg"></i>
             </div>
-            <div class="mgrOrderDetail col-md-11 mgrStepContent container" style="text-align:center;">
+            <div class="mgrOrderDetail mgrStepContent container" style="text-align:center;">
               <div class="row mgrOrderCardDetail">
                 <div class="col-md-2 mgrDetailTitle"></div>
                 <div class="col-md-2 mgrDetailTitle">Item No</div>
@@ -270,7 +277,7 @@ function backendDoFirst(){
             <div class="col-md-2 mgrTitle mgrStep">View
               <i class="fa fa-angle-down fa-lg"></i>
             </div>
-            <div class="mgrOrderDetail col-md-11 mgrStepContent container" style="text-align:center;">
+            <div class="mgrOrderDetail mgrStepContent container" style="text-align:center;">
               <div class="row mgrOrderCardDetail">
                 <div class="col-md-2 mgrDetailTitle"></div>
                 <div class="col-md-2 mgrDetailTitle">Item No</div>
@@ -297,6 +304,8 @@ function backendDoFirst(){
 
   backTicketOrderxhr.open("get", "./backTicketOrder.php", false);
   backTicketOrderxhr.send(null);
+
+
 
 
   // backNightOrder
@@ -391,6 +400,8 @@ function backendDoFirst(){
   backNightOrderxhr.send(null);
 
 
+
+
   // backTicketInfo
   let backTicketInfoxhr = new XMLHttpRequest();
   backTicketInfoxhr.onload = function () {
@@ -440,6 +451,8 @@ function backendDoFirst(){
       xhrEditTicket.send(data_info);
     })
   }
+
+
 
 
   // backNightInfo
@@ -493,6 +506,8 @@ function backendDoFirst(){
   }
 
 
+
+
   // backAdopt
   let backAdoptxhr = new XMLHttpRequest();
   backAdoptxhr.onload = function () {
@@ -516,6 +531,8 @@ function backendDoFirst(){
   }
 
   document.getElementById('backAdoptTable').innerHTML = adopthtml;
+
+
 
 
   // backJournal
@@ -550,41 +567,43 @@ function backendDoFirst(){
 
 
   // backJournal 修改
-  let editJournal = document.querySelectorAll("i.editJournal");
-  for (let i = 0; i < editJournal.length; i++) {
-    editJournal[i].addEventListener("click", function () {
-      let jourNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
-      let aquaNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-      let jourStory = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-      let jourContent = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-      let jourPic1 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-      let jourPic2 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-      let jourPic3 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
-      let jourDate = editJournal[i].parentNode.previousElementSibling.children[0].value;
-      // alert(jourDate);
+  // let editJournal = document.querySelectorAll("i.editJournal");
+  // for (let i = 0; i < editJournal.length; i++) {
+  //   editJournal[i].addEventListener("click", function () {
+  //     let jourNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+  //     let aquaNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourStory = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourContent = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourPic1 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourPic2 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourPic3 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+  //     let jourDate = editJournal[i].parentNode.previousElementSibling.children[0].value;
+  //     // alert(jourDate);
 
-      let xhrEditJournal = new XMLHttpRequest();
-      xhrEditJournal.onload = function () {
-        jourEdit = xhrEditJournal.responseText;
-        // console.log(jourEdit);
-        swal("Edit Succeed!", "", "success");
-        alert('異動成功');
-      }
+  //     let xhrEditJournal = new XMLHttpRequest();
+  //     xhrEditJournal.onload = function () {
+  //       jourEdit = xhrEditJournal.responseText;
+  //       // console.log(jourEdit);
+  //       swal("Edit Succeed!", "", "success");
+  //       alert('異動成功');
+  //     }
 
-      xhrEditJournal.open("Post", "EditbackJournal.php", true);
-      xhrEditJournal.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      let data_info = `
-        jourNo=${jourNo}&
-        aquaNo=${aquaNo}&
-        jourStory=${jourStory}&
-        jourContent=${jourContent}&
-        jourPic1=${jourPic1}&
-        jourPic2=${jourPic2}&
-        jourPic3=${jourPic3}&
-        jourDate=${jourDate}`;
-      xhrEditJournal.send(data_info);
-    })
-  }
+  //     xhrEditJournal.open("Post", "EditbackJournal.php", true);
+  //     xhrEditJournal.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  //     let data_info = `
+  //       jourNo=${jourNo}&
+  //       aquaNo=${aquaNo}&
+  //       jourStory=${jourStory}&
+  //       jourContent=${jourContent}&
+  //       jourPic1=${jourPic1}&
+  //       jourPic2=${jourPic2}&
+  //       jourPic3=${jourPic3}&
+  //       jourDate=${jourDate}`;
+  //     xhrEditJournal.send(data_info);
+  //   })
+  // }
+
+
 
 
   // backJournalMsg
@@ -605,9 +624,9 @@ function backendDoFirst(){
       <td>${backJournalMsgRow[i].jourNo}</td>
       <td>${backJournalMsgRow[i].msgContent}</td>
       <td>${backJournalMsgRow[i].msgTime}</td>
-      <td>${backJournalMsgRow[i].msgStatus}</td>
+      <td><input type="text" value="${backJournalMsgRow[i].msgStatus}"></td>
       <td>
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editJourMsg"></i>
       </td>
     </tr>
     `
@@ -616,6 +635,32 @@ function backendDoFirst(){
   document.getElementById('backJournalMsgTable').innerHTML = journalMsghtml;
 
 
+  // backJourMsg 修改
+  let editJourMsg = document.querySelectorAll("i.editJourMsg");
+  for (let i = 0; i < editJourMsg.length; i++) {
+    editJourMsg[i].addEventListener("click", function () {
+      let msgNo = editJourMsg[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let msgStatus = editJourMsg[i].parentNode.previousElementSibling.children[0].value;
+      // alert(nightPrice);
+
+      let xhrEditJourMsg = new XMLHttpRequest();
+      xhrEditJourMsg.onload = function () {
+        JourMsgEdit = xhrEditJourMsg.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditJourMsg.open("Post", "EditbackJourMsg.php", true);
+      xhrEditJourMsg.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `msgNo=${msgNo}&msgStatus=${msgStatus}`;
+      xhrEditJourMsg.send(data_info);
+    })
+  }
+
+
+
+  
   // backJournalMsgRep
   let backJournalMsgRepxhr = new XMLHttpRequest();
   backJournalMsgRepxhr.onload = function () {
