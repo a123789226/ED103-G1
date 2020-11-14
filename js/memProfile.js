@@ -248,6 +248,9 @@ $(function () {
                     document.getElementById('showMem').style.display = 'block';
                     document.getElementById('editMem').style.display = 'none';
             })
+            .catch(function (err) {
+                console.log(err);
+            });
         },
 
             //blogPreview
