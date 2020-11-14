@@ -1,7 +1,7 @@
 <?php
 try{
-  require_once("./connect_aqua.php");
-  $sql = "select o.ticketOrderNo, o.ticketTotalPrice, o.ticketOrderDate, t.ticketType, t.ticketPrice, l.ticketPerson, l.ticketListPrice from member m join ticket_order o on(m.memNo = o.memNo) join ticket_order_list l on(o.ticketOrderNo = l.ticketOrderNo) join ticket_info t on(l.ticketNo = t.ticketNo) where m.memId =:id;";
+  require_once("./connectAqua.php");
+  $sql = "select o.ticketOrderNo, o.ticketTotalPrice, o.ticketOrderDate, t.ticketType, t.ticketPrice, l.ticketPerson, l.ticketListPrice from member m join ticket_order o on(m.memNo = o.memNo) join ticket_order_list l on(o.ticketOrderNo = l.ticketOrderNo) join ticket_info t on(l.ticketNo = t.ticketNo) where m.memId =:id order by l.ticketItemNo;";
  
   $member = $pdo->prepare($sql);
   $member->bindValue(":id", $_POST["id"]);

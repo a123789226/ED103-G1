@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./connect_aqua.php");
+  require_once("./connectAqua.php");
   $sql = "select i.areaNo areaNo,ifnull(sum(o.nightPerson),0) sum , i.areaCapacity i from night_info i left JOIN night_order_list o ON( o.areaNo = i.areaNo and o.nightDate =:nightDate) group by areaNo";
   // $sql = "select areaNo, sum(nightPerson) as sum from `night_order_list` where nightDate=:nightDate group by areaNo"; 
  

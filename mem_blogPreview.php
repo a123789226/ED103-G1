@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./connect_aqua.php");
+  require_once("./connectAqua.php");
   $sql = "select b.blogPic , b.blogTitle , b.blogTags from blog b join member m on(m.memNo = b.memNo) where m.memId =:id;";
  
   $member = $pdo->prepare($sql);

@@ -214,7 +214,9 @@ $(function () {
                         vue_member.blogPreview();
                         vue_member.blogSaved();
                         vue_member.thanksCard();
+                        vue_member.adopt();
                         vue_member.order();
+                        vue_member.night();
                     }
                 })
                 .catch(function (err) {
@@ -317,7 +319,7 @@ $(function () {
                 params.append('id', this.id);
                 axios.post('mem_thankscard.php', params)
                     .then(function (res) {
-                        // console.log(res.data);
+                        console.log(res.data);
                         let cardContainer = document.getElementsByClassName('memThanksTable')[0];
                         let cardHtml = '';
                         for (let i = 0; i < res.data.length; i++) {
@@ -338,7 +340,7 @@ $(function () {
             },
 
             //adoption
-            thanksCard: function () {
+            adopt: function () {
                 // console.log(this.id);
                 let params = new URLSearchParams();
                 params.append('id', this.id);
@@ -459,40 +461,41 @@ $(function () {
                 axios.post('mem_night_order.php', params)
                     .then(function (res) {
                         console.log(res.data);
-                        let orderContainer = document.getElementsByClassName('memOrderTab1')[0];
+                        let orderContainer = document.getElementsByClassName('memOrderTab2')[0];
                         let orderHtml = '';
                         for (let i = 0; i < res.data.length; i++) {
                             if (i == 0) {
                                 orderHtml += `
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
-                                        <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
-                                        <div class="col-4 col-sm-4 mem_ana">${res.data[i].ticketOrderDate}</div>
+                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].nightOrderNo}</div>
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
+                                        <div class="col-2 col-sm-2 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightOrderDate}</div>
                                         <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
-                                        <div class="col-11 col-sm-11 memOrderDetail memStepContent container">
+                                        <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
                                         <div class="row memBlogForm memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
+                                            <div class="col-3 col-sm-3 memFormTitle">AreaNo.</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Amount</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Price</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
                                         </div>
                                         <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].areaType}</div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].nightPerson}</div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].areaPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].nightListPrice}</span></div>
                                         </div>
                                 `
-                            } else if (res.data[i - 1].ticketOrderNo == res.data[i].ticketOrderNo) {
+                            } else if (res.data[i - 1].nightOrderNo == res.data[i].nightOrderNo) {
                                 orderHtml += `
                                         <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].areaType}</div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].nightPerson}</div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].areaPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].nightListPrice}</span></div>
                                         </div>
                                 `
                             } else {
@@ -500,25 +503,26 @@ $(function () {
                                 </div>
                                 </div>
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
-                                        <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
-                                        <div class="col-4 col-sm-4 mem_ana">${res.data[i].ticketOrderDate}</div>
+                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].nightOrderNo}</div>
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
+                                        <div class="col-2 col-sm-2 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightOrderDate}</div>
                                         <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
-                                        <div class="col-11 col-sm-11 memOrderDetail memStepContent container">
+                                        <div class="col-11 col-sm-11 memBlogDetail memStepContent container">
                                         <div class="row memBlogForm memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memFormTitle">ProdNo.</div>
+                                            <div class="col-3 col-sm-3 memFormTitle">AreaNo.</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Amount</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Price</div>
                                             <div class="col-3 col-sm-3 memFormTitle">Subtotal</div>
                                         </div>
                                         <div class="row memBlogContent memOrderCardDetail">
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketType}</div>
-                                            <div class="col-3 col-sm-3 memTick">${res.data[i].ticketPerson}</div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketPrice}</span></div>
-                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].ticketListPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].areaType}</div>
+                                            <div class="col-3 col-sm-3 memTick">${res.data[i].nightPerson}</div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].areaPrice}</span></div>
+                                            <div class="col-3 col-sm-3 memTick">$<span>${res.data[i].nightListPrice}</span></div>
                                         </div>
                                 `
                             }
@@ -583,7 +587,8 @@ $(".memOrderTab1").on("click",'div.memStep',function () {
         $(this).find('i').toggleClass('rotate');
     });
 
-$("div.memStep").on("click", function () {
+$(".memOrderTab2").on("click", 'div.memStep', function () {
+    console.log(this);
     $(this).next().slideToggle();
     $(this).find('i').toggleClass('rotate');
 });
