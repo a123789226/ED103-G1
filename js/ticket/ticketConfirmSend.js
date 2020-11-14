@@ -177,7 +177,8 @@ function insertTicketOrder(){
   xhr.open("post", "InsertTicketOrder.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   //送出資料
-  let OrderTime = new Date().toISOString().substring(0, 10);
+  // let OrderTime = new Date().toISOString().substring(0, 10);
+  let OrderTime = new Date();
   let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("TotalPrice").innerText}`;
   xhr.send(data_info);
 }

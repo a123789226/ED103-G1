@@ -238,7 +238,8 @@ function insertNightOrder(){
   xhr.open("post", "InsertNightOrder.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   // 送出資料
-  let OrderTime = new Date().toISOString().substring(0, 10);
+  // let OrderTime = new Date().toISOString().substring(0, 10);
+  let OrderTime = new Date();
   let data_info =`memNo=${member.memNo}&nightOrderDate=${OrderTime}&nightTotalPrice=${$id("TotalPrice").innerText}`;
   xhr.send(data_info);
 }
