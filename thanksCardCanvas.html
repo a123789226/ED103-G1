@@ -8,39 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Thanks Card</title>
     <style>
-      canvas {
-  border: 1px solid #000;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  position: relative;
-}
 
-
-input[type="file"] {
-  display: none;
-}
-
-img {
-  display: inline-block;
-  border: 1px solid #eaeaea;
-  height: 100px;
-  width: 100px;
-}
-
-[draggable] {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-    cursor: move;
-}
     </style>
 </head>
 <body>
@@ -164,33 +132,40 @@ img {
 <!-- 你的code打這下面 -->
 
 
-
+<section class="cardMain">
+<div id="cardImages" class="cardMaterials">
+  
+  <span>拖曳圖片</span>
+      <img id="defaultImg" src="./image/thanksCard/animal1.png" alt="" draggable>
+      <img src="./image/thanksCard/animal2.png" alt="">
+      <img src="./image/thanksCard/animal3.png" alt="">
+      <img src="./image/thanksCard/animal4.png" alt="">
+      <img src="./image/thanksCard/animal5.png" alt="">
+      <img src="./image/thanksCard/decoration1.png" alt="">
+      <img src="./image/thanksCard/decoration2.png" alt="">
+      <img src="./image/thanksCard/decoration3.png" alt="">
+      <img src="./image/thanksCard/decoration4.png" alt="">
+      <img src="./image/thanksCard/decoration5.png" alt="">
+      <img src="./image/thanksCard/decoration6.png" alt="">
+      <img src="./image/thanksCard/decoration7.png" alt="">
+      <img src="./image/thanksCard/decoration8.png" alt="">
+      <img src="./image/thanksCard/decoration9.png" alt="">
+      <img src="./image/thanksCard/decoration10.png" alt="">
+      <img src="./image/thanksCard/decoration11.png" alt="">
+      <img src="./image/thanksCard/decoration12.png" alt="">
+      <img src="./image/thanksCard/decoration13.png" alt="">
+      <img src="./image/thanksCard/decoration14.png" alt="">
+</div>
 <div class="options">
-  <button id="imageUploader" >上傳</button>
-  <input type="file" id="file">
+  <button class="imageUploader" id="imageUploader" >upload image</button>
+  <input type="file" id="file" style="display: none;">
 </div>
-拖曳圖片
-<div id="imgset">
-<img id="defaultImg" src="https://www.pakutaso.com/shared/img/thumb/neko1869IMG_9074_TP_V.jpg" alt="" draggable>
- <img src="https://picsum.photos/200/300?random=2">
- <img src="https://picsum.photos/200/300?random=6">
- <img class="cardBgc" src="./image/thanksCard/background1.png" alt="">
- <img class="cardBgc" src="./image/thanksCard/background2.png" alt="">
- <img class="cardBgc" src="./image/thanksCard/background3.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal1.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal2.png" alt="">
- <img class="cardAnimals" src="./image/thanksCard/animal3.png" alt="">
- <img class="cardDeco" src="./image/thanksCard/deco1.png" alt="">
-            <img class="cardDeco" src="./image/thanksCard/deco2.png" alt="">
-            <img class="cardDeco" src="./image/thanksCard/deco3.png" alt="">
-   
-</div>
-<div class="cardMaterials">
+
         
-<canvas id="canvas"></canvas>
-
-
-<div class="cardContainer">
+<canvas id="thanksCardCanvas"></canvas>
+</section>
+<button id="save2Server">儲存到伺服器</button>
+<!-- <div class="cardContainer">
     <div class="cardMaterials">
         <div class="cardMaterialBackground step active">
           <p>Select your background.</p>
@@ -215,10 +190,10 @@ img {
           <button class="btn50whiteA" id="prev" disabled="disabled">BACK</button>
           <button class="btn50whiteA" id="next">NEXT</button>
         </div>
-    </div>
+    </div> -->
 
     <!-- 圖片位置 -->
-    <div class="cardSectionContainer"  id="chart3">
+    <!-- <div class="cardSectionContainer"  id="chart3">
         <div class="cardSectionContent">
           <div class="cardSelectText">
             <p>Thank you for your donation,<br>
@@ -230,13 +205,11 @@ img {
             <div class="cardDecoChosen"></div>
             
             </div>
-            <!-- <div class="cardSelectDeco" style="background-image: url(https://picsum.photos/300/200?random=89);"></div>></div> -->
-          </div>
-
+          </div> -->
+<!-- 
         </div>
     </div>
-</div>
-<a href="#" id="a" download>點選下載圖片</a>
+</div> -->
 
 
 <!--Sign In-->
@@ -399,21 +372,35 @@ function changeBgPattern3(){
   </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.min.js"></script>
 <script>
-  const canvas = new fabric.Canvas('canvas', {
-  width: 500,
-  height: 500
+  const canvas = new fabric.Canvas('thanksCardCanvas', {
+  width: 600,
+  height: 450
 })
 
 const $ = (id) => document.getElementById(id)
 const imageUploader = $('imageUploader')
 const file = $('file')
-const imgset = $('imgset')
+const imgset = $('cardImages')
 const defaultImg = $('defaultImg')
 let movingImage
 let imgDragOffset = {
   offsetX: 0,
-  offsetY: 0
+  offsetY: 10
 }
+
+// 讀取圖片地址，設置畫布背景
+fabric.Image.fromURL('./image/thanksCard/background1.png', (img) => {
+img.set({
+// 通過scale來設置圖片大小，這裡設置和畫布一樣大
+scaleX: canvas.width / img.width,
+scaleY: canvas.height / img.height,
+});
+// 設置背景
+canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+canvas.renderAll();
+});
+
+
 function uploadFile (e) {
   file.click()
 }
@@ -438,6 +425,7 @@ function handleFile () {
     img.click = saveImg
     imgset.appendChild(img)
   }
+  
 }
 
 function dropImg (e) {
@@ -445,21 +433,148 @@ function dropImg (e) {
   const image = new fabric.Image(movingImage, {
     width: movingImage.naturalWidth,
     height: movingImage.naturalHeight,
-    scaleX: 100 / movingImage.naturalWidth,
-    scaleY: 100 / movingImage.naturalHeight,
-    top: offsetY - imgDragOffset.offsetY,
-    left: offsetX - imgDragOffset.offsetX
+    scaleX: 120 / movingImage.naturalWidth,
+    scaleY: 90 / movingImage.naturalHeight,
+    // top: offsetY - imgDragOffset.offsetY,
+    // left: offsetX - imgDragOffset.offsetX
+    top: 0,
+    left: 0
   })
+
+// 複寫掉圖片外編輯框
+  fabric.Object.prototype.drawControls = function(ctx, styleOverride) {
+      styleOverride = styleOverride || {};
+      var wh = this._calculateCurrentDimensions(),
+          width = wh.x,
+          height = wh.y,
+          scaleOffset = styleOverride.cornerSize || this.cornerSize,
+          left = -(width + scaleOffset) / 2,
+          top = -(height + scaleOffset) / 2,
+          transparentCorners = typeof styleOverride.transparentCorners !== 'undefined' ?
+            styleOverride.transparentCorners : this.transparentCorners,
+          hasRotatingPoint = typeof styleOverride.hasRotatingPoint !== 'undefined' ?
+            styleOverride.hasRotatingPoint : this.hasRotatingPoint,
+          methodName = transparentCorners ? 'stroke' : 'fill';
+      ctx.save();
+      ctx.strokeStyle = ctx.fillStyle = styleOverride.cornerColor || this.cornerColor;
+      if (!this.transparentCorners) {
+        ctx.strokeStyle = styleOverride.cornerStrokeColor || this.cornerStrokeColor;
+      }
+      this._setLineDash(ctx, styleOverride.cornerDashArray || this.cornerDashArray, null);
+    // top-left
+    const cancel = new Image()
+    cancel.src = 'https://upload.wikimedia.org/wikipedia/commons/6/65/Crystal_button_cancel.svg'
+    ctx.drawImage(cancel, left, top, this.cornerSize, this.cornerSize)
+      // top-right
+      this._drawControl('tr', ctx, methodName,
+        left + width,
+        top, styleOverride);
+      // bottom-left
+      this._drawControl('bl', ctx, methodName,
+        left,
+        top + height, styleOverride);
+      // bottom-right
+      this._drawControl('br', ctx, methodName,
+        left + width,
+        top + height, styleOverride);
+      if (!this.get('lockUniScaling')) {
+        // middle-top
+        this._drawControl('mt', ctx, methodName,
+          left + width / 2,
+          top, styleOverride);
+        // middle-bottom
+        this._drawControl('mb', ctx, methodName,
+          left + width / 2,
+          top + height, styleOverride);
+        // middle-right
+        this._drawControl('mr', ctx, methodName,
+          left + width,
+          top + height / 2, styleOverride);
+        // middle-left
+        this._drawControl('ml', ctx, methodName,
+          left,
+          top + height / 2, styleOverride);
+      }
+      // middle-top-rotate
+      if (hasRotatingPoint) {
+        this._drawControl('mtr', ctx, methodName,
+          left + width / 2,
+          top - this.rotatingPointOffset, styleOverride);
+      }
+      ctx.restore();
+      return this;
+    },
+
+fabric.Canvas.prototype._getActionFromCorner = function(target, corner, e) {
+      if (!corner) {
+        return 'drag';
+      }
+      switch (corner) {
+        case 'mtr':
+          return 'rotate';
+        case 'ml':
+          break;
+        case 'mr':
+          return e[this.altActionKey] ? 'skewY' : 'scaleX';
+        case 'mt':
+        case 'mb':
+          return e[this.altActionKey] ? 'skewX' : 'scaleY';
+        case 'tl': // 增加左上刪除動作
+          canvas.remove(target)
+          return 'deleted'
+        default:
+          return 'scale';
+      }
+    }
+// 複寫掉圖片外編輯框結束
+
   canvas.add(image)
 }
+// 可編輯的文字物件
+const iText = new fabric.IText(`Thank you for your donation,
+              Wish you have a beautiful day!`, {
+  left: 150,
+  top: 200,
+  fill: 'white', //顏色
+  fontFamily: 'helvetica',　// 字型
+  fontSize: 18 // 字體大小
+})
+
+canvas.add(iText)
+
 
 imageUploader.addEventListener('click', uploadFile, true)
 file.addEventListener('change', handleFile)
 canvas.on('drop', dropImg)
 
+
+
+
 // defaultImg.addEventListener('mousedown', saveImg)
 imgset.addEventListener('mousedown', saveImg)
 
+
+const save2Server = document.getElementById('save2Server')
+    save2Server.addEventListener('click', () => {
+      const payload = {
+        data: JSON.stringify(canvas)
+        
+      }
+      console.log(payload.data);
+      const host = '127.0.0.1'
+      fetch(`http://${host}/add`, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      })
+        .then(res => res.blob())
+        .then(blob => {
+          serverImg.src = URL.createObjectURL(blob)
+        })
+    })
+    
 
 </script>
   <script src="./js/memLogin.js"></script>
