@@ -10,16 +10,16 @@ function chooseAquaType(){
         for(i=0; i<aquas.length; i++){
             bookCoverHTML += `
 
-            <div class="jourBookSection" id="jourBookSection">
+            <div class="jourBookSection">
                 <a href="#">
 
-                <div class="jourBook jourBookOpenBtn" id="jourBookOpenBtn">
+                <div class="jourBook jourBookOpenBtn">
                     <div class="jourBookLeft">
 
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././image/journal/journal_dolphin/23.jpg" alt="">
+                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -56,7 +56,7 @@ function chooseAquaType(){
         }
         let jourBooks = document.getElementById('jourBooksDolphin');
         jourBooks.innerHTML = bookCoverHTML;
-        openBook();
+        openBookDolphin();
 
         
     }
@@ -73,16 +73,16 @@ function chooseAquaType(){
         for(i=0; i<aquas.length; i++){
             bookCoverHTML += `
 
-            <div class="jourBookSection" id="jourBookSection">
-                <a href="#">
+            <div class="jourBookSection">
+                <a>
 
-                <div class="jourBook jourBookOpenBtn" id="jourBookOpenBtn">
+                <div class="jourBook jourBookOpenBtn">
                     <div class="jourBookLeft">
 
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././image/journal/journal_whale/00.jpg" alt="">
+                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -120,7 +120,7 @@ function chooseAquaType(){
         
         let jourBooks = document.getElementById('jourBooksWhale');
         jourBooks.innerHTML = bookCoverHTML;
-        openBook();
+        // openBook();
 
         
     }
@@ -136,16 +136,16 @@ xhrSeal.onload = function(){
     for(i=0; i<aquas.length; i++){
         bookCoverHTML += `
 
-        <div class="jourBookSection" id="jourBookSection">
-            <a href="#">
+        <div class="jourBookSection">
+            <a>
 
-            <div class="jourBook jourBookOpenBtn" id="jourBookOpenBtn">
+            <div class="jourBook jourBookOpenBtn">
                 <div class="jourBookLeft">
 
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././image/journal/journal_Seal/00.jpg" alt="">
+                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -183,7 +183,7 @@ xhrSeal.onload = function(){
     
     let jourBooks = document.getElementById('jourBooksSeal');
     jourBooks.innerHTML = bookCoverHTML;
-    openBook();
+    // openBook();
 
     
 }
@@ -200,16 +200,16 @@ xhrTurtle.onload = function(){
     for(i=0; i<aquas.length; i++){
         bookCoverHTML += `
 
-        <div class="jourBookSection" id="jourBookSection">
-            <a href="#">
+        <div class="jourBookSection">
+            <a>
 
-            <div class="jourBook jourBookOpenBtn" id="jourBookOpenBtn">
+            <div class="jourBook jourBookOpenBtn">
                 <div class="jourBookLeft">
 
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././image/journal/journal_turtle/00.jpg" alt="">
+                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -247,7 +247,7 @@ xhrTurtle.onload = function(){
     
     let jourBooks = document.getElementById('jourBooksTurtle');
     jourBooks.innerHTML = bookCoverHTML;
-    openBook();
+    // openBook();
 
     
 }
@@ -257,20 +257,40 @@ xhrTurtle.send(null);
 
 }
 
-function openBook(){
-    document.getElementById('jourBookOpenBtn').onclick = function () {
-        // document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
-        document.getElementsByClassName("jour_bk")[0].style.display = "block";
-        document.getElementsByClassName("jourLightBox")[0].style.display = "block";
-        document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
-          document.getElementsByClassName("jourLightBox")[0].style.display = "none";
-          document.getElementsByClassName("jour_bk")[0].style.display = "none";
 
-        }
-      };
+
+function openBookDolphin(){
+    let jourBookOpenBtn = document.getElementsByClassName('jourBookOpenBtn');
+    for(let i=0; i< jourBookOpenBtn.length; i++){
+        jourBookOpenBtn[i].addEventListener('click', function(){
+            let aquaNo = this.querySelector('tr').querySelector('td').innerText;
+            document.getElementsByClassName("jourBookOpenBtn")[0].style.display = "block";
+            document.getElementsByClassName("jour_bk")[0].style.display = "block";
+            document.getElementsByClassName("jourLightBox")[0].style.display = "block";
+            document.getElementsByClassName('jourBookOpenBtn_close')[0].onclick = function () {
+                document.getElementsByClassName("jourLightBox")[0].style.display = "none";
+                document.getElementsByClassName("jour_bk")[0].style.display = "none";
+            }
+
+            // 渲染留言的function
+            doPost(aquaNo);
+        })
+    }
 }
 
-// }
+// 渲染留言的function
+function doPost(aquaNo){
+    console.log(aquaNo);
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+
+    }
+
+    xhr.open("Post", "??????.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    let data_info = `dog=${aquaNo}`;
+    xhr.send(data_info);
+}
 
 
 
