@@ -178,7 +178,10 @@ function insertTicketOrder(){
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
   //送出資料
   // let OrderTime = new Date().toISOString().substring(0, 10);
-  let OrderTime = new Date();
+  let year = new Date().getFullYear();
+  let month = new Date().getMonth() + 1;
+  let day = new Date().getDate();
+  let OrderTime = `${year}-${month}-${day}`;
   let data_info =`memNo=${member.memNo}&ticketOrderDate=${OrderTime}&ticketTotalPrice=${$id("TotalPrice").innerText}`;
   xhr.send(data_info);
 }
