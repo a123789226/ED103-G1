@@ -177,6 +177,7 @@ $(function () {
             email: null,
             phone: null,
             birth: null,
+            pic: null,
 
         },
         mounted() {
@@ -192,12 +193,13 @@ $(function () {
                     vue_member.email = res.data.memEmail;
                     vue_member.phone = res.data.memPhone;
                     vue_member.birth = res.data.memBirth;
+                    vue_member.pic = res.data.memPic;
                     if (res.data.memId) {
                         $id("memNameInProfileBlock").innerText = res.data.memName;
                         // 頭像背景變白
                         $id('btn_modal').style.backgroundColor = '#ffffff';
                         // 更換圖片
-                        $id('memberPic').src = `./image/memPic/${res.data.memPic}`;
+                        $id('memberPic').src = `./${res.data.memPic}`;
                         $id('memberPic').classList.add('memberImg');
                         $id('memberPic').title = 'Member Profile';
                         // 關閉登入燈箱
@@ -210,7 +212,7 @@ $(function () {
                         // })
                         $id('btn_modal').addEventListener('click', showMemberProfileBox);
                         $id('memberPic').style.transition = '0s';
-                        $id('memBigImg').src = `./image/memPic/${res.data.memPic}`;
+                        $id('memBigImg').src = `./${res.data.memPic}`;
                         vue_member.blogPreview();
                         vue_member.blogSaved();
                         vue_member.thanksCard();
@@ -618,3 +620,41 @@ $(".memOrderTab2").on("click", 'div.memStep', function () {
 
 
 
+const fileUploader = document.querySelector('#memPhoto');
+let memBigPhoto = document.getElementById('memBigImg');
+let memSmallPhoto = document.getElementById('memberPic');
+
+// let bigFile ='';
+fileUploader.addEventListener('change', (e) => {
+    console.log(e.target.files);       // FileList object
+    console.log(e.target.files[0]);    // File Object (Special Blob)
+     
+    let form = new FormData();
+    form.append('bigPhoto', e.target.files[0]);
+    $.ajax({
+      url: 'memBigPhoto.php',
+      cache: false,
+      contentType: false,
+      processData: false,
+      data: form,
+      type: 'post',
+      success: function (data) {
+        console.log(data);
+        memBigPhoto.src = `${data}`;
+        memSmallPhoto.src = `${data}`;
+      },
+      error: function (data) {
+        console.log(JSON.stringify(data));
+      },
+    })
+});
+
+
+
+
+
+
+
+memBigPhoto.addEventListener('click', function () {
+
+});

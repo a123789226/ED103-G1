@@ -24,10 +24,10 @@ try{
     if($member->rowCount()!=0){ // 有人使用
       echo "This ID is not available. Choose a different ID.";
     }else{ 
-    require_once("connect_aqua.php");
+    require_once("connectAqua.php");
 
-    $sql1 = "INSERT INTO member(memId, memName, memPsw, memPhone, memEmail, memSex, memBirth, memPic)
-    VALUES ('$memId', '$memName','$memPsw','$memPhone','$memEmail','$memSex','$memBirth', '$memPic');";
+    $sql1 = "INSERT INTO member(memId, memName, memPsw, memPhone, memEmail, memSex, memBirth, memPic, memStatus, point)
+    VALUES ('$memId', '$memName','$memPsw','$memPhone','$memEmail','$memSex','$memBirth', '$memPic', 0, 500);";
 
     $member = $pdo->prepare($sql1);
     $member->bindValue(":memId", $memId);

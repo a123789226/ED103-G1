@@ -199,7 +199,7 @@
         <div class="memSignLeft col-md-6">
     
           <div class="memSignImg">
-            <img src="./image/member/Shinnosuke2.jpg" alt="">
+            <img src="./image/member/Shinnosuke2.jpg" id="memSignImg" alt="">
           </div>
     
           <label for="memPhoto">
@@ -245,6 +245,32 @@
   <script>
     const secondForm = document.getElementById("signUpForm");
     secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+    let memSignImg = document.getElementById('memSignImg');
+    const fileUploader = document.querySelector('#memPhoto');
+
+    fileUploader.addEventListener('change', (e) => {
+    // console.log(e.target.files);       // FileList object
+    // console.log(e.target.files[0]);    // File Object (Special Blob)
+
+    let form = new FormData();
+    form.append('bigPhoto', e.target.files[0]);
+    $.ajax({
+      url: 'memberSignPic.php',
+      cache: false,
+      contentType: false,
+      processData: false,
+      data: form,
+      type: 'post',
+      success: function (data) {
+        console.log(data);
+        memSignImg.src = `${data}`;
+      },
+      error: function (data) {
+        console.log(JSON.stringify(data));
+      },
+    })
+  });
 
 
     // 註冊判斷帳號/暱稱是否使用過（這還沒好）
@@ -297,6 +323,7 @@
       let picCheck = $("#memPhoto").val();
       if (picCheck != '') {
         picName = picCheck.substring((picCheck.lastIndexOf("\\")) + 1);
+        picNameC = `image/memPic/${picName}`;
       } else {
         swal("請選擇大頭貼", "", "error");
         return;
@@ -312,18 +339,18 @@
         if (xhr.readyState == 4) {
           if (xhr.status == 200) {
             console.log(xhr.responseText);
-            if (xhr.responseText == '   帳號註冊成功') {
+            if (xhr.responseText == '帳號註冊成功') {
               if (localStorage.getItem('web') == null) { //註冊成功
                 swal(xhr.responseText); //回傳php回應的值
                 $(".swal-button--confirm").click(function () {
-                  $("#signUpForm").submit();
                   window.location.href = './memberProfile.html';
                 })
               } else {
-                let redirection = localStorage.getItem('web');
-                $("#signUpForm").submit();
-                window.location.href = redirection;
+                window.location.href = './memberLogin.html';
               }
+
+
+
             }
           } else {
             // alert(xhr.status); 
@@ -333,7 +360,7 @@
 
       xhr.open("post", "./memberSignup.php", true);
       xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      let data_info = `memId=${$id("signMemId").value}&memName=${$id("signMemName").value}&memPsw=${$id("signMemPsw").value}&memPhone=${$id("memPhone").value}&memEmail=${$id("memEmail").value}&memSex=${sexTrans}&memBirth=${$id("memBirth").value}&memPic=${picName}`;
+      let data_info = `memId=${$id("signMemId").value}&memName=${$id("signMemName").value}&memPsw=${$id("signMemPsw").value}&memPhone=${$id("memPhone").value}&memEmail=${$id("memEmail").value}&memSex=${sexTrans}&memBirth=${$id("memBirth").value}&memPic=${picNameC}`;
       xhr.send(data_info);
     }
 
