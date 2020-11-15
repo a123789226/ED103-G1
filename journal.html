@@ -1734,14 +1734,14 @@
 
         <!-- comment area -->
         <div class="jourCommentArea">
-          <div class="jourCommentBox">
-            <!-- <textarea name="comment" id="jourCommentTextarea" cols="70" rows="6" placeholder="comment.."></textarea> -->
-            <textarea id="myInput" type="text" cols="70" rows="6" placeholder="comment.."></textarea>
-            <!--留言區-->
-            <button class=" jourLightboxBtn" id="doPost">SUBMIT</button>
-            <!--送出按鈕-->
-            <!-- <a href="#" class="jourLightboxBtn">SUBMIT</a> -->
-          </div>
+          <form action="" method="POST">
+            <div class="jourCommentBox">
+              <textarea id="myInput" type="text" cols="70" rows="6" placeholder="comment.."></textarea>
+              <!--留言區-->
+              <button type="submit" class=" jourLightboxBtn" id="doPost">SUBMIT</button>
+              <!--送出按鈕-->
+            </div>
+          </form>
         </div>
       </div>
       <!-- comments -->
