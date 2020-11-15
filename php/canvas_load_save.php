@@ -1,12 +1,16 @@
 <?php
-
- $_SESSION["memId"]='Mark123';
+ini_set('display_errors', 1);
+// ob_start();
+// session_start();
+//  $_SESSION["memId"]='Amy123';
 // $_SESSION["memNo"]='1';
-require_once("./connectBook.php");
+// if(isset($_SESSION["memId"])){
+//   $errMsg = "";
 try{
+require_once("./connectBook.php");
 $sql = "INSERT INTO thankscard ( memNo, memName, memEmail, cardFile, cardStatus,)
-        VALUES('{$_SESSION["memNo"]}', '2', '3', ?, now())"; 
-  $member = $pdo->prepare($sql);
+        VALUES('2', '2', '3', '1', now())"; 
+  // $member = $pdo->prepare($sql);
   // $member->bindValue(1, $_POST['memNo']);
   // $member->bindValue(2, $_POST['memName']);
   // $member->bindValue(3, $_POST['memEmail']);
@@ -20,10 +24,10 @@ $sql = "INSERT INTO thankscard ( memNo, memName, memEmail, cardFile, cardStatus,
     mkdir($upload_dir);
       }
 
-  $imgDataStr = $_POST['hidden_data'];//收到convas.toDataURL()送來的資料
-  $imgDataStr = str_replace('data:image/png;base64,', '', $imgDataStr); //將檔案格式的資訊拿掉
-  $imgDataStr = str_replace(' ', '+', $imgDataStr);
-  $data = base64_decode($imgDataStr);
+      $imgDataStr = $_POST['hidden_data'];//收到convas.toDataURL()送來的資料
+      $imgDataStr = str_replace('data:image/png;base64,', '', $imgDataStr); //將檔案格式的資訊拿掉
+      $imgDataStr = str_replace(' ', '+', $imgDataStr);
+      $data = base64_decode($imgDataStr);
 
   //準備好要存的filename
   $fileName = date("{$cardNo}_1.{$file["extension"]}");  //或time()

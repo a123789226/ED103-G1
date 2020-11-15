@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -533,7 +529,7 @@ $(document).on('click', '#blogIconReportBtn'), function(){
      },
      success:function(res){
 
-     }
+     },
   })
 }
 </script>

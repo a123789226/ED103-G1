@@ -166,7 +166,7 @@
   <input name="hidden_data" id='hidden_data' type="hidden"/>
 </form>
 
-<input type="button" value="save image" onclick="saveImage()" />
+<input type="button" value="save image" onclick="downloadImg()" />
 
 <!-- <button id="save2Server">儲存到伺服器</button> -->
 <!-- <div class="cardContainer">
@@ -326,7 +326,7 @@
 
 
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.js"></script>
 <script>
   const canvas = new fabric.Canvas('thanksCardCanvas', {
   width: 600,
@@ -536,8 +536,7 @@ imgset.addEventListener('mousedown', saveImg)
 
   // 下載圖片
  
-function saveImage() {
-  var canvas = document.getElementById("thanksCardCanvas");
+function downloadImg() {
   var dataURL = canvas.toDataURL("image/png");
   document.getElementById('hidden_data').value = dataURL;
   var formData = new FormData(document.getElementById("form1"));
