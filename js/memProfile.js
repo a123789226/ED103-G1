@@ -243,7 +243,7 @@ $(function () {
                 params.append('email', this.email);
                 params.append('phone', this.phone);
                 params.append('birth', this.birth);
-                axios.post('../AquaAll/mem_editProfile.php', params)
+                axios.post('mem_editProfile.php', params)
                 .then(function (res) {
                     document.getElementById('showMem').style.display = 'block';
                     document.getElementById('editMem').style.display = 'none';
