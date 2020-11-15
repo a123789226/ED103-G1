@@ -48,7 +48,6 @@ function sendForm() {
                 $id('memPsw').value = '';
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
-                showPoint();
             }else{ //停權
                 swal("Sorry!", "Your account has been suspended", "error", {button: "OK"});
                 //將登入表單上的資料清空
@@ -72,7 +71,7 @@ function sendForm() {
     xhr.send(data_info);
 }
 
-// 每次到頁面都會透過session檢查是否有登入
+// 每次到頁面都會透過session檢查是否有登入, "getMemberInfo.php"每次都會重新載入會員資料
 function getMemberInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -84,7 +83,6 @@ function getMemberInfo() {
                 // 會員名稱顯示、變成會員頭像(沒有就用預設)、跳窗關掉、點頭像可控制會員中心小視窗
                 afterLogin();
                 $id('memberPic').style.transition = '0s';
-                // showPoint();
             }else{
                 //do nothing
             }
@@ -97,28 +95,7 @@ function getMemberInfo() {
     xhr.send(null);
 }
 
-
-//從後台資料庫抓會員與點數並在前台印出來
-function showPoint(){
-    console.log(member);
-    $id('memName2').innerText = member.memName;
-    $id('point').innerText = member.point;
-}
-
-// 資料庫更新遊戲點數
-// function show_game_light_box() {
-//     let xhr = new XMLHttpRequest();
-//         xhr.onload = function(){
-//         let url = `updateGamePoint.php?memId=${member.memId}&point=${document.querySelector(".lightboxwinNum").innerText}`;
-//         xhr.open("get", url, true);
-//         xhr.send(null);        
-//       };
-// }
-// window.addEventListener("load",init,false);
-
-
-
-//點擊save按鈕開燈箱
+//點擊save按鈕開燈箱==============================================
 function show_game_light_box(){
     if (member.memId){
         // alert('hello')
@@ -133,9 +110,19 @@ function show_game_light_box(){
     }
 }
 
-//點擊close按鈕關燈箱
+//點擊close按鈕關燈箱: 並執行以下動作
 function close_game_light_box(){
+    //關燈箱
     $("div.game_overlay").removeClass("-on -opacity-zero");
+    //贏得的點數強制歸0 
+    document.querySelector(".winNum").innerHTML = 0;
+    //執行"getMemberInfo.php": 透過session檢查是否有登入, 並再次載入會員相關資料(包含point)
+    getMemberInfo();
+    //old point: 印出資料庫裡的point值 (因為getMemberInfo()有重新載入資料，所以point值是最新的)
+    $id('point').innerText = member.point;
+    //new point: 清空為空值
+    document.querySelector(".lightboxwinNum").innerHTML = '';
+
 }
 
 
@@ -143,6 +130,10 @@ function close_game_light_box(){
 function afterLogin(){
     // 會員名稱出現
     $id("memNameInProfileBlock").innerText = member.memName;
+    //印出遊戲燈箱的名字
+    $id('memName2').innerText = member.memName;
+    //印出遊戲燈箱的舊點數
+    $id('point').innerText = member.point;
     // 頭像背景變白
     $id('btn_modal').style.backgroundColor = '#ffffff';
     // 更換圖片
@@ -151,7 +142,7 @@ function afterLogin(){
     $id('memberPic').title = 'Member Profile';
     // 關閉登入燈箱
     $id('memLightBox').style.display = 'none';
-    $id('btn_modal').addEventListener('click', showMemberProfileBox);
+    $id('btn_modal').addEventListener('click', showMemberProfileBox);   
 }
 
 // 點擊頭像控制小窗打開
@@ -159,14 +150,13 @@ function showMemberProfileBox(){
     $id('memProfileBlock').style.display = $id('memProfileBlock').style.display === 'none'? 'block' : 'none';
 }
 
-
-
+//要做的各種事情
 function init() {
     //===點擊燈箱
     $id('game_btn').onclick = show_game_light_box;
-    // //===關閉燈箱的close按鈕
+    //===關閉燈箱的close按鈕
     $id('game_btn_close').onclick = close_game_light_box;
-    //-----------------------檢查是否已登入
+    //===檢查是否已登入
     getMemberInfo();
     //===設定SignOutLink.onclick 事件處理程序是 doSignOut
     $id('SignOutLink').onclick = doSignOut;
@@ -174,9 +164,6 @@ function init() {
     $id('btnLogin').onclick = sendForm;
     
 }; //window.onload
-
-// $('#memberPic').click(loginStatus);
-
 
 window.addEventListener("load", init, false);
 
@@ -200,7 +187,7 @@ $(function(){
     });
 });
 
-
+//新的遊戲點數同步更新到資料庫中
 window.addEventListener("load", function(){
       // alert(0)
       document.querySelector(".game_btn").addEventListener("click", function(){
@@ -217,3 +204,4 @@ window.addEventListener("load", function(){
         xhr.send(null);        
       },false);
     }, false);
+
