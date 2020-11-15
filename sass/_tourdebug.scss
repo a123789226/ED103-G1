@@ -1,0 +1,1291 @@
+
+.tourbg{
+    @include BGColor(rgb(123, 225, 243),  rgb(203, 236, 241));
+    @include BG01('bg1-1', 100%);
+    @include BG02('bg1-2', 130%);
+    @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+    @include BGRight('bg1-4', 90%, 0%, 10%);
+    @include FishMove1(30%, 30%, 10s);
+    @include FishMove2(30%, 60%, 15s);
+  }
+  
+  .team_main{
+    width:100%;
+    max-width: 1200px;
+    margin:0px auto;
+    // border: 5px solid blue;
+  }
+  
+  //-------天氣API---------
+  #tour_locationName{
+    // border:5px solid blue;
+    width:100%;
+    max-width:1200px;
+    padding:50px 0 50px 0;
+    margin:0px auto;
+    margin-bottom:50px;
+    position: relative;
+    #tour_weather_time{
+    @include sub_title($keyBlack);
+    width:30%;
+    text-align:center;
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    margin:0 auto;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: #333 0px 2px 6px;
+    padding:10px;
+    border-radius: 8px;
+    }
+    #tour_date{
+    // border:2px solid blue;
+    @include sub_title($keyBlack);
+    font-size: 28px;
+    font-weight:bold;
+    text-align: center;
+    width:100%;
+    margin:0 auto;
+    margin-bottom: 50px;
+    }
+    #tour_weather_area{
+    // border:2px solid red; 
+    text-align: center;
+    margin:0px auto;  
+    position: relative;
+    width:100%;
+    #tour_temp{
+    // border:2px solid green;
+    @include sub_title($keyBlack);
+    // font-size:180%;
+    font-size:35px;
+    font-weight:bold;
+    text-align: center;
+    margin-left:0px;
+    }
+    #tour_degree{
+    // border:2px solid blue;
+    @include sub_title($keyBlack);
+    // font-size:150%;
+    font-size:35px;
+    font-weight:bold;
+    text-align:center;
+    padding-right:10px;
+    }
+  }
+   #tour_weather_img_area{
+     position: relative;
+     margin-bottom:30px;
+     animation-name: weather_img_scale;
+     animation-timing-function: ease-in-out;
+     animation-duration: 3s;
+     animation-iteration-count: infinite;
+    #tour_weather_img1{
+      margin-left:10px;
+      position: absolute;
+      width:14%;
+      left:34%;
+      transform: translate(50%, 30%);
+      filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+      display:none;
+      }
+      #tour_weather_img2{
+      margin-left:10px;
+      position: absolute;
+      width:18%;
+      left:31%;
+      transform: translate(50%, 30%);
+      filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+      display:none;
+      }
+      #tour_weather_img3{
+      // border:5px solid blue;
+      margin-left:10px;
+      position:absolute;
+      width:18%;
+      left:31%;
+      transform: translate(50%, 30%);
+      filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+      display:none;
+      }
+      #tour_weather_img4{
+      margin-left:10px;
+      position: absolute;
+      width:18%;
+      left:31%;
+      transform: translate(50%, 30%);
+      filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, .6));
+      display:none;
+      }
+   }
+  }
+  
+  @keyframes weather_img_scale {
+    0%{
+      transform: scaleX(1) scaleY(1) scaleZ(1);
+    }
+    50%{
+      transform: scaleX(1.05) scaleY(1.05) scaleZ(1.05);
+    }
+    100%{
+      transform: scaleX(1) scaleY(1) scaleZ(1);
+    }
+  }
+  
+  
+  // title + btn 部分
+  .tour_title_block{
+      // border:2px solid black;
+      padding:50px;
+  }
+  
+  // btn區塊
+  .tour_btn{
+    width:50%;
+    margin:0 auto;
+    // border:2px solid orange;
+  }
+  
+  // title區塊
+  .tour_title_area{
+    width:49%;
+    // border: 1px solid blue;
+  }
+  
+  // title & btn 水平對齊
+  .tour_btn , .tour_title_area{
+    display: inline-block;
+  }
+  
+  .tour_puzzle{
+    display:block;
+    margin: 0 auto;
+    float:right;
+  }
+  
+  .tour_puzzle_btn{
+      @include btn50Green;
+      box-shadow: $shadow2;
+      padding:0 80px;
+      display:block;
+      margin: 0 auto;
+  }
+  
+  .tour_title1{
+      @include main_title($keyWhite);
+      margin-left: 0px;
+      // border:5px solid red;
+  }
+  
+  .tour_title2{
+    display:none;
+  }
+  
+  
+  
+  //地圖與房子
+  .tour_map_area{
+    // border: 5px solid red;
+    width:100%;
+    max-width:1200px;
+    position: relative;
+    .tour_island{
+      width: 100%;
+      max-width:1200px;
+      // border: 5px solid blue;
+    }
+    .tour_map_house1{
+      // border:2px solid yellow;
+      position: absolute;
+      width: 22%;
+      top: 18%;
+      left: 32%;
+      transform: translate(-50%, -50%);
+      .tour_house1{
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        display:none;
+      }
+      .tour_house1_hover{
+        position: absolute;
+        width: 100%;
+        filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+        display:none;
+      }
+      .tour_dolphin_wave{
+        position: absolute;
+        width: 45%;
+        cursor: pointer;
+        transform: translate(55%, -60%);
+        animation-name: jump;
+        animation-timing-function: ease-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+  
+      }
+    }
+    .tour_map_house2{
+      // border:2px solid yellow;
+      position: absolute;
+      width: 22%;
+      top: 18%;
+      left: 82%;
+      transform: translate(-50%, -50%);
+      .tour_house2{
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        display:none;
+      }
+      .tour_house2_hover{
+        position: absolute;
+        width: 100%;
+        filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+        display:none;
+      }
+      .tour_whale_wave{
+        position: absolute;
+        width: 45%;
+        cursor: pointer;
+        transform: translate(55%, -60%);
+        animation-name: jump;
+        animation-timing-function: ease-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+    }
+    .tour_map_house3{
+      // border:2px solid yellow;
+      position: absolute;
+      width: 22%;
+      top: 59%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      .tour_house3{
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        display:none;
+      }
+      .tour_house3_hover{
+        position: absolute;
+        width: 100%;
+        filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+        display:none;
+      }
+      .tour_seal_wave{
+        position: absolute;
+        width: 45%;
+        cursor: pointer;
+        transform: translate(55%, -60%);
+        animation-name: jump;
+        animation-timing-function: ease-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }   
+    }
+    .tour_map_house4{
+      // border:2px solid yellow;
+      position: absolute;
+      width: 25%;
+      top: 46%;
+      left: 67%;
+      transform: translate(-50%, -50%);
+      .tour_house4{
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        display:none;
+      }
+      .tour_house4_hover{
+        position: absolute;
+        width: 100%;
+        filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
+        display:none;
+      }
+      .tour_seaturtle_wave{
+        position: absolute;
+        width: 45%;
+        cursor: pointer;
+        transform: translate(55%, -60%);
+        animation-name: jump;
+        animation-timing-function: ease-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }  
+    }
+  
+    @keyframes jump {
+      0%{
+        transform: translate(55%, -60%);
+      }
+      50%{
+        transform: translate(55%, -80%);
+  
+      }
+      100%{
+        transform: translate(55%, -60%);
+      }
+    
+    }
+  
+    .tour_map_house1, .tour_map_house2, .tour_map_house3, .tour_map_house4{
+      .tour_house_show{
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  
+  //場館介紹 -- dolphin 館
+  .tour_overlay1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    
+    /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+    opacity: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  
+  }
+  
+  .tour_overlay1.-on{
+    
+    /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .btn_modal{
+    display:flex;
+    justify-content: space-evenly;
+  }
+  
+  .btn_modal_close1{
+    @include btn36Yellow;
+    box-shadow: $shadow2;
+    margin:10px auto;
+    display:block;
+  }
+  
+  .btn_modal_close2{
+    @include btn36NoneBlack;
+    padding:0 43.84px 0 43.85px;
+    margin:10px auto;
+    display:block;
+    &:hover{
+      box-shadow: $shadow2;
+    }
+  }
+  
+  
+  
+  .tour_overlay1.-opacity-zero{
+    /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+    opacity: 0;
+  }
+  
+  /* 元素 article 置中及基本樣式 */
+  .tour_overlay1 > article{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    width: 100%;
+    height:auto;
+    max-width: 450px;
+    padding: 20px;
+    line-height: 22px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tour_overlay1 > article > h4{
+    @include sub_title($keyBlack);
+    padding:10px 10px;
+    margin:0px auto;
+    margin-bottom:10px;
+  }
+  
+  .tour_overlay1 > article > p{
+    @include text($textBlack);
+  //  background-color: rgba(232, 247, 31, 0.5);
+   padding:0px 10px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay1img{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    margin:20px auto;
+  }
+  
+  
+  //場館介紹 -- whale 館
+  .tour_overlay2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    opacity: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+  
+  .tour_overlay2.-on{
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .tour_overlay2.-opacity-zero{
+    opacity: 0;
+  }
+  
+  .tour_overlay2 > article{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    width: 100%;
+    height:auto;
+    max-width: 450px;
+    padding: 20px;
+    line-height: 22px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tour_overlay2 > article > h4{
+  @include sub_title($keyBlack);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay2 > article > p{
+    @include text($textBlack);
+  //  background-color: rgba(232, 247, 31, 0.5);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay2img{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    margin:20px auto;
+  }
+  
+  
+  //場館介紹 -- Seal 館
+  .tour_overlay3{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    opacity: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+  
+  .tour_overlay3.-on{
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .tour_overlay3.-opacity-zero{
+    opacity: 0;
+  }
+  
+  .tour_overlay3 > article{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    width: 100%;
+    height:auto;
+    max-width: 450px;
+    padding: 20px;
+    line-height: 22px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tour_overlay3 > article > h4{
+  @include sub_title($keyBlack);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay3 > article > p{
+    @include text($textBlack);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay3img{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    margin:20px auto;
+  }
+  
+  
+  
+  //場館介紹 -- turtle 館
+  .tour_overlay4{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    opacity: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+  
+  .tour_overlay4.-on{
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .tour_overlay4.-opacity-zero{
+    opacity: 0;
+  }
+  
+  .tour_overlay4 > article{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    width: 100%;
+    height:auto;
+    max-width: 450px;
+    padding: 20px;
+    line-height: 22px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tour_overlay4 > article > h4{
+   @include sub_title($keyBlack);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay4 > article > p{
+  @include text($textBlack);
+  //  background-color: rgba(232, 247, 31, 0.5);
+   padding:10px 10px;
+   border-bottom: 7px;
+   margin:0 auto;
+  }
+  
+  .tour_overlay4img{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    margin:20px auto;
+  }
+  
+  
+  //動物
+  .tour_row{
+    width:100%;
+    max-width: 1200px;
+    display:flex;
+    margin:40px auto;
+    // border:5px solid purple;
+    .tour_slide{
+      // border:5px solid green;
+      position: relative;
+      flex: 1;
+      // widows: 10px;
+      height:auto;
+      overflow: hidden;
+      transition: 0.5s ease-in-out;
+      .tour_slide_word{
+        display:none;
+      }
+      .tour_content{
+        // border:5px solid blue;
+        position: relative;
+        top: 0;
+        padding: 25px 25px;
+        opacity: 0;
+        display: flex;
+        width:100%;
+        height: 100%;
+        align-items: center;
+        .tour_headerimg {
+          // border:5px solid yellow;
+          position: relative;
+          flex: 0 1 40%;
+          border-radius: 6px;
+          box-shadow: $shadow;
+          img{
+            border-radius: 6px;
+          }
+        }
+        .tour_word {
+          background-color: white;
+          border-radius: 6px;
+          box-shadow: $shadow;
+          flex: 1 1 60%;
+          display: flex;
+          flex-direction: column;
+          padding: 10px 10px;
+          // border:5px solid red;
+          margin-left: 25px;
+          max-width: 400px;
+          max-height: 400px;
+          overflow: auto;
+          h4 {
+            @include sub_title($keyBlack);
+            padding-right:10px;
+            padding-left:10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          .btn_modal{
+            display:flex;
+            justify-content: space-evenly;
+            padding:0 10px 0 10px;
+            // border:2px solid red;
+            .tour_row_button1{
+              @include btn36Yellow;
+              box-shadow: $shadow;
+              display:block;
+              margin:20px auto;
+              // border:2px solid red;
+            }
+            .tour_row_button2{
+              @include btn36NoneBlack;
+              margin:20px auto;
+              padding:0 43px 0 43px; 
+              // border:2px solid red;
+              margin-right:0px;
+              display:none;
+            }
+          }      
+            p{
+              @include text($textBlack);
+              padding-right:10px;
+              padding-left:10px;
+          }
+        }
+      }
+    }
+  }
+  
+  .tour_slide:last-child {
+    border-right: none;
+  }
+  
+  .tour_slide:nth-child(1) {
+    background-image: url(../image/tour/tour_dolphin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 6px;
+    box-shadow: $shadow2;
+    filter: brightness(.6);
+    .tour_content {
+        background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));    
+    }
+  }
+  
+  .tour_slide:nth-child(2) {
+    background-image: url(../image/tour/tour_whale.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 6px;
+    box-shadow: $shadow2;
+    filter: brightness(.6);
+    .tour_content {
+        background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    }
+  }
+  
+  .tour_slide:nth-child(3) {
+    background-image: url(../image/tour/tour_seal.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 6px;
+    box-shadow: $shadow2;
+    filter: brightness(.6);
+    .tour_content {
+        background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    }
+  }
+  
+  .tour_slide:nth-child(4) {
+    background-image: url(../image/tour/tour_sea_turtle.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 6px;
+    box-shadow: $shadow2;
+    filter: brightness(.6);
+    .tour_content {
+      background: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    }
+  }
+  
+  .tour_slide:hover {
+    flex-grow:5;
+    background-position: top;
+    background-size: cover;
+    filter: brightness(1);
+    .tour_content {
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+    }
+  }
+  .tour_slide_show, .tour_content_show{
+    filter: brightness(1);
+  }
+  
+  @media screen and (max-width: 991px){
+    .tour_puzzle_btn{
+      display: none;
+    }
+    .tour_title2{
+      display:block;
+      @include sub_title($keyWhite);
+      margin-top:20px;
+      width:150%;
+      // border: 5px solid red;
+    }
+  
+    .tour_row{
+      // border: 5px solid red;;
+      flex-wrap: wrap;
+      flex: 100%;
+      .tour_slide {
+        flex: 1 1 45%;
+        cursor: pointer;
+        filter: brightness(1);
+        margin-left:10px;
+        margin-bottom:10px;
+        .tour_slide_word{
+          display:block;
+          // border:5px solid red;
+          position: absolute;
+          bottom:70px;
+          padding:50px;
+          h4{
+            @include sub_title($keyWhite);
+            font-weight: bold;
+          }
+          p{
+            @include text($keyWhite);
+            padding-top:20px;
+            padding-bottom:20px;
+            font-weight: bold;
+          }
+            .tour_row_button3{
+              @include btn36Yellow;
+              box-shadow: $shadow2;
+              display:block;
+              margin:0px auto;
+          }    
+        }
+        // &:hover{       
+        //   flex-grow:4;
+        //   filter: brightness(1);
+        //   // height:100%;
+        // }
+        .tour_content{
+          // border:5px solid yellow;
+          flex-direction: column;
+          opacity: 0;
+          transition: 0s;
+          transition-delay: 0s;
+          // &:hover{
+          //   opacity:1;
+          // }
+          .tour_headerimg{
+            display: none;
+          }
+          .tour_word{
+            margin:0 auto;
+            width:100%;
+            max-height: 100%;
+            h4{
+              // border:5px solid yellow;
+            }
+            p{
+              display:block;
+            }
+            .btn_modal{
+              display:flex;
+              justify-content: space-evenly;
+              padding:0 10px 0 10px;
+              .tour_row_button1{
+                display:block;
+              }
+              .tour_row_button2{
+                @include btn36NoneBlack;
+                margin:20px auto;
+                padding:0 43px 0 43px; 
+                // border:2px solid red;
+                margin-right:0px;
+              }
+            }
+          }
+        }
+        .tour_content_show{
+           opacity:1 ;
+           transition: 0s;
+           transition-delay: 0s;
+           
+    // border:2px solid red;
+  } 
+      }  
+    }
+    #no2, #no4{
+      margin-right:10px;
+    }
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 767px){
+   #tour_locationName{
+    //  border:5px solid blue;
+     #tour_weather_time{
+      //  border:5px solid blue;
+       width:40%;
+       line-height:30px;
+       font-size:30px;
+     }
+     #tour_date{
+       font-size:28px;
+     }
+     #tour_weather_area{
+      //  border:5px solid blue;
+       #tour_temp{
+         font-size:35px;
+       }
+       #tour_degree{
+         font-size:35px;
+       }
+     }
+     #tour_weather_img_area{
+      //  border:5px solid blue;
+      #tour_weather_img1{
+        width:20%;
+        left:26%;
+        transform: translate(50%, 30%);
+      }
+      #tour_weather_img2{
+        width:25%;
+        left:23%;
+        transform: translate(50%, 30%);
+      }
+      #tour_weather_img3{
+        width:25%;
+        left:23%;
+        transform: translate(50%, 30%);
+      }
+      #tour_weather_img4{
+        width:25%;
+        left:23%;
+        transform: translate(50%, 30%);
+      }
+     }
+   } 
+  
+   .tour_title2{
+    width:400px;
+    // border: 5px solid red;
+  }
+      .tour_row {
+        // border:5px solid deeppink;
+        width:80%;
+        padding:20px;    
+        margin: 0px auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        flex: 100%;
+        .tour_slide {
+            // border:5px solid blue;
+            width:500px;
+            height:450px; 
+            cursor: pointer;  
+            transition: 0s; 
+            margin: 20px; 
+            .tour_slide_word{
+              display:block;
+              // border:5px solid red;
+              position: absolute;
+              bottom:70px;
+              padding:50px;
+              h4{
+                @include sub_title($keyWhite);
+                font-weight: bold;
+              }
+              p{
+                @include text($keyWhite);
+                padding-top:20px;
+                padding-bottom:20px;
+                font-weight: bold;
+              }
+                .tour_row_button3{
+                  @include btn36Yellow;
+                  box-shadow: $shadow2;
+                  display:block;
+                  margin:0px auto;
+              }
+            }
+            .tour_content {
+                // border:5px solid yellow;
+                margin: 0px auto;
+                padding:10px;
+                opacity: 0;
+                transition: 0s;
+                transition-delay: 0s;
+                .tour_headerimg {
+                  position: relative;
+                  top:15px;
+                  display: block;
+                  margin: 0px auto;
+                  width: 70%;
+                  height:70%;          
+                }
+                .tour_word {
+                  // border:5px solid deeppink;
+                    padding:20px 10px 10px 10px;
+                    line-height: 5px;
+                    .btn_modal{
+                      // border:5px solid deeppink;
+                      .tour_row_button1{
+                        // border:5px solid deeppink;
+                        display:block;
+                      }
+                      .tour_row_button2{
+                        @include btn36NoneBlack;
+                        // border:5px solid deeppink;
+                        padding:0 43px 0 43px; 
+                      }
+                    }
+                 }
+              }
+          }
+      }
+  .tour_row .tour_slide_show{
+    height:100%;
+  }
+  .tour_row .tour_slide .tour_content_show{
+    opacity: 1;
+    transition: 0s;
+    transition-delay: 0s;
+  }
+  }
+  
+  @media screen and (max-width: 676px){
+    #tour_locationName{
+      // border:5px solid orange;
+      margin-top:0px;
+      margin-bottom:20px;
+      #tour_weather_time{
+        // border:5px solid orange;
+        font-size: 20px;
+        margin-top:10px;
+        margin-bottom:30px;
+        line-height:20px;
+      }
+      #tour_date{
+        // border:5px solid orange;
+        font-size: 18px;
+        margin-bottom:20px;
+      }
+      #tour_weather_area{
+        // border:5px solid orange;
+        #tour_temp{
+          // border:5px solid orange;
+          font-size: 30px;
+        }
+        #tour_degree{
+          // border:5px solid orange;
+          font-size: 30px;
+        }
+      }
+      #tour_weather_img_area{
+        // border:5px solid orange;
+        #tour_weather_img1{
+          // border:5px solid orange;
+        }
+        #tour_weather_img2{
+          // border:5px solid orange;
+        }
+        #tour_weather_img3{
+          // border:5px solid orange;
+        }
+        #tour_weather_img4{
+          // border:5px solid orange;
+        }
+      }
+    }
+    .tour_title_block{
+      // border:5px solid red;
+      display:flex;
+      .tour_title_area{
+        width:0%;
+      }
+      .tour_btn{
+        width:0%;
+        // border:5px solid red;
+        .tour_puzzle_btn{
+          display:none;
+          // @include btn50Green;
+          // box-shadow: $shadow2;
+          // padding: 0px 31px;
+          // display:block;
+          // margin: 0 auto;
+        }
+      }
+    }
+  
+    .tour_title2{
+      width:400px;
+      // border: 5px solid green;
+    }
+    .tour_row{
+      // border: 5px solid red;
+      margin: 0px auto;
+      .tour_slide {
+        // border: 5px solid brown;
+        width:350px;
+        height:300px;
+        margin: 20px;
+        cursor: pointer;
+        transition: 0s; 
+        .tour_slide_word{
+          display:block;
+          // border:5px solid red;
+          position: absolute;
+          bottom:10px;
+          padding:30px;
+          h4{
+            @include sub_title($keyWhite);
+            font-weight: bold;
+          }
+          p{
+            @include text($keyWhite);
+            padding-top:20px;
+            padding-bottom:20px;
+            font-weight: bold;
+          }
+            .tour_row_button3{
+              @include btn36Yellow;
+              box-shadow: $shadow2;
+              display:block;
+              margin:0px auto;
+          }
+        }
+        .tour_content{
+          display:block;
+          .tour_headerimg{
+            display:block;
+          }
+          .tour_word{
+            text-align: center;
+            h4{
+              margin-top:5px;
+            }
+            p{
+              display:block;
+            }
+            .btn_modal{
+              display:flex;
+              flex-direction: column;
+              .tour_row_button1{
+                display:block;
+              }
+              .tour_row_button2{
+                @include btn36NoneBlack;
+                margin:20px auto;
+                padding:0 40.25px 0 40.25px; 
+                margin-right:0px;
+                margin:0 auto;
+                display:block;
+              }
+            }
+          }
+        } 
+      }  
+    }
+  .tour_row .tour_slide_show{
+    height:100%;
+  }
+  .tour_row .tour_slide .tour_content_show{
+    opacity: 1;
+    transition: 0s;
+    transition-delay: 0s;
+  }
+  }
+  
+  
+  @media screen and (max-width: 479px){
+    #tour_locationName{
+      // border:5px solid green;
+      #tour_weather_time{
+        // border:5px solid green;
+        width:53%;
+      }
+      #tour_date{
+        // border:5px solid green;
+      }
+      #tour_weather_area{
+        // border:5px solid green;
+        #tour_temp{
+        // border:5px solid green;
+        }
+        #tour_degree{
+        // border:5px solid green;
+        }
+      }
+      #tour_weather_img_area{
+        // border:5px solid green;
+        margin-bottom: 0px;
+        #tour_weather_img1{
+        // border:5px solid green;
+        left:25%;
+        transform: translate(50%, 30%);
+        }
+        #tour_weather_img2{
+        // border:5px solid green;
+        left:20%;
+        transform: translate(50%, 30%);
+        }
+        #tour_weather_img3{
+        // border:5px solid green;
+        left:20%;
+        transform: translate(50%, 30%);
+        }
+        #tour_weather_img4{
+        // border:5px solid green;
+        left:20%;
+        transform: translate(50%, 30%);
+        }
+      }
+    }
+  
+    .tour_puzzle_btn{
+      display:none;
+      // @include btn50Green;
+      // box-shadow: $shadow2;
+      // // border:5px solid green;
+      // padding: 0px 26px;
+      // display:block;
+      // margin: 0 auto;
+  }
+    .tour_row{
+      // border: 5px solid yellow;
+      margin: 0px auto;
+      .tour_slide {
+        // border: 5px solid yellowgreen;
+        width:280px;
+        height:230px;
+        opacity:1; 
+        cursor: pointer;
+        margin: 20px;
+        .tour_slide_word{
+          display:block;
+          // border:5px solid red;
+          position: absolute;
+          bottom:0px;
+          padding:30px;
+          h4{
+            @include sub_title($keyWhite);
+            font-weight: bold;
+          }
+          p{
+            @include text12($keyWhite);
+            padding-top:20px;
+            padding-bottom:20px;
+            font-weight: bold;
+          }
+            .tour_row_button3{
+              @include btn36Yellow;
+              box-shadow: $shadow2;
+              display:block;
+              margin:0px auto;
+          }
+        }      
+        .tour_content{
+          margin:0 auto;
+          display:block;
+          .tour_headerimg{
+            display:block;
+          }
+          .tour_word{
+            text-align: center;
+            h4{
+              margin-top:5px;
+            }
+            p{
+              display:block;
+            }
+            .btn_modal{
+              display:flex;
+              flex-direction: column;
+              .tour_row_button1{
+                display:block;
+              }
+              .tour_row_button2{
+                margin-right:0px;
+                margin:0 auto;
+                @include btn36NoneBlack;
+                margin:20px auto;
+                padding:0 40.25px 0 40.25px; 
+              }
+            }
+          }
+        } 
+      }  
+    }
+  .tour_row .tour_slide_show{
+    height:100%;
+  }
+  .tour_row .tour_slide .tour_content_show{
+    opacity: 1;
+    transition: 0s;
+    transition-delay: 0s;
+  }
+  }
+  

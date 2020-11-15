@@ -1,4 +1,6 @@
 
+
+
 .tourbg{
   @include BGColor(rgb(123, 225, 243),  rgb(203, 236, 241));
   @include BG01('bg1-1', 100%);
@@ -380,7 +382,11 @@
   padding:0 43.84px 0 43.85px;
   margin:10px auto;
   display:block;
+  &:hover{
+    box-shadow: $shadow2;
+  }
 }
+
 
 
 .tour_overlay1.-opacity-zero{
@@ -686,6 +692,9 @@
             // border:2px solid red;
             margin-right:0px;
             display:none;
+            &:hover{
+              box-shadow: $shadow2;
+            }
           }
         }      
           p{

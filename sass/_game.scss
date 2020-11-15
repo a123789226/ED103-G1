@@ -32,38 +32,43 @@
 
 // 分數
 .game_point_block{
-    max-width:500px;
-    margin:10px auto;
+    // border: 5px solid blue;
+    // background-color: rgba(0, 0, 0, .2);
+    // background-color: rgba(255, 255, 255, 0.1);
+    max-width:700px;
+    padding:  20px;
+    margin: 10px auto;
     display:flex;
     justify-content: space-around;
     .game_title{
         @include sub_title($keyWhite);
+        // border: 5px solid red;
         font-size: 36px;
         margin:20px auto;
     }
     .winNum{
         @include sub_title($keyWhite);
         font-size: 36px;
-        color:deeppink;
+        color:#FBE108;
         font-weight: bold;
         margin:20px auto;
-        padding-right: 20px;
-        padding-left: 40px;
+        // padding-right: 0px;
+        // padding-left: 0px;
     }
     .game_point{
         @include sub_title($keyWhite);
         font-size: 36px;  
         margin:20px auto;
+        padding-right: 20px;
     }
-}
-
-// save按鈕
-.game_btn{
-    @include btn50White;
-    box-shadow: $shadow2;
-    display:block;
-    margin:10px auto;
-    cursor: pointer;
+    .game_btn{
+        @include btn50White;
+        box-shadow: $shadow2;
+        // border: 5px solid red;
+        display:block;
+        margin:10px auto;
+        cursor: pointer;
+    }
 }
 
 
@@ -170,7 +175,7 @@ canvas{
     height: 400px;
     position: relative;
     margin:0 auto;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
     >h1.winNum{
         top: 10px;
         left: 30px;
