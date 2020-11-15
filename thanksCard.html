@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Thanks Card</title>
@@ -326,18 +326,18 @@
 
 
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.min.js"></script>
 <script>
   const canvas = new fabric.Canvas('thanksCardCanvas', {
   width: 600,
   height: 450
 })
 
-const $ = (id) => document.getElementById(id)
-const imageUploader = $('imageUploader')
-const file = $('file')
-const imgset = $('cardImages')
-const defaultImg = $('defaultImg')
+const $zId = (id) => document.getElementById(id)
+const imageUploader = $zId('imageUploader')
+const file = $zId('file')
+const imgset = $zId('cardImages')
+const defaultImg = $zId('defaultImg')
 let movingImage
 let imgDragOffset = {
   offsetX: 0,
@@ -539,6 +539,7 @@ imgset.addEventListener('mousedown', saveImg)
 function downloadImg() {
   var dataURL = canvas.toDataURL("image/png");
   document.getElementById('hidden_data').value = dataURL;
+  
   var formData = new FormData(document.getElementById("form1"));
 
   var xhr = new XMLHttpRequest();

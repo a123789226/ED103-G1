@@ -6,6 +6,13 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src="./js/layout/header.js"></script>
+
+    <script src="./js/tour/tour_weather.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="./js/tour/tour_game_ndgmr.Collision.js"></script>
+    <script src="./js/tour/tour_game_Mario.js"></script>  
+    <script src="./js/tour/tour_show_game_points.js"></script>
+    <script src="./js/tour/tour_game_play.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Aqua Wonderland</title>
 </head>
@@ -63,28 +70,28 @@
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
           </a>
           <a href="journal.html" class="li_text">JOURNAL</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="ticket.html" class="li_logo">
             <img src="./image/header/header_ticket.png" alt="">
             <img src="./image/header/header_ticket_cover.png" alt="">
           </a>
           <a href="ticket.html" class="li_text">TICKET</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="vote.html" class="li_logo">
             <img src="./image/header/header_vote.png" alt="">
             <img src="./image/header/header_vote_cover.png" alt="">
           </a>
           <a href="vote.html" class="li_text">VOTE</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="blog1.php" class="li_logo">
             <img src="./image/header/header_blog.png" alt="">
             <img src="./image/header/header_blog_cover.png" alt="">
@@ -122,7 +129,7 @@
 
   <div>
     <div class="commonTitleBox">
-      <h2 class="commonTitle">Welcome to Aqua wonderland !</h2>
+      <h2 class="commonTitle">Welcome to Aqua Wonderland !</h2>
     </div>
     <!-- 你的code打這下面 -->
     <main class="team_main">
@@ -135,8 +142,23 @@
           <a href="puzzle.html" class="tour_puzzle">
           <button class="tour_puzzle_btn">Puzzle</button>
           </a>
-        </div>        
+        </div>    
+        <div id="tour_locationName">
+          <div id="tour_weather_time">Current Weather</div>
+          <p id="tour_date"></p> 
+          <div id="tour_weather_area">
+          <span id="tour_temp"></span>
+          <span id="tour_degree">&nbsp &deg;C</span>
+          </div>
+          <div id="tour_weather_img_area">
+          <img id="tour_weather_img1" src="./image/tour/tour_sun.png" />
+          <img id="tour_weather_img2" src="./image/tour/tour_raining.png" />
+          <img id="tour_weather_img3" src="./image/tour/tour_cloud.png" />
+          <img id="tour_weather_img4" src="./image/tour/tour_moon.png" />
+          </div>   
+        </div>    
       </div>
+      
   
       <!------------------------ 大地圖 --------------------------->
       <div class="tour_map_area">
@@ -162,57 +184,57 @@
           <img class="tour_house4_hover tour_houseB" src="./image/tour/house4_hover.png" alt="error">  
           <img class="tour_seaturtle_wave" src="./image/tour/tour_seaturtle_wave.png" alt="error">
         </div>
-      </div> 
+      </div>   
   
         
         <!------------------------ 房子的圖文介紹 ------------------------>
         <div class="tour_overlay1">
-        <article>
-          <h4>Dolphin Aquarium</h4>
-          <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
-          <img class="tour_overlay1img" src="./image/tour/tour_intro_dolphin.jpg" alt="error">
-          <div class="btn_modal">
-          <button type="button" class="btn_modal_close1" id="btn1">Introduction</button>
-          <button type="button" class="btn_modal_close2">Close</button>
-          </div>
-        </article>
-        </div>
-  
-        <div class="tour_overlay2">
           <article>
-            <h4>whale Aquarium</h4>
-            <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
-            <img class= "tour_overlay2img" src="./image/tour/tour_intro_whale.jpg" alt="error">
-            <div class="btn_modal">
-            <button type="button" class="btn_modal_close1" id="btn2">Introduction</button>
-            <button type="button" class="btn_modal_close2">Close</button>
+            <h4>Dolphin Aquarium</h4>
+            <p>This is the Dolphin Aquarium, a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
+            <img class="tour_overlay1img" src="./image/tour/tour_intro_dolphin.jpg" alt="error">
+            <div class="tour_btn_modal">
+            <button type="button" class="tour_btn_modal_close1" id="btn1">Introduction</button>
+            <button type="button" class="tour_btn_modal_close2">Close</button>
             </div>
           </article>
-        </div>
-  
-          <div class="tour_overlay3">
+          </div>
+    
+          <div class="tour_overlay2">
             <article>
-              <h4>Seal Aquarium</h4>
-              <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
-              <img class= "tour_overlay3img" src="./image/tour/tour_intro_seal.jpg" alt="error">
-              <div class="btn_modal">
-              <button type="button" class="btn_modal_close1" id="btn3">Introduction</button>
-              <button type="button" class="btn_modal_close2">Close</button>
+              <h4>whale Aquarium</h4>
+              <p>This is the whale Aquarium,  the exterior building is quite pleasing pink. The first floor is the main exhibition area, where you can interact with whales. There is a large square on the second floor, where people can take a break and enjoy the beautiful scenery. On the top floor is a sky garden with full of green trees. welcome you to find out more !</p>
+              <img class= "tour_overlay2img" src="./image/tour/tour_intro_whale.jpg" alt="error">
+              <div class="tour_btn_modal">
+              <button type="button" class="tour_btn_modal_close1" id="btn2">Introduction</button>
+              <button type="button" class="tour_btn_modal_close2">Close</button>
               </div>
             </article>
           </div>
-  
-          <div class="tour_overlay4">
-            <article>
-              <h4>Turtle Aquarium</h4>
-              <p>This is a two-story building with a slanted roof, which can keep the museum warm in winter and cool in summer in hot summer. At present, the museum houses about 30 dolphins. Under the careful care of the staff, they gradually recover their health and vitality. Here, you can admire the dolphins up close and feel their cuteness and wonder.</p>
-              <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
-              <div class="btn_modal">
-              <button type="button" class="btn_modal_close1" id="btn4">Introduction</button>
-              <button type="button" class="btn_modal_close2">Close</button>
-              </div>
-            </article>
-          </div>
+    
+            <div class="tour_overlay3">
+              <article>
+                <h4>Seal Aquarium</h4>
+                <p>This is the Seal Aquarium, a long cube building that is marvellous. As soon as you enter the hall, first of all, you will see a pair of lovely statues of mother and child seals welcoming you at the door. It is worth mentioning that there is a huge seal-shaped slide in the museum. You must come and have a look.</p>
+                <img class= "tour_overlay3img" src="./image/tour/tour_intro_seal.jpg" alt="error">
+                <div class="tour_btn_modal">
+                <button type="button" class="tour_btn_modal_close1" id="btn3">Introduction</button>
+                <button type="button" class="tour_btn_modal_close2">Close</button>
+                </div>
+              </article>
+            </div>
+    
+            <div class="tour_overlay4">
+              <article>
+                <h4>Turtle Aquarium</h4>
+                <p>This is the Turtle Aquarium. The building itself is elevated to make the room more ventilated. Large pieces of glass allow sunlight to spill into the room naturally, which is environmentally friendly,  you also allow you overlooks the beautiful scenery.  As a reminder, please lower the volume when you see turtles , so as not to scare them.</p>
+                <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
+                <div class="tour_btn_modal">
+                <button type="button" class="tour_btn_modal_close1" id="btn4">Introduction</button>
+                <button type="button" class="tour_btn_modal_close2">Close</button>
+                </div>
+              </article>
+            </div>
   
       <!----------------------- 四個動物圖片的圖文--------------------->
       <div class = "tour_title_block">
@@ -227,7 +249,7 @@
         <div class="tour_slide" id="no1">         
           <div class = "tour_slide_word">
           <h4>Dolphin</h4>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend...</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;Dolphins are aquatic mammals. Their body smooth and hairless skin full of vitality, flexibility,  good at jumping and snorkeling, they are the fastest mammals in the ocean.</p>
           <button class="tour_row_button3" >See more</button>          
           </div>
           <div class="tour_content" >           
@@ -237,10 +259,10 @@
 
             <div class="tour_word">
               <h4>Dolphin</h4>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Dolphins are aquatic mammals. Their body smooth and hairless skin full of vitality, flexibility,  good at jumping and snorkeling, they are the fastest mammals in the ocean.</p>
               <br>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <div class="btn_modal">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;They gentle, friendly, lively and active personality,  loved by people all over the world.</p>
+              <div class="tour_btn_modal">
                 <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
                 <button class="tour_row_button2" >Close</button>
               </div>
@@ -251,7 +273,7 @@
         <div class="tour_slide"  id="no2" >
           <div class = "tour_slide_word">
             <h4>Whale</h4>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend...</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Whales have good hearing, it uses echolocation to find food. Whales need to breathe,  it can hold breath up to 1.5 hours until go back to the sea surface.</p>
               <button class="tour_row_button3" >See more</button>          
             </div>
           <div class="tour_content"  >
@@ -260,10 +282,10 @@
             </div>
             <div class="tour_word" >
               <h4>Whale</h4>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Whales have good hearing, it uses echolocation to find food. Whales need to breathe,  it can hold breath up to 1.5 hours until go back to the sea surface.</p>
               <br>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <div class="btn_modal">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;In the past, whales were often used as table dishes or raw materials for iddustiral.  Fortunately, it has now been banned by various countries.</p>
+              <div class="tour_btn_modal">
                 <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
                 <button class="tour_row_button2" >Close</button>
               </div>
@@ -274,7 +296,7 @@
         <div class="tour_slide" id="no3">
           <div class = "tour_slide_word">
             <h4>Seal</h4>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend...</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Seal are highly adapted to life in the ocean, and most of the time are active in the ocean, covering the entire sea area, with the largest number on the Antarctic coast.</p>
               <button class="tour_row_button3" >See more</button>          
             </div>
           <div class="tour_content" >
@@ -283,10 +305,10 @@
             </div>
             <div class="tour_word">
               <h4>Seal</h4>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Seal are highly adapted to life in the ocean, and most of the time are active in the ocean, covering the entire sea area, with the largest number on the Antarctic coast.</p>
               <br>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <div class="btn_modal">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Their streamlined bodies allow them to swim at high speeds in the water, but a bit clumsy when they reach the shore. </p>
+              <div class="tour_btn_modal">
                 <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
                 <button class="tour_row_button2" >Close</button>
               </div>
@@ -297,7 +319,7 @@
         <div class="tour_slide" id="no4" >
           <div class = "tour_slide_word">
             <h4>Turtle</h4>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend...</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Turtle have big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend...</p>
               <button class="tour_row_button3" >See more</button>          
             </div>
           <div class="tour_content" >
@@ -306,10 +328,10 @@
             </div>
             <div class="tour_word">
               <h4>Turtle</h4>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;With big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Turtle have big bodies and big eyes, they are the reptilian inhabitants of the ocean-turtles, and their lives can be said to be a legend!</p>
               <br>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;From the moment they broke the egg, they began their struggle career, desperately rushing to the ocean from the perilous beach~</p>
-              <div class="btn_modal">
+              <div class="tour_btn_modal">
                 <a href="journal.html"><button class="tour_row_button1" >See Journal</button></a>
                 <button class="tour_row_button2" >Close</button>
               </div>
@@ -331,7 +353,7 @@
             <div id="app">
                 <div class="loading"></div>
         
-                <a class="gamePlayBtn"><img src="./image/game/play.png" alt=""></a>
+                <a class="gamePlayBtn"><img src="./image/game/play.png" alt="" id="gamePlayBtn"></a>
                 <div class="over">
                     <div class="box">
                         <img src="./image/game/gameover.png" alt="">
@@ -358,9 +380,9 @@
           <p class="game_title">Earn : </p> 
           <p class="winNum">0</p>
           <p class="game_point">points!</p>
+          <input type="button" name="save" value="Save Points" class="game_btn" id="game_btn">
           </div>
         </form>
-        <input type="button" name="save" value="Save" class="game_btn" id="game_btn">
 
         <!-- 遊戲燈箱 -->
         <div class="game_overlay">
@@ -376,141 +398,35 @@
             </div>
             <div>
               <span id="game_new_point">New points :  </span>
-              <span class="lightboxwinNum" id="lightboxwinNum">0</span>
+              <span class="lightboxwinNum" id="lightboxwinNum">&nbsp;</span>
             </div>
             <input type="button" class="game_btn_close" value="close" id="game_btn_close">
             <img src="./image/game/header_tour.png" alt="error" class="tour_game_turtle">
           </article>
-        </div>
-
-        <!-- 會員燈箱：登入 -->
-        <!-- <div id="lightBox" style="display:none">
-          <table border="1" align="center" cellspacing="0" id="tableLogin">
-          <tr><td>帳號</td><td><input type="text" name="memId" id="memId"></td></tr>
-          <tr><td>密碼</td><td><input type="password" name="memPsw" id="memPsw"></td></tr>
-          <tr><td colspan="2" align="center">
-                  <input type="button" id="btnLogin" value="登入">
-                  <input type="button" id="btnLoginCancel" value="取消">
-              </td></tr>
-          </table>
-          </div> -->
-  
-        <!-- 右上角登入bar -->
-        <!-- <div id="game_bar">
-        <span id="memName">&nbsp;</span>
-        <span id="spanLogin">登入</span>
-        </div> -->
-        
+        </div>        
     </div>
-
-   
+       
     <!-- 你的code打這上面 -->
   </div>
 
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
-   
-   <!------------------------------遊戲的code--------------------------->
-   <script>
-    //  --------------遊戲: 會員登入頁面-------------
-    //  function $id(id){
-    // return document.getElementById(id);
-    // }	
-    // let member;
 
-    // function showLoginForm(){
-    //   // if($id('spanLogin').innerHTML == "登入"){
-    //   //   $id('lightBox').style.display = 'block';
-    //   // }else{//登出
-    //   //   $id('memName').innerHTML = '&nbsp';
-    //   //   $id('memName2').innerHTML = '&nbsp';
-    //   //   $id('spanLogin').innerHTML = '登入';
-    //   // }
-    // }//showLoginForm
-
-    // function sendForm(){
-    //   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上 
-    //   let memId = $id("memId").value;  
-    //   let memPsw = $id("memPsw").value; 
-    //   let xhr = new XMLHttpRequest();
-    //   xhr.onload = function(){
-    //     member = JSON.parse(xhr.responseText);
-    //     console.log(member);
-    //     if(member.memId){
-    //       $id("memName").innerText = member.memName;
-    //       $id("memName2").innerText = member.memName;
-    //       $id("point").innerText = member.oldPoint;
-    //       $id('spanLogin').innerHTML = '登出';
-    //       //將登入表單上的資料清空，並隱藏起來
-    //       $id('lightBox').style.display = 'none';
-    //       $id('memId').value = '';
-    //       $id('memPsw').value = '';          
-    //     }else{
-    //         window.alert("帳密錯誤~");
-    //     }
-    //   }
-
-    //   xhr.open("Post", "tourgame_json.php", true);
-    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-    //   let loginInfoObj = {memId,memPsw};
-
-    //   let loginInfo = JSON.stringify(loginInfoObj);
-    //   let data_info = `loginInfo=${loginInfo}`;
-    //   xhr.send(data_info); 
-    // }
-
-    // function cancelLogin(){
-    //   //將登入表單上的資料清空，並將燈箱隱藏起來
-    //   $id('lightBox').style.display = 'none';
-    //   $id('memId').value = '';
-    //   $id('memPsw').value = '';
-    // }
-
-    // function init(){
-    //   //===設定spanLogin.onclick 事件處理程序是 showLoginForm
-
-    //   $id('spanLogin').onclick = showLoginForm;
-
-    //   //===設定btnLogin.onclick 事件處理程序是 sendForm
-    //   $id('btnLogin').onclick = sendForm;
-
-    //   //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
-    //   $id('btnLoginCancel').onclick = cancelLogin;
-
-  
-    // }; //window.onload
-
-    // window.addEventListener("load",init,false);
-
-    // //----------------遊戲: 點save 按鈕, 觸發事件: new point 去抓資料庫的更新值-----------------
-    // window.addEventListener("load", function(){
-    //   // alert(0)
-    //   document.querySelector(".game_btn").addEventListener("click", function(){
-    //     // alert(111)
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.onload = function(){
-    //     }
-    //     // let url = `updateGamePoint.php?memId=${member.memId}&point=${member.point+document.querySelector(".lightboxwinNum").innerText}`;
-    //     //從updateGamePoint.php抓某會員與該會員的點數值，並在class=lightboxwinNum的地方印出來。(div,p,span等是用.innerText印出 / input 是用.value印出)
-    //     // let url = `updateGamePoint.php?memId=${document.querySelector("#memNameInProfileBlock").innerText}`;
-    //     let url = `updateGamePoint.php?memId=${member.memId}&point=${document.querySelector(".lightboxwinNum").innerText}`;
-    //     // console.log(url)
-    //     xhr.open("get", url, true);
-    //     xhr.send(null);        
-    //   },false);
-    // }, false);
-    // window.addEventListener("load",init,false);
-     
-   //-----------------------------------------------------------------------
-
-   </script>
    <!--AOS-->
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    <script>
        AOS.init();
    </script>
-  <script>
+
+   <script>
+    //漢堡
+    $(".hamburger_box").on("click", function(){
+      $("span.hamburger_line").toggleClass("is-active");
+      $("span.hamburger_cross").toggleClass("is-active");
+      $("ul.main_menu_ul").toggleClass("is-active");
+    });
+
   //--------點擊第一棟房子:dolphine館, 出現介紹圖文------------
     $(function(){  
   // 開啟 Modal 彈跳視窗
@@ -518,7 +434,7 @@
     $("div.tour_overlay1").addClass("-on");
   }); 
   // 關閉 Modal
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay1").addClass("-opacity-zero");
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
@@ -530,7 +446,7 @@
 //---------第一棟房子:dolphine館,出現介紹圖文後, 按關閉收合----------
 $(function(){  
   // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
+  $("button.tour_btn_modal_close2").on("click", function(){
     $("div.tour_overlay1").addClass("-opacity-zero");
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
@@ -544,7 +460,7 @@ $(function(){
   $("img.tour_house2_hover").on("click", function(){
     $("div.tour_overlay2").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay2").removeClass("-on -opacity-zero");
@@ -555,7 +471,7 @@ $(function(){
 //----------第二棟房子:whale館,出現介紹圖文後, 關閉收合------------
 $(function(){  
   // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
+  $("button.tour_btn_modal_close2").on("click", function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
@@ -569,7 +485,7 @@ $(function(){
   $("img.tour_house3_hover").on("click", function(){
     $("div.tour_overlay3").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay3").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay3").removeClass("-on -opacity-zero");
@@ -580,7 +496,7 @@ $(function(){
 //----------第三棟房子:seal館,出現介紹圖文後, 關閉收合---------
 $(function(){  
   // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
+  $("button.tour_btn_modal_close2").on("click", function(){
     $("div.tour_overlay3").addClass("-opacity-zero");
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
@@ -594,7 +510,7 @@ $(function(){
   $("img.tour_house4_hover").on("click", function(){
     $("div.tour_overlay4").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay4").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay4").removeClass("-on -opacity-zero");
@@ -605,7 +521,7 @@ $(function(){
 //第-------四棟房子:sea turtle 館,出現介紹圖文後, 關閉收合---------
 $(function(){  
   // 關閉 Modal
-  $("button.btn_modal_close2").on("click", function(){
+  $("button.tour_btn_modal_close2").on("click", function(){
     $("div.tour_overlay4").addClass("-opacity-zero");
     // 設定隔一秒後，移除相關 class
     setTimeout(function(){
@@ -714,7 +630,7 @@ $(function(){
   $("img.tour_dolphin_wave").on("click", function(){
     $("div.tour_overlay1").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay1").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay1").removeClass("-on -opacity-zero");
@@ -727,7 +643,7 @@ $(function(){
   $("img.tour_whale_wave").on("click", function(){
     $("div.tour_overlay2").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay2").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay2").removeClass("-on -opacity-zero");
@@ -740,7 +656,7 @@ $(function(){
   $("img.tour_seal_wave").on("click", function(){
     $("div.tour_overlay3").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay3").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay3").removeClass("-on -opacity-zero");
@@ -753,7 +669,7 @@ $(function(){
   $("img.tour_seaturtle_wave").on("click", function(){
     $("div.tour_overlay4").addClass("-on");
   });
-  $("button.btn_modal_close1").on("click", function(){
+  $("button.tour_btn_modal_close1").on("click", function(){
     $("div.tour_overlay4").addClass("-opacity-zero");
     setTimeout(function(){
       $("div.tour_overlay4").removeClass("-on -opacity-zero");
@@ -777,9 +693,10 @@ $('.tour_row_button2').click(function(e){
 })
 </script>
 
+<!-- puzzle -->
 <!-- 每次開瀏覽器會先執行1次拼圖,之後就不會再進行 -->
-<!-- 如果進開瀏覽器name為空値, 就先執行拼圖, 再給name 値"onload"，並且每100毫秒就檢查一次name是否為空値。 -->
-<!-- 因為有給name値"onload"所以不會執行拼圖，必須重新開啟瀏覽器才行 -->
+<!-- 如果開瀏覽器name為空値, 就先執行拼圖, 再給name 値"onload"，並且每100毫秒就檢查一次name是否為空値。 -->
+<!-- 因為有給name値"onload"，所以不會執行拼圖，必須重新開啟瀏覽器才行 -->
 <script>
   function openly(){
           if(window.name==""){
@@ -789,228 +706,5 @@ $('.tour_row_button2').click(function(e){
   }
   setTimeout('openly()',100);
   </script>
-
-
-
-<!--------------------- 遊戲------------------>
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="./js/ndgmr.Collision.js"></script>
-<script src="./js/Mario.js"></script>  
-<script src="./js/tour/tour_show_game_points.js"></script>
-<script>
-    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-    function init() {
-        canvas = document.getElementById("canvas");
-        anim_container = document.getElementById("animation_container");
-        dom_overlay_container = document.getElementById("dom_overlay_container");
-        images = images||{};
-        ss = ss||{};
-        var loader = new createjs.LoadQueue(false);
-        loader.addEventListener("fileload", handleFileLoad);
-        loader.addEventListener("complete", handleComplete);
-        loader.loadManifest(lib.properties.manifest);
-    }
-    function handleFileLoad(evt) {	
-        if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
-    }
-    function handleComplete(evt) {
-        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-        var queue = evt.target;
-        var ssMetadata = lib.ssMetadata;
-        for(i=0; i<ssMetadata.length; i++) {
-            ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-        }
-        exportRoot = new lib.Mario();
-        stage = new createjs.Stage(canvas);
-        stage.addChild(exportRoot);	
-    
-        const SPEED = 10;		//速度
-        const ATTACK = 10;		//沒吃到金幣扣的血
-        let isStart = false;	//是否點擊開始遊戲
-        let Hp = 100;			//總血量
-        let winNum = 0; 		//吃到的金幣數
-        let lightboxwinNum = 0; 		//吃到的
-        let Positions = 1;		//方向判斷
-        let isKeydown = false;	//是否按下鍵盤
-    
-        //創造小烏龜
-        var Mario = new lib.MarioUser();
-        Mario.x = 356;
-        Mario.y = 353;
-        exportRoot.addChild(Mario);
-    
-        
-        let loadint = 0;	//目前載入進度
-        const sounds = [
-            {src:"./image/game/play.mp3", id:"play"},
-            {src:"./image/game/coin.mp3", id:"coin"},
-            {src:"./image/game/boom.mp3", id:"boom"},
-            // {src:"./image/game/bg.mp3", id:"bg"},
-        ];
-        createjs.Sound.alternateExtensions = ["mp3"];
-        createjs.Sound.addEventListener("fileload", (e)=>{
-            loadint++
-            if(loadint === sounds.length){
-                document.querySelector(".loading").style.display = 'none';
-                bgAudio = createjs.Sound.play("bg", {loop:-1});
-                bgAudio.volume = 0.2;
-            }
-        });
-        createjs.Sound.registerSounds(sounds, "./");
-    
-    
-        //每秒產生金幣
-        let timeCoin = setInterval(()=>{
-            if(!isStart) return; 
-            let Coin = new lib.Coin();
-            Coin.x = Math.floor(Math.random() * (670 - 30 + 1) + 30); //亂數 * (最大值 - 最小值 + 1) + 最小值
-            Coin.y = -50;
-            exportRoot.addChildAt(Coin, 1);
-            
-            createjs.Tween.get(Coin)
-            .to({y: 400}, 2500)
-            .call(()=>{
-                console.log("金幣沒吃到");
-                exportRoot.removeChild(Coin);
-                Hp -= ATTACK;
-                document.querySelector(".hp").style.width = `${Hp}%`;
-            })
-            .addEventListener("change", ()=>{
-                let hit = ndgmr.checkRectCollision(Coin, Mario); //金幣跟小烏龜碰撞
-                if(hit){
-                    createjs.Sound.play("coin")
-                    createjs.Tween.removeTweens(Coin); //移除金幣動畫
-                    exportRoot.removeChild(Coin); //移除金幣元件
-                    // winNum ++;
-                    winNum = winNum + 10;
-                    //新點數=獲得的點數+資料庫的目前點數
-                    lightboxwinNum = winNum + parseInt(document.querySelector("#point").innerText);
-                    //玩遊戲獲得的點數印出來
-                    document.querySelector(".winNum").innerHTML = winNum;
-                    //新點數印出來
-                    document.querySelector(".lightboxwinNum").innerHTML = lightboxwinNum;
-                }
-            })
-        }, 1000)
-    
-    
-    
-    
-    
-    
-        //遊戲開始按鈕
-        document.querySelector(".gamePlayBtn").addEventListener("click", ()=>{
-            createjs.Sound.play("play")
-            isStart = true;
-            document.querySelector(".gamePlayBtn").style.display = "none";
-            window.addEventListener("keydown", keydownMoveFn);
-            window.addEventListener("keyup", keyupMoveFn);
-        })
-    
-        //遊戲重新開始
-        document.querySelector(".resetPlay").addEventListener("click",()=>{
-            window.location.reload();
-        })
-    
-        function keydownMoveFn(e){
-            if(isKeydown) return;
-            if(e.keyCode===37 || e.keyCode===39){
-                isKeydown = true;
-                Positions = e.keyCode === 39 ? 1 : -1;
-                Mario.gotoAndPlay("run");
-            }
-        }
-    
-        function keyupMoveFn(e){
-            isKeydown = false;
-            Mario.gotoAndPlay("stop");
-        }
-    
-    
-        createjs.Ticker.addEventListener("tick", tickFn)
-        function tickFn(){
-            if(Hp <= 0){
-                clearInterval(timeCoin);
-                createjs.Sound.play("boom")
-                Mario.gotoAndPlay("del");
-                document.querySelector(".over").style.display = "flex";
-                window.removeEventListener("keydown", keydownMoveFn)
-                window.removeEventListener("keyup", keyupMoveFn)
-                createjs.Ticker.removeEventListener("tick", tickFn)
-            }
-            if(!isKeydown) return;
-            Mario.x += SPEED * Positions;
-            Mario.scaleX = Positions;
-    
-        }
-    
-    
-        //Registers the "tick" event listener.
-        fnStartAnimation = function() {
-            createjs.Ticker.setFPS(lib.properties.fps);
-            createjs.Ticker.addEventListener("tick", stage);
-        }	    
-        //Code to support hidpi screens and responsive scaling.
-        function makeResponsive(isResp, respDim, isScale, scaleType) {		
-            var lastW, lastH, lastS=1;		
-            window.addEventListener('resize', resizeCanvas);		
-            resizeCanvas();		
-            function resizeCanvas() {			
-                var w = lib.properties.width, h = lib.properties.height;			
-                var iw = window.innerWidth, ih=window.innerHeight;			
-                var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
-                if(isResp) {                
-                    if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
-                        sRatio = lastS;                
-                    }				
-                    else if(!isScale) {					
-                        if(iw<w || ih<h)						
-                            sRatio = Math.min(xRatio, yRatio);				
-                    }				
-                    else if(scaleType==1) {					
-                        sRatio = Math.min(xRatio, yRatio);				
-                    }				
-                    else if(scaleType==2) {					
-                        sRatio = Math.max(xRatio, yRatio);				
-                    }			
-                }			
-                canvas.width = w*pRatio*sRatio;			
-                canvas.height = h*pRatio*sRatio;
-                canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
-                canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
-                stage.scaleX = pRatio*sRatio;			
-                stage.scaleY = pRatio*sRatio;			
-                lastW = iw; lastH = ih; lastS = sRatio;		
-            }
-        }
-        makeResponsive(false,'both',false,1);	
-        fnStartAnimation();
-    }
-    </script>
-
-    <!------------------ 遊戲燈箱 ------------------>
-<script>
-      $(function(){
-  
-  // 開啟 Modal 彈跳視窗
-  // $(".game_btn").on("click", function(){
-  //   $("div.game_overlay").addClass("-on");
-  // });
-  
-  // 關閉 Modal
-  // $(".game_btn_close").on("click", function(){
-  //   $("div.game_overlay").addClass("-opacity-zero");
-    
-    // 設定隔一秒後，移除相關 class
-  //   setTimeout(function(){
-  //     $("div.game_overlay").removeClass("-on -opacity-zero");
-  //   }, 50);
-  // });
-  
-});
-
-
-</script>
-
 </body>
 </html>

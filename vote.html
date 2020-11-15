@@ -151,7 +151,7 @@
           
           <div id="nominateCreatureBlock">
             
-            <div class="nominate">
+            <!-- <div class="nominate">
               <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
               <div class="nominate_img">
                 <img src="./image/vote/vote01.jpg">
@@ -164,67 +164,7 @@
                 <input type="test" name="nominateName">
                 <button class="nominateSubmit">SUBMIT</button>
               </div> 
-            </div>
-
-            <div class="nominate">
-              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
-              <div class="nominate_img">
-                <img src="./image/vote/vote01.jpg">
-                <a href="journal.html" class="journal">Journal</a>
-              </div>            
-              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
-              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
-              <div class="nominateInputBox">
-                <h4>Create A Name</h4>
-                <input type="test" name="nominateName">
-                <button class="nominateSubmit">SUBMIT</button>
-              </div> 
-            </div>
-
-            <div class="nominate">
-              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
-              <div class="nominate_img">
-                <img src="./image/vote/vote01.jpg">
-                <a href="journal.html" class="journal">Journal</a>
-              </div>            
-              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
-              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
-              <div class="nominateInputBox">
-                <h4>Create A Name</h4>
-                <input type="test" name="nominateName">
-                <button class="nominateSubmit">SUBMIT</button>
-              </div> 
-            </div>
-
-            <div class="nominate">
-              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
-              <div class="nominate_img">
-                <img src="./image/vote/vote01.jpg">
-                <a href="journal.html" class="journal">Journal</a>
-              </div>            
-              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
-              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
-              <div class="nominateInputBox">
-                <h4>Create A Name</h4>
-                <input type="test" name="nominateName">
-                <button class="nominateSubmit">SUBMIT</button>
-              </div> 
-            </div>
-
-            <div class="nominate">
-              <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
-              <div class="nominate_img">
-                <img src="./image/vote/vote01.jpg">
-                <a href="journal.html" class="journal">Journal</a>
-              </div>            
-              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
-              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
-              <div class="nominateInputBox">
-                <h4>Create A Name</h4>
-                <input type="test" name="nominateName">
-                <button class="nominateSubmit">SUBMIT</button>
-              </div> 
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -652,32 +592,9 @@
   <script src="./js/layout/header.js"></script>
   <script src="./js/vote/vote.js"></script>
   <script>
-    $(function () {
-      $("a.vote").on("click", function (e) {
-        e.preventDefault();
-
-        /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-        $(this).closest("ul").find("a.vote").removeClass("-on");
-        $(this).addClass("-on");
-
-        /* 找到對應的頁籤內容，加上 -on 來顯示 */
-        $("div.vote").removeClass("-on");
-        $("div.vote." + $(this).attr("data-target")).addClass("-on");
-      });
-    });
-    // document.getElementById("nominate_botton_1").addEventListener("click", function () {
-    //   swal("Good job!", "You clicked the button!", "success");
-    // });
 
   </script>
 
-  <script>
-    $('.voteBar').each(function () {
-      $(this).find('.voteBar-bar').animate({
-        width: $(this).attr('data-percent')
-      }, 2000);
-    });
-  </script>
 
 
 </body>
