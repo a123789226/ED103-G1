@@ -2,25 +2,6 @@ function $id(id) {
   return document.getElementById(id);
 }
 
-
-
-  // 取投票的值
-function getVoteName(){
-  let voteSubmit =document.getElementsByClassName('voteSubmit');
-  for(let i = 0 ; i < voteSubmit.length; i++){
-    voteSubmit[i].addEventListener('click', function(){
-      let voteNameForAquaNo = document.getElementsByName(`voteNameForAquaNo${i+1}`);
-      for(let j =0; j < voteNameForAquaNo.length; j++){
-        if(voteNameForAquaNo[j].checked){
-          console.log(voteNameForAquaNo[j].value);
-          break;
-        }
-      }
-    })
-  }
-}
-
-
 // 長條圖最大值加上屬性
 function addClassToMaxBar(){
   let vote_bar_block = document.getElementsByClassName('vote_bar_block');
@@ -44,7 +25,7 @@ function showNominateAqua(){
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status == 200) { //success
-      nominateAqua = JSON.parse(xhr.responseText);
+      let nominateAqua = JSON.parse(xhr.responseText);
       // console.log(nominateAqua);
       let nominateContent = '';
       for(let i = 0; i < nominateAqua.length; i++){
@@ -62,7 +43,7 @@ function showNominateAqua(){
                               <button class="nominateSubmit">SUBMIT</button>
                             </div> 
                           </div>`;
-                        }                      
+      }                      
       $id('nominateCreatureBlock').innerHTML = nominateContent;
       
 
@@ -86,14 +67,16 @@ function nominateClick(nominateAqua){
       }else{
         // alert(nominateAqua[i].aquaNo);
         // alert(nominateName);
+        let nominateCount = this.parentNode.previousElementSibling.querySelector('span.nominateCount');
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
-          nominateResult = JSON.parse(xhr.responseText);
+          let nominateResult = JSON.parse(xhr.responseText);
           // console.log(nominateResult);
-          if(nominateResult.status == 'succeed'){
+          if(nominateResult.status == 'succeed'){ //新增提名成功
             swal("Great!", "You have successfully nominated this animal!", "success");
             nominateName.value ='';
-
+            //提名人數也要做修改
+            nominateCount.innerText = parseInt(nominateCount.innerText) + 1;
           }else if(nominateResult.status == 'repeated'){
             swal(`The name ${nominateResult.name} has already been nominated!`, "Please enter another name!", "warning");
             nominateName.value ='';
@@ -119,25 +102,150 @@ function nominateClick(nominateAqua){
 
 }
 
+// 秀出在投票狀態的動物
+function showVotingAqua(){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) { //success
+      let voteAqua = JSON.parse(xhr.responseText);
+      // console.log(voteAqua);
+      
+      let voteContent = '';
+      for(let i = 0; i < voteAqua.length; i++){
+        if((i+1) % 6 == 1){  //產生區塊的頭還有第1個名字
+          voteContent += `<div class="vote_nav">
+                            <h4>Voting deadline:&nbsp;</h4><h4>${voteAqua[i].voteEnd}</h4>
+                            <div class="vote_img">
+                            <img src="./img/aqua/${voteAqua[i].aquaPic}">
+                              <a href="journal.html" class="journal">Journal</a>
+                            </div>  
+                            <p><span>Creature:&nbsp;</span><span>${voteAqua[i].aquaType}</span></p>           
+                            <div class="vote_Box">
+                              <h4>Select Your Favorite Name</h4>
+                              <input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name1" value="${voteAqua[i].nomName}">
+                              <label for="aquaNo${voteAqua[i].aquaNo}_Name1">${voteAqua[i].nomName}</label>`;
+        }else if((i+1) % 6 == 0){ //產生第6個名字還有區塊的結尾
+          voteContent += `<input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name6" value="${voteAqua[i].nomName}">
+                          <label for="aquaNo${voteAqua[i].aquaNo}_Name6">${voteAqua[i].nomName}</label>
+                          <button class="voteSubmit" data-aquano="${voteAqua[i].aquaNo}">SUBMIT</button>
+                        </div> 
+                      </div>`;
+        }else{  //產生第2~5個名字
+          voteContent += `<input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name${i+1}" value="${voteAqua[i].nomName}">
+                          <label for="aquaNo${voteAqua[i].aquaNo}_Name${i+1}">${voteAqua[i].nomName}</label>`;
+        }
+      }
+      $id('voteCreatureBlock').innerHTML = voteContent;
+      
+      //替投票按鈕建立事件聆聽
+      voteClick();
+    }
+  }
+  xhr.open("get", "voteShowVote.php", true);
+  xhr.send(null);
+}
+
+
+//替投票按鈕建立事件聆聽
+function voteClick(){
+  let voteSubmit = document.getElementsByClassName('voteSubmit');
+  for(let i = 0; i < voteSubmit.length; i++){
+    voteSubmit[i].addEventListener('click', function(){
+      // 透過按鈕的data取aquaNo
+      let aquaNo = this.dataset.aquano;
+      let voteNameForAquaNo = document.getElementsByName(`voteNameForAquaNo${aquaNo}`);
+      for(let j =0; j < 6; j++){
+        if(voteNameForAquaNo[j].checked){ //有任一radio被選中觸發
+          // console.log(voteNameForAquaNo[j].value);
+          let nomName = voteNameForAquaNo[j].value;
+          // 執行增加該姓名的票數
+          UpdateVotedNum(aquaNo, nomName);
+        }
+      }
+    })
+  }
+}
+
+// 執行增加該姓名的票數
+function UpdateVotedNum(aquaNo, nomName){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    // console.log(xhr.responseText);
+    let voteResult = JSON.parse(xhr.responseText);
+    console.log(voteResult);
+    if(voteResult.length == 6){ //投票成功，有回傳nomName回來
+      // swal("Great!", "You have successfully voted!", "success");
+
+      //先計算六個名字的總票數
+      let totalCount = 0;
+      let countArr = [];
+      for(let i = 0; i < voteResult.length; i++){
+        totalCount += parseInt(voteResult[i].votedNum);
+        countArr[i] = parseInt(voteResult[i].votedNum);
+      }
+
+      // 票數的最大值
+      let maxCount = Math.max(...countArr);
+
+      // 產生HTML架構，要讓最高票的data-percent為100%
+      let voteBarHTML = '';
+      for(let i = 0; i < voteResult.length; i++){
+        let dataDecimal = (parseInt(voteResult[i].votedNum) / maxCount);
+        // 要轉成百分比他才會正常
+        let dataPercent = `${Math.round(dataDecimal * 100)}%`;
+        voteBarHTML += `<div class="voteBar" data-percent="${dataPercent}">
+                          <div class="voteBar-title"><span>${voteResult[i].nomName}</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">${voteResult[i].votedNum}</div>
+                        </div>`;
+      }
+      $id('voteBarBlock').innerHTML = voteBarHTML;
+
+      // 燈箱打開
+      $id('voteOverlay').classList.add('-on');
+      // 執行長條圖動畫
+      doBarAnimate();
+      addClassToMaxBar();
+
+    }else if(voteResult.status == 'voted'){ //投過票惹
+      swal('Sorry!', "You can only vote for one animal once a day!", "warning");
+
+    }else{ //非會員  
+      let overlay = document.getElementsByClassName('overlay');
+      overlay[0].classList.add('-on');
+    }
+  }
+
+  xhr.open("Post", "voteUpdateVotedNum.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  let data_info = `aquaNo=${aquaNo}&nomName=${nomName}`;
+  xhr.send(data_info);
+};
+
+
+
+
 
 function voteDoFirst(){
-  // 取投票的值
-  getVoteName();
-
   // 長條圖最大值加上屬性
   addClassToMaxBar();
 
-  // 秀出要被提名的動畫
+  // 執行長條圖動畫
+  doBarAnimate();
+
+  // 秀出要被提名的動物
   showNominateAqua();
+
+  // 秀出在投票狀態的動物
+  showVotingAqua();
+
+
+
+  // 秀出已完成投票的動物
+  //進度： 0%
 }
 
 window.addEventListener('load', voteDoFirst);
-
-
-
-
-
-
 
 
 
@@ -160,8 +268,25 @@ $(function(){
 
 
 // 長條圖動畫
-$('.voteBar').each(function () {
-  $(this).find('.voteBar-bar').animate({
-    width: $(this).attr('data-percent')
-  }, 2000);
+// $('.voteBar').each(function(){
+//   $(this).find('.voteBar-bar').animate({
+//     width: $(this).attr('data-percent')
+//   }, 2000);
+// });
+
+function doBarAnimate(){
+
+  $('.voteBar').each(function(){
+    $(this).find('.voteBar-bar').animate({
+      width: $(this).attr('data-percent')
+    }, 2000);
+  });
+}
+
+// 關閉投完票的長條圖彈窗
+$(function(){
+  // 關閉
+  $(".voteBarClose2").on("click", function(){
+    $("div.voteOverlay").removeClass("-on");
+  });
 });
