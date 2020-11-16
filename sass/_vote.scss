@@ -1,4 +1,5 @@
 body.voteBLOCK{
+
   margin: 0 auto;
   color: #ffffff;
   font-family: 'ROBOTO';
@@ -27,6 +28,7 @@ body.voteBLOCK{
 
 .vote_container{
   width:80%;
+  max-width: 1200px;
   background: rgba(255, 255, 255, .2);
   margin:auto;
   margin-top:50px;
@@ -172,8 +174,8 @@ ul.vote_list > li > a.-on{
 
 .nominate .vote_img  a.journal{
   position: absolute;
-  top:87%;
-  left:80%;
+  top:85%;
+  left:75%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -222,6 +224,7 @@ ul.vote_list > li > a.-on{
   border-radius: 6px;
   box-shadow: $shadow2;
   padding-bottom: 20px;
+  margin-bottom: 20px;
   >p{
   @include text($textBlack);
   padding-left: 5%;
@@ -248,8 +251,8 @@ ul.vote_list > li > a.-on{
 
 .vote_nav .vote_img a.journal{
   position: absolute;
-  top:87%;
-  left:80%;
+  top:85%;
+  left:75%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -346,8 +349,8 @@ ul.vote_list > li > a.-on{
 
 .finished .vote_img a.journal{
   position: absolute;
-  top:64%;
-  left:60%;
+  top:58%;
+  left:56%;
   @include btn36Yellow;
   box-shadow: $shadow2;
 }
@@ -381,7 +384,7 @@ ul.vote_list > li > a.-on{
   margin-bottom: 15px;
   width: 100%;
   background: #eee;
-  height: 35px;
+  height: 30px;
   border-radius: 4px;
   transition: 0.4s linear;
   transition-property: width, background-color;
@@ -403,14 +406,14 @@ ul.vote_list > li > a.-on{
   display: block;
   background: rgba(0, 0, 0, 0.1);
   padding: 0 20px;
-  height: 35px;
+  height: 30px;
   line-height: 35px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
 .skillbar-bar {
-  height: 35px;
+  height: 30px;
   width: 0px;
   background: #6adcfa;
 }
@@ -420,7 +423,7 @@ ul.vote_list > li > a.-on{
   right: 10px;
   top: 0;
   font-size: 11px;
-  height: 35px;
+  height: 30px;
   line-height: 35px;
   color: #444;
   color: rgba(0, 0, 0, 0.4);
@@ -695,6 +698,7 @@ ul.vote_list > li > a.-on{
   width: 90%;
   margin: 0 auto;
   display: block;
+  margin-bottom: 50px;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
@@ -702,6 +706,7 @@ ul.vote_list > li > a.-on{
   width: 90%;
   margin: 0 auto;
   display: block;
+  margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 575px){
@@ -709,6 +714,7 @@ ul.vote_list > li > a.-on{
   width: 90%;
   margin: 0 auto;
   display: block;
+  margin-bottom: 50px;
   }
 }
 
@@ -758,27 +764,29 @@ ul.vote_list > li > a.-on{
 
 
 
-@media screen and (min-width: 992px) and (max-width: 1199px){
-  .finished{
-    height: 40%;
-    display: block;
-  }
-}
+// @media screen and (min-width: 992px) and (max-width: 1199px){
+//   .finished{
+//     height: 40%;
+//     display: block;
+//   }
+// }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .finished{
-    height: 38%;
-    display: block;
+    width: 90%;
+    // display: block;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
   .finished{
-    height: 35%;
+    // height: 35%;
+    width: 90%;
     display: block;
   }
 }
 @media screen and (max-width: 575px){
   .finished{
-    height: 32%;
+    // height: 32%;
+    width: 90%;
     display: block;
   }
 }
@@ -789,18 +797,18 @@ ul.vote_list > li > a.-on{
 
 
 
-@media screen and (min-width: 992px) and (max-width: 1199px){
-  .finished .vote_img{
-    width: 100%;
-    height: 45%;
-    display: block;
+// @media screen and (min-width: 992px) and (max-width: 1199px){
+//   .finished .vote_img{
+//     width: 100%;
+//     height: 45%;
+//     display: block;
     
-  }
-}
+//   }
+// }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .finished .vote_img{
     width: 100%;
-    height: 45%;
+    // height: 45%;
     display: block;
     
   }
@@ -808,7 +816,7 @@ ul.vote_list > li > a.-on{
 @media screen and (min-width: 576px) and (max-width: 767px){
   .finished .vote_img{
     width: 100%;
-    height: 40%;
+    // height: 40%;
     display: block;
     
   }
@@ -817,7 +825,7 @@ ul.vote_list > li > a.-on{
 @media screen and (max-width: 575px){
   .finished .vote_img{
     width: 100%;
-    height: 40%;
+    // height: 40%;
     display: block;
     
   }
@@ -831,35 +839,35 @@ ul.vote_list > li > a.-on{
 @media screen and (min-width: 1200px) and (max-width: 1530px){
   .finished .vote_img a.journal{
     width: 30%;
-    top:56%;
+    top:55%;
     left:46%;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px){
   .finished .vote_img a.journal{
     width: 30%;
-    top:66%;
-    left:52%;
+    top:45%;
+    left:45%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .finished .vote_img a.journal{
     width: 30%;
-    top:60%;
+    top:66%;
     left:50%;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
   .finished .vote_img a.journal{
     width: 30%;
-    top:49%;
+    top:55%;
     left:50%;
   }
 }
 @media screen and (max-width: 575px){
   .finished .vote_img a.journal{
     width: 40%;
-    top:42%;
+    top:48%;
     left:40%;
   }
 }
@@ -868,11 +876,11 @@ ul.vote_list > li > a.-on{
 // -----------------
 
 
-@media screen and (min-width: 992px) and (max-width: 1199px){
-  .finished .vote_img img{
-    margin-left: 65px;
-  }
-}
+// @media screen and (min-width: 992px) and (max-width: 1199px){
+//   .finished .vote_img img{
+//     margin-left: 65px;
+//   }
+// }
 @media screen and (min-width: 768px) and (max-width: 991px){
   .finished .vote_img img{
     margin-left: 50px;
@@ -894,10 +902,7 @@ ul.vote_list > li > a.-on{
 
 @media screen and (min-width: 992px) and (max-width: 1199px){
   .finished .vote_all{
-    width: 60%;
-    display: block;
-    margin-top: 0;
-    margin-left: 15px;
+    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -906,6 +911,7 @@ ul.vote_list > li > a.-on{
     display: block;
     margin-top: 0;
     margin-left: 15px;
+    
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
