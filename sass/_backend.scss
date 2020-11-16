@@ -224,6 +224,72 @@
         }
       }
       // AQUA
+      .aquaForm{
+        // text-align: center;
+        margin: 0 auto;
+        padding: 20px 20px 40px;
+        // border: 1px solid black;
+        background-color: rgba(255, 255, 255, .5);
+        width: 500px;
+        height: 900px;
+        overflow-x: scroll;
+        box-shadow: 0 0 10px #ddd;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        label{
+          text-transform: capitalize;
+          color: #ffffff;
+          margin: 5px;
+        }
+        h3{
+          @include main_title($keyWhite);
+          // margin-bottom: 20px;
+          width: 600px;
+          text-align: left;
+        }
+        .btn_modal_close{
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          border: 1px solid #ffffff;
+          border-radius: 5px;
+          width: 35px;
+          height: 35px;
+          text-align: center;
+          cursor: pointer;
+          > div {
+              position: absolute;
+              border: 1px solid #ffffff;
+              width: 76%;
+              top: 16px;
+              left: 4px;
+              &:nth-child(1) {
+                  transform: rotate(45deg);
+              }
+              &:nth-child(2) {
+                  transform: rotate(-45deg);
+              }
+          }
+        }
+        input {
+          padding: 5px 15px; 
+          background:#ffffff; 
+          border:0 none;
+          cursor:pointer;
+          border-radius: 5px; 
+          margin-bottom: 10px;
+          height: 40px;
+          width: 100%;
+          font-size: 16px;
+        }
+        .ngrbtnAquaAdd{
+          @include btn50Green;
+          width: 240px;
+        }
+      }
       .mgrAquaAll{
         display: block;
         width: 100%;
@@ -371,6 +437,88 @@
         }
       }
       // JOURNAL
+      .jourForm{
+        // text-align: center;
+        label{
+          text-transform: capitalize;
+          color: #ffffff;
+          margin: 5px;
+        }
+        margin: 0 auto;
+        padding: 20px 20px 40px;
+        // border: 1px solid black;
+        background-color: rgba(255, 255, 255, .5);
+        width: 500px;
+        box-shadow: 0 0 10px #ddd;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        h3{
+          @include main_title($keyWhite);
+          // margin-bottom: 20px;
+          width: 600px;
+          text-align: left;
+        }
+        .btn_modal_close{
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          border: 1px solid #ffffff;
+          border-radius: 5px;
+          width: 35px;
+          height: 35px;
+          text-align: center;
+          cursor: pointer;
+          > div {
+              position: absolute;
+              border: 1px solid #ffffff;
+              width: 76%;
+              top: 16px;
+              left: 4px;
+              &:nth-child(1) {
+                  transform: rotate(45deg);
+              }
+              &:nth-child(2) {
+                  transform: rotate(-45deg);
+              }
+          }
+        }
+        input {
+          padding: 5px 15px; 
+          background:#ffffff; 
+          border:0 none;
+          cursor:pointer;
+          border-radius: 5px; 
+          margin-bottom: 10px;
+          height: 40px;
+          width: 100%;
+          font-size: 16px;
+        }
+        .ngrbtnJourAdd{
+          @include btn50Green;
+          width: 240px;
+        }
+      }
+      .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: hsla(0, 0, 0, .8);
+        opacity: 0;
+        z-index: -10;
+        transition: opacity 0.5s;
+      }
+      .overlay.-on{
+        opacity: 1;
+        z-index: 11;
+      }
+      .overlay.-opacity-zero{
+        opacity: 0;
+      }
       .mgrJournalAll{
         display: block;
         width: 100%;

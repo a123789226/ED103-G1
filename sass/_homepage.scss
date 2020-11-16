@@ -58,7 +58,7 @@
     .home_map_container{
       display: inline-block;
       position: absolute;
-      width: 100%;
+      // width: 100%;
       height: 100%;
       top: 0;
       left: 15%;
@@ -335,6 +335,18 @@
     transform: translateY(50px);
   }
 }
+@keyframes home_bounce_down4 {
+  0%{
+    transform: translateY(20px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(20px);
+  }
+}
+
 
 @keyframes fish_move_left{
   0%{
@@ -766,6 +778,41 @@
     padding-bottom: 100px;
     // display: flex;
     // justify-content: center;
+  }
+  .adopt_bg{
+    position: absolute;
+    left: 44%;
+    top: 27%;
+    width: 50%;
+  }
+  .adopt_right_animal01{
+    position: absolute;
+    left: 62%;
+    top: 45%;
+    width: 20%;
+  }
+  .adopt_animal01, .adopt_animal02, .adopt_animal03{
+    position: absolute;
+    cursor: pointer;
+    animation-name: home_bounce_down4;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .adopt_animal01{
+    width: 20%;
+    left: -3%;
+    top: 20%;
+  }
+  .adopt_animal02{
+    width: 17%;
+    left: 10%;
+    top: 25%;
+  }
+  .adopt_animal03{
+    width: 20%;
+    left: 25%;
+    top: 20%;
   }
   .thanks_card{
     position: absolute;
@@ -1437,6 +1484,16 @@
   > img{
     position: absolute;
   }
+  .home_gameTitle_before{
+    padding-top: 3%;
+    .home_game_title{
+      @include main_title($keyWhite);
+      font-size: 48px;
+      position: relative;
+      left: 7%;
+      z-index: 4;
+    }
+  }
   .page7_2{
     width: 100%;
     bottom: -5%;
@@ -1456,6 +1513,18 @@
     left: 0;
     // height: 100vh;
   }
+  .game_gif{
+    left: 32%;
+    top: 12%;
+    width: 40%;
+  }
+  .game_btn{
+    @include btn50Green();
+    position: absolute;
+    left: 45%;
+    top: 65%;
+  }
+
 }
 
 
