@@ -29,8 +29,10 @@
         <div></div>
       </div>
       <h3 class="memLogTitle">LOG IN</h3>
-      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
-      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25" /><br>
+      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
+        placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25" /><br>
       <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
       <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
       <div class="memLine">
@@ -41,7 +43,7 @@
     </form>
   </div>
   <!-- Log In結束 -->
-  
+
   <!-- header開始 -->
   <header class="main_menu">
     <!-- header第一區塊 主導覽列 -->
@@ -93,7 +95,8 @@
       </ul>
       <div class="header_right">
         <span class="member_box btn_modal" id="btn_modal">
-          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+          <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic"
+            onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
         </span>
         <a class="cart_box" href="cart.html">
           <img src="./image/header/header_cart.png" alt="">
@@ -107,26 +110,18 @@
         </div>
       </div>
     </nav>
-    
-    <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
-    <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
-      <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
-      <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
-      <p id="SignOutLink">Sign Out</p>
-    </div>
 
-  </header> 
-
-  <!-- header結束 -->
-
-
-  <div>
     <div class="commonTitleBox VoteTitleBox">
-      <h2 class="commonTitle">VOTE</h2>
-      <h4 class="commonSubTitle">You can view the creatures that are in the process of nomination, including nomination, voting and history record.</h4>
     </div>
     <!-- 你的code打這下面 -->
-       
+
+    =======
+    <h4 class="commonSubTitle">You can view the creatures that are in the process of nomination, including nomination,
+      voting and history record.</h4>
+    </div>
+    <!-- 你的code打這下面 -->
+
+    >>>>>>> Kira
     <div class="vote_container">
 
 
@@ -144,23 +139,21 @@
       <div class="vote_contents">
 
         <!-- 頁籤1 -->
-        
+
         <div class="vote vote1  -on">
           <div class="vote_info">
             <div class="vote_subtitle">Nominate</div>
             <p class="vote_text">Please nominate a name for this marine creatures!</p>
           </div>
-          
-          <div id="nominateCreatureBlock">
-            
-            <!-- <div class="nominate">
+          <<<<<<< HEAD <div id="nominateCreatureBlock">
+
+            =======
+
+            <div id="nominateCreatureBlock">
+
+              <!-- <div class="nominate">
               <h4>Creature:&nbsp;</h4><h4 class="nominate_aquaType">Dolphin</h4>
               <div class="nominate_img">
-                <img src="./image/vote/vote01.jpg">
-                <a href="journal.html" class="journal">Journal</a>
-              </div>            
-              <p><span>Nominating deadline:&nbsp;</span><span class="nominate_deadline">2020-10-25</span></p>
-              <p><span>Current nominated number:&nbsp;</span><span class="nominateCount">0</span></p>
               <div class="nominateInputBox">
                 <h4>Create A Name</h4>
                 <input type="test" name="nominateName">
@@ -168,7 +161,7 @@
               </div> 
             </div> -->
 
-          </div>
+            </div>
         </div>
 
 
@@ -182,8 +175,8 @@
           </div>
 
           <div id="voteCreatureBlock">
-            
-            <!-- <div class="vote_nav">
+            <<<<<<< HEAD=======>>>>>>> Kira
+              <!-- <div class="vote_nav">
               <h4>Voting deadline:&nbsp;</h4><h4>2020-10-25</h4>
               <div class="vote_img">
                 <img src="./image/vote/vote07.jpg">
@@ -215,352 +208,570 @@
           <div class="voteOverlay" id="voteOverlay">
             <div id="voteBarBox">
               <h4>Current Distribution of Votes</h3>
-              <div class="vote_bar_block" id="voteBarBlock">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div> 
-              </div>
-              <button class="voteBarClose2">Close</button>
+                <<<<<<< HEAD <div class="vote_bar_block" id="voteBarBlock">
+                  <div class="voteBar" data-percent="100%">
+                    <div class="voteBar-title"><span>Abby</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">10</div>
+                  </div>
+                  <div class="voteBar" data-percent="88%">
+                    <div class="voteBar-title"><span>Titi</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">5</div>
+                  </div>
+                  <div class="voteBar" data-percent="71%">
+                    <div class="voteBar-title"><span>Morna</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">4</div>
+                  </div>
+                  <div class="voteBar" data-percent="69%">
+                    <div class="voteBar-title"><span>Cindy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">9</div>
+                  </div>
+                  <div class="voteBar" data-percent="63%">
+                    <div class="voteBar-title"><span>Joy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
+                  <div class="voteBar" data-percent="51%">
+                    <div class="voteBar-title"><span>Nana</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
             </div>
+            <button class="voteBarClose2">Close</button>
+            =======
+            <div class="vote_bar_block" id="voteBarBlock">
+              <div class="voteBar" data-percent="100%">
+                <div class="voteBar-title"><span>Abby</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">10</div>
+              </div>
+              <div class="voteBar" data-percent="88%">
+                <div class="voteBar-title"><span>Titi</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">5</div>
+              </div>
+              <div class="voteBar" data-percent="71%">
+                <div class="voteBar-title"><span>Morna</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">4</div>
+              </div>
+              <div class="voteBar" data-percent="69%">
+                <div class="voteBar-title"><span>Cindy</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">9</div>
+              </div>
+              <div class="voteBar" data-percent="63%">
+                <div class="voteBar-title"><span>Joy</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">1</div>
+              </div>
+              <div class="voteBar" data-percent="51%">
+                <div class="voteBar-title"><span>Nana</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">1</div>
+              </div>
+            </div>
+            <button class="voteBarClose2">Close</button>
+            >>>>>>> Kira
           </div>
-
-
-
         </div>
 
 
-        <!-- 頁籤3 -->
 
-
-        <div class="vote vote3">
-          <div class="vote_info">
-            <div class="vote_subtitle">Finished</div>
-            <p class="vote_text">Let’s take a look at the naming results of the animals!</p>
-          </div>
-
-          <div id="voteFinishedBlock">
-            
-            <div class="voteFinished">
-              
-              <div class="voteFinishedNameBox">
-                <h4>Name:&nbsp;</h4>
-                <h4>Abby</h4>
-              </div>
-              
-              <div class="voteFinishedInfo">
-                <div class="voteFinishedImg">
-                  <img src="./image/vote/vote11.jpg">
-                  <a href="journal.html" class="journal">Journal</a>
-                </div>
-                <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
-                <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
-              </div>
-
-              <div class="vote_bar_block">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-  
-              </div> 
-
-            </div>
-
-            <div class="voteFinished">
-              
-              <div class="voteFinishedNameBox">
-                <h4>Name:&nbsp;</h4>
-                <h4>Abby</h4>
-              </div>
-              
-              <div class="voteFinishedInfo">
-                <div class="voteFinishedImg">
-                  <img src="./image/vote/vote11.jpg">
-                  <a href="journal.html" class="journal">Journal</a>
-                </div>
-                <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
-                <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
-              </div>
-
-              <div class="vote_bar_block">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-  
-              </div> 
-               
-            </div>
-
-
-            <div class="voteFinished">
-              
-              <div class="voteFinishedNameBox">
-                <h4>Name:&nbsp;</h4>
-                <h4>Abby</h4>
-              </div>
-              
-              <div class="voteFinishedInfo">
-                <div class="voteFinishedImg">
-                  <img src="./image/vote/vote11.jpg">
-                  <a href="journal.html" class="journal">Journal</a>
-                </div>
-                <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
-                <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
-              </div>
-
-              <div class="vote_bar_block">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-  
-              </div> 
-               
-            </div>
-
-
-            <div class="voteFinished">
-              
-              <div class="voteFinishedNameBox">
-                <h4>Name:&nbsp;</h4>
-                <h4>Abby</h4>
-              </div>
-              
-              <div class="voteFinishedInfo">
-                <div class="voteFinishedImg">
-                  <img src="./image/vote/vote11.jpg">
-                  <a href="journal.html" class="journal">Journal</a>
-                </div>
-                <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
-                <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
-              </div>
-
-              <div class="vote_bar_block">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-  
-              </div> 
-               
-            </div>
-
-
-            <div class="voteFinished">
-              
-              <div class="voteFinishedNameBox">
-                <h4>Name:&nbsp;</h4>
-                <h4>Abby</h4>
-              </div>
-              
-              <div class="voteFinishedInfo">
-                <div class="voteFinishedImg">
-                  <img src="./image/vote/vote11.jpg">
-                  <a href="journal.html" class="journal">Journal</a>
-                </div>
-                <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
-                <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
-              </div>
-
-              <div class="vote_bar_block">
-                <div class="voteBar" data-percent="100%">
-                  <div class="voteBar-title"><span>Abby</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">10</div>
-                </div>  
-                <div class="voteBar" data-percent="88%">
-                  <div class="voteBar-title"><span>Titi</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">5</div>
-                </div> 
-                <div class="voteBar" data-percent="71%">
-                  <div class="voteBar-title"><span>Morna</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">4</div>
-                </div>
-                <div class="voteBar" data-percent="69%">
-                  <div class="voteBar-title"><span>Cindy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">9</div>
-                </div>
-                <div class="voteBar" data-percent="63%">
-                  <div class="voteBar-title"><span>Joy</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-                <div class="voteBar" data-percent="51%">
-                  <div class="voteBar-title"><span>Nana</span></div>
-                  <div class="voteBar-bar"></div>
-                  <div class="voteBar-percent">1</div>
-                </div>
-  
-              </div> 
-               
-            </div>
-            
-
-          </div>
-
-
-        </div>
       </div>
+
+
+      <!-- 頁籤3 -->
+
+
+      <div class="vote vote3">
+        <div class="vote_info">
+          <div class="vote_subtitle">Finished</div>
+          <p class="vote_text">Let’s take a look at the naming results of the animals!</p>
+        </div>
+        <<<<<<< HEAD <div id="voteFinishedBlock">
+
+          <div class="voteFinished">
+
+            <div class="voteFinishedNameBox">
+              <h4>Name:&nbsp;</h4>
+              <h4>Abby</h4>
+            </div>
+
+            <div class="voteFinishedInfo">
+              <div class="voteFinishedImg">
+                <img src="./image/vote/vote11.jpg">
+                <a href="journal.html" class="journal">Journal</a>
+              </div>
+              <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+              <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+            </div>
+
+            <div class="vote_bar_block">
+              <div class="voteBar" data-percent="100%">
+                <div class="voteBar-title"><span>Abby</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">10</div>
+              </div>
+              <div class="voteBar" data-percent="88%">
+                <div class="voteBar-title"><span>Titi</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">5</div>
+              </div>
+              <div class="voteBar" data-percent="71%">
+                <div class="voteBar-title"><span>Morna</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">4</div>
+              </div>
+              <div class="voteBar" data-percent="69%">
+                <div class="voteBar-title"><span>Cindy</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">9</div>
+              </div>
+              <div class="voteBar" data-percent="63%">
+                <div class="voteBar-title"><span>Joy</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">1</div>
+              </div>
+              <div class="voteBar" data-percent="51%">
+                <div class="voteBar-title"><span>Nana</span></div>
+                <div class="voteBar-bar"></div>
+                <div class="voteBar-percent">1</div>
+              </div>
+
+            </div>
+            =======
+
+            <div id="voteFinishedBlock">
+
+              <div class="voteFinished">
+
+                <div class="voteFinishedNameBox">
+                  <h4>Name:&nbsp;</h4>
+                  <h4>Abby</h4>
+                </div>
+
+                <div class="voteFinishedInfo">
+                  <div class="voteFinishedImg">
+                    <img src="./image/vote/vote11.jpg">
+                    <a href="journal.html" class="journal">Journal</a>
+                  </div>
+                  <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+                  <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+                </div>
+
+                <div class="vote_bar_block">
+                  <div class="voteBar" data-percent="100%">
+                    <div class="voteBar-title"><span>Abby</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">10</div>
+                  </div>
+                  <div class="voteBar" data-percent="88%">
+                    <div class="voteBar-title"><span>Titi</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">5</div>
+                  </div>
+                  <div class="voteBar" data-percent="71%">
+                    <div class="voteBar-title"><span>Morna</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">4</div>
+                  </div>
+                  <div class="voteBar" data-percent="69%">
+                    <div class="voteBar-title"><span>Cindy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">9</div>
+                  </div>
+                  <div class="voteBar" data-percent="63%">
+                    <div class="voteBar-title"><span>Joy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
+                  <div class="voteBar" data-percent="51%">
+                    <div class="voteBar-title"><span>Nana</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
+
+                </div>
+                >>>>>>> Kira
+
+              </div>
+
+              <div class="voteFinished">
+                <<<<<<< HEAD=======>>>>>>> Kira
+                  <div class="voteFinishedNameBox">
+                    <h4>Name:&nbsp;</h4>
+                    <h4>Abby</h4>
+                  </div>
+                  <<<<<<< HEAD=======>>>>>>> Kira
+                    <div class="voteFinishedInfo">
+                      <div class="voteFinishedImg">
+                        <img src="./image/vote/vote11.jpg">
+                        <a href="journal.html" class="journal">Journal</a>
+                      </div>
+                      <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+                      <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+                    </div>
+                    <<<<<<< HEAD <div class="vote_bar_block">
+                      <div class="voteBar" data-percent="100%">
+                        <div class="voteBar-title"><span>Abby</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">10</div>
+                      </div>
+                      <div class="voteBar" data-percent="88%">
+                        <div class="voteBar-title"><span>Titi</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">5</div>
+                      </div>
+                      <div class="voteBar" data-percent="71%">
+                        <div class="voteBar-title"><span>Morna</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">4</div>
+                      </div>
+                      <div class="voteBar" data-percent="69%">
+                        <div class="voteBar-title"><span>Cindy</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">9</div>
+                      </div>
+                      <div class="voteBar" data-percent="63%">
+                        <div class="voteBar-title"><span>Joy</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">1</div>
+                      </div>
+                      <div class="voteBar" data-percent="51%">
+                        <div class="voteBar-title"><span>Nana</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">1</div>
+                      </div>
+
+              </div>
+
+              =======
+
+              <div class="vote_bar_block">
+                <div class="voteBar" data-percent="100%">
+                  <div class="voteBar-title"><span>Abby</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">10</div>
+                </div>
+                <div class="voteBar" data-percent="88%">
+                  <div class="voteBar-title"><span>Titi</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">5</div>
+                </div>
+                <div class="voteBar" data-percent="71%">
+                  <div class="voteBar-title"><span>Morna</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">4</div>
+                </div>
+                <div class="voteBar" data-percent="69%">
+                  <div class="voteBar-title"><span>Cindy</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">9</div>
+                </div>
+                <div class="voteBar" data-percent="63%">
+                  <div class="voteBar-title"><span>Joy</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">1</div>
+                </div>
+                <div class="voteBar" data-percent="51%">
+                  <div class="voteBar-title"><span>Nana</span></div>
+                  <div class="voteBar-bar"></div>
+                  <div class="voteBar-percent">1</div>
+                </div>
+
+              </div>
+
+              >>>>>>> Kira
+            </div>
+
+
+            <div class="voteFinished">
+              <<<<<<< HEAD=======>>>>>>> Kira
+                <div class="voteFinishedNameBox">
+                  <h4>Name:&nbsp;</h4>
+                  <h4>Abby</h4>
+                </div>
+                <<<<<<< HEAD=======>>>>>>> Kira
+                  <div class="voteFinishedInfo">
+                    <div class="voteFinishedImg">
+                      <img src="./image/vote/vote11.jpg">
+                      <a href="journal.html" class="journal">Journal</a>
+                    </div>
+                    <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+                    <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+                    <<<<<<< HEAD </div>
+
+                      <div class="vote_bar_block">
+                        <div class="voteBar" data-percent="100%">
+                          <div class="voteBar-title"><span>Abby</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">10</div>
+                        </div>
+                        <div class="voteBar" data-percent="88%">
+                          <div class="voteBar-title"><span>Titi</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">5</div>
+                        </div>
+                        <div class="voteBar" data-percent="71%">
+                          <div class="voteBar-title"><span>Morna</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">4</div>
+                        </div>
+                        <div class="voteBar" data-percent="69%">
+                          <div class="voteBar-title"><span>Cindy</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">9</div>
+                        </div>
+                        <div class="voteBar" data-percent="63%">
+                          <div class="voteBar-title"><span>Joy</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">1</div>
+                        </div>
+                        <div class="voteBar" data-percent="51%">
+                          <div class="voteBar-title"><span>Nana</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">1</div>
+                        </div>
+
+                      </div>
+
+                  </div>
+
+
+                  <div class="voteFinished">
+
+                    =======
+                  </div>
+
+                  <div class="vote_bar_block">
+                    <div class="voteBar" data-percent="100%">
+                      <div class="voteBar-title"><span>Abby</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">10</div>
+                    </div>
+                    <div class="voteBar" data-percent="88%">
+                      <div class="voteBar-title"><span>Titi</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">5</div>
+                    </div>
+                    <div class="voteBar" data-percent="71%">
+                      <div class="voteBar-title"><span>Morna</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">4</div>
+                    </div>
+                    <div class="voteBar" data-percent="69%">
+                      <div class="voteBar-title"><span>Cindy</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">9</div>
+                    </div>
+                    <div class="voteBar" data-percent="63%">
+                      <div class="voteBar-title"><span>Joy</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">1</div>
+                    </div>
+                    <div class="voteBar" data-percent="51%">
+                      <div class="voteBar-title"><span>Nana</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">1</div>
+                    </div>
+
+                  </div>
+
+            </div>
+
+
+            <div class="voteFinished">
+
+              >>>>>>> Kira
+              <div class="voteFinishedNameBox">
+                <h4>Name:&nbsp;</h4>
+                <h4>Abby</h4>
+              </div>
+              <<<<<<< HEAD=======>>>>>>> Kira
+                <div class="voteFinishedInfo">
+                  <div class="voteFinishedImg">
+                    <img src="./image/vote/vote11.jpg">
+                    <a href="journal.html" class="journal">Journal</a>
+                  </div>
+                  <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+                  <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+                  <<<<<<< HEAD </div>
+
+                    <div class="vote_bar_block">
+                      <div class="voteBar" data-percent="100%">
+                        <div class="voteBar-title"><span>Abby</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">10</div>
+                      </div>
+                      <div class="voteBar" data-percent="88%">
+                        <div class="voteBar-title"><span>Titi</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">5</div>
+                      </div>
+                      <div class="voteBar" data-percent="71%">
+                        <div class="voteBar-title"><span>Morna</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">4</div>
+                      </div>
+                      <div class="voteBar" data-percent="69%">
+                        <div class="voteBar-title"><span>Cindy</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">9</div>
+                      </div>
+                      <div class="voteBar" data-percent="63%">
+                        <div class="voteBar-title"><span>Joy</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">1</div>
+                      </div>
+                      <div class="voteBar" data-percent="51%">
+                        <div class="voteBar-title"><span>Nana</span></div>
+                        <div class="voteBar-bar"></div>
+                        <div class="voteBar-percent">1</div>
+                      </div>
+
+                    </div>
+
+                    =======
+                </div>
+
+                <div class="vote_bar_block">
+                  <div class="voteBar" data-percent="100%">
+                    <div class="voteBar-title"><span>Abby</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">10</div>
+                  </div>
+                  <div class="voteBar" data-percent="88%">
+                    <div class="voteBar-title"><span>Titi</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">5</div>
+                  </div>
+                  <div class="voteBar" data-percent="71%">
+                    <div class="voteBar-title"><span>Morna</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">4</div>
+                  </div>
+                  <div class="voteBar" data-percent="69%">
+                    <div class="voteBar-title"><span>Cindy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">9</div>
+                  </div>
+                  <div class="voteBar" data-percent="63%">
+                    <div class="voteBar-title"><span>Joy</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
+                  <div class="voteBar" data-percent="51%">
+                    <div class="voteBar-title"><span>Nana</span></div>
+                    <div class="voteBar-bar"></div>
+                    <div class="voteBar-percent">1</div>
+                  </div>
+
+                </div>
+
+                >>>>>>> Kira
+            </div>
+
+
+            <div class="voteFinished">
+              <<<<<<< HEAD=======>>>>>>> Kira
+                <div class="voteFinishedNameBox">
+                  <h4>Name:&nbsp;</h4>
+                  <h4>Abby</h4>
+                </div>
+                <<<<<<< HEAD=======>>>>>>> Kira
+                  <div class="voteFinishedInfo">
+                    <div class="voteFinishedImg">
+                      <img src="./image/vote/vote11.jpg">
+                      <a href="journal.html" class="journal">Journal</a>
+                    </div>
+                    <p><span>Creature:&nbsp;</span><span>Dolphin</span></p>
+                    <p><span>Voting deadline:&nbsp;</span><span>2020-09-31</span></p>
+                  </div>
+
+                  <div class="vote_bar_block">
+                    <div class="voteBar" data-percent="100%">
+                      <div class="voteBar-title"><span>Abby</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">10</div>
+                      <<<<<<< HEAD </div>
+                        =======
+                    </div>
+                    >>>>>>> Kira
+                    <div class="voteBar" data-percent="88%">
+                      <div class="voteBar-title"><span>Titi</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">5</div>
+                      <<<<<<< HEAD </div>
+                        =======
+                    </div>
+                    >>>>>>> Kira
+                    <div class="voteBar" data-percent="71%">
+                      <div class="voteBar-title"><span>Morna</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">4</div>
+                    </div>
+                    <div class="voteBar" data-percent="69%">
+                      <div class="voteBar-title"><span>Cindy</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">9</div>
+                    </div>
+                    <div class="voteBar" data-percent="63%">
+                      <div class="voteBar-title"><span>Joy</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">1</div>
+                    </div>
+                    <div class="voteBar" data-percent="51%">
+                      <div class="voteBar-title"><span>Nana</span></div>
+                      <div class="voteBar-bar"></div>
+                      <div class="voteBar-percent">1</div>
+                    </div>
+                    <<<<<<< HEAD </div>
+
+                      =======
+
+                  </div>
+
+                  >>>>>>> Kira
+            </div>
+
+
+          </div>
+
+          <<<<<<< HEAD=======</div>
+
+            >>>>>>> Kira
+
+      </div>
+    </div>
 
     </div>
 
-  </div>
+    </div>
 
 
 
 
-  <!-- 你的code打這上面 -->
+    <!-- 你的code打這上面 -->
 
 
 
 
-  <footer>
-    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
-  </footer>
+    <footer>
+      Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+    </footer>
 
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/memLogin.js"></script>
-  <script src="./js/layout/header.js"></script>
-  <script src="./js/vote/vote.js"></script>
-  <script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/memLogin.js"></script>
+    <script src="./js/layout/header.js"></script>
+    <script src="./js/vote/vote.js"></script>
+    <script>
 
-  </script>
+    </script>
 
 
 
