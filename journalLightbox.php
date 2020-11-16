@@ -1,6 +1,7 @@
 <?php 
 try {
-  require_once("./php/connectBook.php");
+  require_once("./connectAqua.php");
+
   $sql = "select * from adopt where aquaNo = 'whale' order by arriveDate DESC";
   $aquaAdopter = $pdo->query($sql);
   $aquaAdopter->execute();

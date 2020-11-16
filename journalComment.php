@@ -1,13 +1,16 @@
 <?php
 try{
-  $_POST["aquaNo"]="1";
-  $_POST["aquaName"]="Tony";
+  // $_POST["aquaNo"]="1";
+  // $_POST["aquaName"]="Tony";
 
-  require_once("./php/connectBook.php");
-  $sql = "select c.msgContent, c.msgTime, m.memName, m.memPic from journal_message c join member m on(c.memNo = m.memNo) where c.aquaNo =:aquaNo and msgStatus='正常' order by c.msgTime DESC;";
+  require_once("./connectAqua.php");
+  $sql = "select c.msgContent, c.msgTime, m.memName, m.memPic 
+  from journal_message c join member m on(c.memNo = m.memNo) 
+  where c.aquaNo =:aquaNo and msgStatus in ('正常',0) 
+  order by c.msgTime DESC;";
  
   $comment = $pdo->prepare($sql);
-  $comment->bindValue(":aquaNo", $_POST['aquaNo']);
+  $comment->bindValue(":aquaNo", 1);
   $comment->execute();
   if($comment->rowCount()==0){ // 無留言
     echo "{}";
