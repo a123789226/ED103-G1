@@ -115,11 +115,11 @@
             </div>
             <h3>AQUA WONDERLAND</h3>
             <ul>
+              <!-- <div class="mgrbtn">
+                <a href="#" data-target="tab1" class="mgrTab">CHATBOT</a>
+              </div> -->
               <div class="mgrbtn">
-                <a href="#" data-target="tab1" class="mgrTab -on">CHATBOT</a>
-              </div>
-              <div class="mgrbtn">
-                <a href="#" data-target="tab2" class="mgrTab">MEMBER</a>
+                <a href="#" data-target="tab2" class="mgrTab -on">MEMBER</a>
               </div>
               <div class="mgrbtn">
                 <a href="#" data-target="tab3" class="mgrTab">AQUA</a>
@@ -160,7 +160,7 @@
           <!-- 右邊內容 -->
           <div class="mgrContent col-lg-10">
             <!-- CHATBOT -->
-            <div class="mgrTab tab1 mgrChatbot -on">
+            <div class="mgrTab tab1 mgrChatbot">
               <h3>CHATBOT</h3>
               <table class="mgrChatAll">
                 <tr class="mgrChatTitle">
@@ -248,7 +248,7 @@
             </div>
             <!-- CHATBOT END -->
             <!-- MEMBER -->
-            <div class="mgrTab tab2 mgrMember">
+            <div class="mgrTab tab2 mgrMember -on">
               <h3>MEMBER</h3>
               <table class="mgrMemAll">
                 <tr class="mgrMemTitle">
@@ -262,7 +262,7 @@
                   <th width="100">Birthday</th>
                   <th width="100">Photo</th>
                   <th width="60">Point</th>
-                  <th width="150">Status</th>
+                  <th width="150">Status(0:正常;1:停權)</th>
                   <th width="100">Edit</th>
                 </tr>
                 <tbody id="backMemberTable">
@@ -317,7 +317,64 @@
             <!-- AQUA -->
             <div class="mgrTab tab3 mgrAqua">
               <h3>AQUA</h3>
-              <button type="submit">Add</button>
+              <button id="ngrAquaAdd" onclick="btnAquaAdd()" class="ngrAquaAdd btn_modal">ADD AQUA</button>
+              <div class="jourAdd overlay">
+                <form class="aquaForm" id="aquaForm" method="post">
+                  <div class="btn_modal_close">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <h3>ADD AQUA</h3>
+                  <label for="">aquaType:</label>
+                  <select name="aquaType" id="">
+                    <option value="0">dolphin</option>
+                    <option value="1">seal</option>
+                    <option value="2">turtle</option>
+                    <option value="3">whale</option>
+                  </select><br>
+                  <label for="">aquaName(can be null):</label><br>
+                  <input type="text" name="aquaName"><br>
+                  <label for="">aquaAge:</label><br>
+                  <input type="number" name="aquaAge"><br>
+                  <label for="">aquaSex:</label>
+                  <select name="aquaSex" id="">
+                    <option value="0">M</option>
+                    <option value="1">F</option>
+                  </select><br>
+                  <label for="">arriveDate:</label><br>
+                  <input type="date" name="arriveDate"><br>
+                  <label for="">rescueLocation:</label><br>
+                  <input type="text" name="rescueLocation"><br>
+                  <label for="">aquaStory:</label><br>
+                  <textarea name="aquaStory" style="width: 100%;"></textarea><br>
+                  <label for="">recoverStatus(0:恢復中;1:已恢復):</label>
+                  <select name="aquaSex" id="">
+                    <option value="0">0</option>
+                    <option value="1">1</option>  
+                  </select><br>
+                  <label for="">releaseDate(can be null):</label><br>
+                  <input type="date" name="releaseDate"><br>
+                  <label for="">releaseLoc(can be null):</label><br>
+                  <input type="text" name="releaseLoc"><br>
+                  <label for="">aquaPic:</label><br>
+                  <input type="file" name="aquaPic"><br>
+                  <label for="">adoptTotalNum(can be null):</label><br>
+                  <input type="number" name="adoptTotalNum"><br>
+                  <label for="">adoptTotalAmt(can be null):</label><br>
+                  <input type="number" name="adoptTotalAmt"><br>
+                  <label for="">nameStatus(提名中/投票中/已完成):</label><br>
+                  <input type="text" name="nameStatus"><br>
+                  <label for="">nameStart(can be null):</label><br>
+                  <input type="date" name="nameStart"><br>
+                  <label for="">nameEnd(can be null):</label><br>
+                  <input type="date" name="nameEnd"><br>
+                  <label for="">voteStart(can be null):</label><br>
+                  <input type="date" name="voteStart"><br>
+                  <label for="">voteEnd(can be null):</label><br>
+                  <input type="date" name="voteEnd"><br>
+                  <button type="button" class="ngrbtnAquaAdd" id="ngrbtnAquaAdd">Comfirm</button><br>
+                </form>
+              </div>
               <table class="mgrAquaAll">
                 <tr>
                   <th width="50">No</th>
@@ -328,7 +385,7 @@
                   <th width="150">Arrive Date</th>
                   <th width="150">Rescue Location</th>
                   <th width="300">Aqua Story</th>
-                  <th width="50">Recover Status</th>
+                  <th width="50">Recover Status(0:恢復中;1:已恢復)</th>
                   <th width="150">Release Date</th>
                   <th width="150">Release Location</th>
                   <th width="200">Aqua Pic</th>
@@ -651,7 +708,36 @@
             <!-- JOURNAL -->
             <div class="mgrTab tab8 mgrJournal">
               <h3>JOURNAL</h3>
-              <button class="ngrJournalAdd">Add</button>
+              <button id="ngrJournalAdd" onclick="btnJourAdd()" class="ngrJournalAdd btn_modal">ADD JOURNAL</button>
+              <div class="jourAdd overlay">
+                <form class="jourForm" id="jourForm" method="post">
+                  <div class="btn_modal_close">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <h3>ADD JOURNAL</h3>
+                  <label for="">aquaType:</label>
+                  <select name="aquaType" id="">
+                    <option value="0">dolphin</option>
+                    <option value="1">seal</option>
+                    <option value="2">turtle</option>
+                    <option value="3">whale</option>
+                  </select><br>
+                  <label for="">jourStory(can be null):</label><br>
+                  <input type="text" name="jourStory"><br>
+                  <label for="">jourContent:</label><br>
+                  <textarea name="jourContent" rows="5" style="width: 100%;"></textarea><br>
+                  <label for="">jourPic1:</label><br>
+                  <input type="file" name="jourPic1"><br>
+                  <label for="">jourPic2:</label><br>
+                  <input type="file" name="jourPic2"><br>
+                  <label for="">jourPic3:</label><br>
+                  <input type="file" name="jourPic3"><br>
+                  <label for="">jourDate:</label><br>
+                  <input type="date" name="jourDate"><br>
+                  <button type="button" class="ngrbtnJourAdd" id="ngrbtnJourAdd">Comfirm</button><br>
+                </form>
+              </div>
               <table class="mgrJournalAll">
                 <tr class="mgrJournalTitle">
                   <th width="100">Journal No</th>
@@ -706,7 +792,7 @@
                       <th width="100" class="mgrTitle">Aqua No</th>
                       <th width="300" class="mgrTitle">Msg Content</th>
                       <th width="200" class="mgrTitle">Datetime</th>
-                      <th width="100" class="mgrTitle">Status</th>
+                      <th width="100" class="mgrTitle">Status(0:顯示;1:隱藏)</th>
                       <th width="100" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backJournalMsgTable">
@@ -756,7 +842,7 @@
                       <th width="100" class="mgrTitle">Aqua No</th>
                       <th width="200" class="mgrTitle">Date</th>
                       <th width="200" class="mgrTitle">Reason</th>
-                      <th width="200" class="mgrTitle">Status(0:成功;1:駁回)</th>
+                      <th width="200" class="mgrTitle">Status(0:顯示;1:隱藏)</th>
                       <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backJournalMsgRepTable">
@@ -795,7 +881,7 @@
                     <th width="200" class="mgrTitle">Member Name</th>
                     <th width="300" class="mgrTitle">Member Email</th>
                     <th width="100" class="mgrTitle">Card File</th>
-                    <th width="100" class="mgrTitle">Status</th>
+                    <th width="100" class="mgrTitle">Status(0:顯示;1:隱藏)</th>
                     <th width="100" class="mgrTitle">Edit</th>
                   </tr>
                   <tbody id="backThankscardTable">
@@ -853,7 +939,7 @@
                       <th width="200" class="mgrTitle">Date</th>
                       <th width="100" class="mgrTitle">Mark</th>
                       <th width="100" class="mgrTitl">Tags</th>
-                      <th width="100" class="mgrTitle">Status</th>
+                      <th width="100" class="mgrTitle">Status(0:顯示;1:隱藏)</th>
                       <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backBlogTable">
@@ -896,7 +982,7 @@
                       <th width="100" class="mgrTitle">Blog No</th>
                       <th width="100" class="mgrTitle">Member No</th>
                       <th width="200" class="mgrTitle">Reson</th>
-                      <th width="100" class="mgrTitle">Status</th>
+                      <th width="100" class="mgrTitle">Status(0:顯示;1:隱藏)</th>
                       <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backBlogRepTable">
@@ -949,7 +1035,7 @@
                     <th width="100" class="mgrTitle">Aqua No</th>
                     <th width="200" class="mgrTitle">Nom Name</th>
                     <th width="300" class="mgrTitle">Number of votes</th>
-                    <th width="200" class="mgrTitle">nomStatus</th>
+                    <th width="200" class="mgrTitle">Status(0:未審;1:已審)</th>
                     <th width="200" class="mgrTitle">Edit</th>
                   </tr>
                   <tbody id="backNominateTable">
