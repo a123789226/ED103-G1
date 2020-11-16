@@ -448,7 +448,7 @@ function doMemPic(aquaNo){
         let adopterHTML='';
         for(i=0; i<adopter.length; i++){
             adopterHTML += `
-            <li><img src="../img/member/${adopter[i].memPic}"></li>
+            <li><img src="./img/member/${adopter[i].memPic}"></li>
             `;
 }
 
@@ -477,7 +477,7 @@ function doPost(aquaNo){
         for(i=0; i<aquaNo.length; i++){
             journalCommentHTML +=`
             <li>
-            <div class="jourCommentPersonPic"><img src="../img/member/${aquaNo[i].memPic}"
+            <div class="jourCommentPersonPic"><img src="./img/member/${aquaNo[i].memPic}"
                   alt=""></div>
             <div class="jourCommentOrder">
               <div class="jourCommentInfo">
