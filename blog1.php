@@ -1,3 +1,7 @@
+<?php
+        ob_start();
+        session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +26,7 @@
   <div class="commonBG02 commonBGSet"></div>
   <div class="commonBGLeft commonBGSet"></div>
   <div class="commonBGRight commonBGSet"></div>
-  <img src="./image/background/fish1.png" alt="e" class="BGFish1">
+  <img src="./image/background/fish1.png" alt="" class="BGFish1">
   <img src="./image/background/fish1.png" alt="" class="BGFish2">
 </div> 
 <!-- 上面是背景的div，先不要動到 -->
@@ -161,8 +165,29 @@
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
     FROM blog b JOIN member m ON (b.memNo = m.memNo) ORDER BY blogNo DESC";
+   
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
+   
+
+
+    $sql1 = "SELECT blogNo
+    FROM  blog_mark 
+    WHERE memNo = :memNo "; 
+        $blogMark = $pdo->prepare($sql1);
+        $blogMark->bindValue(":memNo", $_SESSION["memNo"]);
+        $blogMark->execute();
+
+        $blogMarkRows = $blogMark->fetchAll(PDO::FETCH_ASSOC);
+       $arr=[];
+        foreach($blogMarkRows as $key => $val){
+        array_push($arr,$val['blogNo']);
+       }
+      //  var_dump($arr);
+      //  die;
+
+
+
     }catch (PDOException $e){
       echo "錯誤行號 : " . $e->getLine() . "<br>";
       echo "錯誤訊息 : " . $e->getMessage() . "<br>";
@@ -170,6 +195,7 @@
     }
 ?>
   <?php
+  $count=0;
     foreach($prodRows as $i => $prodRow) {
       if($i%2 == 0 ){
       $align = "left";
@@ -201,8 +227,26 @@
             <div class="blogIcon">
               <div class="blogIconCollect">
                 <div class="blogPostCollected">
-                   <div class="blogPostIconBefore"><img src="./image/blog/icons/icon_heart.svg" alt=""></div>
-                   <div class="blogPostIconAfter"><img src="./image/blog/icons/icon_heart_active.svg" alt=""></div>
+                   <div class="blogPostIconBefore">
+                  <?php
+                      if(in_array($prodRow["blogNo"],$arr)){
+                      ?>
+                      
+                      <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" >
+                      
+                      <?php  
+                      }else{
+                        ?>
+                      <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg">
+                      <?php
+                      }
+                    
+                  ?>
+                  </div>
+                     <!-- <img class="unlike" onclick='addLike(<=$prodRow["blogNo"]?>,<=$count?>)' src="./image/blog/icons/icon_heart.svg"> -->
+                  <!-- </div>
+                   <div class="blogPostIconAfter"> -->
+                     <!-- <img class="liked" onclick='deleteLike(<=$prodRow["blogNo"]?>,<=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" style="display:none;"></div> -->
                    <div class="blogPostCollectNum"><?=$prodRow["blogMark"]?></div>
                </div>
               </div>
@@ -215,6 +259,7 @@
       </div>
     </div>
     <?php
+    $count++;
       }
       ?>
   </div>
@@ -518,21 +563,141 @@ window.addEventListener('load', doFirst);
 
 
 
-$(document).on('click', '#blogIconReportBtn'), function(){
-  //使用$(document).on()的原因是如果id為submit的按鈕是一開始沒有載入、透過ajax互動後才產生的DOM，那用$().click會抓不到，需以$(document).on()才行
-  var name = $('#blogReportReason').val();
-  $.ajax({
-     url:'../../php/blogReport.php',
-     method:'POST',
-     data:{
-        name:name
-     },
-     success:function(res){
+// $(document).on('click', '#blogIconReportBtn'), function(){
+//   //使用$(document).on()的原因是如果id為submit的按鈕是一開始沒有載入、透過ajax互動後才產生的DOM，那用$().click會抓不到，需以$(document).on()才行
+//   var name = $('#blogReportReason').val();
+//   $.ajax({
+//      url:'../../php/blogReport.php',
+//      method:'POST',
+//      data:{
+//         name:name
+//      },
+//      success:function(res){
 
-     },
-  })
-}
+//      },
+//   })
+// }
 </script>
+
+
+<!-- ajax抓資料 -->
+<!-- <script>
+function $id(id){
+return document.getElementById(id);
+}
+let blogNo; 
+</script>  -->
+<script>
+  // let blogNo = location.href.split("?");
+    //檢查是否有登入,有的話檢查是否有加入收藏，調整愛心
+    // function checkheart(){  
+    //         // alert(xhr2.blogNo);
+    //     var xhr1 = new XMLHttpRequest();
+    //     xhr1.onload = function(){
+    //         if (xhr1.status == 200) { //連線成功
+    //             let confirmlike = xhr1.responseText;
+    //             console.log(confirmlike);
+    //             if(confirmlike==='有收藏'){
+    //               document.querySelectorAll('.liked')[count].style.display='block';
+    //               document.querySelectorAll('.unlike')[count].style.display='none';
+    //             }else{
+    //               document.querySelectorAll('.liked')[count].style.display='none';
+    //               document.querySelectorAll('.unlike')[count].style.display='';
+    //             }
+    //         } else {
+    //             // alert(xhr1.status);
+    //             // alert('還沒登入無法判斷愛心');
+    //         }
+    //     }
+    //     xhr1.open("post","./php/collect.php", true);
+    //     xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+    //     // let data = `likework=${likework}`;
+    //     xhr1.send(data);
+
+    // }
+
+    function addLike(likework,count){
+      document.querySelectorAll('.liked')[count].style.display='block';
+      document.querySelectorAll('.unlike')[count].style.display='none';
+
+      // $id('unlike').style.display='none';
+                    // $id('liked').style.display='block';
+       console.log(likework,count)
+        if (member.memId) {
+          // console.log(e.target.parentNode.className);
+            var addlikexhr = new XMLHttpRequest();
+            addlikexhr.onload = function(e) {
+                if (addlikexhr.status == 200) { //連線成功
+                    // console.log(addlikexhr.responseText);
+                   
+                } else {
+                    alert(addlikexhr.status);
+                }
+            }
+            var url = "./php/addCollect.php";
+            addlikexhr.open("post", url, true);
+            addlikexhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            let data = `likework=${likework}`;
+            addlikexhr.send(data);
+        } else {
+            //沒有登入，請先登入
+            // alert('請先登入');
+        }
+    }
+
+    function deleteLike(likework,count){
+      document.querySelectorAll('.liked')[count].style.display='none';
+      document.querySelectorAll('.unlike')[count].style.display='';
+
+        if (member.memId) {
+            var removeCollect = new XMLHttpRequest();
+            removeCollect.onload = function(e) {
+                if (removeCollect.status == 200) { //連線成功
+                    // console.log(removeCollect.responseText);
+                } else {
+                    alert(removeCollect.status);
+                }
+            }
+            var url = "./php/removeCollect.php";
+            removeCollect.open("post", url, true);
+            removeCollect.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            let data = `likework=${likework}`;
+            removeCollect.send(data);
+        } else {
+            //沒有登入，請先登入
+            alert('請先登入');
+        }
+    }
+    // function getMemberInfo_forcamp(callback){
+    // let xhr = new XMLHttpRequest();
+    // xhr.onload = function(){
+    //     callback();
+    //     if(xhr.status == 200){ //success
+    //         member = JSON.parse(xhr.responseText);
+    //         if(member.memId){
+    //             $id("header_memName").innerText = member.MEM_NICKNAME
+    //             $id('spanLogin').innerHTML = '登出';
+    //             console.log(member);         
+    //         }
+    //     }else{ //error
+    //         alert(xhr.status);
+    //     }
+    // }
+    xhr.open("get", "/////", true);
+    xhr.send(null);
+// }
+
+</script>
+
+
+<!-- <script>
+    function init(){
+        getMemberInfo_forcamp(checkheart);
+    };
+
+window.addEventListener('load',init,false);
+
+</script> -->
 <script src="./js/blog/blogReport.js"></script>
 <script src="./js/memLogin.js"></script>
 <script src="./js/layout/header.js"></script>

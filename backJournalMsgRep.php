@@ -1,7 +1,7 @@
 <?php 
 try {
 	require("./connectAqua.php");
-	$sql = "select o.memNo, o.aquaNo, o.msgNo, l.msgReprtNo, l.msgReportStatus, l.msgReportReason, l.msgReportDate from journal_message_report l JOIN journal_message o ON o.msgNo = l.msgNo order by l.msgReprtNo";
+	$sql = "select o.memNo, o.aquaNo, o.msgNo, l.msgReportNo, l.msgReportStatus, l.msgReportReason, l.msgReportDate from journal_message_report l JOIN journal_message o ON o.msgNo = l.msgNo order by l.msgReportNo";
 
 
  	$jourRep = $pdo->prepare($sql);
@@ -18,7 +18,7 @@ try {
     $i = 0;
     foreach($jourRepRows as $jourRepRow){
       $result[$i] = array(
-        "msgReprtNo"=>$jourRepRow["msgReprtNo"], 
+        "msgReportNo"=>$jourRepRow["msgReportNo"], 
         "memNo"=>$jourRepRow["memNo"], 
         "aquaNo"=>$jourRepRow["aquaNo"], 
         "msgNo"=>$jourRepRow["msgNo"], 

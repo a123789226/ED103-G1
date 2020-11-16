@@ -164,6 +164,11 @@ if( $errMsg != ""){ //例外
   <div class="blogArticleTitle">
       <h2 ><?=$prodRow->blogTitle;?></h2>
   </div>
+  <div class="blogArticleMemInfo">
+  <img src='<?php echo $prodRow->memPic;?>' class="blogArticleMemImg">
+    <div class="blogArticleMemName">&nbsp<?php echo $prodRow->memName;?>&nbsp</div>
+    <div class="blogArticleMemDate"><?php echo $prodRow->blogTime;?></div>
+  </div>
   <!-- 文章區塊 -->
   <div class='blogArticleContainer'>
   <!-- 第一區 - 大圖 -->
@@ -185,6 +190,8 @@ if( $errMsg != ""){ //例外
   </div>
 </div>
 
+<div class="blogAritcleStep"><a href='./blogPost.php?blogNo=<?= $_REQUEST["blogNo"]-1;?>' class="blogMoreBtn">LAST</a>
+<a href='./blogPost.php?blogNo=<?= $_REQUEST["blogNo"]+1;?>' class="blogMoreBtn">NEXT</a></div>
 <!-- 你的code打這上面 -->
 
   </div>

@@ -1,6 +1,11 @@
 <?php 
 try {
+<<<<<<< HEAD
 	require_once("./connectAqua.php");
+=======
+  require_once("./connectAqua.php");
+
+>>>>>>> 69866c32f557cbad86340e1d7528aea14dacd962
   $sql = "select * from adopt where aquaNo = 'whale' order by arriveDate DESC";
   $aquaAdopter = $pdo->query($sql);
   $aquaAdopter->execute();

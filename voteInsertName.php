@@ -48,9 +48,9 @@
         echo $json;
       }
 
-      } catch (PDOException $e) {  
+    } catch (PDOException $e) {  
         $error = array("errorMsg"=>$e->getMessage());
-          echo json_encode($error);//{"errorMsg":"......."}
+        echo json_encode($error);//{"errorMsg":"......."}
     }
   }else{
     echo "{}";

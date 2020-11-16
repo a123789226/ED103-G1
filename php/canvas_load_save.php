@@ -8,9 +8,11 @@ $memEmail = $_SESSION["memEmail"];
 // if(isset($_SESSION["memId"])){
 //   $errMsg = "";
 try{
-require_once("../connectAqua.php");
+require_once("./connectBook.php");
 $sql = "INSERT INTO thankscard ( memNo, cardName, memEmail, cardFile, cardStatus, cardDate)
         VALUES('$memNo', '$memName', '$memEmail', '', '1', now())"; 
+        // $sql = "INSERT INTO thankscard ( memNo, memEmail, cardFile, cardStatus)
+        // VALUES('$memNo', '$memEmail', '', '1')"; 
   $member = $pdo->prepare($sql);
   // $member->bindValue(1, $_POST['memNo']);
   // $member->bindValue(2, $_POST['memName']);
