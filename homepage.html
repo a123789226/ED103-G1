@@ -272,19 +272,19 @@
                 <table>
                   <tr>
                     <th>Aqua No.</th>
-                    <td>No.1</td>
+                    <td id="home_adopt_no">No.1</td>
                   </tr>
                   <tr>
                     <th>Aqua Name</th>
-                    <td>Olivia</td>
+                    <td id="home_adopt_name">Olivia</td>
                   </tr>
                   <tr>
                     <th>Found Location</th>
-                    <td>North Bay</td>
+                    <td id="home_adopt_loc">North Bay</td>
                   </tr>
                   <tr>
                     <th>Arrival Date</th>
-                    <td>August 8th, 2020</td>
+                    <td id="home_adopt_date">August 8th, 2020</td>
                   </tr>
                 </table>
               </div>
@@ -469,6 +469,14 @@
       <img src="./image/index/object/indexMain4-1.png" class="page4_platform">
       <img src="./image/index/object/p4bg-modi.png" class="page4_right_bottom">
 
+      <img src="./image/index/object/adopt_bg.png" class="adopt_bg">
+      <img src="./image/index/object/animal1-01.png" class="adopt_right_animal01">
+
+
+      <img src="./image/index/object/animal1-01.png" class="adopt_animal01">
+      <img src="./image/index/object/animal2-01.png" class="adopt_animal02">
+      <img src="./image/index/object/animal4-01.png" class="adopt_animal03">
+
 
       <div class="home_adopt_fish">
         <!-- <img src="./image/index/object/fish8.png" class="page4_fish"> -->
@@ -563,6 +571,9 @@
       <div class="owl-carousel owl-theme">
         <div class="home_carousel_content">
           <div class="home_carousel_title">
+            <div class="blog_carousel_image">
+              <img src="./image/index/object/aqua1.jpeg" alt="">
+            </div>
             <span class="blog_carousel_title">BLOG TITLE 1</span>
             <img src="./image/index/object/heart.png" class="home_heart">
             <div class="home_author">
@@ -570,9 +581,6 @@
               <img src="./image/index/object/player.png" class="home_blog_user">
               <span>September 17, 2020</span>
             </div>
-          </div>
-          <div class="blog_carousel_image">
-            <img src="./image/index/object/aqua1.jpeg" alt="">
           </div>
           <div class="blog_carousel_text">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -582,6 +590,9 @@
 
         <div class="home_carousel_content">
           <div class="home_carousel_title">
+            <div class="blog_carousel_image">
+              <img src="./image/index/object/aqua1.jpeg" alt="">
+            </div>
             <span class="blog_carousel_title">BLOG TITLE 2</span>
             <img src="./image/index/object/heart.png" class="home_heart">
             <div class="home_author">
@@ -589,9 +600,6 @@
               <img src="./image/index/object/player.png" class="home_blog_user">
               <span>September 17, 2020</span>
             </div>
-          </div>
-          <div class="blog_carousel_image">
-            <img src="./image/index/object/aqua1.jpeg" alt="">
           </div>
           <div class="blog_carousel_text">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -605,6 +613,9 @@
 
         <div class="home_carousel_content">
           <div class="home_carousel_title">
+            <div class="blog_carousel_image">
+              <img src="./image/index/object/aqua1.jpeg" alt="">
+            </div>
             <span class="blog_carousel_title">BLOG TITLE 3</span>
             <img src="./image/index/object/heart.png" class="home_heart">
             <div class="home_author">
@@ -612,9 +623,6 @@
               <img src="./image/index/object/player.png" class="home_blog_user">
               <span>September 17, 2020</span>
             </div>
-          </div>
-          <div class="blog_carousel_image">
-            <img src="./image/index/object/aqua1.jpeg" alt="">
           </div>
           <div class="blog_carousel_text">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -632,9 +640,14 @@
 
   <div id="trigger_game"></div>
   <section class="home_game">
+    <div class="home_gameTitle_before">
+      <h3 class="home_game_title">GAME</h3>
+    </div>
     <img src="./image/index/background/7-2.png" class="page7_2">
     <img src="./image/index/background/7-3.png" class="page7_3">
     <img src="./image/index/background/7-4.png" class="page7_4">
+    <img src="./image/index/object/game2(middle).gif" class="game_gif">
+    <a href="./tour.html"><button class="game_btn">Journal</button></a>
   </section>
 
   <!-- boat move -->
@@ -642,335 +655,6 @@
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
   </footer>
-<!-- <script>
-  TweenMax.to('.home_boat', 10, {
-    xPercent: -800,
-    yPercent: 900,
-    repeat: -1,
-    yoyo: false,
-    ease: Power0.easeNone,
-    // delay: 1
-});
-</script> -->
-
-<!-- turn.js -->
-
-  <!-- <script>
-    var flipbook = $('#flipbook');
-    flipbook.turn({
-        width: window.innerWidth * 0.5,
-        height: window.innerHeight * 0.7,
-        autoCenter: true
-        // autoCenter: true
-      });
-    $(document).ready(function () {
-      flipbook.turn("page", 2);
-      var win = $(this); //this = window
-      var home_message = document.getElementsByClassName("home_message_box")[0];
-      if (win.width() <= 974) {
-
-        flipbook.css("left", "7%");
-        flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.6);
-        home_message.style.margin = '50px auto 0 auto';
-        home_message.style.width = '50%';
-        $("#flipbook").turn("display", "single");
-
-      }
-      else {
-        flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.7);
-        flipbook.css("left", "30%");
-        // flipbook.css("trnasfoem","translateX(-50%)");
-        home_message.style.margin = '';
-        home_message.style.width = '';
-        $("#flipbook").turn("display", "double");
-      }
-
-        // flipbook.turn("size", window.innerWidth * 0.7, window.innerHeight * 0.7);
-        // home_message.style.margin = '50px auto 0 auto';
-        // home_message.style.width = '50%';
-    });
-    $(window).resize(function () {
-      var win = $(this); //this = window
-      var home_message = document.getElementsByClassName("home_message_box")[0];
-      if (win.width() <= 974) { 
-        
-        flipbook.css("left", "7%"); 
-        flipbook.turn("size", flipbookEL.clientWidth, flipbookEL.clientHeight);
-        home_message.style.margin = '50px auto 0 auto';
-        home_message.style.width = '50%';
-        $("#flipbook").turn("display", "single");
-      
-      }
-      else{
-        flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.68);
-        flipbook.css("left","25%");
-        // flipbook.css("trnasfoem","translateX(-50%)");
-        home_message.style.margin = '';
-        home_message.style.width = '';
-        $("#flipbook").turn("display", "double");
-      }
-
-    });
-  </script> -->
-
-
-
-    <!-- <script>
-
-      //月曆記得改屬性
-      $(".BoXiang_calendar").datepicker({
-        //開始日期為今日
-        startDate: " new date()",
-        //特別標註今天
-        todayHighlight: true,
-      });
-
-
-    </script> -->
-
-  <!-- <script>
-    $(".home_vote_btn").click(function () {
-      activeButton = $(this).data('no'); 
-      $(".home_vote_btn").css("background-color","#ffffff");
-      $(this).css("background-color", "#FBE108");
-      console.log(this);
-    });
-  </script> -->
-
-  <!-- <script>
-    $("div.hamburger_box").on("click", function () {
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
-  </script> -->
-
-  <!-- <script>
-    $(document).ready(function () {
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-          loop: true,
-          margin: 10,
-          // autoWidth: true,
-          items: 1,
-          responsive: {
-            0: {
-              items: 1
-
-            },
-          }
-          
-        });
-        $('.arrow_right').click(function () {
-        owl.trigger('next.owl.carousel');
-        })
-        $('.arrow_left').click(function () {
-        owl.trigger('prev.owl.carousel');
-      })
-      });
-
-
-  </script> -->
-
-  <!-- <script>
-    document.getElementById("home_jbtn").addEventListener("click", function () {
-        swal("Submit successful", "", "success");
-      });
-    document.getElementById("home_vbtn").addEventListener("click", function () {
-        swal("Vote successful", "", "success");
-      });
-      document.getElementById("home_nbtn").addEventListener("click", function () {
-        swal("Named successful", "", "success");
-      });
-  </script> -->
-
-  <!-- <script>
-      // Login彈窗
-  $(function(){
-    // 開啟 Modal 彈跳視窗
-    $("a.btn_modal").on("click", function(){
-      $("div.overlay").addClass("-on");
-    });
-    // 關閉 Modal
-    $("div.btn_modal_close").on("click", function(){
-      $("div.overlay").addClass("-opacity-zero");
-      // 設定隔一秒後，移除相關 class
-      setTimeout(function(){
-        $("div.overlay").removeClass("-on -opacity-zero");
-      }, 1000);
-    });
-  });
-  </script> -->
-  <!-- <script>
-    parallaxInstance = new Parallax(document.getElementById("move_move"));
-  </script> -->
-
-  <!-- <script>
-    $(document).ready(function () {
-        let divWidth = $('#role_pick').width();
-        let imgCount = $('#content li').length;
-
-    
-      $('#content').width(divWidth * imgCount);       //ul的寬度
-      $('#content li').width(divWidth);                //li的寬度
-
-      var imgContainer = $id("content");
-      var imgs = imgContainer.querySelectorAll(".role_content");
-      $(imgs[0]).css("display", "block");
-      $(imgs[1]).css("display", "none");
-      $(imgs[2]).css("display", "none");
-
-    
-      function $id(id) {
-        return document.getElementById(id);
-      }
-
-      function move() {
-        var imgContainer = document.querySelector(".content");
-        var imgs = imgContainer.getElementsByTagName("li");
-        var first = imgs[0];
-        imgContainer.appendChild(first);
-      }
-      //==========window.onload
-      window.onload = function () {
-
-
-        //==========toLeft.onClick
-        $id("left").onclick = function () {
-          var imgContainer = $id("content");
-          var imgs = imgContainer.querySelectorAll(".role_content");
-          var last = imgs[imgs.length - 1];
-          var first = imgs[0];
-          imgContainer.insertBefore(last, first);
-          $(imgs[0]).css("display","none");
-          $(imgs[1]).css("display","none");
-          $(imgs[2]).css("display", "block");
-          role_pick2 = $("#content").find("li img").first().attr("id");
-          console.log(role_pick2);
-        }
-        //==========toRight.onclick
-        $id("right").onclick = function () {
-          var imgContainer = $id("content");
-          var imgs = imgContainer.querySelectorAll(".role_content");
-          var first = imgs[0];
-          imgContainer.appendChild(first);
-          $(imgs[0]).css("display", "none");
-          $(imgs[1]).css("display", "block");
-          $(imgs[2]).css("display", "none");
-          role_pick2 = $("#content").find("li img").first().attr("id");
-          console.log(role_pick2);
-        }
-        // ................................
-      }    
-    
-    });
-  </script> -->
-
-
-
-
-
-  <!-- <script>
-
-
-            var ticket_move = new TimelineMax();
-            ticket_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 220,
-                ease: Power0.easeNone
-              })
-            );
-            const controller = new ScrollMagic.Controller();
-            const scene1 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_ticket",
-
-            })
-              .setTween(ticket_move)
-              .addIndicators()
-              .addTo(controller);
-
-
-            var journal_move = new TimelineMax();
-            journal_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 20,
-                ease: Power0.easeNone
-              })
-            );
-
-            const scene2 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_journal",
-            })
-              .setTween(journal_move)
-              .addIndicators()
-              .addTo(controller);
-
-            var adopt_move = new TimelineMax();
-            adopt_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 220,
-                ease: Power0.easeNone
-              })
-            );
-
-            const scene3 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_adopt",
-            })
-              .setTween(adopt_move)
-              .addIndicators()
-              .addTo(controller);
-
-            var vote_move = new TimelineMax();
-            vote_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 50,
-                ease: Power0.easeNone
-              })
-            );
-
-            const scene4 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_vote",
-            })
-              .setTween(vote_move)
-              .addIndicators()
-              .addTo(controller);
-
-            var blog_move = new TimelineMax();
-            blog_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 150,
-                ease: Power0.easeNone
-              })
-            );
-
-            const scene5 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_blog",
-            })
-              .setTween(blog_move)
-              .addIndicators()
-              .addTo(controller);
-
-            var game_move = new TimelineMax();
-            game_move.add(
-              TweenMax.to(".role_content", 2, {
-                x: 30,
-                ease: Power0.easeNone
-              })
-            );
-
-            const scene6 = new ScrollMagic.Scene({
-              triggerElement: "#trigger_game",
-            })
-              .setTween(game_move)
-              .addIndicators()
-              .addTo(controller);
-
-
-
-
-
-
-  </script> -->
 
   <script src="./js/homepage/homepage.js"></script>
   <script src="./js/memLogin.js"></script>

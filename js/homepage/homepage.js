@@ -373,11 +373,22 @@ $(window).resize(function () {
 
 // })
 
+let home_adopt_no = document.getElementById('home_adopt_no');
+let home_adopt_name = document.getElementById('home_adopt_name');
+let home_adopt_loc = document.getElementById('home_adopt_loc');
+let home_adopt_date = document.getElementById('home_adopt_date');
+
+
 $.ajax({
   url: 'home_journal.php',
   type: 'get',
   dataType: 'json',
   success: function (data) {
+    home_adopt_no.innerText = data[0].aquaNo;
+    home_adopt_name.innerText = data[0].aquaNo;
+    home_adopt_loc.innerText = data[0].aquaNo;
+    home_adopt_date.innerText = data[0].aquaNo;
+    console.log(data);
     for(let i=0; i<data.length; i++){
       $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
       $(`.jourPage${(i + 1)} .jourPageText > h4`).text(`Story Update${i+1}`);
@@ -391,3 +402,19 @@ $.ajax({
 })
 
 
+let right_animal = document.getElementsByClassName('adopt_right_animal01')[0];
+let animal01 = document.getElementsByClassName('adopt_animal01')[0];
+let animal02 = document.getElementsByClassName('adopt_animal02')[0];
+let animal03 = document.getElementsByClassName('adopt_animal03')[0];
+
+animal01.addEventListener('click', function () {
+  right_animal.src = animal01.src;
+});
+
+animal02.addEventListener('click',function(){
+  right_animal.src = animal02.src;
+});
+
+animal03.addEventListener('click', function () {
+  right_animal.src = animal03.src;
+});
