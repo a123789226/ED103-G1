@@ -19,7 +19,7 @@ function chooseAquaType(){
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                            <img src="././img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -82,7 +82,7 @@ function chooseAquaType(){
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                            <img src="././img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -145,7 +145,7 @@ xhrSeal.onload = function(){
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                        <img src="././img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -209,7 +209,7 @@ xhrTurtle.onload = function(){
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                        <img src="././img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -272,6 +272,24 @@ function openBookDolphin(){
                 document.getElementsByClassName("jour_bk")[0].style.display = "none";
             }
 
+            //帶入journal內頁
+            $.ajax({
+                url: 'journalPage.php',
+                type: 'get',
+                dataType: 'json',
+                success: function (data) {
+                  for(let i=0; i<data.length; i++){
+                    $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
+                    $(`.jourPage${(i + 1)} .jourPageText > h4`).text(`Story Update${i+1}`);
+                    $(`.jourPage${(i+1)} .jourPageText > p`).text(data[i].jourContent);
+                  }
+              
+                },
+                error: function (data) {
+                  console.log(JSON.stringify(data));
+                },
+              })
+
             // 渲染留言的function
             doPost(aquaNo);
         })
@@ -283,17 +301,37 @@ function doPost(aquaNo){
     console.log(aquaNo);
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
+        let aquaNo = JSON.parse(xhr.responseText); //取得aquaNo字串？
+        let journalCommentHTML='';
+        for(i=0; i<aquaNo.length; i++){
+            journalCommentHTML +=`
+            <li>
+            <div class="jourCommentPersonPic"><a href="#"><img src="././img/member/${aquaNo[i].memPic}.jpg"
+                  alt=""></a></div>
+            <div class="jourCommentOrder">
+              <div class="jourCommentInfo">
+                <p class="jourCommentPersonName">${aquaNo[i].memName}</p>
+                <p class="jourCommentTime">${aquaNo[i].msgTime}</p>
+              </div>
+              <div class="jourCommentBox">
+                <h5 class="jourCommentWords">${aquaNo[i].msgContent}</h5>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+              </div>
+            </div>
+          </li>
+            
+            `;
+        }
 
+        let message_box = message_box.getElementsByTagName('ul');
+        message_box.innerHTML = journalCommentHTML;
     }
 
-    xhr.open("Post", "??????.php", true);
+    xhr.open("Post", "journalComment.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     let data_info = `dog=${aquaNo}`;
     xhr.send(data_info);
 }
-
-
-
 
 
 

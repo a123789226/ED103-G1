@@ -1,7 +1,7 @@
 <?
 $ErrMsg='';
 try{
-    require_once('./connectAqua.php');
+    require_once("./php/connectBook.php");
     $sql = "INSERT INTO `journal_message` 
             (memNo,
             jourNo,
