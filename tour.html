@@ -227,7 +227,7 @@
             <div class="tour_overlay4">
               <article>
                 <h4>Turtle Aquarium</h4>
-                <p>This is the Turtle Aquarium. The building itself is elevated to make the room more ventilated. Large pieces of glass allow sunlight to spill into the room naturally, which is environmentally friendly,  you also allow you overlooks the beautiful scenery.  As a reminder, please lower the volume when you see turtles , so as not to scare them.</p>
+                <p>This is the Turtle Aquarium. The building itself is elevated to make the room more ventilated. Large pieces of glass allow sunlight to spill into the room naturally, which is environmentally friendly,  it allows you to overlook the beautiful scenery.  As a reminder, please lower the volume when you see turtles , so as not to scare them.</p>
                 <img class= "tour_overlay4img" src="./image/tour/tour_intro_seaturtle.jpg" alt="error">
                 <div class="tour_btn_modal">
                 <button type="button" class="tour_btn_modal_close1" id="btn4">Introduction</button>
@@ -420,13 +420,6 @@
    </script>
 
    <script>
-    //漢堡
-    $(".hamburger_box").on("click", function(){
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
-
   //--------點擊第一棟房子:dolphine館, 出現介紹圖文------------
     $(function(){  
   // 開啟 Modal 彈跳視窗
@@ -534,22 +527,22 @@ $(function(){
 $(document).ready(function() {
        $("#btn1").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: parseInt($("#no1").offset().top)-70}, {duration: 500,easing: "swing"});
          return false;
        });
        $("#btn2").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no1").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: $("#no1").offset().top-70}, {duration: 500,easing: "swing"});
          return false;
        });
        $("#btn3").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: $("#no3").offset().top-70}, {duration: 500,easing: "swing"});
          return false;
        });
        $("#btn4").click(function() {
          $("html, body").animate({
-           scrollTop: $("#no3").offset().top }, {duration: 500,easing: "swing"});
+           scrollTop: $("#no3").offset().top-70}, {duration: 500,easing: "swing"});
          return false;
        });
      });
@@ -697,10 +690,12 @@ $('.tour_row_button2').click(function(e){
 <!-- 每次開瀏覽器會先執行1次拼圖,之後就不會再進行 -->
 <!-- 如果開瀏覽器name為空値, 就先執行拼圖, 再給name 値"onload"，並且每100毫秒就檢查一次name是否為空値。 -->
 <!-- 因為有給name値"onload"，所以不會執行拼圖，必須重新開啟瀏覽器才行 -->
-<script>
-  function openly(){
+  <script>
+     function openly(){
           if(window.name==""){
+            if(window.innerWidth>1000){
               window.location.href="./puzzle.html";
+            }
           }
           window.name="onload";
   }
