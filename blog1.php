@@ -65,28 +65,28 @@
         </a>
       </div>
       <ul class="main_menu_ul" id="main_menu_ul">
-        <li class="main_menu_li active">
+        <li class="main_menu_li ">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
             <img src="./image/header/header_tour_cover.png" alt="">
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li ">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
           </a>
           <a href="journal.html" class="li_text">JOURNAL</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li ">
           <a href="ticket.html" class="li_logo">
             <img src="./image/header/header_ticket.png" alt="">
             <img src="./image/header/header_ticket_cover.png" alt="">
           </a>
           <a href="ticket.html" class="li_text">TICKET</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li ">
           <a href="vote.html" class="li_logo">
             <img src="./image/header/header_vote.png" alt="">
             <img src="./image/header/header_vote_cover.png" alt="">
@@ -144,13 +144,13 @@
           <p>
             <span>Thanks for visiting Aqua Wonderland. If there's any memorial things here, do not hesitate to post your story and share with anyone else.</span><br>
             <span>1. What you need to do is to hit the crab in the right side and share your story.</span><br>
-            <span>2. Whenever the story you share, we will reward you 1000 points for your further adoption or discount.</span>
+            <span>2. Whenever the story you share, we will reward you 500 points for your further adoption or discount.</span>
           </p>
     </div>
 </div>
 
 <div data-toggle="tooltip" data-placement="top" title="Hit me to post" id="blogCrabTooltip" class="BlogFirstRight">
-  <a href="#" class="blogPostBtn" id="blogPostSectionStart"><img src="./image/blog/photos/crab.png" alt=""></a>
+  <a href="#" class="blogPostBtn" id="blogPostSectionStart"><p class="blogPostText">Click Me for Posting</p><img src="./image/blog/photos/crab.png"></a>
 </div>
 
 
@@ -247,7 +247,10 @@
                   <!-- </div>
                    <div class="blogPostIconAfter"> -->
                      <!-- <img class="liked" onclick='deleteLike(<=$prodRow["blogNo"]?>,<=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" style="display:none;"></div> -->
-                   <div class="blogPostCollectNum"><?=$prodRow["blogMark"]?></div>
+                   
+                   
+                   <!-- 先關掉 -->
+                     <!-- <div class="blogPostCollectNum"><$prodRow["blogMark"]?></div> -->
                </div>
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
@@ -270,7 +273,7 @@
   <!--標題＆關閉按鈕  -->
   <div class="blogPostContainer anim ed animate__fadeIn"  style="display: none; z-index: 999;">
     <div class="blogPostTitle">
-      <h3>Post your own blog</h3>
+      <h3>SHARE A POST</h3>
       <div class="blogPostCloseButton">
         <div></div>
         <div></div>
@@ -282,7 +285,7 @@
   <form class="blogPostForm" action="blogInsert.php" method="post" enctype="multipart/form-data">
     <label for="blogInsertTitle" class="blogPostOwnTitle">
       <span class="blogPostTitleFont">Title</span>
-      <input type="text" class="blogPostInputTitle" name="blogTitle" placeholder="Please insert title">
+      <input type="text" class="blogPostInputTitle" name="blogTitle" placeholder="Please Insert A Title">
     </label>
     <div class="blogPostTagsSection">
       <span class="blogPostTagsFont">Tags</span>

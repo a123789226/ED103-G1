@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Thanks Card</title>
+</head>
+
+<body>
+ <!-- 下面是背景的div，先不要動到 -->
+ <div class="ticketBG">
+  <div class="commonBG00 commonBGSet"></div>
+  <div class="commonBG01 commonBGSet"></div>
+  <div class="commonBG02 commonBGSet"></div>
+  <div class="commonBGLeft commonBGSet"></div>
+  <div class="commonBGRight commonBGSet"></div>
+  <img src="./image/background/fish1.png" alt="" class="BGFish1">
+  <img src="./image/background/fish1.png" alt="" class="BGFish2">
+</div> 
+<!-- 上面是背景的div，先不要動到 -->
+
+<!-- Log In開始 -->
+<div id="memLightBox" class="memLogin overlay">
+  <form action="" class="LogInForm" id="LogInForm" method="post">
+    <div class="btn_modal_close">
+      <div></div>
+      <div></div>
+    </div>
+    <h3 class="memLogTitle">LOG IN</h3>
+    <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+    <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+    <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
+    <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
+    <div class="memLine">
+      <h5>OR</h5>
+    </div>
+    <p>Don't have an account?</p><br>
+    <a href="./memberlogin.html"><button type="button" class="submitBtnSign" id="btnSignup">SIGN UP</button></a>
+  </form>
+</div>
+<!-- Log In結束 -->
+
+<!-- header開始 -->
+<header class="main_menu">
+  <!-- header第一區塊 主導覽列 -->
+  <nav class="main_nav">
+    <div class="logo_box">
+      <a href="homepage.html" class="logo">
+        <img src="./image/header/logo.png" alt="">
+      </a>
+      <a href="" class="logo_text_box">
+        <h1 class="logo_text">AQUA WONDERLAND</h1>
+      </a>
+    </div>
+    <ul class="main_menu_ul" id="main_menu_ul">
+      <li class="main_menu_li">
+        <a href="tour.html" class="li_logo">
+          <img src="./image/header/header_tour.png" alt="">
+          <img src="./image/header/header_tour_cover.png" alt="">
+        </a>
+        <a href="tour.html" class="li_text">TOUR</a>
+      </li>
+      <li class="main_menu_li">
+        <a href="journal.html" class="li_logo">
+          <img src="./image/header/header_journal.png" alt="">
+          <img src="./image/header/header_journal_cover.png" alt="">
+        </a>
+        <a href="journal.html" class="li_text">JOURNAL</a>
+      </li>
+      <li class="main_menu_li active">
+        <a href="ticket.html" class="li_logo">
+          <img src="./image/header/header_ticket.png" alt="">
+          <img src="./image/header/header_ticket_cover.png" alt="">
+        </a>
+        <a href="ticket.html" class="li_text">TICKET</a>
+      </li>
+      <li class="main_menu_li">
+        <a href="vote.html" class="li_logo">
+          <img src="./image/header/header_vote.png" alt="">
+          <img src="./image/header/header_vote_cover.png" alt="">
+        </a>
+        <a href="vote.html" class="li_text">VOTE</a>
+      </li>
+      <li class="main_menu_li">
+        <a href="blog1.php" class="li_logo">
+          <img src="./image/header/header_blog.png" alt="">
+          <img src="./image/header/header_blog_cover.png" alt="">
+        </a>
+        <a href="blog1.php" class="li_text">BLOG</a>
+      </li>
+    </ul>
+    <div class="header_right">
+      <span class="member_box btn_modal" id="btn_modal">
+        <img src="./image/header/header_member_fish.png" alt="" title="Log In" id="memberPic" onerror="javascript:this.src='./image/header/header_member_fish_login.png'">
+      </span>
+      <a class="cart_box" href="cart.html">
+        <img src="./image/header/header_cart.png" alt="">
+        <span class="cart_amount"></span>
+      </a>
+      <div class="hamburger_box" id="hamburger_box">
+        <div class="hamburger">
+          <span class="hamburger_line is-active" id="hamburger_line"></span>
+          <span class="hamburger_cross" id="hamburger_cross">&times;</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- header第二區塊 會員登入後點頭像出線的小窗 -->
+  <div class="memProfileBlock" id="memProfileBlock" style="display: none;">
+    <p class="memNameInProfileBlock"><span>Hello!&nbsp;&nbsp;</span><span id="memNameInProfileBlock"></span></p>
+    <a href="./memberProfile.html" class="memProfileLink">Member Profile</a>
+    <p id="SignOutLink">Sign Out</p>
+  </div>
+
+</header> 
+
+<!-- header結束 -->
+
+<div>
+    <div class="commonTitleBox">
+      <h2 class="commonTitle">Thanks Card</h2>
+      <h4 class="commonSubTitle">Thank you for adopting aqua in Aqua Wonderland; you can make your own unique Thanks Card by yourself.</h4>
+    </div>
+
+<!-- 你的code打這下面 -->
+
+
+<section class="cardMain">
+<div id="cardImages" class="cardMaterials">
+  
+  <p>Drag& Drog Images</p>
+  <div class="cardOptions">
+    <button class="imageUploader" id="imageUploader" >Upload Image</button>
+    <input type="file" id="file" style="display: none;">
+  </div>
+      <img id="defaultImg" src="./image/thanksCard/animal1.png" alt="" draggable>
+      <img src="./image/thanksCard/animal2.png" alt="">
+      <img src="./image/thanksCard/animal3.png" alt="">
+      <img src="./image/thanksCard/animal4.png" alt="">
+      <img src="./image/thanksCard/animal5.png" alt="">
+      <img src="./image/thanksCard/decoration1.png" alt="">
+      <img src="./image/thanksCard/decoration2.png" alt="">
+      <img src="./image/thanksCard/decoration3.png" alt="">
+      <img src="./image/thanksCard/decoration4.png" alt="">
+      <img src="./image/thanksCard/decoration5.png" alt="">
+      <img src="./image/thanksCard/decoration6.png" alt="">
+      <img src="./image/thanksCard/decoration7.png" alt="">
+      <img src="./image/thanksCard/decoration8.png" alt="">
+      <img src="./image/thanksCard/decoration9.png" alt="">
+      <img src="./image/thanksCard/decoration10.png" alt="">
+      <img src="./image/thanksCard/decoration11.png" alt="">
+      <img src="./image/thanksCard/decoration12.png" alt="">
+      <img src="./image/thanksCard/decoration13.png" alt="">
+      <img src="./image/thanksCard/decoration14.png" alt="">
+      
+    </div>
+
+
+<canvas id="thanksCardCanvas"></canvas>
+</section>
+<form method="post" id="form1">
+  <input name="hidden_data" id='hidden_data' type="hidden"/>
+</form>
+<!-- <div class="cardCompletedBtnSection"> -->
+<input class="cardCompletedBtn"type="button" value="COMPLETED" onclick="downloadImg()" />
+<!-- </div> -->
+<!-- <button id="save2Server">儲存到伺服器</button> -->
+<!-- <div class="cardContainer">
+    <div class="cardMaterials">
+        <div class="cardMaterialBackground step active">
+          <p>Select your background.</p>
+          <img class="cardBgc" src="./image/thanksCard/background1.png" alt="">
+          <img class="cardBgc" src="./image/thanksCard/background2.png" alt="">
+          <img class="cardBgc" src="./image/thanksCard/background3.png" alt="">
+        </div>
+        <div class="cardMaterialAnimal step">
+            <p>Select your favorite animal.</p>
+            <img class="cardAnimals" src="./image/thanksCard/animal1.png" alt="">
+            <img class="cardAnimals" src="./image/thanksCard/animal2.png" alt="">
+            <img class="cardAnimals" src="./image/thanksCard/animal3.png" alt="">
+              
+        </div>
+        <div class="cardMaterialDeco step">
+            <p>Select your decorations.</p>
+            <img class="cardDeco" src="./image/thanksCard/deco1.png" alt="">
+            <img class="cardDeco" src="./image/thanksCard/deco2.png" alt="">
+            <img class="cardDeco" src="./image/thanksCard/deco3.png" alt="">
+        </div>
+        <div class="cardBtnSection">
+          <button class="btn50whiteA" id="prev" disabled="disabled">BACK</button>
+          <button class="btn50whiteA" id="next">NEXT</button>
+        </div>
+    </div> -->
+
+    <!-- 圖片位置 -->
+    <!-- <div class="cardSectionContainer"  id="chart3">
+        <div class="cardSectionContent">
+          <div class="cardSelectText">
+            <p>Thank you for your donation,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wish you have a beautiful day!
+            </p>
+            </div>
+            <div class="cardSelectAnimal"></div>
+            <div class="cardAnimalChosen"></div>
+            <div class="cardDecoChosen"></div>
+            
+            </div>
+          </div> -->
+<!-- 
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
+  </footer>
+  <script src="./js/memLogin.js"></script>
+  <script src="./js/layout/header.js"></script>
+  <script>
+
+// // 上一步下一步按鈕控制css的display
+//   var index = $(".step.active").index(".step"), 
+//     stepsCount = $(".step").length, 
+//     prevBtn = $("#prev"), 
+//     nextBtn = $("#next"); 
+
+// // 上一步
+// prevBtn.click(function() { 
+//     nextBtn.prop("disabled", false); 
+
+//     if (index > 0) { 
+//      index--; 
+//      $(".step").removeClass("active").eq(index).addClass("active"); 
+//     }; 
+
+//     if (index === 0) { 
+//      $(this).prop("disabled", true); 
+//     } 
+// }); 
+
+// // 下一步
+// nextBtn.click(function() { 
+//     prevBtn.prop("disabled", false); 
+
+//     if (index < stepsCount - 1) { 
+//      index++; 
+//      $(".step").removeClass("active").eq(index).addClass("active"); 
+//     }; 
+
+//     if (index === stepsCount - 1) { 
+//      $(this).prop("disabled", true); 
+//     } 
+// }); 
+
+
+
+
+
+
+// var temp = 0;
+// // 換背景
+// $(document).ready(function(){
+//     let img = $('.cardBgc');
+//     console.log(img);
+//     for (let i = 0; i < img.length; i++) {
+//         img[i].addEventListener('click',changeBgPattern1)
+//     console.log(img);
+
+//     }
+    
+// });
+// function changeBgPattern1(){
+//     imgSrc = $(this).attr('src');
+//     if(temp == 0){
+//         $('.cardSectionContent').css('backgroundImage', `url(${imgSrc})`);
+//     }
+// }
+
+// // 換動物圖
+// $(document).ready(function(){
+//     let img = $('.cardAnimals');
+//     for (let i = 0; i < img.length; i++) {
+//         img[i].addEventListener('click',changeBgPattern2)
+//     // console.log(img);
+//     }
+// });
+// function changeBgPattern2(){
+//     imgSrc = $(this).attr('src');
+//     if(temp == 0){
+//         $('.cardAnimalChosen').css('backgroundImage', `url(${imgSrc})`);
+//     }
+// }
+
+// //換裝飾品
+// $(document).ready(function(){
+//     let img = $('.cardDeco');
+//     console.log(img);
+//     for (let i = 0; i < img.length; i++) {
+//         img[i].addEventListener('click',changeBgPattern3)
+//     console.log(img);
+
+//     }
+    
+// });
+// function changeBgPattern3(){
+//     imgSrc = $(this).attr('src');
+//     if(temp == 0){
+//         $('.cardDecoChosen').css('backgroundImage', `url(${imgSrc})`);
+//     }
+// }
+
+
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.1.0/fabric.min.js"></script>
+<script>
+  const canvas = new fabric.Canvas('thanksCardCanvas', {
+  width: 600,
+  height: 450
+})
+
+const $zId = (id) => document.getElementById(id)
+const imageUploader = $zId('imageUploader')
+const file = $zId('file')
+const imgset = $zId('cardImages')
+const defaultImg = $zId('defaultImg')
+let movingImage
+let imgDragOffset = {
+  offsetX: 0,
+  offsetY: 10
+}
+
+// 讀取圖片地址，設置畫布背景
+fabric.Image.fromURL('./image/thanksCard/background1.png', (img) => {
+img.set({
+// 通過scale來設置圖片大小，這裡設置和畫布一樣大
+scaleX: canvas.width / img.width,
+scaleY: canvas.height / img.height,
+});
+// 設置背景
+canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+canvas.renderAll();
+});
+
+
+function uploadFile (e) {
+  file.click()
+}
+
+function saveImg (e) {
+  if( e.target.tagName.toLowerCase() === 'img' ){
+    imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
+    imgDragOffset.offsetY = e.clientY - e.target.offsetTop
+    movingImage = e.target
+  }
+}
+
+function handleFile () {
+  const fileReader = new FileReader();
+  fileReader.readAsDataURL(this.files[0])
+  fileReader.onload = (e) => {
+    // 圖片 base64
+    const dataURL = e.target.result
+    const img = document.createElement('img')
+    img.draggable = true
+    img.src = dataURL
+    img.click = saveImg
+    imgset.appendChild(img)
+  }
+  
+}
+
+function dropImg (e) {
+  const {offsetX, offsetY} = e.e
+  const image = new fabric.Image(movingImage, {
+    width: movingImage.naturalWidth,
+    height: movingImage.naturalHeight,
+    scaleX: 120 / movingImage.naturalWidth,
+    scaleY: 90 / movingImage.naturalHeight,
+    // top: offsetY - imgDragOffset.offsetY,
+    // left: offsetX - imgDragOffset.offsetX
+    top: 0,
+    left: 0
+  })
+
+// 複寫掉圖片外編輯框
+  fabric.Object.prototype.drawControls = function(ctx, styleOverride) {
+      styleOverride = styleOverride || {};
+      var wh = this._calculateCurrentDimensions(),
+          width = wh.x,
+          height = wh.y,
+          scaleOffset = styleOverride.cornerSize || this.cornerSize,
+          left = -(width + scaleOffset) / 2,
+          top = -(height + scaleOffset) / 2,
+          transparentCorners = typeof styleOverride.transparentCorners !== 'undefined' ?
+            styleOverride.transparentCorners : this.transparentCorners,
+          hasRotatingPoint = typeof styleOverride.hasRotatingPoint !== 'undefined' ?
+            styleOverride.hasRotatingPoint : this.hasRotatingPoint,
+          methodName = transparentCorners ? 'stroke' : 'fill';
+      ctx.save();
+      ctx.strokeStyle = ctx.fillStyle = styleOverride.cornerColor || this.cornerColor;
+      if (!this.transparentCorners) {
+        ctx.strokeStyle = styleOverride.cornerStrokeColor || this.cornerStrokeColor;
+      }
+      this._setLineDash(ctx, styleOverride.cornerDashArray || this.cornerDashArray, null);
+    // top-left
+    const cancel = new Image()
+    cancel.src = 'https://upload.wikimedia.org/wikipedia/commons/6/65/Crystal_button_cancel.svg'
+    ctx.drawImage(cancel, left, top, this.cornerSize, this.cornerSize)
+      // top-right
+      this._drawControl('tr', ctx, methodName,
+        left + width,
+        top, styleOverride);
+      // bottom-left
+      this._drawControl('bl', ctx, methodName,
+        left,
+        top + height, styleOverride);
+      // bottom-right
+      this._drawControl('br', ctx, methodName,
+        left + width,
+        top + height, styleOverride);
+      if (!this.get('lockUniScaling')) {
+        // middle-top
+        this._drawControl('mt', ctx, methodName,
+          left + width / 2,
+          top, styleOverride);
+        // middle-bottom
+        this._drawControl('mb', ctx, methodName,
+          left + width / 2,
+          top + height, styleOverride);
+        // middle-right
+        this._drawControl('mr', ctx, methodName,
+          left + width,
+          top + height / 2, styleOverride);
+        // middle-left
+        this._drawControl('ml', ctx, methodName,
+          left,
+          top + height / 2, styleOverride);
+      }
+      // middle-top-rotate
+      if (hasRotatingPoint) {
+        this._drawControl('mtr', ctx, methodName,
+          left + width / 2,
+          top - this.rotatingPointOffset, styleOverride);
+      }
+      ctx.restore();
+      return this;
+    },
+
+fabric.Canvas.prototype._getActionFromCorner = function(target, corner, e) {
+      if (!corner) {
+        return 'drag';
+      }
+      switch (corner) {
+        case 'mtr':
+          return 'rotate';
+        case 'ml':
+          break;
+        case 'mr':
+          return e[this.altActionKey] ? 'skewY' : 'scaleX';
+        case 'mt':
+        case 'mb':
+          return e[this.altActionKey] ? 'skewX' : 'scaleY';
+        case 'tl': // 增加左上刪除動作
+          canvas.remove(target)
+          return 'deleted'
+        default:
+          return 'scale';
+      }
+    }
+// 複寫掉圖片外編輯框結束
+
+  canvas.add(image)
+}
+// 可編輯的文字物件
+const iText = new fabric.IText(`Thank you for your donation,
+              Wish you have a beautiful day!`, {
+  left: 150,
+  top: 200,
+  fill: 'white', //顏色
+  fontFamily: 'helvetica',　// 字型
+  fontSize: 18 // 字體大小
+})
+
+canvas.add(iText)
+
+
+imageUploader.addEventListener('click', uploadFile, true)
+file.addEventListener('change', handleFile)
+canvas.on('drop', dropImg)
+
+
+
+
+// defaultImg.addEventListener('mousedown', saveImg)
+imgset.addEventListener('mousedown', saveImg)
+
+
+// const save2Server = document.getElementById('save2Server')
+//     save2Server.addEventListener('click', () => {
+//       const payload = {
+//         data: JSON.stringify(canvas)
+        
+//       }
+//       console.log(payload.data);
+//       const host = '127.0.0.1'
+//       fetch(`http://${host}/add`, {
+//         method: 'POST',
+//         body: JSON.stringify(payload),
+//         headers: new Headers({
+//           'Content-Type': 'application/json'
+//         })
+//       })
+//         .then(res => res.blob())
+//         .then(blob => {
+//           serverImg.src = URL.createObjectURL(blob)
+//         })
+//     })
+    
+
+
+
+  // 下載圖片
+ 
+function downloadImg() {
+  var dataURL = canvas.toDataURL("image/png");
+  document.getElementById('hidden_data').value = dataURL;
+  
+  var formData = new FormData(document.getElementById("form1"));
+
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if( xhr.status == 200){
+
+      if(xhr.responseText == "error"){
+        alert("Error");
+      }else{
+        swal({
+          title: "Succeed!",
+          icon: "success",
+        });  
+
+      }
+    }else{
+      alert(xhr.status)
+    }
+  }
+  
+  xhr.open('POST', './php/canvas_load_save.php', true);
+  xhr.send(formData);
+}
+
+
+</script>
+
+</body>
+</html>
