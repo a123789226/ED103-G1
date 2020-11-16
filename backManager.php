@@ -1,7 +1,7 @@
 <?php 
 	try {
 		require("./connectAqua.php");
-		$sql = "select * from manager";
+		$sql = "select * from manager where mgrStatus='0'";
 		$manager = $pdo->query($sql);
 		$manager->execute();
 		

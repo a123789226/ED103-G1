@@ -1019,13 +1019,31 @@ function backendDoFirst(){
   }
 }
 
+
+
+
+// journal Add
+function btnJourAdd(){
+  var xhrbtnJourAdd = new XMLHttpRequest;
+  xhrbtnJourAdd.onload = function(){
+    if (xhrbtnJourAdd.status == 200){
+      document.getElementById("ngrbtnJourAdd").innerText.xhrbtnJourAdd.responseText;
+    }else{
+      swal("Inserted Successfully!", "", "success");
+    }
+  }
+  
+  //連接的php
+  xhrbtnJourAdd.open("post", "InsertbackJournal.php", true);
+  xhrbtnJourAdd.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  
+  //送出資料
+  let btnJourAddData = `aquaNo=${aquaNo}&jourStory=${jourStory}&jourContent=${jourContent}&jourPic1=${jourPic1}&jourPic2=${jourPic2}&jourPic3=${jourPic3}&jourDate=${jourDate}`;
+  xhrjournal.send(btnJourAddData);
+}
+
+
 window.addEventListener('load',backendDoFirst);
-
-
-
-
-
-
 
 
 
@@ -1077,3 +1095,21 @@ $("div.hamburger_box").on("click", function(){
   $("ul.main_menu_ul").toggleClass("is-active");
 });
 
+
+// Login彈窗
+$(function () {
+  // 開啟 Modal 彈跳視窗
+  $(".btn_modal").on("click", function () {
+    $("div.overlay").addClass("-on");
+  });
+  // 關閉 Modal
+  $("div.btn_modal_close").on("click", function () {
+    $("div.overlay").addClass("-opacity-zero");
+    $('#memId').val('');
+    $('#memPsw').val('');
+  // 設定隔0.5秒後，移除相關 class
+    setTimeout(function () {
+      $("div.overlay").removeClass("-on -opacity-zero");
+    }, 500);
+  });
+});
