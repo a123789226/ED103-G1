@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("./php/connectBook.php");
+	require_once("./connectAqua.php");
   $sql = "select * from aqua where aquaType = 'seal' order by arriveDate DESC";
   $aquatypes = $pdo->prepare($sql);
   $aquatypes->execute();
