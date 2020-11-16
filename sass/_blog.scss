@@ -447,6 +447,24 @@ display: flex;
 justify-content: center;
 margin: 150px auto 20px auto;
 }
+.blogArticleMemInfo{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+.blogArticleMemName,
+.blogArticleMemDate
+{
+@include sub_title($keyWhite);
+}
+.blogArticleMemImg{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 5px;
+}
 .blogArticleContainer{
 display: block;
 width: 80%;
@@ -576,7 +594,9 @@ border-radius: 6px;
         display: flex;
         flex-direction: column;
     }
- 
+    .blogArticleMemInfo{
+        width: 100%;
+    }
     .blogArticleImgRight,
     .blogArticleImgLeft{
         display: flex;
