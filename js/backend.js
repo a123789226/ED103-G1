@@ -16,7 +16,7 @@ function backendDoFirst(){
     <tr>
       <td>${backChatbotRow[i].keywordsNo}</td>
       <td><input type="text" value="${backChatbotRow[i].keywordsQuestion}"size="40"></td>
-      <td><textarea>${backChatbotRow[i].keywordsReply} </textarea></td>
+      <td><textarea rows="2" cols="40">${backChatbotRow[i].keywordsReply} </textarea></td>
       <td><input type="text" value="${backChatbotRow[i].keywords}" size="10"></td>
       <td>
         <i class="fas fa-pen editChatbot"></i>
@@ -621,10 +621,10 @@ function backendDoFirst(){
     <tr>
       <td>${backJournalMsgRow[i].msgNo}</td>
       <td>${backJournalMsgRow[i].memNo}</td>
-      <td>${backJournalMsgRow[i].jourNo}</td>
+      <td>${backJournalMsgRow[i].aquaNo}</td>
       <td>${backJournalMsgRow[i].msgContent}</td>
       <td>${backJournalMsgRow[i].msgTime}</td>
-      <td><input type="text" value="${backJournalMsgRow[i].msgStatus}"></td>
+      <td><input type="text" value="${backJournalMsgRow[i].msgStatus}" size="5"></td>
       <td>
         <i class="fas fa-pen editJourMsg"></i>
       </td>
@@ -674,21 +674,49 @@ function backendDoFirst(){
   for (let i = 0; i < backJournalMsgRepRow.length; i++) {
     journalMsgRephtml += `
     <tr>
-      <td>${backJournalMsgRepRow[i].msgReprtNo}</td>
-      <td>${backJournalMsgRepRow[i].memNo}</td>
-      <td>${backJournalMsgRepRow[i].jourNo}</td>
+      <td>${backJournalMsgRepRow[i].msgReportNo}</td>
       <td>${backJournalMsgRepRow[i].msgNo}</td>
-      <td>${backJournalMsgRepRow[i].msgReportStatus}</td>
-      <td>${backJournalMsgRepRow[i].msgReportReason}</td>
+      <td>${backJournalMsgRepRow[i].memNo}</td>
+      <td>${backJournalMsgRepRow[i].aquaNo}</td>
       <td>${backJournalMsgRepRow[i].msgReportDate}</td>
+      <td>${backJournalMsgRepRow[i].msgReportReason}</td>
+      <td><input type="text" value="${backJournalMsgRepRow[i].msgReportStatus}" size="5"></td>
       <td>
-        <i class="fas fa-pen"></i>
+        <i class="fas fa-pen editJourMsgRep"></i>
       </td>
     </tr>
     `
   }
 
+
   document.getElementById('backJournalMsgRepTable').innerHTML = journalMsgRephtml;
+
+
+  // backJourMsgRep 修改
+  let editJourMsgRep = document.querySelectorAll("i.editJourMsgRep");
+  for (let i = 0; i < editJourMsgRep.length; i++) {
+    editJourMsgRep[i].addEventListener("click", function () {
+      let msgReportNo = editJourMsgRep[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let msgReportStatus = editJourMsgRep[i].parentNode.previousElementSibling.children[0].value;
+      // alert(msgReportNo);
+
+      let xhrEditJourMsgRep = new XMLHttpRequest();
+      xhrEditJourMsgRep.onload = function () {
+        JourMsgRepEdit = xhrEditJourMsgRep.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditJourMsgRep.open("Post", "EditbackJourMsgRep.php", true);
+      xhrEditJourMsgRep.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `msgReportNo=${msgReportNo}&msgReportStatus=${msgReportStatus}`;
+      xhrEditJourMsgRep.send(data_info);
+    })
+  }
+
+
+
 
 
   // backThankscard
@@ -709,9 +737,9 @@ function backendDoFirst(){
       <td>${backThankscardRow[i].memName}</td>
       <td>${backThankscardRow[i].memEmail}</td>
       <td>${backThankscardRow[i].cardFile}</td>
-      <td>${backThankscardRow[i].cardStatus}</td>
+      <td><input type="text" value="${backThankscardRow[i].cardStatus}" size="5"></td>
       <td>        
-        <a href="#">Resend</a>
+        <i class="fas fa-pen editThanks"></i>
       </td>
     </tr>
     `
@@ -719,6 +747,32 @@ function backendDoFirst(){
 
   document.getElementById('backThankscardTable').innerHTML = thankscardhtml;
 
+
+  // backThankscard 修改
+  let editThanks = document.querySelectorAll("i.editThanks");
+  for (let i = 0; i < editThanks.length; i++) {
+    editThanks[i].addEventListener("click", function () {
+      let cardNo = editThanks[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let cardStatus = editThanks[i].parentNode.previousElementSibling.children[0].value;
+      // alert(cardNo);
+
+      let xhrEditThanks = new XMLHttpRequest();
+      xhrEditThanks.onload = function () {
+        ThanksEdit = xhrEditThanks.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditThanks.open("Post", "EditbackThanks.php", true);
+      xhrEditThanks.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `cardNo=${cardNo}&cardStatus=${cardStatus}`;
+      xhrEditThanks.send(data_info);
+    })
+  }
+
+
+  
 
   // backBlog
   let backBlogxhr = new XMLHttpRequest();
@@ -744,16 +798,41 @@ function backendDoFirst(){
       <td>${backBlogRow[i].blogTime}</td>
       <td>${backBlogRow[i].blogMark}</td>
       <td>${backBlogRow[i].blogTags}</td>
-      <td>${backBlogRow[i].blogStatus}</td>
+      <td><input type="text" value="${backBlogRow[i].blogStatus}" size="5"></td>
       <td>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-times-circle"></i>
+        <i class="fas fa-pen editBlog"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backBlogTable').innerHTML = bloghtml;
+
+
+  // backBlog 修改
+  let editBlog = document.querySelectorAll("i.editBlog");
+  for (let i = 0; i < editBlog.length; i++) {
+    editBlog[i].addEventListener("click", function () {
+      let blogNo = editBlog[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let blogStatus = editBlog[i].parentNode.previousElementSibling.children[0].value;
+      // alert(cardNo);
+
+      let xhrEditBlog = new XMLHttpRequest();
+      xhrEditBlog.onload = function () {
+        BlogEdit = xhrEditBlog.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditBlog.open("Post", "EditbackBlog.php", true);
+      xhrEditBlog.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `blogNo=${blogNo}&blogStatus=${blogStatus}`;
+      xhrEditBlog.send(data_info);
+    })
+  }
+
+
 
 
   // backBlogReport
@@ -773,16 +852,41 @@ function backendDoFirst(){
       <td>${backBlogRepRow[i].blogNo}</td>
       <td>${backBlogRepRow[i].memNo}</td>
       <td>${backBlogRepRow[i].blogReportReason}</td>
-      <td>${backBlogRepRow[i].blogReportStatus}</td>
+      <td><input type="text" value="${backBlogRepRow[i].blogReportStatus}" size="5"></td>
       <td>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-times-circle"></i>
+        <i class="fas fa-pen editBlogRep"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backBlogRepTable').innerHTML = blogRephtml;
+
+
+  // backBlogRep 修改
+  let editBlogRep = document.querySelectorAll("i.editBlogRep");
+  for (let i = 0; i < editBlogRep.length; i++) {
+    editBlogRep[i].addEventListener("click", function () {
+      let blogReportNo = editBlogRep[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let blogReportStatus = editBlogRep[i].parentNode.previousElementSibling.children[0].value;
+      // alert(cardNo);
+
+      let xhrEditBlogRep = new XMLHttpRequest();
+      xhrEditBlogRep.onload = function () {
+        BlogRepEdit = xhrEditBlogRep.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditBlogRep.open("Post", "EditbackBlogRep.php", true);
+      xhrEditBlogRep.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `blogReportNo=${blogReportNo}&blogReportStatus=${blogReportStatus}`;
+      xhrEditBlogRep.send(data_info);
+    })
+  }
+
+
 
 
   // backBlogMark
@@ -826,21 +930,41 @@ function backendDoFirst(){
       <td>${backNominateRow[i].aquaNo}</td>
       <td>${backNominateRow[i].nomName}</td>
       <td>${backNominateRow[i].votedNum}</td>
-      <td>
-        <select>
-          <option value="1">Succeeded</option>
-          <option value="2">Reject</option>
-        </select>
-      </td>
-      <td>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-times-circle"></i>
+      <td><input type="text" value="${backNominateRow[i].nomStatus}" size="5"></td>
+      <td>       
+        <i class="fas fa-pen editNominate"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backNominateTable').innerHTML = nomhtml;
+
+
+  // backNominate 修改
+  let editNominate = document.querySelectorAll("i.editNominate");
+  for (let i = 0; i < editNominate.length; i++) {
+    editNominate[i].addEventListener("click", function () {
+      let nameNo = editNominate[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let nomStatus = editNominate[i].parentNode.previousElementSibling.children[0].value;
+      // alert(cardNo);
+
+      let xhrEditNominate = new XMLHttpRequest();
+      xhrEditNominate.onload = function () {
+        NominateEdit = xhrEditNominate.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+
+      xhrEditNominate.open("Post", "EditbackNominate.php", true);
+      xhrEditNominate.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `nameNo=${nameNo}&nomStatus=${nomStatus}`;
+      xhrEditNominate.send(data_info);
+    })
+  }
+
+
 
 
   // backManager
@@ -860,24 +984,43 @@ function backendDoFirst(){
       <td>${backManagerRow[i].mgrName}</td>
       <td>${backManagerRow[i].mgrId}</td>
       <td>${backManagerRow[i].mgrPsw}</td>
+      <td><input type="text" value="${backManagerRow[i].mgrStatus}" size="5"></td>
       <td>
-        <select>
-          <option value="1">正常</option>
-          <option value="2">停權</option>
-        </select>
-      </td>
-      <td>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-times-circle"></i>
+        <i class="fas fa-pen editManager"></i>
       </td>
     </tr>
     `
   }
 
   document.getElementById('backManagerTable').innerHTML = mgrhtml;
+  
+  
+  // backManager 修改
+  let editManager = document.querySelectorAll("i.editManager");
+  for (let i = 0; i < editManager.length; i++) {
+    editManager[i].addEventListener("click", function () {
+      let mgrNo = editManager[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let mgrStatus = editManager[i].parentNode.previousElementSibling.children[0].value;
+      // alert(cardNo);
+  
+      let xhrEditManager = new XMLHttpRequest();
+      xhrEditManager.onload = function () {
+        ManagerEdit = xhrEditManager.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
+  
+      xhrEditManager.open("Post", "EditbackManager.php", true);
+      xhrEditManager.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `mgrNo=${mgrNo}&mgrStatus=${mgrStatus}`;
+      xhrEditManager.send(data_info);
+    })
+  }
 }
 
 window.addEventListener('load',backendDoFirst);
+
 
 
 

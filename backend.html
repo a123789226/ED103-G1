@@ -703,11 +703,11 @@
                     <tr class="mgrJournalMsgTitle">
                       <th width="100" class="mgrTitle">Message No</th>
                       <th width="100" class="mgrTitle">Member No</th>
-                      <th width="100" class="mgrTitle">Journal No</th>
+                      <th width="100" class="mgrTitle">Aqua No</th>
                       <th width="300" class="mgrTitle">Msg Content</th>
                       <th width="200" class="mgrTitle">Datetime</th>
-                      <th width="100" class="mgrTitle">Select</th>
-                      <th width="100" class="mgrTitle">Operation</th>
+                      <th width="100" class="mgrTitle">Status</th>
+                      <th width="100" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backJournalMsgTable">
                       <tr width="100" class=" mgrJournalMsgDetail">
@@ -751,13 +751,13 @@
                   <table>
                     <tr class="mgrJournalMsgTitle2">
                       <th width="100" class="mgrTitle">Report No</th>
-                      <th width="100" class="mgrTitle">Member No</th>
-                      <th width="100" class="mgrTitle">Journal No</th>
                       <th width="100" class="mgrTitle">Message No</th>
-                      <th width="200" class="mgrTitle">Reason</th>
+                      <th width="100" class="mgrTitle">Member No</th>
+                      <th width="100" class="mgrTitle">Aqua No</th>
                       <th width="200" class="mgrTitle">Date</th>
-                      <th width="200" class="mgrTitle">Select</th>
-                      <th width="200" class="mgrTitle">Operation</th>
+                      <th width="200" class="mgrTitle">Reason</th>
+                      <th width="200" class="mgrTitle">Status(0:成功;1:駁回)</th>
+                      <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backJournalMsgRepTable">
                       <tr class="mgrJournalMsgDetail2">
@@ -765,8 +765,8 @@
                         <td width="100" class="mgrTitle">2</td>
                         <td width="100" class="mgrTitle">1</td>
                         <td width="100" class="mgrTitle">2</td>
-                        <td width="200" class="mgrTitle">與Aqua無關</td>
                         <td width="200" class="mgrTitle">2020-09-11</td>
+                        <td width="200" class="mgrTitle">與Aqua無關</td>
                         <td width="200" class="mgrTitle">
                           <select>
                             <option value="1">Succeeded</option>
@@ -796,7 +796,7 @@
                     <th width="300" class="mgrTitle">Member Email</th>
                     <th width="100" class="mgrTitle">Card File</th>
                     <th width="100" class="mgrTitle">Status</th>
-                    <th width="100" class="mgrTitle">Operation</th>
+                    <th width="100" class="mgrTitle">Edit</th>
                   </tr>
                   <tbody id="backThankscardTable">
                     <tr class="mgrThankscardDetail">
@@ -850,11 +850,11 @@
                       <th width="200" class="mgrTitle">Blog Pic1</th>
                       <th width="300" class="mgrTitle">Content2</th>
                       <th width="200" class="mgrTitle">Blog Pic2</th>
-                      <th width="100" class="mgrTitl">Tags</th>
                       <th width="200" class="mgrTitle">Date</th>
                       <th width="100" class="mgrTitle">Mark</th>
+                      <th width="100" class="mgrTitl">Tags</th>
                       <th width="100" class="mgrTitle">Status</th>
-                      <th width="200" class="mgrTitle">Operation</th>
+                      <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backBlogTable">
                       <tr class="mgrBlogDetail">
@@ -897,7 +897,7 @@
                       <th width="100" class="mgrTitle">Member No</th>
                       <th width="200" class="mgrTitle">Reson</th>
                       <th width="100" class="mgrTitle">Status</th>
-                      <th width="200" class="mgrTitle">Operation</th>
+                      <th width="200" class="mgrTitle">Edit</th>
                     </tr>
                     <tbody id="backBlogRepTable">
                       <tr class="mgrBlogDetail">
@@ -950,7 +950,7 @@
                     <th width="200" class="mgrTitle">Nom Name</th>
                     <th width="300" class="mgrTitle">Number of votes</th>
                     <th width="200" class="mgrTitle">nomStatus</th>
-                    <th width="200" class="mgrTitle">Operation</th>
+                    <th width="200" class="mgrTitle">Edit</th>
                   </tr>
                   <tbody id="backNominateTable">
                     <tr class="mgrNominateDetail">
@@ -959,14 +959,9 @@
                       <td class="mgrTitle">2</td>
                       <td class="mgrTitle">Shinnosuke</td>
                       <td class="mgrTitle">11244</td>
+                      <td class="mgrTitle">Status</td>
                       <td class="mgrTitle">
-                        <select>
-                          <option value="1">Succeeded</option>
-                          <option value="2">Reject</option>
-                        </select>
-                      </td>
-                      <td class="mgrTitle">
-                        <i class="fa fa-angle-down fa-lg"></i>
+                        <i class="fas fa-pen editNominate"></i>
                       </td>
                     </tr>
                   </tbody>
@@ -981,12 +976,12 @@
               <div class="mgrManagerAll">
                 <table>
                   <tr class="mgrManagerTitle">
-                    <th width="100" class="mgrTitle">No</th>
+                    <th width="100" class="mgrTitle">ManagerNo</th>
                     <th width="100" class="mgrTitle">Name</th>
                     <th width="100" class="mgrTitle">Id</th>
                     <th width="100" class="mgrTitle">Password</th>
-                    <th width="100" class="mgrTitle">Status</th>
-                    <th width="100" class="mgrTitle">Operation</th>
+                    <th width="100" class="mgrTitle">Status(0:正常;1:停權)</th>
+                    <th width="100" class="mgrTitle">Edit</th>
                   </tr>
                   <tbody id="backManagerTable">
                     <tr class="mgrManagerDetail">
@@ -1001,8 +996,7 @@
                         </select>
                       </td>
                       <td class="mgrTitle">
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-pen editNominate"></i>
                       </td>
                     </tr>
                   </tbody>

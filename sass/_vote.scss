@@ -92,6 +92,9 @@
       margin-top: 20px;
       @include text($keyWhite);
     }
+    .vote_text_note{
+      @include text($blockYellow);
+    }
   }
 
 
@@ -342,7 +345,95 @@
       } 
     }
   }
- 
+
+  //投票區塊的燈箱
+  .voteOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0, 0, .5);
+    opacity: 0;
+    z-index: -1;
+    // transition: opacity 0.5s;
+    #voteBarBox{
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      width: 330px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 6px;
+      text-align: center;
+      h4{
+        color: $keyBlack;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      .vote_bar_block{
+        width: 100%;
+        .voteBar {
+          position: relative;
+          display: block;
+          margin-bottom: 10px;
+          width: 100%;
+          background: #eee;
+          border-radius: 6px;
+          box-shadow: $shadow;
+          .voteBar-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 700;
+            font-size: 14px;
+            color: #ffffff;
+            span {
+              display: block;
+              padding: 0 10px;
+              height: 28px;
+              line-height: 28px;
+            }
+          }
+          .voteBar-bar {
+            height: 28px;
+            width: 0px;
+            background-color: $keyGreen;
+            border-radius: 6px;
+          }
+          .voteBar-bar.changeBG{
+            background-color: $keyBlack;
+            transition: background-color 0s linear 2s;
+          }
+          .voteBar-percent {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            font-size: 14px;
+            height: 28px;
+            line-height: 28px;
+            color: #333;
+          }
+          .voteBar-percent.changeBG{
+            color: white;
+            transition: color 0s linear 2s;
+          }
+        }
+      }
+      .voteBarClose2{
+        margin-top: 20px;
+        @include btn36Yellow();
+      }
+    }
+  }
+  .voteOverlay.-on{
+    opacity: 1;
+    z-index: 11;
+  }
+
   // 已完成
   #voteFinishedBlock{
     width: 100%;

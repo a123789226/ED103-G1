@@ -166,7 +166,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  border: 3px solid white;
+  // border: 3px solid white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -184,7 +184,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  border: 3px solid red;
+  // border: 3px solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -193,7 +193,7 @@ body {
 .jourBookSection {
   text-align: center;
   width: 40%;
-  border: 3px solid black;
+  // border: 3px solid black;
   // flex: 40%;
   margin: 0 auto;
 
@@ -239,7 +239,7 @@ body {
 
   @media screen and (max-width: 676px) {
     min-width: 240px;
-    border: 3px solid yellow;
+    // border: 3px solid yellow;
     max-height: 480px;
     min-height: 360px;
 
@@ -342,7 +342,7 @@ a.jourBookName {
     }
 
     td {
-      padding-left: 20px;
+      padding-left: 10px;
       font-size: 16px;
 
     }
@@ -350,7 +350,8 @@ a.jourBookName {
 
   .jourAquaStory {
     margin: 0 auto;
-    padding: 5px 25px;
+    padding: 0px 15px 5px 35px;
+    // border: 2px solid blue;
   }
 
   .jourAquaStory h5 {
@@ -361,6 +362,7 @@ a.jourBookName {
 
   .jourAquaStory p {
     line-height: 20px;
+    width: 100%;
   }
 }
 
@@ -584,10 +586,16 @@ div.jourLightBox.-on {
 
 .jourAdopterlist li {
   display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 
 .jourAdopterlist li img {
   width: 40px;
+  height: 40px;
+  border: 3px solid $keyGreen;
+  border-radius: 50%;
+  box-shadow: $shadow;
 }
 
 .jourToAdopt {
@@ -664,10 +672,21 @@ div.jourLightBox.-on {
 
 .jourCommentPersonPic {
   display: inline-block;
-  width: 10%;
+  width: 40px;
+  height:40px;
   margin: 0 auto;
-  // border: 3px solid pink;
   text-align: center;
+}
+
+.jourCommentPersonPic img{
+
+  width: 40px;
+  height:40px;
+  margin: 0 auto;
+  border: 3px solid $keyGreen;
+  border-radius: 50%;
+
+
 }
 
 .jourCommentOrder {
@@ -1656,7 +1675,7 @@ div.jourLightBox.-on {
 
 
   #flipbook2Rwd td {
-    padding-left: 20px;
+    padding-left: 10px;
     font-size: 16px;
   }
 

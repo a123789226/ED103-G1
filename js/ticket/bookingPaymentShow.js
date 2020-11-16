@@ -101,7 +101,7 @@ function afterLogin(){
     // 頭像背景變白
     $id('btn_modal').style.backgroundColor = '#ffffff';
     // 更換圖片
-    $id('memberPic').src = `./image/memPic/${member.memPic}`;
+    $id('memberPic').src = `./${member.memPic}`;
     $id('memberPic').classList.add('memberImg');
     $id('memberPic').title = 'Member Profile';
     // 關閉登入燈箱

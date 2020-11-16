@@ -1,8 +1,9 @@
 <?php 
 try {
 	require_once("./connectAqua.php");
-  $sql = "select * from adopt where aquaNo = 'whale' order by arriveDate DESC";
-  $aquaAdopter = $pdo->query($sql);
+  $sql = "select m.memPic from adopt a join member m on (a.memNo = m.memNo) where a.aquaNo =:aquaNo";
+  $aquaAdopter = $pdo->prepare($sql);
+  $aquaAdopter-> bindValue(':aquaNo',$_POST['aquaNo']);
   $aquaAdopter->execute();
 
 

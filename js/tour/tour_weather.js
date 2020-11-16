@@ -28,9 +28,9 @@ $(document).ready(function(){
                           // document.getElementById('tour_weather').append(weather); 也可以 
                           
                           //==顯示照片
-                          //條件1: 設變數nowa 為new Date(); 當"時" 大於18，顯示月亮照片
+                          //條件1: 設變數nowa 為new Date(); 當"時" 大於等於18或小於等於5，顯示月亮照片
                           let nowa = new Date();
-                          if(nowa.getHours() >=18){
+                          if((nowa.getHours() >=18)||(nowa.getHours() <=5)){
                             document.querySelector("#tour_weather_img4").style.display = 'block';
                           }else{
                           //==條件1底下有三個條件
