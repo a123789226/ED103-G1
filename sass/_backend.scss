@@ -231,7 +231,7 @@
         // border: 1px solid black;
         background-color: rgba(255, 255, 255, .5);
         width: 500px;
-        height: 900px;
+        height: 800px;
         overflow-x: scroll;
         box-shadow: 0 0 10px #ddd;
         position: absolute;
@@ -293,7 +293,7 @@
       .mgrAquaAll{
         display: block;
         width: 100%;
-        height: 900px;
+        height: 800px;
         overflow: scroll;
         tr{
           box-shadow: $shadow;
@@ -320,7 +320,7 @@
       // ORDER
       .mgrOrderAll{
         text-align: center;
-        height: 900px;
+        height: 800px;
         overflow-y: scroll;
         .mgrSecTab.-on{
           display: block;
@@ -419,6 +419,9 @@
       }
       // ADOPT
       .mgrAdoptAll{
+        width: 100%;
+        height: 800px;
+        overflow-y: scroll;
         tr{
           box-shadow: $shadow;
           th{
@@ -644,6 +647,9 @@
       }
       // NOMINATE
       .mgrNominateAll{  
+        width: 100%;
+        height: 900px;
+        overflow: scroll;
         tr{
           box-shadow: $shadow;
           th{
