@@ -304,10 +304,8 @@ function openBookDolphin(){
                 }
             }
 
-<<<<<<< HEAD
-=======
-            //帶入journal內頁
-            $.ajax({
+               //帶入journal內頁
+               $.ajax({
                 url: 'journalPage.php',
                 type: 'post',
                 dataType: 'json',
@@ -430,9 +428,7 @@ function openBookDolphin(){
 
             //帶入認養人頭像
             doMemPic(aquaNo);
-           
 
->>>>>>> 69866c32f557cbad86340e1d7528aea14dacd962
             // 渲染留言的function
             doPost(aquaNo);
         })
@@ -475,34 +471,6 @@ function doPost(aquaNo){
     // console.log(aquaNo);
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
-<<<<<<< HEAD
-
-=======
-        let aquaNo = JSON.parse(xhr.responseText); //取得aquaNo字串？
-        let journalCommentHTML='';
-        for(i=0; i<aquaNo.length; i++){
-            journalCommentHTML +=`
-            <li>
-            <div class="jourCommentPersonPic"><img src="./img/member/${aquaNo[i].memPic}"
-                  alt=""></div>
-            <div class="jourCommentOrder">
-              <div class="jourCommentInfo">
-                <p class="jourCommentPersonName">${aquaNo[i].memName}</p>
-                <p class="jourCommentTime">${aquaNo[i].msgTime}</p>
-              </div>
-              <div class="jourCommentBox">
-                <h5 class="jourCommentWords">${aquaNo[i].msgContent}</h5>
-                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
-              </div>
-            </div>
-          </li>
-            
-            `;
-        }
-
-        let message_box = document.getElementById('messageBox');
-        message_box.innerHTML = journalCommentHTML;
->>>>>>> 69866c32f557cbad86340e1d7528aea14dacd962
     }
 
     xhr.open("Post", "??????.php", true);
