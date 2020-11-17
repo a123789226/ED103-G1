@@ -512,22 +512,16 @@
 
       <div class="page5_vote">
         <div class="page5_vote_top">
-          <img src="./image/index/object/vote_big.png" class="page5_big">
-          <p>This is a cute dolphin. It needs it to help him get a name. Come and help him get a cute name. The time is
+          <img src="./image/index/object/vote_big.png" class="page5_big" id="page5_big">
+          <p id="page5_para">This is a cute dolphin. It needs it to help him get a name. Come and help him get a cute name. The time is
             only
             until 10/25.</p>
         </div>
-        <div class="page5_vote_middle">
-          <button class="home_vote_btn" data-no="1">Amy</button>
-          <button class="home_vote_btn" data-no="2">Billy</button>
-          <button class="home_vote_btn" data-no="3">Cat</button>
-          <button class="home_vote_btn" data-no="4">Dog</button>
-          <button class="home_vote_btn" data-no="5">Ella</button>
-          <button class="home_vote_btn" data-no="6">Sam</button>
+        <div class="page5_vote_middle" id="page5_vote_middle">
+
         </div>
-        <div class="page5_vote_bottom">
-          <button id="home_vbtn">Vote</button>
-        </div>
+          <!-- 投完票會跳出的燈箱 -->
+
       </div>
   
   
@@ -544,7 +538,14 @@
 
     </div>
 
-
+          <div class="voteOverlay" id="voteOverlay">
+            <div id="voteBarBox">
+              <h4>Current Distribution of Votes</h3>
+                <div class="vote_bar_block" id="voteBarBlock">
+                </div>
+                <button class="voteBarClose2">Close</button>
+            </div>
+          </div>
   </section>
 
 
@@ -572,17 +573,17 @@
         <div class="home_carousel_content">
           <div class="home_carousel_title">
             <div class="blog_carousel_image">
-              <img src="./image/index/object/aqua1.jpeg" alt="">
+              <img src="./image/index/object/aqua1.jpeg" id="home_blog_img1">
             </div>
-            <span class="blog_carousel_title">BLOG TITLE 1</span>
-            <img src="./image/index/object/heart.png" class="home_heart">
+            <span class="blog_carousel_title" id="home_blog_title1">BLOG TITLE 1</span>
+            <!-- <img src="./image/index/object/heart.png" class="home_heart"> -->
             <div class="home_author">
-              <span>By Lauren Eissey</span>
-              <img src="./image/index/object/player.png" class="home_blog_user">
-              <span>September 17, 2020</span>
+              <span id="home_blog_author1">By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user" id="home_blog_big1">
+              <span id="home_blog_time1">September 17, 2020</span>
             </div>
           </div>
-          <div class="blog_carousel_text">
+          <div class="blog_carousel_text" id="home_blog_content1">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.
           </div>
@@ -591,17 +592,17 @@
         <div class="home_carousel_content">
           <div class="home_carousel_title">
             <div class="blog_carousel_image">
-              <img src="./image/index/object/aqua1.jpeg" alt="">
+              <img src="./image/index/object/aqua1.jpeg" id="home_blog_img2">
             </div>
-            <span class="blog_carousel_title">BLOG TITLE 2</span>
-            <img src="./image/index/object/heart.png" class="home_heart">
+            <span class="blog_carousel_title" id="home_blog_title2">BLOG TITLE 2</span>
+            <!-- <img src="./image/index/object/heart.png" class="home_heart"> -->
             <div class="home_author">
-              <span>By Lauren Eissey</span>
-              <img src="./image/index/object/player.png" class="home_blog_user">
-              <span>September 17, 2020</span>
+              <span id="home_blog_author2">By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user" id="home_blog_big2">
+              <span id="home_blog_time2">September 17, 2020</span>
             </div>
           </div>
-          <div class="blog_carousel_text">
+          <div class="blog_carousel_text" id="home_blog_content2">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's
@@ -614,17 +615,17 @@
         <div class="home_carousel_content">
           <div class="home_carousel_title">
             <div class="blog_carousel_image">
-              <img src="./image/index/object/aqua1.jpeg" alt="">
+              <img src="./image/index/object/aqua1.jpeg" id="home_blog_img3">
             </div>
-            <span class="blog_carousel_title">BLOG TITLE 3</span>
-            <img src="./image/index/object/heart.png" class="home_heart">
+            <span class="blog_carousel_title" id="home_blog_title3">BLOG TITLE 3</span>
+            <!-- <img src="./image/index/object/heart.png" class="home_heart"> -->
             <div class="home_author">
-              <span>By Lauren Eissey</span>
-              <img src="./image/index/object/player.png" class="home_blog_user">
-              <span>September 17, 2020</span>
+              <span id="home_blog_author3">By Lauren Eissey</span>
+              <img src="./image/index/object/player.png" class="home_blog_user" id="home_blog_big3">
+              <span id="home_blog_time3">September 17, 2020</span>
             </div>
           </div>
-          <div class="blog_carousel_text">
+          <div class="blog_carousel_text" id="home_blog_content3">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's

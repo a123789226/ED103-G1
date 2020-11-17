@@ -3,7 +3,7 @@
 try {
 require("connectAqua.php");
 
-$sql = "select * from journal where aquaNo = 1 order by jourDate";
+$sql = "select j.aquaNo, j.jourContent, j.jourDate, j.jourStory, j.jourPic1, j.jourPic2, j.jourPic3, a.aquaNo, a.aquaName, a.rescueLoc, a.arriveDate  from journal j join aqua a on(j.aquaNo = a.aquaNo) where a.aquaNo = 1 order by jourDate";
 $journal = $pdo->prepare($sql);
 $journal->execute();
   
@@ -20,7 +20,7 @@ $journal->execute();
         foreach($journalRows as $journalRow)
         {
         $result[$i] = array("aquaNo"=>$journalRow["aquaNo"], "jourStory"=>$journalRow["jourStory"],
-            "jourContent"=>$journalRow["jourContent"], "jourPic1"=>$journalRow["jourPic1"],"jourPic2"=>$journalRow["jourPic2"],"jourPic3"=>$journalRow["jourPic3"],"jourDate"=>$journalRow["jourDate"],);
+            "jourContent"=>$journalRow["jourContent"], "jourPic1"=>$journalRow["jourPic1"],"jourPic2"=>$journalRow["jourPic2"],"jourPic3"=>$journalRow["jourPic3"],"jourDate"=>$journalRow["jourDate"],"aquaName"=>$journalRow["aquaName"],"rescueLoc"=>$journalRow["rescueLoc"],"arriveDate"=>$journalRow["arriveDate"]);
             $i++;
 
       }

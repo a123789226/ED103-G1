@@ -1,3 +1,28 @@
+let home_blog_img1 = document.getElementById('home_blog_img1');
+let home_blog_img2 = document.getElementById('home_blog_img2');
+let home_blog_img3 = document.getElementById('home_blog_img3');
+let home_blog_title1 = document.getElementById('home_blog_title1');
+let home_blog_title2 = document.getElementById('home_blog_title2');
+let home_blog_title3 = document.getElementById('home_blog_title3');
+let home_blog_author1 = document.getElementById('home_blog_author1');
+let home_blog_author2 = document.getElementById('home_blog_author2');
+let home_blog_author3 = document.getElementById('home_blog_author3');
+let home_blog_time1 = document.getElementById('home_blog_time1');
+let home_blog_time2 = document.getElementById('home_blog_time2');
+let home_blog_time3 = document.getElementById('home_blog_time3');
+let home_blog_content1 = document.getElementById('home_blog_content1');
+let home_blog_content2 = document.getElementById('home_blog_content2');
+let home_blog_content3 = document.getElementById('home_blog_content3');
+let home_blog_big1 = document.getElementById('home_blog_big1');
+let home_blog_big2 = document.getElementById('home_blog_big2');
+let home_blog_big3 = document.getElementById('home_blog_big3');
+
+
+
+
+
+
+
 let now = new Date();
 let time = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
 console.log(time);
@@ -81,6 +106,7 @@ let vue_remaining = new Vue({
 
 
 
+
   //Boat move
   TweenMax.to('.home_boat', 10, {
     xPercent: -800,
@@ -127,9 +153,6 @@ let vue_remaining = new Vue({
   // document.getElementById("home_jbtn").addEventListener("click", function () {
   //   swal("Submit successful", "", "success");
   // });
-  document.getElementById("home_vbtn").addEventListener("click", function () {
-    swal("Vote successful", "", "success");
-  });
 
   //Parallax
   parallaxInstance = new Parallax(document.getElementById("move_move"));
@@ -175,6 +198,36 @@ let vue_remaining = new Vue({
       $(imgs[1]).css("display", "none");
       $(imgs[2]).css("display", "block");
       role_pick2 = $("#content").find("li img").first().attr("id");
+
+      $.ajax({
+        url: 'home_blog.php',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+          console.log(data);
+          home_blog_img1.src = data[0].blogPic;
+          home_blog_img2.src = data[1].blogPic;
+          home_blog_img3.src = data[2].blogPic;
+          home_blog_big1.src = data[0].memPic;
+          home_blog_big2.src = data[1].memPic;
+          home_blog_big3.src = data[2].memPic;
+          home_blog_title1.innerText = data[0].blogTitle;
+          home_blog_title2.innerText = data[1].blogTitle;
+          home_blog_title3.innerText = data[2].blogTitle;
+          home_blog_author1.innerText = data[0].memName;
+          home_blog_author2.innerText = data[1].memName;
+          home_blog_author3.innerText = data[2].memName;
+          home_blog_time1.innerText = data[0].blogTime;
+          home_blog_time2.innerText = data[1].blogTime;
+          home_blog_time3.innerText = data[2].blogTime;
+          home_blog_content1.innerText = data[0].blogContent1;
+          home_blog_content2.innerText = data[1].blogContent1;
+          home_blog_content3.innerText = data[2].blogContent1;
+        },
+        error: function (data) {
+          console.log(JSON.stringify(data));
+        },
+      })
     }
     //==========toRight.onclick
     $id("right").onclick = function () {
@@ -187,8 +240,41 @@ let vue_remaining = new Vue({
       $(imgs[2]).css("display", "none");
       role_pick2 = $("#content").find("li img").first().attr("id");
       console.log(role_pick2);
+
+
+      $.ajax({
+        url: 'home_blog.php',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+          console.log(data);
+          home_blog_img1.src = data[0].blogPic;
+          home_blog_img2.src = data[1].blogPic;
+          home_blog_img3.src = data[2].blogPic;
+          home_blog_big1.src = data[0].memPic;
+          home_blog_big2.src = data[1].memPic;
+          home_blog_big3.src = data[2].memPic;
+          home_blog_title1.innerText = data[0].blogTitle;
+          home_blog_title2.innerText = data[1].blogTitle;
+          home_blog_title3.innerText = data[2].blogTitle;
+          home_blog_author1.innerText = data[0].memName;
+          home_blog_author2.innerText = data[1].memName;
+          home_blog_author3.innerText = data[2].memName;
+          home_blog_time1.innerText = data[0].blogTime;
+          home_blog_time2.innerText = data[1].blogTime;
+          home_blog_time3.innerText = data[2].blogTime;
+          home_blog_content1.innerText = data[0].blogContent1;
+          home_blog_content2.innerText = data[1].blogContent1;
+          home_blog_content3.innerText = data[2].blogContent1;
+        },
+        error: function (data) {
+          console.log(JSON.stringify(data));
+        },
+      })
     }
     // ................................
+
+    showVotingAqua();
   }    
 
   //role down
@@ -385,9 +471,9 @@ $.ajax({
   dataType: 'json',
   success: function (data) {
     home_adopt_no.innerText = data[0].aquaNo;
-    home_adopt_name.innerText = data[0].aquaNo;
-    home_adopt_loc.innerText = data[0].aquaNo;
-    home_adopt_date.innerText = data[0].aquaNo;
+    home_adopt_name.innerText = data[0].aquaName;
+    home_adopt_loc.innerText = data[0].rescueLoc;
+    home_adopt_date.innerText = data[0].arriveDate;
     console.log(data);
     for(let i=0; i<data.length; i++){
       $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
@@ -401,6 +487,43 @@ $.ajax({
   },
 })
 
+
+
+
+
+
+
+
+
+$.ajax({
+  url: 'home_blog.php',
+  type: 'get',
+  dataType: 'json',
+  success: function (data) {
+    console.log(data);
+    home_blog_img1.src = data[0].blogPic;
+    home_blog_img2.src = data[1].blogPic;
+    home_blog_img3.src = data[2].blogPic;
+    home_blog_big1.src = data[0].memPic;
+    home_blog_big2.src = data[1].memPic;
+    home_blog_big3.src = data[2].memPic;
+    home_blog_title1.innerText = data[0].blogTitle;
+    home_blog_title2.innerText = data[1].blogTitle;
+    home_blog_title3.innerText = data[2].blogTitle;
+    home_blog_author1.innerText = data[0].memName;
+    home_blog_author2.innerText = data[1].memName;
+    home_blog_author3.innerText = data[2].memName;
+    home_blog_time1.innerText = data[0].blogTime;
+    home_blog_time2.innerText = data[1].blogTime;
+    home_blog_time3.innerText = data[2].blogTime;
+    home_blog_content1.innerText = data[0].blogContent1;
+    home_blog_content2.innerText = data[1].blogContent1;
+    home_blog_content3.innerText = data[2].blogContent1;
+  },
+  error: function (data) {
+    console.log(JSON.stringify(data));
+  },
+})
 
 let right_animal = document.getElementsByClassName('adopt_right_animal01')[0];
 let animal01 = document.getElementsByClassName('adopt_animal01')[0];
@@ -418,3 +541,180 @@ animal02.addEventListener('click',function(){
 animal03.addEventListener('click', function () {
   right_animal.src = animal03.src;
 });
+
+
+//Vote
+
+
+// 長條圖最大值加上屬性
+function addClassToMaxBar() {
+  let vote_bar_block = document.getElementsByClassName('vote_bar_block');
+  for (let i = 0; i < vote_bar_block.length; i++) {
+    let voteBarNum = vote_bar_block[i].querySelectorAll('.voteBar-percent');
+    let voteBarNumArr = [];
+    for (let j = 0; j < voteBarNum.length; j++) {
+      voteBarNumArr[j] = voteBarNum[j].innerText;
+    }
+    for (let j = 0; j < voteBarNum.length; j++) {
+      if (voteBarNum[j].innerText == Math.max(...voteBarNumArr)) {
+        voteBarNum[j].classList.add('changeBG');
+        voteBarNum[j].previousElementSibling.classList.add('changeBG');
+      }
+    }
+  }
+}
+
+
+function showVotingAqua() {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) { //success
+      let voteAqua = JSON.parse(xhr.responseText);
+      // console.log(voteAqua);
+
+      let voteContent = '';
+      for (let i = 0; i < 6; i++) {
+        if ((i + 1) % 6 == 1) {  //產生區塊的頭還有第1個名字
+          voteContent += `
+                          <input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name1" value="${voteAqua[i].nomName}">
+                          <label for="aquaNo${voteAqua[i].aquaNo}_Name1">${voteAqua[i].nomName}</label>`;
+        } else if ((i + 1) % 6 == 0) { //產生第6個名字還有區塊的結尾
+          voteContent += `<input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name6" value="${voteAqua[i].nomName}">
+                          <label for="aquaNo${voteAqua[i].aquaNo}_Name6">${voteAqua[i].nomName}</label>
+                          <button class="voteSubmit" data-aquano="${voteAqua[i].aquaNo}">SUBMIT</button> 
+                      `;
+        } else {  //產生第2~5個名字
+          voteContent += `<input type="radio" name="voteNameForAquaNo${voteAqua[i].aquaNo}" id="aquaNo${voteAqua[i].aquaNo}_Name${i + 1}" value="${voteAqua[i].nomName}">
+                          <label for="aquaNo${voteAqua[i].aquaNo}_Name${i + 1}">${voteAqua[i].nomName}</label>`;
+        }
+      }
+      $id('page5_vote_middle').innerHTML = voteContent;
+
+      //替投票按鈕建立事件聆聽
+      voteClick();
+
+      //ajax
+      $.ajax({
+        url: 'homeAquaShow.php',
+        type: 'post',
+        data: {
+          aquaNo: voteAqua[0].aquaNo,
+        },
+        dataType: 'json',
+        success: function (data) {
+          console.log(data);
+          $id('page5_big').src = `./img/aqua/${data.aquaPic}`;
+          $id('page5_para').innerText = data.jourStory;
+        }
+
+      })
+    }
+  }
+  xhr.open("get", "voteShowVote.php", true);
+  xhr.send(null);
+}
+
+
+
+
+
+
+
+
+//替投票按鈕建立事件聆聽
+function voteClick() {
+  let voteSubmit = document.getElementsByClassName('voteSubmit');
+  for (let i = 0; i < voteSubmit.length; i++) {
+    voteSubmit[i].addEventListener('click', function () {
+      // 透過按鈕的data取aquaNo
+      let aquaNo = this.dataset.aquano;
+      let voteNameForAquaNo = document.getElementsByName(`voteNameForAquaNo${aquaNo}`);
+      for (let j = 0; j < 6; j++) {
+        if (voteNameForAquaNo[j].checked) { //有任一radio被選中觸發
+          // console.log(voteNameForAquaNo[j].value);
+          let nomName = voteNameForAquaNo[j].value;
+          // 執行增加該姓名的票數
+          UpdateVotedNum(aquaNo, nomName);
+        }
+      }
+    })
+  }
+}
+
+// 執行增加該姓名的票數
+function UpdateVotedNum(aquaNo, nomName) {
+
+
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    // console.log(xhr.responseText);
+    let voteResult = JSON.parse(xhr.responseText);
+    console.log(voteResult);
+    if (voteResult.length == 6) { //投票成功，有回傳nomName回來
+      // swal("Great!", "You have successfully voted!", "success");
+
+      //先計算六個名字的總票數
+      let totalCount = 0;
+      let countArr = [];
+      for (let i = 0; i < voteResult.length; i++) {
+        totalCount += parseInt(voteResult[i].votedNum);
+        countArr[i] = parseInt(voteResult[i].votedNum);
+      }
+
+      // 票數的最大值
+      let maxCount = Math.max(...countArr);
+
+      // 產生HTML架構，要讓最高票的data-percent為100%
+      let voteBarHTML = '';
+      for (let i = 0; i < voteResult.length; i++) {
+        let dataDecimal = (parseInt(voteResult[i].votedNum) / maxCount);
+        // 要轉成百分比他才會正常
+        let dataPercent = `${Math.round(dataDecimal * 100)}%`;
+        voteBarHTML += `<div class="voteBar" data-percent="${dataPercent}">
+                          <div class="voteBar-title"><span>${voteResult[i].nomName}</span></div>
+                          <div class="voteBar-bar"></div>
+                          <div class="voteBar-percent">${voteResult[i].votedNum}</div>
+                        </div>`;
+      }
+      $id('voteBarBlock').innerHTML = voteBarHTML;
+
+      // 燈箱打開
+      $id('voteOverlay').classList.add('-on');
+      // 執行長條圖動畫
+      doBarAnimate();
+      addClassToMaxBar();
+
+    } else if (voteResult.status == 'voted') { //投過票惹
+      swal('Sorry!', "You can only vote for one animal once a day!", "warning");
+
+    } else { //非會員  
+      let overlay = document.getElementsByClassName('overlay');
+      overlay[0].classList.add('-on');
+    }
+  }
+
+  xhr.open("Post", "voteUpdateVotedNum.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  let data_info = `aquaNo=${aquaNo}&nomName=${nomName}`;
+  xhr.send(data_info);
+};
+
+function doBarAnimate() {
+
+  $('.voteBar').each(function () {
+    $(this).find('.voteBar-bar').animate({
+      width: $(this).attr('data-percent')
+    }, 2000);
+  });
+}
+
+// 關閉投完票的長條圖彈窗
+$(function () {
+  // 關閉
+  $(".voteBarClose2").on("click", function () {
+    $("div.voteOverlay").removeClass("-on");
+  });
+});
+
+
+
