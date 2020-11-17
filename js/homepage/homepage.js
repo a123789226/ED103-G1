@@ -291,7 +291,7 @@ let vue_remaining = new Vue({
 
   })
     .setTween(ticket_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
 
@@ -307,7 +307,7 @@ let vue_remaining = new Vue({
     triggerElement: "#trigger_journal",
   })
     .setTween(journal_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
   var adopt_move = new TimelineMax();
@@ -322,7 +322,7 @@ let vue_remaining = new Vue({
     triggerElement: "#trigger_adopt",
   })
     .setTween(adopt_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
   var vote_move = new TimelineMax();
@@ -337,7 +337,7 @@ let vue_remaining = new Vue({
     triggerElement: "#trigger_vote",
   })
     .setTween(vote_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
   var blog_move = new TimelineMax();
@@ -352,7 +352,7 @@ let vue_remaining = new Vue({
     triggerElement: "#trigger_blog",
   })
     .setTween(blog_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
   var game_move = new TimelineMax();
@@ -367,7 +367,7 @@ let vue_remaining = new Vue({
     triggerElement: "#trigger_game",
   })
     .setTween(game_move)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
 
@@ -708,11 +708,42 @@ function doBarAnimate() {
   });
 }
 
+
+
+
+
 // 關閉投完票的長條圖彈窗
 $(function () {
   // 關閉
   $(".voteBarClose2").on("click", function () {
     $("div.voteOverlay").removeClass("-on");
+  });
+});
+
+
+$(function () {
+  // 關閉
+  $(".complete1").on("click", function () {
+    $("div.adoptOverlay").addClass("-on");
+    $("#adopt_complete").attr('src','./image/index/object/complete1.png');
+  });
+  $(".complete2").on("click", function () {
+    $("div.adoptOverlay").addClass("-on");
+    $("#adopt_complete").attr('src', './image/index/object/complete2.png');
+  });
+  $(".complete3").on("click", function () {
+    $("div.adoptOverlay").addClass("-on");
+    $("#adopt_complete").attr('src', './image/index/object/complete3.png');
+  });
+});
+
+
+
+// 關閉投完票的長條圖彈窗
+$(function () {
+  // 關閉
+  $(".adoptClose2").on("click", function () {
+    $("div.adoptOverlay").removeClass("-on");
   });
 });
 

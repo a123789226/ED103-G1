@@ -772,6 +772,43 @@
       z-index: 4;
     }
   }
+  .adoptOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0, 0, .5);
+    opacity: 0;
+    z-index: -1;
+    // transition: opacity 0.5s;
+    #adoptBox{
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      width: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 6px;
+      text-align: center;
+
+
+      }
+      #adopt_complete{
+        width: 100%;
+      }
+      .adoptClose2{
+        margin-top: 20px;
+        @include btn36Yellow();
+      }
+    }
+  }
+  .adoptOverlay.-on{
+    opacity: 1;
+    z-index: 11;
+  }
   .home_adopt_pic{
     position: relative;
     // padding-top: 100px;
@@ -813,6 +850,26 @@
     width: 20%;
     left: 25%;
     top: 20%;
+  }
+  .complete1, .complete2, .complete3{
+    position: absolute;
+    width: 10%;
+    animation-name: bubble;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+  }
+  .complete1{
+    right: 39%;
+    top: -14%;
+  }
+  .complete2{
+    right: 27%;
+    top: -14%;
+  }
+  .complete3{
+    right: 15%;
+    top: -14%;
   }
   .thanks_card{
     position: absolute;
@@ -1009,8 +1066,22 @@
   }
 }
 
+@keyframes bubble {
+  0% {
+    transform: translateY(0px);
+  }
 
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
+
+
+
 .home_vote{
   padding-top: 100px;
 
