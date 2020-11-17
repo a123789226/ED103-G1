@@ -422,6 +422,8 @@ function openBookDolphin(){
                 },
               })
 
+            //傳aquaNo, aquaPic到adopt.php  
+            doAquano(aquaNo);
 
             //帶入認養人頭像
             doMemPic(aquaNo);
@@ -431,6 +433,35 @@ function openBookDolphin(){
         })
     }
 }
+
+//--------------------------------------------------------------------------
+//傳aquaNo, aquaPic到adopt.php
+function doAquano(aquaNo){
+  // console.log(aquaNo);
+  let xhradopt = new XMLHttpRequest();
+  
+  xhradopt.onload = function(){
+
+      let adoptAqua = JSON.parse(xhradopt.responseText);
+      console.log(adoptAqua);
+
+      let adoptAquaHTML = `
+        <input type="hidden" value="${adoptAqua.aquaNo}">
+        <input type="hidden" value="${adoptAqua.aquaPic}">
+          `;
+
+
+let sendAquaNo = document.getElementById('sendAquaNo');
+sendAquaNo.innerHTML += adoptAquaHTML;
+
+}    
+
+xhradopt.open("POST", "adoptAquano.php", true);
+xhradopt.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+let data_info = `aquaNo=${aquaNo}`;
+xhradopt.send(data_info);
+}
+
 
 //--------------------------------------------------------------------------
 // 找認養人頭像(doMemPic)
