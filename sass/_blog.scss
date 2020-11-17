@@ -43,6 +43,20 @@
     width: 80px;
     // position: relative;
 }
+.blogPostText{
+    border: 2px solid $keyWhite;
+    background-color: $keyGreen;
+    color: $keyWhite;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    transform: translateY(-20px);
+        animation-name: bounce-down;
+        animation-duration: 3s;
+        // animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+}
 .blogPostBtn{
     // position: absolute;
     width: auto;
@@ -107,7 +121,7 @@
 
 }
 .card-title{
-    @include sub_title($keyBlack);
+    @include sub_title($keyGreen);
 }
 .card-text{
     @include text($keyBlack);
@@ -249,12 +263,17 @@
     z-index: 12;
 }
 .blogPostTitle {
-    @include main_title(black);
+    font-size: 36px;
+    font-family: $en;
+    font-weight: 700;
+    color: $keyBlack;
+    position: relative;
     font-size: 1.5rem;
     position: relative;
     display: flex;
     justify-content: center;
     margin: 20px auto;
+  
 }
 .blogPostTitleFont {
     @include sub_title(black);
@@ -300,6 +319,7 @@
     border-width: 0 0 1px 0;
     border-color: #000;
     margin-right: 0;
+    border-radius: 0;
     width: calc(100% - 60px - 20px);
     font-size: 16px;
 }
@@ -322,7 +342,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 25%;
+        width: 20%;
         height: auto;
         // text-align: center;
         margin-right: 5%;
@@ -380,7 +400,7 @@
     background-image: url(../image/blog/photos/img.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: contain 80% 80%;
     height: auto;
     width: 100%;
     // background-image: url(../image/blog/photos/photo.png);
@@ -522,7 +542,23 @@ border-radius: 6px;
 
     @include text($keyWhite);
 }
-
+.blogAritcleStep{
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-content: center;
+    .blogMoreBtnLast{
+    @include btn50White; 
+    box-shadow: $shadow2;
+    margin-right: 20%;
+    }
+    .blogMoreBtnNext{
+    @include btn50Green; 
+    box-shadow: $shadow2;
+    margin-left: 20%;
+    }
+}
 
 // LightBox的RWD
 @media screen and (max-width: 767px){
@@ -564,6 +600,8 @@ border-radius: 6px;
     .blogPostContentPart2{
         display: flex;
         flex-direction: column-reverse;
+        height: 350px * 2;
+        overflow: hidden;
         .blogPostContentText2{
             display: block;
             width: 100%;
@@ -579,6 +617,17 @@ border-radius: 6px;
             height: 350px;
         }
         
+    }
+    .blogPostContentPart3 {
+        display: flex;
+        flex-direction: column;
+        height: 350px * 2;
+        overflow: hidden;
+        .blogPostContentText3{
+            display: block;
+            width: 100%;
+            height: 350px;
+        }
     }
    
 }
@@ -613,4 +662,27 @@ border-radius: 6px;
         width: 80%;
         margin: 10px auto;
     }
+    .blogPostText{
+        display: block;
+        width: 50%;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 auto;
+    }
+    .blogPostBtn{
+        width: 50%;
+        position: fixed;
+        right: -10%;
+        bottom: 5%;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        justify-items: right;
+        justify-self: right;
+        >img{
+        width: 50%;
+        }
+    }
+
 }
