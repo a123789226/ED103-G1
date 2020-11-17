@@ -6,15 +6,6 @@ function doFirst(){
         amountResult.innerText = adoptAmount.value;
     });
 
-
-    // let aquaName = document.getElementById('adoptAquaName');
-    // let aquaNameResult =  document.getElementById('adoptAquaNameResult');
-    
-    // aquaName.addEventListener('blur', function(){
-    //     aquaNameResult.innerText = aquaName.value;
-    // });
-
-
     //First Name
     let adoptFirstname = document.getElementById('adoptFirstname');
     let adoptFirstnameResult = document.getElementById('adoptFirstnameResult');
@@ -46,14 +37,6 @@ function doFirst(){
  
      adoptPhone.addEventListener('blur', function(){
         adoptPhoneResult.innerText = adoptPhone.value;
-     });
-
-     //Message
-     let adoptMessage = document.getElementById('adoptMessage');
-     let adoptMessageResult = document.getElementById('adoptMessageResult');
- 
-     adoptMessage.addEventListener('blur', function(){
-        adoptMessageResult.innerText = adoptMessage.value;
      });
 
       //CardName
