@@ -20,7 +20,7 @@ function addClassToMaxBar(){
   }
 }
 
-// 秀出要被提名的動畫
+// 秀出要被提名的動物
 function showNominateAqua(){
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -224,25 +224,112 @@ function UpdateVotedNum(aquaNo, nomName){
 
 
 
+// 秀出已完成投票的動物
+function showFinishedAqua(){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) { //success
+      let finishedAqua = JSON.parse(xhr.responseText);
+      // console.log(finishedAqua);
+
+      // 先渲染基礎資料，裡面其他要計算最大值等資訊等渲染完再抓取一次
+      let finishedContent = '';
+      for(let i = 0; i < finishedAqua.length; i++){
+        if((i+1) % 6 == 1){ //每隻動物第一筆資料
+          finishedContent += `<div class="voteFinished">             
+                                <div class="voteFinishedNameBox">
+                                  <h4>Name:&nbsp;</h4>
+                                  <h4 class="FinishedName"></h4>
+                                </div>                              
+                                <div class="voteFinishedInfo">
+                                  <div class="voteFinishedImg">
+                                    <img src="./img/aqua/${finishedAqua[i].aquaPic}">
+                                    <a href="journal.html" class="journal">Journal</a>
+                                  </div>
+                                  <p><span>Creature:&nbsp;</span><span>${finishedAqua[i].aquaType}</span></p>
+                                  <p><span>Voting deadline:&nbsp;</span><span>${finishedAqua[i].voteEnd}</span></p>
+                                </div>
+                                <div class="vote_bar_block">
+                                  <div class="voteBar">
+                                    <div class="voteBar-title"><span>${finishedAqua[i].nomName}</span></div>
+                                    <div class="voteBar-bar"></div>
+                                    <div class="voteBar-percent">${finishedAqua[i].votedNum}</div>
+                                  </div>`;
+
+        }else if((i+1) % 6 == 0){ //每隻動物第六筆資料
+          finishedContent += `<div class="voteBar">
+                                <div class="voteBar-title"><span>${finishedAqua[i].nomName}</span></div>
+                                <div class="voteBar-bar"></div>
+                                <div class="voteBar-percent">${finishedAqua[i].votedNum}</div>
+                              </div>
+                            </div> 
+                          </div>`;
+
+        }else{ //每隻動物第二到五比資料
+          finishedContent += `<div class="voteBar">
+                                <div class="voteBar-title"><span>${finishedAqua[i].nomName}</span></div>
+                                <div class="voteBar-bar"></div>
+                                <div class="voteBar-percent">${finishedAqua[i].votedNum}</div>
+                              </div>`;
+        }
+      }
+
+      $id('voteFinishedBlock').innerHTML = finishedContent;
+
+      // 針對每一隻動物去找最大票數的姓名，並給長條圖%數
+      let voteFinished = document.getElementsByClassName('voteFinished');
+      for(let i = 0; i < voteFinished.length; i++){
+        let voteNum = voteFinished[i].querySelectorAll('.voteBar-percent');
+        let voteNumArr = [];
+        for(let j = 0; j < voteNum.length; j++){
+          voteNumArr[j] = voteNum[j].innerText;
+        }
+        let maxCount = Math.max(...voteNumArr);
+        // console.log(maxCount);
+
+        let aquaName;
+        // 給長條圖%數
+        let voteBar = voteFinished[i].querySelectorAll('.voteBar');
+        for(let j = 0; j < voteBar.length; j++){
+          let thisNum = voteBar[j].querySelector('.voteBar-percent');
+          let dataDecimal = (parseInt(thisNum.innerText) / maxCount);
+          // 要轉成百分比他才會正常
+          let dataPercent = `${Math.round(dataDecimal * 100)}%`;
+          voteBar[j].dataset.percent = dataPercent;
+
+          // 找最高票數的名字是誰
+          if(parseInt(thisNum.innerText) == maxCount){
+            aquaName = thisNum.previousElementSibling.previousElementSibling.children[0].innerText;
+          }
+        }
+
+        // 把名字塞到標題
+        voteFinished[i].querySelector('.FinishedName').innerText = aquaName;
+      }
+
+      // 執行長條圖兩個動畫
+      addClassToMaxBar();
+      doBarAnimate();
+
+    }
+  }
+  xhr.open("get", "voteShowFinished.php", true);
+  xhr.send(null);
+};
+
+
+
 
 
 function voteDoFirst(){
-  // 長條圖最大值加上屬性
-  addClassToMaxBar();
-
-  // 執行長條圖動畫
-  doBarAnimate();
-
   // 秀出要被提名的動物
   showNominateAqua();
 
   // 秀出在投票狀態的動物
   showVotingAqua();
 
-
-
   // 秀出已完成投票的動物
-  //進度： 0%
+  showFinishedAqua();
 }
 
 window.addEventListener('load', voteDoFirst);
@@ -263,6 +350,11 @@ $(function(){
     /* 找到對應的頁籤內容，加上 -on 來顯示 */
     $("div.vote").removeClass("-on");
     $("div.vote." + $(this).attr("data-target")).addClass("-on");
+    
+    // 執行長條圖兩個動畫
+    addClassToMaxBar();
+    doBarAnimate();
+
   });
 });
 
@@ -277,6 +369,10 @@ $(function(){
 function doBarAnimate(){
 
   $('.voteBar').each(function(){
+    // 每次要先讓寬度變0才會都有動態的效果
+    $(this).find('.voteBar-bar').width(0);
+
+    // 長條圖寬度變成對應%數的寬度
     $(this).find('.voteBar-bar').animate({
       width: $(this).attr('data-percent')
     }, 2000);

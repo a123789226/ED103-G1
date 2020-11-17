@@ -186,7 +186,7 @@ function checkRemain(){
             window.location = "ticket.html#ticketOverNightBox";
           }
         });
-        setTimeout("location.href='ticket.html#ticketOverNightBox';", 5000); 
+        setTimeout("location.href='ticket.html#ticketOverNightBox';", 10000); 
       }
     }else{
       alert(xhr.status);
