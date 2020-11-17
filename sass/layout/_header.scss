@@ -255,8 +255,8 @@ ul{
   .memProfileBlock{
     position: absolute;
     top: 110px;
-    right: 30px;
-    width: 200px;
+    right: 20px;
+    width: 220px;
     background-color: rgba(255, 255, 255, .7);
     border-radius: 6px;
     text-align: center;
@@ -270,12 +270,12 @@ ul{
       }
     }
     .memProfileLink{
-      width: 165px;
+      width: 185px;
       @include btn36Yellow;
       box-shadow: $shadow2; 
     }
     #SignOutLink{
-      width: 165px;
+      width: 185px;
       @include btn36Yellow;
       box-shadow: $shadow2; 
       margin: 15px 0 20px;
