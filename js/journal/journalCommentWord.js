@@ -2,18 +2,17 @@
   $('#doPost').on('click',function(){
       $.ajax({
         url:'journalComment1.php',
-        type:'GET',
+        type:'POST',
         dataType:'json',
         data:{
           aquano:$('#openAquaNo').text(),
           word:$('#myInput').val(),
         },
         complete(e){
-          console.log(typeof(e.responseText));
           let word = $('#myInput').val();
           if(e.responseText == 'OhOh'){
-            alert('123');
           }else{
+            console.log(data);
             $('.jourCommentList ul').prepend(`
             <li>
               <div class="jourCommentPersonPic"><img src="./image/journal/journal_element/adopter.png"

@@ -10,7 +10,7 @@ try{
   order by c.msgTime DESC;";
  
   $comment = $pdo->prepare($sql);
-  $comment->bindValue(":aquaNo", 1);
+  $comment->bindValue(":aquaNo", $_POST["aquaNo"]);
   $comment->execute();
   if($comment->rowCount()==0){ // 無留言
     echo "{}";

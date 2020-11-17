@@ -19,7 +19,7 @@ function chooseAquaType(){
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                            <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -33,7 +33,7 @@ function chooseAquaType(){
                                 <td>${aquas[i].aquaName}</td>
                             </tr>
                             <tr>
-                                <th>Found Location</th>
+                                <th>Found Place</th>
                                 <td>${aquas[i].rescueLoc}</td>
                             </tr>
                             <tr>
@@ -82,7 +82,7 @@ function chooseAquaType(){
                     </div>
                     <div class="jourBookRight">
                         <div class="jourBookPhoto">
-                            <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                            <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                         </div>
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
@@ -96,7 +96,7 @@ function chooseAquaType(){
                                 <td>${aquas[i].aquaName}</td>
                             </tr>
                             <tr>
-                                <th>Found Location</th>
+                                <th>Found Place</th>
                                 <td>${aquas[i].rescueLoc}</td>
                             </tr>
                             <tr>
@@ -145,7 +145,7 @@ xhrSeal.onload = function(){
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                        <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -159,7 +159,7 @@ xhrSeal.onload = function(){
                             <td>${aquas[i].aquaName}</td>
                         </tr>
                         <tr>
-                            <th>Found Location</th>
+                            <th>Found Place</th>
                             <td>${aquas[i].rescueLoc}</td>
                         </tr>
                         <tr>
@@ -209,7 +209,7 @@ xhrTurtle.onload = function(){
                 </div>
                 <div class="jourBookRight">
                     <div class="jourBookPhoto">
-                        <img src="././img/aqua/${aquas[i].aquaNo}" alt="">
+                        <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
                     </div>
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
@@ -223,7 +223,7 @@ xhrTurtle.onload = function(){
                             <td>${aquas[i].aquaName}</td>
                         </tr>
                         <tr>
-                            <th>Found Location</th>
+                            <th>Found Place</th>
                             <td>${aquas[i].rescueLoc}</td>
                         </tr>
                         <tr>
@@ -259,7 +259,7 @@ $.ajax({
   type: 'get',
   success: function (data) {
     data1 = JSON.parse(data);
-    console.log(data1.aquaNo);
+    // console.log(data1.aquaNo);
     let demoDolphinId = document.getElementById('demoDolphinId');
     let demoDolphinName = document.getElementById('demoDolphinName');
     let demoDolphinLoc = document.getElementById('demoDolphinLoc');
@@ -324,7 +324,7 @@ function openBookDolphin(){
                     openFoundLoc.innerText = data[0].rescueLoc;
                     openArriveDate.innerText = data[0].arriveDate;
                     openAquaStory.innerText = data[0].jourStory;
-
+                    console.log(data);
                   for(let i=0; i<data.length; i++){
                       if( i == 0){
                         element = $(`<div />`).html(`
@@ -333,14 +333,14 @@ function openBookDolphin(){
                           <h4>${data[i].jourDate}</h4>
                           <div class="jourPagePhotoArea1">
                             <div class="jourPagePhotoLeft1">
-                              <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                              <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
                             </div>
                             <div class="jourPagePhotoRight1">
                               <div class="jourPagePhotoRightInner1">
-                                <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                                <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
                               </div>
                               <div class="jourPagePhotoRightInner1">
-                                <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                                <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
                               </div>
                             </div>
                           </div>
@@ -355,16 +355,16 @@ function openBookDolphin(){
                             element = $(`<div />`).html(`<div class="hard jourPage${i+1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
-                              <div class="jourPagePhotoArea1">
+                                <div class="jourPagePhotoArea1">
                                 <div class="jourPagePhotoLeft1">
-                                  <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                                  <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
                                 </div>
                                 <div class="jourPagePhotoRight1">
                                   <div class="jourPagePhotoRightInner1">
-                                    <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                                    <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
                                   </div>
                                   <div class="jourPagePhotoRightInner1">
-                                    <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                                    <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
                                   </div>
                                 </div>
                               </div>
@@ -383,16 +383,16 @@ function openBookDolphin(){
                         element = $(`<div />`).html(`<div class="jourPage jourPage${i+1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
-                          <div class="jourPagePhotoArea1">
+                            <div class="jourPagePhotoArea1">
                             <div class="jourPagePhotoLeft1">
-                              <img src="./image/journal/journal_dolphin/23.jpg" alt="">
+                              <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
                             </div>
                             <div class="jourPagePhotoRight1">
                               <div class="jourPagePhotoRightInner1">
-                                <img src="./image/journal/journal_dolphin/15.jpg" alt="">
+                                <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
                               </div>
                               <div class="jourPagePhotoRightInner1">
-                                <img src="./image/journal/journal_dolphin/14.jpg" alt="">
+                                <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
                               </div>
                             </div>
                           </div>
@@ -443,11 +443,12 @@ function doMemPic(aquaNo){
     
     xhradopter.onload = function(){
         let adopter = JSON.parse(xhradopter.responseText);
+        console.log(adopter);
         // console.log(adopter[0].memPic);
         let adopterHTML='';
         for(i=0; i<adopter.length; i++){
             adopterHTML += `
-            <li><img src="./img/member/${adopter[i].memPic}"></li>
+            <li><img src="${adopter[i].memPic}"></li>
             `;
 }
 
@@ -471,9 +472,34 @@ function doPost(aquaNo){
     // console.log(aquaNo);
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
+      let aquaNo = JSON.parse(xhr.responseText); //取得aquaNo字串？
+      console.log(aquaNo);
+        let journalCommentHTML='';
+        for(i=0; i<aquaNo.length; i++){
+            journalCommentHTML +=`
+            <li>
+            <div class="jourCommentPersonPic"><img src="./image/memPic/${aquaNo[i].memPic}"
+                  alt=""></div>
+            <div class="jourCommentOrder">
+              <div class="jourCommentInfo">
+                <p class="jourCommentPersonName">${aquaNo[i].memName}</p>
+                <p class="jourCommentTime">${aquaNo[i].msgTime}</p>
+              </div>
+              <div class="jourCommentBox">
+                <h5 class="jourCommentWords">${aquaNo[i].msgContent}</h5>
+                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+              </div>
+            </div>
+          </li>
+            
+            `;
+        }
+
+        let message_box = document.getElementById('messageBox');
+        message_box.innerHTML = journalCommentHTML;
     }
 
-    xhr.open("Post", "??????.php", true);
+    xhr.open("Post", "journalComment.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     let data_info = `aquaNo=${aquaNo}`;
     xhr.send(data_info);
