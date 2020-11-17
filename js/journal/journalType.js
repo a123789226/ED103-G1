@@ -478,7 +478,7 @@ function doPost(aquaNo){
         for(i=0; i<aquaNo.length; i++){
             journalCommentHTML +=`
             <li>
-            <div class="jourCommentPersonPic"><img src="./image/memPic/${aquaNo[i].memPic}"
+            <div class="jourCommentPersonPic"><img src="./${aquaNo[i].memPic}"
                   alt=""></div>
             <div class="jourCommentOrder">
               <div class="jourCommentInfo">
