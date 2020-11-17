@@ -273,7 +273,7 @@ body {
 .jourBookRight {
   // width: 93%;
   background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
-
+  padding: 20px 0;
   display: inline-block;
   // padding-bottom: 120px;
   border-radius: 3px 10px 10px 3px;
@@ -281,6 +281,9 @@ body {
   // background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%);
   // background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
   // background: linear-gradient(45deg, #6d4a03 1%, #aa7304 20%, #f2a306 50%, #aa7304 80%, #6d4a03 99%);
+  @media screen and (max-width: 676px) {
+    padding: 10px 0px 0px 0px;
+  }
 }
 
 .jourBookPhoto {
@@ -303,6 +306,7 @@ body {
 .jourBookName {
   margin: 0 auto;
   text-align: center;
+  height: 30px;
   @include sub_title($keyWhite);
 }
 
@@ -328,6 +332,11 @@ a.jourBookName {
   padding: 20px 10px 20px 20px;
   // border: 3px solid white;
 
+  @media screen and (max-width: 676px) {
+    padding: 10px 5px 10px 10px;
+
+  }
+  
 
   table {
     margin: 0 auto;
@@ -344,8 +353,9 @@ a.jourBookName {
     td {
       padding-left: 10px;
       font-size: 16px;
-
     }
+
+    
   }
 
   .jourAquaStory {
@@ -364,6 +374,8 @@ a.jourBookName {
     line-height: 20px;
     width: 100%;
   }
+
+
 }
 
 .jourBookShadow {
@@ -588,12 +600,13 @@ div.jourLightBox.-on {
   display: inline-block;
   width: 40px;
   height: 40px;
+  margin: 3px;
 }
 
 .jourAdopterlist li img {
   width: 40px;
   height: 40px;
-  border: 3px solid $keyGreen;
+  // border: 3px solid $keyGreen;
   border-radius: 50%;
   box-shadow: $shadow;
 }
@@ -659,31 +672,43 @@ div.jourLightBox.-on {
 
 // comment list
 .jourCommentList {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  // border: 3px solid pink;
+  // border: 3px solid red;
   display: block;
   text-align: center;
+  overflow: auto;
+  height: 300px;
+}
+
+.message_box{
+  width: 80%;
+  // border: 3px solid blue;
+  margin: 0 auto;
+
 }
 
 .jourCommentList li {
   margin: 15px auto;
+  display: block;
+
 }
 
 .jourCommentPersonPic {
   display: inline-block;
   width: 40px;
   height:40px;
-  margin: 0 auto;
+  margin: 5px;
   text-align: center;
+  // border: 3px solid blue;
+
 }
 
 .jourCommentPersonPic img{
-
   width: 40px;
   height:40px;
   margin: 0 auto;
-  border: 3px solid $keyGreen;
+  box-shadow: $shadow;
   border-radius: 50%;
 
 
@@ -694,14 +719,24 @@ div.jourLightBox.-on {
   margin: 0 auto;
   // border: 3px solid pink;
   width: 85%;
+  
+  @media screen and (max-width: 676px) {
+    text-align:left;
+    margin: 0;
+    width: 80%;
+
+  } 
+
 }
 
 .jourCommentInfo,
 .jourCommentBox {
   display: block;
-  // border: 3px solid blue;
+  // border: 3px solid green;
   width: 100%;
 }
+
+
 
 .jourCommentBox textarea {
   display: block;
@@ -721,6 +756,12 @@ div.jourLightBox.-on {
   text-align: left;
   // border: 3px solid pink;
   width: 50%;
+  padding-left: 20px;
+  @media screen and (max-width: 676px) {
+    padding-left: 0px;
+    width: 33%;
+
+  }
 }
 
 .jourCommentTime {
@@ -729,6 +770,14 @@ div.jourLightBox.-on {
   text-align: right;
   // border: 3px solid pink;
   width: 48%;
+  padding-right: 50px;
+  @media screen and (max-width: 676px) {
+    padding-right: 0px;
+  width: 65%;
+
+  }
+
+
 }
 
 .jourCommentBox {

@@ -1,11 +1,7 @@
 <?
 $ErrMsg='';
 try{
-<<<<<<< HEAD
-    require_once('./connectAqua.php');
-=======
     require_once("./connectAqua.php");
->>>>>>> 69866c32f557cbad86340e1d7528aea14dacd962
     $sql = "INSERT INTO `journal_message` 
             (memNo,
             jourNo,

@@ -12,7 +12,7 @@
           let word = $('#myInput').val();
           if(e.responseText == 'OhOh'){
           }else{
-            console.log(data);
+            console.log(e);
             $('.jourCommentList ul').prepend(`
             <li>
               <div class="jourCommentPersonPic"><img src="./image/journal/journal_element/adopter.png"
@@ -24,7 +24,6 @@
                 </div>
                 <div class="jourCommentBox">
                   <h5 class="jourCommentWords">${word}</h5>
-                  <!-- <a href="#" class="jourCommentLike"><img src="./image/journal/journal_element/like.png" alt=""></a> -->
                   <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
                 </div>
               </div>

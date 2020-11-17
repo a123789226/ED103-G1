@@ -210,7 +210,13 @@
             </form>
         </div>
     </div>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- adopt succeed -->
+    <script>
+        document.getElementById("demo1").addEventListener("click", function () {
+            swal("Adopt Succeed!", "Thank you for your adoption!", "success");
+        });
+    </script>
     
 </body>
 

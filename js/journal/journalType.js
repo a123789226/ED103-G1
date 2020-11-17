@@ -315,9 +315,6 @@ function openBookDolphin(){
                 success: function (data) {
                     console.log($("#flipbook2").turn("pages"));
 
-                    
-
-
                     console.log(data.length);
                     openAquaNo.innerText = data[0].aquaNo;
                     openAquaName.innerText = data[0].aquaName;
