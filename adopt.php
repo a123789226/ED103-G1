@@ -17,6 +17,7 @@ $name = explode(",",$_GET['name']);
     <script src="./js/memLogin.js"></script>
     <script src="./js/layout/header.js"></script>
     <script src="./js/journal/adopt.js"></script>
+    <script src="./js/journal/type.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
