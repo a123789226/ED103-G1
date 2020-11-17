@@ -16,7 +16,7 @@ try {
                                                   WHERE DateDiff(Now(), a.voteEnd) >= 0 AND n.nomStatus = 1 
                                                   GROUP BY a.aquaNo 
                                                   HAVING count(n.aquaNo) = 6)
-          ORDER BY a.voteEnd, n.aquaNo;"; //一定要排序(最先結束的最前，相同日期就動物編號小的在前)
+          ORDER BY a.voteEnd DESC, n.aquaNo;"; //一定要排序(最後結束的最前(時間越大的越前面)，相同日期就動物編號小的在前)
 
   $vote = $pdo->query($sql);
   $vote->execute();
