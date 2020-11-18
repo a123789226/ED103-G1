@@ -9,7 +9,7 @@
     <link rel="icon" href="./image/header/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
-    <title>Aqua backend</title>
+    <title>Aqua Wonderland</title>
 </head>
 <body>
   <!-- 下面是背景的div，先不要動到 -->
@@ -317,7 +317,7 @@
               <h3>AQUA</h3>
               <button id="ngrAquaAdd" onclick="btnAquaAdd()" class="ngrAquaAdd btn_modal">ADD AQUA</button>
               <div class="jourAdd overlay">
-                <form class="aquaForm" id="aquaForm" method="post">
+                <form action="InsertbackAqua.php" class="aquaForm" id="aquaForm" method="post" enctype="multipart/form-data">
                   <div class="btn_modal_close">
                     <div></div>
                     <div></div>
@@ -330,8 +330,8 @@
                     <option value="2">turtle</option>
                     <option value="3">whale</option>
                   </select><br>
-                  <label for="">aquaName(Null):</label><br>
-                  <input type="text" name="aquaName"><br>
+                  <!-- <label for="">aquaName(Null):</label><br>
+                  <input type="text" name="aquaName"><br> -->
                   <label for="">aquaAge:</label><br>
                   <input type="number" name="aquaAge"><br>
                   <label for="">aquaSex:</label>
@@ -341,36 +341,36 @@
                   </select><br>
                   <label for="">arriveDate:</label><br>
                   <input type="date" name="arriveDate"><br>
-                  <label for="">rescueLocation:</label><br>
-                  <input type="text" name="rescueLocation"><br>
+                  <label for="">rescueLoc:</label><br>
+                  <input type="text" name="rescueLoc"><br>
                   <label for="">aquaStory:</label><br>
                   <textarea name="aquaStory" style="width: 100%;"></textarea><br>
                   <label for="">recoverStatus(0:恢復中;1:已恢復):</label>
-                  <select name="aquaSex" id="">
+                  <select name="recoverStatus" id="">
                     <option value="0">0</option>
                     <option value="1">1</option>  
                   </select><br>
-                  <label for="">releaseDate(Null):</label><br>
-                  <input type="date" name="releaseDate"><br>
+                  <!-- <label for="">releaseDate(Null):</label><br>
+                  <input type="text" name="releaseDate"><br>
                   <label for="">releaseLoc(Null):</label><br>
-                  <input type="text" name="releaseLoc"><br>
+                  <input type="text" name="releaseLoc"><br> -->
                   <label for="">aquaPic:</label><br>
-                  <input type="file" name="aquaPic"><br>
+                  <input type="file" name="upFile[]" accept="images/png, images/jpg, image/jpeg"><br>
                   <!-- <label for="">adoptTotalNum(Null):</label><br>
                   <input type="number" name="adoptTotalNum"><br>
                   <label for="">adoptTotalAmt(Null):</label><br>
                   <input type="number" name="adoptTotalAmt"><br> -->
                   <label for="">nameStatus(提名中/投票中/已完成):</label><br>
                   <input type="text" name="nameStatus"><br>
-                  <label for="">nameStart(Null):</label><br>
+                  <!-- <label for="">nameStart(Null):</label><br>
                   <input type="date" name="nameStart"><br>
                   <label for="">nameEnd(Null):</label><br>
                   <input type="date" name="nameEnd"><br>
                   <label for="">voteStart(Null):</label><br>
                   <input type="date" name="voteStart"><br>
                   <label for="">voteEnd(Null):</label><br>
-                  <input type="date" name="voteEnd"><br>
-                  <button type="button" class="ngrbtnAquaAdd" id="ngrbtnAquaAdd">Comfirm</button><br>
+                  <input type="date" name="voteEnd"><br> -->
+                  <button type="submit" class="ngrbtnAquaAdd" id="ngrbtnAquaAdd">Comfirm</button><br>
                 </form>
               </div>
               <table class="mgrAquaAll">
@@ -387,8 +387,8 @@
                   <th width="150">Release Date(Null)</th>
                   <th width="150">Release Location(Null)</th>
                   <th width="200">Aqua Pic</th>
-                  <!-- <th width="50">Adopt Number</th>
-                  <th width="50">Adopt Amount</th> -->
+                  <th width="50">Adopt Number</th>
+                  <th width="50">Adopt Amount</th>
                   <th width="50">Name Status</th>
                   <th width="150">Name Start(Null)</th>
                   <th width="150">Name End(Null)</th>
@@ -709,34 +709,29 @@
             <!-- JOURNAL -->
             <div class="mgrTab tab8 mgrJournal">
               <h3>JOURNAL</h3>
-              <button id="ngrJournalAdd" onclick="btnJourAdd()" class="ngrJournalAdd btn_modal">ADD JOURNAL</button>
+              <button id="ngrJournalAdd" class="ngrJournalAdd btn_modal">ADD JOURNAL</button>
               <div class="jourAdd overlay">
-                <form class="jourForm" id="jourForm" method="post">
+                <form action="InsertbackJournal.php" class="jourForm" id="jourForm" method="post" enctype="multipart/form-data">
                   <div class="btn_modal_close">
                     <div></div>
                     <div></div>
                   </div>
                   <h3>ADD JOURNAL</h3>
-                  <label for="">aquaType:</label>
-                  <select name="aquaType" id="">
-                    <option value="0">dolphin</option>
-                    <option value="1">seal</option>
-                    <option value="2">turtle</option>
-                    <option value="3">whale</option>
-                  </select><br>
+                  <label for="">aquaNo:</label>
+                  <input type="text" id="aquaNo" name="aquaNo"><br>
                   <label for="">jourStory(can be null):</label><br>
-                  <input type="text" name="jourStory"><br>
+                  <input type="text" id="jourStory" name="jourStory"><br>
                   <label for="">jourContent:</label><br>
-                  <textarea name="jourContent" rows="5" style="width: 100%;"></textarea><br>
+                  <textarea id="jourContent" name="jourContent" rows="5" style="width: 100%;"></textarea><br>
                   <label for="">jourPic1:</label><br>
-                  <input type="file" name="jourPic1"><br>
+                  <input type="file" name="upFile[]" accept="images/png, images/jpg, image/jpeg"><br>
                   <label for="">jourPic2:</label><br>
-                  <input type="file" name="jourPic2"><br>
+                  <input type="file" name="upFile[]" accept="images/png, images/jpg, image/jpeg"><br>
                   <label for="">jourPic3:</label><br>
-                  <input type="file" name="jourPic3"><br>
+                  <input type="file" name="upFile[]" accept="images/png, images/jpg, image/jpeg"><br>
                   <label for="">jourDate:</label><br>
-                  <input type="date" name="jourDate"><br>
-                  <button type="button" class="ngrbtnJourAdd" id="ngrbtnJourAdd">Comfirm</button><br>
+                  <input type="date" id="jourDate" name="jourDate"><br>
+                  <button type="submit" class="ngrbtnJourAdd" id="ngrbtnJourAdd">Comfirm</button><br>
                 </form>
               </div>
               <table class="mgrJournalAll">
@@ -744,7 +739,7 @@
                   <th width="100">Journal No</th>
                   <th width="100">Aqua No</th>
                   <th width="100">Story</th>
-                  <th width="300">Content</th>
+                  <th width="100">Content</th>
                   <th width="100">Pic1</th>
                   <th width="100">Pic2</th>
                   <th width="100">Pic3</th>
