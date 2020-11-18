@@ -165,7 +165,9 @@
     require_once('./php/connectBook.php');
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
-    FROM blog b JOIN member m ON (b.memNo = m.memNo) ORDER BY blogNo DESC";
+    FROM blog b JOIN member m ON (b.memNo = m.memNo)
+    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = 'reported')
+    ORDER BY blogNo DESC";
    
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
