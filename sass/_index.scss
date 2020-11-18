@@ -1,3 +1,46 @@
+.indexBackGround{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(139, 227, 243) 0%, rgb(195, 239, 245) 50%, rgb(139, 227, 243) 100%);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  .commonBGSet{
+    position: absolute;
+    left: 0;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    width: 100%;
+    height: 1600px;
+    transform: translateY(-50%);
+  }
+  .commonBG00{
+    background-image: url("../image/background/bg0.png");
+    top: 80%;
+  }
+  .BGFish1, .BGFish2{
+    position: absolute;  
+    opacity: 20%;   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .commonBG01{
+    background-image: url("../image/background/bg1-2.png");
+    top: 100%;
+  }
+
+
+  @include BG02('bridge', 140%);
+  @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+  @include BGRight('bg1-4', 90%, 0%, 10%);
+  @include FishMove1(30%, 30%, 10s);
+  @include FishMove2(30%, 60%, 15s);
+}
+
+
 .indexTitle{
   h1{
     color: $keyGreen;
@@ -35,5 +78,55 @@
     .homepage:hover p, .backend:hover p{
       color: $blockYellow;
     }
+  }
+}
+
+
+
+
+
+//創建的水波紋樣式
+.clickEffect{
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -100px 0 0 -100px;
+  border: 8px solid;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99999;
+  transform-origin: center;
+  animation-name: clickEffect;
+  animation-duration: 2s;
+}
+
+.clickEffect::before,
+.clickEffect::after{
+  content: "";
+  display: block;
+  height: 200px;
+  width: 200px;
+  border: 8px solid;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: clickEffect;
+  animation-duration: 2s;
+  animation-delay: .1s;
+}
+
+.clickEffect::after{
+  animation-delay: .4s;
+}
+
+@keyframes clickEffect{
+  0%{
+    color: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+  }
+  100%{
+    color: rgba(255, 255, 255, 0);
+    transform: scale(1);
   }
 }
