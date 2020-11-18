@@ -12,7 +12,7 @@ try{
         $blogMark->bindValue(":likework", $_POST["likework"]);
         $blogMark->execute();//執行之
 
-
+    echo "刪除成功";
     }catch(PDOException $e){
             echo "錯誤訊息:", $e->getLine(),"<br>";
             echo "錯誤訊息:", $e->getMessage(),"<br>";

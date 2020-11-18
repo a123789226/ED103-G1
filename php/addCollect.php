@@ -13,7 +13,7 @@ try{
         $blogMark->execute();//執行之
         // $blogMarkNo = $pdo->lastInsertId();
 
-
+    echo '異動成功';
     }catch(PDOException $e){
             echo "錯誤訊息:", $e->getLine(),"<br>";
             echo "錯誤訊息:", $e->getMessage(),"<br>";

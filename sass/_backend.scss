@@ -121,6 +121,12 @@
     }
   }
   // 右邊內容
+  input{
+    font-size: 16px;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 5px;
+  }
   .fas{
     cursor: pointer;
   }
@@ -200,6 +206,7 @@
       }
       // MEMBER
       .mgrMemAll{
+        display: block;
         height: 800px;
         overflow-y: scroll;
         tr{
@@ -321,6 +328,7 @@
       // ORDER
       .mgrOrderAll{
         text-align: center;
+        display: block;
         height: 800px;
         overflow-y: scroll;
         .mgrSecTab.-on{
@@ -420,6 +428,7 @@
       }
       // ADOPT
       .mgrAdoptAll{
+        display: block;
         width: 100%;
         height: 800px;
         overflow-y: scroll;
@@ -551,6 +560,7 @@
       }
       // JOURNAL MSG
       .mgrJournalMsgAll{
+        display: block;
         height: 800px;
         overflow-y: scroll;
         .mgrSecTab.-on{
@@ -585,6 +595,7 @@
       }
       // THANKSCARD
       .mgrThankscardAll{
+        display: block;
         height: 800px;
         overflow-y: scroll;
         tr{
@@ -615,6 +626,7 @@
       }
       // BLOG
       .mgrBlogAll{
+        display: block;
         width: 100%;
         height: 800px;
         overflow: scroll;
@@ -650,6 +662,7 @@
       }
       // NOMINATE
       .mgrNominateAll{  
+        display: block;
         width: 100%;
         height: 800px;
         overflow: scroll;
@@ -678,6 +691,7 @@
       }
       // MANAGER
       .mgrManagerAll{
+        display: block;
         height: 800px;
         overflow-y: scroll;
         tr{

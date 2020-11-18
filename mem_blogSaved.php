@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("./connectAqua.php");
-  $sql = "select b.blogPic , b.blogTitle , b.blogTags from blog_mark s join blog b on (s.blogNo = b.blogNo) join member m on(m.memNo = s.memNo) where m.memId =:id;";
+  $sql = "select b.blogPic , b.blogTitle , b.blogTags, b.blogNo from blog_mark s join blog b on (s.blogNo = b.blogNo) join member m on(m.memNo = s.memNo) where m.memId =:id;";
  
   $member = $pdo->prepare($sql);
   $member->bindValue(":id", $_POST["id"]);
@@ -18,7 +18,7 @@ try{
         $i = 0;
         foreach($memberRows as $memberRow)
         {
-        $result[$i] = array("blogPic"=>$memberRow["blogPic"], "blogTitle"=>$memberRow["blogTitle"],"blogTags"=>$memberRow["blogTags"]);
+        $result[$i] = array("blogPic"=>$memberRow["blogPic"], "blogTitle"=>$memberRow["blogTitle"],"blogTags"=>$memberRow["blogTags"], "blogNo"=>$memberRow["blogNo"]);
             $i++;
 
       }

@@ -165,12 +165,19 @@
     require_once('./php/connectBook.php');
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
-    FROM blog b JOIN member m ON (b.memNo = m.memNo) ORDER BY blogNo DESC";
+    FROM blog b JOIN member m ON (b.memNo = m.memNo)
+    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = 'reported')
+    ORDER BY blogNo DESC";
    
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
    
 
+    if(isset($_SESSION["memNo"])){
+      $_SESSION["memNo"] = $_SESSION["memNo"];
+    }else{
+      $_SESSION["memNo"] = '0';
+    }
 
     $sql1 = "SELECT blogNo
     FROM  blog_mark 
@@ -184,8 +191,6 @@
         foreach($blogMarkRows as $key => $val){
         array_push($arr,$val['blogNo']);
        }
-      //  var_dump($arr);
-      //  die;
 
 
 
@@ -232,26 +237,20 @@
                   <?php
                       if(in_array($prodRow["blogNo"],$arr)){
                       ?>
-                      
-                      <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" >
+                       <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg"  style="display:none" data-blogcollect="<?=$prodRow["blogNo"]?>">
+                      <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg"  data-blogcollect="<?=$prodRow["blogNo"]?>">
                       
                       <?php  
                       }else{
                         ?>
-                      <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg">
+                      <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg" data-blogcollect="<?=$prodRow["blogNo"]?>">
+                      <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg"  style="display:none" data-blogcollect="<?=$prodRow["blogNo"]?>">
                       <?php
                       }
                     
                   ?>
                   </div>
-                     <!-- <img class="unlike" onclick='addLike(<=$prodRow["blogNo"]?>,<=$count?>)' src="./image/blog/icons/icon_heart.svg"> -->
-                  <!-- </div>
-                   <div class="blogPostIconAfter"> -->
-                     <!-- <img class="liked" onclick='deleteLike(<=$prodRow["blogNo"]?>,<=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" style="display:none;"></div> -->
-                   
-                   
-                   <!-- 先關掉 -->
-                     <!-- <div class="blogPostCollectNum"><$prodRow["blogMark"]?></div> -->
+
                </div>
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
@@ -349,16 +348,6 @@
   </footer>
   
   <script>
-  // ---------這裡是jQuery---------
-  // 愛心點擊換圖＆數字增加
-  // $(".blogPostCollected").click(function() {
-  // if ($(this).hasClass("like-active")) {
-  //   $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) - 1)
-  // } else {
-  //   $(this).find('.blogPostCollectNum').html(parseInt($(this).find('.blogPostCollectNum').html(), 10) + 1)
-  // }
-  // $(this).toggleClass('like-active');
-  // });
 
   // 發文頁面 tag選擇
     $(".blogPostTags").on("click", function(){
@@ -427,31 +416,6 @@ function(inputValue){
       document.getElementsByClassName("blogPostContainer")[0].style.display = "none";
           };
     }
-
-  // ---------這裡是換圖---------
-
-//   // 建立變數         
-// let arr = new Array();
-// let postcardPhotoPut = document.getElementById('blogPostWrapImg1');//放置PHOTO的img標籤的ID
-// let updatePhotoHere =document.getElementById('img1');//input的ID
-
-// // 建立事件聆聽
-
-// updatePhotoHere.addEventListener('change',PhotoPut);   //建立事件聆聽，偵測input發生change事件，執行PhotoPut函數
-
-// // 函數區
-
-// function PhotoPut(){
-//     let putPhotoFrom = updatePhotoHere.files[0];     //抓input內的FILE資訊，因為只有一個檔案，所以為FILES陣列中的第一個
-//     let readPhoto = new FileReader();       //將FileReader物件命名
-//     readPhoto.readAsDataURL(putPhotoFrom);    //使用FileReader的物件方法
-//     readPhoto.addEventListener('load',function(e){    //建立事件聆聽 等待讀到檔案，LOAD事件發生
-//        postcardPhotoPut.src = readPhoto.result;   //結果放入img標籤的src
-//        postcardPhotoPut.style.width = '100%';   //設定寬
-//        postcardPhotoPut.style.height = '100%';  //設定高
-//     });
-
-// }
 
 
 
@@ -529,6 +493,21 @@ function doFirst(){
   content3.addEventListener('blur', function(){
     inputContent3.value = content3.innerText;
   })
+
+
+
+
+
+  //給登出按鈕建立事件聆聽
+  let SignOutLink = document.getElementById('SignOutLink');
+  SignOutLink.addEventListener('click', function(){
+    let redHeart = document.querySelectorAll('img.liked');
+    let blackHeart = document.querySelectorAll('img.unlike');
+    for(let i=0; i<redHeart.length; i++){
+      redHeart[i].style.display = 'none';
+      blackHeart[i].style.display ='block';
+    }
+  })
 }
 
 
@@ -549,162 +528,75 @@ function doFirst(){
 
 window.addEventListener('load', doFirst);
 </script>
+
+
+
+
 <script>
-  // 多行變.....
-// var el = document.getElementsByClassName('blogPostPreview');
-// var text = el.innerText;
-// var n = el.offsetHeight;
-// for(i=0; i<text.length; i++){
-//   el.innerHTML = text.substr(0, i);
-//   if(n < el.scrollHeight){
-//     el.style.overflow = 'hidden';
-//     el.innerHTML = text.substr(o, i-3) + '...';
-//     break;
-//   }
-// }
 
-
-
-
-
-// $(document).on('click', '#blogIconReportBtn'), function(){
-//   //使用$(document).on()的原因是如果id為submit的按鈕是一開始沒有載入、透過ajax互動後才產生的DOM，那用$().click會抓不到，需以$(document).on()才行
-//   var name = $('#blogReportReason').val();
-//   $.ajax({
-//      url:'../../php/blogReport.php',
-//      method:'POST',
-//      data:{
-//         name:name
-//      },
-//      success:function(res){
-
-//      },
-//   })
-// }
-</script>
-
-
-<!-- ajax抓資料 -->
-<!-- <script>
-function $id(id){
-return document.getElementById(id);
-}
-let blogNo; 
-</script>  -->
-<script>
-  // let blogNo = location.href.split("?");
-    //檢查是否有登入,有的話檢查是否有加入收藏，調整愛心
-    // function checkheart(){  
-    //         // alert(xhr2.blogNo);
-    //     var xhr1 = new XMLHttpRequest();
-    //     xhr1.onload = function(){
-    //         if (xhr1.status == 200) { //連線成功
-    //             let confirmlike = xhr1.responseText;
-    //             console.log(confirmlike);
-    //             if(confirmlike==='有收藏'){
-    //               document.querySelectorAll('.liked')[count].style.display='block';
-    //               document.querySelectorAll('.unlike')[count].style.display='none';
-    //             }else{
-    //               document.querySelectorAll('.liked')[count].style.display='none';
-    //               document.querySelectorAll('.unlike')[count].style.display='';
-    //             }
-    //         } else {
-    //             // alert(xhr1.status);
-    //             // alert('還沒登入無法判斷愛心');
-    //         }
-    //     }
-    //     xhr1.open("post","./php/collect.php", true);
-    //     xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-    //     // let data = `likework=${likework}`;
-    //     xhr1.send(data);
-
-    // }
 
     function addLike(likework,count){
-      document.querySelectorAll('.liked')[count].style.display='block';
-      document.querySelectorAll('.unlike')[count].style.display='none';
-
-      // $id('unlike').style.display='none';
-                    // $id('liked').style.display='block';
-       console.log(likework,count)
-        if (member.memId) {
-          // console.log(e.target.parentNode.className);
-            var addlikexhr = new XMLHttpRequest();
-            addlikexhr.onload = function(e) {
-                if (addlikexhr.status == 200) { //連線成功
-                    // console.log(addlikexhr.responseText);
-                   
-                } else {
-                    alert(addlikexhr.status);
-                }
+      if(member.memId){
+        // alert('登入狀態');
+        document.querySelectorAll('.liked')[count].style.display='block';
+        document.querySelectorAll('.unlike')[count].style.display='none';
+        let addlikexhr = new XMLHttpRequest();
+        addlikexhr.onload = function(e) {
+            if (addlikexhr.status == 200) { //值有成功回傳，他是有新增成功的
+                // alert(addlikexhr.responseText);
+                
+            } else {
+                alert(addlikexhr.status);
             }
-            var url = "./php/addCollect.php";
-            addlikexhr.open("post", url, true);
-            addlikexhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-            let data = `likework=${likework}`;
-            addlikexhr.send(data);
-        } else {
-            //沒有登入，請先登入
-            // alert('請先登入');
         }
+        var url = "./php/addCollect.php";
+        addlikexhr.open("post", url, true);
+        addlikexhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+        let data = `likework=${likework}`;
+        addlikexhr.send(data);
+      }else{
+
+
+
+        
+        swal('非登入狀態');
+
+        //跳出燈箱
+      }
+      
+
+
+      
+
     }
 
     function deleteLike(likework,count){
       document.querySelectorAll('.liked')[count].style.display='none';
-      document.querySelectorAll('.unlike')[count].style.display='';
+      document.querySelectorAll('.unlike')[count].style.display='block';
 
-        if (member.memId) {
-            var removeCollect = new XMLHttpRequest();
-            removeCollect.onload = function(e) {
-                if (removeCollect.status == 200) { //連線成功
-                    // console.log(removeCollect.responseText);
-                } else {
-                    alert(removeCollect.status);
-                }
-            }
-            var url = "./php/removeCollect.php";
-            removeCollect.open("post", url, true);
-            removeCollect.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-            let data = `likework=${likework}`;
-            removeCollect.send(data);
-        } else {
-            //沒有登入，請先登入
-            alert('請先登入');
-        }
+
+      let removeCollect = new XMLHttpRequest();
+      removeCollect.onload = function(e) {
+          if (removeCollect.status == 200) { //有刪除成功
+              alert(removeCollect.responseText);
+
+          } else {
+              alert(removeCollect.status);
+          }
+      }
+      var url = "./php/removeCollect.php";
+      removeCollect.open("post", url, true);
+      removeCollect.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+      let data = `likework=${likework}`;
+      removeCollect.send(data);
+
     }
-    // function getMemberInfo_forcamp(callback){
-    // let xhr = new XMLHttpRequest();
-    // xhr.onload = function(){
-    //     callback();
-    //     if(xhr.status == 200){ //success
-    //         member = JSON.parse(xhr.responseText);
-    //         if(member.memId){
-    //             $id("header_memName").innerText = member.MEM_NICKNAME
-    //             $id('spanLogin').innerHTML = '登出';
-    //             console.log(member);         
-    //         }
-    //     }else{ //error
-    //         alert(xhr.status);
-    //     }
-    // }
-    xhr.open("get", "/////", true);
-    xhr.send(null);
-// }
 
 </script>
 
-
-<!-- <script>
-    function init(){
-        getMemberInfo_forcamp(checkheart);
-    };
-
-window.addEventListener('load',init,false);
-
-</script> -->
 <script src="./js/blog/blogReport.js"></script>
-<script src="./js/memLogin.js"></script>
+<script src="./js/blogLogin.js"></script>
 <script src="./js/layout/header.js"></script>
-<script src="./js/collect.js"></script>
+
 </body>
 </html>

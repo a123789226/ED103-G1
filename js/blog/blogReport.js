@@ -10,4 +10,4 @@ $(document).on('click', '#blogIconReportBtn', function(){//使用$(document).on(
 
      }
   })
-}
+})
