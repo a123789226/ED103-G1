@@ -469,8 +469,9 @@ function backendDoFirst(){
     nightInfohtml += `
     <tr>
       <td>${backNightInfoRow[i].areaNo}</td>
-      <td><input type="text" value="${backNightInfoRow[i].areaCapacity}" size="10"></td>
+      <td><input type="text" value="${backNightInfoRow[i].areaCapacity}" size="5"></td>
       <td><input type="text" value="${backNightInfoRow[i].areaPrice}" size="5"></td>
+      <td><input type="text" value="${backNightInfoRow[i].areaType}" ></td>
       <td>        
         <i class="fas fa-pen editNightInfo"></i>
       </td>
@@ -485,9 +486,10 @@ function backendDoFirst(){
   let editNightInfo = document.querySelectorAll("i.editNightInfo");
   for (let i = 0; i < editNightInfo.length; i++) {
     editNightInfo[i].addEventListener("click", function () {
-      let areaNo = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
-      let areaCapacity = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
-      let areaPrice = editNightInfo[i].parentNode.previousElementSibling.children[0].value;
+      let areaNo = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let areaCapacity = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let areaPrice = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let areaType = editNightInfo[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
       // alert(nightPrice);
 
       let xhrEditNight = new XMLHttpRequest();
@@ -500,7 +502,7 @@ function backendDoFirst(){
 
       xhrEditNight.open("Post", "EditbackNightInfo.php", true);
       xhrEditNight.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      let data_info = `areaNo=${areaNo}&areaCapacity=${areaCapacity}&areaPrice=${areaPrice}`;
+      let data_info = `areaNo=${areaNo}&areaCapacity=${areaCapacity}&areaPrice=${areaPrice}&areaType=${areaType}`;
       xhrEditNight.send(data_info);
     })
   }

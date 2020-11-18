@@ -315,9 +315,6 @@ function openBookDolphin(){
                 success: function (data) {
                     console.log($("#flipbook2").turn("pages"));
 
-                    
-
-
                     console.log(data.length);
                     openAquaNo.innerText = data[0].aquaNo;
                     openAquaName.innerText = data[0].aquaName;
@@ -425,6 +422,8 @@ function openBookDolphin(){
                 },
               })
 
+            //傳aquaNo, aquaPic到adopt.php  
+            doAquano(aquaNo);
 
             //帶入認養人頭像
             doMemPic(aquaNo);
@@ -434,6 +433,35 @@ function openBookDolphin(){
         })
     }
 }
+
+//--------------------------------------------------------------------------
+//傳aquaNo, aquaPic到adopt.php
+function doAquano(aquaNo){
+  // console.log(aquaNo);
+  let xhradopt = new XMLHttpRequest();
+  
+  xhradopt.onload = function(){
+
+      let adoptAqua = JSON.parse(xhradopt.responseText);
+      console.log(adoptAqua);
+
+      let adoptAquaHTML = `
+        <input type="hidden" value="${adoptAqua.aquaNo}">
+        <input type="hidden" value="${adoptAqua.aquaPic}">
+          `;
+
+
+let sendAquaNo = document.getElementById('sendAquaNo');
+sendAquaNo.innerHTML += adoptAquaHTML;
+
+}    
+
+xhradopt.open("POST", "adoptAquano.php", true);
+xhradopt.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+let data_info = `aquaNo=${aquaNo}`;
+xhradopt.send(data_info);
+}
+
 
 //--------------------------------------------------------------------------
 // 找認養人頭像(doMemPic)
@@ -478,7 +506,7 @@ function doPost(aquaNo){
         for(i=0; i<aquaNo.length; i++){
             journalCommentHTML +=`
             <li>
-            <div class="jourCommentPersonPic"><img src="./image/memPic/${aquaNo[i].memPic}"
+            <div class="jourCommentPersonPic"><img src="./${aquaNo[i].memPic}"
                   alt=""></div>
             <div class="jourCommentOrder">
               <div class="jourCommentInfo">

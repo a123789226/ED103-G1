@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal</title>
+  <title>Aqua Wonderland</title>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="icon" href="./image/header/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
 
 
@@ -1683,8 +1684,10 @@
 
       </div>
       <div class="jourToAdopt">
-        <form action="./adopt.php" method="GET">
+        <form action="./adopt.php" method="GET" id="sendAquaNo">
           <button class=" jourLightboxBtn" name="name">ADOPT</button></a>
+          <!-- <input type="hidden" value="aquaNo"> -->
+          <!-- <input type="hidden" value="aquaImg"> -->
         </form>
       </div>
       <p class="jourAdopterSection">Current Adopter</p>
@@ -1718,10 +1721,10 @@
       </div>
       <!-- comments -->
       <div class="jourCommentList">
-        <div class="message_box"></div>
-        <!--留言產生區塊-->
-        <ul id="messageBox">
-          <!-- 
+        <div class="message_box">
+          <!--留言產生區塊-->
+          <ul id="messageBox">
+            <!-- 
           <li>
             <div class="jourCommentPersonPic"><a href="#"><img src="./image/journal/journal_element/adopter.png"
                   alt=""></a></div>
@@ -1814,7 +1817,8 @@
             </div>
           </li>
            -->
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

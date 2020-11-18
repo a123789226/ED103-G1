@@ -42,9 +42,10 @@ var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAni
         
         let loadint = 0;	//目前載入進度
         const sounds = [
-            {src:"./image/game/play.mp3", id:"play"},
-            {src:"./image/game/coin.mp3", id:"coin"},
-            {src:"./image/game/boom.mp3", id:"boom"},
+            {src:"./image/game/play.mp3"},
+            // {src:"./image/game/play.mp3", id:"play"},
+            // {src:"./image/game/coin.mp3", id:"coin"},
+            // {src:"./image/game/boom.mp3", id:"boom"},
             // {src:"./image/game/bg.mp3", id:"bg"},
         ];
         createjs.Sound.alternateExtensions = ["mp3"];

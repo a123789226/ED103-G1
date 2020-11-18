@@ -38,8 +38,8 @@
         <div></div>
       </div>
       <h3 class="memLogTitle">LOG IN</h3>
-      <input type="text" name="memId" id="memId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
-      <input type="password" name="memPsw" id="memPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
+      <input type="text" name="memId" id="memId" pattern="[A-Za-z0-9]*" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" size="25"/><br>
+      <input type="password" name="memPsw" id="memPsw" pattern="[A-Za-z0-9]*" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" size="25"/><br>
       <h6><a href="./memberLock.html" class="memForgot memForget_modal">Forget Password?</a></h6><br>
       <input type="button" class="submitBtnLog" id="btnLogin" value="LOG IN"><br>
       <div class="memLine">
@@ -141,7 +141,7 @@
     <!-- Sign Up -->
     <div class="memSignup">
     
-      <form class="signUpForm" id="signUpForm" method="post">
+      <form class="signUpForm row" id="signUpForm" method="post">
     
         <div class="memSignRight col-md-6">
     
@@ -149,16 +149,15 @@
     
           <div class="memSignDetail">
     
-            <input type="text" name="signMemName" id="signMemName" placeholder="Full Name" onfocus="this.placeholder=''"
+            <input type="text" name="signMemName" id="signMemName" placeholder="Name" onfocus="this.placeholder=''"
               onblur="this.placeholder='Full Name'" size="30" required /><br>
     
-            <input type="text" name="signMemId" id="signMemId" placeholder="Username" onfocus="this.placeholder=''"
+            <input type="text" name="signMemId" id="signMemId" placeholder="ID" onfocus="this.placeholder=''"
               onblur="this.placeholder='Username'" maxlength="12" size="30" required />
     
             <!-- <input type="button" id="btnCheckId" value="Check"><span id="idMsg"></span> -->
-            <input type="password" maxlength="12" minlength="8" name="signMemPsw" id="signMemPsw" placeholder="Password"
-              onfocus="this.placeholder=''" onblur="checkpas1();" size="30" required /><br><span class="tip_length"
-              style="color: red;">Password length is wrong</span>
+            <input type="password" name="signMemPsw" id="signMemPsw" placeholder="Password" onfocus="this.placeholder=''" 
+              onblur="checkpas1();" size="30" required /><br>
     
             <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password"
               onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br><span
@@ -199,7 +198,7 @@
         <div class="memSignLeft col-md-6">
     
           <div class="memSignImg">
-            <img src="./image/member/Shinnosuke2.jpg" id="memSignImg" alt="">
+            <img src="./image/memPic/Shinnosuke2.jpg" id="memSignImg" alt="">
           </div>
     
           <label for="memPhoto">
@@ -223,7 +222,6 @@
           </div>
     
         </div>
-    
       </form>
     
     </div>

@@ -1,5 +1,6 @@
 <?php
 try{
+  // $_GET["nightDate"] = '2020-11-19';
   require_once("./connectAqua.php");
   // $sql = "SELECT i.areaNo areaNo, IFNULL(sum(o.nightPerson), 0) orderPerson , i.areaCapacity capacity 
   //           FROM night_info i LEFT JOIN night_order_list o ON( o.areaNo = i.areaNo AND o.nightDate =:nightDate)
@@ -7,7 +8,7 @@ try{
   //           GROUP BY areaNo;";
   $sql = "SELECT i.areaType areaType, IFNULL(sum(o.nightPerson), 0) orderPerson , i.areaCapacity capacity 
             FROM night_info i LEFT JOIN night_order_list o ON( o.areaNo = i.areaNo AND o.nightDate =:nightDate)
-            GROUP BY areaType;";
+            GROUP BY areaType ORDER BY i.areaNo;";
  
   $night = $pdo->prepare($sql);
   $night->bindValue(":nightDate", $_GET["nightDate"]);

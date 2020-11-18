@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="icon" href="./image/header/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Aqua Wonderland</title>
+    <title>Aqua Blog</title>
 </head>
 
 <body>
@@ -172,6 +171,11 @@
    
 
 
+    if(isset($_SESSION["memNo"])){
+      $_SESSION["memNo"] = $_SESSION["memNo"];
+    }else{
+      $_SESSION["memNo"] = '0';
+    }
     $sql1 = "SELECT blogNo
     FROM  blog_mark 
     WHERE memNo = :memNo "; 
@@ -184,8 +188,7 @@
         foreach($blogMarkRows as $key => $val){
         array_push($arr,$val['blogNo']);
        }
-      //  var_dump($arr);
-      //  die;
+
 
 
 
@@ -234,24 +237,17 @@
                       ?>
                       
                       <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" >
-                      
+                      <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg" style="display:none;">
                       <?php  
                       }else{
                         ?>
+                      <img class="liked" onclick='deleteLike(<?=$prodRow["blogNo"]?>,<?=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" style="display:none;">
                       <img class="unlike" onclick='addLike(<?=$prodRow["blogNo"]?>,<?=$count?>)' src="./image/blog/icons/icon_heart.svg">
                       <?php
                       }
                     
                   ?>
                   </div>
-                     <!-- <img class="unlike" onclick='addLike(<=$prodRow["blogNo"]?>,<=$count?>)' src="./image/blog/icons/icon_heart.svg"> -->
-                  <!-- </div>
-                   <div class="blogPostIconAfter"> -->
-                     <!-- <img class="liked" onclick='deleteLike(<=$prodRow["blogNo"]?>,<=$count?>)'; src="./image/blog/icons/icon_heart_active.svg" style="display:none;"></div> -->
-                   
-                   
-                   <!-- 先關掉 -->
-                     <!-- <div class="blogPostCollectNum"><$prodRow["blogMark"]?></div> -->
                </div>
               </div>
               <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
@@ -584,127 +580,68 @@ window.addEventListener('load', doFirst);
 </script>
 
 
-<!-- ajax抓資料 -->
-<!-- <script>
-function $id(id){
-return document.getElementById(id);
-}
-let blogNo; 
-</script>  -->
-<script>
-  // let blogNo = location.href.split("?");
-    //檢查是否有登入,有的話檢查是否有加入收藏，調整愛心
-    // function checkheart(){  
-    //         // alert(xhr2.blogNo);
-    //     var xhr1 = new XMLHttpRequest();
-    //     xhr1.onload = function(){
-    //         if (xhr1.status == 200) { //連線成功
-    //             let confirmlike = xhr1.responseText;
-    //             console.log(confirmlike);
-    //             if(confirmlike==='有收藏'){
-    //               document.querySelectorAll('.liked')[count].style.display='block';
-    //               document.querySelectorAll('.unlike')[count].style.display='none';
-    //             }else{
-    //               document.querySelectorAll('.liked')[count].style.display='none';
-    //               document.querySelectorAll('.unlike')[count].style.display='';
-    //             }
-    //         } else {
-    //             // alert(xhr1.status);
-    //             // alert('還沒登入無法判斷愛心');
-    //         }
-    //     }
-    //     xhr1.open("post","./php/collect.php", true);
-    //     xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-    //     // let data = `likework=${likework}`;
-    //     xhr1.send(data);
 
-    // }
+<script>
+
 
     function addLike(likework,count){
-      document.querySelectorAll('.liked')[count].style.display='block';
-      document.querySelectorAll('.unlike')[count].style.display='none';
+      if(member.memId){
+        // alert('您已登入');
+        document.querySelectorAll('.liked')[count].style.display='block';
+        document.querySelectorAll('.unlike')[count].style.display='none';
 
-      // $id('unlike').style.display='none';
-                    // $id('liked').style.display='block';
-       console.log(likework,count)
-        if (member.memId) {
-          // console.log(e.target.parentNode.className);
-            var addlikexhr = new XMLHttpRequest();
-            addlikexhr.onload = function(e) {
-                if (addlikexhr.status == 200) { //連線成功
-                    // console.log(addlikexhr.responseText);
-                   
-                } else {
-                    alert(addlikexhr.status);
-                }
+
+        let addlikexhr = new XMLHttpRequest();
+        addlikexhr.onload = function(e) {
+            if (addlikexhr.status == 200) { //連線成功
+                // console.log(addlikexhr.responseText);
+                alert('新增成功');
+
+            } else {
+                alert(addlikexhr.status);
             }
-            var url = "./php/addCollect.php";
-            addlikexhr.open("post", url, true);
-            addlikexhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-            let data = `likework=${likework}`;
-            addlikexhr.send(data);
-        } else {
-            //沒有登入，請先登入
-            // alert('請先登入');
         }
+        var url = "./php/addCollect.php";
+        addlikexhr.open("post", url, true);
+        addlikexhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+        let data = `likework=${likework}`;
+        addlikexhr.send(data);
+      }else{
+        alert('要登入才能收藏');
+      }
+
+
     }
 
     function deleteLike(likework,count){
       document.querySelectorAll('.liked')[count].style.display='none';
       document.querySelectorAll('.unlike')[count].style.display='';
 
-        if (member.memId) {
-            var removeCollect = new XMLHttpRequest();
-            removeCollect.onload = function(e) {
-                if (removeCollect.status == 200) { //連線成功
-                    // console.log(removeCollect.responseText);
-                } else {
-                    alert(removeCollect.status);
-                }
-            }
-            var url = "./php/removeCollect.php";
-            removeCollect.open("post", url, true);
-            removeCollect.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-            let data = `likework=${likework}`;
-            removeCollect.send(data);
-        } else {
-            //沒有登入，請先登入
-            alert('請先登入');
-        }
+
+      var removeCollect = new XMLHttpRequest();
+      removeCollect.onload = function(e) {
+          if (removeCollect.status == 200) { //連線成功
+              alert('刪除成功');
+          } else {
+              alert(removeCollect.status);
+          }
+      }
+      var url = "./php/removeCollect.php";
+      removeCollect.open("post", url, true);
+      removeCollect.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+      let data = `likework=${likework}`;
+      removeCollect.send(data);
+
     }
-    // function getMemberInfo_forcamp(callback){
-    // let xhr = new XMLHttpRequest();
-    // xhr.onload = function(){
-    //     callback();
-    //     if(xhr.status == 200){ //success
-    //         member = JSON.parse(xhr.responseText);
-    //         if(member.memId){
-    //             $id("header_memName").innerText = member.MEM_NICKNAME
-    //             $id('spanLogin').innerHTML = '登出';
-    //             console.log(member);         
-    //         }
-    //     }else{ //error
-    //         alert(xhr.status);
-    //     }
-    // }
-    xhr.open("get", "/////", true);
-    xhr.send(null);
-// }
+
+
+
 
 </script>
 
 
-<!-- <script>
-    function init(){
-        getMemberInfo_forcamp(checkheart);
-    };
-
-window.addEventListener('load',init,false);
-
-</script> -->
 <script src="./js/blog/blogReport.js"></script>
 <script src="./js/memLogin.js"></script>
 <script src="./js/layout/header.js"></script>
-<script src="./js/collect.js"></script>
 </body>
 </html>
