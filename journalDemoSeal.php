@@ -3,9 +3,14 @@
 try {
 require("./connectAqua.php");
 
-$sql = "select * from journal j join aqua a on(a.aquaNo = j.aquaNo) where j.aquaNo =:aquaNo order by jourNo DESC";
+$sql = "select * 
+from journal j 
+join aqua a on(a.aquaNo = j.aquaNo) 
+where j.aquaNo = (select max(a.aquaNo) from journal j join aqua a where a.aquaType = 'Seal')
+order by jourNo desc;
+";
 $journal = $pdo->prepare($sql);
-$journal-> bindValue(':aquaNo',$_POST['aquaNo']);
+// $journal-> bindValue(':aquaNo',$_POST['aquaNo']);
 $journal->execute();
   
   if($journal->rowCount()==0){ // 查無此人
