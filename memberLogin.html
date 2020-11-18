@@ -161,7 +161,7 @@
     
             <input type="password" name="repassword" id="repassword" onChange="checkpas();" placeholder="Confirm Password"
               onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'" size="30" required><br><span
-              class="tip" style="color: red;">輸入密碼不一致</span>
+              class="tip" style="color: red;">Password mismatch</span>
     
             <input type="text" name="memPhone" id="memPhone" placeholder="Phone Number" onfocus="this.placeholder=''"
               onblur="this.placeholder='Phone Number'" maxlength="10" size="30" required /><br>
@@ -278,27 +278,27 @@
 
       let idCheck = $("#signMemId").val();
       if (idCheck.length < 5 ^ idCheck.length > 12) { // 帳號
-        swal("帳號長度錯誤", "請輸入5~12字以內", "error");
+        swal("User ID must have at least 5-12 characters", "", "error");
         // alert('暱稱不可空白');
         return;
       }
 
       let pswCheck = $("#signMemPsw").val();
       if (pswCheck.length < 6 ^ pswCheck.length > 12) { //密碼
-        swal("密碼長度錯誤", "6~12字以內", "error");
+        swal("Password must have at least 6-12 characters", "", "error");
         return;
       }
 
       let phoneCheck = $("#memPhone").val();
       if (phoneCheck.length != 10) { //密碼
-        swal("電話長度錯誤", "長度為10個字元", "error");
+        swal("Please enter 10-digit phone number", "", "error");
         return;
       }
 
       let mail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       let mailCheck = $("#memEmail").val();
       if (mailCheck.match(mail) == null) { //信箱
-        swal("Enter a valid email address.", "請確認Email", "error");
+        swal("Please enter a valid email address to continue.", "", "error");
         return;
       }
 
@@ -313,7 +313,7 @@
 
       let birthCheck = $("#memBirth").val();
       if (birthCheck == "") { //密碼
-        swal("請填寫出生日", "", "error");
+        swal("Please enter a DOB", "", "error");
         return;
       }
 
@@ -323,7 +323,7 @@
         picName = picCheck.substring((picCheck.lastIndexOf("\\")) + 1);
         picNameC = `image/memPic/${picName}`;
       } else {
-        swal("請選擇大頭貼", "", "error");
+        swal("Please upload a profile photo", "", "error");
         return;
       }
 

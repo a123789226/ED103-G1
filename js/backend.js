@@ -79,7 +79,7 @@ function backendDoFirst(){
       <td>${backMemberRow[i].memBirth}</td>
       <td>${backMemberRow[i].memPic}</td>
       <td><input type="text" value="${backMemberRow[i].point}" size="5"></td>
-      <td><input type="text" value="${backMemberRow[i].memStatus}" size="3"></td>
+      <td><input type="text" value="${backMemberRow[i].memStatus}" size="2"></td>
       <td>        
         <i class="fas fa-pen editMember"></i>
       </td>
@@ -138,13 +138,11 @@ function backendDoFirst(){
       <td><input type="date" value="${backAquaRow[i].arriveDate}" size="15"></td>
       <td><input type="text" value="${backAquaRow[i].rescueLoc}" size="10"></td>
       <td><textarea rows="2" cols="20">${backAquaRow[i].jourStory}</textarea></td>
-      <td><input type="text" value="${backAquaRow[i].recoverStatus}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].recoverStatus}" size="2"></td>
       <td><input type="date" value="${backAquaRow[i].releaseDate}" size="15"></td>
       <td><input type="text" value="${backAquaRow[i].releaseLoc}" size="10"></td>
       <td><input type="text" value="${backAquaRow[i].aquaPic}" size="10"></td>
-      <td><input type="text" value="${backAquaRow[i].adoptTotalNum}" size="3"></td>
-      <td><input type="text" value="${backAquaRow[i].adoptTotalAmt}" size="5"></td>
-      <td><input type="text" value="${backAquaRow[i].nameStatus}" size="3"></td>
+      <td><input type="text" value="${backAquaRow[i].nameStatus}" size="6"></td>
       <td><input type="date" value="${backAquaRow[i].nameStart}" size="15"></td>
       <td><input type="date" value="${backAquaRow[i].nameEnd}" size="15"</td>
       <td><input type="date" value="${backAquaRow[i].voteStart}" size="15"</td>
@@ -626,7 +624,7 @@ function backendDoFirst(){
       <td>${backJournalMsgRow[i].aquaNo}</td>
       <td>${backJournalMsgRow[i].msgContent}</td>
       <td>${backJournalMsgRow[i].msgTime}</td>
-      <td><input type="text" value="${backJournalMsgRow[i].msgStatus}" size="5"></td>
+      <td><input type="text" value="${backJournalMsgRow[i].msgStatus}" size="2"></td>
       <td>
         <i class="fas fa-pen editJourMsg"></i>
       </td>
@@ -682,7 +680,7 @@ function backendDoFirst(){
       <td>${backJournalMsgRepRow[i].aquaNo}</td>
       <td>${backJournalMsgRepRow[i].msgReportDate}</td>
       <td>${backJournalMsgRepRow[i].msgReportReason}</td>
-      <td><input type="text" value="${backJournalMsgRepRow[i].msgReportStatus}" size="5"></td>
+      <td><input type="text" value="${backJournalMsgRepRow[i].msgReportStatus}" size="2"></td>
       <td>
         <i class="fas fa-pen editJourMsgRep"></i>
       </td>
@@ -739,7 +737,7 @@ function backendDoFirst(){
       <td>${backThankscardRow[i].memName}</td>
       <td>${backThankscardRow[i].memEmail}</td>
       <td>${backThankscardRow[i].cardFile}</td>
-      <td><input type="text" value="${backThankscardRow[i].cardStatus}" size="5"></td>
+      <td><input type="text" value="${backThankscardRow[i].cardStatus}" size="2"></td>
       <td>        
         <i class="fas fa-pen editThanks"></i>
       </td>
@@ -800,7 +798,7 @@ function backendDoFirst(){
       <td>${backBlogRow[i].blogTime}</td>
       <td>${backBlogRow[i].blogMark}</td>
       <td>${backBlogRow[i].blogTags}</td>
-      <td><input type="text" value="${backBlogRow[i].blogStatus}" size="5"></td>
+      <td><input type="text" value="${backBlogRow[i].blogStatus}" size="2"></td>
       <td>
         <i class="fas fa-pen editBlog"></i>
       </td>
@@ -854,7 +852,7 @@ function backendDoFirst(){
       <td>${backBlogRepRow[i].blogNo}</td>
       <td>${backBlogRepRow[i].memNo}</td>
       <td>${backBlogRepRow[i].blogReportReason}</td>
-      <td><input type="text" value="${backBlogRepRow[i].blogReportStatus}" size="5"></td>
+      <td><input type="text" value="${backBlogRepRow[i].blogReportStatus}" size="2"></td>
       <td>
         <i class="fas fa-pen editBlogRep"></i>
       </td>
@@ -932,7 +930,7 @@ function backendDoFirst(){
       <td>${backNominateRow[i].aquaNo}</td>
       <td>${backNominateRow[i].nomName}</td>
       <td>${backNominateRow[i].votedNum}</td>
-      <td><input type="text" value="${backNominateRow[i].nomStatus}" size="5"></td>
+      <td><input type="text" value="${backNominateRow[i].nomStatus}" size="2"></td>
       <td>       
         <i class="fas fa-pen editNominate"></i>
       </td>
@@ -986,7 +984,7 @@ function backendDoFirst(){
       <td>${backManagerRow[i].mgrName}</td>
       <td>${backManagerRow[i].mgrId}</td>
       <td>${backManagerRow[i].mgrPsw}</td>
-      <td><input type="text" value="${backManagerRow[i].mgrStatus}" size="5"></td>
+      <td><input type="text" value="${backManagerRow[i].mgrStatus}" size="2"></td>
       <td>
         <i class="fas fa-pen editManager"></i>
       </td>
