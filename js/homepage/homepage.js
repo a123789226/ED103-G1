@@ -495,35 +495,35 @@ $.ajax({
 
 
 
-$.ajax({
-  url: 'home_blog.php',
-  type: 'get',
-  dataType: 'json',
-  success: function (data) {
-    console.log(data);
-    home_blog_img1.src = data[0].blogPic;
-    home_blog_img2.src = data[1].blogPic;
-    home_blog_img3.src = data[2].blogPic;
-    home_blog_big1.src = data[0].memPic;
-    home_blog_big2.src = data[1].memPic;
-    home_blog_big3.src = data[2].memPic;
-    home_blog_title1.innerText = data[0].blogTitle;
-    home_blog_title2.innerText = data[1].blogTitle;
-    home_blog_title3.innerText = data[2].blogTitle;
-    home_blog_author1.innerText = data[0].memName;
-    home_blog_author2.innerText = data[1].memName;
-    home_blog_author3.innerText = data[2].memName;
-    home_blog_time1.innerText = data[0].blogTime;
-    home_blog_time2.innerText = data[1].blogTime;
-    home_blog_time3.innerText = data[2].blogTime;
-    home_blog_content1.innerText = data[0].blogContent1;
-    home_blog_content2.innerText = data[1].blogContent1;
-    home_blog_content3.innerText = data[2].blogContent1;
-  },
-  error: function (data) {
-    console.log(JSON.stringify(data));
-  },
-})
+// $.ajax({
+//   url: 'home_blog.php',
+//   type: 'get',
+//   dataType: 'json',
+//   success: function (data) {
+//     console.log(data);
+//     home_blog_img1.src = data[0].blogPic;
+//     home_blog_img2.src = data[1].blogPic;
+//     home_blog_img3.src = data[2].blogPic;
+//     home_blog_big1.src = data[0].memPic;
+//     home_blog_big2.src = data[1].memPic;
+//     home_blog_big3.src = data[2].memPic;
+//     home_blog_title1.innerText = data[0].blogTitle;
+//     home_blog_title2.innerText = data[1].blogTitle;
+//     home_blog_title3.innerText = data[2].blogTitle;
+//     home_blog_author1.innerText = data[0].memName;
+//     home_blog_author2.innerText = data[1].memName;
+//     home_blog_author3.innerText = data[2].memName;
+//     home_blog_time1.innerText = data[0].blogTime;
+//     home_blog_time2.innerText = data[1].blogTime;
+//     home_blog_time3.innerText = data[2].blogTime;
+//     home_blog_content1.innerText = data[0].blogContent1;
+//     home_blog_content2.innerText = data[1].blogContent1;
+//     home_blog_content3.innerText = data[2].blogContent1;
+//   },
+//   error: function (data) {
+//     console.log(JSON.stringify(data));
+//   },
+// })
 
 let right_animal = document.getElementsByClassName('adopt_right_animal01')[0];
 let animal01 = document.getElementsByClassName('adopt_animal01')[0];
