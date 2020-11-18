@@ -142,6 +142,8 @@ function backendDoFirst(){
       <td><input type="date" value="${backAquaRow[i].releaseDate}" size="15"></td>
       <td><input type="text" value="${backAquaRow[i].releaseLoc}" size="10"></td>
       <td><input type="text" value="${backAquaRow[i].aquaPic}" size="10"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalNum}" size="6"></td>
+      <td><input type="text" value="${backAquaRow[i].adoptTotalAmt}" size="6"></td>
       <td><input type="text" value="${backAquaRow[i].nameStatus}" size="6"></td>
       <td><input type="date" value="${backAquaRow[i].nameStart}" size="15"></td>
       <td><input type="date" value="${backAquaRow[i].nameEnd}" size="15"</td>
@@ -180,7 +182,7 @@ function backendDoFirst(){
       let nameEnd = editAqua[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
       let voteStart = editAqua[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
       let voteEnd = editAqua[i].parentNode.previousElementSibling.children[0].value;
-      // alert(adoptTotalNum);
+      // alert(voteEnd);
 
       let xhrEditAqua = new XMLHttpRequest();
       xhrEditAqua.onload = function () {
@@ -192,31 +194,13 @@ function backendDoFirst(){
 
       xhrEditAqua.open("Post", "EditbackAqua.php", true);
       xhrEditAqua.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      let data_info = `
-        aquaNo=${aquaNo}&
-        aquaType=${aquaType}&
-        aquaName=${aquaName}&
-        aquaAge=${aquaAge}&
-        aquaSex=${aquaSex}&
-        arriveDate=${arriveDate}&
-        rescueLoc=${rescueLoc}&
-        jourStory=${jourStory}&
-        recoverStatus=${recoverStatus}&
-        releaseDate=${releaseDate}&
-        releaseLoc=${releaseLoc}&
-        aquaPic=${aquaPic}&
-        adoptTotalNum=${adoptTotalNum}&
-        adoptTotalAmt=${adoptTotalAmt}&
-        nameStatus=${nameStatus}&
-        nameStart=${nameStart}&
-        nameEnd=${nameEnd}&
-        voteStart=${voteStart}&
-        voteEnd=${voteEnd}`;
+      let data_info = `aquaNo=${aquaNo}&aquaType=${aquaType}&aquaName=${aquaName}&aquaAge=${aquaAge}&aquaSex=${aquaSex}&arriveDate=${arriveDate}&rescueLoc=${rescueLoc}&jourStory=${jourStory}&recoverStatus=${recoverStatus}&releaseDate=${releaseDate}&releaseLoc=${releaseLoc}&aquaPic=${aquaPic}&adoptTotalNum=${adoptTotalNum}&adoptTotalAmt=${adoptTotalAmt}&nameStatus=${nameStatus}&nameStart=${nameStart}&nameEnd=${nameEnd}&voteStart=${voteStart}&voteEnd=${voteEnd}`;
       xhrEditAqua.send(data_info);
     })
   }
 
 
+  // backaqua 新增
 
 
   // backTicketOrder
@@ -552,10 +536,10 @@ function backendDoFirst(){
       <td><input type="text" value="${backJournalRow[i].aquaNo}" size="3"></td>
       <td><textarea>${backJournalRow[i].jourStory}</textarea></td>
       <td><textarea>${backJournalRow[i].jourContent}</textarea></td>
-      <td><input type="text" value="${backJournalRow[i].jourPic1}"></td>
-      <td><input type="text" value="${backJournalRow[i].jourPic2}"></td>
-      <td><input type="text" value="${backJournalRow[i].jourPic3}"></td>
-      <td><input type="date" value="${backJournalRow[i].jourDate}"></td>
+      <td><input type="text" value="${backJournalRow[i].jourPic1}" size="10"></td>
+      <td><input type="text" value="${backJournalRow[i].jourPic2}" size="10"></td>
+      <td><input type="text" value="${backJournalRow[i].jourPic3}" size="10"></td>
+      <td><input type="date" value="${backJournalRow[i].jourDate}" size="10"></td>
       <td>
         <i class="fas fa-pen editJournal"></i>
       </td>
@@ -567,43 +551,35 @@ function backendDoFirst(){
 
 
   // backJournal 修改
-  // let editJournal = document.querySelectorAll("i.editJournal");
-  // for (let i = 0; i < editJournal.length; i++) {
-  //   editJournal[i].addEventListener("click", function () {
-  //     let jourNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
-  //     let aquaNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourStory = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourContent = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourPic1 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourPic2 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourPic3 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
-  //     let jourDate = editJournal[i].parentNode.previousElementSibling.children[0].value;
-  //     // alert(jourDate);
+  let editJournal = document.querySelectorAll("i.editJournal");
+  for (let i = 0; i < editJournal.length; i++) {
+    editJournal[i].addEventListener("click", function () {
+      let jourNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let aquaNo = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourStory = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourContent = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourPic1 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourPic2 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.previousElementSibling.children[0].value;
+      let jourPic3 = editJournal[i].parentNode.previousElementSibling.previousElementSibling.children[0].value;
+      let jourDate = editJournal[i].parentNode.previousElementSibling.children[0].value;
+      // alert(jourDate);
 
-  //     let xhrEditJournal = new XMLHttpRequest();
-  //     xhrEditJournal.onload = function () {
-  //       jourEdit = xhrEditJournal.responseText;
-  //       // console.log(jourEdit);
-  //       swal("Edit Succeed!", "", "success");
-  //       alert('異動成功');
-  //     }
+      let xhrEditJournal = new XMLHttpRequest();
+      xhrEditJournal.onload = function () {
+        JournalEdit = xhrEditJournal.responseText;
+        // console.log(NightInfoEdit);
+        swal("Edit Succeed!", "", "success");
+        // alert('異動成功');
+      }
 
-  //     xhrEditJournal.open("Post", "EditbackJournal.php", true);
-  //     xhrEditJournal.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  //     let data_info = `
-  //       jourNo=${jourNo}&
-  //       aquaNo=${aquaNo}&
-  //       jourStory=${jourStory}&
-  //       jourContent=${jourContent}&
-  //       jourPic1=${jourPic1}&
-  //       jourPic2=${jourPic2}&
-  //       jourPic3=${jourPic3}&
-  //       jourDate=${jourDate}`;
-  //     xhrEditJournal.send(data_info);
-  //   })
-  // }
+      xhrEditJournal.open("Post", "EditbackJournal.php", true);
+      xhrEditJournal.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      let data_info = `jourNo=${jourNo}&aquaNo=${aquaNo}&jourStory=${jourStory}&jourContent=${jourContent}&jourPic1=${jourPic1}&jourPic2=${jourPic2}&jourPic3=${jourPic3}&jourDate=${jourDate}`;
+      xhrEditJournal.send(data_info);
+    })
+  }
 
-
+ 
 
 
   // backJournalMsg
@@ -1020,27 +996,54 @@ function backendDoFirst(){
 }
 
 
+// backJournal 新增
+// $(document).ready(function () {
+//   let imgs = new FormData();
+//   for (var i = 0; i < $(':file')[0].files.length; i++) {
+//     imgs.append('upfile[]', $(':file')[0].files[i]);
+//   }
+//   $('.ngrbtnJourAdd').on('click', function () {
+//     console.log(111);
+//     $.ajax({
+//       url: 'InsertbackJournal.php',
+//       type: 'POST',
+//       dataType: 'json',
+//       contentType: false,
+//       data: {
+//         aquaNo: $('#jourForm #aquaNo').val(),
+//         jourStory: $('#jourForm #jourStory').val(),
+//         jourContent: $('#jourForm #jourContent').val(),
+//         upfile: imgs,
+//         jourDate: $('#jourForm #jourDate').val(),
 
+//       },
+//       success(e) {
+//         console.log(e);
+//       },
 
-// journal Add
-function btnJourAdd(){
-  var xhrbtnJourAdd = new XMLHttpRequest;
-  xhrbtnJourAdd.onload = function(){
-    if (xhrbtnJourAdd.status == 200){
-      document.getElementById("ngrbtnJourAdd").innerText.xhrbtnJourAdd.responseText;
-    }else{
-      swal("Inserted Successfully!", "", "success");
-    }
-  }
-  
-  //連接的php
-  xhrbtnJourAdd.open("post", "InsertbackJournal.php", true);
-  xhrbtnJourAdd.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  
-  //送出資料
-  let btnJourAddData = `aquaNo=${aquaNo}&jourStory=${jourStory}&jourContent=${jourContent}&jourPic1=${jourPic1}&jourPic2=${jourPic2}&jourPic3=${jourPic3}&jourDate=${jourDate}`;
-  xhrjournal.send(btnJourAddData);
-}
+//     });
+//   });
+// });
+
+  // journal Add
+  // function btnJourAdd(){
+  //   var xhrbtnJourAdd = new XMLHttpRequest;
+  //   xhrbtnJourAdd.onload = function(){
+  //     if (xhrbtnJourAdd.status == 200){
+  //       document.getElementById("ngrbtnJourAdd").innerText.xhrbtnJourAdd.responseText;
+  //     }else{
+  //       swal("Inserted Successfully!", "", "success");
+  //     }
+  //   }
+    
+  //   //連接的php
+  //   xhrbtnJourAdd.open("post", "InsertbackJournal.php", true);
+  //   xhrbtnJourAdd.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+  //   //送出資料
+  //   let btnJourAddData = `aquaNo=${aquaNo}&jourStory=${jourStory}&jourContent=${jourContent}&jourPic1=${jourPic1}&jourPic2=${jourPic2}&jourPic3=${jourPic3}&jourDate=${jourDate}`;
+  //   xhrjournal.send(btnJourAddData);
+  // }
 
 
 window.addEventListener('load',backendDoFirst);
