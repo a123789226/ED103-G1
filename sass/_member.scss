@@ -246,6 +246,7 @@
     }
 
   }
+  //Profile
   .memProfile{
     .memProAll{
       .memProfileContent {
@@ -268,7 +269,9 @@
       }
     }
   }
+  //Blog
   .memBlog{
+    text-align: center;
     >ul{
       margin-bottom: 20px;
       .memSpanBlog .memBlogTab:hover{
@@ -328,7 +331,6 @@
               }  
             }
           }
-          
         }
         .memBlogCard:nth-child(2n+1){
           background-color: #EEEEEE;
@@ -340,7 +342,9 @@
       }
     }
   }
+  //Card
   .memThanks{
+    text-align: center;
     .memThanksAll{
       background-color: white;
       border-radius: 6px;
@@ -367,7 +371,9 @@
       }
     }
   }
+  //Adoption
   .memAdopt{
+    text-align: center;
     .memAdoptAll{
       background-color: white;
       border-radius: 6px;
@@ -394,7 +400,9 @@
       }
     }
   }
+  //Order
   .memOrder{
+    text-align: center;
     >ul{
       margin-bottom: 20px;
       .memSpanBlog .memBlogTab:hover{
@@ -425,7 +433,6 @@
         }
       }
     }
-
     .memOrderAll{
       height: 520px;
       overflow-y: scroll;

@@ -18,6 +18,7 @@ $name = explode(",",$_GET['name']);
     <script src="./js/layout/header.js"></script>
     <script src="./js/journal/adopt.js"></script>
     <script src="./js/journal/type.js"></script>
+    <link rel="icon" href="./image/header/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
