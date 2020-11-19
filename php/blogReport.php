@@ -4,7 +4,7 @@ $errMsg = "";
 try{
     // header("connect-type: text/html; charset=utf-8");
     
-    require_once('./connectBook.php');
+    require_once('../connectAqua.php');
     
     session_start();
     //送出登入者的姓名資料
