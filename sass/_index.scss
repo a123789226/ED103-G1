@@ -1,132 +1,223 @@
-.indexBackGround{
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(90deg, rgb(139, 227, 243) 0%, rgb(195, 239, 245) 50%, rgb(139, 227, 243) 100%);
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  .commonBGSet{
-    position: absolute;
-    left: 0;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    background-size: inherit;
+
+#indexBlock{
+  cursor: crosshair;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+
+
+  //背景設定
+  .indexBackground{
+    @include BGColor(rgb(139, 227, 243),  rgb(195, 239, 245));
+    // background: radial-gradient(circle at 50% 10%, rgb(195, 239, 245) 0%, rgb(4, 167, 196) 100%);
+    background:  rgb(10, 140, 192);
+    @include BG01('bg1-2', 100%);
+    @include BG02('bridge', 140%);
+    @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
+    @include BGRight('bg1-4', 90%, 0%, 10%);
+    @include FishMove1(30%, 30%, 10s);
+    @include FishMove2(30%, 60%, 15s);
+    .waterWave{
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1920px;
+      max-width: 1920px;
+    }
+    transition: 1s;
+    z-index: -2;
+    #shadow{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgb(4, 8, 15);
+      opacity: 0.9;
+      transition: 1s;
+    }
+    .BGFish3{
+      position: absolute;  
+      opacity: 20%;   
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      width: 25%;
+      animation-name: move;
+      top: 20%;
+      transform: translate(-100%, -50%);
+      animation-duration: 8s;
+    }
+    .BGFish4{
+      position: absolute;  
+      opacity: 20%;   
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      width: 20%;
+      animation-name: move2;
+      top: 70%;
+      transform: translate(100%, -50%) scaleX(-1);
+      animation-duration: 5s;
+    }
+    .BGFish5{
+      position: absolute;  
+      opacity: 20%;   
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      width: 20%;
+      animation-name: move;
+      top: 80%;
+      transform: translate(-100%, -50%);
+      animation-duration: 12s;
+    }
+  }
+
+  .hoverBG{
+    background: rgb(175, 231, 248);
+    #shadow{
+      opacity: 0;
+    }
+  }
+
+  .backHoverBG{
+    @include BGColor(rgb(24, 12, 77),  rgb(18, 35, 82));
+    background: rgb(12, 35, 77);
+    @include BG01('bg6-1', 80%);
+    @include BG02('bg7-1', 110%);
+    @include BGLeft('bg6-3', 90%, 0%, -10%, -10%);
+    @include BGRight('bg6-4', 90%, 0%, 10%);
+    @include FishMove1(30%, 30%, 10s);
+    @include FishMove2(30%, 60%, 15s);
+    #shadow{
+      opacity: 0;
+    }
+  }
+
+
+  .indexTitle{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 1600px;
-    transform: translateY(-50%);
-  }
-  .commonBG00{
-    background-image: url("../image/background/bg0.png");
-    top: 80%;
-  }
-  .BGFish1, .BGFish2{
-    position: absolute;  
-    opacity: 20%;   
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    text-align: center;
+    .LinkDiv{
+      width: 200px;
+      display: inline-block;
+      @media screen and (max-width: 575px){
+        display: block;
+        margin: 0 auto;
+      }
+      &:first-child{
+        margin-right: 80px;
+        @media screen and (max-width: 575px){
+          margin: 0 auto 20px;
+        }
+      }
+      .LinkBlock{
+        box-shadow: $shadow2;
+        border: 3px solid white;
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: rgb(6, 34, 75);
+        img{
+          width: 102%;
+          height: 102%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          object-fit:cover;          
+          opacity: 1;
+          transition: .5s;
+        }
+        .imgShadow{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          opacity: .6;
+          transition: .5s;
+        }
+        p{
+          font-size: 30px;
+          font-weight: 700;
+          color: white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:hover{
+          img{
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 1;
+          }
+          .imgShadow{
+            opacity: 0;
+          }
+          p{
+            display: none;
+          }
+        }
+      }
+    }
   }
 
-  .commonBG01{
-    background-image: url("../image/background/bg1-2.png");
-    top: 100%;
-  }
 
 
-  @include BG02('bridge', 140%);
-  @include BGLeft('bg1-3', 90%, 0%, -10%, -10%);
-  @include BGRight('bg1-4', 90%, 0%, 10%);
-  @include FishMove1(30%, 30%, 10s);
-  @include FishMove2(30%, 60%, 15s);
-}
 
 
-.indexTitle{
-  h1{
-    color: $keyGreen;
-    font-size: 80px;
-    font-family: $en;
-    text-align: center; 
-    margin: 250px 0 50px 0;
-  }
-  .indexAll{
+  //創建的水波紋樣式
+  .clickEffect{
+    height: 200px;
+    width: 200px;
     display: flex;
-    justify-content: space-evenly;
-    .homepage, .backend{
-      border: 10px solid #ffffff;
-      overflow: hidden;
-    }
-    .homepage img{
-      margin-top: 50px;
-      margin-bottom: 57px;
-    }
-    img{
-      width: 300px;
-    }
-    p{
-      font-size: 40px;
-      color: #ffffff;
-      text-align: center;
-      line-height: 40px;
-    }
-    a{
-      text-decoration: none;
-    }
-    .homepage:hover, .backend:hover{
-      border: 10px solid $keyGreen;
-    }
-    .homepage:hover p, .backend:hover p{
-      color: $blockYellow;
-    }
+    align-items: center;
+    justify-content: center;
+    margin: -100px 0 0 -100px;
+    border: 8px solid;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99999;
+    transform-origin: center;
+    animation-name: clickEffect;
+    animation-duration: 2s;
   }
-}
 
-
-
-
-
-//創建的水波紋樣式
-.clickEffect{
-  height: 200px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -100px 0 0 -100px;
-  border: 8px solid;
-  border-radius: 50%;
-  position: fixed;
-  z-index: 99999;
-  transform-origin: center;
-  animation-name: clickEffect;
-  animation-duration: 2s;
-}
-
-.clickEffect::before,
-.clickEffect::after{
-  content: "";
-  display: block;
-  height: 200px;
-  width: 200px;
-  border: 8px solid;
-  border-radius: 50%;
-  position: absolute;
-  animation-name: clickEffect;
-  animation-duration: 2s;
-  animation-delay: .1s;
-}
-
-.clickEffect::after{
-  animation-delay: .4s;
-}
-
-@keyframes clickEffect{
-  0%{
-    color: rgba(255, 255, 255, 0.5);
-    transform: scale(0);
+  .clickEffect::before,
+  .clickEffect::after{
+    content: "";
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: 8px solid;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: clickEffect;
+    animation-duration: 2s;
+    animation-delay: .1s;
   }
-  100%{
-    color: rgba(255, 255, 255, 0);
-    transform: scale(1);
+
+  .clickEffect::after{
+    animation-delay: .4s;
+  }
+
+  @keyframes clickEffect{
+    0%{
+      color: rgba(255, 255, 255, 0.5);
+      transform: scale(0);
+    }
+    100%{
+      color: rgba(255, 255, 255, 0);
+      transform: scale(1);
+    }
   }
 }

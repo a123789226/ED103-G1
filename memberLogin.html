@@ -339,7 +339,7 @@
             console.log(xhr.responseText);
             if (xhr.responseText == '帳號註冊成功') {
               if (localStorage.getItem('web') == null) { //註冊成功
-                swal(xhr.responseText); //回傳php回應的值
+                swal('Sign up succeed!'); //回傳php回應的值
                 $(".swal-button--confirm").click(function () {
                   window.location.href = './memberProfile.html';
                 })

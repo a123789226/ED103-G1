@@ -1,5 +1,5 @@
 <?php
-$name = explode(",",$_GET['name']);
+$name = explode(",",$_GET['aquaNo']);
 // $name[0] 名字
 // $name[1] 圖片
 

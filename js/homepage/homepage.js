@@ -20,9 +20,6 @@ let home_blog_big3 = document.getElementById('home_blog_big3');
 
 
 
-
-
-
 let now = new Date();
 let time = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
 console.log(time);
@@ -93,20 +90,6 @@ let vue_remaining = new Vue({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   //Boat move
   TweenMax.to('.home_boat', 10, {
     xPercent: -800,
@@ -117,15 +100,6 @@ let vue_remaining = new Vue({
   });
 
 
-
-
-  //Vote Button
-  $(".home_vote_btn").click(function () {
-    activeButton = $(this).data('no');
-    $(".home_vote_btn").css("background-color", "#ffffff");
-    $(this).css("background-color", "#FBE108");
-    console.log(this);
-  });
 
   //Owl Carousel
   var owl = $('.owl-carousel');
@@ -149,10 +123,6 @@ let vue_remaining = new Vue({
     owl.trigger('prev.owl.carousel');
   })
 
-  //Alert style
-  // document.getElementById("home_jbtn").addEventListener("click", function () {
-  //   swal("Submit successful", "", "success");
-  // });
 
   //Parallax
   parallaxInstance = new Parallax(document.getElementById("move_move"));
@@ -386,8 +356,6 @@ flipbook.turn({
 
 flipbook.turn("page", 2);
 var win = $(this); //this = window
-// var home_message = document.getElementsByClassName("home_message_box")[0];
-
 if (win.width() <= 576) {
   flipbook.css("left", "7%");
   flipbook.turn("size", window.innerWidth * 0.8, window.innerHeight * 0.5);
@@ -398,8 +366,6 @@ if (win.width() <= 576) {
 }else{
   flipbook.turn("size", window.innerWidth * 0.5, window.innerHeight * 0.75);
   flipbook.css("left", "45%");
-  // flipbook.css("trnasfoem","translateX(-50%)");
-  // $("#flipbook").turn("display", "double");。。
 }
 
 
@@ -425,40 +391,6 @@ $(window).resize(function () {
 
 
 
-
-// let vue_journal = new Vue({
-//   el: '#vue_journal',
-//   data: {
-//     no: null,
-//     content: [],
-
-//   },
-//   mounted() {
-
-
-//     // var params = new URLSearchParams();
-//     // params.append('nightDate', this.$data.date);
-
-//     // let bbb = 0;
-//     axios.post('home_journal.php')
-//       .then(function (res) {
-//         vue_journal.no = res.data[0].aquaNo;
-//         for(let i =0; i<res.data.length ; i++){
-//           vue_journal.content[i] = res.data[i];
-//           console.log(typeof(res.data[0].aquaNo));
-//         }
-//       })
-//       .catch(function (err) {
-//         console.log(err);
-//       });
-
-
-//   },
-// document.getElementsByClassName('jourPage6')[0];
-
-
-// })
-
 let home_adopt_no = document.getElementById('home_adopt_no');
 let home_adopt_name = document.getElementById('home_adopt_name');
 let home_adopt_loc = document.getElementById('home_adopt_loc');
@@ -470,6 +402,7 @@ $.ajax({
   type: 'get',
   dataType: 'json',
   success: function (data) {
+    console.log(data);
     home_adopt_no.innerText = data[0].aquaNo;
     home_adopt_name.innerText = data[0].aquaName;
     home_adopt_loc.innerText = data[0].rescueLoc;
@@ -531,15 +464,15 @@ let animal02 = document.getElementsByClassName('adopt_animal02')[0];
 let animal03 = document.getElementsByClassName('adopt_animal03')[0];
 
 animal01.addEventListener('click', function () {
-  right_animal.src = animal01.src;
+  right_animal.src = './image/index/object/animal1-01.png';
 });
 
 animal02.addEventListener('click',function(){
-  right_animal.src = animal02.src;
+  right_animal.src = './image/index/object/animal4-01.png';
 });
 
 animal03.addEventListener('click', function () {
-  right_animal.src = animal03.src;
+  right_animal.src = './image/index/object/animal2-01.png';
 });
 
 
@@ -725,15 +658,16 @@ $(function () {
   // 關閉
   $(".complete1").on("click", function () {
     $("div.adoptOverlay").addClass("-on");
-    $("#adopt_complete").attr('src','./image/index/object/complete1.png');
+    $("#adopt_complete").attr('src','./image/index/object/bgc1.png');
+    
   });
   $(".complete2").on("click", function () {
     $("div.adoptOverlay").addClass("-on");
-    $("#adopt_complete").attr('src', './image/index/object/complete2.png');
+    $("#adopt_complete").attr('src', './image/index/object/bgc2.png');
   });
   $(".complete3").on("click", function () {
     $("div.adoptOverlay").addClass("-on");
-    $("#adopt_complete").attr('src', './image/index/object/complete3.png');
+    $("#adopt_complete").attr('src', './image/index/object/bgc3.png');
   });
 });
 

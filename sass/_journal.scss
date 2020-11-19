@@ -328,7 +328,7 @@ a.jourBookName {
   font-size: 14px;
   margin: 0 auto;
   text-align: left;
-  width: 80%;
+  width: 85%;
   padding: 20px 10px 20px 20px;
   // border: 3px solid white;
 
@@ -342,6 +342,7 @@ a.jourBookName {
     margin: 0 auto;
     text-align: left;
     box-shadow: none;
+    // border: 3px solid white;
 
     tr {
       border-bottom: 1px solid rgba(255, 255, 255, .5);
@@ -466,7 +467,7 @@ a.jourBookName {
   padding: 5px;
   max-width: 1200px;
   // height: 95%;
-  z-index: 12;
+  z-index: 8;
   // overflow: auto;
   overflow: hidden;
 
@@ -527,7 +528,7 @@ div.jourLightBox.-on {
     width: 100%;
 
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: -50%;
   }
 }
@@ -615,6 +616,8 @@ div.jourLightBox.-on {
   margin: 0 auto;
   // border: 3px solid yellow;
   text-align: center;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -624,6 +627,10 @@ div.jourLightBox.-on {
   margin: 20px auto;
   width: 200px;
   text-align: center;
+}
+#sendAquaNo{
+  width: 200px;
+  // margin: 20px auto;
 }
 
 
@@ -1503,7 +1510,7 @@ div.jourLightBox.-on {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -1882,7 +1889,7 @@ div.jourLightBox.-on {
 
 
 .jourToAdopt {
-  cursor: pointer;
+  // cursor: pointer;
   margin: 20px auto;
 }
 

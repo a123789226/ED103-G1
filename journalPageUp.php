@@ -3,7 +3,7 @@
 try {
 require("./connectAqua.php");
 
-$sql = "select * from journal j join aqua a on(a.aquaNo = j.aquaNo) where aquaType='Dolphin' order by jourDate DESC limit 1";
+$sql = "select * from journal j join aqua a on(a.aquaNo = j.aquaNo) where aquaType='Dolphin' order by jourNo DESC limit 1";
 $journal = $pdo->prepare($sql);
 $journal->execute();
   
