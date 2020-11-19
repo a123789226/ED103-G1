@@ -417,8 +417,8 @@ $(function () {
                                     </div>
                                     <div class="memBlogContent memOrderCard row">
                                         <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
-                                        <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
-                                        <div class="col-4 col-sm-4 mem_ana">${res.data[i].ticketOrderDate}</div>
+                                        <div class="col-3 col-sm-3 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
+                                        <div class="col-5 col-sm-5 mem_ana">${res.data[i].ticketOrderDate}</div>
                                         <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
