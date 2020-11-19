@@ -14,7 +14,7 @@ function chooseAquaType(){
             bookCoverHTML += `
 
             <div class="jourBookSection">
-                <a href="#">
+              <a href="#">
 
                 <div class="jourBook jourBookOpenBtn">
                     <div class="jourBookLeft">
@@ -27,33 +27,33 @@ function chooseAquaType(){
                     <div class="jourBookName">${aquas[i].aquaName}</div>
                         <div class="jourBookText">
                             <table>
-                            <tr>
-                                <th>Aqua No.</th>
-                                <td>${aquas[i].aquaNo}</td>
-                            </tr>
-                            <tr>
-                                <th>Aqua Name</th>
-                                <td>${aquas[i].aquaName}</td>
-                            </tr>
-                            <tr>
-                                <th>Found Place</th>
-                                <td>${aquas[i].rescueLoc}</td>
-                            </tr>
-                            <tr>
-                                <th>Arrival Date</th>
-                                <td>${aquas[i].arriveDate}</td>
-                            </tr>
+                              <tr>
+                                  <th>Aqua No.</th>
+                                  <td>${aquas[i].aquaNo}</td>
+                              </tr>
+                              <tr>
+                                  <th>Aqua Name</th>
+                                  <td>${aquas[i].aquaName}</td>
+                              </tr>
+                              <tr>
+                                  <th>Found Place</th>
+                                  <td>${aquas[i].rescueLoc}</td>
+                              </tr>
+                              <tr>
+                                  <th>Arrival Date</th>
+                                  <td>${aquas[i].arriveDate}</td>
+                              </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                </a>
-                <!-- 陰影 -->
-                <div class="jourBookShadow"></div>
-                <!-- 石頭 -->
-                <div class="jourStone">
+              </a>
+              <!-- 陰影 -->
+              <div class="jourBookShadow"></div>
+              <!-- 石頭 -->
+              <div class="jourStone">
                 <img src="./image/journal/journal_element/stone.png" alt="">
-                </div>
+              </div>
             </div>
         `;
         }
@@ -77,46 +77,46 @@ function chooseAquaType(){
             bookCoverHTML += `
 
             <div class="jourBookSection">
-                <a href="#">
+              <a href="#">
 
                 <div class="jourBook jourBookOpenBtn">
-                    <div class="jourBookLeft">
+                  <div class="jourBookLeft">
 
-                    </div>
-                    <div class="jourBookRight">
-                        <div class="jourBookPhoto">
-                            <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
-                        </div>
-                    <div class="jourBookName">${aquas[i].aquaName}</div>
-                        <div class="jourBookText">
-                            <table>
-                            <tr>
-                                <th>Aqua No.</th>
-                                <td>${aquas[i].aquaNo}</td>
-                            </tr>
-                            <tr>
-                                <th>Aqua Name</th>
-                                <td>${aquas[i].aquaName}</td>
-                            </tr>
-                            <tr>
-                                <th>Found Place</th>
-                                <td>${aquas[i].rescueLoc}</td>
-                            </tr>
-                            <tr>
-                                <th>Arrival Date</th>
-                                <td>${aquas[i].arriveDate}</td>
-                            </tr>
-                            </table>
-                        </div>
-                    </div>
+                  </div>
+                  <div class="jourBookRight">
+                      <div class="jourBookPhoto">
+                          <img src="./img/aqua/${aquas[i].aquaNo}.jpg" alt="">
+                      </div>
+                  <div class="jourBookName">${aquas[i].aquaName}</div>
+                      <div class="jourBookText">
+                          <table>
+                              <tr>
+                                  <th>Aqua No.</th>
+                                  <td>${aquas[i].aquaNo}</td>
+                              </tr>
+                              <tr>
+                                  <th>Aqua Name</th>
+                                  <td>${aquas[i].aquaName}</td>
+                              </tr>
+                              <tr>
+                                  <th>Found Place</th>
+                                  <td>${aquas[i].rescueLoc}</td>
+                              </tr>
+                              <tr>
+                                  <th>Arrival Date</th>
+                                  <td>${aquas[i].arriveDate}</td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
                 </div>
-                </a>
-                <!-- 陰影 -->
-                <div class="jourBookShadow"></div>
-                <!-- 石頭 -->
-                <div class="jourStone">
+              </a>
+              <!-- 陰影 -->
+              <div class="jourBookShadow"></div>
+              <!-- 石頭 -->
+              <div class="jourStone">
                 <img src="./image/journal/journal_element/stone.png" alt="">
-                </div>
+              </div>
             </div>
         `;
         }
@@ -141,7 +141,7 @@ xhrSeal.onload = function(){
         bookCoverHTML += `
 
         <div class="jourBookSection">
-            <a href="#">
+          <a href="#">
 
             <div class="jourBook jourBookOpenBtn">
                 <div class="jourBookLeft">
@@ -154,33 +154,33 @@ xhrSeal.onload = function(){
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
                         <table>
-                        <tr>
-                            <th>Aqua No.</th>
-                            <td>${aquas[i].aquaNo}</td>
-                        </tr>
-                        <tr>
-                            <th>Aqua Name</th>
-                            <td>${aquas[i].aquaName}</td>
-                        </tr>
-                        <tr>
-                            <th>Found Place</th>
-                            <td>${aquas[i].rescueLoc}</td>
-                        </tr>
-                        <tr>
-                            <th>Arrival Date</th>
-                            <td>${aquas[i].arriveDate}</td>
-                        </tr>
+                          <tr>
+                              <th>Aqua No.</th>
+                              <td>${aquas[i].aquaNo}</td>
+                          </tr>
+                          <tr>
+                              <th>Aqua Name</th>
+                              <td>${aquas[i].aquaName}</td>
+                          </tr>
+                          <tr>
+                              <th>Found Place</th>
+                              <td>${aquas[i].rescueLoc}</td>
+                          </tr>
+                          <tr>
+                              <th>Arrival Date</th>
+                              <td>${aquas[i].arriveDate}</td>
+                          </tr>
                         </table>
                     </div>
                 </div>
             </div>
-            </a>
-            <!-- 陰影 -->
-            <div class="jourBookShadow"></div>
-            <!-- 石頭 -->
-            <div class="jourStone">
+          </a>
+          <!-- 陰影 -->
+          <div class="jourBookShadow"></div>
+          <!-- 石頭 -->
+          <div class="jourStone">
             <img src="./image/journal/journal_element/stone.png" alt="">
-            </div>
+          </div>
         </div>
     `;
     }
@@ -205,7 +205,7 @@ xhrTurtle.onload = function(){
         bookCoverHTML += `
 
         <div class="jourBookSection">
-            <a href="#">
+          <a href="#">
 
             <div class="jourBook jourBookOpenBtn">
                 <div class="jourBookLeft">
@@ -218,33 +218,33 @@ xhrTurtle.onload = function(){
                 <div class="jourBookName">${aquas[i].aquaName}</div>
                     <div class="jourBookText">
                         <table>
-                        <tr>
-                            <th>Aqua No.</th>
-                            <td>${aquas[i].aquaNo}</td>
-                        </tr>
-                        <tr>
-                            <th>Aqua Name</th>
-                            <td>${aquas[i].aquaName}</td>
-                        </tr>
-                        <tr>
-                            <th>Found Place</th>
-                            <td>${aquas[i].rescueLoc}</td>
-                        </tr>
-                        <tr>
-                            <th>Arrival Date</th>
-                            <td>${aquas[i].arriveDate}</td>
-                        </tr>
+                          <tr>
+                              <th>Aqua No.</th>
+                              <td>${aquas[i].aquaNo}</td>
+                          </tr>
+                          <tr>
+                              <th>Aqua Name</th>
+                              <td>${aquas[i].aquaName}</td>
+                          </tr>
+                          <tr>
+                              <th>Found Place</th>
+                              <td>${aquas[i].rescueLoc}</td>
+                          </tr>
+                          <tr>
+                              <th>Arrival Date</th>
+                              <td>${aquas[i].arriveDate}</td>
+                          </tr>
                         </table>
                     </div>
                 </div>
             </div>
-            </a>
-            <!-- 陰影 -->
-            <div class="jourBookShadow"></div>
-            <!-- 石頭 -->
-            <div class="jourStone">
+          </a>
+          <!-- 陰影 -->
+          <div class="jourBookShadow"></div>
+          <!-- 石頭 -->
+          <div class="jourStone">
             <img src="./image/journal/journal_element/stone.png" alt="">
-            </div>
+          </div>
         </div>
     `;
     }
@@ -335,51 +335,51 @@ function openBookDolphin(){
                       if( i == 0){
                         element = $(`<div />`).html(`
                         <div class="hard jourPage${i+1}">
-                        <div class="jourPageContent">
-                          <h4>${data[i].jourDate}</h4>
-                          <div class="jourPagePhotoArea1">
-                            <div class="jourPagePhotoLeft1">
-                              <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
+                          <div class="jourPageContent">
+                            <h4>${data[i].jourDate}</h4>
+                            <div class="jourPagePhotoArea1">
+                              <div class="jourPagePhotoLeft1">
+                                <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
+                              </div>
+                              <div class="jourPagePhotoRight1">
+                                <div class="jourPagePhotoRightInner1">
+                                  <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
+                                </div>
+                                <div class="jourPagePhotoRightInner1">
+                                  <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
+                                </div>
+                              </div>
                             </div>
-                            <div class="jourPagePhotoRight1">
-                              <div class="jourPagePhotoRightInner1">
-                                <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
-                              </div>
-                              <div class="jourPagePhotoRightInner1">
-                                <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
-                              </div>
+                            <div class="jourPageText1">
+                              <h4>Story Updates</h4>
+                              <p>${data[i].jourContent}</p>
                             </div>
                           </div>
-                          <div class="jourPageText1">
-                            <h4>Story Updates</h4>
-                            <p>${data[i].jourContent}</p>
-                          </div>
-                        </div>
-                      </div>`);
+                        </div>`);
                         $("#flipbook2").turn("addPage", element, i+2);
                       }else if(i == data.length-1 ){
                             element = $(`<div />`).html(`<div class="hard jourPage${i+1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
                                 <div class="jourPagePhotoArea1">
-                                <div class="jourPagePhotoLeft1">
-                                  <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
+                                  <div class="jourPagePhotoLeft1">
+                                    <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
+                                  </div>
+                                  <div class="jourPagePhotoRight1">
+                                    <div class="jourPagePhotoRightInner1">
+                                      <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
+                                    </div>
+                                    <div class="jourPagePhotoRightInner1">
+                                      <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="jourPagePhotoRight1">
-                                  <div class="jourPagePhotoRightInner1">
-                                    <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
-                                  </div>
-                                  <div class="jourPagePhotoRightInner1">
-                                    <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
-                                  </div>
+                                <div class="jourPageText1">
+                                  <h4>Story Updates</h4>
+                                  <p>${data[i].jourContent}</p>
                                 </div>
                               </div>
-                              <div class="jourPageText1">
-                                <h4>Story Updates</h4>
-                                <p>${data[i].jourContent}</p>
-                              </div>
-                            </div>
-                          </div>`);
+                            </div>`);
                             $("#flipbook2").turn("addPage", element, i+2);
                             element = $(`<div />`).html(`<div class="hard jourLastPage">
                             <h4>Welcome to visit Olivia at <br> Aqua Wonderland!</h4>
@@ -623,31 +623,32 @@ function demoDolphin(){
       for (let i = 0; i < data.length; i++) {
         if (i == 0) {
           element = $(`<div />`).html(`
-                        <div class="hard jourPage${i + 1}">
-                        <div class="jourPageContent">
-                          <h4>${data[i].jourDate}</h4>
-                          <div class="jourPagePhotoArea">
-                            <div class="jourPagePhotoLeft">
-                              <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
-                            </div>
-                            <div class="jourPagePhotoRight">
-                              <div class="jourPagePhotoRightInner">
-                                <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
+                         <div class="hard jourPage${i + 1}">
+                            <div class="jourPageContent">
+                              <h4>${data[i].jourDate}</h4>
+                              <div class="jourPagePhotoArea">
+                                <div class="jourPagePhotoLeft">
+                                  <img src="./img/journal/a${data[i].jourNo}.jpg" alt="">
+                                </div>
+                                <div class="jourPagePhotoRight">
+                                  <div class="jourPagePhotoRightInner">
+                                    <img src="./img/journal/b${data[i].jourNo}.jpg" alt="">
+                                  </div>
+                                  <div class="jourPagePhotoRightInner">
+                                    <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
+                                  </div>
+                                </div>
                               </div>
-                              <div class="jourPagePhotoRightInner">
-                                <img src="./img/journal/c${data[i].jourNo}.jpg" alt="">
+                              <div class="jourPageText">
+                                <h4>Story Updates</h4>
+                                <p>${data[i].jourContent}</p>
                               </div>
                             </div>
-                          </div>
-                          <div class="jourPageText">
-                            <h4>Story Updates</h4>
-                            <p>${data[i].jourContent}</p>
-                          </div>
-                        </div>
-                      </div>`);
+                          </div>`);
           $("#demobook").turn("addPage", element, i + 2);
         } else if (i == data.length - 1) {
-          element = $(`<div />`).html(`<div class="hard jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                          <div class="hard jourPage${i + 1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
                                 <div class="jourPagePhotoArea">
@@ -675,7 +676,8 @@ function demoDolphin(){
                           </div>`);
           $("#demobook").turn("addPage", element, i + 3);
         } else {
-          element = $(`<div />`).html(`<div class="jourPage jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                      <div class="jourPage jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                             <div class="jourPagePhotoArea">
@@ -740,7 +742,7 @@ function demoWhale() {
       for (let i = 0; i < data.length; i++) {
         if (i == 0) {
           element = $(`<div />`).html(`
-                        <div class="hard jourPage${i + 1}">
+                      <div class="hard jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                           <div class="jourPagePhotoArea">
@@ -764,7 +766,8 @@ function demoWhale() {
                       </div>`);
           $("#demobook1").turn("addPage", element, i + 2);
         } else if (i == data.length - 1) {
-          element = $(`<div />`).html(`<div class="hard jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                          <div class="hard jourPage${i + 1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
                                 <div class="jourPagePhotoArea">
@@ -792,7 +795,8 @@ function demoWhale() {
                           </div>`);
           $("#demobook1").turn("addPage", element, i + 3);
         } else {
-          element = $(`<div />`).html(`<div class="jourPage jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                      <div class="jourPage jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                             <div class="jourPagePhotoArea">
@@ -857,7 +861,7 @@ function demoWhale() {
       for (let i = 0; i < data.length; i++) {
         if (i == 0) {
           element = $(`<div />`).html(`
-                        <div class="hard jourPage${i + 1}">
+                      <div class="hard jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                           <div class="jourPagePhotoArea">
@@ -881,7 +885,8 @@ function demoWhale() {
                       </div>`);
           $("#demobook2").turn("addPage", element, i + 2);
         } else if (i == data.length - 1) {
-          element = $(`<div />`).html(`<div class="hard jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                          <div class="hard jourPage${i + 1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
                                 <div class="jourPagePhotoArea">
@@ -909,7 +914,8 @@ function demoWhale() {
                           </div>`);
           $("#demobook2").turn("addPage", element, i + 3);
         } else {
-          element = $(`<div />`).html(`<div class="jourPage jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                      <div class="jourPage jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                             <div class="jourPagePhotoArea">
@@ -974,7 +980,7 @@ function demoTurtle() {
       for (let i = 0; i < data.length; i++) {
         if (i == 0) {
           element = $(`<div />`).html(`
-                        <div class="hard jourPage${i + 1}">
+                      <div class="hard jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                           <div class="jourPagePhotoArea">
@@ -998,7 +1004,8 @@ function demoTurtle() {
                       </div>`);
           $("#demobook3").turn("addPage", element, i + 2);
         } else if (i == data.length - 1) {
-          element = $(`<div />`).html(`<div class="hard jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                          <div class="hard jourPage${i + 1}">
                             <div class="jourPageContent">
                               <h4>${data[i].jourDate}</h4>
                                 <div class="jourPagePhotoArea">
@@ -1026,7 +1033,8 @@ function demoTurtle() {
                           </div>`);
           $("#demobook3").turn("addPage", element, i + 3);
         } else {
-          element = $(`<div />`).html(`<div class="jourPage jourPage${i + 1}">
+          element = $(`<div />`).html(`
+                      <div class="jourPage jourPage${i + 1}">
                         <div class="jourPageContent">
                           <h4>${data[i].jourDate}</h4>
                             <div class="jourPagePhotoArea">
@@ -1093,7 +1101,7 @@ function rwdLightBox(aquaNo){
         let rwdHtml = '';
         // console.log(data);
         rwdHtml += `            
-        <li>
+            <li>
               <div class="hard jourCoverRwd">
                 <div class="jourOpenBookRwd">
                   <div class="jourOpenBookRightRwd jourPage0">
@@ -1157,7 +1165,7 @@ function rwdLightBox(aquaNo){
 
         }
         rwdHtml += `
-      <li>
+            <li>
               <div class="jourLastPageRwd">
                 <p class="jourLastPageText">Welcome to visit the aquas <br>at Aqua Wonderland!</p>
               </div>

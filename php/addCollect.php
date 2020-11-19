@@ -1,7 +1,7 @@
 <?php
 try{
     session_start();
-    require_once("./connectBook.php");
+    require_once("../connectAqua.php");
     $sql = "INSERT INTO blog_mark (memNo, blogNo) VALUES (:memNo,:likework)"; 
 
         // var_dump($_POST["CAM_NO"]);

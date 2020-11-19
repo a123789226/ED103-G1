@@ -995,57 +995,6 @@ function backendDoFirst(){
   }
 }
 
-
-// backJournal 新增
-// $(document).ready(function () {
-//   let imgs = new FormData();
-//   for (var i = 0; i < $(':file')[0].files.length; i++) {
-//     imgs.append('upfile[]', $(':file')[0].files[i]);
-//   }
-//   $('.ngrbtnJourAdd').on('click', function () {
-//     console.log(111);
-//     $.ajax({
-//       url: 'InsertbackJournal.php',
-//       type: 'POST',
-//       dataType: 'json',
-//       contentType: false,
-//       data: {
-//         aquaNo: $('#jourForm #aquaNo').val(),
-//         jourStory: $('#jourForm #jourStory').val(),
-//         jourContent: $('#jourForm #jourContent').val(),
-//         upfile: imgs,
-//         jourDate: $('#jourForm #jourDate').val(),
-
-//       },
-//       success(e) {
-//         console.log(e);
-//       },
-
-//     });
-//   });
-// });
-
-  // journal Add
-  // function btnJourAdd(){
-  //   var xhrbtnJourAdd = new XMLHttpRequest;
-  //   xhrbtnJourAdd.onload = function(){
-  //     if (xhrbtnJourAdd.status == 200){
-  //       document.getElementById("ngrbtnJourAdd").innerText.xhrbtnJourAdd.responseText;
-  //     }else{
-  //       swal("Inserted Successfully!", "", "success");
-  //     }
-  //   }
-    
-  //   //連接的php
-  //   xhrbtnJourAdd.open("post", "InsertbackJournal.php", true);
-  //   xhrbtnJourAdd.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-  //   //送出資料
-  //   let btnJourAddData = `aquaNo=${aquaNo}&jourStory=${jourStory}&jourContent=${jourContent}&jourPic1=${jourPic1}&jourPic2=${jourPic2}&jourPic3=${jourPic3}&jourDate=${jourDate}`;
-  //   xhrjournal.send(btnJourAddData);
-  // }
-
-
 window.addEventListener('load',backendDoFirst);
 
 

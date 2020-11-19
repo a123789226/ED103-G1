@@ -1,7 +1,7 @@
 <?php
 try{
     session_start();
-    require_once("./connectBook.php");
+    require_once("../connectAqua.php");
 
     $sql1 = "SELECT blogNo FROM  blog_mark WHERE memNo = :memNo "; 
     $blogMark = $pdo->prepare($sql1);

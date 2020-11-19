@@ -1,7 +1,7 @@
 <?php
 try{
     session_start();
-    require_once("./connectBook.php");
+    require_once("../connectAqua.php");
     $sql = "SELECT *
     FROM member m
     join blog_mark b
