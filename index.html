@@ -3,49 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="icon" href="./image/header/favicon.ico">
 
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Aqua Wonderland</title>
 </head>
-<body>
+<body id="indexBlock">
   <!-- 下面是背景的div，先不要動到 -->
-  <div class="indexBackGround">
-    <div class="commonBG00 commonBGSet"></div>
+  <div class="indexBackground" id="indexBackground">
+    <img src="./image/background/bg0.png" alt="" class="waterWave">
     <div class="commonBG01 commonBGSet"></div>
     <div class="commonBG02 commonBGSet"></div>
     <div class="commonBGLeft commonBGSet"></div>
     <div class="commonBGRight commonBGSet"></div>
     <img src="./image/background/fish1.png" alt="" class="BGFish1">
-    <img src="./image/background/fish2.png" alt="" class="BGFish2">
+    <img src="./image/background/fish3.png" alt="" class="BGFish2">
+    <img src="./image/background/fish2.png" alt="" class="BGFish3">
+    <img src="./image/background/fish4.png" alt="" class="BGFish4">
+    <img src="./image/background/fish1.png" alt="" class="BGFish5">
+    <div id="shadow"></div>
   </div> 
   <!-- 上面是背景的div，先不要動到 -->
   
   <main class="indexTitle">
-    <h1>WELCOME TO AQUA WONDERLAND!</h1>
-    <div class="indexAll">
-      <div class="homepage">
-        <a href="./homepage.html">
-          <!-- <img src="./image/header/logo.png" alt=""> -->
-          <p>Front Stage</p>
-        </a>
-      </div>
-      <div class="backend">
-        <a href="./backendLogin.html">
-          <!-- <img src="./image/memPic/image2.jpg" alt=""> -->
-          <p>Back Stage</p>
-        </a>
-      </div>
+    <div class="LinkDiv">
+      <a href="./homepage.html" class="LinkBlock" id="homepageLink">
+        <img src="./image/tour/getCollectionImage.jpg" alt="">
+        <div class="imgShadow"></div>
+        <p>HOME</p>
+      </a>
+    </div>
+    <div class="LinkDiv">
+      <a href="./backendLogin.html" class="LinkBlock" id="backendLink">
+        <img src="./image/index/object/indexMain3-5.png" alt="">
+        <div class="imgShadow"></div>
+        <p>BACKEND</p>
+      </a>
     </div>
   </main>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script>
+
+    function doFirst(){
+      //每0.3秒要再建立一次事件聆聽
+      // document.getElementById('shadow').addEventListener("mousemove", clickEffect);
+      // setInterval(function(){document.getElementById('shadow').addEventListener("mousemove", clickEffect)}, 150);
+      setInterval(function(){window.addEventListener("mousemove", clickEffect)}, 300);
+      // 點擊也會觸發
+      window.addEventListener("click", clickEffect);
+
+      // 防止拖曳
+      let pic = document.querySelectorAll('img');
+      for(let i = 0; i < pic.length; i++){
+        pic[i].ondragstart=function(){return false}
+      }
+
+    }
+
+    //水波紋效果
     function clickEffect(e) {
       var clickDiv = document.createElement("div");
 
@@ -53,19 +71,34 @@
       clickDiv.style.top = e.clientY + "px";
       clickDiv.style.left = e.clientX + "px";
 
-      document.body.appendChild(clickDiv);
+      document.getElementById('shadow').appendChild(clickDiv);
 
       clickDiv.onanimationend = function() {
         clickDiv.parentElement.removeChild(clickDiv);
       };
       // 執行一次就要移除事件聆聽，不然移動會跑出很多圈圈
-      document.removeEventListener("mousemove", clickEffect);
+      // document.getElementById('shadow').removeEventListener("mousemove", clickEffect);
+      window.removeEventListener("mousemove", clickEffect);
     }
 
-    //每0.25秒要再建立一次事件聆聽
-    setInterval(function(){document.addEventListener("mousemove", clickEffect)}, 250);
+
+    window.addEventListener('load', doFirst);
     
 
+
+    // jQuery
+
+    $('#homepageLink').hover(function(){
+      $('.indexBackground').addClass('hoverBG');
+    }, function(){
+      $('.indexBackground').removeClass('hoverBG');
+    })
+
+    $('#backendLink').hover(function(){
+      $('.indexBackground').addClass('backHoverBG');
+    }, function(){
+      $('.indexBackground').removeClass('backHoverBG');
+    })
   </script>
 </body>
 </html>
