@@ -1,7 +1,7 @@
 <?php
 try{
     session_start();
-    require_once("./connectBook.php");
+    require_once("../connectAqua.php");
     $sql = "DELETE FROM `blog_mark` WHERE (memNo=:memNo) AND (blogNo=:likework)"; 
 
         // var_dump($_SESSION["MEMNO"]);

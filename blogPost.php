@@ -3,7 +3,7 @@ $blogNo = $_REQUEST["blogNo"];
 $errMsg = "";
 //連線資料庫
 try{
-    require_once("./php/connectBook.php");
+    require_once("./connectAqua.php");
     // select p.piNo, p.piTitle, p.piTitlePic, p.piTitleContent, p.piFloatLeftPic, p.piFloatLeftContent, p.piFloatRightPic, p.piFloatRightContent, m.memName, m.memId 'E-mail'
     // from postinfo p join memInfo m on (p.memNo = m.memNo)
     // where p.piNo = 2;

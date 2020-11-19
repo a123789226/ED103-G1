@@ -162,7 +162,7 @@
   <div class="row">
   <?php
   try {
-    require_once('./php/connectBook.php');
+    require_once('./connectAqua.php');
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
     FROM blog b JOIN member m ON (b.memNo = m.memNo)

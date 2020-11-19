@@ -114,7 +114,7 @@
         if(isset($_SESSION["memId"])){
             $errMsg = "";
             try {
-                require_once("./php/connectBook.php");
+                require_once("./connectAqua.php");
                 $pdo->beginTransaction();
                 // 取得上傳檔案數量
                 $fileCount = count($_FILES['upFile']['name']);

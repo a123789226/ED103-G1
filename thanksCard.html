@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <link rel="icon" href="./image/header/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Aqua Wonderland</title>
+    <title>Thanks Card</title>
 </head>
 
 <body>
@@ -134,7 +133,11 @@
 <section class="cardMain">
 <div id="cardImages" class="cardMaterials">
   
-  <span>拖曳圖片</span>
+  <p>Drag& Drog Images</p>
+  <div class="cardOptions">
+    <button class="imageUploader" id="imageUploader" >Upload Image</button>
+    <input type="file" id="file" style="display: none;">
+  </div>
       <img id="defaultImg" src="./image/thanksCard/animal1.png" alt="" draggable>
       <img src="./image/thanksCard/animal2.png" alt="">
       <img src="./image/thanksCard/animal3.png" alt="">
@@ -154,21 +157,20 @@
       <img src="./image/thanksCard/decoration12.png" alt="">
       <img src="./image/thanksCard/decoration13.png" alt="">
       <img src="./image/thanksCard/decoration14.png" alt="">
-</div>
-<div class="options">
-  <button class="imageUploader" id="imageUploader" >upload image</button>
-  <input type="file" id="file" style="display: none;">
+      
+    </div>
+
+<div class="cardCanvasContanier">
+  <canvas id="thanksCardCanvas"></canvas>
 </div>
 
-        
-<canvas id="thanksCardCanvas"></canvas>
 </section>
 <form method="post" id="form1">
   <input name="hidden_data" id='hidden_data' type="hidden"/>
 </form>
-
-<input type="button" value="save image" onclick="downloadImg()" />
-
+<!-- <div class="cardCompletedBtnSection"> -->
+<input class="cardCompletedBtn"type="button" value="COMPLETED" onclick="downloadImg()" />
+<!-- </div> -->
 <!-- <button id="save2Server">儲存到伺服器</button> -->
 <!-- <div class="cardContainer">
     <div class="cardMaterials">
@@ -510,6 +512,26 @@ canvas.on('drop', dropImg)
 // defaultImg.addEventListener('mousedown', saveImg)
 imgset.addEventListener('mousedown', saveImg)
 
+//點擊選圖
+// function imgPick(e){
+//   let srcImg = e.target;
+//   let newImg = srcImg.cloneNode();
+//   let thanksCardCanvas = document.getElementById("thanksCardCanvas");
+//   if(thanksCardCanvas.children.length == 0){
+//   	thanksCardCanvas.appendChild(newImg);
+//   }else{
+//   	thanksCardCanvas.appendChild( newImg, thanksCardCanvas.firstElementChild);
+
+//   }
+  
+// }
+
+// function init(){
+// 	var imgs = document.querySelectorAll(".cardMaterials img");
+// 	for(  var i = 0; i < imgs.length; i++){
+// 		imgs[i].onclick = imgPick;
+// 	}
+// }
 
 // const save2Server = document.getElementById('save2Server')
 //     save2Server.addEventListener('click', () => {

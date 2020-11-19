@@ -1,214 +1,132 @@
-.cardContainer{
+.cardMain{
     display: flex;
     flex-direction: row;
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1006px;
     margin: 0 auto;
+    border: 3px solid $keyWhite;
+    border-radius: 6px;
     .cardMaterials{
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 100%;
+        max-width: 400px;
+        height: 450px;
+        overflow-y: scroll;
+        border-radius: 6px;
         background-color: $keyGreen;
         background-repeat: no-repeat;
         background-size: cover;
+        .cardOptions{
+            margin: 0 auto;
+        }
         p{
             @include sub_title($keyWhite);
             margin: 20px auto;
             text-align: center;
         }
-        .cardMaterialBackground{
+        img{
             width: 80%;
-            margin: 20px auto;
-            .cardBgc{
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
-                border: 1px solid $keyWhite;
-                cursor: pointer;
-            }
+            max-width: 150px;
+            height: 100%;
+            max-height: 100px;
+            margin: 20px auto 0 auto;
+            border: 1px solid $keyWhite;
+            // cursor: pointer;
+            // display: inline-block;
+            // border: 1px solid $keyWhite;
+            // width: 100px;
+            // height: auto;
+            cursor: move;
         }
-        .cardMaterialAnimal{
-            width: 80%;
-            // max-width: 100px;
-            margin: 20px auto;
-            .cardAnimals{
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
-                border: 1px solid $keyWhite;
-                cursor: pointer;
-            }
-        }
-        .cardMaterialDeco{
-            width: 80%;
-            margin: 20px auto;
-            .cardDeco{
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
-                border: 1px solid $keyWhite;
-                cursor: pointer;
-            }
-        }
+        // .cardMaterialBackground{
+        //     width: 80%;
+        //     margin: 20px auto;
+        //     .cardBgc{
+        //         width: 100%;
+        //         height: auto;
+        //         margin-top: 20px;
+        //         border: 1px solid $keyWhite;
+        //         cursor: pointer;
+        //     }
+        // }
+        
     }
 }
-        .cardMaterialAnimalBtn{
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-        .cardMaterialBackgroundBtn{
-            text-align: center;
-        }
-        .cardMaterialDecoBtn{
-            text-align: center;
-        }
-        cardStepBtn
-//     }
-//     .cardSectionContainer{
-//         display: block;
-//         width: 100%;
-//         height: 100%;
-//         margin-left: 5%;
-//         .cardSectionContent{
-//             width: 600px;
-//             height: 450px;
-//             padding: 20px;
-//             background-color:rgba(255, 255, 255, 0.856);
-//             position: relative;
-//             background-repeat: no-repeat;
-//             background-position: center;
-//             background-size: cover;
-//             z-index: 3;
-//             .cardSelectText{
-//                 display: flex;
-//                 // width: 70%;
-//                 font-size: 20px;
-//                 line-height: 1.5;
-//                 padding: 5%;
-//                 position: absolute;
-//                 top: 35%;
-//                 left: 20%;
-//                 color: $keyWhite;
-//                 border: 3px solid $keyWhite;
-//                 z-index: 6;
-
-            
-//             }
-//             .cardAnimalChosen{
-//                 width: 100%;
-//                 height: 100%;
-//                 max-width: 600px;
-//                 max-height: 450px;
-//                 position: absolute;
-//                 bottom: 0%;
-//                 right: 0%;
-//                 // background-color: #888;
-//                 background-repeat: no-repeat;
-//                 background-position: center;
-//                 background-size: contain; 
-//                 z-index: 9;
-
-//               .cardAnimalChosen img{
-//                 width: 100%;
-//                 height: 100%;
-//                 // height: 100%;
-//                 // object-fit: cover !important;
-//               }
-//             }
-
-//             .cardDecoChosen{
-//                 width: 100%;
-//                 height: 100%;
-//                 max-width: 600px;
-//                 max-height: 450px;
-//                 position: absolute;
-//                 bottom: 0%;
-//                 right: 0%;
-//                 // background-color: #888;
-//                 background-repeat: no-repeat;
-//                 background-position: center;
-//                 // background-size: cover; 
-//                 // background-size: ;
-//                 background-size: contain;
-//                 z-index: 8;
-
-//               .cardDecoChosen img{
-//                 width: 100%;
-//                 height: 100%;
-//                 object-fit: cover;
-//               }
-//             }
-//         }
-
-//     }
-// }
-
-
-
-
-// 上下一步按鈕位置
-.cardBtnSection{
-    display: flex;
-    justify-content: center;
+.cardCompletedBtnSection{
     width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+.cardCompletedBtn{
+    @include btn50Green; 
+    box-shadow: $shadow2;
+    margin: 20px auto;   
 }
 
-// 上下一步按鈕控制div的CSS
-.step { 
-    display: none; 
-} 
 
-.step.active { 
-    display: block; 
-} 
-
-.cardMain{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.cardMaterials{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 400px;
-    overflow-y: scroll;
-    background-color: $keyGreen;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 #imageUploader{
     @include btn50Green; 
     box-shadow: $shadow2;
 }
 #thanksCardCanvas {
     display: flex;
-    border: 3px solid $keyWhite;
-    border-radius: 6px;
+    // width: 100%;
+    // max-width: 600px;
+    // border: 3px solid $keyWhite;
+    // border-radius: 6px;
   }
-  
+  .cardCanvasContanier{
+      width: 100%;
+      height: auto;
+  }
 
   #cardImages{
       display: flex;
       flex-direction: column;
   }
-  #cardImages > img {
-    display: inline-block;
-    border: 1px solid $keyWhite;
-    width: 100px;
-    height: auto;
-    cursor: move;
-  }
+ 
 
-  [draggable] {
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      user-select: none;
-      -khtml-user-drag: element;
-      -webkit-user-drag: element;
-      cursor: move;
-  }
+//   [draggable] {
+//       -moz-user-select: none;
+//       -khtml-user-select: none;
+//       -webkit-user-select: none;
+//       user-select: none;
+//       -khtml-user-drag: element;
+//       -webkit-user-drag: element;
+//       cursor: move;
+//   }
+
+// RWD for fake Post
+@media screen and (max-width: 767px) {
+    .cardMain{
+        display: flex;
+        flex-direction: column;
+        // width: 100%;
+        // max-width: 500px;
+        // margin: 0 auto;
+        border: 0;
+    }
+    .cardMaterials{
+        display: flex;
+        flex-direction: row !important;
+        border-radius: 6px;
+        background-color: $keyGreen;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    //RWD 要每個級距去寫
+    // .canvas-container{
+    //     width: 300px !important;
+    //     height: 150px !important;
+    // }
+    // #thanksCardCanvas {
+    //     width: 300px !important;
+    //     height: 150px !important;
+ 
+    //   }
+    //   .upper-canvas {
+    //     width: 300px !important;
+    //     height: 150px !important;
+    //   }
+}

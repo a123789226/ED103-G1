@@ -5,7 +5,7 @@ if (isset($_SESSION["memId"]) === true){
     $blogNo = $_POST["blogNo"];
     $memNo = $_SESSION["memNo"];
     try {
-        require_once ('./php/connectBook.php');
+        require_once ('../connectAqua.php');
         //查詢
         $sql = "SELECT memNo , blogNo from blog_mark where memNo = $memNo and blogNo = $blogNo";
         $pdoStatement = $pdo->query($sql);
