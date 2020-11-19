@@ -124,8 +124,8 @@
   input{
     font-size: 16px;
     border-radius: 6px;
-    margin: 10px;
-    padding: 5px;
+    // margin: 10px;
+    // padding: 10px;
   }
   .fas{
     cursor: pointer;
@@ -224,22 +224,16 @@
           i{
             font-size: 20px;
           }
-          .fa-check-circle:hover, .fa-check-circle:active{
-            color: green;
-          }
-          .fa-times-circle:hover, .fa-times-circle:active{
-            color: red;
-          }
         }
       }
       // AQUA
       .aquaForm{
         // text-align: center;
         margin: 0 auto;
-        padding: 20px 20px 40px;
+        padding: 20px 20px;
         // border: 1px solid black;
         background-color: rgba(255, 255, 255, .5);
-        width: 500px;
+        width: 520px;
         height: 800px;
         overflow-x: scroll;
         box-shadow: 0 0 10px #ddd;
@@ -256,7 +250,7 @@
         h3{
           @include main_title($keyWhite);
           // margin-bottom: 20px;
-          width: 600px;
+          width: 400px;
           text-align: left;
         }
         .btn_modal_close{
@@ -284,7 +278,7 @@
           }
         }
         input {
-          padding: 5px 15px; 
+          // padding: 10px; 
           background:#ffffff; 
           border:0 none;
           cursor:pointer;
@@ -316,12 +310,6 @@
           }
           i{
             font-size: 20px;
-          }
-          .fa-check-circle:hover, .fa-check-circle:active{
-            color: green;
-          }
-          .fa-times-circle:hover, .fa-times-circle:active{
-            color: red;
           }
         }
       }
@@ -418,12 +406,6 @@
           i{
             font-size: 20px;
           }
-          .fa-check-circle:hover, .fa-check-circle:active{
-            color: green;
-          }
-          .fa-times-circle:hover, .fa-times-circle:active{
-            color: red;
-          }
         }
       }
       // ADOPT
@@ -458,10 +440,12 @@
           margin: 5px;
         }
         margin: 0 auto;
-        padding: 20px 20px 40px;
+        padding: 20px;
         // border: 1px solid black;
         background-color: rgba(255, 255, 255, .5);
         width: 500px;
+        height: 800px;
+        overflow-x: scroll;
         box-shadow: 0 0 10px #ddd;
         position: absolute;
         top: 50%;
@@ -471,7 +455,7 @@
         h3{
           @include main_title($keyWhite);
           // margin-bottom: 20px;
-          width: 600px;
+          width: 400px;
           text-align: left;
         }
         .btn_modal_close{
@@ -584,12 +568,6 @@
             i{
               font-size: 20px;
             }
-            .fa-check-circle:hover, .fa-check-circle:active{
-              color: green;
-            }
-            .fa-times-circle:hover, .fa-times-circle:active{
-              color: red;
-            }
           }
         }
       }
@@ -615,12 +593,6 @@
           }
           i{
             font-size: 20px;
-          }
-          .fa-check-circle:hover, .fa-check-circle:active{
-            color: green;
-          }
-          .fa-times-circle:hover, .fa-times-circle:active{
-            color: red;
           }
         }
       }
@@ -651,12 +623,6 @@
             i{
               font-size: 20px;
             }
-            .fa-check-circle:hover, .fa-check-circle:active{
-              color: green;
-            }
-            .fa-times-circle:hover, .fa-times-circle:active{
-              color: red;
-            }
           }
         }
       }
@@ -680,12 +646,6 @@
             i{
               font-size: 20px;
             }
-            .fa-check-circle:hover, .fa-check-circle:active{
-              color: green;
-            }
-            .fa-times-circle:hover, .fa-times-circle:active{
-              color: red;
-            }
           }
         }
       }
@@ -707,12 +667,6 @@
             padding: 5px;
             i{
               font-size: 20px;
-            }
-            .fa-check-circle:hover, .fa-check-circle:active{
-              color: green;
-            }
-            .fa-times-circle:hover, .fa-times-circle:active{
-              color: red;
             }
           }
         }
