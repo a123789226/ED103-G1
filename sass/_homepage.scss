@@ -902,8 +902,8 @@
     #adoptBox{
       margin: 0 auto;
       padding: 20px;
-      background-color: white;
-      width: 600px;
+      background-color:  hsla(255,255,255,.3);
+      width: 800px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -915,6 +915,7 @@
       }
       #adopt_complete{
         width: 100%;
+        padding-top: 5%;
       }
       .adoptClose2{
         margin-top: 20px;
@@ -945,7 +946,7 @@
     top: 45%;
     width: 20%;
   }
-  .adopt_animal01, .adopt_animal02, .adopt_animal03{
+  .complete1, .complete2, .complete3{
     position: absolute;
     cursor: pointer;
     animation-name: home_bounce_down4;
@@ -953,22 +954,22 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
-  .adopt_animal01{
-    width: 20%;
-    left: -3%;
+  .complete1{
+    width: 15%;
+    left: 0%;
     top: 20%;
   }
-  .adopt_animal02{
-    width: 17%;
-    left: 10%;
+  .complete2{
+    width: 15%;
+    left: 13.5%;
     top: 25%;
   }
-  .adopt_animal03{
-    width: 20%;
-    left: 25%;
+  .complete3{
+    width: 15%;
+    left: 28%;
     top: 20%;
   }
-  .complete1, .complete2, .complete3{
+  .adopt_animal01, .adopt_animal02, .adopt_animal03{
     position: absolute;
     width: 10%;
     animation-name: bubble;
@@ -976,15 +977,15 @@
     animation-iteration-count: infinite;
     cursor: pointer;
   }
-  .complete1{
+  .adopt_animal01{
     right: 39%;
     top: -14%;
   }
-  .complete2{
+  .adopt_animal02{
     right: 27%;
     top: -14%;
   }
-  .complete3{
+  .adopt_animal03{
     right: 15%;
     top: -14%;
   }

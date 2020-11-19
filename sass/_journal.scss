@@ -466,7 +466,7 @@ a.jourBookName {
   padding: 5px;
   max-width: 1200px;
   // height: 95%;
-  z-index: 12;
+  z-index: 9;
   // overflow: auto;
   overflow: hidden;
 
@@ -615,6 +615,8 @@ div.jourLightBox.-on {
   margin: 0 auto;
   // border: 3px solid yellow;
   text-align: center;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -624,6 +626,10 @@ div.jourLightBox.-on {
   margin: 20px auto;
   width: 200px;
   text-align: center;
+}
+#sendAquaNo{
+  width: 200px;
+  // margin: 20px auto;
 }
 
 
@@ -1882,7 +1888,7 @@ div.jourLightBox.-on {
 
 
 .jourToAdopt {
-  cursor: pointer;
+  // cursor: pointer;
   margin: 20px auto;
 }
 

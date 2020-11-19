@@ -431,14 +431,14 @@ function openBookDolphin(){
                 },
               })
               //傳aquaNo, aquaPic到adopt.php  
-              doAquano(aquaNo);
               
               if(check == 1 ){
                 check += 1;
+                doAquano(aquaNo);
                 rwdLightBox(aquaNo);
               }
-              //帶入認養人頭像
               doMemPic(aquaNo);
+              //帶入認養人頭像
               
               // 渲染留言的function
               doPost(aquaNo);
@@ -546,29 +546,60 @@ function doPost(aquaNo){
     xhr.send(data_info);
 }
 
-
+// let mem_info;
 
 $('#doPost').on('click', function () {
-  let aquaNo = $('#openAquaNo').text();
-  $.ajax({
-    url: 'journalComment1.php',
-    type: 'POST',
-    dataType: 'json',
-    data: {
-      aquano: $('#openAquaNo').text(),
-      word: $('#myInput').val(),
-    },
-    complete(e) {
-      let word = $('#myInput').val();
-      if (e.responseText == 'OhOh') {
-      } else {
-        doPost(aquaNo);
-      }
-      
-    },
-  });
-  $('#myInput').val('');
+    let aquaNo = $('#openAquaNo').text();
+    $.ajax({
+      url: 'journalComment1.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        aquano: $('#openAquaNo').text(),
+        word: $('#myInput').val(),
+      },
+      complete(e) {
+        let word = $('#myInput').val();
+        if (e.responseText == 'OhOh') {
+          $("div.overlay").addClass("-on");
+        } else {
+          doPost(aquaNo);
+        }
+
+      },
+    });
+    $('#myInput').val('');
 });
+
+
+
+
+
+let mem_adopt='';
+$("#sendAquaNo").on("click", function () {
+  let aquano = $('#openAquaNo').text();
+  let url = `adopt.php?aquaNo=${aquano}`
+  $.ajax({
+    url: 'getMemberInfo.php',
+    type: 'GET',
+    success(data) {
+      mem_adopt = JSON.parse(data);
+      console.log(mem_adopt.memId);
+    }
+  })
+  window.setTimeout(function () {
+    if (mem_adopt.memId !== undefined) {
+        window.location = url;
+
+    } else {
+      $("div.overlay").addClass("-on");
+    }
+  }, 100);
+
+
+
+});
+
 
 
 
@@ -681,7 +712,7 @@ function demoDolphin(){
       $('.jourLastPage').css('height', '420px');
       $('.jourLastPage h4').css('padding-top', '200px');
       $('.jourLastPage h4').css('margin', '0 auto');
-
+      $("#demobook").turn("page", 2);
     },
     error: function (data) {
       console.log(JSON.stringify(data));
@@ -1172,13 +1203,20 @@ function rwdLightBox(aquaNo){
 
 
 
+// let ADOPTBTN = document.getElementById('ADOPTBTN');
+// console.log(ADOPTBTN);
 
-
-
-
-
-
-
+// ADOPTBTN.addEventListener('click',function(){
+  // $.ajax({
+  //   url: 'getMemberInfo.php',
+  //   type: 'GET',
+  //   success(data) {
+  //     mem_adopt = JSON.parse(data);
+  //     console.log(data);
+  //   }
+  // })
+// })
+  
 
 
 
