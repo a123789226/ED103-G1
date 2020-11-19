@@ -253,8 +253,14 @@
 
                </div>
               </div>
-              <div class="blogIconReport" id="blogIconReportBtn" ><i class="fas fa-exclamation-circle"></i></div>
-              <input type="hidden" name="blogReportReason" id="blogReportReason">
+              <div class="blogIconReport">
+                  <img class="blogReportBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-before.png"  data-blogreport="<?=$prodRow["blogNo"]?>">
+                  <input type="hidden" name="blogReportReason" id="blogReportReason">
+                  <!-- <img class="blogReportedBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-after.png"> -->
+
+              <!-- <i class="fas fa-exclamation-circle"></i> -->
+              </div>
+              <input type="hidden" name="blogReportReason" id="blogReportReasonInput">
           </div>
           <div class="blogMoreBtnSection"><a href='./blogPost.php?blogNo=<?=$prodRow["blogNo"]?>' class="blogMoreBtn">More</a></div>
           </div>
@@ -356,57 +362,69 @@
     });
 //  ---------這裡是SweetAlert---------
 
-// $('.blogIconReport').on('click', function(){
-  
-//   swal({
-//     title: "Do you want to report this post?",
-//     icon: "warning",
-//     buttons: {
-//       Btn: false,
-//       Cancel: {
-//         text: "Cancel",
-//         visible: true
-//       },
-//       Confirm: {
-//         text: "Confirm",
-//         visible: true
-//       }
-//     }
-//   })
-//   .then((value) => {
-//     if(value == "Confirm"){
-//       swal({
-//       title: "Succeed!",
-//       icon: "success",
-//     });
-//     }
-//   })
-// })
+// function blogReport(){
+  // 點擊跳窗
+  let blogReportBtn = document.getElementsByClassName("blogReportBtn");
+  for(let i =0; i <blogReportBtn.length; i++){
+    blogReportBtn[i].addEventListener("click", function(e){
+      if(member.memId){
+        console.log(this.dataset.blogreport);
+        let reportBlogNo = this.dataset.blogreport;
+        // 跳窗
+        swal({
+          title: "Please type the reason for reporting",
+          icon: "warning",
+          content: "input",
+          buttons:{
+            btn: false,
+            cancel:{
+              text: "Cancel",
+              visible: true
+            },
+            confirm:{
+              text: "Confirm",
+              visible: true
+            },
+          }
+        })
+        .then((value) => {
+          if (value !== "" && value !== null){
+           
+            let reportXHR = new XMLHttpRequest();
+            reportXHR.onload = function(e) {
+                if (reportXHR.status == 200) { //有刪除成功
+                    // alert(reportXHR.responseText);
+                    swal({
+                  // title:` ${value}`,
+                  title:"Thank you!",
+                  text: "We will review the post.",
+                  visible: true,
+                  icon: "success"
+                  })
+                } else {
+                    alert(reportXHR.status);
+                }
+            }
+            var url = "./php/blogReport.php";
+            reportXHR.open("post", url, true);
+            reportXHR.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            let data = `blogNo=${reportBlogNo}&blogReportReason=${value}`;
+            reportXHR.send(data);
+          }else{
+          //   swal({
+          //     title: "You did not input anything",
+          //     icon: "warning",
+          // })
+          }
+        })
+        // 跳窗END
+      }else{
+        alert('not member');
+      }
 
-
-
-
-$('.blogIconReport').on('click', function(){
-  swal({
-  title: "An input!",
-  text: "Write something interesting:",
-  type: "input",
-  showCancelButton: true,
-  closeOnConfirm: false,
-  animation: "slide-from-top",
-  inputPlaceholder: "Write something"
-},
-function(inputValue){
-  if (inputValue === false) return false;
-  
-  if (inputValue === "") {
-    swal.showInputError("You need to write something!");
-    return false
+    })
   }
-  
-  swal("Nice!", "You wrote: " + inputValue, "success");
-});
-})
+
   // ---------這裡是JavaScript---------
   // 燈箱開關
   document.getElementById("blogPostSectionStart").onclick = function(){
@@ -481,6 +499,13 @@ function changed(e) {
 };
 
 function doFirst(){
+  // 檢舉區塊放入input傳至後台
+  // let reportContent = document.getElementById('blogIconReportBtn');
+  // let reportContentInput = document.getElementById('blogReportReasonInput');
+  // reportContent.addEventListener('blur', function(){
+  //   reportContent.value = reportContentInput.innerText;
+  // })
+
   //文章區塊一放入input傳至後台
   let content2 = document.getElementById('content2');
   let inputContent2 = document.getElementById('inputContent2');
@@ -591,6 +616,7 @@ window.addEventListener('load', doFirst);
       removeCollect.send(data);
 
     }
+    
 
 </script>
 

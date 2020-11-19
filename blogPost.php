@@ -89,28 +89,28 @@ if( $errMsg != ""){ //例外
         </a>
       </div>
       <ul class="main_menu_ul" id="main_menu_ul">
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="tour.html" class="li_logo">
             <img src="./image/header/header_tour.png" alt="">
             <img src="./image/header/header_tour_cover.png" alt="">
           </a>
           <a href="tour.html" class="li_text">TOUR</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="journal.html" class="li_logo">
             <img src="./image/header/header_journal.png" alt="">
             <img src="./image/header/header_journal_cover.png" alt="">
           </a>
           <a href="journal.html" class="li_text">JOURNAL</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="ticket.html" class="li_logo">
             <img src="./image/header/header_ticket.png" alt="">
             <img src="./image/header/header_ticket_cover.png" alt="">
           </a>
           <a href="ticket.html" class="li_text">TICKET</a>
         </li>
-        <li class="main_menu_li active">
+        <li class="main_menu_li">
           <a href="vote.html" class="li_logo">
             <img src="./image/header/header_vote.png" alt="">
             <img src="./image/header/header_vote_cover.png" alt="">
