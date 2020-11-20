@@ -24,11 +24,61 @@
   padding-bottom: 100px;
   // border: 2px solid red;
   // overflow: hidden;
-  
+  .water_1{
+    width: 100%;
+    position: absolute;
+    top: -2%;
+  }
+  .water_2{
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    left: -16%;
+  }
+  .water_3{
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    left: 67%;
+  }
   .home_tour_pic{
     position: relative;
     padding-top: 100px;
     padding-bottom: 30%;
+    .tooltip {
+      position: absolute;
+      left: 15%;
+      top: 30%;
+      display: inline-block;
+      animation-name: home_bounce_down;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .tooltip .tooltiptext {
+      width: 120px;
+      background-color: #0047AB;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #0047AB transparent transparent transparent;
+    }
+
+
+
     .role_pick{
       display: inline-block;
       width: 300px;
@@ -85,16 +135,18 @@
   .tour_island{
     cursor: pointer;
     position: absolute;
-    left: -0.8px;
-    width: 100%;
+    left: 50.8px;
+    width: 90%;
     max-width:1200px;
+    
       &:hover{
         opacity: 0;
     }  
   }
   .tour_islandh{
     position: absolute;
-    width: 100%;
+    left: 50px;
+    width: 90%;
     max-width:1200px;
   }
   .tour_map_house1{
@@ -169,6 +221,8 @@
       animation-iteration-count: infinite;
     }  
   }
+
+
 
   @keyframes jump {
     0%{
@@ -346,7 +400,39 @@
   float: left;
 }
 
-
+    @media screen and (max-width: 1200px){
+      .home_tour .home_tour_pic .tooltip{
+        display: none;
+      }
+      // .home_tour .home_tour_pic .home_map_container .hometour_map_area .tour_islandh{
+      //   left: -13%;
+      // }
+        .home_tour{
+          .home_tour_pic{
+             .home_map_container{
+               .hometour_map_area{
+                .tour_islandh ,.tour_island{
+                  left: -13%;
+                }
+                .tour_map_house1{
+                  left: 15%;
+                }
+                .tour_map_house2{
+                  left: 58%;
+                }
+                .tour_map_house3{
+                  left: 0%;
+                  padding-top: 28%;
+                }
+                .tour_map_house4{
+                  left: 50%;
+                  padding-top: 46%;
+                }
+               }
+             }
+          }
+    }
+  }  
 
 
 @media screen and (max-width: 1200px){
@@ -777,6 +863,13 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+
+  .journal_bg{
+    display: none;
+    width: 80%;
+    background: linear-gradient(to right, #C43535 0%, #A52B2B 3%, #7A2929 4%, #7A2929 6%, #A52B2B 6% #7A2929 7%, #A52B2B 30%, #C43535 60%, #A52B2B 90%, #7A2929 99%) !important;
+  }
+
   .home_jtitle_before{
     padding-top: 5%;
     .home_journal_title{
@@ -858,16 +951,23 @@
   }
 }
 
-@media screen and (max-width: 768px){
-  .home_message_box{
-    .home_message{
-      flex-direction: column;
-      > textarea{
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
+@media screen and (max-width: 576px){
+  #flipbook{
+    display: none;
   }
+  .home_journal{
+    a{
+      display: block !important;
+    }
+  .journal_bg{
+    display: block;
+    margin: 0 auto;
+    z-index: 5;
+    width: 65%;
+    padding: 5%;
+  }
+  }
+
 
 }
 
@@ -1198,6 +1298,44 @@
   }
 }
 
+@media screen and (max-width: 768px){
+  .page4_platform, .complete1, .complete2, .complete3{
+    display: none;
+  }
+  .page4_right_bottom{
+    left: 18%;
+    top: 10%;
+    padding-bottom: 0;
+    padding-top: 100px;
+    width: 70%;
+  }
+  .adopt_bg{
+    width: 75%;
+    left: 18%;
+    top: 42%;
+  }
+  .adopt_right_animal01{
+    left: 58%;
+    top: 57%;
+    width: 23%;
+  }
+  .adopt_animal01{
+    width: 15%;
+    right: 60%;
+    top: 5%;
+  }
+  .adopt_animal02{
+    width: 15%;
+    right: 38%;
+    top: 5%;
+  }
+  .adopt_animal03{
+    width: 15%;
+    top: 5%;
+  }
+}
+
+
 
 
 .home_vote{
@@ -1485,10 +1623,11 @@
   .home_vote .home_vote_main{
     justify-content: space-evenly;
     align-items: center;
+    padding-bottom: 5%;
   }
   .home_vote .page5_vote{
-    width: 40%;
-    left: 0;
+    width: 65%;
+    left: -5%;
   }
   .home_vote .page5_named{
     position: relative;
@@ -1506,6 +1645,7 @@
   .home_vote .page5_vote{
     width: 75%;
     margin-bottom: 50px;
+    left: 0;
   }
   .home_vote .page5_named{
     width: 75%;
@@ -1529,8 +1669,10 @@
   }
 }
 @media (max-width: 576px) {
-  .home_vote .page5_named .page5_named_info input{
-    margin: 20px 0;
+
+  .home_vote .page5_vote_middle label{
+    padding: 0;
+    font-size: 14px;
   }
 }
 
@@ -1651,7 +1793,7 @@
       }
       .blog_carousel_image{
         width: 100%;
-        height: 350px;
+        height: 250px;
         padding-top: 2%;
         padding-bottom: 5%;
         img{
@@ -1722,7 +1864,9 @@
       padding-top: 20.5%;
     }
   }
-
+.home_blog .home_blog_carousel .owl-carousel .home_carousel_title .blog_carousel_title{
+  font-size: 24px;
+}
 }
 @media (max-width: 768px){
   .home_blog .home_blog_carousel .owl-carousel .home_carousel_title .blog_carousel_title{
@@ -1737,8 +1881,18 @@
   .home_blog .blog_carousel_text{
     font-size: 12px;
   }
+  .home_blog .home_blog_carousel .owl-carousel .blog_carousel_image{
+    height: 130px;
+  }
 }
 @media (max-width: 576px){
+  .owl-dots{
+    margin-top: 0 !important;
+    span{
+      width: 5px;
+      height: 5px;
+    }
+  }
   .home_blog .home_blog_carousel .owl-carousel .home_carousel_title .home_heart{
     width: 14px;
   }
@@ -1747,6 +1901,11 @@
   }
   .home_blog .home_blog_carousel .owl-carousel .home_carousel_title{
     margin-bottom: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .home_blog .home_blog_carousel .owl-carousel{
     border-radius: 10px;
@@ -1757,7 +1916,11 @@
   .home_blog{
     .blog_carousel_text{
       -webkit-line-clamp: 3;
+      line-height: 16px;
     }
+  }
+  .home_blog .home_blog_carousel .owl-carousel .blog_carousel_image{
+    height: 90px;
   }
 }
 
@@ -2075,5 +2238,18 @@
 // }
 // }
 
+@media screen and (max-width: 576px){
+  .home_game .game_gif {
+    top: 25%;
+    left: 27%;
+    width: 50%;
+  }
+  .home_game .game_btn{
+    height: 30px;
+    line-height: 22px;
+    left: 38%;
+    top: 74%;
+  }
+}
 
 
