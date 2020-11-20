@@ -4,7 +4,7 @@ try{
   // $_POST["aquaName"]="Tony";
 
   require_once("./connectAqua.php");
-  $sql = "select c.msgContent, c.msgTime, m.memName, m.memPic 
+  $sql = "select c.msgContent, c.msgNo, c.aquaNo, c.msgTime, m.memName, m.memPic 
   from journal_message c join member m on(c.memNo = m.memNo) 
   where c.aquaNo =:aquaNo and msgStatus in ('正常',0) 
   order by c.msgTime DESC;";
@@ -24,7 +24,7 @@ try{
         $i = 0;
         foreach($commentRows as $commentRow)
         {
-        $result[$i] = array("msgContent"=>$commentRow["msgContent"], "msgTime"=>$commentRow["msgTime"],"memName"=>$commentRow["memName"],"memPic"=>$commentRow["memPic"]);
+        $result[$i] = array("msgContent"=>$commentRow["msgContent"], "msgNo"=>$commentRow["msgNo"], "aquaNo"=>$commentRow["aquaNo"], "msgTime"=>$commentRow["msgTime"],"memName"=>$commentRow["memName"],"memPic"=>$commentRow["memPic"]);
             $i++;
 
       }
