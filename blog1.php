@@ -166,9 +166,9 @@
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
     FROM blog b JOIN member m ON (b.memNo = m.memNo)
-    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = 'reported')
+    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = '1')
     ORDER BY blogNo DESC";
-   
+  //  0:預設 1: 審核通過（下架） 2: 審核未通過(不下架)
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
    
@@ -255,7 +255,6 @@
               </div>
               <div class="blogIconReport">
                   <img class="blogReportBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-before.png"  data-blogreport="<?=$prodRow["blogNo"]?>">
-                  <input type="hidden" name="blogReportReason" id="blogReportReason">
                   <!-- <img class="blogReportedBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-after.png"> -->
 
               <!-- <i class="fas fa-exclamation-circle"></i> -->
