@@ -966,7 +966,8 @@ a.jourBookName {
 }
 
 .adoptProcessBtn,
-.adoptBackBtn {
+.adoptBackBtn,
+.adoptSubmit {
   @include btn50Green;
   box-shadow: $shadow2;
   margin: 30px 10px 10px;
@@ -1033,20 +1034,6 @@ a.jourBookName {
   }
 }
 
-// .adoptInfo textarea {
-//   width: 100%;
-// }
-
-
-// .adoptInfo p {
-//   @include text($keyGreen);
-// }
-
-
-// .adoptInfo h6 {
-//   @include text12($keyWhite);
-//   // border: 2px solid red;
-// }
 
 .adoptConfirm {
   width: 95%;
@@ -1096,6 +1083,9 @@ a.jourBookName {
       @media screen and (max-width: 767px){
         width: initial;
       }
+      @media screen and (max-width: 479px){
+        font-size: 16px;
+      }
     }
     p:nth-child(2){
       color: $keyWhite;
@@ -1120,7 +1110,7 @@ a.jourBookName {
           width: 60px;
         }
         @media screen and (max-width: 479px){
-          width: 50px;
+          width: 45px;
         }
       }
     }
@@ -1143,21 +1133,6 @@ a.jourBookName {
   }
 }
 
-// .adoptPayment {
-//   margin: 5px auto;
-//   width: 100%;
-//   // border: 3px solid blue;
-//   @include text($keyWhite);
-// }
-
-// .adoptPayment p {
-//   margin-top: 5px;
-// }
-
-// .adoptPayment input {
-//   height: 30px;
-//   margin-bottom: 5px;
-// }
 
 //step 4
 .adoptConfirmSection {
@@ -1167,67 +1142,55 @@ a.jourBookName {
 }
 
 .adoptConfirmCheck {
-  // border: 3px solid blue;
   width: 100%;
-  vertical-align: top;
   margin: 0 auto;
-
-
   @media screen and (max-width: 767px) {
     text-align: left;
   }
 }
 
 .adoptConfirm {
-  // border: 2px dotted $keyGreen;
-  margin: 10px 10px;
+  margin: 0 10px 20px;
   width: 45%;
   @include sub_title($keyWhite);
   display: inline-block;
   text-align: left;
-  border-radius: 6px;
-  vertical-align: top;
-
   @media screen and (max-width: 767px) {
-    width: 90%;
-    // border: 2px dotted red;
-
-    // margin: 0 auto;
+    width: 100%;
     text-align: left;
-
+    margin: 0 0 20px;
   }
 }
 
+
 .adoptConfirm h5 {
-  // border: 3px solid red;
-  margin: 5px auto;
+  width: 100%;
+  margin: 0 auto 10px;
   @include text($keyWhite);
-  font-weight: 500;
+  font-weight: 400;
   background-color: $keyGreen;
   border-radius: 6px;
-  padding: 5px;
-  height: 30px;
+  padding: 6px 12px;
 }
 
-.adoptConfirm .adoptConfirmTitle {
-  height: 30px;
-  width: 100%;
-  margin-bottom: 5px;
-  color: $keyGreen;
+.adoptConfirm label{
+  @include sub_title($keyGreen);
+  @media screen and (max-width: 479px) {
+    font-size: 16px;
+  }
 }
 
 .adoptConfirm p {
+  @include sub_title($keyWhite);
   height: 30px;
   width: 100%;
   margin-bottom: 5px;
   color: $keyWhite;
+  @media screen and (max-width: 479px) {
+    font-size: 16px;
+  }
 }
 
-.adoptProcessStepFinal {
-  display: inline-block;
-  width: 100%;
-  // border: 3px solid red;
-}
 
 
 // turn css

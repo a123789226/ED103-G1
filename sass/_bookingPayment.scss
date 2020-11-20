@@ -40,6 +40,7 @@
     border: 1px solid rgba(0,0,0,.8);
     width: 100%;
     background-color: rgba(0,0,0,.8);
+    border-radius: 6px;
     @include sub_title($keyWhite);
     @media screen and (max-width: 676px){
       font-size: 16px;
@@ -94,7 +95,7 @@
             width: 60px;
           }
           @media screen and (max-width: 479px){
-            width: 50px;
+            width: 45px;
           }
         }
       }
