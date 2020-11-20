@@ -579,7 +579,7 @@ $("#sendAquaNo").on("click", function () {
   let aquaPhoto = $('#openAquaPic').attr('src');
   let aquaPhoto1 = aquaPhoto.split("/", 4);
   console.log(aquaPhoto1[3]);
-  let url = `adopt.php?aquaNo=${aquano}?aquaPic=${aquaPhoto1[3]}`;
+  let url = `adopt.php?aquaNo=${aquano}&aquaPic=${aquaPhoto1[3]}`;
   // console.log(aquaPhoto1);
   
   $.ajax({
