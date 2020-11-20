@@ -333,38 +333,76 @@
     display: inline-block;
     margin-right: 2%;
 }
+.blogPostTagsOptionsLabels{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    // max-width: 900px;
+    margin: 0 auto;
+    cursor: pointer;
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox]+span {
+        // display: inline-block;
+        // background-color: #aaa;
+        // padding: 3px 6px;
+        // border: 1px solid gray;
+        // color: #444;
+        // user-select: none; /* 防止文字被滑鼠選取反白 */
+        @include btn30White;
+        margin-left: 2%;
+        width: 100%;
+        max-width: 200px;
+        padding: 0 12px;
+        text-align: center;
+  
+    }
+
+    input[type=checkbox]:checked+span {
+    @include btn30Green;
+
+    width: 100%;
+    max-width: 200px;
+    padding: 0 12px;
+    text-align: center;
+
+    }
+}
 .blogPostTagsOptions {
     display: flex;
     height: 30px;
     width: 80%;
-    > .blogPostTags {
-        @include btn30White;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
-        height: auto;
-        // text-align: center;
-        margin-right: 5%;
-        // border: 1px solid Black;
-        // border-radius: 5px;
-        // outline: none;
-        // position: relative;
-        // text-decoration: none;
-        // background-color: $keyWhite;ß
-        // padding: 5px;
-        // transition: all 0.2s ease-in;
-    cursor: pointer;
+    // > .blogPostTags {
+    //     @include btn30White;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 20%;
+    //     height: auto;
+    //     // text-align: center;
+    //     margin-right: 5%;
+    //     // border: 1px solid Black;
+    //     // border-radius: 5px;
+    //     // outline: none;
+    //     // position: relative;
+    //     // text-decoration: none;
+    //     // background-color: $keyWhite;ß
+    //     // padding: 5px;
+    //     // transition: all 0.2s ease-in;
+    // cursor: pointer;
    
-    }
+    // }
 }
-.blogPostTagsOn{
-    @include btn30Green;
-    background-color: $keyGreen !important;
-    border: 1px solid $keyGreen !important;
-    // border-radius: 5px;
-    color: $keyWhite !important;
-}
+// .blogPostTagsOn{
+//     @include btn30Green;
+//     background-color: $keyGreen !important;
+//     border: 1px solid $keyGreen !important;
+//     // border-radius: 5px;
+//     color: $keyWhite !important;
+// }
 .blogPostContentSection {
     border: solid 2px #000;
     width: 100%;
