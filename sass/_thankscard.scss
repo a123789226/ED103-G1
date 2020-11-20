@@ -116,17 +116,17 @@
         background-size: cover;
     }
     //RWD 要每個級距去寫
-    // .canvas-container{
-    //     width: 300px !important;
-    //     height: 150px !important;
-    // }
-    // #thanksCardCanvas {
-    //     width: 300px !important;
-    //     height: 150px !important;
+    .canvas-container{
+        width: 450px !important;
+        height: 300px !important;
+    }
+    #thanksCardCanvas {
+        width: 450px !important;
+        height: 300px !important;
  
-    //   }
-    //   .upper-canvas {
-    //     width: 300px !important;
-    //     height: 150px !important;
-    //   }
+      }
+      .upper-canvas {
+        width: 450px !important;
+        height: 300px !important;
+      }
 }

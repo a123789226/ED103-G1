@@ -2,6 +2,7 @@
         ob_start();
         session_start();
         // $_SESSION["memId"]='Mark123';
+        $blogTags = $_POST['blogTags'];
         // $_SESSION["memNo"]='1';
         // ob_start();
         // session_start();
@@ -16,12 +17,12 @@
 
                 $sql = "INSERT INTO blog ( memNo, blogTitle, blogPic, blogContent1, blogPic1, blogContent2, blogPic2, blogTime, blogStatus,
                        blogMark, blogTags)
-                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '0', :blogTags)"; 
+                values('{$_SESSION["memNo"]}', :blogTitle, '', :blogContent1, '', :blogContent2, '', now(), '0', '0', '$blogTags')"; 
                 $products = $pdo->prepare( $sql );
                 $products -> bindValue(":blogTitle", $_POST["blogTitle"]);
                 $products -> bindValue(":blogContent1", $_POST["blogContent1"]);
                 $products -> bindValue(":blogContent2", $_POST["blogContent2"]);
-                $products -> bindValue(":blogTags", $_POST["blogTags"]);
+                // $products -> bindValue(":blogTags", $_POST["blogTags"]);
                 $products -> execute();
                     //取得自動創號的key值
                 $blogNo = $pdo->lastInsertId();
