@@ -16,7 +16,7 @@ try{
     $blogReportReason = $_REQUEST['blogReportReason']; //檢舉原因
 
     $sql = "INSERT  INTO blog_report (blogNo, memNo, blogReportReason, blogReportStatus)
-            VALUES ('$blogNo', '$memNo', '$blogReportReason', 'reporting' );";
+            VALUES ('$blogNo', '$memNo', '$blogReportReason', '0' );";
     
     $pdoStatement = $pdo->prepare($sql);
     $pdoStatement->execute();
