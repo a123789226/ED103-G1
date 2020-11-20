@@ -855,9 +855,8 @@ a.jourBookName {
 .adoptAquaBlock{
   width: 30%;
   min-width: 200px;
-  @media screen and (max-width: 991x){
+  @media screen and (max-width: 1200px){
     width: 100%;
-    min-width: 200px;
   }
 }
 
@@ -865,7 +864,7 @@ a.jourBookName {
   @include sub_title($keyWhite);
   margin: 0 auto;
   text-align: center;
-  padding: 0 0 20px;
+  padding: 10px 0 20px;
   display: inline-block;
   color: $blockYellow;
 }
@@ -903,9 +902,9 @@ a.jourBookName {
   border-radius: 6px;
   background: rgba(0, 0, 0, .8);
   padding: 20px;
-  @media screen and (max-width: 991x){
+  @media screen and (max-width: 1200px){
     width: 100%;
-    min-width: 400px;
+    min-width: inherit;
   }
 }
 
@@ -929,8 +928,8 @@ a.jourBookName {
 
 .adoptProcessContents h4 {
   width: 100%;
-  @include sub_title($keyWhite);
-  margin: 20px auto;
+  @include sub_title($blockYellow);
+  margin: 30px auto;
 }
 
 
@@ -948,14 +947,22 @@ a.jourBookName {
   width: 100%;
   display: inline-block;
   height: 40px;
+  border: none;
+  text-align: center;
+  max-width: 300px;
+  font-size: 20px;
+  font-weight: 400;
   @media screen and (max-width: 479px){
     height: 30px;
+    font-size: 16px;
   }
 }
 
 .adoptProcessStep {
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .adoptProcessBtn,
@@ -966,7 +973,7 @@ a.jourBookName {
   display: inline-block;
   width: 140px;
   @media screen and (max-width: 479px){
-    width: 125px;
+    width: 110px;
   } 
 }
 
@@ -990,31 +997,56 @@ a.jourBookName {
 
 .adoptInfo {
   width: 100%;
-  margin: 5px auto;
+  margin: 10px auto;
   // border: 2px solid green;
+  @media screen and (max-width: 479px){
+    width: 250px;
+    margin: 0 auto;
+  }
+  label{
+    @include sub_title($keyGreen);
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    // @media screen and (max-width: 991px){
+    // }
+    @media screen and (max-width: 479px){
+      display: block;
+      width: 100%;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+  p{
+    @include sub_title($keyWhite);
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    // @media screen and (max-width: 991px){
+    // }
+    @media screen and (max-width: 479px){
+      display: block;
+      width: 100%;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
 }
 
-.adoptInfo textarea {
-  width: 100%;
-
-}
-
-.adoptInfo p {
-  @include text($keyGreen);
-}
+// .adoptInfo textarea {
+//   width: 100%;
+// }
 
 
-.adoptInfo input {
-  height: 30px;
-  margin-bottom: 5px;
-  font-size: 16px;
+// .adoptInfo p {
+//   @include text($keyGreen);
+// }
 
-}
 
-.adoptInfo h6 {
-  @include text12($keyWhite);
-  // border: 2px solid red;
-}
+// .adoptInfo h6 {
+//   @include text12($keyWhite);
+//   // border: 2px solid red;
+// }
 
 .adoptConfirm {
   width: 95%;
@@ -1031,26 +1063,101 @@ a.jourBookName {
 
 //step3
 .adoptPaymentSection {
-  width: 95%;
-  // border: 3px solid red;
-  margin: 5px auto;
-}
-
-.adoptPayment {
-  margin: 5px auto;
   width: 100%;
-  // border: 3px solid blue;
-  @include text($keyWhite);
+  text-align: left;
+  @include sub_title($keyWhite);
+  @media screen and (max-width: 676px){
+    font-size: 16px;
+  }
+  .adoptPayment{
+    width: 540px;
+    margin: 30px auto;
+    @media screen and (max-width: 991px){
+      width: 450px;
+    }
+    @media screen and (max-width: 767px){
+      width: 340px;
+    }
+    @media screen and (max-width: 676px){
+      width: 280px;
+    }
+    @media screen and (max-width: 479px){
+      width: 260px;
+    }
+    label{
+      color: $keyGreen;
+      display: inline-block;
+      width: 180px;
+      margin-bottom: 10px;
+      text-align: left;
+      @media screen and (max-width: 991px){
+        display: block;
+      }
+      @media screen and (max-width: 767px){
+        width: initial;
+      }
+    }
+    p:nth-child(2){
+      color: $keyWhite;
+    }
+    input{
+      border: none;
+      @include sub_title($keyBlack);
+      height: 40px;
+      padding: 0 10px;
+      @media screen and (max-width: 676px){
+        font-size: 16px;
+        padding: 0 5px;
+      }
+      @media screen and (max-width: 479px){
+        height: 30px;
+      } 
+    }
+    &:first-child{
+      input{
+        width: 70px;
+        @media screen and (max-width: 676px){
+          width: 60px;
+        }
+        @media screen and (max-width: 479px){
+          width: 50px;
+        }
+      }
+    }
+    &:nth-child(2){
+      input{
+        width: 60px;
+        @media screen and (max-width: 676px){
+          width: 50px;
+        }
+      }
+    }
+    &:nth-child(3){
+      input{
+        width: 70px;
+        @media screen and (max-width: 676px){
+          width: 60px;
+        }
+      }
+    }
+  }
 }
 
-.adoptPayment p {
-  margin-top: 5px;
-}
+// .adoptPayment {
+//   margin: 5px auto;
+//   width: 100%;
+//   // border: 3px solid blue;
+//   @include text($keyWhite);
+// }
 
-.adoptPayment input {
-  height: 30px;
-  margin-bottom: 5px;
-}
+// .adoptPayment p {
+//   margin-top: 5px;
+// }
+
+// .adoptPayment input {
+//   height: 30px;
+//   margin-bottom: 5px;
+// }
 
 //step 4
 .adoptConfirmSection {
