@@ -1,18 +1,3 @@
-$(document).on('click', '#jourIconReportBtn', function(){//使用$(document).on()的原因是如果id為submit的按鈕是一開始沒有載入、透過ajax互動後才產生的DOM，那用$().click會抓不到，需以$(document).on()才行
-    var name = $('#blogReportReason').val();
-    $.ajax({
-       url:'../journalReport.php',
-       method:'POST',
-       data:{
-          name:name
-       },
-       success:function(res){
-  
-       }
-    })
-  })
-
-
 // function blogReport(){
   // 點擊跳窗
   let jourReportBtn = document.getElementsByClassName("jourCommentReport");
@@ -56,7 +41,7 @@ $(document).on('click', '#jourIconReportBtn', function(){//使用$(document).on(
                     alert(reportXHR.status);
                 }
             }
-            var url = "../journalReport.php";
+            var url = "./jourReport.php";
             reportXHR.open("post", url, true);
             reportXHR.setRequestHeader("content-type", "application/x-www-form-urlencoded")
             let data = `msgNo=${msgReportNo}&msgReportReason=${value}`;
