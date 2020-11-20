@@ -2,7 +2,7 @@ function chooseAquaType(){
     //=====使用Ajax 回server端,取回aquatype, 放到頁面上 
   demoDolphin();
   demoWhale();
-  demoWhale();
+  demoSeal();
   demoTurtle();
 // Dolphin
     let xhr = new XMLHttpRequest();
@@ -573,12 +573,15 @@ $('#doPost').on('click', function () {
 
 
 
-
-
 let mem_adopt='';
 $("#sendAquaNo").on("click", function () {
   let aquano = $('#openAquaNo').text();
-  let url = `adopt.php?aquaNo=${aquano}`
+  let aquaPhoto = $('#openAquaPic').attr('src');
+  let aquaPhoto1 = aquaPhoto.split("/", 4);
+  console.log(aquaPhoto1[3]);
+  let url = `adopt.php?aquaNo=${aquano}&aquaPic=${aquaPhoto1[3]}`;
+  // console.log(aquaPhoto1);
+  
   $.ajax({
     url: 'getMemberInfo.php',
     type: 'GET',
@@ -842,7 +845,7 @@ function demoWhale() {
 }
 
 
-function demoWhale() {
+function demoSeal() {
   //帶入journal內頁
   $.ajax({
     url: 'journalDemoSeal.php',
