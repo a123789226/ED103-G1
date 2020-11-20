@@ -820,12 +820,8 @@ div.jourLightBox.-on {
 
 
 // Adopt Html
-.adoptLightBox {
-  // background-color: hsla(255, 255, 255, 0.6);
-  margin: O auto;
-  display: block;
-  width: 100%;
-  // border: 3px solid black;
+.adoptSection .commonTitleBox .commonTitle {
+  color: $keyWhite !important;
 }
 
 .adoptSubTitle {
@@ -833,101 +829,91 @@ div.jourLightBox.-on {
 }
 
 .adoptSection {
-  width: 80%;
-  margin: 0 auto;
-  // border: 3px solid black;
-  max-width: 1200px;
-  padding: 50px;
+  width: 100%;
+}
 
-  @media screen and (max-width: 676px) {
+.adoptInnerSection {
+  width: 80%;
+  margin: 0 auto 50px;
+  background-color: hsla(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 50px 50px 30px;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media screen and (max-width: 676px){
     padding: 20px;
     width: 90%;
   }
 }
 
-.adoptInnerSection {
+//上
+.adoptStepTitle {
+  @include main_title($keyWhite);
   width: 100%;
-  margin: 0 auto;
-  background-color: hsla(255, 255, 255, 0.2);
-  // border: 3px dashed $keyGreen;
-  border-radius: 6px;
-  text-align: center;
-  padding: 20px 0;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
-.adoptDetail {
-  display: block;
-  width: 100%;
-}
-
-.adoptSection .commonTitleBox .commonTitle {
-  color: $keyWhite !important;
-}
-
-.adoptAqua {
-  display: inline-block;
-  width: 33%;
-  // border: 3px solid black;
-  vertical-align: middle;
-  padding: 20px;
-  object-fit: cover;
-
-  @media screen and (max-width: 676px) {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
+//動物區
+.adoptAquaBlock{
+  width: 30%;
+  min-width: 200px;
+  @media screen and (max-width: 991x){
+    width: 100%;
+    min-width: 200px;
   }
 }
 
-.adoptAqua p {
+.adoptAquaBlock p {
   @include sub_title($keyWhite);
   margin: 0 auto;
   text-align: center;
-  padding: 20px 0;
+  padding: 0 0 20px;
   display: inline-block;
-  // border: 3px solid black;
+  color: $blockYellow;
 }
 
-.adoptAqua input {
-  display: inline-block;
-  padding: 20px 0;
-  width: 100px;
-  margin: 0 10px;
-  height: 30px;
+.adoptAqua {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: $shadow2 inset;
+  overflow: hidden;
 }
 
 .adoptAqua img {
-  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
   width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  // border: 3px solid black;
-  border: 3px solid #fff;
-
-  @include box-shadow;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+
+// adopt right
 
 .adoptProcessContainer {
   display: inline-block;
-  width: 60%;
+  width: 65%;
+  min-width: 400px;
   vertical-align: middle;
   border-radius: 6px;
   background: rgba(0, 0, 0, .8);
   padding: 20px;
-
-  @media screen and (max-width: 676px) {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
+  @media screen and (max-width: 991x){
+    width: 100%;
+    min-width: 400px;
   }
-
 }
 
-.adoptProcessContainer h4 {
-  @include sub_title($keyWhite);
-}
-
-// adopt right
 .adoptProcessList {
   // border: 3px solid blue;
   width: 100%;
@@ -935,148 +921,80 @@ div.jourLightBox.-on {
   text-align: center;
 }
 
-.adoptStepTitle {
-  @include main_title($keyWhite);
-  padding: 0;
-  width: 100%;
-  margin: 20px;
-  text-align: left;
 
-  @media screen and (max-width: 676px) {
-    margin: 20px;
-  }
-}
 
 .adoptTabList {
   @include StepBox;
 }
 
-.adoptedAqua {
-  display: inline-block;
-  padding: 10px;
-}
-
 .adoptProcessContents {
-  // border: 3px solid green;
   width: 100%;
-  margin: 0 auto;
-  // border: 3px solid blue;
-  text-align: left;
 }
 
-.adoptConfirmAqua {
-  // border: 3px solid orange;
-  width: 100%;
-  margin: 0 auto;
-}
 
 .adoptProcessContents h4 {
   width: 100%;
   @include sub_title($keyWhite);
-  padding-top: 10px;
-  // border: 3px solid blue;
-}
-
-.aquaNameSection {
-  width: 95%;
-  margin: 0 auto;
-
-}
-
-.adoptProcessContents select {
-  width: 40%;
-  margin: 5px auto;
-  height: 30px;
-}
-
-.adoptAmountSection {
-  width: 95%;
-  // border: 3px solid red;
-  margin: 5px auto;
-}
-
-.adoptConfirmAmount {
-  // border: 3px solid red;
-  width: 100%;
   margin: 20px auto;
 }
 
-.adoptAmountType {
-  width: 22%;
-  display: inline-block;
-  margin: 0 auto;
-  // border: 3px solid red;
-  // height: 30px;
-}
 
-.adoptConfirmAmount label input {
-  display: inline-block;
-  height: 30px;
-  // box-shadow: $shadow;
-
-}
-
-.adoptSelfAmountType {
-  // width: 40%;
-  display: inline-block;
-  // border: 3px solid red;
-}
-
-.adoptSelfAmountType input {
-  display: inline-block;
-  // border: 3px solid yellow;
-  margin: 0 5px;
-  // box-shadow: $shadow;
-  // border-radius: 6px;
-}
-
-
-.adoptProcessStep {
-  // border: 3px solid red;
-  margin: 0 auto;
-  text-align: center;
+.adoptConfirmAmount {
   width: 100%;
 }
 
+.adoptAmountSection {
+  width: 100%;
+  margin: 5px auto;
+}
 
+
+.adoptConfirmAmount input {
+  width: 100%;
+  display: inline-block;
+  height: 40px;
+  @media screen and (max-width: 479px){
+    height: 30px;
+  }
+}
+
+.adoptProcessStep {
+  text-align: center;
+  width: 100%;
+}
 
 .adoptProcessBtn,
 .adoptBackBtn {
   @include btn50Green;
   box-shadow: $shadow2;
-  margin: 10px 5px;
-  // width: 30%;
-  // text-align: center;
-  // line-height: 40px;
-  // height: 40px;
-  // // border: 3px solid green;
-  // border-radius: 20px;
-
+  margin: 30px 10px 10px;
   display: inline-block;
+  width: 140px;
+  @media screen and (max-width: 479px){
+    width: 125px;
+  } 
+}
 
-  @media screen and (max-width: 676px) {
-    padding: 0 15px;
-  }
+.adoptBackBtn{
+  @include btn50White;
+}
+
+.adoptProcessBtnFirst{
+  width: 200px;
+  @media screen and (max-width: 479px){
+    width: 180px;
+  } 
 }
 
 // step 2
 .adoptTab {
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   @include text($keyWhite);
-
-}
-
-.adoptTab h4 {
-  width: 95%;
-  margin: 0 auto;
-  text-align: left;
-  // border: 2px solid green;
-  padding: 10px 0;
 }
 
 .adoptInfo {
-  width: 95%;
+  width: 100%;
   margin: 5px auto;
   // border: 2px solid green;
 }
