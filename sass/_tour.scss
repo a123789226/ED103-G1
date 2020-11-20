@@ -1219,7 +1219,8 @@
     }
     #tour_weather_area{
       // border:5px solid green;
-      padding-right:40px;
+      // padding-right:40px;
+      width:250px;
       #tour_temp{
       // border:5px solid green;
       }
@@ -1268,13 +1269,14 @@
   .tour_row{
     // border: 5px solid yellow;
     margin: 0px auto;
+    padding: 0;
     .tour_slide {
       // border: 5px solid yellowgreen;
       width:280px;
       height:230px;
       opacity:1; 
       cursor: pointer;
-      margin: 20px;
+      margin: 20px auto;
       .tour_slide_word{
         display:block;
         // border:5px solid red;
@@ -1338,4 +1340,21 @@
   transition: 0s;
   transition-delay: 0s;
 }
+#no1{
+  margin:20px auto;
+//   border:5px solid blue;
 }
+#no2{
+  margin:20px auto;
+  // border:5px solid blue;
+}
+#no3{
+  margin:20px auto;
+  // border:5px solid blue;
+}
+#no4{
+  margin:20px auto;
+  // border:5px solid blue;
+}
+}
+
