@@ -255,9 +255,11 @@
                </div>
               </div>
               <div class="blogIconReport">
-                  <img class="blogReportBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-before.png"  data-blogreport="<?=$prodRow["blogNo"]?>">
+                  <!-- <img class="blogReportBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-before.png"  data-blogreport="<prodRow["blogNo"]?>"> -->
+                  <i class="blogReportBtn fas fa-exclamation-circle" data-blogreport='<?=$prodRow["blogNo"]?>'></i>
+                
                   <!-- <img class="blogReportedBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-after.png"> -->
-
+                    
               <!-- <i class="fas fa-exclamation-circle"></i> -->
               </div>
               <input type="hidden" name="blogReportReason" id="blogReportReasonInput">
