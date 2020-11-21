@@ -187,12 +187,14 @@
       // 沒有會員不能前往結帳判定
       let ticketToMoneyButton = document.getElementsByClassName('ticketToMoneyButton');
       ticketToMoneyButton[0].addEventListener("click", function(e){
-        if(member.memId){ 
+        if(ticketToMoneyButton[0].innerText == 'Go To Payment'){
+          if(member.memId){ 
           //do nothing
-        }else{  
-          e.preventDefault();
-          let overlay = document.getElementsByClassName('overlay');
-          overlay[0].classList.add('-on');
+          }else{  
+            e.preventDefault();
+            let overlay = document.getElementsByClassName('overlay');
+            overlay[0].classList.add('-on');
+          }
         }
       });
     }
