@@ -505,8 +505,39 @@ canvas.add(iText)
 imageUploader.addEventListener('click', uploadFile, true)
 file.addEventListener('change', handleFile)
 canvas.on('drop', dropImg)
+// let panning
+// let prevX
+// let prevY
+// canvas.on("mouse:down", (e) => {
+//   panning = true
+//   if (e.e instanceof TouchEvent) {
+//     const {clientX, clientY} = e.e.touches[0]
+//     prevX = clientX
+//     prevY = clientY
+//   }
+// })
 
+// canvas.on("mouse:move", e => {
+//   if (panning) {
+//     let delta
+//     if (e.e instanceof TouchEvent) {
+//       // we're on mobile
+//       const {clientX, clientY} = e.e.touches[0]
+//       delta = new fabric.Point(clientX - prevX, clientY - prevY)
+//       prevX = clientX
+//       prevY = clientY
+//     } else {
+//       // we're on desktop
+//       delta = new fabric.Point(e.e.movementX, e.e.movementY)
+//     }
+//     console.log(delta.x, delta.y)
+//     canvas.relativePan(delta)
+//   }
+// })
 
+// canvas.on("mouse:up", () => {
+//   panning = false
+// })
 
 
 // defaultImg.addEventListener('mousedown', saveImg)
