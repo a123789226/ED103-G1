@@ -1,5 +1,8 @@
 
 #indexBlock{
+  position: relative;
+  width: 100%;
+  height: 100vh;
   cursor: crosshair;
   -webkit-user-select:none;
   -moz-user-select:none;
@@ -94,6 +97,15 @@
     }
   }
 
+  #indexBigTitle{
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
 
   .indexTitle{
     position: fixed;
