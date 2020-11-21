@@ -187,13 +187,17 @@ $(function () {
                     // console.log(res.data);
                     vue_member.name = res.data.memName;
                     vue_member.id = res.data.memId;
-                    vue_member.password = res.data.memPsw;
+                    let str = res.data.memPsw;
+                    let flower = str.replace(/\w/g, '*');
+                    vue_member.password = flower;
                     vue_member.point = res.data.point;
                     vue_member.sex = res.data.memSex;
                     vue_member.email = res.data.memEmail;
                     vue_member.phone = res.data.memPhone;
                     vue_member.birth = res.data.memBirth;
                     vue_member.pic = res.data.memPic;
+                    let re = '[a-zA-Z0-9]';
+
                     if (res.data.memId) {
                         $id("memNameInProfileBlock").innerText = res.data.memName;
                         // 頭像背景變白
@@ -328,7 +332,7 @@ $(function () {
                             cardHtml += `
                             <div class="memBlogContent memCard row">
                                 <div class="mem_ana col-6 col-sm-6 col-lg-6">${res.data[i].cardDate}</div>
-                                <div class="mem_ana col-6 col-sm-6 col-lg-6">${res.data[i].cardFile}</div>
+                                <div class="mem_ana col-6 col-sm-6 col-lg-6"><img src="${res.data[i].cardFile}"></div>
                             </div>
                             
                             `

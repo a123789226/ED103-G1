@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("./connectAqua.php");
-  $sql = "select c.cardDate, c.cardName, c.memEmail from thankscard c join member m on(c.memNo = m .memNo) where m.memId =:id;";
+  $sql = "select c.cardDate, c.cardFile from thankscard c join member m on(c.memNo = m .memNo) where m.memId =:id;";
  
   $member = $pdo->prepare($sql);
   $member->bindValue(":id", $_POST["id"]);
@@ -18,7 +18,7 @@ try{
         $i = 0;
         foreach($memberRows as $memberRow)
         {
-        $result[$i] = array("cardDate"=>$memberRow["cardDate"], "cardName"=>$memberRow["cardName"],"memEmail"=>$memberRow["memEmail"]);
+        $result[$i] = array("cardDate"=>$memberRow["cardDate"], "cardFile"=>$memberRow["cardFile"]);
             $i++;
 
       }

@@ -437,6 +437,8 @@
 
 @media screen and (max-width: 1200px){
   .home_tour{
+    position: relative;
+    overflow: hidden;
     padding-bottom: 20%;
     .home_tour_pic{
       .home_map{
@@ -722,8 +724,8 @@
     margin-left: 4%;
     z-index: 3;
     margin-top: 10%;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, .5);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, .8);
     > h3{
       margin-bottom: 10px;
       color: #000000;
@@ -986,7 +988,7 @@
       font-size: 48px;
       position: relative;
       left: 7%;
-      z-index: 4;
+      z-index: 0;
     }
   }
   .adoptOverlay{
@@ -1002,7 +1004,7 @@
     #adoptBox{
       margin: 0 auto;
       padding: 20px;
-      background-color:  hsla(255,255,255,.3);
+      background-color:  hsla(0,0,0,.8);
       width: 800px;
       position: absolute;
       top: 50%;
@@ -1010,12 +1012,14 @@
       transform: translate(-50%, -50%);
       border-radius: 6px;
       text-align: center;
-
+      img{
+        border: 3px solid #fff;
+        border-radius: 6px;
+      }
 
       }
       #adopt_complete{
         width: 100%;
-        padding-top: 5%;
       }
       .adoptClose2{
         margin-top: 20px;
@@ -1055,17 +1059,17 @@
     animation-timing-function: linear;
   }
   .complete1{
-    width: 15%;
+    width: 13%;
     left: 0%;
     top: 20%;
   }
   .complete2{
-    width: 15%;
-    left: 13.5%;
+    width: 13%;
+    left: 14%;
     top: 25%;
   }
   .complete3{
-    width: 15%;
+    width: 13%;
     left: 28%;
     top: 20%;
   }
@@ -1417,11 +1421,11 @@
   }
   .page5_vote{
     width: 40%;
-    border-radius: 30px;
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     // margin-top: 5%;
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255,255,255,.2);
     padding: 2%;
     z-index: 5;
     position: relative;
@@ -1430,11 +1434,12 @@
   .page5_vote_top{
     width: 100%;
     display: flex;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     vertical-align: middle;
     align-items: center;
     > img{
       width: 40%;
+      border: 3px solid #fff;
     }
     p{
       width: 50%;
@@ -1766,7 +1771,7 @@
       padding: 4%;
       padding-top: 3%;
       padding-bottom: 3%;
-      border-radius: 30px;
+      border-radius: 6px;
       background-color: rgba(255,255,255, .6);
       .home_carousel_title{
         color: $keyWhite;
@@ -1783,6 +1788,7 @@
         .home_blog_user{
           width: 24px;
           margin-right: 2%;
+          border-radius: 50%;
         }
         .home_heart{
           width: 24px;
