@@ -17,7 +17,7 @@ $journal->execute();
         foreach($journalRows as $journalRow)
         {
         $result = array("aquaNo"=>$journalRow["aquaNo"], "jourStory"=>$journalRow["jourStory"],
-            "jourContent"=>$journalRow["jourContent"], "jourPic1"=>$journalRow["jourPic1"],"jourPic2"=>$journalRow["jourPic2"],"jourPic3"=>$journalRow["jourPic3"],"jourDate"=>$journalRow["jourDate"],"rescueLoc"=>$journalRow["rescueLoc"],"arriveDate"=>$journalRow["arriveDate"],"aquaName"=>$journalRow["aquaName"]);
+            "jourContent"=>$journalRow["jourContent"], "jourPic1"=>$journalRow["jourPic1"],"jourPic2"=>$journalRow["jourPic2"],"jourPic3"=>$journalRow["jourPic3"],"jourDate"=>$journalRow["jourDate"],"rescueLoc"=>$journalRow["rescueLoc"],"arriveDate"=>$journalRow["arriveDate"],"aquaName"=>$journalRow["aquaName"],"aquaPic"=>$journalRow["aquaPic"]);
 
       }
             echo  json_encode($result);
