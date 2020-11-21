@@ -64,14 +64,14 @@
         </a>
         <a href="tour.html" class="li_text">TOUR</a>
       </li>
-      <li class="main_menu_li">
+      <li class="main_menu_li active">
         <a href="journal.html" class="li_logo">
           <img src="./image/header/header_journal.png" alt="">
           <img src="./image/header/header_journal_cover.png" alt="">
         </a>
         <a href="journal.html" class="li_text">JOURNAL</a>
       </li>
-      <li class="main_menu_li active">
+      <li class="main_menu_li">
         <a href="ticket.html" class="li_logo">
           <img src="./image/header/header_ticket.png" alt="">
           <img src="./image/header/header_ticket_cover.png" alt="">
@@ -168,9 +168,9 @@
 <form method="post" id="form1">
   <input name="hidden_data" id='hidden_data' type="hidden"/>
 </form>
-<!-- <div class="cardCompletedBtnSection"> -->
+<div class="cardCompletedBtnSection">
 <input class="cardCompletedBtn"type="button" value="COMPLETED" onclick="downloadImg()" />
-<!-- </div> -->
+</div>
 <!-- <button id="save2Server">儲存到伺服器</button> -->
 <!-- <div class="cardContainer">
     <div class="cardMaterials">
@@ -227,7 +227,7 @@
 
 
 
-
+</div>
 
   <footer>
     Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
@@ -575,7 +575,8 @@ function downloadImg() {
         swal({
           title: "Succeed!",
           icon: "success",
-        });  
+        }); 
+        setTimeout(function(){window.location.href = "./journal.html"}, 1000); 
 
       }
     }else{

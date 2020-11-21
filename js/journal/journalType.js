@@ -528,7 +528,7 @@ function doPost(aquaNo){
               </div>
               <div class="jourCommentBox">
                 <h5 class="jourCommentWords">${aquaNo[i].msgContent}</h5>
-                <div class="jourCommentReport" id="jourIconReportBtn"><i class="fas fa-exclamation-circle"></i></div>
+                <div class="jourCommentReport" ><i class="fas fa-exclamation-circle jourReportIcon" data-msgno="${aquaNo[i].msgNo}" data-aquano="${aquaNo[i].aquaNo}"></i></div>
               </div>
             </div>
           </li>
@@ -538,6 +538,7 @@ function doPost(aquaNo){
 
         let message_box = document.getElementById('messageBox');
         message_box.innerHTML = journalCommentHTML;
+        jourReport();
     }
 
     xhr.open("Post", "journalComment.php", true);
@@ -546,6 +547,70 @@ function doPost(aquaNo){
     xhr.send(data_info);
 }
 
+
+function jourReport(){
+  // 點擊跳窗
+  let jourReportBtn = document.getElementsByClassName("jourReportIcon");
+  for(let i =0; i <jourReportBtn.length; i++){
+    jourReportBtn[i].addEventListener("click", function(e){
+      let aquaNo = this.dataset.aquano;
+      let msgNo = this.dataset.msgno;
+      if(member.memId){
+        // 跳窗
+        swal({
+          title: "Please type the reason for reporting",
+          icon: "warning",
+          content: "input",
+          buttons:{
+            btn: false,
+            cancel:{
+              text: "Cancel",
+              visible: true
+            },
+            confirm:{
+              text: "Confirm",
+              visible: true
+            },
+          }
+        })
+        .then((value) => {
+          if (value !== "" && value !== null){
+           
+            let reportXHR = new XMLHttpRequest();
+            reportXHR.onload = function(e) {
+                if (reportXHR.status == 200) { 
+                    // alert(reportXHR.responseText);
+                    swal({
+                  // title:` ${value}`,
+                  title:"Thank you!",
+                  text: "We will review the post.",
+                  visible: true,
+                  icon: "success"
+                  })
+                } else {
+                    alert(reportXHR.status);
+                }
+            }
+            var url = "./jourReport.php";
+            reportXHR.open("post", url, true);
+            reportXHR.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            let data = `aquaNo=${aquaNo}&msgNo=${msgNo}&msgReportReason=${value}`;
+            reportXHR.send(data);
+          }else{
+          //   swal({
+          //     title: "You did not input anything",
+          //     icon: "warning",
+          // })
+          }
+        })
+        // 跳窗END
+      }else{
+        alert('Please Login.');
+      }
+
+    })
+  }
+}
 // let mem_info;
 
 $('#doPost').on('click', function () {

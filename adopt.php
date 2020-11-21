@@ -1,12 +1,16 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt</title>
     <link rel="icon" href="./image/header/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
+    <title>Aqua Wonderland</title>
 </head>
 
 <body>   
@@ -134,10 +138,10 @@
         <div class="adoptInnerSection">
             <h3 class="adoptStepTitle">Start Your Adoption</h3>
             <div class="adoptAquaBlock">
-                <p style="display: inline-block;">Aqua No.<?=$_GET["aquaNo"]?></p>
                 <div class="adoptAqua">
-                    <img src="./img/aqua/1.jpg" alt="">
+                    <img src="./img/aqua/<?=$_GET["aquaPic"]?>" alt="">
                 </div>
+                <p style="display: inline-block;">Aqua No.<?=$_GET["aquaNo"]?></p>
             </div>
             <!-- right adopt process -->
             <!-- step 1 -->
@@ -205,25 +209,18 @@
                         <h4>YOUR INFORMATION</h4>
                         <div class="adoptInfo">
                             <label class="adoptFrontTitle">Name</label>
-                            <input type="text" name="firstname" placeholder="first name" id="adoptFirstname">
-                            <input type="text" name="lastname" placeholder="last name" id="adoptLastname">
+                            <p><?=$_SESSION["memName"]?></p>
                         </div>
 
                         <div class="adoptInfo">
                             <label class="adoptFrontTitle" for="adoptEmail">Email</label>
-                            <input type="text" name="email" id="adoptEmail">
-                            <h6>*Your receipt will be emailed here</h6>
+                            <p><?=$_SESSION["memEmail"]?></p>
                         </div>
 
                         <div class="adoptInfo">
-                            <label class="adoptFrontTitle" for="adoptPhone">Phone Number</label>
-                            <input type="text" name="phone" id="adoptPhone">
+                            <label class="adoptFrontTitle" for="adoptPhone">Phone</label>
+                            <p><?=$_SESSION["memPhone"]?></p>
                         </div>
-
-                        <!-- <div class="adoptInfo">
-                            <label class="adoptFrontTitle" for="adoptMessage">LEAVE MESSAGE TO AQUA</label>
-                            <textarea name="adoptmessage" id="adoptMessage" cols="44" rows="6"></textarea>
-                        </div> -->
 
                         <div class="adoptProcessStep">
                             <a href="#" class="adoptBackBtn">BACK</a>
@@ -255,30 +252,17 @@
                         </div>
                         <h4>PAYMENT DETIAL</h4>
                         <div class="adoptPaymentSection">
-
-                            <!-- <div class="adoptPayment">
-                                    <p>Payment amount</p>
-                                    <p>$500</p>
-                                </div> -->
-
                             <div class="adoptPayment">
-                                <label class="adoptFrontTitle" for="adoptCardname">Name on Card</label>
-                                <input type="text" name="cardname" id="adoptCardname">
+                                <label>Card Number</label>
+                                <input type="text" class="adoptCardInput">&nbsp;-&nbsp;<input type="text" class="adoptCardInput">&nbsp;-&nbsp;<input type="text" class="adoptCardInput">&nbsp;-&nbsp;<input type="text" class="adoptCardInput">
                             </div>
-
                             <div class="adoptPayment">
-                                <label class="adoptFrontTitle" for="adoptCardnumber">Card Number</label>
-                                <input type="text" name="cardnumber" id="adoptCardnumber">
+                                <label >Effective Date</label>
+                                <input type="text" class="adoptCardInput">&nbsp;/&nbsp;<input type="text" class="adoptCardInput">
                             </div>
-
                             <div class="adoptPayment">
-                                <label class="adoptFrontTitle" for="adoptCarddate">Effective Date</label>
-                                <input type="text" name="carddate" placeholder="MM/YY" id="adoptCarddate">
-                            </div>
-
-                            <div class="adoptPayment">
-                                <label class="adoptFrontTitle" for="adoptCardcode">Security Code</label>
-                                <input type="text" name="cardcode" id="adoptCardcode">
+                                <label>Security Code</label>
+                                <input type="text" class="adoptCardInput">
                             </div>
                         </div>
 
@@ -317,15 +301,12 @@
                         <div class="adoptConfirmCheck">
                             <div class="adoptConfirm">
                                 <h5>ADOPTED AQUA</h5>
-                                <!-- <input type="text"> -->
-                                <p id="adoptAquaNameResult"></p>
+                                <p id="adoptAquaNameResult"><span>No.</span><span id="aquaNo"><?=$_GET["aquaNo"]?></span></p>
                             </div>
 
                             <div class="adoptConfirm">
                                 <h5>ADOPT AMOUNT</h5>
-                                <!-- <input type="text"> -->
-                                <label class="adoptFrontTitle" for="adoptAmount">$</label>
-                                <p id="adoptAmountResult"></p>
+                                <p><span>$&nbsp;</span><span id="adoptAmountResult"></span></p>
                             </div>
                         </div>
 
@@ -333,61 +314,45 @@
                         <div class="adoptConfirmCheck">
                             <div class="adoptConfirm">
                                 <h5>YOUR INFORMATION</h5>
-                                <div class="adoptInfo">
-                                    <!-- <input type="text" placeholder="first name"> -->
-                                    <label class="adoptFrontTitle">First name:</label>
-                                    <p id="adoptFirstnameResult"></p>
-                                    <!-- <input type="text" placeholder="last name"> -->
-                                    <label class="adoptFrontTitle">Last name:</label>
-                                    <p id="adoptLastnameResult"></p>
+                                <div class="adoptMenInfo">
+                                    <label class="adoptFrontTitle">Name</label>
+                                    <p><span><?=$_SESSION["memName"]?></span></p>
                                 </div>
 
-                                <div class="adoptInfo">
-                                    <label class="adoptFrontTitle">Email:</label>
-                                    <!-- <input type="text"> -->
-                                    <p id="adoptEmailResult"></p>
-                                    <h6 class="adoptReceipt">*Your receipt will be emailed here</h6>
+                                <div class="adoptMenInfo">
+                                    <label class="adoptFrontTitle">Email</label>
+                                    <p><span><?=$_SESSION["memEmail"]?></span></p>
                                 </div>
 
-                                <div class="adoptInfo">
-                                    <label class="adoptFrontTitle">Phone Number:</label>
-                                    <!-- <input type="text"> -->
-                                    <p id="adoptPhoneResult"></p>
+                                <div class="adoptMenInfo">
+                                    <label class="adoptFrontTitle">Phone</label>
+                                    <p><span><?=$_SESSION["memPhone"]?></span></p>
                                 </div>
                             </div>
 
                             <div class="adoptConfirm">
-                                <h5>PAYMENT DETIAL</h5>
+                                <h5>PAYMENT DETAIL</h5>
 
-                                <div class="adoptPayment">
-                                    <label class="adoptFrontTitle">Name on Card:</label>
-                                    <!-- <input type="text"> -->
-                                    <p id="adoptCardnameResult"></p>
+                                <div class="adoptPaymentInfo">
+                                    <label class="adoptFrontTitle">Card Number</label>
+                                    <p><span class="adoptCardInfo"></span><span>-</span><span class="adoptCardInfo"></span><span>-</span><span class="adoptCardInfo"></span><span>-</span><span class="adoptCardInfo"></span></p>
                                 </div>
 
-                                <div class="adoptPayment">
-                                    <label class="adoptFrontTitle">Card Number:</label>
-                                    <!-- <input type="text"> -->
-                                    <p id="adoptCardnumberResult"></p>
+                                <div class="adoptPaymentInfo">
+                                    <label class="adoptFrontTitle">Effective Date</label>
+                                    <p><span class="adoptCardInfo"></span><span>/</span><span class="adoptCardInfo"></span></p>
                                 </div>
 
-                                <div class="adoptPayment">
-                                    <label class="adoptFrontTitle">Effective Date:</label>
-                                    <!-- <input type="text" placeholder="MM/YY"> -->
-                                    <p id="adoptCarddateResult"></p>
-                                </div>
-
-                                <div class="adoptPayment">
-                                    <label class="adoptFrontTitle">Security Code:</label>
-                                    <!-- <input type="number"> -->
-                                    <p id="adoptCardcodeResult"></p>
+                                <div class="adoptPaymentInfo">
+                                    <label class="adoptFrontTitle">Security Code</label>
+                                    <p><span class="adoptCardInfo"></span></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="adoptProcessStep adoptProcessStepFinal">
                             <a href="#" class="adoptBackBtn">BACK</a>
-                            <button class="adoptProcessBtn" type="button">ADOPT</button>
+                            <button class="adoptSubmit" id="adoptSubmit">ADOPT</button>
                         </div>
                     </div>
                 </div>

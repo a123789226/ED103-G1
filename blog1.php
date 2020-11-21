@@ -166,9 +166,9 @@
     // $sql = "select * from blog join member order by blogNo desc";
     $sql = "SELECT b.blogNo, b.blogTitle, b.blogPic, b.blogContent1, b.blogPic1, b.blogContent2, b.blogPic2, b.blogTime, b.blogStatus, b.blogMark, b.blogTags, m.memPic, m.memName, m.memId, m.memEmail, m.memNo
     FROM blog b JOIN member m ON (b.memNo = m.memNo)
-    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = 'reported')
+    WHERE b.blogNo NOT IN (SELECT blogNo FROM blog_report WHERE blogReportStatus = '1')
     ORDER BY blogNo DESC";
-   
+  //  0:預設 1: 審核通過（下架） 2: 審核未通過(不下架)
     $products = $pdo->query($sql);
     $prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
    
@@ -223,6 +223,7 @@
                 <img src='<?=$prodRow["memPic"]?>' class="blogMemImg">
                 <span>|&nbsp;</span>
                 <div class="blogMemDate"><?=$prodRow["blogTime"]?></div>
+                <div class="blogPostPreviewTag">&nbsp&nbsp#<?=$prodRow["blogTags"]?></div>
               </div>
               <div class="blogPostPreview" id="previewText">
                 <p class="card-text" ><?=$prodRow["blogContent1"]?></p>
@@ -255,7 +256,6 @@
               </div>
               <div class="blogIconReport">
                   <img class="blogReportBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-before.png"  data-blogreport="<?=$prodRow["blogNo"]?>">
-                  <input type="hidden" name="blogReportReason" id="blogReportReason">
                   <!-- <img class="blogReportedBtn" src="./image/blog/icons/exclamation-mark-in-a-circle-after.png"> -->
 
               <!-- <i class="fas fa-exclamation-circle"></i> -->
@@ -296,11 +296,27 @@
     <div class="blogPostTagsSection">
       <span class="blogPostTagsFont">Tags</span>
       <div class="blogPostTagsOptions">
-        <div class="blogPostTags" value="Dolphin">Dolphin</div>
-        <div class="blogPostTags" value="Whale">Whale</div>
-        <div class="blogPostTags" value="Seal">Seal</div>
-        <div class="blogPostTags" value="Turtle">Turtle</div>
-        <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogTags"/>
+      <label class="blogPostTagsOptionsLabels">
+        <input type="checkbox" value="Dolphin" class="blogPostTags" name="blogTags"/>
+        <span>Dolphin</span>
+    </label>
+    <label class="blogPostTagsOptionsLabels">
+        <input type="checkbox" value="Whale" class="blogPostTags" name="blogTags"/>
+        <span>Whale</span>
+    </label>
+    <label class="blogPostTagsOptionsLabels">
+        <input type="checkbox" value="Seal" class="blogPostTags" name="blogTags"/>
+        <span>Seal</span>
+    </label>
+    <label class="blogPostTagsOptionsLabels">
+        <input type="checkbox" value="Turtle" class="blogPostTags" name="blogTags"/>
+        <span>Turtle</span>
+    </label>
+        <!-- <input type="checkbox" class="blogPostTags" value="Dolphin" name="blogTags">Dolphin
+        <input type="checkbox" class="blogPostTags" value="Whale" name="blogTags">Whale
+        <input type="checkbox" class="blogPostTags" value="Seal" name="blogTags">Seal
+        <input type="checkbox" class="blogPostTags" value="Turtle" name="blogTags">Turtle -->
+        <!-- <input class="blogPostTagsFontSelected" type="hidden" value="" name="blogTags"/> -->
       </div>
     </div>
     
@@ -356,10 +372,22 @@
   <script>
 
   // 發文頁面 tag選擇
-    $(".blogPostTags").on("click", function(){
-    $(".blogPostTags").removeClass("blogPostTagsOn");
-    $(this).toggleClass("blogPostTagsOn");
-    });
+    // $(".blogPostTags").on("click", function(){
+    // $(".blogPostTags").removeClass("blogPostTagsOn");
+    // $(this).toggleClass("blogPostTagsOn");
+    // });
+
+    $(document).ready(function(){
+
+$("input[name=blogTags]").click( function () {
+var Selected = $(this).val();
+$("input[name=blogTags]").each(function(i){
+if($(this).val() == Selected) $(this).prop("checked", true);
+else $(this).prop("checked", false);
+});
+});
+
+});
 //  ---------這裡是SweetAlert---------
 
 // function blogReport(){
@@ -419,7 +447,9 @@
         })
         // 跳窗END
       }else{
-        alert('not member');
+        // alert('not member');
+        swal('Please log in!');
+        
       }
 
     })
@@ -428,11 +458,16 @@
   // ---------這裡是JavaScript---------
   // 燈箱開關
   document.getElementById("blogPostSectionStart").onclick = function(){
+    if(member.memId){
     document.getElementsByClassName("blogPostBtn")[0].style.display = "block";
     document.getElementsByClassName("blogPostContainer")[0].style.display = "block";
     document.getElementsByClassName("blogPostCloseButton")[0].onclick = function(){
       document.getElementsByClassName("blogPostContainer")[0].style.display = "none";
           };
+    }else{
+      swal('Please log in!');
+    }
+
     }
 
 
@@ -572,6 +607,7 @@ window.addEventListener('load', doFirst);
                 
             } else {
                 alert(addlikexhr.status);
+                
             }
         }
         var url = "./php/addCollect.php";
@@ -584,7 +620,7 @@ window.addEventListener('load', doFirst);
 
 
         
-        swal('非登入狀態');
+        swal('Please log in!');
 
         //跳出燈箱
       }
@@ -603,8 +639,8 @@ window.addEventListener('load', doFirst);
       let removeCollect = new XMLHttpRequest();
       removeCollect.onload = function(e) {
           if (removeCollect.status == 200) { //有刪除成功
-              alert(removeCollect.responseText);
-
+              // alert(removeCollect.responseText);
+              swal('Remove Successfully!');
           } else {
               alert(removeCollect.status);
           }

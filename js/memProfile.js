@@ -331,7 +331,7 @@ $(function () {
                         for (let i = 0; i < res.data.length; i++) {
                             cardHtml += `
                             <div class="memBlogContent memCard row">
-                                <div class="mem_ana col-3 col-sm-3 col-lg-3">${res.data[i].cardDate}</div>
+                                <div class="mem_ana col-6 col-sm-6 col-lg-6">${res.data[i].cardDate}</div>
                                 <div class="mem_ana col-6 col-sm-6 col-lg-6"><img src="${res.data[i].cardFile}"></div>
                             </div>
                             
@@ -357,9 +357,9 @@ $(function () {
                         for (let i = 0; i < res.data.length; i++) {
                             adoptHtml += `
                                 <div class="row memBlogContent memAdoptCard">
-                                    <div class="col-5 col-sm-5 mem_ana">${res.data[i].adoptDate}</div>
+                                    <div class="col-4 col-sm-4 mem_ana">${res.data[i].adoptDate}</div>
                                     <div class="col-4 col-sm-4 mem_ana">${res.data[i].aquaType}</div>
-                                    <div class="col-3 col-sm-3 mem_ana">${res.data[i].adoptDollar}</div>
+                                    <div class="col-4 col-sm-4 mem_ana">${res.data[i].adoptDollar}</div>
                                 </div>
                             
                             `
@@ -370,6 +370,8 @@ $(function () {
                         console.log(err);
                     });
             },
+
+
             //order
             order: function () {
                 // console.log(this.id);
@@ -384,10 +386,9 @@ $(function () {
                             if(i == 0 ){
                                 orderHtml += `
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
-                                        <div class="col-3 col-sm-3 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
-                                        <div class="col-5 col-sm-5 mem_ana">${res.data[i].ticketOrderDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
+                                        <div class="col-4 col-sm-4 mem_ana">${res.data[i].ticketOrderDate}</div>
+                                        <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
+                                        <div class="col-4 col-sm-4 mem_ana memStep" aria-expanded="false">view 
                                             <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
@@ -419,10 +420,9 @@ $(function () {
                                         </div>
                                     </div>
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].ticketOrderNo}</div>
-                                        <div class="col-3 col-sm-3 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
-                                        <div class="col-5 col-sm-5 mem_ana">${res.data[i].ticketOrderDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
+                                        <div class="col-4 col-sm-4 mem_ana">${res.data[i].ticketOrderDate}</div>
+                                        <div class="col-4 col-sm-4 mem_ana">$<span>${res.data[i].ticketTotalPrice}</span></div>
+                                        <div class="col-4 col-sm-4 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
@@ -471,11 +471,10 @@ $(function () {
                             if (i == 0) {
                                 orderHtml += `
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].nightOrderNo}</div>
-                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
                                         <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightOrderDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
+                                        <div class="col-3 col-sm-3 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
+                                        <div class="col-3 col-sm-3 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
@@ -507,11 +506,10 @@ $(function () {
                                 </div>
                                 </div>
                                     <div class="memBlogContent memOrderCard row">
-                                        <div class="col-2 col-sm-2 mem_ana">${res.data[i].nightOrderNo}</div>
-                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
                                         <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightOrderDate}</div>
-                                        <div class="col-2 col-sm-2 mem_ana memStep" aria-expanded="false">view 
+                                        <div class="col-3 col-sm-3 mem_ana">${res.data[i].nightDate}</div>
+                                        <div class="col-3 col-sm-3 mem_ana">$<span>${res.data[i].nightTotalPrice}</span></div>
+                                        <div class="col-3 col-sm-3 mem_ana memStep" aria-expanded="false">view 
                                         <i class="fa fa-angle-down fa-lg"></i>
                                         </div>
 
