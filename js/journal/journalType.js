@@ -263,11 +263,13 @@ $.ajax({
   type: 'get',
   success: function (data) {
     data1 = JSON.parse(data);
-    // console.log(data1.aquaNo);
+    // console.log(data1.aquaPic);
+    let demoDolphinPic = document.getElementById('demoDolphinPic');
     let demoDolphinId = document.getElementById('demoDolphinId');
     let demoDolphinName = document.getElementById('demoDolphinName');
     let demoDolphinLoc = document.getElementById('demoDolphinLoc');
     let demoDolphinDate = document.getElementById('demoDolphinDate');
+    demoDolphinPic.src = `./img/aqua/${data1.aquaPic}`;
     demoDolphinId.innerText = data1.aquaNo;
     demoDolphinName.innerText = data1.aquaName;
     demoDolphinLoc.innerText = data1.rescueLoc;
