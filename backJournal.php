@@ -1,7 +1,7 @@
 <?php 
 	try {
 		require("./connectAqua.php");
-		$sql = "select * from journal";
+		$sql = "select * from journal order by jourNo desc";
 		$journal = $pdo->query($sql);
 		$journal->execute();
 		
