@@ -395,6 +395,17 @@ let home_adopt_no = document.getElementById('home_adopt_no');
 let home_adopt_name = document.getElementById('home_adopt_name');
 let home_adopt_loc = document.getElementById('home_adopt_loc');
 let home_adopt_date = document.getElementById('home_adopt_date');
+// let journal_bg1 = $('.journal_bg')[0].getElementsByTagName('img')[0].attributes[0].value;
+let journal_bg1 = $('.journal_bg .jourBookName').text();
+console.log(journal_bg1);
+
+// let phototop = $('.jourPagePhotoTop')[1].getElementsByTagName('img')[0].attributes[0].value;
+// let phototop = $('.jourPagePhotoDown')[0].getElementsByTagName('img')[0].attributes[0].value;
+// let phototop1 = $('.jourPagePhotoDown')[0].getElementsByTagName('img')[1].attributes[0].value;
+// let phototop1 = phototop().attr('src');
+// let phototop1 = phototop.split('/',5);
+// console.log(phototop);
+// console.log(phototop1);
 
 
 $.ajax({
@@ -407,8 +418,18 @@ $.ajax({
     home_adopt_name.innerText = data[0].aquaName;
     home_adopt_loc.innerText = data[0].rescueLoc;
     home_adopt_date.innerText = data[0].arriveDate;
+    $('.journal_bg')[0].getElementsByTagName('img')[0].attributes[0].value = `./img/journal/${data[0].jourPic1}`;
+    $('.jourBookPhoto')[0].getElementsByTagName('img')[0].attributes[0].value = `./img/journal/${data[0].jourPic1}`
+    $('.journal_bg .jourBookName').text(`${data[0].aquaName}`);
+    $('.journal_bg .jourBookText #home_adopt_no').text(`${data[0].aquaNo}`);
+    $('.journal_bg .jourBookText #home_adopt_name').text(`${data[0].aquaName}`);
+    $('.journal_bg .jourBookText #home_adopt_date').text(`${data[0].arriveDate}`);
+
     console.log(data);
     for(let i=0; i<data.length; i++){
+      $('.jourPagePhotoTop')[i].getElementsByTagName('img')[0].attributes[0].value = `./img/journal/${data[i].jourPic1}`;
+      $('.jourPagePhotoDown')[i].getElementsByTagName('img')[0].attributes[0].value = `./img/journal/${data[i].jourPic2}`;
+      $('.jourPagePhotoDown')[i].getElementsByTagName('img')[1].attributes[0].value = `./img/journal/${data[i].jourPic3}`;
       $(`.jourPage${(i + 1)} .jourPageContent > h4`).text(data[i].jourDate);
       $(`.jourPage${(i + 1)} .jourPageText > h4`).text(`Story Update${i+1}`);
       $(`.jourPage${(i+1)} .jourPageText > p`).text(data[i].jourContent);

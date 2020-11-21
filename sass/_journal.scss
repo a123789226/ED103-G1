@@ -286,7 +286,7 @@ body {
   // background: linear-gradient(45deg, #7A2929 1%, #A52B2B 20%, #C43535 50%, #A52B2B 80%, #7A2929 99%);
   // background: linear-gradient(45deg, #6d4a03 1%, #aa7304 20%, #f2a306 50%, #aa7304 80%, #6d4a03 99%);
   @media screen and (max-width: 676px) {
-    padding: 10px 0px 0px 0px;
+    // padding: 0px 0px 0px 0px;
   }
 }
 
@@ -347,6 +347,10 @@ a.jourBookName {
     text-align: left;
     box-shadow: none;
     // border: 3px solid white;
+    @media screen and (max-width: 676px) {
+     margin: 10px auto;
+  
+    }
 
     tr {
       border-bottom: 1px solid rgba(255, 255, 255, .5);
@@ -358,6 +362,7 @@ a.jourBookName {
     td {
       padding-left: 10px;
       font-size: 16px;
+
     }
 
     
@@ -1610,7 +1615,7 @@ a.jourBookName {
   }
 
   #jourContentButton li.clickMe {
-    background: #888;
+    background: #1BB8CE;
   }
 
   #flipbook2Rwd {

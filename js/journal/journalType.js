@@ -605,7 +605,7 @@ function jourReport(){
         })
         // 跳窗END
       }else{
-        alert('Please Login.');
+        swal('Please log in!');
       }
 
     })
