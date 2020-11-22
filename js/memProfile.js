@@ -271,9 +271,8 @@ $(function () {
                         for(let i = 0 ; i < res.data.length ; i++){
                             blogHtml += `
                             <div class="memBlogContent memBlogCard row">
-                                <div class="memFormBlogTitle col-4 col-sm-4"><img src="${res.data[i].blogPic}" alt=""></div>
-                                <div class="memFormBlogTitle col-4 col-sm-4">${res.data[i].blogTitle}</div>
-                                <div class="memFormBlogTitle col-4 col-sm-4">${res.data[i].blogTags}</div>
+                                <div class="memFormBlogTitle col-6 col-sm-6"><img src="${res.data[i].blogPic}" alt=""></div>
+                                <div class="memFormBlogTitle col-6 col-sm-6">${res.data[i].blogTitle}</div>
                             </div>
                             
                             `
@@ -299,10 +298,9 @@ $(function () {
                         for (let i = 0; i < res.data.length; i++) {
                             blogHtml += `
                                 <div class="memBlogContent memBlogCard row">
-                                    <div class="mem_ana col-sm-2"><img src="${res.data[i].blogPic}" alt=""></div>
-                                    <div class="mem_ana col-4 col-sm-5">${res.data[i].blogTitle}</div>
-                                    <div class="mem_ana col-4 col-sm-3">${res.data[i].blogTags}</div>
-                                    <div class="mem_ana col-4 col-sm-2">
+                                    <div class="mem_ana col-4 col-sm-4"><img src="${res.data[i].blogPic}" alt=""></div>
+                                    <div class="mem_ana col-4 col-sm-4">${res.data[i].blogTitle}</div>
+                                    <div class="mem_ana col-4 col-sm-4">
                                     <div class="memBlogClick">
                                         <i class="fas fa-trash-alt blogTrash" data-blogno="${res.data[i].blogNo}"></i>
                                     </div>

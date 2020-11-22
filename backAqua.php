@@ -1,7 +1,7 @@
 <?php 
 	try {
 		require("./connectAqua.php");
-		$sql = "select * from aqua";
+		$sql = "select * from aqua order by aquaNo desc";
 		$Aqua = $pdo->query($sql);
 		$Aqua->execute();
 		

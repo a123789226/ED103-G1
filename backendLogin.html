@@ -5,22 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="icon" href="./image/header/favicon.ico">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-  <title>Aqua BackState</title>
+  <title>Aqua Wonderland</title>
 </head>
 
 <body>
-  <!-- 下面是背景的div，先不要動到 -->
-  <div class="background"
-    style="background: linear-gradient( #4990d6 0%, #2b66ad 100%); width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;">
-  </div>
-  <!-- 上面是背景的div，先不要動到 -->
-
   <!-- 下面是背景的div，先不要動到 -->
   <div class="mgrBackground">
     <div class="commonBG00 commonBGSet"></div>
@@ -32,70 +23,7 @@
     <img src="./image/background/fish2.png" alt="" class="BGFish2">
   </div>
   <!-- 上面是背景的div，先不要動到 -->
-  <!-- <header class="main_menu">
-    <nav class="main_nav">
-      <div class="logo_box">
-        <a href="index.html" class="logo">
-          <img src="./image/header/logo.png" alt="">
-        </a>
-        <a href="" class="logo_text_box">
-          <h1 class="logo_text">AQUA WONDERLAND</h1>
-        </a>
-      </div>
-      <ul class="main_menu_ul">
-        <li class="main_menu_li active">
-          <a href="tour.html" class="li_logo">
-            <img src="./image/header/header_tour.png" alt="">
-            <img src="./image/header/header_tour_cover.png" alt="">
-          </a>
-          <a href="tour.html" class="li_text">TOUR</a>
-        </li>
-        <li class="main_menu_li active">
-          <a href="journal.html" class="li_logo">
-            <img src="./image/header/header_journal.png" alt="">
-            <img src="./image/header/header_journal_cover.png" alt="">
-          </a>
-          <a href="journal.html" class="li_text">JOURNAL</a>
-        </li>
-        <li class="main_menu_li active">
-          <a href="ticket.html" class="li_logo">
-            <img src="./image/header/header_ticket.png" alt="">
-            <img src="./image/header/header_ticket_cover.png" alt="">
-          </a>
-          <a href="ticket.html" class="li_text">TICKET</a>
-        </li>
-        <li class="main_menu_li active">
-          <a href="vote.html" class="li_logo">
-            <img src="./image/header/header_vote.png" alt="">
-            <img src="./image/header/header_vote_cover.png" alt="">
-          </a>
-          <a href="vote.html" class="li_text">VOTE</a>
-        </li>
-        <li class="main_menu_li active">
-          <a href="blog.html" class="li_logo">
-            <img src="./image/header/header_blog.png" alt="">
-            <img src="./image/header/header_blog_cover.png" alt="">
-          </a>
-          <a href="blog.html" class="li_text">BLOG</a>
-        </li>
-      </ul>
-      <div class="header_right">
-        <a class="member_box" href="">
-          <img src="./image/header/header_member_fish.png" alt="">
-        </a>
-        <a class="cart_box" href="">
-          <img src="./image/header/header_cart.png" alt="">
-          <span class="cart_amount">1</span>
-        </a>
-        <div class="hamburger_box">
-          <div class="hamburger">
-            <span class="hamburger_line is-active"></span>
-            <span class="hamburger_cross">&times;</span>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header> -->
+
   <div>
     <!-- Title -->
     <!-- <div class="commonTitleBox">
@@ -103,18 +31,14 @@
       <h4 class="commonSubTitle">Lorem ipsum dolor sit amet consectetur.</h4>
     </div> -->
     <!-- 你的code打這下面 -->
-    <div id="bar" style="position: absolute;top:0;right: 20px">
-        <span id="mgrName">&nbsp;</span> <!-- 使用者姓名 -->
-        <span id="spanLogin">Log In</span>
-    </div>
+
     <!-- Log In -->
     <div class="mgrLogin" id="mgrLogin">
       <form class="LogInForm" id="LogInForm" method="post">
         <div class="mgrImg">
-          <img src="./image/header/logo.png" alt="">
-          <h1>Aqua Wonderland</h3>
+          <img src="./image/index/object/indexMain3-5.png" alt="">
         </div>
-        <h3 class="mgrLogTitle">BackState</h3>
+        <h3 class="mgrLogTitle">BackStage</h3>
         <input type="text" name="mgrId" id="mgrId" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
           placeholder="ID" size="30" /><br>
         <input type="password" name="mgrPsw" id="mgrPsw" minlength="6" maxlength="12" pattern="[A-Za-z0-9]*"
@@ -125,33 +49,10 @@
     <!-- 你的code打這上面 -->
   </div>
 
-  <footer>
-    Copyright 2020 ED103-G1 Aqua Wonderland All Rights Reserved
-  </footer>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="./js/mgrLogin.js"></script>
 
 
-  <!-- 頁籤 -->
-  <script>
-
-    // OrderDetail收合
-    $("div.mgrStep").on("click", function () {
-      $(this).next().slideToggle();
-      $(this).find('i').toggleClass('rotate');
-    });
-
-    // Hamburger
-    $("div.hamburger_box").on("click", function () {
-      $("span.hamburger_line").toggleClass("is-active");
-      $("span.hamburger_cross").toggleClass("is-active");
-      $("ul.main_menu_ul").toggleClass("is-active");
-    });
-
-  </script>
 </body>
 
 </html>
