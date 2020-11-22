@@ -582,19 +582,13 @@ border-radius: 6px;
 }
 .blogAritcleStep{
     display: flex;
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     margin: 20px auto;
     justify-content: center;
-    .blogMoreBtnLast{
-    @include btn50White; 
-    box-shadow: $shadow2;
-    margin-right: 20%;
-    }
     .blogMoreBtnNext{
     @include btn50Green; 
     box-shadow: $shadow2;
-    margin-left: 20%;
     }
 }
 

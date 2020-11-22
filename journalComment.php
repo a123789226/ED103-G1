@@ -6,7 +6,7 @@ try{
   require_once("./connectAqua.php");
   $sql = "select c.msgContent, c.msgNo, c.aquaNo, c.msgTime, m.memName, m.memPic 
   from journal_message c join member m on(c.memNo = m.memNo) 
-  where c.aquaNo =:aquaNo and msgStatus in ('正常',0) 
+  where c.aquaNo =:aquaNo and c.msgNo NOT IN (SELECT msgNo FROM journal_message_report WHERE msgReportStatus = '1')
   order by c.msgTime DESC;";
  
   $comment = $pdo->prepare($sql);

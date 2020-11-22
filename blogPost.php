@@ -191,8 +191,7 @@ if( $errMsg != ""){ //例外
 </div>
 
 <div class="blogAritcleStep">
-<a href='./blogPost.php?blogNo=<?= $_REQUEST["blogNo"]-1;?>' class="blogMoreBtnLast">LAST</a>
-<a href='./blogPost.php?blogNo=<?= $_REQUEST["blogNo"]+1;?>' class="blogMoreBtnNext">NEXT</a></div>
+<a href="./blog1.php" class="blogMoreBtnNext">More Post</a></div>
 <!-- 你的code打這上面 -->
 
   </div>
