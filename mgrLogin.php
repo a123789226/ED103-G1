@@ -2,7 +2,7 @@
 try {
   require("connectAqua.php");
 
-  $sql = "select * from `manager` where mgrId=:mgrId and mgrPsw=:mgrPsw and mgrStatus=0;";
+  $sql = "select * from `manager` where mgrId=:mgrId and mgrPsw=:mgrPsw;";
   
   $manager = $pdo->prepare($sql);
   $manager->bindValue(":mgrId", $_POST["mgrId"]);
@@ -20,11 +20,13 @@ try {
       $_SESSION["mgrName"] = $mgrRow["mgrName"];
       $_SESSION["mgrId"] = $mgrRow["mgrId"];
       $_SESSION["mgrPsw"] = $mgrRow["mgrPsw"];
+      $_SESSION["mgrStatus"] = $mgrRow["mgrStatus"];
 
       $result = array("mgrNo"=>$mgrRow["mgrNo"],
                       "mgrName"=>$mgrRow["mgrName"],
                       "mgrId"=>$mgrRow["mgrId"],
-                      "mgrPsw"=>$mgrRow["mgrPsw"]);
+                      "mgrPsw"=>$mgrRow["mgrPsw"],
+                      "mgrStatus"=>$mgrRow["mgrStatus"]);
       
       $json = json_encode($result);
       // 送出登入者的資料
