@@ -15,15 +15,15 @@ try{
   $aqua->bindValue(6, $_POST['rescueLoc']);
   $aqua->bindValue(7, $_POST["jourStory"]);
   $aqua->bindValue(8, $_POST['recoverStatus']);
-  $aqua->bindValue(9, $_POST["releaseDate"]);
-  $aqua->bindValue(10, $_POST["releaseLoc"]);
+  $aqua->bindValue(9, null);
+  $aqua->bindValue(10, null);
   $aqua->bindValue(11, $_FILES['upFile']['name'][0]);
-  $aqua->bindValue(12, $_POST["adoptTotalNum"]);
-  $aqua->bindValue(13, $_POST["adoptTotalAmt"]);
-  $aqua->bindValue(14, $_POST['nameStatus']);
-  $aqua->bindValue(15, $_POST["nameStart"]);
+  $aqua->bindValue(12, 0);
+  $aqua->bindValue(13, 0);
+  $aqua->bindValue(14, 0);
+  $aqua->bindValue(15, null);
   $aqua->bindValue(16, $_POST["nameEnd"]);
-  $aqua->bindValue(17, $_POST["voteStart"]);
+  $aqua->bindValue(17, null);
   $aqua->bindValue(18, $_POST["voteEnd"]);
 
   $aqua ->execute();

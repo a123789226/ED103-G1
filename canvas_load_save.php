@@ -8,7 +8,7 @@ $memEmail = $_SESSION["memEmail"];
 // if(isset($_SESSION["memId"])){
 //   $errMsg = "";
 try{
-require_once("../connectAqua.php");
+require_once("./connectAqua.php");
 $sql = "INSERT INTO thankscard ( memNo, cardName, memEmail, cardFile, cardStatus, cardDate)
         VALUES('$memNo', '$memName', '$memEmail', '', '1', now())"; 
         // $sql = "INSERT INTO thankscard ( memNo, memEmail, cardFile, cardStatus)
@@ -22,7 +22,7 @@ $sql = "INSERT INTO thankscard ( memNo, cardName, memEmail, cardFile, cardStatus
   //取得自動創號的key值
   $cardNo = $pdo->lastInsertId();
   
-    $upload_dir = "../img/thanksCard/";  //檢查資料夾存不存在
+    $upload_dir = "./img/thanksCard/";  //檢查資料夾存不存在
     if( ! file_exists($upload_dir)){
     mkdir($upload_dir);
       }
