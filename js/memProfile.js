@@ -187,9 +187,10 @@ $(function () {
                     // console.log(res.data);
                     vue_member.name = res.data.memName;
                     vue_member.id = res.data.memId;
-                    let str = res.data.memPsw;
-                    let flower = str.replace(/\w/g, '*');
-                    vue_member.password = flower;
+                    // let str = res.data.memPsw;
+                    // let flower = str.replace(/\w/g, '*');
+                    // vue_member.password = flower;
+                    vue_member.password = res.data.memPsw;
                     vue_member.point = res.data.point;
                     vue_member.sex = res.data.memSex;
                     vue_member.email = res.data.memEmail;
@@ -632,7 +633,9 @@ $(".memOrderTab2").on("click", 'div.memStep', function () {
             editMem.style.display = 'block';
         }
     });
-    
+    editConfirm.addEventListener('click', function () {
+        swal('Good Job','Edit Success','success');
+    });
 
     editCancel.addEventListener('click', function () {
         showMem.style.display = 'block';
