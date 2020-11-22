@@ -104,7 +104,8 @@ function show_game_light_box(){
     }else{
         // alert('sorry')
         // swal("Not our member!", "Please login to save your points", "warning", {button: "OK"});
-        swal("Please log in to save your points", "warning", {button: "OK"});
+        // swal("Please log in to save your points", "warning", {button: "OK"});
+        swal("Please log in!", "Log in to save your points", "warning", {button: "OK"});
         $('button:contains("OK")').click(function () {
         $id('memLightBox').classList.add('-on'); 
      })     
