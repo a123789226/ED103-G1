@@ -91,3 +91,9 @@ textarea{
 button{
   outline: none;
 }
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  -webkit-appearance: none;
+}
